@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PCBVI.Forms.Login;
 
 namespace PCBVI
 {
@@ -16,7 +17,7 @@ namespace PCBVI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LoginForms());
         }
     }
 }
