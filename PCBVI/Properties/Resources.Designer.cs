@@ -113,6 +113,46 @@ namespace PCBVI.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap main_cerrar {
+            get {
+                object obj = ResourceManager.GetObject("main_cerrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap main_maxi {
+            get {
+                object obj = ResourceManager.GetObject("main_maxi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap main_minimazar {
+            get {
+                object obj = ResourceManager.GetObject("main_minimazar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap main_res {
+            get {
+                object obj = ResourceManager.GetObject("main_res", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap project_icon {
             get {
                 object obj = ResourceManager.GetObject("project_icon", resourceCulture);
@@ -126,6 +166,16 @@ namespace PCBVI.Properties {
         internal static System.Drawing.Bitmap project_logo {
             get {
                 object obj = ResourceManager.GetObject("project_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap project_white_ {
+            get {
+                object obj = ResourceManager.GetObject("project_white_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

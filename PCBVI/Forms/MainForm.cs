@@ -17,5 +17,30 @@ namespace PCBVI.Forms
         {
             InitializeComponent();
         }
+
+        private void PtbMinimi_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
+        }
+
+        private void PtbCnacle_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void PtbMax_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            ptbMin.Visible = true;
+            ptbMax.Visible = false;
+        }
+
+        private void PtbMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            ptbMin.Visible = false;
+            ptbMax.Visible = true;
+        }
     }
 }
