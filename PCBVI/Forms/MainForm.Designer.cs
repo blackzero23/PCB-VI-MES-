@@ -68,6 +68,7 @@
             this.panelMainTitle.Name = "panelMainTitle";
             this.panelMainTitle.Size = new System.Drawing.Size(800, 33);
             this.panelMainTitle.TabIndex = 1;
+            this.panelMainTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelMainTitle_MouseDown);
             // 
             // ptbMin
             // 
