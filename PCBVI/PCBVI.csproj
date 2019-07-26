@@ -46,16 +46,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\MainControls\MainMenulistControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MainControls\MainMenulistControl.Designer.cs">
+      <DependentUpon>MainMenulistControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login\LoginForms.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Login\LoginForms.Designer.cs">
       <DependentUpon>LoginForms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\MainControls\MainMenulistControl.resx">
+      <DependentUpon>MainMenulistControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\LoginForms.resx">
       <DependentUpon>LoginForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,7 +99,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\" />
+    <None Include="Resources\Collapse Arrow_20px.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-Cancel-100.png" />
@@ -97,6 +115,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\project logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expand Arrow_20px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
