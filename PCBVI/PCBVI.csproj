@@ -52,6 +52,60 @@
     <Compile Include="Controls\MainControls\MainMenulistControl.Designer.cs">
       <DependentUpon>MainMenulistControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Basic\EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Basic\EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Basic\EquipmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Basic\EquipmentForm.Designer.cs">
+      <DependentUpon>EquipmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Basic\ErrorCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Basic\ErrorCodeForm.Designer.cs">
+      <DependentUpon>ErrorCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Basic\InspectionStForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Basic\InspectionStForm.Designer.cs">
+      <DependentUpon>InspectionStForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Basic\NonMovingTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Basic\NonMovingTypeForm.Designer.cs">
+      <DependentUpon>NonMovingTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Basic\SubJectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Basic\SubJectForm.Designer.cs">
+      <DependentUpon>SubJectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Facilities\FacilitiesErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Facilities\FacilitiesErrorForm.Designer.cs">
+      <DependentUpon>FacilitiesErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Facilities\FacilitiesHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Facilities\FacilitiesHistoryForm.Designer.cs">
+      <DependentUpon>FacilitiesHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Facilities\FacilitiesPowerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Facilities\FacilitiesPowerForm.Designer.cs">
+      <DependentUpon>FacilitiesPowerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login\LoginForms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,10 +118,136 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Materials\MaterialsHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Materials\MaterialsHistory.Designer.cs">
+      <DependentUpon>MaterialsHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Materials\MaterialsInOutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Materials\MaterialsInOutForm.Designer.cs">
+      <DependentUpon>MaterialsInOutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Materials\MaterialsInReForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Materials\MaterialsInReForm.Designer.cs">
+      <DependentUpon>MaterialsInReForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Monitoring\FacilitiesMonitoringFormcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Monitoring\FacilitiesMonitoringFormcs.Designer.cs">
+      <DependentUpon>FacilitiesMonitoringFormcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Monitoring\PPMonitoringForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Monitoring\PPMonitoringForm.Designer.cs">
+      <DependentUpon>PPMonitoringForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Monitoring\PSMonitoringForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Monitoring\PSMonitoringForm.Designer.cs">
+      <DependentUpon>PSMonitoringForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Monitoring\QualityMonitoringForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Monitoring\QualityMonitoringForm.Designer.cs">
+      <DependentUpon>QualityMonitoringForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Production\BarcodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\BarcodeForm.Designer.cs">
+      <DependentUpon>BarcodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Production\DefectiveProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\DefectiveProductForm.Designer.cs">
+      <DependentUpon>DefectiveProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Production\MaterialsManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\MaterialsManageForm.Designer.cs">
+      <DependentUpon>MaterialsManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Production\ProcessDefectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\ProcessDefectForm.Designer.cs">
+      <DependentUpon>ProcessDefectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Production\ProductionHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\ProductionHistoryForm.Designer.cs">
+      <DependentUpon>ProductionHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Production\WorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\WorkerForm.Designer.cs">
+      <DependentUpon>WorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Production\WorkLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\WorkLogForm.Designer.cs">
+      <DependentUpon>WorkLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Quality\FirstInspectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Quality\FirstInspectionForm.Designer.cs">
+      <DependentUpon>FirstInspectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Quality\LastInspectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Quality\LastInspectionForm.Designer.cs">
+      <DependentUpon>LastInspectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Quality\ProcessInspectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Quality\ProcessInspectionForm.Designer.cs">
+      <DependentUpon>ProcessInspectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Statistics\ErrorStatisticsFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Statistics\ErrorStatisticsFrom.Designer.cs">
+      <DependentUpon>ErrorStatisticsFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Statistics\PPStatisticsFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Statistics\PPStatisticsFrom.Designer.cs">
+      <DependentUpon>PPStatisticsFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Statistics\StockStatisticsFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Statistics\StockStatisticsFrom.Designer.cs">
+      <DependentUpon>StockStatisticsFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\MainControls\MainMenulistControl.resx">
       <DependentUpon>MainMenulistControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\SubJectForm.resx">
+      <DependentUpon>SubJectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\LoginForms.resx">
       <DependentUpon>LoginForms.cs</DependentUpon>
@@ -134,5 +314,6 @@
   <ItemGroup>
     <None Include="Resources\res.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

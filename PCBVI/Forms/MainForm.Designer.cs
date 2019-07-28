@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.panelMainTitle = new System.Windows.Forms.Panel();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.ptbMin = new System.Windows.Forms.PictureBox();
             this.ptbMinimi = new System.Windows.Forms.PictureBox();
             this.ptbMax = new System.Windows.Forms.PictureBox();
             this.ptbCnacle = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.mainMenulistControl1 = new PCBVI.Controls.MainControls.MainMenulistControl();
+            this.uscMenuBar = new PCBVI.Controls.MainControls.MainMenulistControl();
             this.panelMainTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMinimi)).BeginInit();
@@ -44,23 +44,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbCnacle)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel2
+            // panelContainer
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(175, 33);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(625, 642);
-            this.panel2.TabIndex = 2;
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelContainer.ForeColor = System.Drawing.Color.White;
+            this.panelContainer.Location = new System.Drawing.Point(175, 33);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(625, 642);
+            this.panelContainer.TabIndex = 2;
             // 
             // panelMainTitle
             // 
             this.panelMainTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
+            this.panelMainTitle.Controls.Add(this.lbTitle);
             this.panelMainTitle.Controls.Add(this.ptbMin);
             this.panelMainTitle.Controls.Add(this.ptbMinimi);
             this.panelMainTitle.Controls.Add(this.ptbMax);
             this.panelMainTitle.Controls.Add(this.ptbCnacle);
-            this.panelMainTitle.Controls.Add(this.textBox1);
             this.panelMainTitle.Controls.Add(this.maskedTextBox1);
             this.panelMainTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMainTitle.ForeColor = System.Drawing.Color.White;
@@ -69,6 +69,16 @@
             this.panelMainTitle.Size = new System.Drawing.Size(800, 33);
             this.panelMainTitle.TabIndex = 1;
             this.panelMainTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelMainTitle_MouseDown);
+            // 
+            // lbTitle
+            // 
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Font = new System.Drawing.Font("배달의민족 주아", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbTitle.Location = new System.Drawing.Point(35, 5);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(103, 25);
+            this.lbTitle.TabIndex = 0;
+            this.lbTitle.Text = "PK Vision";
             // 
             // ptbMin
             // 
@@ -123,19 +133,6 @@
             this.ptbCnacle.TabStop = false;
             this.ptbCnacle.Click += new System.EventHandler(this.PtbCnacle_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("배달의민족 주아", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(12, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 27);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "PK Vision";
-            // 
             // maskedTextBox1
             // 
             this.maskedTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -145,21 +142,34 @@
             this.maskedTextBox1.TabIndex = 2;
             this.maskedTextBox1.Text = "나중에 로그인 처리";
             // 
-            // mainMenulistControl1
+            // uscMenuBar
             // 
-            this.mainMenulistControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.mainMenulistControl1.Location = new System.Drawing.Point(0, 33);
-            this.mainMenulistControl1.Name = "mainMenulistControl1";
-            this.mainMenulistControl1.Size = new System.Drawing.Size(175, 642);
-            this.mainMenulistControl1.TabIndex = 0;
+            this.uscMenuBar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.uscMenuBar.Location = new System.Drawing.Point(0, 33);
+            this.uscMenuBar.Name = "uscMenuBar";
+            this.uscMenuBar.Size = new System.Drawing.Size(175, 642);
+            this.uscMenuBar.TabIndex = 0;
+            this.uscMenuBar.EmployeeButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.EmployeeButtonClickedEventArgs>(this.UscMenuBar_EmployeeButtonClicked);
+            this.uscMenuBar.SubjectButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.SubjectButtonClickedEventArgs>(this.UscMenuBar_SubjectButtonClicked);
+            this.uscMenuBar.ErrorCodeButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.ErrorCodeButtonClickedEventArgs>(this.UscMenuBar_ErrorCodeButtonClicked);
+            this.uscMenuBar.InspectionStButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.InspectionStButtonClickedEventArgs>(this.UscMenuBar_InspectionStButtonClicked);
+            this.uscMenuBar.EquipmentButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.EquipmentButtonClickedEventArgs>(this.UscMenuBar_EquipmentButtonClicked);
+            this.uscMenuBar.ProductionHistoryButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.ProductionHistoryButtonClickedEventArgs>(this.UscMenuBar_ProductionHistoryButtonClicked);
+            this.uscMenuBar.WorkLogButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.WorkLogButtonClickedEventArgs>(this.UscMenuBar_WorkLogButtonClicked);
+            this.uscMenuBar.MaterialManageButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.MaterialManageButtonClickedEventArgs>(this.UscMenuBar_MaterialManageButtonClicked);
+            this.uscMenuBar.WorkerButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.WorkerButtonClickedEventArgs>(this.UscMenuBar_WorkerButtonClicked);
+            this.uscMenuBar.DefectiveProductButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.DefectiveProductButtonClickedEventArgs>(this.UscMenuBar_DefectiveProductButtonClicked);
+            this.uscMenuBar.BarcodeButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.BarcodeButtonClickedEventArgs>(this.UscMenuBar_BarcodeButtonClicked);
+            this.uscMenuBar.ProcessDefectButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.ProcessDefectButtonClickedEventArgs>(this.UscMenuBar_ProcessDefectButtonClicked);
+            this.uscMenuBar.NonMovingTypeButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.NonMovingTypeButtonClickedEventArgs>(this.UscMenuBar_NonMovingTypeButtonClicked);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 675);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.mainMenulistControl1);
+            this.Controls.Add(this.panelContainer);
+            this.Controls.Add(this.uscMenuBar);
             this.Controls.Add(this.panelMainTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
@@ -175,14 +185,14 @@
         }
 
         #endregion
-        private Controls.MainControls.MainMenulistControl mainMenulistControl1;
-        private System.Windows.Forms.Panel panel2;
+        private Controls.MainControls.MainMenulistControl uscMenuBar;
+        private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Panel panelMainTitle;
         private System.Windows.Forms.PictureBox ptbMin;
         private System.Windows.Forms.PictureBox ptbMinimi;
         private System.Windows.Forms.PictureBox ptbMax;
         private System.Windows.Forms.PictureBox ptbCnacle;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label lbTitle;
     }
 }
