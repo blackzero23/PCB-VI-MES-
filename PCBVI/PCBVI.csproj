@@ -118,11 +118,11 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Materials\MaterialsHistory.cs">
+    <Compile Include="Forms\Materials\MaterialsHistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Materials\MaterialsHistory.Designer.cs">
-      <DependentUpon>MaterialsHistory.cs</DependentUpon>
+    <Compile Include="Forms\Materials\MaterialsHistoryForm.Designer.cs">
+      <DependentUpon>MaterialsHistoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Materials\MaterialsInOutForm.cs">
       <SubType>Form</SubType>
@@ -226,11 +226,11 @@
     <Compile Include="Forms\Statistics\ErrorStatisticsFrom.Designer.cs">
       <DependentUpon>ErrorStatisticsFrom.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Statistics\PPStatisticsFrom.cs">
+    <Compile Include="Forms\Statistics\PPStatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Statistics\PPStatisticsFrom.Designer.cs">
-      <DependentUpon>PPStatisticsFrom.cs</DependentUpon>
+    <Compile Include="Forms\Statistics\PPStatisticsForm.Designer.cs">
+      <DependentUpon>PPStatisticsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Statistics\StockStatisticsFrom.cs">
       <SubType>Form</SubType>

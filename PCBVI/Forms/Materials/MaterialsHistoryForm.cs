@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PCBVI.Forms.Statistics
+namespace PCBVI.Forms.Materials
 {
-    public partial class PPStatisticsFrom : Form
+    public partial class MaterialsHistoryForm : Form
     {
-        public PPStatisticsFrom()
+        public MaterialsHistoryForm()
         {
             InitializeComponent();
         }

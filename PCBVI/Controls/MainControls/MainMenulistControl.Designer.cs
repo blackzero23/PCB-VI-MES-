@@ -418,6 +418,7 @@
             this.btnMaterialsHistory.TabIndex = 14;
             this.btnMaterialsHistory.Text = "자재 이력";
             this.btnMaterialsHistory.UseVisualStyleBackColor = false;
+            this.btnMaterialsHistory.Click += new System.EventHandler(this.BtnMaterialsHistory_Click);
             // 
             // btnMaterialsInRe
             // 
@@ -433,6 +434,7 @@
             this.btnMaterialsInRe.TabIndex = 13;
             this.btnMaterialsInRe.Text = "자재투입반품";
             this.btnMaterialsInRe.UseVisualStyleBackColor = false;
+            this.btnMaterialsInRe.Click += new System.EventHandler(this.BtnMaterialsInRe_Click);
             // 
             // btnMaterialsInOut
             // 
@@ -448,6 +450,7 @@
             this.btnMaterialsInOut.TabIndex = 12;
             this.btnMaterialsInOut.Text = "자재 입출고";
             this.btnMaterialsInOut.UseVisualStyleBackColor = false;
+            this.btnMaterialsInOut.Click += new System.EventHandler(this.BtnMaterialsInOut_Click);
             // 
             // btnMaterials
             // 
@@ -495,6 +498,7 @@
             this.btnFacilitiesHistory.TabIndex = 14;
             this.btnFacilitiesHistory.Text = "설비 이력";
             this.btnFacilitiesHistory.UseVisualStyleBackColor = false;
+            this.btnFacilitiesHistory.Click += new System.EventHandler(this.BtnFacilitiesHistory_Click);
             // 
             // btnFacilitiesError
             // 
@@ -510,6 +514,7 @@
             this.btnFacilitiesError.TabIndex = 13;
             this.btnFacilitiesError.Text = "설비 이상 관리";
             this.btnFacilitiesError.UseVisualStyleBackColor = false;
+            this.btnFacilitiesError.Click += new System.EventHandler(this.BtnFacilitiesError_Click);
             // 
             // btnFacilitiesPower
             // 
@@ -525,6 +530,7 @@
             this.btnFacilitiesPower.TabIndex = 12;
             this.btnFacilitiesPower.Text = "설비가동/비가동관리";
             this.btnFacilitiesPower.UseVisualStyleBackColor = false;
+            this.btnFacilitiesPower.Click += new System.EventHandler(this.BtnFacilitiesPower_Click);
             // 
             // btnFacilities
             // 
@@ -572,6 +578,7 @@
             this.btnLastInspection.TabIndex = 14;
             this.btnLastInspection.Text = "출하전검사";
             this.btnLastInspection.UseVisualStyleBackColor = false;
+            this.btnLastInspection.Click += new System.EventHandler(this.BtnLastInspection_Click);
             // 
             // btnProcessInspection
             // 
@@ -587,6 +594,7 @@
             this.btnProcessInspection.TabIndex = 13;
             this.btnProcessInspection.Text = "공정 검사";
             this.btnProcessInspection.UseVisualStyleBackColor = false;
+            this.btnProcessInspection.Click += new System.EventHandler(this.BtnProcessInspection_Click);
             // 
             // btnFirstInspection
             // 
@@ -602,6 +610,7 @@
             this.btnFirstInspection.TabIndex = 12;
             this.btnFirstInspection.Text = "수입 검사";
             this.btnFirstInspection.UseVisualStyleBackColor = false;
+            this.btnFirstInspection.Click += new System.EventHandler(this.BtnFirstInspection_Click);
             // 
             // btnQuality
             // 
@@ -650,6 +659,7 @@
             this.btnQualityMonitoring.TabIndex = 15;
             this.btnQualityMonitoring.Text = "품질검사모니터링";
             this.btnQualityMonitoring.UseVisualStyleBackColor = false;
+            this.btnQualityMonitoring.Click += new System.EventHandler(this.BtnQualityMonitoring_Click);
             // 
             // btnFacilitiesMonitoring
             // 
@@ -665,6 +675,7 @@
             this.btnFacilitiesMonitoring.TabIndex = 14;
             this.btnFacilitiesMonitoring.Text = "설비현황모니터링";
             this.btnFacilitiesMonitoring.UseVisualStyleBackColor = false;
+            this.btnFacilitiesMonitoring.Click += new System.EventHandler(this.BtnFacilitiesMonitoring_Click);
             // 
             // btnProStatusMonitoring
             // 
@@ -680,6 +691,7 @@
             this.btnProStatusMonitoring.TabIndex = 13;
             this.btnProStatusMonitoring.Text = "생산현황모니터링";
             this.btnProStatusMonitoring.UseVisualStyleBackColor = false;
+            this.btnProStatusMonitoring.Click += new System.EventHandler(this.BtnProStatusMonitoring_Click);
             // 
             // btnProPerformanceMonitoring
             // 
@@ -695,6 +707,7 @@
             this.btnProPerformanceMonitoring.TabIndex = 12;
             this.btnProPerformanceMonitoring.Text = "생산실적모니터링";
             this.btnProPerformanceMonitoring.UseVisualStyleBackColor = false;
+            this.btnProPerformanceMonitoring.Click += new System.EventHandler(this.BtnProPerformanceMonitoring_Click);
             // 
             // btnMonitoring
             // 
@@ -742,6 +755,7 @@
             this.btnStockStatistics.TabIndex = 14;
             this.btnStockStatistics.Text = "재고 현황";
             this.btnStockStatistics.UseVisualStyleBackColor = false;
+            this.btnStockStatistics.Click += new System.EventHandler(this.BtnStockStatistics_Click);
             // 
             // btnErrorStatistics
             // 
@@ -757,6 +771,7 @@
             this.btnErrorStatistics.TabIndex = 13;
             this.btnErrorStatistics.Text = "불량/부적합 현황";
             this.btnErrorStatistics.UseVisualStyleBackColor = false;
+            this.btnErrorStatistics.Click += new System.EventHandler(this.BtnErrorStatistics_Click);
             // 
             // btnProductProcessStatistics
             // 
@@ -772,6 +787,7 @@
             this.btnProductProcessStatistics.TabIndex = 12;
             this.btnProductProcessStatistics.Text = "제품/공정별 생산현황";
             this.btnProductProcessStatistics.UseVisualStyleBackColor = false;
+            this.btnProductProcessStatistics.Click += new System.EventHandler(this.BtnProductProcessStatistics_Click);
             // 
             // btnStatistics
             // 

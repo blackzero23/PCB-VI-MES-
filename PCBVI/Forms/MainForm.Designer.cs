@@ -46,11 +46,10 @@
             // 
             // panelContainer
             // 
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelContainer.ForeColor = System.Drawing.Color.White;
             this.panelContainer.Location = new System.Drawing.Point(175, 33);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(625, 642);
+            this.panelContainer.Size = new System.Drawing.Size(622, 642);
             this.panelContainer.TabIndex = 2;
             // 
             // panelMainTitle
@@ -162,6 +161,22 @@
             this.uscMenuBar.BarcodeButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.BarcodeButtonClickedEventArgs>(this.UscMenuBar_BarcodeButtonClicked);
             this.uscMenuBar.ProcessDefectButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.ProcessDefectButtonClickedEventArgs>(this.UscMenuBar_ProcessDefectButtonClicked);
             this.uscMenuBar.NonMovingTypeButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.NonMovingTypeButtonClickedEventArgs>(this.UscMenuBar_NonMovingTypeButtonClicked);
+            this.uscMenuBar.MaterialsInOutButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.MaterialsInOutButtonClickedEventArgs>(this.UscMenuBar_MaterialsInOutButtonClicked);
+            this.uscMenuBar.MaterialsInReButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.MaterialsInReButtonClickedEventArgs>(this.UscMenuBar_MaterialsInReButtonClicked);
+            this.uscMenuBar.MaterialsHistoryButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.MaterialsHistoryButtonClickedEventArgs>(this.UscMenuBar_MaterialsHistoryButtonClicked);
+            this.uscMenuBar.FacilitiesPowerButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.FacilitiesPowerButtonClickedEventArgs>(this.UscMenuBar_FacilitiesPowerButtonClicked);
+            this.uscMenuBar.FacilitiesErrorButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.FacilitiesErrorButtonClickedEventArgs>(this.UscMenuBar_FacilitiesErrorButtonClicked);
+            this.uscMenuBar.FacilitiesHistoryButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.FacilitiesHistoryButtonClickedEventArgs>(this.UscMenuBar_FacilitiesHistoryButtonClicked);
+            this.uscMenuBar.FirstInspectionButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.FirstInspectionButtonClickedEventArgs>(this.UscMenuBar_FirstInspectionButtonClicked);
+            this.uscMenuBar.ProcessInspectionButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.ProcessInspectionButtonClickedEventArgs>(this.UscMenuBar_ProcessInspectionButtonClicked);
+            this.uscMenuBar.LastInspectionButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.LastInspectionButtonClickedEventArgs>(this.UscMenuBar_LastInspectionButtonClicked);
+            this.uscMenuBar.PPMonitoringButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.PPMonitoringButtonClickedEventArgs>(this.UscMenuBar_PPMonitoringButtonClicked);
+            this.uscMenuBar.PSMonitoringButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.PSMonitoringButtonClickedEventArgs>(this.UscMenuBar_PSMonitoringButtonClicked);
+            this.uscMenuBar.FacilitiesButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.FacilitiesButtonClickedEventArgs>(this.UscMenuBar_FacilitiesButtonClicked);
+            this.uscMenuBar.QualityButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.QualityButtonClickedEventArgs>(this.UscMenuBar_QualityButtonClicked);
+            this.uscMenuBar.PPStatisticsButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.PPStatisticsButtonClickedEventArgs>(this.UscMenuBar_PPStatisticsButtonClicked);
+            this.uscMenuBar.ErrorStatisticsButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.ErrorStatisticsButtonClickedEventArgs>(this.UscMenuBar_ErrorStatisticsButtonClicked);
+            this.uscMenuBar.StockStatisticsButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.StockStatisticsButtonClickedEventArgs>(this.UscMenuBar_StockStatisticsButtonClicked);
             // 
             // MainForm
             // 
