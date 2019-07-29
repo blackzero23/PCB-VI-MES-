@@ -238,6 +238,12 @@
     <Compile Include="Forms\Statistics\StockStatisticsFrom.Designer.cs">
       <DependentUpon>StockStatisticsFrom.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubForm.Designer.cs">
+      <DependentUpon>SubForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\MainControls\MainMenulistControl.resx">
@@ -246,14 +252,95 @@
     <EmbeddedResource Include="Forms\Basic\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\EquipmentForm.resx">
+      <DependentUpon>EquipmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\ErrorCodeForm.resx">
+      <DependentUpon>ErrorCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\InspectionStForm.resx">
+      <DependentUpon>InspectionStForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\NonMovingTypeForm.resx">
+      <DependentUpon>NonMovingTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\SubJectForm.resx">
       <DependentUpon>SubJectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Facilities\FacilitiesErrorForm.resx">
+      <DependentUpon>FacilitiesErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Facilities\FacilitiesHistoryForm.resx">
+      <DependentUpon>FacilitiesHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Facilities\FacilitiesPowerForm.resx">
+      <DependentUpon>FacilitiesPowerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\LoginForms.resx">
       <DependentUpon>LoginForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Materials\MaterialsHistoryForm.resx">
+      <DependentUpon>MaterialsHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Materials\MaterialsInOutForm.resx">
+      <DependentUpon>MaterialsInOutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Materials\MaterialsInReForm.resx">
+      <DependentUpon>MaterialsInReForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Monitoring\FacilitiesMonitoringFormcs.resx">
+      <DependentUpon>FacilitiesMonitoringFormcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Monitoring\PPMonitoringForm.resx">
+      <DependentUpon>PPMonitoringForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Monitoring\PSMonitoringForm.resx">
+      <DependentUpon>PSMonitoringForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Monitoring\QualityMonitoringForm.resx">
+      <DependentUpon>QualityMonitoringForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\BarcodeForm.resx">
+      <DependentUpon>BarcodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\DefectiveProductForm.resx">
+      <DependentUpon>DefectiveProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\MaterialsManageForm.resx">
+      <DependentUpon>MaterialsManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\ProcessDefectForm.resx">
+      <DependentUpon>ProcessDefectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\ProductionHistoryForm.resx">
+      <DependentUpon>ProductionHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\WorkerForm.resx">
+      <DependentUpon>WorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\WorkLogForm.resx">
+      <DependentUpon>WorkLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Quality\FirstInspectionForm.resx">
+      <DependentUpon>FirstInspectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Quality\LastInspectionForm.resx">
+      <DependentUpon>LastInspectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Quality\ProcessInspectionForm.resx">
+      <DependentUpon>ProcessInspectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Statistics\ErrorStatisticsFrom.resx">
+      <DependentUpon>ErrorStatisticsFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Statistics\PPStatisticsForm.resx">
+      <DependentUpon>PPStatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Statistics\StockStatisticsFrom.resx">
+      <DependentUpon>StockStatisticsFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
