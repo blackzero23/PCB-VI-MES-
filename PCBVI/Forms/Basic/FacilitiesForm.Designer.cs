@@ -1,6 +1,6 @@
-﻿namespace PCBVI.Forms.Production
+﻿namespace PCBVI.Forms.Basic
 {
-    partial class BarcodeForm
+    partial class FacilitiesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // BarcodeForm
+            // EquipmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "BarcodeForm";
-            this.Text = "BarcodeForm";
+            this.Name = "EquipmentForm";
+            this.Text = "EquipmentForm";
             this.ResumeLayout(false);
 
         }

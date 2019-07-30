@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PCBVI.Forms.Basic
 {
-    public partial class EquipmentForm : Form
+    public partial class FacilitiesForm : Form
     {
-        public EquipmentForm()
+        public FacilitiesForm()
         {
             InitializeComponent();
         }

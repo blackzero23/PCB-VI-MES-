@@ -31,9 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.panelBasicInfo = new System.Windows.Forms.Panel();
             this.btnNonMovingType = new System.Windows.Forms.Button();
-            this.btnEquipment = new System.Windows.Forms.Button();
+            this.btnFacilitiesInfo = new System.Windows.Forms.Button();
             this.btnInspectionSt = new System.Windows.Forms.Button();
             this.btnErrorCode = new System.Windows.Forms.Button();
+            this.btnBarcode = new System.Windows.Forms.Button();
             this.btnSubject = new System.Windows.Forms.Button();
             this.btnEmployee = new System.Windows.Forms.Button();
             this.btnBasicInfo = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelProduction = new System.Windows.Forms.Panel();
             this.btnProcessDefect = new System.Windows.Forms.Button();
-            this.btnBarcode = new System.Windows.Forms.Button();
             this.btnDefectiveProduct = new System.Windows.Forms.Button();
             this.btnWorker = new System.Windows.Forms.Button();
             this.btnMaterialsManage = new System.Windows.Forms.Button();
@@ -93,9 +93,10 @@
             // panelBasicInfo
             // 
             this.panelBasicInfo.Controls.Add(this.btnNonMovingType);
-            this.panelBasicInfo.Controls.Add(this.btnEquipment);
+            this.panelBasicInfo.Controls.Add(this.btnFacilitiesInfo);
             this.panelBasicInfo.Controls.Add(this.btnInspectionSt);
             this.panelBasicInfo.Controls.Add(this.btnErrorCode);
+            this.panelBasicInfo.Controls.Add(this.btnBarcode);
             this.panelBasicInfo.Controls.Add(this.btnSubject);
             this.panelBasicInfo.Controls.Add(this.btnEmployee);
             this.panelBasicInfo.Controls.Add(this.btnBasicInfo);
@@ -115,7 +116,7 @@
             this.btnNonMovingType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNonMovingType.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnNonMovingType.ForeColor = System.Drawing.Color.White;
-            this.btnNonMovingType.Location = new System.Drawing.Point(0, 196);
+            this.btnNonMovingType.Location = new System.Drawing.Point(0, 225);
             this.btnNonMovingType.Name = "btnNonMovingType";
             this.btnNonMovingType.Size = new System.Drawing.Size(168, 29);
             this.btnNonMovingType.TabIndex = 14;
@@ -123,21 +124,21 @@
             this.btnNonMovingType.UseVisualStyleBackColor = false;
             this.btnNonMovingType.Click += new System.EventHandler(this.BtnNonMovingType_Click);
             // 
-            // btnEquipment
+            // btnFacilitiesInfo
             // 
-            this.btnEquipment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.btnEquipment.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEquipment.FlatAppearance.BorderSize = 0;
-            this.btnEquipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEquipment.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnEquipment.ForeColor = System.Drawing.Color.White;
-            this.btnEquipment.Location = new System.Drawing.Point(0, 167);
-            this.btnEquipment.Name = "btnEquipment";
-            this.btnEquipment.Size = new System.Drawing.Size(168, 29);
-            this.btnEquipment.TabIndex = 13;
-            this.btnEquipment.Text = "설비 정보";
-            this.btnEquipment.UseVisualStyleBackColor = false;
-            this.btnEquipment.Click += new System.EventHandler(this.BtnEquipment_Click);
+            this.btnFacilitiesInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.btnFacilitiesInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFacilitiesInfo.FlatAppearance.BorderSize = 0;
+            this.btnFacilitiesInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFacilitiesInfo.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnFacilitiesInfo.ForeColor = System.Drawing.Color.White;
+            this.btnFacilitiesInfo.Location = new System.Drawing.Point(0, 196);
+            this.btnFacilitiesInfo.Name = "btnFacilitiesInfo";
+            this.btnFacilitiesInfo.Size = new System.Drawing.Size(168, 29);
+            this.btnFacilitiesInfo.TabIndex = 13;
+            this.btnFacilitiesInfo.Text = "설비 정보";
+            this.btnFacilitiesInfo.UseVisualStyleBackColor = false;
+            this.btnFacilitiesInfo.Click += new System.EventHandler(this.BtnFacilitiesInfo_Click);
             // 
             // btnInspectionSt
             // 
@@ -147,7 +148,7 @@
             this.btnInspectionSt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInspectionSt.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInspectionSt.ForeColor = System.Drawing.Color.White;
-            this.btnInspectionSt.Location = new System.Drawing.Point(0, 138);
+            this.btnInspectionSt.Location = new System.Drawing.Point(0, 167);
             this.btnInspectionSt.Name = "btnInspectionSt";
             this.btnInspectionSt.Size = new System.Drawing.Size(168, 29);
             this.btnInspectionSt.TabIndex = 12;
@@ -163,13 +164,29 @@
             this.btnErrorCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnErrorCode.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnErrorCode.ForeColor = System.Drawing.Color.White;
-            this.btnErrorCode.Location = new System.Drawing.Point(0, 109);
+            this.btnErrorCode.Location = new System.Drawing.Point(0, 138);
             this.btnErrorCode.Name = "btnErrorCode";
             this.btnErrorCode.Size = new System.Drawing.Size(168, 29);
             this.btnErrorCode.TabIndex = 11;
             this.btnErrorCode.Text = "불량 정보";
             this.btnErrorCode.UseVisualStyleBackColor = false;
             this.btnErrorCode.Click += new System.EventHandler(this.BtnErrorCode_Click);
+            // 
+            // btnBarcode
+            // 
+            this.btnBarcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.btnBarcode.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBarcode.FlatAppearance.BorderSize = 0;
+            this.btnBarcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBarcode.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnBarcode.ForeColor = System.Drawing.Color.White;
+            this.btnBarcode.Location = new System.Drawing.Point(0, 109);
+            this.btnBarcode.Name = "btnBarcode";
+            this.btnBarcode.Size = new System.Drawing.Size(168, 29);
+            this.btnBarcode.TabIndex = 17;
+            this.btnBarcode.Text = "바코드";
+            this.btnBarcode.UseVisualStyleBackColor = false;
+            this.btnBarcode.Click += new System.EventHandler(this.BtnBarcode_Click);
             // 
             // btnSubject
             // 
@@ -216,7 +233,7 @@
             this.btnBasicInfo.Name = "btnBasicInfo";
             this.btnBasicInfo.Size = new System.Drawing.Size(168, 51);
             this.btnBasicInfo.TabIndex = 8;
-            this.btnBasicInfo.Text = "기준 정보";
+            this.btnBasicInfo.Text = "기준 정보 관리";
             this.btnBasicInfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBasicInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnBasicInfo.UseVisualStyleBackColor = false;
@@ -246,7 +263,6 @@
             // panelProduction
             // 
             this.panelProduction.Controls.Add(this.btnProcessDefect);
-            this.panelProduction.Controls.Add(this.btnBarcode);
             this.panelProduction.Controls.Add(this.btnDefectiveProduct);
             this.panelProduction.Controls.Add(this.btnWorker);
             this.panelProduction.Controls.Add(this.btnMaterialsManage);
@@ -268,29 +284,13 @@
             this.btnProcessDefect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcessDefect.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnProcessDefect.ForeColor = System.Drawing.Color.White;
-            this.btnProcessDefect.Location = new System.Drawing.Point(0, 225);
+            this.btnProcessDefect.Location = new System.Drawing.Point(0, 196);
             this.btnProcessDefect.Name = "btnProcessDefect";
             this.btnProcessDefect.Size = new System.Drawing.Size(168, 29);
             this.btnProcessDefect.TabIndex = 18;
             this.btnProcessDefect.Text = "공정 불량";
             this.btnProcessDefect.UseVisualStyleBackColor = false;
             this.btnProcessDefect.Click += new System.EventHandler(this.BtnProcessDefect_Click);
-            // 
-            // btnBarcode
-            // 
-            this.btnBarcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.btnBarcode.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBarcode.FlatAppearance.BorderSize = 0;
-            this.btnBarcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBarcode.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnBarcode.ForeColor = System.Drawing.Color.White;
-            this.btnBarcode.Location = new System.Drawing.Point(0, 196);
-            this.btnBarcode.Name = "btnBarcode";
-            this.btnBarcode.Size = new System.Drawing.Size(168, 29);
-            this.btnBarcode.TabIndex = 17;
-            this.btnBarcode.Text = "바코드 라벨";
-            this.btnBarcode.UseVisualStyleBackColor = false;
-            this.btnBarcode.Click += new System.EventHandler(this.BtnBarcode_Click);
             // 
             // btnDefectiveProduct
             // 
@@ -385,7 +385,7 @@
             this.btnProduction.Name = "btnProduction";
             this.btnProduction.Size = new System.Drawing.Size(168, 51);
             this.btnProduction.TabIndex = 10;
-            this.btnProduction.Text = "생 산";
+            this.btnProduction.Text = "생산 관리";
             this.btnProduction.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProduction.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnProduction.UseVisualStyleBackColor = false;
@@ -465,7 +465,7 @@
             this.btnMaterials.Name = "btnMaterials";
             this.btnMaterials.Size = new System.Drawing.Size(168, 51);
             this.btnMaterials.TabIndex = 10;
-            this.btnMaterials.Text = "자 재";
+            this.btnMaterials.Text = "자재 관리";
             this.btnMaterials.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMaterials.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnMaterials.UseVisualStyleBackColor = false;
@@ -545,7 +545,7 @@
             this.btnFacilities.Name = "btnFacilities";
             this.btnFacilities.Size = new System.Drawing.Size(168, 51);
             this.btnFacilities.TabIndex = 10;
-            this.btnFacilities.Text = "설 비";
+            this.btnFacilities.Text = "설비 관리";
             this.btnFacilities.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFacilities.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnFacilities.UseVisualStyleBackColor = false;
@@ -625,7 +625,7 @@
             this.btnQuality.Name = "btnQuality";
             this.btnQuality.Size = new System.Drawing.Size(168, 51);
             this.btnQuality.TabIndex = 10;
-            this.btnQuality.Text = "품 질";
+            this.btnQuality.Text = "품질 관리";
             this.btnQuality.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuality.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnQuality.UseVisualStyleBackColor = false;
@@ -860,7 +860,7 @@
         #endregion
         private System.Windows.Forms.Panel panelBasicInfo;
         private System.Windows.Forms.Button btnNonMovingType;
-        private System.Windows.Forms.Button btnEquipment;
+        private System.Windows.Forms.Button btnFacilitiesInfo;
         private System.Windows.Forms.Button btnInspectionSt;
         private System.Windows.Forms.Button btnErrorCode;
         private System.Windows.Forms.Button btnSubject;

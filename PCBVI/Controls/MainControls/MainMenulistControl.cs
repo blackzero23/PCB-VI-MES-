@@ -145,9 +145,9 @@ namespace PCBVI.Controls.MainControls
             OnInspectionStButtonClicked(new InspectionStForm());
         }
 
-        private void BtnEquipment_Click(object sender, EventArgs e)
+        private void BtnFacilitiesInfo_Click(object sender, EventArgs e)
         {
-            OnEquipmentButtonClicked(new EquipmentForm());
+            OnEquipmentButtonClicked(new FacilitiesForm());
         }
 
         private void BtnProductionHistory_Click(object sender, EventArgs e)
@@ -1400,5 +1400,6 @@ namespace PCBVI.Controls.MainControls
         }
         #endregion
 
+     
     }
 }

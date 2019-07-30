@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PCBVI.Forms.Production
+namespace PCBVI.Forms.Basic
 {
     public partial class BarcodeForm : Form
     {

@@ -52,17 +52,23 @@
     <Compile Include="Controls\MainControls\MainMenulistControl.Designer.cs">
       <DependentUpon>MainMenulistControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Basic\BarcodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Basic\BarcodeForm.Designer.cs">
+      <DependentUpon>BarcodeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Basic\EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Basic\EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Basic\EquipmentForm.cs">
+    <Compile Include="Forms\Basic\FacilitiesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Basic\EquipmentForm.Designer.cs">
-      <DependentUpon>EquipmentForm.cs</DependentUpon>
+    <Compile Include="Forms\Basic\FacilitiesForm.Designer.cs">
+      <DependentUpon>FacilitiesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Basic\ErrorCodeForm.cs">
       <SubType>Form</SubType>
@@ -160,12 +166,6 @@
     <Compile Include="Forms\Monitoring\QualityMonitoringForm.Designer.cs">
       <DependentUpon>QualityMonitoringForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Production\BarcodeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Production\BarcodeForm.Designer.cs">
-      <DependentUpon>BarcodeForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Production\DefectiveProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,11 +249,14 @@
     <EmbeddedResource Include="Controls\MainControls\MainMenulistControl.resx">
       <DependentUpon>MainMenulistControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\BarcodeForm.resx">
+      <DependentUpon>BarcodeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Basic\EquipmentForm.resx">
-      <DependentUpon>EquipmentForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Basic\FacilitiesForm.resx">
+      <DependentUpon>FacilitiesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\ErrorCodeForm.resx">
       <DependentUpon>ErrorCodeForm.cs</DependentUpon>
@@ -302,9 +305,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Monitoring\QualityMonitoringForm.resx">
       <DependentUpon>QualityMonitoringForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Production\BarcodeForm.resx">
-      <DependentUpon>BarcodeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\DefectiveProductForm.resx">
       <DependentUpon>DefectiveProductForm.cs</DependentUpon>

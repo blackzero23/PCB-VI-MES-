@@ -14,6 +14,7 @@ namespace PCBVI.Forms
         }
 
         //폼이 고정되어있어서 고정 풀어주고 움직여 주는 역활.
+        //DllImport(c 나 c++로 작성된 네이티브 DLL에 있는 함수를 호출할때 사용하는 에트리뷰트)
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
