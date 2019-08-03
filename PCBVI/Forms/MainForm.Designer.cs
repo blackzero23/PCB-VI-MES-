@@ -37,6 +37,8 @@
             this.ptbCnacle = new System.Windows.Forms.PictureBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.uscMenuBar = new PCBVI.Controls.MainControls.MainMenulistControl();
+            this.kryptonMonthCalendar1 = new ComponentFactory.Krypton.Toolkit.KryptonMonthCalendar();
+            this.panelContainer.SuspendLayout();
             this.panelMainTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMinimi)).BeginInit();
@@ -46,6 +48,7 @@
             // 
             // panelContainer
             // 
+            this.panelContainer.Controls.Add(this.kryptonMonthCalendar1);
             this.panelContainer.ForeColor = System.Drawing.Color.White;
             this.panelContainer.Location = new System.Drawing.Point(175, 33);
             this.panelContainer.Name = "panelContainer";
@@ -178,6 +181,13 @@
             this.uscMenuBar.ErrorStatisticsButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.ErrorStatisticsButtonClickedEventArgs>(this.UscMenuBar_ErrorStatisticsButtonClicked);
             this.uscMenuBar.StockStatisticsButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.StockStatisticsButtonClickedEventArgs>(this.UscMenuBar_StockStatisticsButtonClicked);
             // 
+            // kryptonMonthCalendar1
+            // 
+            this.kryptonMonthCalendar1.Location = new System.Drawing.Point(210, 369);
+            this.kryptonMonthCalendar1.Name = "kryptonMonthCalendar1";
+            this.kryptonMonthCalendar1.Size = new System.Drawing.Size(230, 184);
+            this.kryptonMonthCalendar1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -189,6 +199,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.panelContainer.ResumeLayout(false);
             this.panelMainTitle.ResumeLayout(false);
             this.panelMainTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMin)).EndInit();
@@ -209,5 +220,6 @@
         private System.Windows.Forms.PictureBox ptbCnacle;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label lbTitle;
+        private ComponentFactory.Krypton.Toolkit.KryptonMonthCalendar kryptonMonthCalendar1;
     }
 }
