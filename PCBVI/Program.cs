@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using PCBVI.Forms.Main;
+using System;
 using System.Windows.Forms;
-using PCBVI.Forms;
-using PCBVI.Forms.Login;
 
 namespace PCBVI
 {
