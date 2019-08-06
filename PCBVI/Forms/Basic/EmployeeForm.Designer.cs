@@ -28,41 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.naviEmployee = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
+            this.pageEmployee = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
+            this.MainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.naviEmployee)).BeginInit();
+            this.naviEmployee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pageEmployee)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // MainPanel
             // 
-            this.textBox1.Location = new System.Drawing.Point(331, 197);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "여기는 사원!";
+            this.MainPanel.Controls.Add(this.naviEmployee);
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(0, 35);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(800, 415);
+            this.MainPanel.TabIndex = 1;
             // 
-            // contextMenuStrip1
+            // naviEmployee
             // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.naviEmployee.Bar.BarMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.SmallMedium;
+            this.naviEmployee.Bar.BarMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.Text;
+            this.naviEmployee.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
+            this.naviEmployee.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.naviEmployee.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.None;
+            this.naviEmployee.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.naviEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.naviEmployee.Location = new System.Drawing.Point(0, 0);
+            this.naviEmployee.Name = "naviEmployee";
+            this.naviEmployee.Padding = new System.Windows.Forms.Padding(3);
+            this.naviEmployee.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
+            this.pageEmployee});
+            this.naviEmployee.SelectedIndex = 0;
+            this.naviEmployee.Size = new System.Drawing.Size(800, 415);
+            this.naviEmployee.TabIndex = 0;
+            this.naviEmployee.Text = "navi";
+            // 
+            // pageEmployee
+            // 
+            this.pageEmployee.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.pageEmployee.Flags = 65534;
+            this.pageEmployee.LastVisibleSet = true;
+            this.pageEmployee.MinimumSize = new System.Drawing.Size(50, 50);
+            this.pageEmployee.Name = "pageEmployee";
+            this.pageEmployee.Size = new System.Drawing.Size(798, 388);
+            this.pageEmployee.Text = "사원 정보";
+            this.pageEmployee.ToolTipTitle = "Page ToolTip";
+            this.pageEmployee.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
+            // 
+            // uscTopMenu
+            // 
+            this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
+            this.uscTopMenu.Name = "uscTopMenu";
+            this.uscTopMenu.Size = new System.Drawing.Size(800, 35);
+            this.uscTopMenu.TabIndex = 0;
             // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.MainPanel);
+            this.Controls.Add(this.uscTopMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeeForm";
             this.Text = "EmployeeForm";
+            this.MainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.naviEmployee)).EndInit();
+            this.naviEmployee.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pageEmployee)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private Controls.CommonControl.TopMenubar uscTopMenu;
+        private System.Windows.Forms.Panel MainPanel;
+        private ComponentFactory.Krypton.Navigator.KryptonNavigator naviEmployee;
+        private ComponentFactory.Krypton.Navigator.KryptonPage pageEmployee;
     }
 }

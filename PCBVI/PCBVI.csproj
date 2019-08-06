@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\CommonControl\TopMenubar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CommonControl\TopMenubar.Designer.cs">
+      <DependentUpon>TopMenubar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\MainControls\MainMenulistControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -265,6 +271,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\CommonControl\TopMenubar.resx">
+      <DependentUpon>TopMenubar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\MainControls\MainMenulistControl.resx">
       <DependentUpon>MainMenulistControl.cs</DependentUpon>
     </EmbeddedResource>

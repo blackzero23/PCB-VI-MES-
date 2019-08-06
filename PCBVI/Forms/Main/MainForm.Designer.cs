@@ -28,10 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uscMenuBar = new PCBVI.Controls.MainControls.MainMenulistControl();
             this.panelContainer = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.uscMenuBar = new PCBVI.Controls.MainControls.MainMenulistControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelContainer)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(175, 0);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
+            this.panelContainer.Size = new System.Drawing.Size(625, 450);
+            this.panelContainer.TabIndex = 1;
             // 
             // uscMenuBar
             // 
@@ -69,15 +78,6 @@
             this.uscMenuBar.PPStatisticsButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.PPStatisticsButtonClickedEventArgs>(this.UscMenuBar_PPStatisticsButtonClicked);
             this.uscMenuBar.ErrorStatisticsButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.ErrorStatisticsButtonClickedEventArgs>(this.UscMenuBar_ErrorStatisticsButtonClicked);
             this.uscMenuBar.StockStatisticsButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.StockStatisticsButtonClickedEventArgs>(this.UscMenuBar_StockStatisticsButtonClicked);
-            // 
-            // panelContainer
-            // 
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(175, 0);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
-            this.panelContainer.Size = new System.Drawing.Size(625, 450);
-            this.panelContainer.TabIndex = 1;
             // 
             // MainForm
             // 

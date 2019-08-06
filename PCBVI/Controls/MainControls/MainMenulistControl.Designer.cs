@@ -246,6 +246,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
             this.flowLayoutPanel1.Controls.Add(this.panelBasicInfo);
             this.flowLayoutPanel1.Controls.Add(this.panelProduction);
