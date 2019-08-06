@@ -32,21 +32,21 @@
             this.btnExcel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnPrint = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnInsert = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnUpdate = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnDelete = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnUpdate = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.kryptonButton1);
             this.kryptonPanel1.Controls.Add(this.btnExcel);
             this.kryptonPanel1.Controls.Add(this.btnPrint);
             this.kryptonPanel1.Controls.Add(this.btnInsert);
             this.kryptonPanel1.Controls.Add(this.btnUpdate);
             this.kryptonPanel1.Controls.Add(this.btnDelete);
-            this.kryptonPanel1.Controls.Add(this.btnSearch);
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.Size = new System.Drawing.Size(480, 35);
@@ -54,51 +54,63 @@
             // 
             // btnExcel
             // 
+            this.btnExcel.AutoSize = true;
             this.btnExcel.Location = new System.Drawing.Point(400, 0);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(80, 35);
+            this.btnExcel.Size = new System.Drawing.Size(80, 38);
             this.btnExcel.TabIndex = 5;
+            this.btnExcel.Values.Image = global::PCBVI.Properties.Resources.icons8_ms_excel_32px;
             this.btnExcel.Values.Text = "엑셀";
             // 
             // btnPrint
             // 
+            this.btnPrint.AutoSize = true;
             this.btnPrint.Location = new System.Drawing.Point(320, 0);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(80, 35);
+            this.btnPrint.Size = new System.Drawing.Size(81, 38);
             this.btnPrint.TabIndex = 4;
+            this.btnPrint.Values.Image = global::PCBVI.Properties.Resources.icons8_print_32px;
             this.btnPrint.Values.Text = "프린트";
             // 
             // btnInsert
             // 
+            this.btnInsert.AutoSize = true;
             this.btnInsert.Location = new System.Drawing.Point(240, 0);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(80, 35);
+            this.btnInsert.Size = new System.Drawing.Size(80, 38);
             this.btnInsert.TabIndex = 3;
+            this.btnInsert.Values.Image = global::PCBVI.Properties.Resources.icons8_add_database_32px;
             this.btnInsert.Values.Text = "신 규";
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(80, 0);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(80, 35);
-            this.btnUpdate.TabIndex = 2;
-            this.btnUpdate.Values.Text = "저 장";
             // 
             // btnDelete
             // 
+            this.btnDelete.AutoSize = true;
             this.btnDelete.Location = new System.Drawing.Point(160, 0);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(80, 35);
+            this.btnDelete.Size = new System.Drawing.Size(80, 38);
             this.btnDelete.TabIndex = 1;
+            this.btnDelete.Values.Image = global::PCBVI.Properties.Resources.icons8_delete_32px;
             this.btnDelete.Values.Text = "삭 제";
             // 
-            // btnSearch
+            // btnUpdate
             // 
-            this.btnSearch.Location = new System.Drawing.Point(0, 0);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(80, 35);
-            this.btnSearch.TabIndex = 0;
-            this.btnSearch.Values.Text = "검 색";
+            this.btnUpdate.AutoSize = true;
+            this.btnUpdate.Location = new System.Drawing.Point(80, 0);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(80, 38);
+            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.Values.Image = global::PCBVI.Properties.Resources.icons8_save_32px;
+            this.btnUpdate.Values.Text = "저 장";
+            // 
+            // kryptonButton1
+            // 
+            this.kryptonButton1.AutoSize = true;
+            this.kryptonButton1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.Size = new System.Drawing.Size(80, 38);
+            this.kryptonButton1.TabIndex = 6;
+            this.kryptonButton1.Values.Image = global::PCBVI.Properties.Resources.icons8_search_32px;
+            this.kryptonButton1.Values.Text = "검 색";
             // 
             // TopMenubar
             // 
@@ -109,6 +121,7 @@
             this.Size = new System.Drawing.Size(480, 35);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
+            this.kryptonPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -121,6 +134,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnInsert;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnUpdate;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnDelete;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnSearch;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
     }
 }

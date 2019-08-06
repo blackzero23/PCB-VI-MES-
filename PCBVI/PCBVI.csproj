@@ -65,6 +65,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Basic\Employee\EmployeeList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Basic\Employee\EmployeeList.Designer.cs">
+      <DependentUpon>EmployeeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Basic\Employee\EmployeeSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Basic\Employee\EmployeeSearch.Designer.cs">
+      <DependentUpon>EmployeeSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CommonControl\TopMenubar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -271,6 +283,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\Basic\Employee\EmployeeList.resx">
+      <DependentUpon>EmployeeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Basic\Employee\EmployeeSearch.resx">
+      <DependentUpon>EmployeeSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CommonControl\TopMenubar.resx">
       <DependentUpon>TopMenubar.cs</DependentUpon>
     </EmbeddedResource>
@@ -430,6 +448,23 @@
   <ItemGroup>
     <None Include="Resources\res.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8_save_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_delete_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_database_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_print_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_ms_excel_32px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

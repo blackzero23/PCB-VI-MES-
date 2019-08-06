@@ -31,20 +31,27 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.naviEmployee = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageEmployee = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelSearch = new System.Windows.Forms.Panel();
+            this.uscList = new PCBVI.Controls.Basic.Employee.EmployeeList();
+            this.uscSearch = new PCBVI.Controls.Basic.Employee.EmployeeSearch();
             this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.naviEmployee)).BeginInit();
             this.naviEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageEmployee)).BeginInit();
+            this.pageEmployee.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panelSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPanel
             // 
             this.MainPanel.Controls.Add(this.naviEmployee);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(0, 35);
+            this.MainPanel.Location = new System.Drawing.Point(0, 36);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(800, 415);
+            this.MainPanel.Size = new System.Drawing.Size(800, 414);
             this.MainPanel.TabIndex = 1;
             // 
             // naviEmployee
@@ -61,29 +68,67 @@
             this.naviEmployee.Padding = new System.Windows.Forms.Padding(3);
             this.naviEmployee.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageEmployee});
+            this.naviEmployee.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.naviEmployee.SelectedIndex = 0;
-            this.naviEmployee.Size = new System.Drawing.Size(800, 415);
+            this.naviEmployee.Size = new System.Drawing.Size(800, 414);
+            this.naviEmployee.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("굴림체", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.naviEmployee.TabIndex = 0;
             this.naviEmployee.Text = "navi";
             // 
             // pageEmployee
             // 
             this.pageEmployee.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.pageEmployee.Controls.Add(this.panel1);
+            this.pageEmployee.Controls.Add(this.panelSearch);
             this.pageEmployee.Flags = 65534;
             this.pageEmployee.LastVisibleSet = true;
             this.pageEmployee.MinimumSize = new System.Drawing.Size(50, 50);
             this.pageEmployee.Name = "pageEmployee";
-            this.pageEmployee.Size = new System.Drawing.Size(798, 388);
+            this.pageEmployee.Size = new System.Drawing.Size(798, 385);
             this.pageEmployee.Text = "사원 정보";
             this.pageEmployee.ToolTipTitle = "Page ToolTip";
             this.pageEmployee.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.uscList);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 60);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(798, 325);
+            this.panel1.TabIndex = 1;
+            // 
+            // panelSearch
+            // 
+            this.panelSearch.Controls.Add(this.uscSearch);
+            this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSearch.Location = new System.Drawing.Point(0, 0);
+            this.panelSearch.Name = "panelSearch";
+            this.panelSearch.Size = new System.Drawing.Size(798, 60);
+            this.panelSearch.TabIndex = 0;
+            // 
+            // uscList
+            // 
+            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscList.Location = new System.Drawing.Point(0, 0);
+            this.uscList.Name = "uscList";
+            this.uscList.Size = new System.Drawing.Size(798, 325);
+            this.uscList.TabIndex = 0;
+            // 
+            // uscSearch
+            // 
+            this.uscSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscSearch.Location = new System.Drawing.Point(0, 0);
+            this.uscSearch.Name = "uscSearch";
+            this.uscSearch.Size = new System.Drawing.Size(798, 60);
+            this.uscSearch.TabIndex = 0;
             // 
             // uscTopMenu
             // 
             this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
             this.uscTopMenu.Name = "uscTopMenu";
-            this.uscTopMenu.Size = new System.Drawing.Size(800, 35);
+            this.uscTopMenu.Size = new System.Drawing.Size(800, 36);
             this.uscTopMenu.TabIndex = 0;
             // 
             // EmployeeForm
@@ -100,6 +145,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.naviEmployee)).EndInit();
             this.naviEmployee.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pageEmployee)).EndInit();
+            this.pageEmployee.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panelSearch.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -110,5 +158,9 @@
         private System.Windows.Forms.Panel MainPanel;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator naviEmployee;
         private ComponentFactory.Krypton.Navigator.KryptonPage pageEmployee;
+        private System.Windows.Forms.Panel panelSearch;
+        private Controls.Basic.Employee.EmployeeSearch uscSearch;
+        private System.Windows.Forms.Panel panel1;
+        private Controls.Basic.Employee.EmployeeList uscList;
     }
 }

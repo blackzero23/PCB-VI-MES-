@@ -181,7 +181,7 @@ namespace PCBVI.Controls.MainControls
 
         private void BtnProcessDefect_Click(object sender, EventArgs e)
         {
-            OnProcessDefectButtonClicked(new DefectiveProductForm());
+            OnProcessDefectButtonClicked(new ProcessDefectForm());
         }
         private void BtnNonMovingType_Click(object sender, EventArgs e)
         {
