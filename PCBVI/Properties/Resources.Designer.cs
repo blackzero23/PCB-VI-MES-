@@ -83,9 +83,9 @@ namespace PCBVI.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_add_database_32px {
+        internal static System.Drawing.Bitmap icons8_add_database_20px {
             get {
-                object obj = ResourceManager.GetObject("icons8_add_database_32px", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_add_database_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace PCBVI.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_delete_32px {
+        internal static System.Drawing.Bitmap icons8_delete_20px {
             get {
-                object obj = ResourceManager.GetObject("icons8_delete_32px", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_delete_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace PCBVI.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_ms_excel_32px {
+        internal static System.Drawing.Bitmap icons8_ms_excel_20px {
             get {
-                object obj = ResourceManager.GetObject("icons8_ms_excel_32px", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_ms_excel_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace PCBVI.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_print_32px {
+        internal static System.Drawing.Bitmap icons8_print_20px {
             get {
-                object obj = ResourceManager.GetObject("icons8_print_32px", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_print_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace PCBVI.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_save_32px {
+        internal static System.Drawing.Bitmap icons8_save_20px {
             get {
-                object obj = ResourceManager.GetObject("icons8_save_32px", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_save_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,19 @@ namespace PCBVI.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_search_32px {
+        internal static System.Drawing.Bitmap icons8_search_20px_1 {
             get {
-                object obj = ResourceManager.GetObject("icons8_search_32px", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_search_20px_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_settings_20px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_settings_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

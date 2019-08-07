@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnExcel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnPrint = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnInsert = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnDelete = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnUpdate = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnDelete = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +52,16 @@
             this.kryptonPanel1.Size = new System.Drawing.Size(480, 35);
             this.kryptonPanel1.TabIndex = 0;
             // 
+            // kryptonButton1
+            // 
+            this.kryptonButton1.AutoSize = true;
+            this.kryptonButton1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.Size = new System.Drawing.Size(80, 38);
+            this.kryptonButton1.TabIndex = 6;
+            this.kryptonButton1.Values.Image = global::PCBVI.Properties.Resources.icons8_search_20px_1;
+            this.kryptonButton1.Values.Text = "검 색";
+            // 
             // btnExcel
             // 
             this.btnExcel.AutoSize = true;
@@ -59,7 +69,7 @@
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(80, 38);
             this.btnExcel.TabIndex = 5;
-            this.btnExcel.Values.Image = global::PCBVI.Properties.Resources.icons8_ms_excel_32px;
+            this.btnExcel.Values.Image = global::PCBVI.Properties.Resources.icons8_ms_excel_20px;
             this.btnExcel.Values.Text = "엑셀";
             // 
             // btnPrint
@@ -69,7 +79,7 @@
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(81, 38);
             this.btnPrint.TabIndex = 4;
-            this.btnPrint.Values.Image = global::PCBVI.Properties.Resources.icons8_print_32px;
+            this.btnPrint.Values.Image = global::PCBVI.Properties.Resources.icons8_print_20px;
             this.btnPrint.Values.Text = "프린트";
             // 
             // btnInsert
@@ -79,18 +89,8 @@
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(80, 38);
             this.btnInsert.TabIndex = 3;
-            this.btnInsert.Values.Image = global::PCBVI.Properties.Resources.icons8_add_database_32px;
+            this.btnInsert.Values.Image = global::PCBVI.Properties.Resources.icons8_add_database_20px;
             this.btnInsert.Values.Text = "신 규";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.AutoSize = true;
-            this.btnDelete.Location = new System.Drawing.Point(160, 0);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(80, 38);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Values.Image = global::PCBVI.Properties.Resources.icons8_delete_32px;
-            this.btnDelete.Values.Text = "삭 제";
             // 
             // btnUpdate
             // 
@@ -99,18 +99,18 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(80, 38);
             this.btnUpdate.TabIndex = 2;
-            this.btnUpdate.Values.Image = global::PCBVI.Properties.Resources.icons8_save_32px;
+            this.btnUpdate.Values.Image = global::PCBVI.Properties.Resources.icons8_save_20px;
             this.btnUpdate.Values.Text = "저 장";
             // 
-            // kryptonButton1
+            // btnDelete
             // 
-            this.kryptonButton1.AutoSize = true;
-            this.kryptonButton1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(80, 38);
-            this.kryptonButton1.TabIndex = 6;
-            this.kryptonButton1.Values.Image = global::PCBVI.Properties.Resources.icons8_search_32px;
-            this.kryptonButton1.Values.Text = "검 색";
+            this.btnDelete.AutoSize = true;
+            this.btnDelete.Location = new System.Drawing.Point(160, 0);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(80, 38);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Values.Image = global::PCBVI.Properties.Resources.icons8_delete_20px;
+            this.btnDelete.Values.Text = "삭 제";
             // 
             // TopMenubar
             // 

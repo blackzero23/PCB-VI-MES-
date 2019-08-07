@@ -32,8 +32,8 @@
             this.naviEmployee = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageEmployee = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelSearch = new System.Windows.Forms.Panel();
             this.uscList = new PCBVI.Controls.Basic.Employee.EmployeeList();
+            this.panelSearch = new System.Windows.Forms.Panel();
             this.uscSearch = new PCBVI.Controls.Basic.Employee.EmployeeSearch();
             this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
             this.MainPanel.SuspendLayout();
@@ -71,7 +71,7 @@
             this.naviEmployee.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.naviEmployee.SelectedIndex = 0;
             this.naviEmployee.Size = new System.Drawing.Size(800, 414);
-            this.naviEmployee.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("굴림체", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.naviEmployee.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.naviEmployee.TabIndex = 0;
             this.naviEmployee.Text = "navi";
             // 
@@ -84,7 +84,7 @@
             this.pageEmployee.LastVisibleSet = true;
             this.pageEmployee.MinimumSize = new System.Drawing.Size(50, 50);
             this.pageEmployee.Name = "pageEmployee";
-            this.pageEmployee.Size = new System.Drawing.Size(798, 385);
+            this.pageEmployee.Size = new System.Drawing.Size(798, 383);
             this.pageEmployee.Text = "사원 정보";
             this.pageEmployee.ToolTipTitle = "Page ToolTip";
             this.pageEmployee.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
@@ -95,8 +95,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(798, 325);
+            this.panel1.Size = new System.Drawing.Size(798, 323);
             this.panel1.TabIndex = 1;
+            // 
+            // uscList
+            // 
+            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscList.Location = new System.Drawing.Point(0, 0);
+            this.uscList.Name = "uscList";
+            this.uscList.Size = new System.Drawing.Size(798, 323);
+            this.uscList.TabIndex = 0;
             // 
             // panelSearch
             // 
@@ -106,14 +114,6 @@
             this.panelSearch.Name = "panelSearch";
             this.panelSearch.Size = new System.Drawing.Size(798, 60);
             this.panelSearch.TabIndex = 0;
-            // 
-            // uscList
-            // 
-            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscList.Location = new System.Drawing.Point(0, 0);
-            this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(798, 325);
-            this.uscList.TabIndex = 0;
             // 
             // uscSearch
             // 
