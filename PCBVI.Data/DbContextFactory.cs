@@ -42,14 +42,14 @@ namespace PCBVI.Data
             File.WriteAllText(FilePath, contents);
         }
 
-        //public static ChinookEntities Create()
-        //{
-        //    ChinookEntities context = new ChinookEntities(ConnectionString);
+        public static PCBVIEntities Create()
+        {
+            PCBVIEntities context = new PCBVIEntities();
 
-        //    context.Database.Log = Write;
+            context.Database.Log = Write;
 
-        //    return context;
-        //}
+            return context;
+        }
 
     }
 }
