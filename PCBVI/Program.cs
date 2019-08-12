@@ -1,4 +1,5 @@
-﻿using PCBVI.Forms.Main;
+﻿using PCBVI.Forms.Login;
+using PCBVI.Forms.Main;
 using System;
 using System.Windows.Forms;
 
@@ -14,7 +15,7 @@ namespace PCBVI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new LoginForms());
         }
     }
 }

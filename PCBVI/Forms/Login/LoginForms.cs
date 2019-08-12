@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //폼이 고정되어있어서 고정 풀어주고 움직여 주는 역활.
 using System.Runtime.InteropServices;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace PCBVI.Forms.Login
 {
-    public partial class LoginForms : Form
+    public partial class LoginForms : KryptonForm
     {
         public LoginForms()
         {
