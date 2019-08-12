@@ -12,6 +12,7 @@ using System.Runtime.InteropServices;
 using ComponentFactory.Krypton.Toolkit;
 using PCBVI.Data;
 using PCBVI.Data.Data;
+using PCBVI.Forms.Main;
 
 namespace PCBVI.Forms.Login
 {
@@ -91,13 +92,13 @@ namespace PCBVI.Forms.Login
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txbId.Text)|| txbId.Text.Equals("아이디"))
+            if (string.IsNullOrWhiteSpace(txbId.Text) || txbId.Text.Equals("아이디"))
             {
                 MessageBox.Show("ID를 입력해주세요");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txbPassword.Text)||txbPassword.Text.Equals("비밀 번호"))
+            if (string.IsNullOrWhiteSpace(txbPassword.Text) || txbPassword.Text.Equals("비밀 번호"))
             {
                 MessageBox.Show("Password를 입력해주세요");
                 return;
@@ -105,12 +106,14 @@ namespace PCBVI.Forms.Login
 
             Employee employee = DB.Employee.IsCorrectEmployee(txbId.Text, txbPassword.Text);
 
-
             if (employee != null)
             {
                 //싱글톤 적용 생각.
-                //접속
-                //새창
+                MainForm loginSuccess = new MainForm(employee);
+                loginSuccess.FormClosed += new FormClosedEventHandler(LoginSuccessFormClosed);
+                loginSuccess.Show();
+                this.Hide();
+
             }
             else
             {
@@ -119,7 +122,15 @@ namespace PCBVI.Forms.Login
             }
 
             //LogOut 했을시 NULL.
-            employee = null;
+
+        }
+
+    private void LoginSuccessFormClosed(object sender, FormClosedEventArgs e)
+        {
+            //이창이 닫힐때가 아닌 로그아웃 을했을때.
+            this.Show();
+            //this.Close();
+            //this.ParentForm?.Show();
         }
     }
 }

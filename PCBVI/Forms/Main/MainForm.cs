@@ -8,14 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using PCBVI.Data;
 
 namespace PCBVI.Forms.Main
 {
     public partial class MainForm : KryptonForm
     {
+        private Employee _employee;
+
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        public MainForm(Employee employee)
+        {
+            InitializeComponent();
+            _employee = employee;
         }
 
         //서브 컨테이너에 띄울 폼 함수.
