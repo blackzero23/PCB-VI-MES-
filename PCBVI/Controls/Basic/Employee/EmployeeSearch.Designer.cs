@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.lbDepartment = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lbName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonComboBox1 = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.kryptonComboBox1 = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.lbName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lbDepartment = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox1)).BeginInit();
@@ -52,23 +52,23 @@
             this.kryptonPanel1.Size = new System.Drawing.Size(703, 60);
             this.kryptonPanel1.TabIndex = 0;
             // 
-            // lbDepartment
+            // btnSearch
             // 
-            this.lbDepartment.Location = new System.Drawing.Point(45, 15);
-            this.lbDepartment.MinimumSize = new System.Drawing.Size(0, 30);
-            this.lbDepartment.Name = "lbDepartment";
-            this.lbDepartment.Size = new System.Drawing.Size(45, 30);
-            this.lbDepartment.TabIndex = 0;
-            this.lbDepartment.Values.Text = "부 서 :";
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Location = new System.Drawing.Point(586, 15);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(90, 30);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Values.Text = "검 색";
             // 
-            // lbName
+            // kryptonTextBox1
             // 
-            this.lbName.Location = new System.Drawing.Point(307, 15);
-            this.lbName.MinimumSize = new System.Drawing.Size(0, 30);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(54, 30);
-            this.lbName.TabIndex = 1;
-            this.lbName.Values.Text = "사원명 :";
+            this.kryptonTextBox1.Location = new System.Drawing.Point(367, 15);
+            this.kryptonTextBox1.MinimumSize = new System.Drawing.Size(0, 30);
+            this.kryptonTextBox1.Name = "kryptonTextBox1";
+            this.kryptonTextBox1.Size = new System.Drawing.Size(100, 30);
+            this.kryptonTextBox1.TabIndex = 3;
+            this.kryptonTextBox1.Text = "kryptonTextBox1";
             // 
             // kryptonComboBox1
             // 
@@ -80,23 +80,23 @@
             this.kryptonComboBox1.TabIndex = 2;
             this.kryptonComboBox1.Text = "kryptonComboBox1";
             // 
-            // kryptonTextBox1
+            // lbName
             // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(367, 15);
-            this.kryptonTextBox1.MinimumSize = new System.Drawing.Size(0, 30);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(100, 30);
-            this.kryptonTextBox1.TabIndex = 3;
-            this.kryptonTextBox1.Text = "kryptonTextBox1";
+            this.lbName.Location = new System.Drawing.Point(307, 15);
+            this.lbName.MinimumSize = new System.Drawing.Size(0, 30);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(54, 30);
+            this.lbName.TabIndex = 1;
+            this.lbName.Values.Text = "사원명 :";
             // 
-            // btnSearch
+            // lbDepartment
             // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Location = new System.Drawing.Point(586, 15);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(90, 30);
-            this.btnSearch.TabIndex = 4;
-            this.btnSearch.Values.Text = "검 색";
+            this.lbDepartment.Location = new System.Drawing.Point(45, 15);
+            this.lbDepartment.MinimumSize = new System.Drawing.Size(0, 30);
+            this.lbDepartment.Name = "lbDepartment";
+            this.lbDepartment.Size = new System.Drawing.Size(45, 30);
+            this.lbDepartment.TabIndex = 0;
+            this.lbDepartment.Values.Text = "부 서 :";
             // 
             // EmployeeSearch
             // 

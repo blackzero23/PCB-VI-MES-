@@ -113,6 +113,18 @@
     <Compile Include="Controls\Basic\Employee\EmployeeSearch.Designer.cs">
       <DependentUpon>EmployeeSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Basic\ErrorCode\ErrorCodeList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Basic\ErrorCode\ErrorCodeList.Designer.cs">
+      <DependentUpon>ErrorCodeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Basic\ErrorCode\ErrorCodeSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Basic\ErrorCode\ErrorCodeSearch.Designer.cs">
+      <DependentUpon>ErrorCodeSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CommonControl\TopMenubar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -330,6 +342,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Basic\Employee\EmployeeSearch.resx">
       <DependentUpon>EmployeeSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Basic\ErrorCode\ErrorCodeList.resx">
+      <DependentUpon>ErrorCodeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Basic\ErrorCode\ErrorCodeSearch.resx">
+      <DependentUpon>ErrorCodeSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\CommonControl\TopMenubar.resx">
       <DependentUpon>TopMenubar.cs</DependentUpon>
