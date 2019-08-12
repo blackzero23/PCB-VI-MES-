@@ -33,7 +33,7 @@ namespace PCBVI.Forms.Login
             if (txbId.Text == "아이디")
             {
                 txbId.Text = "";
-                txbId.ForeColor = Color.DimGray;
+                txbId.ForeColor = Color.DarkGray;
             }
         }
 
@@ -42,7 +42,7 @@ namespace PCBVI.Forms.Login
             if (txbId.Text == "")
             {
                 txbId.Text = "아이디";
-                txbId.ForeColor = Color.DimGray;
+                txbId.ForeColor = Color.DarkGray;
             }
         }
 
@@ -51,7 +51,7 @@ namespace PCBVI.Forms.Login
             if (txbPassword.Text == "비밀 번호")
             {
                 txbPassword.Text = "";
-                txbPassword.ForeColor = Color.DimGray;
+                txbPassword.ForeColor = Color.DarkGray;
                 txbPassword.UseSystemPasswordChar = true;
 
             }
@@ -62,7 +62,7 @@ namespace PCBVI.Forms.Login
             if (txbPassword.Text == "")
             {
                 txbPassword.Text = "비밀 번호";
-                txbPassword.ForeColor = Color.DimGray;
+                txbPassword.ForeColor = Color.DarkGray;
                 txbPassword.UseSystemPasswordChar = false;
             }
         }

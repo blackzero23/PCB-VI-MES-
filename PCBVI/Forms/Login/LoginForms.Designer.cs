@@ -41,12 +41,11 @@
             // 
             // txbId
             // 
-            this.txbId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbId.Font = new System.Drawing.Font("HY헤드라인M", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txbId.ForeColor = System.Drawing.Color.DarkGray;
             this.txbId.Location = new System.Drawing.Point(33, 207);
             this.txbId.Name = "txbId";
-            this.txbId.Size = new System.Drawing.Size(158, 23);
+            this.txbId.Size = new System.Drawing.Size(158, 30);
             this.txbId.TabIndex = 1;
             this.txbId.Text = "아이디";
             this.txbId.Enter += new System.EventHandler(this.TxbId_Enter);
@@ -54,12 +53,11 @@
             // 
             // txbPassword
             // 
-            this.txbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbPassword.Font = new System.Drawing.Font("HY헤드라인M", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txbPassword.ForeColor = System.Drawing.Color.DarkGray;
             this.txbPassword.Location = new System.Drawing.Point(33, 254);
             this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(158, 23);
+            this.txbPassword.Size = new System.Drawing.Size(158, 30);
             this.txbPassword.TabIndex = 2;
             this.txbPassword.Text = "비밀 번호";
             this.txbPassword.Enter += new System.EventHandler(this.TxbPassword_Enter);
