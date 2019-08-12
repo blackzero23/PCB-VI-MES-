@@ -462,6 +462,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\PCBVI.Data.Product.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -552,6 +553,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_gender_neutral_user_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PCBVI.Data\PCBVI.Data.csproj">
+      <Project>{bdaf3e39-6a6e-4a75-a31e-267b5de23f7e}</Project>
+      <Name>PCBVI.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\WorkLog\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
