@@ -28,22 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.kryptonComboBox1 = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.txbName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.cbbDepartment = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.lbName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbDepartment = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbDepartment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
             // 
             this.kryptonPanel1.Controls.Add(this.btnSearch);
-            this.kryptonPanel1.Controls.Add(this.kryptonTextBox1);
-            this.kryptonPanel1.Controls.Add(this.kryptonComboBox1);
+            this.kryptonPanel1.Controls.Add(this.txbName);
+            this.kryptonPanel1.Controls.Add(this.cbbDepartment);
             this.kryptonPanel1.Controls.Add(this.lbName);
             this.kryptonPanel1.Controls.Add(this.lbDepartment);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -61,24 +64,23 @@
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Values.Text = "검 색";
             // 
-            // kryptonTextBox1
+            // txbName
             // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(367, 15);
-            this.kryptonTextBox1.MinimumSize = new System.Drawing.Size(0, 30);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(100, 30);
-            this.kryptonTextBox1.TabIndex = 3;
-            this.kryptonTextBox1.Text = "kryptonTextBox1";
+            this.txbName.Location = new System.Drawing.Point(367, 15);
+            this.txbName.Name = "txbName";
+            this.txbName.Size = new System.Drawing.Size(100, 23);
+            this.txbName.TabIndex = 3;
             // 
-            // kryptonComboBox1
+            // cbbDepartment
             // 
-            this.kryptonComboBox1.DropDownWidth = 121;
-            this.kryptonComboBox1.Location = new System.Drawing.Point(154, 15);
-            this.kryptonComboBox1.MinimumSize = new System.Drawing.Size(0, 30);
-            this.kryptonComboBox1.Name = "kryptonComboBox1";
-            this.kryptonComboBox1.Size = new System.Drawing.Size(121, 30);
-            this.kryptonComboBox1.TabIndex = 2;
-            this.kryptonComboBox1.Text = "kryptonComboBox1";
+            this.cbbDepartment.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.departmentBindingSource, "DepartmentId", true));
+            this.cbbDepartment.DataSource = this.departmentBindingSource;
+            this.cbbDepartment.DisplayMember = "Name";
+            this.cbbDepartment.DropDownWidth = 121;
+            this.cbbDepartment.Location = new System.Drawing.Point(154, 15);
+            this.cbbDepartment.Name = "cbbDepartment";
+            this.cbbDepartment.Size = new System.Drawing.Size(121, 21);
+            this.cbbDepartment.TabIndex = 2;
             // 
             // lbName
             // 
@@ -98,6 +100,10 @@
             this.lbDepartment.TabIndex = 0;
             this.lbDepartment.Values.Text = "부 서 :";
             // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataSource = typeof(PCBVI.Data.Department);
+            // 
             // EmployeeSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -108,7 +114,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbDepartment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -117,9 +124,10 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSearch;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox kryptonComboBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txbName;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbDepartment;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lbName;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lbDepartment;
+        private System.Windows.Forms.BindingSource departmentBindingSource;
     }
 }

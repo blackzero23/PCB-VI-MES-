@@ -16,5 +16,10 @@ namespace PCBVI.Controls.Basic.Employee
         {
             InitializeComponent();
         }
+
+        public void SetEmployeeDataSource(List<Data.Employee> list)
+        {
+            dgvList.DataSource = list;
+        }
     }
 }

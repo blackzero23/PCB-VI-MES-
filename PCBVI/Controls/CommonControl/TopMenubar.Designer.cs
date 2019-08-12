@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnExcel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnPrint = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnInsert = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -41,7 +41,7 @@
             // 
             // kryptonPanel1
             // 
-            this.kryptonPanel1.Controls.Add(this.kryptonButton1);
+            this.kryptonPanel1.Controls.Add(this.btnSearch);
             this.kryptonPanel1.Controls.Add(this.btnExcel);
             this.kryptonPanel1.Controls.Add(this.btnPrint);
             this.kryptonPanel1.Controls.Add(this.btnInsert);
@@ -52,15 +52,15 @@
             this.kryptonPanel1.Size = new System.Drawing.Size(480, 35);
             this.kryptonPanel1.TabIndex = 0;
             // 
-            // kryptonButton1
+            // btnSearch
             // 
-            this.kryptonButton1.AutoSize = true;
-            this.kryptonButton1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(80, 38);
-            this.kryptonButton1.TabIndex = 6;
-            this.kryptonButton1.Values.Image = global::PCBVI.Properties.Resources.icons8_search_20px_1;
-            this.kryptonButton1.Values.Text = "검 색";
+            this.btnSearch.AutoSize = true;
+            this.btnSearch.Location = new System.Drawing.Point(0, 0);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(80, 38);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Values.Image = global::PCBVI.Properties.Resources.icons8_search_20px_1;
+            this.btnSearch.Values.Text = "검 색";
             // 
             // btnExcel
             // 
@@ -134,6 +134,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnInsert;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnUpdate;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnDelete;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnSearch;
     }
 }

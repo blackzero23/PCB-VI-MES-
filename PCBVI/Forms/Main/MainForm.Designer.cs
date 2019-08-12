@@ -46,7 +46,7 @@
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
             this.panelContainer.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonBreadCrumb;
-            this.panelContainer.Size = new System.Drawing.Size(625, 407);
+            this.panelContainer.Size = new System.Drawing.Size(1009, 614);
             this.panelContainer.TabIndex = 1;
             // 
             // kryptonPanel1
@@ -58,7 +58,7 @@
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.kryptonPanel1.Size = new System.Drawing.Size(800, 43);
+            this.kryptonPanel1.Size = new System.Drawing.Size(1184, 43);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
             this.kryptonPanel1.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
             this.kryptonPanel1.TabIndex = 0;
@@ -66,7 +66,7 @@
             // btnLogOut
             // 
             this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogOut.Location = new System.Drawing.Point(735, 13);
+            this.btnLogOut.Location = new System.Drawing.Point(1119, 13);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(40, 25);
             this.btnLogOut.TabIndex = 2;
@@ -75,7 +75,7 @@
             // kryptonLabel1
             // 
             this.kryptonLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonLabel1.Location = new System.Drawing.Point(651, 13);
+            this.kryptonLabel1.Location = new System.Drawing.Point(1035, 13);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.kryptonLabel1.Size = new System.Drawing.Size(77, 22);
@@ -101,7 +101,7 @@
             this.uscMenuBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.uscMenuBar.Location = new System.Drawing.Point(0, 43);
             this.uscMenuBar.Name = "uscMenuBar";
-            this.uscMenuBar.Size = new System.Drawing.Size(175, 407);
+            this.uscMenuBar.Size = new System.Drawing.Size(175, 614);
             this.uscMenuBar.TabIndex = 0;
             this.uscMenuBar.EmployeeButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.EmployeeButtonClickedEventArgs>(this.UscMenuBar_EmployeeButtonClicked);
             this.uscMenuBar.SubjectButtonClicked += new System.EventHandler<PCBVI.Controls.MainControls.MainMenulistControl.SubjectButtonClickedEventArgs>(this.UscMenuBar_SubjectButtonClicked);
@@ -137,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1184, 657);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.uscMenuBar);
             this.Controls.Add(this.kryptonPanel1);

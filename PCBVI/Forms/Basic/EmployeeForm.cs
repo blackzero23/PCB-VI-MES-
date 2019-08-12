@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PCBVI.Data.Data;
 
 namespace PCBVI.Forms.Basic
 {
@@ -16,6 +17,10 @@ namespace PCBVI.Forms.Basic
         {
             InitializeComponent();
         }
-        
+
+        private void EmployeeForm_Load(object sender, EventArgs e)
+        {
+            uscSearch.SetDepartmentSource(DB.Department.GetAll());
+        }
     }
 }

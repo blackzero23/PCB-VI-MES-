@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 namespace PCBVI.Data.Data
 {
     public class DB
-    {     
-
-        public static ErrorCodeData ErrorCode { get; set; } = new ErrorCodeData();
+    {
+        public static DepartMentData Department { get;} = new DepartMentData();       
+        public static BarCodeData BarCode { get; } = new BarCodeData();
+        public static EmployeeData Employee { get; } = new EmployeeData();
+        public static ErrorCodeData ErrorCode { get; } = new ErrorCodeData();
     }
 }

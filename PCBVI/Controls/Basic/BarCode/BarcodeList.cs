@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PCBVI.Data;
 
-namespace PCBVI.Controls.Basic.Employee
+namespace PCBVI.Controls.Basic.BarCode
 {
-    public partial class EmployeeSearch : UserControl
+    public partial class BarcodeList : UserControl
     {
-        public EmployeeSearch()
+        public BarcodeList()
         {
             InitializeComponent();
         }
 
-        public void SetDepartmentSource(List<Department> list)
+        public void SetBarcodeDataSource(List<Barcode> list)
         {
-            cbbDepartment.DataSource = list;
+            dgvList.DataSource = list;
         }
     }
 }

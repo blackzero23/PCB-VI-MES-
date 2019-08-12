@@ -10,6 +10,8 @@ using System.Windows.Forms;
 //폼이 고정되어있어서 고정 풀어주고 움직여 주는 역활.
 using System.Runtime.InteropServices;
 using ComponentFactory.Krypton.Toolkit;
+using PCBVI.Data;
+using PCBVI.Data.Data;
 
 namespace PCBVI.Forms.Login
 {
@@ -85,6 +87,39 @@ namespace PCBVI.Forms.Login
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txbId.Text)|| txbId.Text.Equals("아이디"))
+            {
+                MessageBox.Show("ID를 입력해주세요");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txbPassword.Text)||txbPassword.Text.Equals("비밀 번호"))
+            {
+                MessageBox.Show("Password를 입력해주세요");
+                return;
+            }
+
+            Employee employee = DB.Employee.IsCorrectEmployee(txbId.Text, txbPassword.Text);
+
+
+            if (employee != null)
+            {
+                //싱글톤 적용 생각.
+                //접속
+                //새창
+            }
+            else
+            {
+                MessageBox.Show("ID 혹은 Password가 옳지 않습니다.");
+                return;
+            }
+
+            //LogOut 했을시 NULL.
+            employee = null;
         }
     }
 }
