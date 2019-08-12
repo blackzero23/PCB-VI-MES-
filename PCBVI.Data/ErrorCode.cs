@@ -28,7 +28,7 @@ namespace PCBVI.Data
         public string Name { get; set; }
         public int ErrorTypeId { get; set; }
         public int ErrorKindId { get; set; }
-        public bool UseState { get; set; }
+        public bool InspectionStatus { get; set; }
         public string Explanation { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

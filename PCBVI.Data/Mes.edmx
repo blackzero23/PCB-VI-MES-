@@ -55,7 +55,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ErrorTypeId" Type="int" Nullable="false" />
           <Property Name="ErrorKindId" Type="int" Nullable="false" />
-          <Property Name="UseState" Type="bit" Nullable="false" />
+          <Property Name="InspectionStatus" Type="bit" Nullable="false" />
           <Property Name="Explanation" Type="nvarchar" MaxLength="300" Nullable="false" />
         </EntityType>
         <EntityType Name="ErrorKind">
@@ -1149,7 +1149,7 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ErrorTypeId" Type="Int32" Nullable="false" />
           <Property Name="ErrorKindId" Type="Int32" Nullable="false" />
-          <Property Name="UseState" Type="Boolean" Nullable="false" />
+          <Property Name="InspectionStatus" Type="Boolean" Nullable="false" />
           <Property Name="Explanation" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Barcodes" Relationship="Self.FK_Barcode_ErrorCode" FromRole="ErrorCode" ToRole="Barcode" />
           <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_ErrorCode" FromRole="ErrorCode" ToRole="DefectiveProduct" />
@@ -2305,7 +2305,7 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ErrorTypeId" ColumnName="ErrorTypeId" />
                 <ScalarProperty Name="ErrorKindId" ColumnName="ErrorKindId" />
-                <ScalarProperty Name="UseState" ColumnName="UseState" />
+                <ScalarProperty Name="InspectionStatus" ColumnName="InspectionStatus" />
                 <ScalarProperty Name="Explanation" ColumnName="Explanation" />
               </MappingFragment>
             </EntityTypeMapping>

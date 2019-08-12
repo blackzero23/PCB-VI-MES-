@@ -36,10 +36,10 @@
             this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.cbbErrorCode = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.errorCodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.errorCodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbInspectionStatus)).BeginInit();
@@ -84,6 +84,9 @@
             // 
             // cbbErrorTypeName
             // 
+            this.cbbErrorTypeName.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.errorCodeBindingSource, "ErrorCodeId", true));
+            this.cbbErrorTypeName.DataSource = this.errorCodeBindingSource;
+            this.cbbErrorTypeName.DisplayMember = "Name";
             this.cbbErrorTypeName.DropDownWidth = 121;
             this.cbbErrorTypeName.Location = new System.Drawing.Point(273, 22);
             this.cbbErrorTypeName.Name = "cbbErrorTypeName";
@@ -117,6 +120,10 @@
             this.cbbErrorCode.Size = new System.Drawing.Size(105, 21);
             this.cbbErrorCode.TabIndex = 11;
             // 
+            // errorCodeBindingSource
+            // 
+            this.errorCodeBindingSource.DataSource = typeof(PCBVI.Data.ErrorCode);
+            // 
             // kryptonLabel1
             // 
             this.kryptonLabel1.Location = new System.Drawing.Point(398, 22);
@@ -141,10 +148,6 @@
             this.btnSearch.Size = new System.Drawing.Size(90, 30);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Values.Text = "검 색";
-            // 
-            // errorCodeBindingSource
-            // 
-            this.errorCodeBindingSource.DataSource = typeof(PCBVI.Data.ErrorCode);
             // 
             // ErrorCodeSearch
             // 

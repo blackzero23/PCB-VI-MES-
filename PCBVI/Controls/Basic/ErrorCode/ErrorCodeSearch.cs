@@ -16,14 +16,13 @@ namespace PCBVI.Controls.Basic.ErrorCode
         {
             InitializeComponent();
         }
-
-        public void ex()
-        {
-            //cbbErrorCode.DataSource
-        }
+        //usc형태의 콤보박스바인딩
+        //콤보박스바인딩
+        //
 
         public void SetErrorcodeDataSource(List<PCBVI.Data.ErrorCode> list)
         {
+            
             cbbErrorCode.DataSource = list;
         }
        
