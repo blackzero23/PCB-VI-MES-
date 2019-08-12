@@ -17,8 +17,8 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Lot()
         {
-            this.DefectiveProduct = new HashSet<DefectiveProduct>();
-            this.MaterialHistory = new HashSet<MaterialHistory>();
+            this.DefectiveProducts = new HashSet<DefectiveProduct>();
+            this.MaterialHistories = new HashSet<MaterialHistory>();
         }
     
         public int LotId { get; set; }
@@ -28,9 +28,9 @@ namespace PCBVI.Data
         public string LotCode { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DefectiveProduct> DefectiveProduct { get; set; }
+        public virtual ICollection<DefectiveProduct> DefectiveProducts { get; set; }
         public virtual Product Product { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MaterialHistory> MaterialHistory { get; set; }
+        public virtual ICollection<MaterialHistory> MaterialHistories { get; set; }
     }
 }

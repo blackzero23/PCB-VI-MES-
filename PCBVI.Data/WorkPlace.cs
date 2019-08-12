@@ -17,22 +17,22 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public WorkPlace()
         {
-            this.FirstInspection = new HashSet<FirstInspection>();
-            this.LastInspection = new HashSet<LastInspection>();
-            this.MaterialHistory = new HashSet<MaterialHistory>();
-            this.MaterialsInRe = new HashSet<MaterialsInRe>();
+            this.FirstInspections = new HashSet<FirstInspection>();
+            this.LastInspections = new HashSet<LastInspection>();
+            this.MaterialHistories = new HashSet<MaterialHistory>();
+            this.MaterialsInRes = new HashSet<MaterialsInRe>();
         }
     
         public int WorkPlaceId { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FirstInspection> FirstInspection { get; set; }
+        public virtual ICollection<FirstInspection> FirstInspections { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LastInspection> LastInspection { get; set; }
+        public virtual ICollection<LastInspection> LastInspections { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MaterialHistory> MaterialHistory { get; set; }
+        public virtual ICollection<MaterialHistory> MaterialHistories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MaterialsInRe> MaterialsInRe { get; set; }
+        public virtual ICollection<MaterialsInRe> MaterialsInRes { get; set; }
     }
 }

@@ -17,13 +17,13 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public WokGroup()
         {
-            this.WorkLog = new HashSet<WorkLog>();
+            this.WorkLogs = new HashSet<WorkLog>();
         }
     
         public int WorkGroupId { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<WorkLog> WorkLog { get; set; }
+        public virtual ICollection<WorkLog> WorkLogs { get; set; }
     }
 }

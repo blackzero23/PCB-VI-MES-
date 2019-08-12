@@ -17,6 +17,15 @@ namespace PCBVI.Controls.Basic.ErrorCode
             InitializeComponent();
         }
 
-        
+        public void ex()
+        {
+            //cbbErrorCode.DataSource
+        }
+
+        public void SetErrorcodeDataSource(List<PCBVI.Data.ErrorCode> list)
+        {
+            cbbErrorCode.DataSource = list;
+        }
+       
     }
 }

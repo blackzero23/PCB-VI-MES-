@@ -25,34 +25,34 @@ namespace PCBVI.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Barcode> Barcode { get; set; }
-        public virtual DbSet<DefectiveProduct> DefectiveProduct { get; set; }
-        public virtual DbSet<Department> Department { get; set; }
-        public virtual DbSet<Employee> Employee { get; set; }
-        public virtual DbSet<ErrorCode> ErrorCode { get; set; }
-        public virtual DbSet<ErrorKind> ErrorKind { get; set; }
-        public virtual DbSet<ErrorType> ErrorType { get; set; }
-        public virtual DbSet<Facilities> Facilities { get; set; }
-        public virtual DbSet<FacilitiesHistory> FacilitiesHistory { get; set; }
-        public virtual DbSet<FacilitiesPower> FacilitiesPower { get; set; }
-        public virtual DbSet<FHistoryDivision> FHistoryDivision { get; set; }
-        public virtual DbSet<FirstInspection> FirstInspection { get; set; }
-        public virtual DbSet<InspectionStandard> InspectionStandard { get; set; }
-        public virtual DbSet<InspectionStandardType> InspectionStandardType { get; set; }
-        public virtual DbSet<LastInspection> LastInspection { get; set; }
-        public virtual DbSet<Lot> Lot { get; set; }
-        public virtual DbSet<MaterialHistory> MaterialHistory { get; set; }
-        public virtual DbSet<MaterialsInRe> MaterialsInRe { get; set; }
-        public virtual DbSet<Process> Process { get; set; }
-        public virtual DbSet<ProcessDefect> ProcessDefect { get; set; }
-        public virtual DbSet<Product> Product { get; set; }
-        public virtual DbSet<ProductionHistory> ProductionHistory { get; set; }
-        public virtual DbSet<ProductSubJect> ProductSubJect { get; set; }
-        public virtual DbSet<RotationGroup> RotationGroup { get; set; }
-        public virtual DbSet<TotalMonitoring> TotalMonitoring { get; set; }
-        public virtual DbSet<WokGroup> WokGroup { get; set; }
-        public virtual DbSet<Worker> Worker { get; set; }
-        public virtual DbSet<WorkLog> WorkLog { get; set; }
-        public virtual DbSet<WorkPlace> WorkPlace { get; set; }
+        public virtual DbSet<Barcode> Barcodes { get; set; }
+        public virtual DbSet<DefectiveProduct> DefectiveProducts { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<ErrorCode> ErrorCodes { get; set; }
+        public virtual DbSet<ErrorKind> ErrorKinds { get; set; }
+        public virtual DbSet<ErrorType> ErrorTypes { get; set; }
+        public virtual DbSet<Facility> Facilities { get; set; }
+        public virtual DbSet<FacilitiesHistory> FacilitiesHistories { get; set; }
+        public virtual DbSet<FacilitiesPower> FacilitiesPowers { get; set; }
+        public virtual DbSet<FHistoryDivision> FHistoryDivisions { get; set; }
+        public virtual DbSet<FirstInspection> FirstInspections { get; set; }
+        public virtual DbSet<InspectionStandard> InspectionStandards { get; set; }
+        public virtual DbSet<InspectionStandardType> InspectionStandardTypes { get; set; }
+        public virtual DbSet<LastInspection> LastInspections { get; set; }
+        public virtual DbSet<Lot> Lots { get; set; }
+        public virtual DbSet<MaterialHistory> MaterialHistories { get; set; }
+        public virtual DbSet<MaterialsInRe> MaterialsInRes { get; set; }
+        public virtual DbSet<Process> Processes { get; set; }
+        public virtual DbSet<ProcessDefect> ProcessDefects { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProductionHistory> ProductionHistories { get; set; }
+        public virtual DbSet<ProductSubJect> ProductSubJects { get; set; }
+        public virtual DbSet<RotationGroup> RotationGroups { get; set; }
+        public virtual DbSet<TotalMonitoring> TotalMonitorings { get; set; }
+        public virtual DbSet<WokGroup> WokGroups { get; set; }
+        public virtual DbSet<Worker> Workers { get; set; }
+        public virtual DbSet<WorkLog> WorkLogs { get; set; }
+        public virtual DbSet<WorkPlace> WorkPlaces { get; set; }
     }
 }

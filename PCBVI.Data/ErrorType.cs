@@ -17,13 +17,13 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ErrorType()
         {
-            this.ErrorCode = new HashSet<ErrorCode>();
+            this.ErrorCodes = new HashSet<ErrorCode>();
         }
     
         public int ErrorTypeId { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ErrorCode> ErrorCode { get; set; }
+        public virtual ICollection<ErrorCode> ErrorCodes { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public InspectionStandard()
         {
-            this.Process = new HashSet<Process>();
+            this.Processes = new HashSet<Process>();
         }
     
         public int InspectionStandardId { get; set; }
@@ -28,6 +28,6 @@ namespace PCBVI.Data
     
         public virtual InspectionStandardType InspectionStandardType1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Process> Process { get; set; }
+        public virtual ICollection<Process> Processes { get; set; }
     }
 }

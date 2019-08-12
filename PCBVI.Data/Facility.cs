@@ -12,15 +12,15 @@ namespace PCBVI.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Facilities
+    public partial class Facility
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Facilities()
+        public Facility()
         {
-            this.ProductionHistory = new HashSet<ProductionHistory>();
-            this.FacilitiesHistory = new HashSet<FacilitiesHistory>();
-            this.FacilitiesPower = new HashSet<FacilitiesPower>();
-            this.Worker = new HashSet<Worker>();
+            this.ProductionHistories = new HashSet<ProductionHistory>();
+            this.FacilitiesHistories = new HashSet<FacilitiesHistory>();
+            this.FacilitiesPowers = new HashSet<FacilitiesPower>();
+            this.Workers = new HashSet<Worker>();
         }
     
         public int FacilitiesId { get; set; }
@@ -37,12 +37,12 @@ namespace PCBVI.Data
     
         public virtual Process Process { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductionHistory> ProductionHistory { get; set; }
+        public virtual ICollection<ProductionHistory> ProductionHistories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FacilitiesHistory> FacilitiesHistory { get; set; }
+        public virtual ICollection<FacilitiesHistory> FacilitiesHistories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FacilitiesPower> FacilitiesPower { get; set; }
+        public virtual ICollection<FacilitiesPower> FacilitiesPowers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Worker> Worker { get; set; }
+        public virtual ICollection<Worker> Workers { get; set; }
     }
 }

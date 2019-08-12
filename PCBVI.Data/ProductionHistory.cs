@@ -17,7 +17,7 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ProductionHistory()
         {
-            this.FacilitiesPower = new HashSet<FacilitiesPower>();
+            this.FacilitiesPowers = new HashSet<FacilitiesPower>();
         }
     
         public int ProductionHistoryId { get; set; }
@@ -32,9 +32,9 @@ namespace PCBVI.Data
         public string WorkContent { get; set; }
     
         public virtual ErrorCode ErrorCode { get; set; }
-        public virtual Facilities Facilities { get; set; }
+        public virtual Facility Facility { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FacilitiesPower> FacilitiesPower { get; set; }
+        public virtual ICollection<FacilitiesPower> FacilitiesPowers { get; set; }
         public virtual Product Product { get; set; }
     }
 }

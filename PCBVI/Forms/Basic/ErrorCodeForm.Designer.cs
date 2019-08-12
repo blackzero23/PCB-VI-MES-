@@ -28,24 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.topMenubar1 = new PCBVI.Controls.CommonControl.TopMenubar();
             this.naviEmployee = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageEmployee = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.errorCodeSearch1 = new PCBVI.Controls.Basic.ErrorCode.ErrorCodeSearch();
             this.errorCodeList1 = new PCBVI.Controls.Basic.ErrorCode.ErrorCodeList();
+            this.uscSearch = new PCBVI.Controls.Basic.ErrorCode.ErrorCodeSearch();
+            this.topMenubar1 = new PCBVI.Controls.CommonControl.TopMenubar();
             ((System.ComponentModel.ISupportInitialize)(this.naviEmployee)).BeginInit();
             this.naviEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageEmployee)).BeginInit();
             this.pageEmployee.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // topMenubar1
-            // 
-            this.topMenubar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topMenubar1.Location = new System.Drawing.Point(0, 0);
-            this.topMenubar1.Name = "topMenubar1";
-            this.topMenubar1.Size = new System.Drawing.Size(800, 35);
-            this.topMenubar1.TabIndex = 0;
             // 
             // naviEmployee
             // 
@@ -72,7 +64,7 @@
             // 
             this.pageEmployee.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
             this.pageEmployee.Controls.Add(this.errorCodeList1);
-            this.pageEmployee.Controls.Add(this.errorCodeSearch1);
+            this.pageEmployee.Controls.Add(this.uscSearch);
             this.pageEmployee.Flags = 65534;
             this.pageEmployee.LastVisibleSet = true;
             this.pageEmployee.MinimumSize = new System.Drawing.Size(50, 50);
@@ -82,14 +74,6 @@
             this.pageEmployee.ToolTipTitle = "Page ToolTip";
             this.pageEmployee.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
             // 
-            // errorCodeSearch1
-            // 
-            this.errorCodeSearch1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.errorCodeSearch1.Location = new System.Drawing.Point(0, 0);
-            this.errorCodeSearch1.Name = "errorCodeSearch1";
-            this.errorCodeSearch1.Size = new System.Drawing.Size(798, 98);
-            this.errorCodeSearch1.TabIndex = 0;
-            // 
             // errorCodeList1
             // 
             this.errorCodeList1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -97,6 +81,22 @@
             this.errorCodeList1.Name = "errorCodeList1";
             this.errorCodeList1.Size = new System.Drawing.Size(798, 286);
             this.errorCodeList1.TabIndex = 1;
+            // 
+            // uscSearch
+            // 
+            this.uscSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscSearch.Location = new System.Drawing.Point(0, 0);
+            this.uscSearch.Name = "uscSearch";
+            this.uscSearch.Size = new System.Drawing.Size(798, 98);
+            this.uscSearch.TabIndex = 0;
+            // 
+            // topMenubar1
+            // 
+            this.topMenubar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topMenubar1.Location = new System.Drawing.Point(0, 0);
+            this.topMenubar1.Name = "topMenubar1";
+            this.topMenubar1.Size = new System.Drawing.Size(800, 35);
+            this.topMenubar1.TabIndex = 0;
             // 
             // ErrorCodeForm
             // 
@@ -108,6 +108,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ErrorCodeForm";
             this.Text = "ErrorCodeForm";
+            this.Load += new System.EventHandler(this.ErrorCodeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.naviEmployee)).EndInit();
             this.naviEmployee.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pageEmployee)).EndInit();
@@ -122,6 +123,6 @@
         private ComponentFactory.Krypton.Navigator.KryptonNavigator naviEmployee;
         private ComponentFactory.Krypton.Navigator.KryptonPage pageEmployee;
         private Controls.Basic.ErrorCode.ErrorCodeList errorCodeList1;
-        private Controls.Basic.ErrorCode.ErrorCodeSearch errorCodeSearch1;
+        private Controls.Basic.ErrorCode.ErrorCodeSearch uscSearch;
     }
 }

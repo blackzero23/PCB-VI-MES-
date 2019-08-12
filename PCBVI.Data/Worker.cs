@@ -22,7 +22,7 @@ namespace PCBVI.Data
         public int RotationGroupId { get; set; }
     
         public virtual Employee Employee { get; set; }
-        public virtual Facilities Facilities { get; set; }
+        public virtual Facility Facility { get; set; }
         public virtual Process Process { get; set; }
         public virtual RotationGroup RotationGroup { get; set; }
     }

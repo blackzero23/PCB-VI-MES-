@@ -17,10 +17,10 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Barcode()
         {
-            this.DefectiveProduct = new HashSet<DefectiveProduct>();
-            this.MaterialHistory = new HashSet<MaterialHistory>();
-            this.MaterialsInRe = new HashSet<MaterialsInRe>();
-            this.Product = new HashSet<Product>();
+            this.DefectiveProducts = new HashSet<DefectiveProduct>();
+            this.MaterialHistories = new HashSet<MaterialHistory>();
+            this.MaterialsInRes = new HashSet<MaterialsInRe>();
+            this.Products = new HashSet<Product>();
         }
     
         public int BarcodeId { get; set; }
@@ -30,12 +30,12 @@ namespace PCBVI.Data
     
         public virtual ErrorCode ErrorCode { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DefectiveProduct> DefectiveProduct { get; set; }
+        public virtual ICollection<DefectiveProduct> DefectiveProducts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MaterialHistory> MaterialHistory { get; set; }
+        public virtual ICollection<MaterialHistory> MaterialHistories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MaterialsInRe> MaterialsInRe { get; set; }
+        public virtual ICollection<MaterialsInRe> MaterialsInRes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Product { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

@@ -17,13 +17,13 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Process()
         {
-            this.DefectiveProduct = new HashSet<DefectiveProduct>();
-            this.Facilities = new HashSet<Facilities>();
-            this.FacilitiesPower = new HashSet<FacilitiesPower>();
-            this.MaterialsInRe = new HashSet<MaterialsInRe>();
-            this.ProcessDefect = new HashSet<ProcessDefect>();
-            this.TotalMonitoring = new HashSet<TotalMonitoring>();
-            this.Worker = new HashSet<Worker>();
+            this.DefectiveProducts = new HashSet<DefectiveProduct>();
+            this.Facilities = new HashSet<Facility>();
+            this.FacilitiesPowers = new HashSet<FacilitiesPower>();
+            this.MaterialsInRes = new HashSet<MaterialsInRe>();
+            this.ProcessDefects = new HashSet<ProcessDefect>();
+            this.TotalMonitorings = new HashSet<TotalMonitoring>();
+            this.Workers = new HashSet<Worker>();
         }
     
         public int ProcessId { get; set; }
@@ -31,19 +31,19 @@ namespace PCBVI.Data
         public Nullable<int> InspectionStandardId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DefectiveProduct> DefectiveProduct { get; set; }
+        public virtual ICollection<DefectiveProduct> DefectiveProducts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Facilities> Facilities { get; set; }
+        public virtual ICollection<Facility> Facilities { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FacilitiesPower> FacilitiesPower { get; set; }
+        public virtual ICollection<FacilitiesPower> FacilitiesPowers { get; set; }
         public virtual InspectionStandard InspectionStandard { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MaterialsInRe> MaterialsInRe { get; set; }
+        public virtual ICollection<MaterialsInRe> MaterialsInRes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProcessDefect> ProcessDefect { get; set; }
+        public virtual ICollection<ProcessDefect> ProcessDefects { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TotalMonitoring> TotalMonitoring { get; set; }
+        public virtual ICollection<TotalMonitoring> TotalMonitorings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Worker> Worker { get; set; }
+        public virtual ICollection<Worker> Workers { get; set; }
     }
 }
