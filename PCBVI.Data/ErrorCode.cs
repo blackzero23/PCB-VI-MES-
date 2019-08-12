@@ -17,10 +17,10 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ErrorCode()
         {
-            this.Barcode = new HashSet<Barcode>();
-            this.DefectiveProduct = new HashSet<DefectiveProduct>();
-            this.ProductionHistory = new HashSet<ProductionHistory>();
-            this.ProcessDefect = new HashSet<ProcessDefect>();
+            this.Barcodes = new HashSet<Barcode>();
+            this.DefectiveProducts = new HashSet<DefectiveProduct>();
+            this.ProductionHistories = new HashSet<ProductionHistory>();
+            this.ProcessDefects = new HashSet<ProcessDefect>();
         }
     
         public int ErrorCodeId { get; set; }
@@ -28,18 +28,18 @@ namespace PCBVI.Data
         public string Name { get; set; }
         public int ErrorTypeId { get; set; }
         public int ErrorKindId { get; set; }
-        public bool UseState { get; set; }
+        public bool InspectionStatus { get; set; }
         public string Explanation { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Barcode> Barcode { get; set; }
+        public virtual ICollection<Barcode> Barcodes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DefectiveProduct> DefectiveProduct { get; set; }
+        public virtual ICollection<DefectiveProduct> DefectiveProducts { get; set; }
         public virtual ErrorKind ErrorKind { get; set; }
         public virtual ErrorType ErrorType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductionHistory> ProductionHistory { get; set; }
+        public virtual ICollection<ProductionHistory> ProductionHistories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProcessDefect> ProcessDefect { get; set; }
+        public virtual ICollection<ProcessDefect> ProcessDefects { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace PCBVI.Data
         public int FacilitiesId { get; set; }
         public int ProductionHistoryId { get; set; }
     
-        public virtual Facilities Facilities { get; set; }
+        public virtual Facility Facility { get; set; }
         public virtual Process Process { get; set; }
         public virtual ProductionHistory ProductionHistory { get; set; }
     }

@@ -55,7 +55,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ErrorTypeId" Type="int" Nullable="false" />
           <Property Name="ErrorKindId" Type="int" Nullable="false" />
-          <Property Name="UseState" Type="bit" Nullable="false" />
+          <Property Name="InspectionStatus" Type="bit" Nullable="false" />
           <Property Name="Explanation" Type="nvarchar" MaxLength="300" Nullable="false" />
         </EntityType>
         <EntityType Name="ErrorKind">
@@ -1091,10 +1091,10 @@
           <Property Name="State" Type="Int32" Nullable="false" />
           <Property Name="ErrorCodeId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ErrorCode" Relationship="Self.FK_Barcode_ErrorCode" FromRole="Barcode" ToRole="ErrorCode" />
-          <NavigationProperty Name="DefectiveProduct" Relationship="Self.FK_DefectiveProduct_Barcode" FromRole="Barcode" ToRole="DefectiveProduct" />
-          <NavigationProperty Name="MaterialHistory" Relationship="Self.FK_MaterialHistory_Barcode" FromRole="Barcode" ToRole="MaterialHistory" />
-          <NavigationProperty Name="MaterialsInRe" Relationship="Self.FK_MaterialsInRe_Barcode" FromRole="Barcode" ToRole="MaterialsInRe" />
-          <NavigationProperty Name="Product" Relationship="Self.FK_Product_Barcode" FromRole="Barcode" ToRole="Product" />
+          <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_Barcode" FromRole="Barcode" ToRole="DefectiveProduct" />
+          <NavigationProperty Name="MaterialHistories" Relationship="Self.FK_MaterialHistory_Barcode" FromRole="Barcode" ToRole="MaterialHistory" />
+          <NavigationProperty Name="MaterialsInRes" Relationship="Self.FK_MaterialsInRe_Barcode" FromRole="Barcode" ToRole="MaterialsInRe" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Product_Barcode" FromRole="Barcode" ToRole="Product" />
         </EntityType>
         <EntityType Name="DefectiveProduct">
           <Key>
@@ -1120,7 +1120,7 @@
           </Key>
           <Property Name="DepartmentId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Department" FromRole="Department" ToRole="Employee" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employee_Department" FromRole="Department" ToRole="Employee" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -1133,12 +1133,12 @@
           <Property Name="EmploymentDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="DepartureDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Grade" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DefectiveProduct" Relationship="Self.FK_DefectiveProduct_Employee" FromRole="Employee" ToRole="DefectiveProduct" />
+          <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_Employee" FromRole="Employee" ToRole="DefectiveProduct" />
           <NavigationProperty Name="Department" Relationship="Self.FK_Employee_Department" FromRole="Employee" ToRole="Department" />
-          <NavigationProperty Name="FirstInspection" Relationship="Self.FK_FirstInspection_Employee" FromRole="Employee" ToRole="FirstInspection" />
-          <NavigationProperty Name="TotalMonitoring" Relationship="Self.FK_TotalMonitoring_Employee" FromRole="Employee" ToRole="TotalMonitoring" />
-          <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_Employee" FromRole="Employee" ToRole="Worker" />
-          <NavigationProperty Name="WorkLog" Relationship="Self.FK_WorkLog_Employee" FromRole="Employee" ToRole="WorkLog" />
+          <NavigationProperty Name="FirstInspections" Relationship="Self.FK_FirstInspection_Employee" FromRole="Employee" ToRole="FirstInspection" />
+          <NavigationProperty Name="TotalMonitorings" Relationship="Self.FK_TotalMonitoring_Employee" FromRole="Employee" ToRole="TotalMonitoring" />
+          <NavigationProperty Name="Workers" Relationship="Self.FK_Worker_Employee" FromRole="Employee" ToRole="Worker" />
+          <NavigationProperty Name="WorkLogs" Relationship="Self.FK_WorkLog_Employee" FromRole="Employee" ToRole="WorkLog" />
         </EntityType>
         <EntityType Name="ErrorCode">
           <Key>
@@ -1149,14 +1149,14 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ErrorTypeId" Type="Int32" Nullable="false" />
           <Property Name="ErrorKindId" Type="Int32" Nullable="false" />
-          <Property Name="UseState" Type="Boolean" Nullable="false" />
+          <Property Name="InspectionStatus" Type="Boolean" Nullable="false" />
           <Property Name="Explanation" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Barcode" Relationship="Self.FK_Barcode_ErrorCode" FromRole="ErrorCode" ToRole="Barcode" />
-          <NavigationProperty Name="DefectiveProduct" Relationship="Self.FK_DefectiveProduct_ErrorCode" FromRole="ErrorCode" ToRole="DefectiveProduct" />
+          <NavigationProperty Name="Barcodes" Relationship="Self.FK_Barcode_ErrorCode" FromRole="ErrorCode" ToRole="Barcode" />
+          <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_ErrorCode" FromRole="ErrorCode" ToRole="DefectiveProduct" />
           <NavigationProperty Name="ErrorKind" Relationship="Self.FK_ErrorCode_ErrorKind" FromRole="ErrorCode" ToRole="ErrorKind" />
           <NavigationProperty Name="ErrorType" Relationship="Self.FK_ErrorCode_ErrorType" FromRole="ErrorCode" ToRole="ErrorType" />
-          <NavigationProperty Name="ProductionHistory" Relationship="Self.FK_FacilitiesHistory_ErrorCode" FromRole="ErrorCode" ToRole="ProductionHistory" />
-          <NavigationProperty Name="ProcessDefect" Relationship="Self.FK_ProcessDefect_ErrorCode" FromRole="ErrorCode" ToRole="ProcessDefect" />
+          <NavigationProperty Name="ProductionHistories" Relationship="Self.FK_FacilitiesHistory_ErrorCode" FromRole="ErrorCode" ToRole="ProductionHistory" />
+          <NavigationProperty Name="ProcessDefects" Relationship="Self.FK_ProcessDefect_ErrorCode" FromRole="ErrorCode" ToRole="ProcessDefect" />
         </EntityType>
         <EntityType Name="ErrorKind">
           <Key>
@@ -1164,7 +1164,7 @@
           </Key>
           <Property Name="ErrorKindId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="ErrorCode" Relationship="Self.FK_ErrorCode_ErrorKind" FromRole="ErrorKind" ToRole="ErrorCode" />
+          <NavigationProperty Name="ErrorCodes" Relationship="Self.FK_ErrorCode_ErrorKind" FromRole="ErrorKind" ToRole="ErrorCode" />
         </EntityType>
         <EntityType Name="ErrorType">
           <Key>
@@ -1172,9 +1172,9 @@
           </Key>
           <Property Name="ErrorTypeId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="ErrorCode" Relationship="Self.FK_ErrorCode_ErrorType" FromRole="ErrorType" ToRole="ErrorCode" />
+          <NavigationProperty Name="ErrorCodes" Relationship="Self.FK_ErrorCode_ErrorType" FromRole="ErrorType" ToRole="ErrorCode" />
         </EntityType>
-        <EntityType Name="Facilities">
+        <EntityType Name="Facility">
           <Key>
             <PropertyRef Name="FacilitiesId" />
           </Key>
@@ -1190,10 +1190,10 @@
           <Property Name="ProcessId" Type="Int32" Nullable="false" />
           <Property Name="Weight" Type="Double" Nullable="false" />
           <NavigationProperty Name="Process" Relationship="Self.FK_Facilities_Process" FromRole="Facilities" ToRole="Process" />
-          <NavigationProperty Name="ProductionHistory" Relationship="Self.FK_FacilitiesHistory_Facilities" FromRole="Facilities" ToRole="ProductionHistory" />
-          <NavigationProperty Name="FacilitiesHistory" Relationship="Self.FK_FacilitiesHistory_Facilities1" FromRole="Facilities" ToRole="FacilitiesHistory" />
-          <NavigationProperty Name="FacilitiesPower" Relationship="Self.FK_FacilitiesPower_Facilities" FromRole="Facilities" ToRole="FacilitiesPower" />
-          <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_Facilities" FromRole="Facilities" ToRole="Worker" />
+          <NavigationProperty Name="ProductionHistories" Relationship="Self.FK_FacilitiesHistory_Facilities" FromRole="Facilities" ToRole="ProductionHistory" />
+          <NavigationProperty Name="FacilitiesHistories" Relationship="Self.FK_FacilitiesHistory_Facilities1" FromRole="Facilities" ToRole="FacilitiesHistory" />
+          <NavigationProperty Name="FacilitiesPowers" Relationship="Self.FK_FacilitiesPower_Facilities" FromRole="Facilities" ToRole="FacilitiesPower" />
+          <NavigationProperty Name="Workers" Relationship="Self.FK_Worker_Facilities" FromRole="Facilities" ToRole="Worker" />
         </EntityType>
         <EntityType Name="FacilitiesHistory">
           <Key>
@@ -1208,7 +1208,7 @@
           <Property Name="OCompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="OCompanyPhoneNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="OCompanyEmployee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Facilities" Relationship="Self.FK_FacilitiesHistory_Facilities1" FromRole="FacilitiesHistory" ToRole="Facilities" />
+          <NavigationProperty Name="Facility" Relationship="Self.FK_FacilitiesHistory_Facilities1" FromRole="FacilitiesHistory" ToRole="Facilities" />
           <NavigationProperty Name="FHistoryDivision" Relationship="Self.FK_FacilitiesHistory_FHistoryDivision" FromRole="FacilitiesHistory" ToRole="FHistoryDivision" />
         </EntityType>
         <EntityType Name="FacilitiesPower">
@@ -1219,7 +1219,7 @@
           <Property Name="ProcessId" Type="Int32" Nullable="false" />
           <Property Name="FacilitiesId" Type="Int32" Nullable="false" />
           <Property Name="ProductionHistoryId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Facilities" Relationship="Self.FK_FacilitiesPower_Facilities" FromRole="FacilitiesPower" ToRole="Facilities" />
+          <NavigationProperty Name="Facility" Relationship="Self.FK_FacilitiesPower_Facilities" FromRole="FacilitiesPower" ToRole="Facilities" />
           <NavigationProperty Name="Process" Relationship="Self.FK_FacilitiesPower_Process" FromRole="FacilitiesPower" ToRole="Process" />
           <NavigationProperty Name="ProductionHistory" Relationship="Self.FK_FacilitiesPower_ProductionHistory" FromRole="FacilitiesPower" ToRole="ProductionHistory" />
         </EntityType>
@@ -1229,7 +1229,7 @@
           </Key>
           <Property Name="FHistoryDivisionId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="FacilitiesHistory" Relationship="Self.FK_FacilitiesHistory_FHistoryDivision" FromRole="FHistoryDivision" ToRole="FacilitiesHistory" />
+          <NavigationProperty Name="FacilitiesHistories" Relationship="Self.FK_FacilitiesHistory_FHistoryDivision" FromRole="FHistoryDivision" ToRole="FacilitiesHistory" />
         </EntityType>
         <EntityType Name="FirstInspection">
           <Key>
@@ -1259,7 +1259,7 @@
           <Property Name="Note" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="UseState" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="InspectionStandardType1" Relationship="Self.FK_InspectionStandard_InspectionStandardType" FromRole="InspectionStandard" ToRole="InspectionStandardType" />
-          <NavigationProperty Name="Process" Relationship="Self.FK_Process_InspectionStandard" FromRole="InspectionStandard" ToRole="Process" />
+          <NavigationProperty Name="Processes" Relationship="Self.FK_Process_InspectionStandard" FromRole="InspectionStandard" ToRole="Process" />
         </EntityType>
         <EntityType Name="InspectionStandardType">
           <Key>
@@ -1267,7 +1267,7 @@
           </Key>
           <Property Name="InspectionStandardType1" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="InspectionStandard" Relationship="Self.FK_InspectionStandard_InspectionStandardType" FromRole="InspectionStandardType" ToRole="InspectionStandard" />
+          <NavigationProperty Name="InspectionStandards" Relationship="Self.FK_InspectionStandard_InspectionStandardType" FromRole="InspectionStandardType" ToRole="InspectionStandard" />
         </EntityType>
         <EntityType Name="LastInspection">
           <Key>
@@ -1295,9 +1295,9 @@
           <Property Name="ProductId" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
           <Property Name="LotCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DefectiveProduct" Relationship="Self.FK_DefectiveProduct_Lot" FromRole="Lot" ToRole="DefectiveProduct" />
+          <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_Lot" FromRole="Lot" ToRole="DefectiveProduct" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Lot_Product" FromRole="Lot" ToRole="Product" />
-          <NavigationProperty Name="MaterialHistory" Relationship="Self.FK_MaterialHistory_Lot" FromRole="Lot" ToRole="MaterialHistory" />
+          <NavigationProperty Name="MaterialHistories" Relationship="Self.FK_MaterialHistory_Lot" FromRole="Lot" ToRole="MaterialHistory" />
         </EntityType>
         <EntityType Name="MaterialHistory">
           <Key>
@@ -1336,14 +1336,14 @@
           <Property Name="ProcessId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="InspectionStandardId" Type="Int32" />
-          <NavigationProperty Name="DefectiveProduct" Relationship="Self.FK_DefectiveProduct_Process" FromRole="Process" ToRole="DefectiveProduct" />
+          <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_Process" FromRole="Process" ToRole="DefectiveProduct" />
           <NavigationProperty Name="Facilities" Relationship="Self.FK_Facilities_Process" FromRole="Process" ToRole="Facilities" />
-          <NavigationProperty Name="FacilitiesPower" Relationship="Self.FK_FacilitiesPower_Process" FromRole="Process" ToRole="FacilitiesPower" />
+          <NavigationProperty Name="FacilitiesPowers" Relationship="Self.FK_FacilitiesPower_Process" FromRole="Process" ToRole="FacilitiesPower" />
           <NavigationProperty Name="InspectionStandard" Relationship="Self.FK_Process_InspectionStandard" FromRole="Process" ToRole="InspectionStandard" />
-          <NavigationProperty Name="MaterialsInRe" Relationship="Self.FK_MaterialsInRe_Process" FromRole="Process" ToRole="MaterialsInRe" />
-          <NavigationProperty Name="ProcessDefect" Relationship="Self.FK_ProcessDefect_Process" FromRole="Process" ToRole="ProcessDefect" />
-          <NavigationProperty Name="TotalMonitoring" Relationship="Self.FK_TotalMonitoring_Process" FromRole="Process" ToRole="TotalMonitoring" />
-          <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_Process" FromRole="Process" ToRole="Worker" />
+          <NavigationProperty Name="MaterialsInRes" Relationship="Self.FK_MaterialsInRe_Process" FromRole="Process" ToRole="MaterialsInRe" />
+          <NavigationProperty Name="ProcessDefects" Relationship="Self.FK_ProcessDefect_Process" FromRole="Process" ToRole="ProcessDefect" />
+          <NavigationProperty Name="TotalMonitorings" Relationship="Self.FK_TotalMonitoring_Process" FromRole="Process" ToRole="TotalMonitoring" />
+          <NavigationProperty Name="Workers" Relationship="Self.FK_Worker_Process" FromRole="Process" ToRole="Worker" />
         </EntityType>
         <EntityType Name="ProcessDefect">
           <Key>
@@ -1370,12 +1370,12 @@
           <Property Name="Quantity" Type="Int32" Nullable="false" />
           <Property Name="DetailContents" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Barcode" Relationship="Self.FK_Product_Barcode" FromRole="Product" ToRole="Barcode" />
-          <NavigationProperty Name="FirstInspection" Relationship="Self.FK_FirstInspection_Product" FromRole="Product" ToRole="FirstInspection" />
-          <NavigationProperty Name="LastInspection" Relationship="Self.FK_LastInspection_Product" FromRole="Product" ToRole="LastInspection" />
-          <NavigationProperty Name="Lot" Relationship="Self.FK_Lot_Product" FromRole="Product" ToRole="Lot" />
-          <NavigationProperty Name="ProductionHistory" Relationship="Self.FK_FacilitiesHistory_Product" FromRole="Product" ToRole="ProductionHistory" />
+          <NavigationProperty Name="FirstInspections" Relationship="Self.FK_FirstInspection_Product" FromRole="Product" ToRole="FirstInspection" />
+          <NavigationProperty Name="LastInspections" Relationship="Self.FK_LastInspection_Product" FromRole="Product" ToRole="LastInspection" />
+          <NavigationProperty Name="Lots" Relationship="Self.FK_Lot_Product" FromRole="Product" ToRole="Lot" />
+          <NavigationProperty Name="ProductionHistories" Relationship="Self.FK_FacilitiesHistory_Product" FromRole="Product" ToRole="ProductionHistory" />
           <NavigationProperty Name="ProductSubJect" Relationship="Self.FK_Product_ProductSubJect" FromRole="Product" ToRole="ProductSubJect" />
-          <NavigationProperty Name="TotalMonitoring" Relationship="Self.FK_TotalMonitoring_Product" FromRole="Product" ToRole="TotalMonitoring" />
+          <NavigationProperty Name="TotalMonitorings" Relationship="Self.FK_TotalMonitoring_Product" FromRole="Product" ToRole="TotalMonitoring" />
         </EntityType>
         <EntityType Name="ProductionHistory">
           <Key>
@@ -1392,8 +1392,8 @@
           <Property Name="Quantity" Type="Int32" Nullable="false" />
           <Property Name="WorkContent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="ErrorCode" Relationship="Self.FK_FacilitiesHistory_ErrorCode" FromRole="ProductionHistory" ToRole="ErrorCode" />
-          <NavigationProperty Name="Facilities" Relationship="Self.FK_FacilitiesHistory_Facilities" FromRole="ProductionHistory" ToRole="Facilities" />
-          <NavigationProperty Name="FacilitiesPower" Relationship="Self.FK_FacilitiesPower_ProductionHistory" FromRole="ProductionHistory" ToRole="FacilitiesPower" />
+          <NavigationProperty Name="Facility" Relationship="Self.FK_FacilitiesHistory_Facilities" FromRole="ProductionHistory" ToRole="Facilities" />
+          <NavigationProperty Name="FacilitiesPowers" Relationship="Self.FK_FacilitiesPower_ProductionHistory" FromRole="ProductionHistory" ToRole="FacilitiesPower" />
           <NavigationProperty Name="Product" Relationship="Self.FK_FacilitiesHistory_Product" FromRole="ProductionHistory" ToRole="Product" />
         </EntityType>
         <EntityType Name="ProductSubJect">
@@ -1402,7 +1402,7 @@
           </Key>
           <Property Name="ProductSubjectId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Product" Relationship="Self.FK_Product_ProductSubJect" FromRole="ProductSubJect" ToRole="Product" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Product_ProductSubJect" FromRole="ProductSubJect" ToRole="Product" />
         </EntityType>
         <EntityType Name="RotationGroup">
           <Key>
@@ -1410,7 +1410,7 @@
           </Key>
           <Property Name="RotationGroupId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_RotationGroup" FromRole="RotationGroup" ToRole="Worker" />
+          <NavigationProperty Name="Workers" Relationship="Self.FK_Worker_RotationGroup" FromRole="RotationGroup" ToRole="Worker" />
         </EntityType>
         <EntityType Name="TotalMonitoring">
           <Key>
@@ -1433,7 +1433,7 @@
           </Key>
           <Property Name="WorkGroupId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="WorkLog" Relationship="Self.FK_WorkLog_WokGroup" FromRole="WokGroup" ToRole="WorkLog" />
+          <NavigationProperty Name="WorkLogs" Relationship="Self.FK_WorkLog_WokGroup" FromRole="WokGroup" ToRole="WorkLog" />
         </EntityType>
         <EntityType Name="Worker">
           <Key>
@@ -1446,7 +1446,7 @@
           <Property Name="WorkDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="RotationGroupId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_Worker_Employee" FromRole="Worker" ToRole="Employee" />
-          <NavigationProperty Name="Facilities" Relationship="Self.FK_Worker_Facilities" FromRole="Worker" ToRole="Facilities" />
+          <NavigationProperty Name="Facility" Relationship="Self.FK_Worker_Facilities" FromRole="Worker" ToRole="Facilities" />
           <NavigationProperty Name="Process" Relationship="Self.FK_Worker_Process" FromRole="Worker" ToRole="Process" />
           <NavigationProperty Name="RotationGroup" Relationship="Self.FK_Worker_RotationGroup" FromRole="Worker" ToRole="RotationGroup" />
         </EntityType>
@@ -1465,7 +1465,7 @@
           <Property Name="FailQuantity" Type="Int32" Nullable="false" />
           <Property Name="TargetQuantity" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_WorkLog_Employee" FromRole="WorkLog" ToRole="Employee" />
-          <NavigationProperty Name="TotalMonitoring" Relationship="Self.FK_TotalMonitoring_WorkLog" FromRole="WorkLog" ToRole="TotalMonitoring" />
+          <NavigationProperty Name="TotalMonitorings" Relationship="Self.FK_TotalMonitoring_WorkLog" FromRole="WorkLog" ToRole="TotalMonitoring" />
           <NavigationProperty Name="WokGroup" Relationship="Self.FK_WorkLog_WokGroup" FromRole="WorkLog" ToRole="WokGroup" />
         </EntityType>
         <EntityType Name="WorkPlace">
@@ -1474,10 +1474,10 @@
           </Key>
           <Property Name="WorkPlaceId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="FirstInspection" Relationship="Self.FK_FirstInspection_WorkPlace" FromRole="WorkPlace" ToRole="FirstInspection" />
-          <NavigationProperty Name="LastInspection" Relationship="Self.FK_LastInspection_WorkPlace" FromRole="WorkPlace" ToRole="LastInspection" />
-          <NavigationProperty Name="MaterialHistory" Relationship="Self.FK_MaterialHistory_WorkPlace" FromRole="WorkPlace" ToRole="MaterialHistory" />
-          <NavigationProperty Name="MaterialsInRe" Relationship="Self.FK_MaterialsInRe_WorkPlace" FromRole="WorkPlace" ToRole="MaterialsInRe" />
+          <NavigationProperty Name="FirstInspections" Relationship="Self.FK_FirstInspection_WorkPlace" FromRole="WorkPlace" ToRole="FirstInspection" />
+          <NavigationProperty Name="LastInspections" Relationship="Self.FK_LastInspection_WorkPlace" FromRole="WorkPlace" ToRole="LastInspection" />
+          <NavigationProperty Name="MaterialHistories" Relationship="Self.FK_MaterialHistory_WorkPlace" FromRole="WorkPlace" ToRole="MaterialHistory" />
+          <NavigationProperty Name="MaterialsInRes" Relationship="Self.FK_MaterialsInRe_WorkPlace" FromRole="WorkPlace" ToRole="MaterialsInRe" />
         </EntityType>
         <Association Name="FK_Barcode_ErrorCode">
           <End Role="ErrorCode" Type="Self.ErrorCode" Multiplicity="1" />
@@ -1697,7 +1697,7 @@
         </Association>
         <Association Name="FK_Facilities_Process">
           <End Role="Process" Type="Self.Process" Multiplicity="1" />
-          <End Role="Facilities" Type="Self.Facilities" Multiplicity="*" />
+          <End Role="Facilities" Type="Self.Facility" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Process">
               <PropertyRef Name="ProcessId" />
@@ -1708,7 +1708,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FacilitiesHistory_Facilities">
-          <End Role="Facilities" Type="Self.Facilities" Multiplicity="1" />
+          <End Role="Facilities" Type="Self.Facility" Multiplicity="1" />
           <End Role="ProductionHistory" Type="Self.ProductionHistory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Facilities">
@@ -1720,7 +1720,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FacilitiesHistory_Facilities1">
-          <End Role="Facilities" Type="Self.Facilities" Multiplicity="1" />
+          <End Role="Facilities" Type="Self.Facility" Multiplicity="1" />
           <End Role="FacilitiesHistory" Type="Self.FacilitiesHistory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Facilities">
@@ -1732,7 +1732,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FacilitiesPower_Facilities">
-          <End Role="Facilities" Type="Self.Facilities" Multiplicity="1" />
+          <End Role="Facilities" Type="Self.Facility" Multiplicity="1" />
           <End Role="FacilitiesPower" Type="Self.FacilitiesPower" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Facilities">
@@ -1744,7 +1744,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Worker_Facilities">
-          <End Role="Facilities" Type="Self.Facilities" Multiplicity="1" />
+          <End Role="Facilities" Type="Self.Facility" Multiplicity="1" />
           <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Facilities">
@@ -2032,218 +2032,218 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="PCBVIEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Barcode" EntityType="Self.Barcode" />
-          <EntitySet Name="DefectiveProduct" EntityType="Self.DefectiveProduct" />
-          <EntitySet Name="Department" EntityType="Self.Department" />
-          <EntitySet Name="Employee" EntityType="Self.Employee" />
-          <EntitySet Name="ErrorCode" EntityType="Self.ErrorCode" />
-          <EntitySet Name="ErrorKind" EntityType="Self.ErrorKind" />
-          <EntitySet Name="ErrorType" EntityType="Self.ErrorType" />
-          <EntitySet Name="Facilities" EntityType="Self.Facilities" />
-          <EntitySet Name="FacilitiesHistory" EntityType="Self.FacilitiesHistory" />
-          <EntitySet Name="FacilitiesPower" EntityType="Self.FacilitiesPower" />
-          <EntitySet Name="FHistoryDivision" EntityType="Self.FHistoryDivision" />
-          <EntitySet Name="FirstInspection" EntityType="Self.FirstInspection" />
-          <EntitySet Name="InspectionStandard" EntityType="Self.InspectionStandard" />
-          <EntitySet Name="InspectionStandardType" EntityType="Self.InspectionStandardType" />
-          <EntitySet Name="LastInspection" EntityType="Self.LastInspection" />
-          <EntitySet Name="Lot" EntityType="Self.Lot" />
-          <EntitySet Name="MaterialHistory" EntityType="Self.MaterialHistory" />
-          <EntitySet Name="MaterialsInRe" EntityType="Self.MaterialsInRe" />
-          <EntitySet Name="Process" EntityType="Self.Process" />
-          <EntitySet Name="ProcessDefect" EntityType="Self.ProcessDefect" />
-          <EntitySet Name="Product" EntityType="Self.Product" />
-          <EntitySet Name="ProductionHistory" EntityType="Self.ProductionHistory" />
-          <EntitySet Name="ProductSubJect" EntityType="Self.ProductSubJect" />
-          <EntitySet Name="RotationGroup" EntityType="Self.RotationGroup" />
-          <EntitySet Name="TotalMonitoring" EntityType="Self.TotalMonitoring" />
-          <EntitySet Name="WokGroup" EntityType="Self.WokGroup" />
-          <EntitySet Name="Worker" EntityType="Self.Worker" />
-          <EntitySet Name="WorkLog" EntityType="Self.WorkLog" />
-          <EntitySet Name="WorkPlace" EntityType="Self.WorkPlace" />
+          <EntitySet Name="Barcodes" EntityType="Self.Barcode" />
+          <EntitySet Name="DefectiveProducts" EntityType="Self.DefectiveProduct" />
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="ErrorCodes" EntityType="Self.ErrorCode" />
+          <EntitySet Name="ErrorKinds" EntityType="Self.ErrorKind" />
+          <EntitySet Name="ErrorTypes" EntityType="Self.ErrorType" />
+          <EntitySet Name="Facilities" EntityType="Self.Facility" />
+          <EntitySet Name="FacilitiesHistories" EntityType="Self.FacilitiesHistory" />
+          <EntitySet Name="FacilitiesPowers" EntityType="Self.FacilitiesPower" />
+          <EntitySet Name="FHistoryDivisions" EntityType="Self.FHistoryDivision" />
+          <EntitySet Name="FirstInspections" EntityType="Self.FirstInspection" />
+          <EntitySet Name="InspectionStandards" EntityType="Self.InspectionStandard" />
+          <EntitySet Name="InspectionStandardTypes" EntityType="Self.InspectionStandardType" />
+          <EntitySet Name="LastInspections" EntityType="Self.LastInspection" />
+          <EntitySet Name="Lots" EntityType="Self.Lot" />
+          <EntitySet Name="MaterialHistories" EntityType="Self.MaterialHistory" />
+          <EntitySet Name="MaterialsInRes" EntityType="Self.MaterialsInRe" />
+          <EntitySet Name="Processes" EntityType="Self.Process" />
+          <EntitySet Name="ProcessDefects" EntityType="Self.ProcessDefect" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="ProductionHistories" EntityType="Self.ProductionHistory" />
+          <EntitySet Name="ProductSubJects" EntityType="Self.ProductSubJect" />
+          <EntitySet Name="RotationGroups" EntityType="Self.RotationGroup" />
+          <EntitySet Name="TotalMonitorings" EntityType="Self.TotalMonitoring" />
+          <EntitySet Name="WokGroups" EntityType="Self.WokGroup" />
+          <EntitySet Name="Workers" EntityType="Self.Worker" />
+          <EntitySet Name="WorkLogs" EntityType="Self.WorkLog" />
+          <EntitySet Name="WorkPlaces" EntityType="Self.WorkPlace" />
           <AssociationSet Name="FK_Barcode_ErrorCode" Association="Self.FK_Barcode_ErrorCode">
-            <End Role="ErrorCode" EntitySet="ErrorCode" />
-            <End Role="Barcode" EntitySet="Barcode" />
+            <End Role="ErrorCode" EntitySet="ErrorCodes" />
+            <End Role="Barcode" EntitySet="Barcodes" />
           </AssociationSet>
           <AssociationSet Name="FK_DefectiveProduct_Barcode" Association="Self.FK_DefectiveProduct_Barcode">
-            <End Role="Barcode" EntitySet="Barcode" />
-            <End Role="DefectiveProduct" EntitySet="DefectiveProduct" />
+            <End Role="Barcode" EntitySet="Barcodes" />
+            <End Role="DefectiveProduct" EntitySet="DefectiveProducts" />
           </AssociationSet>
           <AssociationSet Name="FK_MaterialHistory_Barcode" Association="Self.FK_MaterialHistory_Barcode">
-            <End Role="Barcode" EntitySet="Barcode" />
-            <End Role="MaterialHistory" EntitySet="MaterialHistory" />
+            <End Role="Barcode" EntitySet="Barcodes" />
+            <End Role="MaterialHistory" EntitySet="MaterialHistories" />
           </AssociationSet>
           <AssociationSet Name="FK_MaterialsInRe_Barcode" Association="Self.FK_MaterialsInRe_Barcode">
-            <End Role="Barcode" EntitySet="Barcode" />
-            <End Role="MaterialsInRe" EntitySet="MaterialsInRe" />
+            <End Role="Barcode" EntitySet="Barcodes" />
+            <End Role="MaterialsInRe" EntitySet="MaterialsInRes" />
           </AssociationSet>
           <AssociationSet Name="FK_Product_Barcode" Association="Self.FK_Product_Barcode">
-            <End Role="Barcode" EntitySet="Barcode" />
-            <End Role="Product" EntitySet="Product" />
+            <End Role="Barcode" EntitySet="Barcodes" />
+            <End Role="Product" EntitySet="Products" />
           </AssociationSet>
           <AssociationSet Name="FK_DefectiveProduct_Employee" Association="Self.FK_DefectiveProduct_Employee">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="DefectiveProduct" EntitySet="DefectiveProduct" />
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="DefectiveProduct" EntitySet="DefectiveProducts" />
           </AssociationSet>
           <AssociationSet Name="FK_DefectiveProduct_ErrorCode" Association="Self.FK_DefectiveProduct_ErrorCode">
-            <End Role="ErrorCode" EntitySet="ErrorCode" />
-            <End Role="DefectiveProduct" EntitySet="DefectiveProduct" />
+            <End Role="ErrorCode" EntitySet="ErrorCodes" />
+            <End Role="DefectiveProduct" EntitySet="DefectiveProducts" />
           </AssociationSet>
           <AssociationSet Name="FK_DefectiveProduct_Lot" Association="Self.FK_DefectiveProduct_Lot">
-            <End Role="Lot" EntitySet="Lot" />
-            <End Role="DefectiveProduct" EntitySet="DefectiveProduct" />
+            <End Role="Lot" EntitySet="Lots" />
+            <End Role="DefectiveProduct" EntitySet="DefectiveProducts" />
           </AssociationSet>
           <AssociationSet Name="FK_DefectiveProduct_Process" Association="Self.FK_DefectiveProduct_Process">
-            <End Role="Process" EntitySet="Process" />
-            <End Role="DefectiveProduct" EntitySet="DefectiveProduct" />
+            <End Role="Process" EntitySet="Processes" />
+            <End Role="DefectiveProduct" EntitySet="DefectiveProducts" />
           </AssociationSet>
           <AssociationSet Name="FK_Employee_Department" Association="Self.FK_Employee_Department">
-            <End Role="Department" EntitySet="Department" />
-            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Employee" EntitySet="Employees" />
           </AssociationSet>
           <AssociationSet Name="FK_FirstInspection_Employee" Association="Self.FK_FirstInspection_Employee">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="FirstInspection" EntitySet="FirstInspection" />
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="FirstInspection" EntitySet="FirstInspections" />
           </AssociationSet>
           <AssociationSet Name="FK_TotalMonitoring_Employee" Association="Self.FK_TotalMonitoring_Employee">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="TotalMonitoring" EntitySet="TotalMonitoring" />
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="TotalMonitoring" EntitySet="TotalMonitorings" />
           </AssociationSet>
           <AssociationSet Name="FK_Worker_Employee" Association="Self.FK_Worker_Employee">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="Worker" EntitySet="Worker" />
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Worker" EntitySet="Workers" />
           </AssociationSet>
           <AssociationSet Name="FK_WorkLog_Employee" Association="Self.FK_WorkLog_Employee">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="WorkLog" EntitySet="WorkLog" />
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="WorkLog" EntitySet="WorkLogs" />
           </AssociationSet>
           <AssociationSet Name="FK_ErrorCode_ErrorKind" Association="Self.FK_ErrorCode_ErrorKind">
-            <End Role="ErrorKind" EntitySet="ErrorKind" />
-            <End Role="ErrorCode" EntitySet="ErrorCode" />
+            <End Role="ErrorKind" EntitySet="ErrorKinds" />
+            <End Role="ErrorCode" EntitySet="ErrorCodes" />
           </AssociationSet>
           <AssociationSet Name="FK_ErrorCode_ErrorType" Association="Self.FK_ErrorCode_ErrorType">
-            <End Role="ErrorType" EntitySet="ErrorType" />
-            <End Role="ErrorCode" EntitySet="ErrorCode" />
+            <End Role="ErrorType" EntitySet="ErrorTypes" />
+            <End Role="ErrorCode" EntitySet="ErrorCodes" />
           </AssociationSet>
           <AssociationSet Name="FK_FacilitiesHistory_ErrorCode" Association="Self.FK_FacilitiesHistory_ErrorCode">
-            <End Role="ErrorCode" EntitySet="ErrorCode" />
-            <End Role="ProductionHistory" EntitySet="ProductionHistory" />
+            <End Role="ErrorCode" EntitySet="ErrorCodes" />
+            <End Role="ProductionHistory" EntitySet="ProductionHistories" />
           </AssociationSet>
           <AssociationSet Name="FK_ProcessDefect_ErrorCode" Association="Self.FK_ProcessDefect_ErrorCode">
-            <End Role="ErrorCode" EntitySet="ErrorCode" />
-            <End Role="ProcessDefect" EntitySet="ProcessDefect" />
+            <End Role="ErrorCode" EntitySet="ErrorCodes" />
+            <End Role="ProcessDefect" EntitySet="ProcessDefects" />
           </AssociationSet>
           <AssociationSet Name="FK_Facilities_Process" Association="Self.FK_Facilities_Process">
-            <End Role="Process" EntitySet="Process" />
+            <End Role="Process" EntitySet="Processes" />
             <End Role="Facilities" EntitySet="Facilities" />
           </AssociationSet>
           <AssociationSet Name="FK_FacilitiesHistory_Facilities" Association="Self.FK_FacilitiesHistory_Facilities">
             <End Role="Facilities" EntitySet="Facilities" />
-            <End Role="ProductionHistory" EntitySet="ProductionHistory" />
+            <End Role="ProductionHistory" EntitySet="ProductionHistories" />
           </AssociationSet>
           <AssociationSet Name="FK_FacilitiesHistory_Facilities1" Association="Self.FK_FacilitiesHistory_Facilities1">
             <End Role="Facilities" EntitySet="Facilities" />
-            <End Role="FacilitiesHistory" EntitySet="FacilitiesHistory" />
+            <End Role="FacilitiesHistory" EntitySet="FacilitiesHistories" />
           </AssociationSet>
           <AssociationSet Name="FK_FacilitiesPower_Facilities" Association="Self.FK_FacilitiesPower_Facilities">
             <End Role="Facilities" EntitySet="Facilities" />
-            <End Role="FacilitiesPower" EntitySet="FacilitiesPower" />
+            <End Role="FacilitiesPower" EntitySet="FacilitiesPowers" />
           </AssociationSet>
           <AssociationSet Name="FK_Worker_Facilities" Association="Self.FK_Worker_Facilities">
             <End Role="Facilities" EntitySet="Facilities" />
-            <End Role="Worker" EntitySet="Worker" />
+            <End Role="Worker" EntitySet="Workers" />
           </AssociationSet>
           <AssociationSet Name="FK_FacilitiesHistory_FHistoryDivision" Association="Self.FK_FacilitiesHistory_FHistoryDivision">
-            <End Role="FHistoryDivision" EntitySet="FHistoryDivision" />
-            <End Role="FacilitiesHistory" EntitySet="FacilitiesHistory" />
+            <End Role="FHistoryDivision" EntitySet="FHistoryDivisions" />
+            <End Role="FacilitiesHistory" EntitySet="FacilitiesHistories" />
           </AssociationSet>
           <AssociationSet Name="FK_FacilitiesPower_Process" Association="Self.FK_FacilitiesPower_Process">
-            <End Role="Process" EntitySet="Process" />
-            <End Role="FacilitiesPower" EntitySet="FacilitiesPower" />
+            <End Role="Process" EntitySet="Processes" />
+            <End Role="FacilitiesPower" EntitySet="FacilitiesPowers" />
           </AssociationSet>
           <AssociationSet Name="FK_FacilitiesPower_ProductionHistory" Association="Self.FK_FacilitiesPower_ProductionHistory">
-            <End Role="ProductionHistory" EntitySet="ProductionHistory" />
-            <End Role="FacilitiesPower" EntitySet="FacilitiesPower" />
+            <End Role="ProductionHistory" EntitySet="ProductionHistories" />
+            <End Role="FacilitiesPower" EntitySet="FacilitiesPowers" />
           </AssociationSet>
           <AssociationSet Name="FK_FirstInspection_Product" Association="Self.FK_FirstInspection_Product">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="FirstInspection" EntitySet="FirstInspection" />
+            <End Role="Product" EntitySet="Products" />
+            <End Role="FirstInspection" EntitySet="FirstInspections" />
           </AssociationSet>
           <AssociationSet Name="FK_FirstInspection_WorkPlace" Association="Self.FK_FirstInspection_WorkPlace">
-            <End Role="WorkPlace" EntitySet="WorkPlace" />
-            <End Role="FirstInspection" EntitySet="FirstInspection" />
+            <End Role="WorkPlace" EntitySet="WorkPlaces" />
+            <End Role="FirstInspection" EntitySet="FirstInspections" />
           </AssociationSet>
           <AssociationSet Name="FK_InspectionStandard_InspectionStandardType" Association="Self.FK_InspectionStandard_InspectionStandardType">
-            <End Role="InspectionStandardType" EntitySet="InspectionStandardType" />
-            <End Role="InspectionStandard" EntitySet="InspectionStandard" />
+            <End Role="InspectionStandardType" EntitySet="InspectionStandardTypes" />
+            <End Role="InspectionStandard" EntitySet="InspectionStandards" />
           </AssociationSet>
           <AssociationSet Name="FK_Process_InspectionStandard" Association="Self.FK_Process_InspectionStandard">
-            <End Role="InspectionStandard" EntitySet="InspectionStandard" />
-            <End Role="Process" EntitySet="Process" />
+            <End Role="InspectionStandard" EntitySet="InspectionStandards" />
+            <End Role="Process" EntitySet="Processes" />
           </AssociationSet>
           <AssociationSet Name="FK_LastInspection_Product" Association="Self.FK_LastInspection_Product">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="LastInspection" EntitySet="LastInspection" />
+            <End Role="Product" EntitySet="Products" />
+            <End Role="LastInspection" EntitySet="LastInspections" />
           </AssociationSet>
           <AssociationSet Name="FK_LastInspection_WorkPlace" Association="Self.FK_LastInspection_WorkPlace">
-            <End Role="WorkPlace" EntitySet="WorkPlace" />
-            <End Role="LastInspection" EntitySet="LastInspection" />
+            <End Role="WorkPlace" EntitySet="WorkPlaces" />
+            <End Role="LastInspection" EntitySet="LastInspections" />
           </AssociationSet>
           <AssociationSet Name="FK_Lot_Product" Association="Self.FK_Lot_Product">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="Lot" EntitySet="Lot" />
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Lot" EntitySet="Lots" />
           </AssociationSet>
           <AssociationSet Name="FK_MaterialHistory_Lot" Association="Self.FK_MaterialHistory_Lot">
-            <End Role="Lot" EntitySet="Lot" />
-            <End Role="MaterialHistory" EntitySet="MaterialHistory" />
+            <End Role="Lot" EntitySet="Lots" />
+            <End Role="MaterialHistory" EntitySet="MaterialHistories" />
           </AssociationSet>
           <AssociationSet Name="FK_MaterialHistory_WorkPlace" Association="Self.FK_MaterialHistory_WorkPlace">
-            <End Role="WorkPlace" EntitySet="WorkPlace" />
-            <End Role="MaterialHistory" EntitySet="MaterialHistory" />
+            <End Role="WorkPlace" EntitySet="WorkPlaces" />
+            <End Role="MaterialHistory" EntitySet="MaterialHistories" />
           </AssociationSet>
           <AssociationSet Name="FK_MaterialsInRe_Process" Association="Self.FK_MaterialsInRe_Process">
-            <End Role="Process" EntitySet="Process" />
-            <End Role="MaterialsInRe" EntitySet="MaterialsInRe" />
+            <End Role="Process" EntitySet="Processes" />
+            <End Role="MaterialsInRe" EntitySet="MaterialsInRes" />
           </AssociationSet>
           <AssociationSet Name="FK_MaterialsInRe_WorkPlace" Association="Self.FK_MaterialsInRe_WorkPlace">
-            <End Role="WorkPlace" EntitySet="WorkPlace" />
-            <End Role="MaterialsInRe" EntitySet="MaterialsInRe" />
+            <End Role="WorkPlace" EntitySet="WorkPlaces" />
+            <End Role="MaterialsInRe" EntitySet="MaterialsInRes" />
           </AssociationSet>
           <AssociationSet Name="FK_ProcessDefect_Process" Association="Self.FK_ProcessDefect_Process">
-            <End Role="Process" EntitySet="Process" />
-            <End Role="ProcessDefect" EntitySet="ProcessDefect" />
+            <End Role="Process" EntitySet="Processes" />
+            <End Role="ProcessDefect" EntitySet="ProcessDefects" />
           </AssociationSet>
           <AssociationSet Name="FK_TotalMonitoring_Process" Association="Self.FK_TotalMonitoring_Process">
-            <End Role="Process" EntitySet="Process" />
-            <End Role="TotalMonitoring" EntitySet="TotalMonitoring" />
+            <End Role="Process" EntitySet="Processes" />
+            <End Role="TotalMonitoring" EntitySet="TotalMonitorings" />
           </AssociationSet>
           <AssociationSet Name="FK_Worker_Process" Association="Self.FK_Worker_Process">
-            <End Role="Process" EntitySet="Process" />
-            <End Role="Worker" EntitySet="Worker" />
+            <End Role="Process" EntitySet="Processes" />
+            <End Role="Worker" EntitySet="Workers" />
           </AssociationSet>
           <AssociationSet Name="FK_FacilitiesHistory_Product" Association="Self.FK_FacilitiesHistory_Product">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="ProductionHistory" EntitySet="ProductionHistory" />
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductionHistory" EntitySet="ProductionHistories" />
           </AssociationSet>
           <AssociationSet Name="FK_Product_ProductSubJect" Association="Self.FK_Product_ProductSubJect">
-            <End Role="ProductSubJect" EntitySet="ProductSubJect" />
-            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductSubJect" EntitySet="ProductSubJects" />
+            <End Role="Product" EntitySet="Products" />
           </AssociationSet>
           <AssociationSet Name="FK_TotalMonitoring_Product" Association="Self.FK_TotalMonitoring_Product">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="TotalMonitoring" EntitySet="TotalMonitoring" />
+            <End Role="Product" EntitySet="Products" />
+            <End Role="TotalMonitoring" EntitySet="TotalMonitorings" />
           </AssociationSet>
           <AssociationSet Name="FK_Worker_RotationGroup" Association="Self.FK_Worker_RotationGroup">
-            <End Role="RotationGroup" EntitySet="RotationGroup" />
-            <End Role="Worker" EntitySet="Worker" />
+            <End Role="RotationGroup" EntitySet="RotationGroups" />
+            <End Role="Worker" EntitySet="Workers" />
           </AssociationSet>
           <AssociationSet Name="FK_TotalMonitoring_WorkLog" Association="Self.FK_TotalMonitoring_WorkLog">
-            <End Role="WorkLog" EntitySet="WorkLog" />
-            <End Role="TotalMonitoring" EntitySet="TotalMonitoring" />
+            <End Role="WorkLog" EntitySet="WorkLogs" />
+            <End Role="TotalMonitoring" EntitySet="TotalMonitorings" />
           </AssociationSet>
           <AssociationSet Name="FK_WorkLog_WokGroup" Association="Self.FK_WorkLog_WokGroup">
-            <End Role="WokGroup" EntitySet="WokGroup" />
-            <End Role="WorkLog" EntitySet="WorkLog" />
+            <End Role="WokGroup" EntitySet="WokGroups" />
+            <End Role="WorkLog" EntitySet="WorkLogs" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -2252,7 +2252,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="PCBVIModelStoreContainer" CdmEntityContainer="PCBVIEntities">
-          <EntitySetMapping Name="Barcode">
+          <EntitySetMapping Name="Barcodes">
             <EntityTypeMapping TypeName="PCBVIModel.Barcode">
               <MappingFragment StoreEntitySet="Barcode">
                 <ScalarProperty Name="BarcodeId" ColumnName="BarcodeId" />
@@ -2262,7 +2262,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DefectiveProduct">
+          <EntitySetMapping Name="DefectiveProducts">
             <EntityTypeMapping TypeName="PCBVIModel.DefectiveProduct">
               <MappingFragment StoreEntitySet="DefectiveProduct">
                 <ScalarProperty Name="DefectiveProductId" ColumnName="DefectiveProductId" />
@@ -2276,7 +2276,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Department">
+          <EntitySetMapping Name="Departments">
             <EntityTypeMapping TypeName="PCBVIModel.Department">
               <MappingFragment StoreEntitySet="Department">
                 <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
@@ -2284,7 +2284,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Employee">
+          <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="PCBVIModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
@@ -2297,7 +2297,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ErrorCode">
+          <EntitySetMapping Name="ErrorCodes">
             <EntityTypeMapping TypeName="PCBVIModel.ErrorCode">
               <MappingFragment StoreEntitySet="ErrorCode">
                 <ScalarProperty Name="ErrorCodeId" ColumnName="ErrorCodeId" />
@@ -2305,12 +2305,12 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ErrorTypeId" ColumnName="ErrorTypeId" />
                 <ScalarProperty Name="ErrorKindId" ColumnName="ErrorKindId" />
-                <ScalarProperty Name="UseState" ColumnName="UseState" />
+                <ScalarProperty Name="InspectionStatus" ColumnName="InspectionStatus" />
                 <ScalarProperty Name="Explanation" ColumnName="Explanation" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ErrorKind">
+          <EntitySetMapping Name="ErrorKinds">
             <EntityTypeMapping TypeName="PCBVIModel.ErrorKind">
               <MappingFragment StoreEntitySet="ErrorKind">
                 <ScalarProperty Name="ErrorKindId" ColumnName="ErrorKindId" />
@@ -2318,7 +2318,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ErrorType">
+          <EntitySetMapping Name="ErrorTypes">
             <EntityTypeMapping TypeName="PCBVIModel.ErrorType">
               <MappingFragment StoreEntitySet="ErrorType">
                 <ScalarProperty Name="ErrorTypeId" ColumnName="ErrorTypeId" />
@@ -2327,7 +2327,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Facilities">
-            <EntityTypeMapping TypeName="PCBVIModel.Facilities">
+            <EntityTypeMapping TypeName="PCBVIModel.Facility">
               <MappingFragment StoreEntitySet="Facilities">
                 <ScalarProperty Name="FacilitiesId" ColumnName="FacilitiesId" />
                 <ScalarProperty Name="Num" ColumnName="Num" />
@@ -2343,7 +2343,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FacilitiesHistory">
+          <EntitySetMapping Name="FacilitiesHistories">
             <EntityTypeMapping TypeName="PCBVIModel.FacilitiesHistory">
               <MappingFragment StoreEntitySet="FacilitiesHistory">
                 <ScalarProperty Name="FacilitiesHistoryId" ColumnName="FacilitiesHistoryId" />
@@ -2358,7 +2358,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FacilitiesPower">
+          <EntitySetMapping Name="FacilitiesPowers">
             <EntityTypeMapping TypeName="PCBVIModel.FacilitiesPower">
               <MappingFragment StoreEntitySet="FacilitiesPower">
                 <ScalarProperty Name="FacilitiesPowerId" ColumnName="FacilitiesPowerId" />
@@ -2368,7 +2368,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FHistoryDivision">
+          <EntitySetMapping Name="FHistoryDivisions">
             <EntityTypeMapping TypeName="PCBVIModel.FHistoryDivision">
               <MappingFragment StoreEntitySet="FHistoryDivision">
                 <ScalarProperty Name="FHistoryDivisionId" ColumnName="FHistoryDivisionId" />
@@ -2376,7 +2376,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FirstInspection">
+          <EntitySetMapping Name="FirstInspections">
             <EntityTypeMapping TypeName="PCBVIModel.FirstInspection">
               <MappingFragment StoreEntitySet="FirstInspection">
                 <ScalarProperty Name="FirstInspectionId" ColumnName="FirstInspectionId" />
@@ -2392,7 +2392,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="InspectionStandard">
+          <EntitySetMapping Name="InspectionStandards">
             <EntityTypeMapping TypeName="PCBVIModel.InspectionStandard">
               <MappingFragment StoreEntitySet="InspectionStandard">
                 <ScalarProperty Name="InspectionStandardId" ColumnName="InspectionStandardId" />
@@ -2403,7 +2403,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="InspectionStandardType">
+          <EntitySetMapping Name="InspectionStandardTypes">
             <EntityTypeMapping TypeName="PCBVIModel.InspectionStandardType">
               <MappingFragment StoreEntitySet="InspectionStandardType">
                 <ScalarProperty Name="InspectionStandardType1" ColumnName="InspectionStandardType" />
@@ -2411,7 +2411,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="LastInspection">
+          <EntitySetMapping Name="LastInspections">
             <EntityTypeMapping TypeName="PCBVIModel.LastInspection">
               <MappingFragment StoreEntitySet="LastInspection">
                 <ScalarProperty Name="LasInspectionId" ColumnName="LasInspectionId" />
@@ -2427,7 +2427,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Lot">
+          <EntitySetMapping Name="Lots">
             <EntityTypeMapping TypeName="PCBVIModel.Lot">
               <MappingFragment StoreEntitySet="Lot">
                 <ScalarProperty Name="LotId" ColumnName="LotId" />
@@ -2438,7 +2438,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MaterialHistory">
+          <EntitySetMapping Name="MaterialHistories">
             <EntityTypeMapping TypeName="PCBVIModel.MaterialHistory">
               <MappingFragment StoreEntitySet="MaterialHistory">
                 <ScalarProperty Name="MaterialHistoryId" ColumnName="MaterialHistoryId" />
@@ -2450,7 +2450,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MaterialsInRe">
+          <EntitySetMapping Name="MaterialsInRes">
             <EntityTypeMapping TypeName="PCBVIModel.MaterialsInRe">
               <MappingFragment StoreEntitySet="MaterialsInRe">
                 <ScalarProperty Name="MaterialsInReId" ColumnName="MaterialsInReId" />
@@ -2464,7 +2464,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Process">
+          <EntitySetMapping Name="Processes">
             <EntityTypeMapping TypeName="PCBVIModel.Process">
               <MappingFragment StoreEntitySet="Process">
                 <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
@@ -2473,7 +2473,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ProcessDefect">
+          <EntitySetMapping Name="ProcessDefects">
             <EntityTypeMapping TypeName="PCBVIModel.ProcessDefect">
               <MappingFragment StoreEntitySet="ProcessDefect">
                 <ScalarProperty Name="ProcessDefectId" ColumnName="ProcessDefectId" />
@@ -2484,7 +2484,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Product">
+          <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="PCBVIModel.Product">
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
@@ -2498,7 +2498,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ProductionHistory">
+          <EntitySetMapping Name="ProductionHistories">
             <EntityTypeMapping TypeName="PCBVIModel.ProductionHistory">
               <MappingFragment StoreEntitySet="ProductionHistory">
                 <ScalarProperty Name="ProductionHistoryId" ColumnName="ProductionHistoryId" />
@@ -2514,7 +2514,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ProductSubJect">
+          <EntitySetMapping Name="ProductSubJects">
             <EntityTypeMapping TypeName="PCBVIModel.ProductSubJect">
               <MappingFragment StoreEntitySet="ProductSubJect">
                 <ScalarProperty Name="ProductSubjectId" ColumnName="ProductSubjectId" />
@@ -2522,7 +2522,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="RotationGroup">
+          <EntitySetMapping Name="RotationGroups">
             <EntityTypeMapping TypeName="PCBVIModel.RotationGroup">
               <MappingFragment StoreEntitySet="RotationGroup">
                 <ScalarProperty Name="RotationGroupId" ColumnName="RotationGroupId" />
@@ -2530,7 +2530,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TotalMonitoring">
+          <EntitySetMapping Name="TotalMonitorings">
             <EntityTypeMapping TypeName="PCBVIModel.TotalMonitoring">
               <MappingFragment StoreEntitySet="TotalMonitoring">
                 <ScalarProperty Name="TotalMonitoringId" ColumnName="TotalMonitoringId" />
@@ -2542,7 +2542,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="WokGroup">
+          <EntitySetMapping Name="WokGroups">
             <EntityTypeMapping TypeName="PCBVIModel.WokGroup">
               <MappingFragment StoreEntitySet="WokGroup">
                 <ScalarProperty Name="WorkGroupId" ColumnName="WorkGroupId" />
@@ -2550,7 +2550,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Worker">
+          <EntitySetMapping Name="Workers">
             <EntityTypeMapping TypeName="PCBVIModel.Worker">
               <MappingFragment StoreEntitySet="Worker">
                 <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
@@ -2562,7 +2562,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="WorkLog">
+          <EntitySetMapping Name="WorkLogs">
             <EntityTypeMapping TypeName="PCBVIModel.WorkLog">
               <MappingFragment StoreEntitySet="WorkLog">
                 <ScalarProperty Name="WorkLogId" ColumnName="WorkLogId" />
@@ -2578,7 +2578,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="WorkPlace">
+          <EntitySetMapping Name="WorkPlaces">
             <EntityTypeMapping TypeName="PCBVIModel.WorkPlace">
               <MappingFragment StoreEntitySet="WorkPlace">
                 <ScalarProperty Name="WorkPlaceId" ColumnName="WorkPlaceId" />
@@ -2600,7 +2600,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="없음" />

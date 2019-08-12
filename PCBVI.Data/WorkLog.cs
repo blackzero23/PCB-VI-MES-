@@ -17,7 +17,7 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public WorkLog()
         {
-            this.TotalMonitoring = new HashSet<TotalMonitoring>();
+            this.TotalMonitorings = new HashSet<TotalMonitoring>();
         }
     
         public int WorkLogId { get; set; }
@@ -33,7 +33,7 @@ namespace PCBVI.Data
     
         public virtual Employee Employee { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TotalMonitoring> TotalMonitoring { get; set; }
+        public virtual ICollection<TotalMonitoring> TotalMonitorings { get; set; }
         public virtual WokGroup WokGroup { get; set; }
     }
 }

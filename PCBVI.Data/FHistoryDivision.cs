@@ -17,13 +17,13 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public FHistoryDivision()
         {
-            this.FacilitiesHistory = new HashSet<FacilitiesHistory>();
+            this.FacilitiesHistories = new HashSet<FacilitiesHistory>();
         }
     
         public int FHistoryDivisionId { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FacilitiesHistory> FacilitiesHistory { get; set; }
+        public virtual ICollection<FacilitiesHistory> FacilitiesHistories { get; set; }
     }
 }

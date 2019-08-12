@@ -15,7 +15,7 @@ namespace PCBVI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForms());
+            Application.Run(new MainForm());
         }
     }
 }

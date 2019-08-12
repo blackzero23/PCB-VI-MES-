@@ -24,7 +24,7 @@ namespace PCBVI.Data
         public string OCompanyPhoneNum { get; set; }
         public string OCompanyEmployee { get; set; }
     
-        public virtual Facilities Facilities { get; set; }
+        public virtual Facility Facility { get; set; }
         public virtual FHistoryDivision FHistoryDivision { get; set; }
     }
 }

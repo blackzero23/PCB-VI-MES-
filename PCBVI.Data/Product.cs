@@ -17,11 +17,11 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
-            this.FirstInspection = new HashSet<FirstInspection>();
-            this.LastInspection = new HashSet<LastInspection>();
-            this.Lot = new HashSet<Lot>();
-            this.ProductionHistory = new HashSet<ProductionHistory>();
-            this.TotalMonitoring = new HashSet<TotalMonitoring>();
+            this.FirstInspections = new HashSet<FirstInspection>();
+            this.LastInspections = new HashSet<LastInspection>();
+            this.Lots = new HashSet<Lot>();
+            this.ProductionHistories = new HashSet<ProductionHistory>();
+            this.TotalMonitorings = new HashSet<TotalMonitoring>();
         }
     
         public int ProductId { get; set; }
@@ -35,15 +35,15 @@ namespace PCBVI.Data
     
         public virtual Barcode Barcode { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FirstInspection> FirstInspection { get; set; }
+        public virtual ICollection<FirstInspection> FirstInspections { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LastInspection> LastInspection { get; set; }
+        public virtual ICollection<LastInspection> LastInspections { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Lot> Lot { get; set; }
+        public virtual ICollection<Lot> Lots { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductionHistory> ProductionHistory { get; set; }
+        public virtual ICollection<ProductionHistory> ProductionHistories { get; set; }
         public virtual ProductSubJect ProductSubJect { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TotalMonitoring> TotalMonitoring { get; set; }
+        public virtual ICollection<TotalMonitoring> TotalMonitorings { get; set; }
     }
 }

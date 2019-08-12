@@ -17,13 +17,13 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public InspectionStandardType()
         {
-            this.InspectionStandard = new HashSet<InspectionStandard>();
+            this.InspectionStandards = new HashSet<InspectionStandard>();
         }
     
         public int InspectionStandardType1 { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<InspectionStandard> InspectionStandard { get; set; }
+        public virtual ICollection<InspectionStandard> InspectionStandards { get; set; }
     }
 }

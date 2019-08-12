@@ -17,11 +17,11 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Employee()
         {
-            this.DefectiveProduct = new HashSet<DefectiveProduct>();
-            this.FirstInspection = new HashSet<FirstInspection>();
-            this.TotalMonitoring = new HashSet<TotalMonitoring>();
-            this.Worker = new HashSet<Worker>();
-            this.WorkLog = new HashSet<WorkLog>();
+            this.DefectiveProducts = new HashSet<DefectiveProduct>();
+            this.FirstInspections = new HashSet<FirstInspection>();
+            this.TotalMonitorings = new HashSet<TotalMonitoring>();
+            this.Workers = new HashSet<Worker>();
+            this.WorkLogs = new HashSet<WorkLog>();
         }
     
         public int EmployeeId { get; set; }
@@ -33,15 +33,15 @@ namespace PCBVI.Data
         public int Grade { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DefectiveProduct> DefectiveProduct { get; set; }
+        public virtual ICollection<DefectiveProduct> DefectiveProducts { get; set; }
         public virtual Department Department { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FirstInspection> FirstInspection { get; set; }
+        public virtual ICollection<FirstInspection> FirstInspections { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TotalMonitoring> TotalMonitoring { get; set; }
+        public virtual ICollection<TotalMonitoring> TotalMonitorings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Worker> Worker { get; set; }
+        public virtual ICollection<Worker> Workers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<WorkLog> WorkLog { get; set; }
+        public virtual ICollection<WorkLog> WorkLogs { get; set; }
     }
 }

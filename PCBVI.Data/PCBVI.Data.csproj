@@ -53,7 +53,9 @@
     <Compile Include="Barcode.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\DB.cs" />
     <Compile Include="Data\EntityData.cs" />
+    <Compile Include="Data\ErrorCodeData.cs" />
     <Compile Include="DbContextFactory.cs" />
     <Compile Include="DefectiveProduct.cs">
       <DependentUpon>Mes.tt</DependentUpon>
@@ -73,13 +75,13 @@
     <Compile Include="ErrorType.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
-    <Compile Include="Facilities.cs">
-      <DependentUpon>Mes.tt</DependentUpon>
-    </Compile>
     <Compile Include="FacilitiesHistory.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="FacilitiesPower.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facility.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="FHistoryDivision.cs">
@@ -360,8 +362,8 @@
     <Content Include="DLLS\KrytonDLL\WorkspacePersistence.pdb" />
     <Content Include="Mes.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Mes.Context.cs</LastGenOutput>
       <DependentUpon>Mes.edmx</DependentUpon>
+      <LastGenOutput>Mes.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Mes.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

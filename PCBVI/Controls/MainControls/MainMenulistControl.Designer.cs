@@ -114,7 +114,7 @@
             this.btnNonMovingType.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNonMovingType.FlatAppearance.BorderSize = 0;
             this.btnNonMovingType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNonMovingType.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnNonMovingType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnNonMovingType.ForeColor = System.Drawing.Color.White;
             this.btnNonMovingType.Location = new System.Drawing.Point(0, 225);
             this.btnNonMovingType.Name = "btnNonMovingType";
@@ -130,7 +130,7 @@
             this.btnFacilitiesInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFacilitiesInfo.FlatAppearance.BorderSize = 0;
             this.btnFacilitiesInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFacilitiesInfo.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnFacilitiesInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnFacilitiesInfo.ForeColor = System.Drawing.Color.White;
             this.btnFacilitiesInfo.Location = new System.Drawing.Point(0, 196);
             this.btnFacilitiesInfo.Name = "btnFacilitiesInfo";
@@ -146,7 +146,7 @@
             this.btnInspectionSt.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInspectionSt.FlatAppearance.BorderSize = 0;
             this.btnInspectionSt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInspectionSt.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnInspectionSt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInspectionSt.ForeColor = System.Drawing.Color.White;
             this.btnInspectionSt.Location = new System.Drawing.Point(0, 167);
             this.btnInspectionSt.Name = "btnInspectionSt";
@@ -162,7 +162,7 @@
             this.btnErrorCode.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnErrorCode.FlatAppearance.BorderSize = 0;
             this.btnErrorCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnErrorCode.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnErrorCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnErrorCode.ForeColor = System.Drawing.Color.White;
             this.btnErrorCode.Location = new System.Drawing.Point(0, 138);
             this.btnErrorCode.Name = "btnErrorCode";
@@ -178,7 +178,7 @@
             this.btnBarcode.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBarcode.FlatAppearance.BorderSize = 0;
             this.btnBarcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBarcode.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnBarcode.ForeColor = System.Drawing.Color.White;
             this.btnBarcode.Location = new System.Drawing.Point(0, 109);
             this.btnBarcode.Name = "btnBarcode";
@@ -194,7 +194,7 @@
             this.btnSubject.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSubject.FlatAppearance.BorderSize = 0;
             this.btnSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubject.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSubject.ForeColor = System.Drawing.Color.White;
             this.btnSubject.Location = new System.Drawing.Point(0, 80);
             this.btnSubject.Name = "btnSubject";
@@ -210,7 +210,7 @@
             this.btnEmployee.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEmployee.FlatAppearance.BorderSize = 0;
             this.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmployee.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnEmployee.ForeColor = System.Drawing.Color.White;
             this.btnEmployee.Location = new System.Drawing.Point(0, 51);
             this.btnEmployee.Name = "btnEmployee";
@@ -226,7 +226,7 @@
             this.btnBasicInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBasicInfo.FlatAppearance.BorderSize = 0;
             this.btnBasicInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBasicInfo.Font = new System.Drawing.Font("배달의민족 주아", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnBasicInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnBasicInfo.ForeColor = System.Drawing.Color.White;
             this.btnBasicInfo.Image = global::PCBVI.Properties.Resources.Expand_Arrow_20px;
             this.btnBasicInfo.Location = new System.Drawing.Point(0, 0);
@@ -283,7 +283,7 @@
             this.btnProcessDefect.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProcessDefect.FlatAppearance.BorderSize = 0;
             this.btnProcessDefect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcessDefect.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnProcessDefect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnProcessDefect.ForeColor = System.Drawing.Color.White;
             this.btnProcessDefect.Location = new System.Drawing.Point(0, 196);
             this.btnProcessDefect.Name = "btnProcessDefect";
@@ -299,7 +299,7 @@
             this.btnDefectiveProduct.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDefectiveProduct.FlatAppearance.BorderSize = 0;
             this.btnDefectiveProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDefectiveProduct.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDefectiveProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDefectiveProduct.ForeColor = System.Drawing.Color.White;
             this.btnDefectiveProduct.Location = new System.Drawing.Point(0, 167);
             this.btnDefectiveProduct.Name = "btnDefectiveProduct";
@@ -315,7 +315,7 @@
             this.btnWorker.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnWorker.FlatAppearance.BorderSize = 0;
             this.btnWorker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWorker.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnWorker.ForeColor = System.Drawing.Color.White;
             this.btnWorker.Location = new System.Drawing.Point(0, 138);
             this.btnWorker.Name = "btnWorker";
@@ -331,7 +331,7 @@
             this.btnMaterialsManage.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMaterialsManage.FlatAppearance.BorderSize = 0;
             this.btnMaterialsManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaterialsManage.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnMaterialsManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnMaterialsManage.ForeColor = System.Drawing.Color.White;
             this.btnMaterialsManage.Location = new System.Drawing.Point(0, 109);
             this.btnMaterialsManage.Name = "btnMaterialsManage";
@@ -347,7 +347,7 @@
             this.btnWorkLog.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnWorkLog.FlatAppearance.BorderSize = 0;
             this.btnWorkLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWorkLog.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnWorkLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnWorkLog.ForeColor = System.Drawing.Color.White;
             this.btnWorkLog.Location = new System.Drawing.Point(0, 80);
             this.btnWorkLog.Name = "btnWorkLog";
@@ -363,7 +363,7 @@
             this.btnProductionHistory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProductionHistory.FlatAppearance.BorderSize = 0;
             this.btnProductionHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductionHistory.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnProductionHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnProductionHistory.ForeColor = System.Drawing.Color.White;
             this.btnProductionHistory.Location = new System.Drawing.Point(0, 51);
             this.btnProductionHistory.Name = "btnProductionHistory";
@@ -379,7 +379,7 @@
             this.btnProduction.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProduction.FlatAppearance.BorderSize = 0;
             this.btnProduction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProduction.Font = new System.Drawing.Font("배달의민족 주아", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnProduction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnProduction.ForeColor = System.Drawing.Color.White;
             this.btnProduction.Image = global::PCBVI.Properties.Resources.Expand_Arrow_20px;
             this.btnProduction.Location = new System.Drawing.Point(0, 0);
@@ -411,7 +411,7 @@
             this.btnMaterialsHistory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMaterialsHistory.FlatAppearance.BorderSize = 0;
             this.btnMaterialsHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaterialsHistory.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnMaterialsHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnMaterialsHistory.ForeColor = System.Drawing.Color.White;
             this.btnMaterialsHistory.Location = new System.Drawing.Point(0, 109);
             this.btnMaterialsHistory.Name = "btnMaterialsHistory";
@@ -427,7 +427,7 @@
             this.btnMaterialsInRe.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMaterialsInRe.FlatAppearance.BorderSize = 0;
             this.btnMaterialsInRe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaterialsInRe.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnMaterialsInRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnMaterialsInRe.ForeColor = System.Drawing.Color.White;
             this.btnMaterialsInRe.Location = new System.Drawing.Point(0, 80);
             this.btnMaterialsInRe.Name = "btnMaterialsInRe";
@@ -443,7 +443,7 @@
             this.btnMaterialsInOut.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMaterialsInOut.FlatAppearance.BorderSize = 0;
             this.btnMaterialsInOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaterialsInOut.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnMaterialsInOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnMaterialsInOut.ForeColor = System.Drawing.Color.White;
             this.btnMaterialsInOut.Location = new System.Drawing.Point(0, 51);
             this.btnMaterialsInOut.Name = "btnMaterialsInOut";
@@ -459,7 +459,7 @@
             this.btnMaterials.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMaterials.FlatAppearance.BorderSize = 0;
             this.btnMaterials.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaterials.Font = new System.Drawing.Font("배달의민족 주아", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnMaterials.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnMaterials.ForeColor = System.Drawing.Color.White;
             this.btnMaterials.Image = global::PCBVI.Properties.Resources.Expand_Arrow_20px;
             this.btnMaterials.Location = new System.Drawing.Point(0, 0);
@@ -491,7 +491,7 @@
             this.btnFacilitiesHistory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFacilitiesHistory.FlatAppearance.BorderSize = 0;
             this.btnFacilitiesHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFacilitiesHistory.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnFacilitiesHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnFacilitiesHistory.ForeColor = System.Drawing.Color.White;
             this.btnFacilitiesHistory.Location = new System.Drawing.Point(0, 109);
             this.btnFacilitiesHistory.Name = "btnFacilitiesHistory";
@@ -507,7 +507,7 @@
             this.btnFacilitiesError.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFacilitiesError.FlatAppearance.BorderSize = 0;
             this.btnFacilitiesError.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFacilitiesError.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnFacilitiesError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnFacilitiesError.ForeColor = System.Drawing.Color.White;
             this.btnFacilitiesError.Location = new System.Drawing.Point(0, 80);
             this.btnFacilitiesError.Name = "btnFacilitiesError";
@@ -523,7 +523,7 @@
             this.btnFacilitiesPower.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFacilitiesPower.FlatAppearance.BorderSize = 0;
             this.btnFacilitiesPower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFacilitiesPower.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnFacilitiesPower.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnFacilitiesPower.ForeColor = System.Drawing.Color.White;
             this.btnFacilitiesPower.Location = new System.Drawing.Point(0, 51);
             this.btnFacilitiesPower.Name = "btnFacilitiesPower";
@@ -539,7 +539,7 @@
             this.btnFacilities.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFacilities.FlatAppearance.BorderSize = 0;
             this.btnFacilities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFacilities.Font = new System.Drawing.Font("배달의민족 주아", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnFacilities.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnFacilities.ForeColor = System.Drawing.Color.White;
             this.btnFacilities.Image = global::PCBVI.Properties.Resources.Expand_Arrow_20px;
             this.btnFacilities.Location = new System.Drawing.Point(0, 0);
@@ -571,7 +571,7 @@
             this.btnLastInspection.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLastInspection.FlatAppearance.BorderSize = 0;
             this.btnLastInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLastInspection.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnLastInspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnLastInspection.ForeColor = System.Drawing.Color.Black;
             this.btnLastInspection.Location = new System.Drawing.Point(0, 109);
             this.btnLastInspection.Name = "btnLastInspection";
@@ -587,7 +587,7 @@
             this.btnProcessInspection.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProcessInspection.FlatAppearance.BorderSize = 0;
             this.btnProcessInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcessInspection.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnProcessInspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnProcessInspection.ForeColor = System.Drawing.Color.Black;
             this.btnProcessInspection.Location = new System.Drawing.Point(0, 80);
             this.btnProcessInspection.Name = "btnProcessInspection";
@@ -603,7 +603,7 @@
             this.btnFirstInspection.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFirstInspection.FlatAppearance.BorderSize = 0;
             this.btnFirstInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFirstInspection.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnFirstInspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnFirstInspection.ForeColor = System.Drawing.Color.Black;
             this.btnFirstInspection.Location = new System.Drawing.Point(0, 51);
             this.btnFirstInspection.Name = "btnFirstInspection";
@@ -619,7 +619,7 @@
             this.btnQuality.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQuality.FlatAppearance.BorderSize = 0;
             this.btnQuality.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuality.Font = new System.Drawing.Font("배달의민족 주아", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnQuality.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnQuality.ForeColor = System.Drawing.Color.Black;
             this.btnQuality.Image = global::PCBVI.Properties.Resources.Expand_Arrow_20px;
             this.btnQuality.Location = new System.Drawing.Point(0, 0);
@@ -652,7 +652,7 @@
             this.btnQualityMonitoring.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQualityMonitoring.FlatAppearance.BorderSize = 0;
             this.btnQualityMonitoring.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQualityMonitoring.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnQualityMonitoring.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnQualityMonitoring.ForeColor = System.Drawing.Color.Black;
             this.btnQualityMonitoring.Location = new System.Drawing.Point(0, 138);
             this.btnQualityMonitoring.Name = "btnQualityMonitoring";
@@ -668,7 +668,7 @@
             this.btnFacilitiesMonitoring.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFacilitiesMonitoring.FlatAppearance.BorderSize = 0;
             this.btnFacilitiesMonitoring.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFacilitiesMonitoring.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnFacilitiesMonitoring.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnFacilitiesMonitoring.ForeColor = System.Drawing.Color.Black;
             this.btnFacilitiesMonitoring.Location = new System.Drawing.Point(0, 109);
             this.btnFacilitiesMonitoring.Name = "btnFacilitiesMonitoring";
@@ -684,7 +684,7 @@
             this.btnProStatusMonitoring.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProStatusMonitoring.FlatAppearance.BorderSize = 0;
             this.btnProStatusMonitoring.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProStatusMonitoring.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnProStatusMonitoring.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnProStatusMonitoring.ForeColor = System.Drawing.Color.Black;
             this.btnProStatusMonitoring.Location = new System.Drawing.Point(0, 80);
             this.btnProStatusMonitoring.Name = "btnProStatusMonitoring";
@@ -700,7 +700,7 @@
             this.btnProPerformanceMonitoring.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProPerformanceMonitoring.FlatAppearance.BorderSize = 0;
             this.btnProPerformanceMonitoring.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProPerformanceMonitoring.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnProPerformanceMonitoring.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnProPerformanceMonitoring.ForeColor = System.Drawing.Color.Black;
             this.btnProPerformanceMonitoring.Location = new System.Drawing.Point(0, 51);
             this.btnProPerformanceMonitoring.Name = "btnProPerformanceMonitoring";
@@ -716,7 +716,7 @@
             this.btnMonitoring.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMonitoring.FlatAppearance.BorderSize = 0;
             this.btnMonitoring.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMonitoring.Font = new System.Drawing.Font("배달의민족 주아", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnMonitoring.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnMonitoring.ForeColor = System.Drawing.Color.Black;
             this.btnMonitoring.Image = global::PCBVI.Properties.Resources.Expand_Arrow_20px;
             this.btnMonitoring.Location = new System.Drawing.Point(0, 0);
@@ -748,7 +748,7 @@
             this.btnStockStatistics.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStockStatistics.FlatAppearance.BorderSize = 0;
             this.btnStockStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStockStatistics.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnStockStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnStockStatistics.ForeColor = System.Drawing.Color.White;
             this.btnStockStatistics.Location = new System.Drawing.Point(0, 109);
             this.btnStockStatistics.Name = "btnStockStatistics";
@@ -764,7 +764,7 @@
             this.btnErrorStatistics.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnErrorStatistics.FlatAppearance.BorderSize = 0;
             this.btnErrorStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnErrorStatistics.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnErrorStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnErrorStatistics.ForeColor = System.Drawing.Color.White;
             this.btnErrorStatistics.Location = new System.Drawing.Point(0, 80);
             this.btnErrorStatistics.Name = "btnErrorStatistics";
@@ -780,7 +780,7 @@
             this.btnProductProcessStatistics.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProductProcessStatistics.FlatAppearance.BorderSize = 0;
             this.btnProductProcessStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductProcessStatistics.Font = new System.Drawing.Font("배달의민족 주아", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnProductProcessStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnProductProcessStatistics.ForeColor = System.Drawing.Color.White;
             this.btnProductProcessStatistics.Location = new System.Drawing.Point(0, 51);
             this.btnProductProcessStatistics.Name = "btnProductProcessStatistics";
@@ -796,7 +796,7 @@
             this.btnStatistics.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStatistics.FlatAppearance.BorderSize = 0;
             this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatistics.Font = new System.Drawing.Font("배달의민족 주아", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnStatistics.ForeColor = System.Drawing.Color.White;
             this.btnStatistics.Image = global::PCBVI.Properties.Resources.Expand_Arrow_20px;
             this.btnStatistics.Location = new System.Drawing.Point(0, 0);
