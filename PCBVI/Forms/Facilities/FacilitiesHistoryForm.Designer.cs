@@ -28,37 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.topMenubar1 = new PCBVI.Controls.CommonControl.TopMenubar();
+            this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
             this.naviFacilitiesHistory = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageFacilitiesHistory = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.facilitiesHSC1 = new PCBVI.Controls.Facilities.FacilitiesHSC();
-            this.facilitiesHLC1 = new PCBVI.Controls.Facilities.FacilitiesHLC();
+            this.uscList = new PCBVI.Controls.Facilities.FacilitiesHLC();
+            this.uscSearch = new PCBVI.Controls.Facilities.FacilitiesHSC();
             ((System.ComponentModel.ISupportInitialize)(this.naviFacilitiesHistory)).BeginInit();
             this.naviFacilitiesHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageFacilitiesHistory)).BeginInit();
             this.pageFacilitiesHistory.SuspendLayout();
             this.SuspendLayout();
             // 
-            // topMenubar1
+            // uscTopMenu
             // 
-            this.topMenubar1.BackColor = System.Drawing.Color.White;
-            this.topMenubar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topMenubar1.Location = new System.Drawing.Point(0, 0);
-            this.topMenubar1.Name = "topMenubar1";
-            this.topMenubar1.Size = new System.Drawing.Size(800, 35);
-            this.topMenubar1.TabIndex = 0;
+            this.uscTopMenu.BackColor = System.Drawing.Color.White;
+            this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
+            this.uscTopMenu.Name = "uscTopMenu";
+            this.uscTopMenu.Size = new System.Drawing.Size(800, 35);
+            this.uscTopMenu.TabIndex = 0;
             // 
             // naviFacilitiesHistory
             // 
+            this.naviFacilitiesHistory.Bar.BarMapExtraText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.None;
             this.naviFacilitiesHistory.Bar.BarMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.SmallMedium;
             this.naviFacilitiesHistory.Bar.BarMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.Text;
+            this.naviFacilitiesHistory.Bar.ItemSizing = ComponentFactory.Krypton.Navigator.BarItemSizing.SameHeight;
+            this.naviFacilitiesHistory.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.Context;
             this.naviFacilitiesHistory.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.naviFacilitiesHistory.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.naviFacilitiesHistory.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.None;
             this.naviFacilitiesHistory.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.naviFacilitiesHistory.Button.ContextMenuMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
+            this.naviFacilitiesHistory.Button.ContextMenuMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
+            this.naviFacilitiesHistory.Button.NextButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
+            this.naviFacilitiesHistory.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
+            this.naviFacilitiesHistory.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
+            this.naviFacilitiesHistory.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.naviFacilitiesHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.naviFacilitiesHistory.Location = new System.Drawing.Point(0, 35);
             this.naviFacilitiesHistory.Name = "naviFacilitiesHistory";
+            this.naviFacilitiesHistory.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarTabGroup;
             this.naviFacilitiesHistory.Padding = new System.Windows.Forms.Padding(3);
             this.naviFacilitiesHistory.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageFacilitiesHistory});
@@ -72,8 +82,8 @@
             // pageFacilitiesHistory
             // 
             this.pageFacilitiesHistory.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.pageFacilitiesHistory.Controls.Add(this.facilitiesHLC1);
-            this.pageFacilitiesHistory.Controls.Add(this.facilitiesHSC1);
+            this.pageFacilitiesHistory.Controls.Add(this.uscList);
+            this.pageFacilitiesHistory.Controls.Add(this.uscSearch);
             this.pageFacilitiesHistory.Flags = 65534;
             this.pageFacilitiesHistory.LastVisibleSet = true;
             this.pageFacilitiesHistory.MinimumSize = new System.Drawing.Size(50, 50);
@@ -83,21 +93,22 @@
             this.pageFacilitiesHistory.ToolTipTitle = "Page ToolTip";
             this.pageFacilitiesHistory.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
             // 
-            // facilitiesHSC1
+            // uscList
             // 
-            this.facilitiesHSC1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.facilitiesHSC1.Location = new System.Drawing.Point(0, 0);
-            this.facilitiesHSC1.Name = "facilitiesHSC1";
-            this.facilitiesHSC1.Size = new System.Drawing.Size(798, 109);
-            this.facilitiesHSC1.TabIndex = 0;
+            this.uscList.AutoScroll = true;
+            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscList.Location = new System.Drawing.Point(0, 109);
+            this.uscList.Name = "uscList";
+            this.uscList.Size = new System.Drawing.Size(798, 277);
+            this.uscList.TabIndex = 1;
             // 
-            // facilitiesHLC1
+            // uscSearch
             // 
-            this.facilitiesHLC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.facilitiesHLC1.Location = new System.Drawing.Point(0, 109);
-            this.facilitiesHLC1.Name = "facilitiesHLC1";
-            this.facilitiesHLC1.Size = new System.Drawing.Size(798, 277);
-            this.facilitiesHLC1.TabIndex = 1;
+            this.uscSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscSearch.Location = new System.Drawing.Point(0, 0);
+            this.uscSearch.Name = "uscSearch";
+            this.uscSearch.Size = new System.Drawing.Size(798, 109);
+            this.uscSearch.TabIndex = 0;
             // 
             // FacilitiesHistoryForm
             // 
@@ -105,7 +116,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.naviFacilitiesHistory);
-            this.Controls.Add(this.topMenubar1);
+            this.Controls.Add(this.uscTopMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FacilitiesHistoryForm";
             this.Text = "FacilitiesHistoryForm";
@@ -119,10 +130,10 @@
 
         #endregion
 
-        private Controls.CommonControl.TopMenubar topMenubar1;
+        private Controls.CommonControl.TopMenubar uscTopMenu;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator naviFacilitiesHistory;
         private ComponentFactory.Krypton.Navigator.KryptonPage pageFacilitiesHistory;
-        private Controls.Facilities.FacilitiesHSC facilitiesHSC1;
-        private Controls.Facilities.FacilitiesHLC facilitiesHLC1;
+        private Controls.Facilities.FacilitiesHSC uscSearch;
+        private Controls.Facilities.FacilitiesHLC uscList;
     }
 }

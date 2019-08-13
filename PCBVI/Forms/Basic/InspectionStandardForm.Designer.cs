@@ -30,9 +30,9 @@
         {
             this.naviEmployee = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageEmployee = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.inspectionStandardSearch1 = new PCBVI.Controls.Basic.InspectionStandard.InspectionStandardSearch();
-            this.topMenubar1 = new PCBVI.Controls.CommonControl.TopMenubar();
-            this.inspectionStandardList1 = new PCBVI.Controls.Basic.InspectionStandard.InspectionStandardList();
+            this.uscList = new PCBVI.Controls.Basic.InspectionStandard.InspectionStandardList();
+            this.uscSearch = new PCBVI.Controls.Basic.InspectionStandard.InspectionStandardSearch();
+            this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
             ((System.ComponentModel.ISupportInitialize)(this.naviEmployee)).BeginInit();
             this.naviEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageEmployee)).BeginInit();
@@ -41,15 +41,25 @@
             // 
             // naviEmployee
             // 
+            this.naviEmployee.Bar.BarMapExtraText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.None;
             this.naviEmployee.Bar.BarMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.SmallMedium;
             this.naviEmployee.Bar.BarMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.Text;
+            this.naviEmployee.Bar.ItemSizing = ComponentFactory.Krypton.Navigator.BarItemSizing.SameHeight;
+            this.naviEmployee.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.Context;
             this.naviEmployee.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.naviEmployee.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.naviEmployee.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.None;
             this.naviEmployee.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.naviEmployee.Button.ContextMenuMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
+            this.naviEmployee.Button.ContextMenuMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
+            this.naviEmployee.Button.NextButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
+            this.naviEmployee.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
+            this.naviEmployee.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
+            this.naviEmployee.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.naviEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.naviEmployee.Location = new System.Drawing.Point(0, 35);
             this.naviEmployee.Name = "naviEmployee";
+            this.naviEmployee.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarTabGroup;
             this.naviEmployee.Padding = new System.Windows.Forms.Padding(3);
             this.naviEmployee.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageEmployee});
@@ -63,8 +73,8 @@
             // pageEmployee
             // 
             this.pageEmployee.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.pageEmployee.Controls.Add(this.inspectionStandardList1);
-            this.pageEmployee.Controls.Add(this.inspectionStandardSearch1);
+            this.pageEmployee.Controls.Add(this.uscList);
+            this.pageEmployee.Controls.Add(this.uscSearch);
             this.pageEmployee.Flags = 65534;
             this.pageEmployee.LastVisibleSet = true;
             this.pageEmployee.MinimumSize = new System.Drawing.Size(50, 50);
@@ -74,30 +84,30 @@
             this.pageEmployee.ToolTipTitle = "Page ToolTip";
             this.pageEmployee.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
             // 
-            // inspectionStandardSearch1
+            // uscList
             // 
-            this.inspectionStandardSearch1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.inspectionStandardSearch1.Location = new System.Drawing.Point(0, 0);
-            this.inspectionStandardSearch1.Name = "inspectionStandardSearch1";
-            this.inspectionStandardSearch1.Size = new System.Drawing.Size(798, 69);
-            this.inspectionStandardSearch1.TabIndex = 0;
+            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscList.Location = new System.Drawing.Point(0, 69);
+            this.uscList.Name = "uscList";
+            this.uscList.Size = new System.Drawing.Size(798, 315);
+            this.uscList.TabIndex = 1;
             // 
-            // topMenubar1
+            // uscSearch
             // 
-            this.topMenubar1.BackColor = System.Drawing.Color.White;
-            this.topMenubar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topMenubar1.Location = new System.Drawing.Point(0, 0);
-            this.topMenubar1.Name = "topMenubar1";
-            this.topMenubar1.Size = new System.Drawing.Size(800, 35);
-            this.topMenubar1.TabIndex = 0;
+            this.uscSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscSearch.Location = new System.Drawing.Point(0, 0);
+            this.uscSearch.Name = "uscSearch";
+            this.uscSearch.Size = new System.Drawing.Size(798, 69);
+            this.uscSearch.TabIndex = 0;
             // 
-            // inspectionStandardList1
+            // uscTopMenu
             // 
-            this.inspectionStandardList1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inspectionStandardList1.Location = new System.Drawing.Point(0, 69);
-            this.inspectionStandardList1.Name = "inspectionStandardList1";
-            this.inspectionStandardList1.Size = new System.Drawing.Size(798, 315);
-            this.inspectionStandardList1.TabIndex = 1;
+            this.uscTopMenu.BackColor = System.Drawing.Color.White;
+            this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
+            this.uscTopMenu.Name = "uscTopMenu";
+            this.uscTopMenu.Size = new System.Drawing.Size(800, 35);
+            this.uscTopMenu.TabIndex = 0;
             // 
             // InspectionStForm
             // 
@@ -105,7 +115,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.naviEmployee);
-            this.Controls.Add(this.topMenubar1);
+            this.Controls.Add(this.uscTopMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InspectionStForm";
             this.Text = "InspectionStForm";
@@ -119,10 +129,10 @@
 
         #endregion
 
-        private Controls.CommonControl.TopMenubar topMenubar1;
+        private Controls.CommonControl.TopMenubar uscTopMenu;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator naviEmployee;
         private ComponentFactory.Krypton.Navigator.KryptonPage pageEmployee;
-        private Controls.Basic.InspectionStandard.InspectionStandardSearch inspectionStandardSearch1;
-        private Controls.Basic.InspectionStandard.InspectionStandardList inspectionStandardList1;
+        private Controls.Basic.InspectionStandard.InspectionStandardSearch uscSearch;
+        private Controls.Basic.InspectionStandard.InspectionStandardList uscList;
     }
 }
