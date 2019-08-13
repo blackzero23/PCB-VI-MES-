@@ -168,16 +168,16 @@
     <Compile Include="Controls\MainControls\MainMenulistControl.Designer.cs">
       <DependentUpon>MainMenulistControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SubjectControl\SubjectGrid.cs">
+    <Compile Include="Controls\Basic\SubjectControl\SubjectGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\SubjectControl\SubjectGrid.Designer.cs">
+    <Compile Include="Controls\Basic\SubjectControl\SubjectGrid.Designer.cs">
       <DependentUpon>SubjectGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SubjectControl\SubjectSearch.cs">
+    <Compile Include="Controls\Basic\SubjectControl\SubjectSearch.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\SubjectControl\SubjectSearch.Designer.cs">
+    <Compile Include="Controls\Basic\SubjectControl\SubjectSearch.Designer.cs">
       <DependentUpon>SubjectSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Basic\BarcodeForm.cs">
@@ -410,10 +410,10 @@
     <EmbeddedResource Include="Controls\MainControls\MainMenulistControl.resx">
       <DependentUpon>MainMenulistControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\SubjectControl\SubjectGrid.resx">
+    <EmbeddedResource Include="Controls\Basic\SubjectControl\SubjectGrid.resx">
       <DependentUpon>SubjectGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\SubjectControl\SubjectSearch.resx">
+    <EmbeddedResource Include="Controls\Basic\SubjectControl\SubjectSearch.resx">
       <DependentUpon>SubjectSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\BarcodeForm.resx">

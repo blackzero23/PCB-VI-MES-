@@ -1,4 +1,4 @@
-﻿namespace PCBVI.Controls.SubjectControl
+﻿namespace PCBVI.Controls.Basic.SubjectControl
 {
     partial class SubjectSearch
     {

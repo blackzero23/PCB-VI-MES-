@@ -30,8 +30,8 @@
         {
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.subjectGrid1 = new PCBVI.Controls.SubjectControl.SubjectGrid();
-            this.subjectSearch1 = new PCBVI.Controls.SubjectControl.SubjectSearch();
+            this.subjectGrid1 = new PCBVI.Controls.Basic.SubjectControl.SubjectGrid();
+            this.subjectSearch1 = new PCBVI.Controls.Basic.SubjectControl.SubjectSearch();
             this.topMenubar1 = new PCBVI.Controls.CommonControl.TopMenubar();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).BeginInit();
             this.kryptonNavigator1.SuspendLayout();
@@ -113,10 +113,10 @@
 
         #endregion
 
-        private Controls.SubjectControl.SubjectSearch subjectSearch1;
+        private Controls.Basic.SubjectControl.SubjectSearch subjectSearch1;
         private Controls.CommonControl.TopMenubar topMenubar1;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator kryptonNavigator1;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage1;
-        private Controls.SubjectControl.SubjectGrid subjectGrid1;
+        private Controls.Basic.SubjectControl.SubjectGrid subjectGrid1;
     }
 }

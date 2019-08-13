@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PCBVI.Controls.SubjectControl
+namespace PCBVI.Controls.Basic.SubjectControl
 {
-    public partial class SubjectSearch : UserControl
+    public partial class SubjectGrid : UserControl
     {
-        public SubjectSearch()
+        public SubjectGrid()
         {
             InitializeComponent();
         }

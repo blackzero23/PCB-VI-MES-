@@ -1,4 +1,4 @@
-﻿namespace PCBVI.Controls.SubjectControl
+﻿namespace PCBVI.Controls.Basic.SubjectControl
 {
     partial class SubjectGrid
     {
@@ -66,7 +66,6 @@
             // 
             // productBds
             // 
-            this.productBds.DataSource = typeof(PCBVI.Data.Product);
             // 
             // productIdDataGridViewTextBoxColumn
             // 
