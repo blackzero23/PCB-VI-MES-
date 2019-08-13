@@ -145,6 +145,24 @@
     <Compile Include="Controls\Basic\ErrorCode\ErrorCodeSearch.Designer.cs">
       <DependentUpon>ErrorCodeSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Basic\Facilities\FacilitiesList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Basic\Facilities\FacilitiesList.Designer.cs">
+      <DependentUpon>FacilitiesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Basic\Facilities\FacilitiesSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Basic\Facilities\FacilitiesSearch.Designer.cs">
+      <DependentUpon>FacilitiesSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Basic\Facilities\FacilitiesSpec.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Basic\Facilities\FacilitiesSpec.Designer.cs">
+      <DependentUpon>FacilitiesSpec.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Basic\InspectionStandard\InspectionStandardList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -483,6 +501,15 @@
     <EmbeddedResource Include="Controls\Basic\ErrorCode\ErrorCodeSearch.resx">
       <DependentUpon>ErrorCodeSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Basic\Facilities\FacilitiesList.resx">
+      <DependentUpon>FacilitiesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Basic\Facilities\FacilitiesSearch.resx">
+      <DependentUpon>FacilitiesSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Basic\Facilities\FacilitiesSpec.resx">
+      <DependentUpon>FacilitiesSpec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Basic\InspectionStandard\InspectionStandardList.resx">
       <DependentUpon>InspectionStandardList.cs</DependentUpon>
     </EmbeddedResource>
@@ -655,6 +682,7 @@
     <None Include="Properties\DataSources\PCBVI.Data.Employee.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.ErrorCode.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.FacilitiesHistory.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.Facility.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.InspectionStandard.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Process.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Product.datasource" />
