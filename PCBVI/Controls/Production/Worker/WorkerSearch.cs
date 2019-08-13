@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PCBVI.Controls.Production.Worker
 {
-    public partial class WorkderTopMenu : UserControl
+    public partial class WorkerSearch : UserControl
     {
-        public WorkderTopMenu()
+        public WorkerSearch()
         {
             InitializeComponent();
         }
