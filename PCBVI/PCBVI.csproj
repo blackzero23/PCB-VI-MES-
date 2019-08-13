@@ -277,6 +277,18 @@
     <Compile Include="Controls\Quality\FirstInspectionSearch.Designer.cs">
       <DependentUpon>FirstInspectionSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Quality\LastInspectionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Quality\LastInspectionList.Designer.cs">
+      <DependentUpon>LastInspectionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Quality\LastInspectionSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Quality\LastInspectionSearch.Designer.cs">
+      <DependentUpon>LastInspectionSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Basic\BarcodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -560,6 +572,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Quality\FirstInspectionSearch.resx">
       <DependentUpon>FirstInspectionSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Quality\LastInspectionList.resx">
+      <DependentUpon>LastInspectionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Quality\LastInspectionSearch.resx">
+      <DependentUpon>LastInspectionSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\BarcodeForm.resx">
       <DependentUpon>BarcodeForm.cs</DependentUpon>
