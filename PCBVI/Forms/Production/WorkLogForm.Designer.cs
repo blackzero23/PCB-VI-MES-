@@ -67,7 +67,7 @@
             this.kryptonPage1,
             this.WorkLogEnrollment,
             this.WorkLogInquire});
-            this.kryptonNavigator1.SelectedIndex = 0;
+            this.kryptonNavigator1.SelectedIndex = 1;
             this.kryptonNavigator1.Size = new System.Drawing.Size(800, 415);
             this.kryptonNavigator1.TabIndex = 1;
             this.kryptonNavigator1.Text = "kryptonNavigator1";

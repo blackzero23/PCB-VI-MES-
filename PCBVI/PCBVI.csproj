@@ -97,6 +97,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -192,6 +193,36 @@
     <Compile Include="Controls\Materials\MaterialsHSC.Designer.cs">
       <DependentUpon>MaterialsHSC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductGridView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductGridView.Designer.cs">
+      <DependentUpon>DefectiveProductGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductSearchMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductSearchMenu.Designer.cs">
+      <DependentUpon>DefectiveProductSearchMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Production\ProcessDefect\ProcessDefectChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\ProcessDefect\ProcessDefectChart.Designer.cs">
+      <DependentUpon>ProcessDefectChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Production\ProcessDefect\ProcessDefectGridView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\ProcessDefect\ProcessDefectGridView.Designer.cs">
+      <DependentUpon>ProcessDefectGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Production\ProcessDefect\ProcessDefectSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\ProcessDefect\ProcessDefectSearch.Designer.cs">
+      <DependentUpon>ProcessDefectSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Production\Worker\WorkerGridView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -227,6 +258,12 @@
     </Compile>
     <Compile Include="Controls\Production\WorkLog\WorkLogInquirePopUp.Designer.cs">
       <DependentUpon>WorkLogInquirePopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Statistics\StockStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Statistics\StockStatistics.Designer.cs">
+      <DependentUpon>StockStatistics.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Basic\BarcodeForm.cs">
       <SubType>Form</SubType>
@@ -354,6 +391,12 @@
     <Compile Include="Forms\Production\DefectiveProductForm.Designer.cs">
       <DependentUpon>DefectiveProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Production\DefectiveProductPopUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\DefectiveProductPopUpForm.Designer.cs">
+      <DependentUpon>DefectiveProductPopUpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Production\MaterialsManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,6 +408,12 @@
     </Compile>
     <Compile Include="Forms\Production\ProcessDefectForm.Designer.cs">
       <DependentUpon>ProcessDefectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Production\ProcessDefectPopUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\ProcessDefectPopUpForm.Designer.cs">
+      <DependentUpon>ProcessDefectPopUpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Production\ProductionHistoryForm.cs">
       <SubType>Form</SubType>
@@ -470,6 +519,21 @@
     <EmbeddedResource Include="Controls\Materials\MaterialsHSC.resx">
       <DependentUpon>MaterialsHSC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\DefectiveProduct\DefectiveProductGridView.resx">
+      <DependentUpon>DefectiveProductGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\DefectiveProduct\DefectiveProductSearchMenu.resx">
+      <DependentUpon>DefectiveProductSearchMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\ProcessDefect\ProcessDefectChart.resx">
+      <DependentUpon>ProcessDefectChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\ProcessDefect\ProcessDefectGridView.resx">
+      <DependentUpon>ProcessDefectGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\ProcessDefect\ProcessDefectSearch.resx">
+      <DependentUpon>ProcessDefectSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Production\Worker\WorkerGridView.resx">
       <DependentUpon>WorkerGridView.cs</DependentUpon>
     </EmbeddedResource>
@@ -487,6 +551,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Production\WorkLog\WorkLogInquirePopUp.resx">
       <DependentUpon>WorkLogInquirePopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Statistics\StockStatistics.resx">
+      <DependentUpon>StockStatistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\BarcodeForm.resx">
       <DependentUpon>BarcodeForm.cs</DependentUpon>
@@ -551,11 +618,17 @@
     <EmbeddedResource Include="Forms\Production\DefectiveProductForm.resx">
       <DependentUpon>DefectiveProductForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\DefectiveProductPopUpForm.resx">
+      <DependentUpon>DefectiveProductPopUpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\MaterialsManageForm.resx">
       <DependentUpon>MaterialsManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\ProcessDefectForm.resx">
       <DependentUpon>ProcessDefectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\ProcessDefectPopUpForm.resx">
+      <DependentUpon>ProcessDefectPopUpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\ProductionHistoryForm.resx">
       <DependentUpon>ProductionHistoryForm.cs</DependentUpon>
