@@ -180,9 +180,18 @@
     <Compile Include="Controls\Basic\SubjectControl\SubjectSearch.Designer.cs">
       <DependentUpon>SubjectSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Materials\MaterialsHLC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Materials\MaterialsHLC.Designer.cs">
+      <DependentUpon>MaterialsHLC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Materials\MaterialsHSC.cs">
     <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductGridView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\Materials\MaterialsHSC.Designer.cs">
+      <DependentUpon>MaterialsHSC.cs</DependentUpon>
     <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductGridView.Designer.cs">
       <DependentUpon>DefectiveProductGridView.cs</DependentUpon>
     </Compile>
@@ -191,6 +200,12 @@
     </Compile>
     <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductTopMenu.Designer.cs">
       <DependentUpon>DefectiveProductTopMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Production\Worker\WorkerSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\Worker\WorkerSearch.Designer.cs">
+      <DependentUpon>WorkerSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Production\WorkLog\WorkLogCommonMenu.cs">
       <SubType>UserControl</SubType>
@@ -460,9 +475,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Production\DefectiveProduct\DefectiveProductGridView.resx">
       <DependentUpon>DefectiveProductGridView.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Materials\MaterialsHLC.resx">
+      <DependentUpon>MaterialsHLC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Materials\MaterialsHSC.resx">
+      <DependentUpon>MaterialsHSC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Production\DefectiveProduct\DefectiveProductTopMenu.resx">
       <DependentUpon>DefectiveProductTopMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\Worker\WorkerSearch.resx">
+      <DependentUpon>WorkerSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Production\WorkLog\WorkLogCommonMenu.resx">
       <DependentUpon>WorkLogCommonMenu.cs</DependentUpon>
