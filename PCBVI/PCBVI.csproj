@@ -205,6 +205,18 @@
     <Compile Include="Controls\Materials\MaterialsHSC.Designer.cs">
       <DependentUpon>MaterialsHSC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Production\ProductionHistory\ProductionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\ProductionHistory\ProductionList.Designer.cs">
+      <DependentUpon>ProductionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Production\ProductionHistory\ProductionSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\ProductionHistory\ProductionSearch.Designer.cs">
+      <DependentUpon>ProductionSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Production\Worker\WorkerGridView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -488,6 +500,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Materials\MaterialsHSC.resx">
       <DependentUpon>MaterialsHSC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\ProductionHistory\ProductionList.resx">
+      <DependentUpon>ProductionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\ProductionHistory\ProductionSearch.resx">
+      <DependentUpon>ProductionSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Production\Worker\WorkerGridView.resx">
       <DependentUpon>WorkerGridView.cs</DependentUpon>
