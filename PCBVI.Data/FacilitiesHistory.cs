@@ -14,7 +14,7 @@ namespace PCBVI.Data
     
     public partial class FacilitiesHistory
     {
-        public string FacilitiesHistoryId { get; set; }
+        public int FacilitiesHistoryId { get; set; }
         public System.DateTime WorkDate { get; set; }
         public int FacilitiesId { get; set; }
         public string Place { get; set; }

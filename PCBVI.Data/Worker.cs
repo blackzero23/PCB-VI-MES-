@@ -14,7 +14,7 @@ namespace PCBVI.Data
     
     public partial class Worker
     {
-        public string WorkerId { get; set; }
+        public int WorkerId { get; set; }
         public int EmployeeId { get; set; }
         public int ProcessId { get; set; }
         public int FacilitiesId { get; set; }
