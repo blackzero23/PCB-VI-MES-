@@ -180,6 +180,42 @@
     <Compile Include="Controls\Basic\SubjectControl\SubjectSearch.Designer.cs">
       <DependentUpon>SubjectSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Production\Worker\WorkderTopMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\Worker\WorkderTopMenu.Designer.cs">
+      <DependentUpon>WorkderTopMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Production\Worker\WorkerGridView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\Worker\WorkerGridView.Designer.cs">
+      <DependentUpon>WorkerGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Production\WorkLog\WorkLogCommonMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\WorkLog\WorkLogCommonMenu.Designer.cs">
+      <DependentUpon>WorkLogCommonMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Production\WorkLog\WorkLogEnrollment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\WorkLog\WorkLogEnrollment.Designer.cs">
+      <DependentUpon>WorkLogEnrollment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Production\WorkLog\WorkLogInquire.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\WorkLog\WorkLogInquire.Designer.cs">
+      <DependentUpon>WorkLogInquire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Production\WorkLog\WorkLogInquirePopUp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\WorkLog\WorkLogInquirePopUp.Designer.cs">
+      <DependentUpon>WorkLogInquirePopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Basic\BarcodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -416,6 +452,24 @@
     <EmbeddedResource Include="Controls\Basic\SubjectControl\SubjectSearch.resx">
       <DependentUpon>SubjectSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\Worker\WorkderTopMenu.resx">
+      <DependentUpon>WorkderTopMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\Worker\WorkerGridView.resx">
+      <DependentUpon>WorkerGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\WorkLog\WorkLogCommonMenu.resx">
+      <DependentUpon>WorkLogCommonMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\WorkLog\WorkLogEnrollment.resx">
+      <DependentUpon>WorkLogEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\WorkLog\WorkLogInquire.resx">
+      <DependentUpon>WorkLogInquire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\WorkLog\WorkLogInquirePopUp.resx">
+      <DependentUpon>WorkLogInquirePopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\BarcodeForm.resx">
       <DependentUpon>BarcodeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -626,5 +680,6 @@
       <Name>PCBVI.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
