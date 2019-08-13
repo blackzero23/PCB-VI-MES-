@@ -54,7 +54,7 @@
             // kryptonButton1
             // 
             this.kryptonButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonButton1.Location = new System.Drawing.Point(689, 263);
+            this.kryptonButton1.Location = new System.Drawing.Point(558, 311);
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.Size = new System.Drawing.Size(108, 44);
             this.kryptonButton1.TabIndex = 2;
@@ -68,7 +68,7 @@
             this.Controls.Add(this.kryptonRichTextBox1);
             this.Controls.Add(this.kryptonLabel1);
             this.Name = "WorkLogEnrollment";
-            this.Size = new System.Drawing.Size(800, 310);
+            this.Size = new System.Drawing.Size(800, 358);
             this.ResumeLayout(false);
             this.PerformLayout();
 

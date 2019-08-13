@@ -180,17 +180,17 @@
     <Compile Include="Controls\Basic\SubjectControl\SubjectSearch.Designer.cs">
       <DependentUpon>SubjectSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Production\Worker\WorkderTopMenu.cs">
+    <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductGridView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Production\Worker\WorkderTopMenu.Designer.cs">
-      <DependentUpon>WorkderTopMenu.cs</DependentUpon>
+    <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductGridView.Designer.cs">
+      <DependentUpon>DefectiveProductGridView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Production\Worker\WorkerGridView.cs">
+    <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductTopMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Production\Worker\WorkerGridView.Designer.cs">
-      <DependentUpon>WorkerGridView.cs</DependentUpon>
+    <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductTopMenu.Designer.cs">
+      <DependentUpon>DefectiveProductTopMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Production\WorkLog\WorkLogCommonMenu.cs">
       <SubType>UserControl</SubType>
@@ -342,6 +342,12 @@
     <Compile Include="Forms\Production\DefectiveProductForm.Designer.cs">
       <DependentUpon>DefectiveProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Production\DefectiveProductPopUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\DefectiveProductPopUpForm.Designer.cs">
+      <DependentUpon>DefectiveProductPopUpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Production\MaterialsManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -452,11 +458,11 @@
     <EmbeddedResource Include="Controls\Basic\SubjectControl\SubjectSearch.resx">
       <DependentUpon>SubjectSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Production\Worker\WorkderTopMenu.resx">
-      <DependentUpon>WorkderTopMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Production\DefectiveProduct\DefectiveProductGridView.resx">
+      <DependentUpon>DefectiveProductGridView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Production\Worker\WorkerGridView.resx">
-      <DependentUpon>WorkerGridView.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Production\DefectiveProduct\DefectiveProductTopMenu.resx">
+      <DependentUpon>DefectiveProductTopMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Production\WorkLog\WorkLogCommonMenu.resx">
       <DependentUpon>WorkLogCommonMenu.cs</DependentUpon>
@@ -532,6 +538,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\DefectiveProductForm.resx">
       <DependentUpon>DefectiveProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\DefectiveProductPopUpForm.resx">
+      <DependentUpon>DefectiveProductPopUpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\MaterialsManageForm.resx">
       <DependentUpon>MaterialsManageForm.cs</DependentUpon>

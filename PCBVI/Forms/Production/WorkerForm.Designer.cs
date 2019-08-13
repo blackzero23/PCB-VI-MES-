@@ -31,8 +31,6 @@
             this.topMenubar1 = new PCBVI.Controls.CommonControl.TopMenubar();
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.workderTopMenu1 = new PCBVI.Controls.Production.Worker.WorkderTopMenu();
-            this.workerGridView1 = new PCBVI.Controls.Production.Worker.WorkerGridView();
             this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).BeginInit();
             this.kryptonNavigator1.SuspendLayout();
@@ -67,8 +65,6 @@
             // 
             this.kryptonPage1.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
             this.kryptonPage1.Controls.Add(this.kryptonTextBox1);
-            this.kryptonPage1.Controls.Add(this.workerGridView1);
-            this.kryptonPage1.Controls.Add(this.workderTopMenu1);
             this.kryptonPage1.Flags = 65534;
             this.kryptonPage1.LastVisibleSet = true;
             this.kryptonPage1.MinimumSize = new System.Drawing.Size(50, 50);
@@ -80,19 +76,9 @@
             // 
             // workderTopMenu1
             // 
-            this.workderTopMenu1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.workderTopMenu1.Location = new System.Drawing.Point(0, 0);
-            this.workderTopMenu1.Name = "workderTopMenu1";
-            this.workderTopMenu1.Size = new System.Drawing.Size(798, 75);
-            this.workderTopMenu1.TabIndex = 0;
             // 
             // workerGridView1
             // 
-            this.workerGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.workerGridView1.Location = new System.Drawing.Point(0, 75);
-            this.workerGridView1.Name = "workerGridView1";
-            this.workerGridView1.Size = new System.Drawing.Size(798, 313);
-            this.workerGridView1.TabIndex = 1;
             // 
             // kryptonTextBox1
             // 
@@ -126,8 +112,6 @@
         private Controls.CommonControl.TopMenubar topMenubar1;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator kryptonNavigator1;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage1;
-        private Controls.Production.Worker.WorkderTopMenu workderTopMenu1;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
-        private Controls.Production.Worker.WorkerGridView workerGridView1;
     }
 }

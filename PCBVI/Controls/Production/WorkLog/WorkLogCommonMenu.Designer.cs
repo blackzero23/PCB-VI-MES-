@@ -64,6 +64,7 @@
             // 
             this.kryptonDateTimePicker1.Location = new System.Drawing.Point(284, 27);
             this.kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
+            this.kryptonDateTimePicker1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.kryptonDateTimePicker1.Size = new System.Drawing.Size(114, 21);
             this.kryptonDateTimePicker1.TabIndex = 3;
             // 
@@ -84,8 +85,6 @@
             // 
             // kryptonButton1
             // 
-            this.kryptonButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonButton1.Location = new System.Drawing.Point(707, 27);
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.Size = new System.Drawing.Size(90, 25);

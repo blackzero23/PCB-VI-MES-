@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PCBVI.Controls.Production.Worker
+namespace PCBVI.Forms.Production
 {
-    public partial class WorkderTopMenu : UserControl
+    public partial class DefectiveProductPopUpForm : Form
     {
-        public WorkderTopMenu()
+        public DefectiveProductPopUpForm()
         {
             InitializeComponent();
         }
