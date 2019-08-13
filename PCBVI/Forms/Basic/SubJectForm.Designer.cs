@@ -30,9 +30,9 @@
         {
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.subjectGrid1 = new PCBVI.Controls.Basic.SubjectControl.SubjectGrid();
-            this.subjectSearch1 = new PCBVI.Controls.Basic.SubjectControl.SubjectSearch();
-            this.topMenubar1 = new PCBVI.Controls.CommonControl.TopMenubar();
+            this.uscList = new PCBVI.Controls.Basic.SubjectControl.SubjectGrid();
+            this.uscSearch = new PCBVI.Controls.Basic.SubjectControl.SubjectSearch();
+            this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).BeginInit();
             this.kryptonNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).BeginInit();
@@ -44,9 +44,18 @@
             this.kryptonNavigator1.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.None;
             this.kryptonNavigator1.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.kryptonNavigator1.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.kryptonNavigator1.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.SelectPage;
+            this.kryptonNavigator1.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
+            this.kryptonNavigator1.Button.ContextMenuMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
+            this.kryptonNavigator1.Button.ContextMenuMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
+            this.kryptonNavigator1.Button.NextButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
+            this.kryptonNavigator1.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
+            this.kryptonNavigator1.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
+            this.kryptonNavigator1.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.kryptonNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonNavigator1.Location = new System.Drawing.Point(0, 35);
             this.kryptonNavigator1.Name = "kryptonNavigator1";
+            this.kryptonNavigator1.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarTabGroup;
             this.kryptonNavigator1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage1});
             this.kryptonNavigator1.SelectedIndex = 0;
@@ -57,8 +66,8 @@
             // kryptonPage1
             // 
             this.kryptonPage1.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kryptonPage1.Controls.Add(this.subjectGrid1);
-            this.kryptonPage1.Controls.Add(this.subjectSearch1);
+            this.kryptonPage1.Controls.Add(this.uscList);
+            this.kryptonPage1.Controls.Add(this.uscSearch);
             this.kryptonPage1.Flags = 65534;
             this.kryptonPage1.LastVisibleSet = true;
             this.kryptonPage1.MinimumSize = new System.Drawing.Size(50, 50);
@@ -68,30 +77,31 @@
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "959E674ED33C4409AA829284582CFFF9";
             // 
-            // subjectGrid1
+            // uscList
             // 
-            this.subjectGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.subjectGrid1.Location = new System.Drawing.Point(0, 75);
-            this.subjectGrid1.Name = "subjectGrid1";
-            this.subjectGrid1.Size = new System.Drawing.Size(947, 313);
-            this.subjectGrid1.TabIndex = 1;
+            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscList.Location = new System.Drawing.Point(0, 75);
+            this.uscList.Name = "uscList";
+            this.uscList.Size = new System.Drawing.Size(947, 313);
+            this.uscList.TabIndex = 1;
             // 
-            // subjectSearch1
+            // uscSearch
             // 
-            this.subjectSearch1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.subjectSearch1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.subjectSearch1.Location = new System.Drawing.Point(0, 0);
-            this.subjectSearch1.Name = "subjectSearch1";
-            this.subjectSearch1.Size = new System.Drawing.Size(947, 75);
-            this.subjectSearch1.TabIndex = 0;
+            this.uscSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.uscSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscSearch.Location = new System.Drawing.Point(0, 0);
+            this.uscSearch.Name = "uscSearch";
+            this.uscSearch.Size = new System.Drawing.Size(947, 75);
+            this.uscSearch.TabIndex = 0;
             // 
-            // topMenubar1
+            // uscTopMenu
             // 
-            this.topMenubar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topMenubar1.Location = new System.Drawing.Point(0, 0);
-            this.topMenubar1.Name = "topMenubar1";
-            this.topMenubar1.Size = new System.Drawing.Size(949, 35);
-            this.topMenubar1.TabIndex = 1;
+            this.uscTopMenu.BackColor = System.Drawing.Color.White;
+            this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
+            this.uscTopMenu.Name = "uscTopMenu";
+            this.uscTopMenu.Size = new System.Drawing.Size(949, 35);
+            this.uscTopMenu.TabIndex = 1;
             // 
             // SubJectForm
             // 
@@ -99,7 +109,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 450);
             this.Controls.Add(this.kryptonNavigator1);
-            this.Controls.Add(this.topMenubar1);
+            this.Controls.Add(this.uscTopMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SubJectForm";
             this.Text = "SubJectForm";
@@ -113,10 +123,10 @@
 
         #endregion
 
-        private Controls.Basic.SubjectControl.SubjectSearch subjectSearch1;
-        private Controls.CommonControl.TopMenubar topMenubar1;
+        private Controls.Basic.SubjectControl.SubjectSearch uscSearch;
+        private Controls.CommonControl.TopMenubar uscTopMenu;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator kryptonNavigator1;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage1;
-        private Controls.Basic.SubjectControl.SubjectGrid subjectGrid1;
+        private Controls.Basic.SubjectControl.SubjectGrid uscList;
     }
 }

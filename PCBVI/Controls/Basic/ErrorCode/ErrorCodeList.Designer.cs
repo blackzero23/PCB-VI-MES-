@@ -30,12 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.errorCodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorKindDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.useStateDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.explanationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.errorCodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCodeBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +48,6 @@
             this.codeDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.errorKindDataGridViewTextBoxColumn,
-            this.useStateDataGridViewCheckBoxColumn,
             this.explanationDataGridViewTextBoxColumn});
             this.dgvList.DataSource = this.errorCodeBindingSource;
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -59,39 +57,33 @@
             this.dgvList.Size = new System.Drawing.Size(703, 150);
             this.dgvList.TabIndex = 0;
             // 
+            // errorCodeBindingSource
+            // 
+            this.errorCodeBindingSource.DataSource = typeof(PCBVI.Data.ErrorCode);
+            // 
             // codeDataGridViewTextBoxColumn
             // 
             this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "불량코드";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
             this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "불량유형명";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // errorKindDataGridViewTextBoxColumn
             // 
             this.errorKindDataGridViewTextBoxColumn.DataPropertyName = "ErrorKind";
-            this.errorKindDataGridViewTextBoxColumn.HeaderText = "불량군";
+            this.errorKindDataGridViewTextBoxColumn.HeaderText = "ErrorKind";
             this.errorKindDataGridViewTextBoxColumn.Name = "errorKindDataGridViewTextBoxColumn";
-            // 
-            // useStateDataGridViewCheckBoxColumn
-            // 
-            this.useStateDataGridViewCheckBoxColumn.DataPropertyName = "UseState";
-            this.useStateDataGridViewCheckBoxColumn.HeaderText = "사용여부";
-            this.useStateDataGridViewCheckBoxColumn.Name = "useStateDataGridViewCheckBoxColumn";
             // 
             // explanationDataGridViewTextBoxColumn
             // 
             this.explanationDataGridViewTextBoxColumn.DataPropertyName = "Explanation";
-            this.explanationDataGridViewTextBoxColumn.HeaderText = "불량설명";
+            this.explanationDataGridViewTextBoxColumn.HeaderText = "Explanation";
             this.explanationDataGridViewTextBoxColumn.Name = "explanationDataGridViewTextBoxColumn";
-            // 
-            // errorCodeBindingSource
-            // 
-            this.errorCodeBindingSource.DataSource = typeof(PCBVI.Data.ErrorCode);
             // 
             // ErrorCodeList
             // 
@@ -112,7 +104,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn errorKindDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn useStateDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn explanationDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource errorCodeBindingSource;
     }

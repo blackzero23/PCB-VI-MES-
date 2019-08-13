@@ -1,23 +1,20 @@
-﻿using PCBVI.Data.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PCBVI.Forms.Basic
+namespace PCBVI.Controls.Facilities
 {
-    public partial class ErrorCodeForm : Form
+    public partial class FacilitiesPLC : UserControl
     {
-        public ErrorCodeForm()
+        public FacilitiesPLC()
         {
             InitializeComponent();
         }
-
-       
     }
 }

@@ -145,6 +145,18 @@
     <Compile Include="Controls\Basic\ErrorCode\ErrorCodeSearch.Designer.cs">
       <DependentUpon>ErrorCodeSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Basic\InspectionStandard\InspectionStandardList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Basic\InspectionStandard\InspectionStandardList.Designer.cs">
+      <DependentUpon>InspectionStandardList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Basic\InspectionStandard\InspectionStandardSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Basic\InspectionStandard\InspectionStandardSearch.Designer.cs">
+      <DependentUpon>InspectionStandardSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CommonControl\TopMenubar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +174,18 @@
     </Compile>
     <Compile Include="Controls\Facilities\FacilitiesHSC.Designer.cs">
       <DependentUpon>FacilitiesHSC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Facilities\FacilitiesPLC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Facilities\FacilitiesPLC.Designer.cs">
+      <DependentUpon>FacilitiesPLC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Facilities\FacilitiesPSC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Facilities\FacilitiesPSC.Designer.cs">
+      <DependentUpon>FacilitiesPSC.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\MainControls\MainMenulistControl.cs">
       <SubType>UserControl</SubType>
@@ -192,6 +216,18 @@
     </Compile>
     <Compile Include="Controls\Materials\MaterialsHSC.Designer.cs">
       <DependentUpon>MaterialsHSC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Production\ProductionHistory\ProductionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\ProductionHistory\ProductionList.Designer.cs">
+      <DependentUpon>ProductionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Production\ProductionHistory\ProductionSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\ProductionHistory\ProductionSearch.Designer.cs">
+      <DependentUpon>ProductionSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductGridView.cs">
       <SubType>UserControl</SubType>
@@ -259,6 +295,30 @@
     <Compile Include="Controls\Production\WorkLog\WorkLogInquirePopUp.Designer.cs">
       <DependentUpon>WorkLogInquirePopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Quality\FirstInspectionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Quality\FirstInspectionList.Designer.cs">
+      <DependentUpon>FirstInspectionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Quality\FirstInspectionSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Quality\FirstInspectionSearch.Designer.cs">
+      <DependentUpon>FirstInspectionSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Quality\LastInspectionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Quality\LastInspectionList.Designer.cs">
+      <DependentUpon>LastInspectionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Quality\LastInspectionSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Quality\LastInspectionSearch.Designer.cs">
+      <DependentUpon>LastInspectionSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Statistics\StockStatistics.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -289,11 +349,11 @@
     <Compile Include="Forms\Basic\ErrorCodeForm.Designer.cs">
       <DependentUpon>ErrorCodeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Basic\InspectionStForm.cs">
+    <Compile Include="Forms\Basic\InspectionStandardForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Basic\InspectionStForm.Designer.cs">
-      <DependentUpon>InspectionStForm.cs</DependentUpon>
+    <Compile Include="Forms\Basic\InspectionStandardForm.Designer.cs">
+      <DependentUpon>InspectionStandardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Basic\NonMovingTypeForm.cs">
       <SubType>Form</SubType>
@@ -495,6 +555,12 @@
     <EmbeddedResource Include="Controls\Basic\ErrorCode\ErrorCodeSearch.resx">
       <DependentUpon>ErrorCodeSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Basic\InspectionStandard\InspectionStandardList.resx">
+      <DependentUpon>InspectionStandardList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Basic\InspectionStandard\InspectionStandardSearch.resx">
+      <DependentUpon>InspectionStandardSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CommonControl\TopMenubar.resx">
       <DependentUpon>TopMenubar.cs</DependentUpon>
     </EmbeddedResource>
@@ -503,6 +569,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Facilities\FacilitiesHSC.resx">
       <DependentUpon>FacilitiesHSC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Facilities\FacilitiesPLC.resx">
+      <DependentUpon>FacilitiesPLC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Facilities\FacilitiesPSC.resx">
+      <DependentUpon>FacilitiesPSC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MainControls\MainMenulistControl.resx">
       <DependentUpon>MainMenulistControl.cs</DependentUpon>
@@ -518,6 +590,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Materials\MaterialsHSC.resx">
       <DependentUpon>MaterialsHSC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\ProductionHistory\ProductionList.resx">
+      <DependentUpon>ProductionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\ProductionHistory\ProductionSearch.resx">
+      <DependentUpon>ProductionSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Production\DefectiveProduct\DefectiveProductGridView.resx">
       <DependentUpon>DefectiveProductGridView.cs</DependentUpon>
@@ -552,6 +630,18 @@
     <EmbeddedResource Include="Controls\Production\WorkLog\WorkLogInquirePopUp.resx">
       <DependentUpon>WorkLogInquirePopUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Quality\FirstInspectionList.resx">
+      <DependentUpon>FirstInspectionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Quality\FirstInspectionSearch.resx">
+      <DependentUpon>FirstInspectionSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Quality\LastInspectionList.resx">
+      <DependentUpon>LastInspectionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Quality\LastInspectionSearch.resx">
+      <DependentUpon>LastInspectionSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Statistics\StockStatistics.resx">
       <DependentUpon>StockStatistics.cs</DependentUpon>
     </EmbeddedResource>
@@ -567,8 +657,8 @@
     <EmbeddedResource Include="Forms\Basic\ErrorCodeForm.resx">
       <DependentUpon>ErrorCodeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Basic\InspectionStForm.resx">
-      <DependentUpon>InspectionStForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Basic\InspectionStandardForm.resx">
+      <DependentUpon>InspectionStandardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\NonMovingTypeForm.resx">
       <DependentUpon>NonMovingTypeForm.cs</DependentUpon>
@@ -673,6 +763,7 @@
     <None Include="Properties\DataSources\PCBVI.Data.Employee.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.ErrorCode.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.FacilitiesHistory.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.InspectionStandard.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Process.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Product.datasource" />
     <None Include="Properties\Settings.settings">
