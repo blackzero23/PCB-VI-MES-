@@ -21,11 +21,7 @@ namespace PCBVI.Controls.Basic.ErrorCode
         //
 
         //매개변수 List< >using이 적용이 안되는 이유는 겹치는 부분이 존재하는것으로 추정.ㅣ
-        public void SetErrorcodeDataSource(List<PCBVI.Data.ErrorCode> list)
-        {
-            
-            cbbErrorCode.DataSource = list;
-        }
+        
        
     }
 }

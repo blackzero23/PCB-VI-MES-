@@ -144,6 +144,18 @@
     <Compile Include="Controls\Basic\ErrorCode\ErrorCodeSearch.Designer.cs">
       <DependentUpon>ErrorCodeSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Basic\InspectionStandard\InspectionStandardList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Basic\InspectionStandard\InspectionStandardList.Designer.cs">
+      <DependentUpon>InspectionStandardList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Basic\InspectionStandard\InspectionStandardSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Basic\InspectionStandard\InspectionStandardSearch.Designer.cs">
+      <DependentUpon>InspectionStandardSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CommonControl\TopMenubar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -252,11 +264,11 @@
     <Compile Include="Forms\Basic\ErrorCodeForm.Designer.cs">
       <DependentUpon>ErrorCodeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Basic\InspectionStForm.cs">
+    <Compile Include="Forms\Basic\InspectionStandardForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Basic\InspectionStForm.Designer.cs">
-      <DependentUpon>InspectionStForm.cs</DependentUpon>
+    <Compile Include="Forms\Basic\InspectionStandardForm.Designer.cs">
+      <DependentUpon>InspectionStandardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Basic\NonMovingTypeForm.cs">
       <SubType>Form</SubType>
@@ -446,6 +458,12 @@
     <EmbeddedResource Include="Controls\Basic\ErrorCode\ErrorCodeSearch.resx">
       <DependentUpon>ErrorCodeSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Basic\InspectionStandard\InspectionStandardList.resx">
+      <DependentUpon>InspectionStandardList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Basic\InspectionStandard\InspectionStandardSearch.resx">
+      <DependentUpon>InspectionStandardSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CommonControl\TopMenubar.resx">
       <DependentUpon>TopMenubar.cs</DependentUpon>
     </EmbeddedResource>
@@ -500,8 +518,8 @@
     <EmbeddedResource Include="Forms\Basic\ErrorCodeForm.resx">
       <DependentUpon>ErrorCodeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Basic\InspectionStForm.resx">
-      <DependentUpon>InspectionStForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Basic\InspectionStandardForm.resx">
+      <DependentUpon>InspectionStandardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\NonMovingTypeForm.resx">
       <DependentUpon>NonMovingTypeForm.cs</DependentUpon>
@@ -600,6 +618,7 @@
     <None Include="Properties\DataSources\PCBVI.Data.Employee.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.ErrorCode.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.FacilitiesHistory.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.InspectionStandard.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Process.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Product.datasource" />
     <None Include="Properties\Settings.settings">

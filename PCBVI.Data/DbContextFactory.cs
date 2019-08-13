@@ -15,6 +15,7 @@ namespace PCBVI.Data
 
         private static void Write(string log)
         {
+            /*
             for (int i = 0; i < PrefixList.Length; i++)
             {
                 if (log.StartsWith(PrefixList[i]))
@@ -22,7 +23,7 @@ namespace PCBVI.Data
                     //
                 }
             }
-
+            */
             //if (PrefixList.All(x => log.StartsWith(x) == false))
             //return;
             //if (log.StartsWith("SELECT ") == false)

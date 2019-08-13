@@ -1,6 +1,6 @@
 ﻿namespace PCBVI.Forms.Basic
 {
-    partial class ErrorCodeForm
+    partial class InspectionStForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,9 @@
         {
             this.naviEmployee = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageEmployee = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.errorCodeList1 = new PCBVI.Controls.Basic.ErrorCode.ErrorCodeList();
-            this.uscSearch = new PCBVI.Controls.Basic.ErrorCode.ErrorCodeSearch();
+            this.inspectionStandardSearch1 = new PCBVI.Controls.Basic.InspectionStandard.InspectionStandardSearch();
             this.topMenubar1 = new PCBVI.Controls.CommonControl.TopMenubar();
+            this.inspectionStandardList1 = new PCBVI.Controls.Basic.InspectionStandard.InspectionStandardList();
             ((System.ComponentModel.ISupportInitialize)(this.naviEmployee)).BeginInit();
             this.naviEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageEmployee)).BeginInit();
@@ -57,48 +57,49 @@
             this.naviEmployee.SelectedIndex = 0;
             this.naviEmployee.Size = new System.Drawing.Size(800, 415);
             this.naviEmployee.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.naviEmployee.TabIndex = 1;
+            this.naviEmployee.TabIndex = 2;
             this.naviEmployee.Text = "navi";
             // 
             // pageEmployee
             // 
             this.pageEmployee.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.pageEmployee.Controls.Add(this.errorCodeList1);
-            this.pageEmployee.Controls.Add(this.uscSearch);
+            this.pageEmployee.Controls.Add(this.inspectionStandardList1);
+            this.pageEmployee.Controls.Add(this.inspectionStandardSearch1);
             this.pageEmployee.Flags = 65534;
             this.pageEmployee.LastVisibleSet = true;
             this.pageEmployee.MinimumSize = new System.Drawing.Size(50, 50);
             this.pageEmployee.Name = "pageEmployee";
             this.pageEmployee.Size = new System.Drawing.Size(798, 384);
-            this.pageEmployee.Text = "불량 정보";
+            this.pageEmployee.Text = "검사기준정보";
             this.pageEmployee.ToolTipTitle = "Page ToolTip";
             this.pageEmployee.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
             // 
-            // errorCodeList1
+            // inspectionStandardSearch1
             // 
-            this.errorCodeList1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.errorCodeList1.Location = new System.Drawing.Point(0, 98);
-            this.errorCodeList1.Name = "errorCodeList1";
-            this.errorCodeList1.Size = new System.Drawing.Size(798, 286);
-            this.errorCodeList1.TabIndex = 1;
-            // 
-            // uscSearch
-            // 
-            this.uscSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.uscSearch.Location = new System.Drawing.Point(0, 0);
-            this.uscSearch.Name = "uscSearch";
-            this.uscSearch.Size = new System.Drawing.Size(798, 98);
-            this.uscSearch.TabIndex = 0;
+            this.inspectionStandardSearch1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.inspectionStandardSearch1.Location = new System.Drawing.Point(0, 0);
+            this.inspectionStandardSearch1.Name = "inspectionStandardSearch1";
+            this.inspectionStandardSearch1.Size = new System.Drawing.Size(798, 69);
+            this.inspectionStandardSearch1.TabIndex = 0;
             // 
             // topMenubar1
             // 
+            this.topMenubar1.BackColor = System.Drawing.Color.White;
             this.topMenubar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.topMenubar1.Location = new System.Drawing.Point(0, 0);
             this.topMenubar1.Name = "topMenubar1";
             this.topMenubar1.Size = new System.Drawing.Size(800, 35);
             this.topMenubar1.TabIndex = 0;
             // 
-            // ErrorCodeForm
+            // inspectionStandardList1
+            // 
+            this.inspectionStandardList1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inspectionStandardList1.Location = new System.Drawing.Point(0, 69);
+            this.inspectionStandardList1.Name = "inspectionStandardList1";
+            this.inspectionStandardList1.Size = new System.Drawing.Size(798, 315);
+            this.inspectionStandardList1.TabIndex = 1;
+            // 
+            // InspectionStForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -106,8 +107,8 @@
             this.Controls.Add(this.naviEmployee);
             this.Controls.Add(this.topMenubar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ErrorCodeForm";
-            this.Text = "ErrorCodeForm";
+            this.Name = "InspectionStForm";
+            this.Text = "InspectionStForm";
             ((System.ComponentModel.ISupportInitialize)(this.naviEmployee)).EndInit();
             this.naviEmployee.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pageEmployee)).EndInit();
@@ -121,7 +122,7 @@
         private Controls.CommonControl.TopMenubar topMenubar1;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator naviEmployee;
         private ComponentFactory.Krypton.Navigator.KryptonPage pageEmployee;
-        private Controls.Basic.ErrorCode.ErrorCodeList errorCodeList1;
-        private Controls.Basic.ErrorCode.ErrorCodeSearch uscSearch;
+        private Controls.Basic.InspectionStandard.InspectionStandardSearch inspectionStandardSearch1;
+        private Controls.Basic.InspectionStandard.InspectionStandardList inspectionStandardList1;
     }
 }
