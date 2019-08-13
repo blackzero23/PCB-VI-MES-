@@ -29,87 +29,126 @@
         private void InitializeComponent()
         {
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.lbDate = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lbProcess = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.cbbDivision = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.kryptonDateTimePicker1 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
-            this.kryptonDateTimePicker2 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
-            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.txbName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txbLocation = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txbNumber = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.lbDate = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lbLocation = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lbDivision = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lbName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lbNumber = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbDivision)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
             // 
-            this.kryptonPanel1.Controls.Add(this.kryptonLabel1);
-            this.kryptonPanel1.Controls.Add(this.kryptonDateTimePicker2);
+            this.kryptonPanel1.Controls.Add(this.btnSearch);
+            this.kryptonPanel1.Controls.Add(this.cbbDivision);
             this.kryptonPanel1.Controls.Add(this.kryptonDateTimePicker1);
-            this.kryptonPanel1.Controls.Add(this.kryptonTextBox1);
-            this.kryptonPanel1.Controls.Add(this.kryptonButton1);
-            this.kryptonPanel1.Controls.Add(this.lbProcess);
+            this.kryptonPanel1.Controls.Add(this.txbName);
+            this.kryptonPanel1.Controls.Add(this.txbLocation);
+            this.kryptonPanel1.Controls.Add(this.txbNumber);
             this.kryptonPanel1.Controls.Add(this.lbDate);
+            this.kryptonPanel1.Controls.Add(this.lbLocation);
+            this.kryptonPanel1.Controls.Add(this.lbDivision);
+            this.kryptonPanel1.Controls.Add(this.lbName);
+            this.kryptonPanel1.Controls.Add(this.lbNumber);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(644, 68);
+            this.kryptonPanel1.Size = new System.Drawing.Size(679, 109);
             this.kryptonPanel1.TabIndex = 0;
             // 
-            // lbDate
+            // btnSearch
             // 
-            this.lbDate.Location = new System.Drawing.Point(30, 21);
-            this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(69, 20);
-            this.lbDate.TabIndex = 0;
-            this.lbDate.Values.Text = "생산 일자 :";
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Location = new System.Drawing.Point(576, 47);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(90, 25);
+            this.btnSearch.TabIndex = 11;
+            this.btnSearch.Values.Text = "검 색";
             // 
-            // lbProcess
+            // cbbDivision
             // 
-            this.lbProcess.Location = new System.Drawing.Point(324, 23);
-            this.lbProcess.Name = "lbProcess";
-            this.lbProcess.Size = new System.Drawing.Size(41, 20);
-            this.lbProcess.TabIndex = 1;
-            this.lbProcess.Values.Text = "공정 :";
-            // 
-            // kryptonButton1
-            // 
-            this.kryptonButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonButton1.Location = new System.Drawing.Point(516, 23);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(90, 25);
-            this.kryptonButton1.TabIndex = 2;
-            this.kryptonButton1.Values.Text = "검 색";
-            // 
-            // kryptonTextBox1
-            // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(371, 23);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.kryptonTextBox1.TabIndex = 3;
+            this.cbbDivision.DropDownWidth = 99;
+            this.cbbDivision.Location = new System.Drawing.Point(281, 65);
+            this.cbbDivision.Name = "cbbDivision";
+            this.cbbDivision.Size = new System.Drawing.Size(99, 21);
+            this.cbbDivision.TabIndex = 10;
             // 
             // kryptonDateTimePicker1
             // 
             this.kryptonDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.kryptonDateTimePicker1.Location = new System.Drawing.Point(105, 21);
+            this.kryptonDateTimePicker1.Location = new System.Drawing.Point(442, 28);
             this.kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
             this.kryptonDateTimePicker1.Size = new System.Drawing.Size(87, 21);
-            this.kryptonDateTimePicker1.TabIndex = 4;
+            this.kryptonDateTimePicker1.TabIndex = 9;
             // 
-            // kryptonDateTimePicker2
+            // txbName
             // 
-            this.kryptonDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.kryptonDateTimePicker2.Location = new System.Drawing.Point(226, 22);
-            this.kryptonDateTimePicker2.Name = "kryptonDateTimePicker2";
-            this.kryptonDateTimePicker2.Size = new System.Drawing.Size(89, 21);
-            this.kryptonDateTimePicker2.TabIndex = 5;
+            this.txbName.Location = new System.Drawing.Point(280, 28);
+            this.txbName.Name = "txbName";
+            this.txbName.Size = new System.Drawing.Size(100, 20);
+            this.txbName.TabIndex = 8;
             // 
-            // kryptonLabel1
+            // txbLocation
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(198, 22);
-            this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(22, 20);
-            this.kryptonLabel1.TabIndex = 6;
-            this.kryptonLabel1.Values.Text = " ~";
+            this.txbLocation.Location = new System.Drawing.Point(90, 67);
+            this.txbLocation.Name = "txbLocation";
+            this.txbLocation.Size = new System.Drawing.Size(100, 20);
+            this.txbLocation.TabIndex = 7;
+            // 
+            // txbNumber
+            // 
+            this.txbNumber.Location = new System.Drawing.Point(90, 28);
+            this.txbNumber.Name = "txbNumber";
+            this.txbNumber.Size = new System.Drawing.Size(100, 20);
+            this.txbNumber.TabIndex = 5;
+            // 
+            // lbDate
+            // 
+            this.lbDate.Location = new System.Drawing.Point(401, 28);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(45, 20);
+            this.lbDate.TabIndex = 4;
+            this.lbDate.Values.Text = "날 짜 :";
+            // 
+            // lbLocation
+            // 
+            this.lbLocation.Location = new System.Drawing.Point(39, 67);
+            this.lbLocation.Name = "lbLocation";
+            this.lbLocation.Size = new System.Drawing.Size(45, 20);
+            this.lbLocation.TabIndex = 3;
+            this.lbLocation.Values.Text = "장 소 :";
+            // 
+            // lbDivision
+            // 
+            this.lbDivision.Location = new System.Drawing.Point(229, 67);
+            this.lbDivision.Name = "lbDivision";
+            this.lbDivision.Size = new System.Drawing.Size(45, 20);
+            this.lbDivision.TabIndex = 2;
+            this.lbDivision.Values.Text = "구 분 :";
+            // 
+            // lbName
+            // 
+            this.lbName.Location = new System.Drawing.Point(205, 28);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(69, 20);
+            this.lbName.TabIndex = 1;
+            this.lbName.Values.Text = "설비 이름 :";
+            // 
+            // lbNumber
+            // 
+            this.lbNumber.Location = new System.Drawing.Point(15, 28);
+            this.lbNumber.Name = "lbNumber";
+            this.lbNumber.Size = new System.Drawing.Size(69, 20);
+            this.lbNumber.TabIndex = 0;
+            this.lbNumber.Values.Text = "설비 번호 :";
             // 
             // FacilitiesHSC
             // 
@@ -117,10 +156,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.kryptonPanel1);
             this.Name = "FacilitiesHSC";
-            this.Size = new System.Drawing.Size(644, 68);
+            this.Size = new System.Drawing.Size(679, 109);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbDivision)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -128,12 +168,16 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker kryptonDateTimePicker2;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker kryptonDateTimePicker1;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbProcess;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txbName;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txbLocation;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txbNumber;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lbDate;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbLocation;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbDivision;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbName;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbNumber;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbDivision;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnSearch;
     }
 }

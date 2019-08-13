@@ -581,6 +581,7 @@
     <None Include="Properties\DataSources\PCBVI.Data.Department.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Employee.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.ErrorCode.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.FacilitiesHistory.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Process.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Product.datasource" />
     <None Include="Properties\Settings.settings">

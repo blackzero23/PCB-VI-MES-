@@ -14,12 +14,12 @@ namespace PCBVI.Data
     
     public partial class MaterialsInRe
     {
-        public string MaterialsInReId { get; set; }
+        public int MaterialsInReId { get; set; }
         public int BarcodeId { get; set; }
         public int ProcessId { get; set; }
         public string CurrentState { get; set; }
-        public string PassProductQuantity { get; set; }
-        public string FailProductQuantity { get; set; }
+        public int PassProductQuantity { get; set; }
+        public int FailProductQuantity { get; set; }
         public int WorkPlaceId { get; set; }
         public int InputQuantity { get; set; }
     

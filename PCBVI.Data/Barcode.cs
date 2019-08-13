@@ -25,10 +25,12 @@ namespace PCBVI.Data
     
         public int BarcodeId { get; set; }
         public int BarcodeNo { get; set; }
-        public int State { get; set; }
+        public string State { get; set; }
         public int ErrorCodeId { get; set; }
+        public int LotId { get; set; }
     
         public virtual ErrorCode ErrorCode { get; set; }
+        public virtual Lot Lot { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DefectiveProduct> DefectiveProducts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
