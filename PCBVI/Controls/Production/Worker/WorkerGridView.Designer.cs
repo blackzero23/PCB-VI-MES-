@@ -1,6 +1,6 @@
-﻿namespace PCBVI.Controls.Production.DefectiveProduct
+﻿namespace PCBVI.Controls.Production.Worker
 {
-    partial class DefectiveProductGridView
+    partial class WorkerGridView
     {
         /// <summary> 
         /// Required designer variable.
@@ -42,12 +42,12 @@
             this.kryptonDataGridView1.Size = new System.Drawing.Size(800, 150);
             this.kryptonDataGridView1.TabIndex = 0;
             // 
-            // DefectiveProductGridView
+            // WorkerGridView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.kryptonDataGridView1);
-            this.Name = "DefectiveProductGridView";
+            this.Name = "WorkerGridView";
             this.Size = new System.Drawing.Size(800, 150);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
             this.ResumeLayout(false);

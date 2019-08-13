@@ -122,7 +122,7 @@
             this.Controls.Add(this.kryptonLabel2);
             this.Controls.Add(this.kryptonLabel1);
             this.Name = "WorkLogInquirePopUp";
-            this.Size = new System.Drawing.Size(400, 315);
+            this.Size = new System.Drawing.Size(400, 317);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -93,17 +93,25 @@
             this.kryptonTextBox1.TabIndex = 2;
             this.kryptonTextBox1.Text = "작업자 사원번호 직책 공정 설비 작업일자";
             // 
+            // topMenubar1
+            // 
+            this.topMenubar1.BackColor = System.Drawing.Color.White;
+            this.topMenubar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topMenubar1.Location = new System.Drawing.Point(0, 0);
+            this.topMenubar1.Name = "topMenubar1";
+            this.topMenubar1.Size = new System.Drawing.Size(800, 35);
+            this.topMenubar1.TabIndex = 0;
+            // 
+            // workerSearch1
+            // 
+            this.workerSearch1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.workerSearch1.Location = new System.Drawing.Point(0, 0);
+            this.workerSearch1.Name = "workerSearch1";
+            this.workerSearch1.Size = new System.Drawing.Size(798, 71);
+            this.workerSearch1.TabIndex = 2;
             // 
             // workerGridView1
             // 
-            // 
-            // kryptonTextBox1
-            // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(64, 123);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(415, 20);
-            this.kryptonTextBox1.TabIndex = 2;
-            this.kryptonTextBox1.Text = "작업자 사원번호 직책 공정 설비 작업일자";
             this.workerGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.workerGridView1.Location = new System.Drawing.Point(0, 71);
             this.workerGridView1.Name = "workerGridView1";

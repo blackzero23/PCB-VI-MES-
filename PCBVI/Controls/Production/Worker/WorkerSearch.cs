@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PCBVI.Controls.Production.DefectiveProduct
+namespace PCBVI.Controls.Production.Worker
 {
-    public partial class DefectiveProductGridView : UserControl
+    public partial class WorkerSearch : UserControl
     {
-        public DefectiveProductGridView()
+        public WorkerSearch()
         {
             InitializeComponent();
         }
