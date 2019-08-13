@@ -45,7 +45,7 @@
             // 
             // btnCancle
             // 
-            this.btnCancle.Location = new System.Drawing.Point(247, 104);
+            this.btnCancle.Location = new System.Drawing.Point(216, 90);
             this.btnCancle.Name = "btnCancle";
             this.btnCancle.Size = new System.Drawing.Size(90, 25);
             this.btnCancle.TabIndex = 3;
@@ -54,7 +54,7 @@
             // cbbURL
             // 
             this.cbbURL.FormattingEnabled = true;
-            this.cbbURL.Location = new System.Drawing.Point(113, 45);
+            this.cbbURL.Location = new System.Drawing.Point(82, 44);
             this.cbbURL.Name = "cbbURL";
             this.cbbURL.Size = new System.Drawing.Size(224, 20);
             this.cbbURL.TabIndex = 5;
@@ -62,7 +62,7 @@
             // kryptonButton1
             // 
             this.kryptonButton1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.kryptonButton1.Location = new System.Drawing.Point(113, 104);
+            this.kryptonButton1.Location = new System.Drawing.Point(82, 90);
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.Size = new System.Drawing.Size(90, 25);
             this.kryptonButton1.TabIndex = 6;
@@ -73,12 +73,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 155);
+            this.ClientSize = new System.Drawing.Size(395, 155);
             this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.cbbURL);
             this.Controls.Add(this.btnCancle);
             this.Controls.Add(this.lbDescription);
             this.Name = "CCTVURLForm";
+            this.ShowIcon = false;
             this.Text = "CCTVURLForm";
             this.ResumeLayout(false);
 
