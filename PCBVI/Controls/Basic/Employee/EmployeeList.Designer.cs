@@ -30,12 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employmentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departureDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gradeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.defectiveProductsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstInspectionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalMonitoringsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workLogsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -49,11 +56,18 @@
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.employeeIdDataGridViewTextBoxColumn,
             this.codeDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
+            this.departmentIdDataGridViewTextBoxColumn,
             this.employmentDateDataGridViewTextBoxColumn,
             this.departureDateDataGridViewTextBoxColumn,
-            this.gradeDataGridViewTextBoxColumn});
+            this.gradeDataGridViewTextBoxColumn,
+            this.defectiveProductsDataGridViewTextBoxColumn,
+            this.departmentDataGridViewTextBoxColumn,
+            this.firstInspectionsDataGridViewTextBoxColumn,
+            this.totalMonitoringsDataGridViewTextBoxColumn,
+            this.workLogsDataGridViewTextBoxColumn});
             this.dgvList.DataSource = this.employeeBindingSource;
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.Location = new System.Drawing.Point(0, 0);
@@ -62,6 +76,16 @@
             this.dgvList.RowTemplate.Height = 23;
             this.dgvList.Size = new System.Drawing.Size(663, 461);
             this.dgvList.TabIndex = 0;
+            // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataSource = typeof(PCBVI.Data.Employee);
+            // 
+            // employeeIdDataGridViewTextBoxColumn
+            // 
+            this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "EmployeeId";
+            this.employeeIdDataGridViewTextBoxColumn.HeaderText = "EmployeeId";
+            this.employeeIdDataGridViewTextBoxColumn.Name = "employeeIdDataGridViewTextBoxColumn";
             // 
             // codeDataGridViewTextBoxColumn
             // 
@@ -74,6 +98,12 @@
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // departmentIdDataGridViewTextBoxColumn
+            // 
+            this.departmentIdDataGridViewTextBoxColumn.DataPropertyName = "DepartmentId";
+            this.departmentIdDataGridViewTextBoxColumn.HeaderText = "DepartmentId";
+            this.departmentIdDataGridViewTextBoxColumn.Name = "departmentIdDataGridViewTextBoxColumn";
             // 
             // employmentDateDataGridViewTextBoxColumn
             // 
@@ -93,9 +123,35 @@
             this.gradeDataGridViewTextBoxColumn.HeaderText = "Grade";
             this.gradeDataGridViewTextBoxColumn.Name = "gradeDataGridViewTextBoxColumn";
             // 
-            // employeeBindingSource
+            // defectiveProductsDataGridViewTextBoxColumn
             // 
-            this.employeeBindingSource.DataSource = typeof(PCBVI.Data.Employee);
+            this.defectiveProductsDataGridViewTextBoxColumn.DataPropertyName = "DefectiveProducts";
+            this.defectiveProductsDataGridViewTextBoxColumn.HeaderText = "DefectiveProducts";
+            this.defectiveProductsDataGridViewTextBoxColumn.Name = "defectiveProductsDataGridViewTextBoxColumn";
+            // 
+            // departmentDataGridViewTextBoxColumn
+            // 
+            this.departmentDataGridViewTextBoxColumn.DataPropertyName = "Department";
+            this.departmentDataGridViewTextBoxColumn.HeaderText = "Department";
+            this.departmentDataGridViewTextBoxColumn.Name = "departmentDataGridViewTextBoxColumn";
+            // 
+            // firstInspectionsDataGridViewTextBoxColumn
+            // 
+            this.firstInspectionsDataGridViewTextBoxColumn.DataPropertyName = "FirstInspections";
+            this.firstInspectionsDataGridViewTextBoxColumn.HeaderText = "FirstInspections";
+            this.firstInspectionsDataGridViewTextBoxColumn.Name = "firstInspectionsDataGridViewTextBoxColumn";
+            // 
+            // totalMonitoringsDataGridViewTextBoxColumn
+            // 
+            this.totalMonitoringsDataGridViewTextBoxColumn.DataPropertyName = "TotalMonitorings";
+            this.totalMonitoringsDataGridViewTextBoxColumn.HeaderText = "TotalMonitorings";
+            this.totalMonitoringsDataGridViewTextBoxColumn.Name = "totalMonitoringsDataGridViewTextBoxColumn";
+            // 
+            // workLogsDataGridViewTextBoxColumn
+            // 
+            this.workLogsDataGridViewTextBoxColumn.DataPropertyName = "WorkLogs";
+            this.workLogsDataGridViewTextBoxColumn.HeaderText = "WorkLogs";
+            this.workLogsDataGridViewTextBoxColumn.Name = "workLogsDataGridViewTextBoxColumn";
             // 
             // EmployeeList
             // 
@@ -113,11 +169,18 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departmentIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn employmentDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departureDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gradeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn defectiveProductsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departmentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstInspectionsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalMonitoringsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workLogsDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource employeeBindingSource;
     }
 }
