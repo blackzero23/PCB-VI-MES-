@@ -7,21 +7,95 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PCBVI.Data.Data;
 
 namespace PCBVI.Controls.Basic.ErrorCode
 {
     public partial class ErrorCodeSearch : UserControl
     {
+       
+
         public ErrorCodeSearch()
         {
             InitializeComponent();
         }
+
+        private void ErrorCodeSearch_Load(object sender, EventArgs e)
+        {
+            
+            List<Data.ErrorCode> errorCodes = DB.ErrorCode.GetAll();
+            //errorCodes.Add(new Data.ErrorCode("없음"));
+            cbbErrorCode.DataSource = errorCodes; 
+            List<Data.ErrorType> errorTypes = DB.ErrorType.GetAll();
+            cbbErrorType.DataSource = errorTypes;
+            var errorKinds = DB.ErrorKind.GetAll();
+            cbbErrorKind.DataSource = errorKinds;
+          
+        }
+
+
+
         //usc형태의 콤보박스바인딩
         //콤보박스바인딩
         //
-
         //매개변수 List< >using이 적용이 안되는 이유는 겹치는 부분이 존재하는것으로 추정.ㅣ
-        
-       
+
+        #region SearchClicked event things for C# 3.0
+        public event EventHandler<SearchClickedEventArgs> SearchClicked;
+
+        protected virtual void OnSearchClicked(SearchClickedEventArgs e)
+        {
+            if (SearchClicked != null)
+                SearchClicked(this, e);
+        }
+
+        private SearchClickedEventArgs OnSearchClicked(string code, string kind, string type)
+        {
+            SearchClickedEventArgs args = new SearchClickedEventArgs(code, kind, type);
+            OnSearchClicked(args);
+
+            return args;
+        }
+
+        private SearchClickedEventArgs OnSearchClickedForOut()
+        {
+            SearchClickedEventArgs args = new SearchClickedEventArgs();
+            OnSearchClicked(args);
+
+            return args;
+        }
+
+        public class SearchClickedEventArgs : EventArgs
+        {
+            public string Code { get; set; }
+            public string Kind { get; set; }
+            public string Type { get; set; }
+
+            public SearchClickedEventArgs()
+            {
+            }
+
+            public SearchClickedEventArgs(string code, string kind, string type)
+            {
+                Code = code;
+                Kind = kind;
+                Type = type;
+            }
+        }
+        #endregion
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            string code = cbbErrorCode.Text;
+            string type = cbbErrorKind.Text;
+            string kind = cbbErrorType.Text;
+
+            MessageBox.Show(code);
+            MessageBox.Show(type);
+            MessageBox.Show(kind);
+
+            OnSearchClicked(code, kind, type);
+            
+        }
     }
 }

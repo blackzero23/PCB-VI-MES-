@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.errorCodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.cbbErrorKind = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.cbbErrorTypeName = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.errorKindBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbbErrorType = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.errorTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.cbbErrorCode = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.errorCodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            ((System.ComponentModel.ISupportInitialize)(this.errorCodeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbErrorKind)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbErrorTypeName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorKindBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbErrorType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbErrorCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorCodeBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // errorCodeBindingSource
-            // 
-            this.errorCodeBindingSource.DataSource = typeof(PCBVI.Data.ErrorCode);
             // 
             // kryptonPanel1
             // 
             this.kryptonPanel1.Controls.Add(this.cbbErrorKind);
-            this.kryptonPanel1.Controls.Add(this.cbbErrorTypeName);
+            this.kryptonPanel1.Controls.Add(this.cbbErrorType);
             this.kryptonPanel1.Controls.Add(this.kryptonLabel3);
             this.kryptonPanel1.Controls.Add(this.cbbErrorCode);
             this.kryptonPanel1.Controls.Add(this.kryptonLabel1);
@@ -67,22 +67,35 @@
             // 
             // cbbErrorKind
             // 
+            this.cbbErrorKind.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.errorKindBindingSource, "ErrorKindId", true));
+            this.cbbErrorKind.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.errorKindBindingSource, "Name", true));
+            this.cbbErrorKind.DataSource = this.errorKindBindingSource;
+            this.cbbErrorKind.DisplayMember = "Name";
             this.cbbErrorKind.DropDownWidth = 121;
             this.cbbErrorKind.Location = new System.Drawing.Point(450, 34);
             this.cbbErrorKind.Name = "cbbErrorKind";
             this.cbbErrorKind.Size = new System.Drawing.Size(105, 21);
             this.cbbErrorKind.TabIndex = 24;
             // 
-            // cbbErrorTypeName
+            // errorKindBindingSource
             // 
-            this.cbbErrorTypeName.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.errorCodeBindingSource, "ErrorCodeId", true));
-            this.cbbErrorTypeName.DataSource = this.errorCodeBindingSource;
-            this.cbbErrorTypeName.DisplayMember = "Name";
-            this.cbbErrorTypeName.DropDownWidth = 121;
-            this.cbbErrorTypeName.Location = new System.Drawing.Point(280, 35);
-            this.cbbErrorTypeName.Name = "cbbErrorTypeName";
-            this.cbbErrorTypeName.Size = new System.Drawing.Size(105, 21);
-            this.cbbErrorTypeName.TabIndex = 23;
+            this.errorKindBindingSource.DataSource = typeof(PCBVI.Data.ErrorKind);
+            // 
+            // cbbErrorType
+            // 
+            this.cbbErrorType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.errorTypeBindingSource, "ErrorTypeId", true));
+            this.cbbErrorType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.errorTypeBindingSource, "Name", true));
+            this.cbbErrorType.DataSource = this.errorTypeBindingSource;
+            this.cbbErrorType.DisplayMember = "Name";
+            this.cbbErrorType.DropDownWidth = 121;
+            this.cbbErrorType.Location = new System.Drawing.Point(280, 35);
+            this.cbbErrorType.Name = "cbbErrorType";
+            this.cbbErrorType.Size = new System.Drawing.Size(105, 21);
+            this.cbbErrorType.TabIndex = 23;
+            // 
+            // errorTypeBindingSource
+            // 
+            this.errorTypeBindingSource.DataSource = typeof(PCBVI.Data.ErrorType);
             // 
             // kryptonLabel3
             // 
@@ -95,6 +108,7 @@
             // cbbErrorCode
             // 
             this.cbbErrorCode.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.errorCodeBindingSource, "ErrorCodeId", true));
+            this.cbbErrorCode.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.errorCodeBindingSource, "Code", true));
             this.cbbErrorCode.DataSource = this.errorCodeBindingSource;
             this.cbbErrorCode.DisplayMember = "Code";
             this.cbbErrorCode.DropDownWidth = 121;
@@ -102,6 +116,11 @@
             this.cbbErrorCode.Name = "cbbErrorCode";
             this.cbbErrorCode.Size = new System.Drawing.Size(105, 21);
             this.cbbErrorCode.TabIndex = 21;
+            this.cbbErrorCode.TabStop = false;
+            // 
+            // errorCodeBindingSource
+            // 
+            this.errorCodeBindingSource.DataSource = typeof(PCBVI.Data.ErrorCode);
             // 
             // kryptonLabel1
             // 
@@ -127,6 +146,7 @@
             this.btnSearch.Size = new System.Drawing.Size(90, 30);
             this.btnSearch.TabIndex = 18;
             this.btnSearch.Values.Text = "검 색";
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // ErrorCodeSearch
             // 
@@ -135,26 +155,31 @@
             this.Controls.Add(this.kryptonPanel1);
             this.Name = "ErrorCodeSearch";
             this.Size = new System.Drawing.Size(703, 82);
-            ((System.ComponentModel.ISupportInitialize)(this.errorCodeBindingSource)).EndInit();
+            this.Load += new System.EventHandler(this.ErrorCodeSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbErrorKind)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbErrorTypeName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorKindBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbErrorType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbErrorCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorCodeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource errorCodeBindingSource;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbErrorKind;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbErrorTypeName;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbErrorType;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbErrorCode;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSearch;
+        private System.Windows.Forms.BindingSource errorCodeBindingSource;
+        private System.Windows.Forms.BindingSource errorTypeBindingSource;
+        private System.Windows.Forms.BindingSource errorKindBindingSource;
     }
 }

@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PCBVI.Data.Entities
+namespace PCBVI.Data
 {
     public partial class ErrorCode
     {
-        public string ErrorType { get; set; }
-        public string ErrorKind { get; set; }
+        public ErrorCode(string _code)
+        {
+            this.Code = _code;
+        }
+
+        public string ErrorTypeName { get; set; }
+        public string ErrorKindName { get; set; }
     }
 }
