@@ -23,9 +23,14 @@ namespace PCBVI.Forms.Basic
             uscSearch.SetDepartmentSource(DB.Department.GetAll());
         }
 
-        private void UscSearch_SearchCliked(object sender, Controls.Basic.Employee.EmployeeSearch.SearchClikedEventArgs e)
+        private void UscSearch_SearchButtonClicked(object sender, Controls.Basic.Employee.EmployeeSearch.SearchButtonClickedEventArgs e)
         {
-           uscList.SetEmployeeDataSource (DB.Employee.SeachEmployeeInfo(e.Employee, e.Department));
+            uscList.SetEmployeeDataSource(DB.Employee.SeachEmployeeInfo(e.DepartmentId,e.Name));
+        }
+
+        private void UscTopMenu_InsertButtonClicked(object sender, Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs e)
+        {
+            uscTopMenu.OpenInsertForm(new EmployeeInsertForm());
         }
     }
 }

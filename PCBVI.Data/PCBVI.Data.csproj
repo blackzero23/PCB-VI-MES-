@@ -69,6 +69,7 @@
     <Compile Include="Employee.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\ErrorCode.cs" />
     <Compile Include="ErrorCode.cs">
       <DependentUpon>Mes.tt</DependentUpon>

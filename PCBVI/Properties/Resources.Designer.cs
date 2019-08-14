@@ -133,6 +133,26 @@ namespace PCBVI.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Logout_10 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Logout_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_LogOut_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_LogOut_20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_ms_excel_20px {
             get {
                 object obj = ResourceManager.GetObject("icons8_ms_excel_20px", resourceCulture);

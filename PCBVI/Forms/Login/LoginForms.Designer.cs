@@ -61,6 +61,7 @@
             this.txbPassword.TabIndex = 2;
             this.txbPassword.Text = "비밀 번호";
             this.txbPassword.Enter += new System.EventHandler(this.TxbPassword_Enter);
+            this.txbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxbPassword_KeyDown);
             this.txbPassword.Leave += new System.EventHandler(this.TxbPassword_Leave);
             // 
             // btnLogin
@@ -132,7 +133,7 @@
             this.StateCommon.Header.Content.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.StateCommon.Header.Content.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.Text = "PCB_ VI_MES";
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LoginForms_MouseDown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginForms_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -355,6 +355,12 @@
     <Compile Include="Forms\Basic\EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Basic\EmployeeInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Basic\EmployeeInsertForm.Designer.cs">
+      <DependentUpon>EmployeeInsertForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Basic\FacilitiesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -891,6 +897,11 @@
       <Name>PCBVI.Data</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-export-10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-LogOut-20.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

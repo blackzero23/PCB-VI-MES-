@@ -24,54 +24,55 @@ namespace PCBVI.Controls.Basic.Employee
         }
 
 
-        #region SearchCliked event things for C# 3.0
-        public event EventHandler<SearchClikedEventArgs> SearchCliked;
-
-        protected virtual void OnSearchCliked(SearchClikedEventArgs e)
-        {
-            if (SearchCliked != null)
-                SearchCliked(this, e);
-        }
-
-        private SearchClikedEventArgs OnSearchCliked(string department, string employee)
-        {
-            SearchClikedEventArgs args = new SearchClikedEventArgs(department, employee);
-            OnSearchCliked(args);
-
-            return args;
-        }
-
-        private SearchClikedEventArgs OnSearchClikedForOut()
-        {
-            SearchClikedEventArgs args = new SearchClikedEventArgs();
-            OnSearchCliked(args);
-
-            return args;
-        }
-
-        public class SearchClikedEventArgs : EventArgs
-        {
-            public string Department { get; set; }
-            public string Employee { get; set; }
-
-            public SearchClikedEventArgs()
-            {
-            }
-
-            public SearchClikedEventArgs(string department, string employee)
-            {
-                Department = department;
-                Employee = employee;
-            }
-        }
-        #endregion
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            string department = cbbDepartment.SelectedItem.ToString();
+            int departmentId = (int)cbbDepartment.SelectedValue;
             string name = txbName.Text;
 
-            OnSearchCliked(department, name);
+            OnSearchButtonClicked(departmentId, name);
         }
+
+        #region SearchButtonClicked event things for C# 3.0
+        public event EventHandler<SearchButtonClickedEventArgs> SearchButtonClicked;
+
+        protected virtual void OnSearchButtonClicked(SearchButtonClickedEventArgs e)
+        {
+            if (SearchButtonClicked != null)
+                SearchButtonClicked(this, e);
+        }
+
+        private SearchButtonClickedEventArgs OnSearchButtonClicked(int departmentId, string name)
+        {
+            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(departmentId, name);
+            OnSearchButtonClicked(args);
+
+            return args;
+        }
+
+        private SearchButtonClickedEventArgs OnSearchButtonClickedForOut()
+        {
+            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs();
+            OnSearchButtonClicked(args);
+
+            return args;
+        }
+
+        public class SearchButtonClickedEventArgs : EventArgs
+        {
+            public int DepartmentId { get; set; }
+            public string Name { get; set; }
+
+            public SearchButtonClickedEventArgs()
+            {
+            }
+
+            public SearchButtonClickedEventArgs(int departmentId, string name)
+            {
+                DepartmentId = departmentId;
+                Name = name;
+            }
+        }
+        #endregion
     }
 }
