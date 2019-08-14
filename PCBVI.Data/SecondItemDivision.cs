@@ -12,18 +12,18 @@ namespace PCBVI.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductSubJect
+    public partial class SecondItemDivision
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ProductSubJect()
+        public SecondItemDivision()
         {
-            this.Products = new HashSet<Product>();
+            this.Items = new HashSet<Item>();
         }
     
-        public int ProductSubjectId { get; set; }
+        public int SecondItemDivisionId { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Item> Items { get; set; }
     }
 }

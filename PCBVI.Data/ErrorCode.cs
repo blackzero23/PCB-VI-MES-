@@ -19,16 +19,13 @@ namespace PCBVI.Data
         {
             this.Barcodes = new HashSet<Barcode>();
             this.DefectiveProducts = new HashSet<DefectiveProduct>();
-            this.ProductionHistories = new HashSet<ProductionHistory>();
             this.ProcessDefects = new HashSet<ProcessDefect>();
         }
     
         public int ErrorCodeId { get; set; }
         public string Code { get; set; }
-        public string Name { get; set; }
         public int ErrorTypeId { get; set; }
         public int ErrorKindId { get; set; }
-        public bool InspectionStatus { get; set; }
         public string Explanation { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -37,8 +34,6 @@ namespace PCBVI.Data
         public virtual ICollection<DefectiveProduct> DefectiveProducts { get; set; }
         public virtual ErrorKind ErrorKind { get; set; }
         public virtual ErrorType ErrorType { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductionHistory> ProductionHistories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProcessDefect> ProcessDefects { get; set; }
     }

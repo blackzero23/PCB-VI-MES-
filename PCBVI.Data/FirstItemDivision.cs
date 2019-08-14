@@ -12,18 +12,18 @@ namespace PCBVI.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class WokGroup
+    public partial class FirstItemDivision
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public WokGroup()
+        public FirstItemDivision()
         {
-            this.WorkLogs = new HashSet<WorkLog>();
+            this.Items = new HashSet<Item>();
         }
     
-        public int WorkGroupId { get; set; }
+        public int FirstItemDivisionId { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<WorkLog> WorkLogs { get; set; }
+        public virtual ICollection<Item> Items { get; set; }
     }
 }

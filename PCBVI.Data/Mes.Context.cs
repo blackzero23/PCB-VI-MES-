@@ -37,22 +37,23 @@ namespace PCBVI.Data
         public virtual DbSet<FacilitiesPower> FacilitiesPowers { get; set; }
         public virtual DbSet<FHistoryDivision> FHistoryDivisions { get; set; }
         public virtual DbSet<FirstInspection> FirstInspections { get; set; }
+        public virtual DbSet<FirstItemDivision> FirstItemDivisions { get; set; }
         public virtual DbSet<InspectionStandard> InspectionStandards { get; set; }
         public virtual DbSet<InspectionStandardType> InspectionStandardTypes { get; set; }
+        public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<LastInspection> LastInspections { get; set; }
         public virtual DbSet<Lot> Lots { get; set; }
         public virtual DbSet<MaterialHistory> MaterialHistories { get; set; }
         public virtual DbSet<MaterialsInRe> MaterialsInRes { get; set; }
+        public virtual DbSet<MaterialsManage> MaterialsManages { get; set; }
         public virtual DbSet<Process> Processes { get; set; }
         public virtual DbSet<ProcessDefect> ProcessDefects { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductionHistory> ProductionHistories { get; set; }
-        public virtual DbSet<ProductSubJect> ProductSubJects { get; set; }
         public virtual DbSet<RotationGroup> RotationGroups { get; set; }
+        public virtual DbSet<SecondItemDivision> SecondItemDivisions { get; set; }
         public virtual DbSet<TotalMonitoring> TotalMonitorings { get; set; }
-        public virtual DbSet<WokGroup> WokGroups { get; set; }
-        public virtual DbSet<Worker> Workers { get; set; }
         public virtual DbSet<WorkLog> WorkLogs { get; set; }
+        public virtual DbSet<WorkOrder> WorkOrders { get; set; }
         public virtual DbSet<WorkPlace> WorkPlaces { get; set; }
     }
 }

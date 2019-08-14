@@ -20,8 +20,9 @@ namespace PCBVI.Data
             this.InspectionStandards = new HashSet<InspectionStandard>();
         }
     
-        public int InspectionStandardType1 { get; set; }
+        public int InspectionStandardTypeId { get; set; }
         public string Name { get; set; }
+        public string Code { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InspectionStandard> InspectionStandards { get; set; }

@@ -12,21 +12,17 @@ namespace PCBVI.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class LastInspection
+    public partial class MaterialsManage
     {
-        public int LasInspectionId { get; set; }
-        public string OCompanyName { get; set; }
-        public int ItemId { get; set; }
-        public System.DateTime ProductionDate { get; set; }
-        public int WorkPlaceId { get; set; }
-        public int UnCheckedQuantity { get; set; }
-        public int CheckedQuantity { get; set; }
-        public int PassState { get; set; }
+        public int MaterialsManageId { get; set; }
+        public int LotId { get; set; }
+        public int ProcessId { get; set; }
+        public string CurrentState { get; set; }
         public int PassQuantity { get; set; }
-        public int failQuantity { get; set; }
-        public int FinalQuantity { get; set; }
+        public int ErrorQuantity { get; set; }
+        public int TotalQuantity { get; set; }
     
-        public virtual Item Item { get; set; }
-        public virtual WorkPlace WorkPlace { get; set; }
+        public virtual Lot Lot { get; set; }
+        public virtual Process Process { get; set; }
     }
 }

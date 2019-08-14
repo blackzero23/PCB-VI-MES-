@@ -20,13 +20,13 @@ namespace PCBVI.Data
             this.DefectiveProducts = new HashSet<DefectiveProduct>();
             this.MaterialHistories = new HashSet<MaterialHistory>();
             this.MaterialsInRes = new HashSet<MaterialsInRe>();
-            this.Products = new HashSet<Product>();
+            this.Items = new HashSet<Item>();
         }
     
         public int BarcodeId { get; set; }
-        public int BarcodeNo { get; set; }
+        public int BarcodeCode { get; set; }
         public string State { get; set; }
-        public int ErrorCodeId { get; set; }
+        public Nullable<int> ErrorCodeId { get; set; }
         public int LotId { get; set; }
     
         public virtual ErrorCode ErrorCode { get; set; }
@@ -38,6 +38,6 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MaterialsInRe> MaterialsInRes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Item> Items { get; set; }
     }
 }

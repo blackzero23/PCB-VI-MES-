@@ -17,13 +17,16 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public RotationGroup()
         {
-            this.Workers = new HashSet<Worker>();
+            this.WorkLogs = new HashSet<WorkLog>();
+            this.WorkOrders = new HashSet<WorkOrder>();
         }
     
         public int RotationGroupId { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Worker> Workers { get; set; }
+        public virtual ICollection<WorkLog> WorkLogs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<WorkOrder> WorkOrders { get; set; }
     }
 }

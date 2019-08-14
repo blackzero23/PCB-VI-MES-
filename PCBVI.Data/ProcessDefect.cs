@@ -18,9 +18,11 @@ namespace PCBVI.Data
         public int ErrorCodeId { get; set; }
         public double DefectRate { get; set; }
         public int ProcessId { get; set; }
+        public int ItemId { get; set; }
         public System.DateTime WorkDate { get; set; }
     
         public virtual ErrorCode ErrorCode { get; set; }
+        public virtual Item Item { get; set; }
         public virtual Process Process { get; set; }
     }
 }

@@ -60,13 +60,29 @@
             this.kryptonNavigator1.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.None;
             this.kryptonNavigator1.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.kryptonNavigator1.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.kryptonNavigator1.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.SelectPage;
+            this.kryptonNavigator1.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
+            this.kryptonNavigator1.Button.ContextMenuMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
+            this.kryptonNavigator1.Button.ContextMenuMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
+            this.kryptonNavigator1.Button.NextButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
+            this.kryptonNavigator1.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
+            this.kryptonNavigator1.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
+            this.kryptonNavigator1.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.kryptonNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kryptonNavigator1.Group.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
+            this.kryptonNavigator1.Group.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ControlClient;
+            this.kryptonNavigator1.Header.HeaderStyleBar = ComponentFactory.Krypton.Toolkit.HeaderStyle.Secondary;
+            this.kryptonNavigator1.Header.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Primary;
+            this.kryptonNavigator1.Header.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Secondary;
             this.kryptonNavigator1.Location = new System.Drawing.Point(0, 35);
             this.kryptonNavigator1.Name = "kryptonNavigator1";
+            this.kryptonNavigator1.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarTabGroup;
+            this.kryptonNavigator1.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
             this.kryptonNavigator1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage1,
             this.WorkLogEnrollment,
             this.WorkLogInquire});
+            this.kryptonNavigator1.Panel.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
             this.kryptonNavigator1.SelectedIndex = 1;
             this.kryptonNavigator1.Size = new System.Drawing.Size(800, 415);
             this.kryptonNavigator1.TabIndex = 1;
@@ -82,6 +98,7 @@
             this.kryptonPage1.Name = "kryptonPage1";
             this.kryptonPage1.Size = new System.Drawing.Size(798, 388);
             this.kryptonPage1.Text = "작업일지";
+            this.kryptonPage1.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "A39FBF88B0584D7E8F87C787287F24B0";
             // 
@@ -96,6 +113,7 @@
             this.WorkLogEnrollment.Name = "WorkLogEnrollment";
             this.WorkLogEnrollment.Size = new System.Drawing.Size(798, 388);
             this.WorkLogEnrollment.Text = "등록";
+            this.WorkLogEnrollment.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.WorkLogEnrollment.ToolTipTitle = "Page ToolTip";
             this.WorkLogEnrollment.UniqueName = "30631063436B41A1E1AABA2D53F97292";
             // 
@@ -126,6 +144,7 @@
             this.WorkLogInquire.Name = "WorkLogInquire";
             this.WorkLogInquire.Size = new System.Drawing.Size(798, 388);
             this.WorkLogInquire.Text = "조회";
+            this.WorkLogInquire.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.WorkLogInquire.ToolTipTitle = "Page ToolTip";
             this.WorkLogInquire.UniqueName = "9A9A8FEB6DFA4B6A539304514B8721ED";
             // 

@@ -17,12 +17,13 @@ namespace PCBVI.Data
         public int FacilitiesHistoryId { get; set; }
         public System.DateTime WorkDate { get; set; }
         public int FacilitiesId { get; set; }
-        public string Place { get; set; }
+        public int WorkPlaceId { get; set; }
         public int FHistoryDivisionId { get; set; }
         public string HistoryContent { get; set; }
         public string OCompanyName { get; set; }
         public string OCompanyPhoneNum { get; set; }
         public string OCompanyEmployee { get; set; }
+        public string PowerState { get; set; }
     
         public virtual Facility Facility { get; set; }
         public virtual FHistoryDivision FHistoryDivision { get; set; }

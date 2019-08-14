@@ -22,19 +22,16 @@ namespace PCBVI.Data
     
         public int ProductionHistoryId { get; set; }
         public System.DateTime ProductionDate { get; set; }
-        public int ErrorCodeId { get; set; }
-        public System.DateTime EndTime { get; set; }
-        public int FacilitiesId { get; set; }
+        public int ProcessId { get; set; }
+        public int ItemId { get; set; }
+        public int PassQuantity { get; set; }
+        public int ErrorQuantity { get; set; }
         public System.DateTime StartTime { get; set; }
-        public int ProductId { get; set; }
-        public string PassState { get; set; }
-        public int Quantity { get; set; }
-        public string WorkContent { get; set; }
+        public System.DateTime EndTime { get; set; }
     
-        public virtual ErrorCode ErrorCode { get; set; }
-        public virtual Facility Facility { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FacilitiesPower> FacilitiesPowers { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual Item Item { get; set; }
+        public virtual Process Process { get; set; }
     }
 }

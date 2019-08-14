@@ -21,12 +21,10 @@ namespace PCBVI.Data
         }
     
         public int InspectionStandardId { get; set; }
-        public string Code { get; set; }
-        public int InspectionStandardType { get; set; }
+        public int InspectionStandardTypeId { get; set; }
         public string Note { get; set; }
-        public bool UseState { get; set; }
     
-        public virtual InspectionStandardType InspectionStandardType1 { get; set; }
+        public virtual InspectionStandardType InspectionStandardType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Process> Processes { get; set; }
     }

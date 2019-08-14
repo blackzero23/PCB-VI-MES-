@@ -21,9 +21,11 @@ namespace PCBVI.Data
             this.Facilities = new HashSet<Facility>();
             this.FacilitiesPowers = new HashSet<FacilitiesPower>();
             this.MaterialsInRes = new HashSet<MaterialsInRe>();
+            this.MaterialsManages = new HashSet<MaterialsManage>();
             this.ProcessDefects = new HashSet<ProcessDefect>();
+            this.ProductionHistories = new HashSet<ProductionHistory>();
             this.TotalMonitorings = new HashSet<TotalMonitoring>();
-            this.Workers = new HashSet<Worker>();
+            this.WorkOrders = new HashSet<WorkOrder>();
         }
     
         public int ProcessId { get; set; }
@@ -40,10 +42,14 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MaterialsInRe> MaterialsInRes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MaterialsManage> MaterialsManages { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProcessDefect> ProcessDefects { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProductionHistory> ProductionHistories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TotalMonitoring> TotalMonitorings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Worker> Workers { get; set; }
+        public virtual ICollection<WorkOrder> WorkOrders { get; set; }
     }
 }

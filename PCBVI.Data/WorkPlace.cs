@@ -21,6 +21,7 @@ namespace PCBVI.Data
             this.LastInspections = new HashSet<LastInspection>();
             this.MaterialHistories = new HashSet<MaterialHistory>();
             this.MaterialsInRes = new HashSet<MaterialsInRe>();
+            this.WorkOrders = new HashSet<WorkOrder>();
         }
     
         public int WorkPlaceId { get; set; }
@@ -34,5 +35,7 @@ namespace PCBVI.Data
         public virtual ICollection<MaterialHistory> MaterialHistories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MaterialsInRe> MaterialsInRes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<WorkOrder> WorkOrders { get; set; }
     }
 }

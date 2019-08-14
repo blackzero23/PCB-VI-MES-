@@ -17,13 +17,13 @@ namespace PCBVI.Data
         public int TotalMonitoringId { get; set; }
         public int ProcessId { get; set; }
         public int EmployeeId { get; set; }
-        public int ProductId { get; set; }
+        public int ItemId { get; set; }
         public int WorkLogId { get; set; }
         public double FacilitiesRate { get; set; }
     
         public virtual Employee Employee { get; set; }
+        public virtual Item Item { get; set; }
         public virtual Process Process { get; set; }
-        public virtual Product Product { get; set; }
         public virtual WorkLog WorkLog { get; set; }
     }
 }

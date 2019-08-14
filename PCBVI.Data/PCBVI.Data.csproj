@@ -93,10 +93,16 @@
     <Compile Include="FirstInspection.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
+    <Compile Include="FirstItemDivision.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
     <Compile Include="InspectionStandard.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="InspectionStandardType.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="LastInspection.cs">
@@ -109,6 +115,9 @@
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="MaterialsInRe.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialsManage.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="Mes.Context.cs">
@@ -132,29 +141,23 @@
     <Compile Include="ProcessDefect.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
-    <Compile Include="Product.cs">
-      <DependentUpon>Mes.tt</DependentUpon>
-    </Compile>
     <Compile Include="ProductionHistory.cs">
-      <DependentUpon>Mes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductSubJect.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RotationGroup.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
+    <Compile Include="SecondItemDivision.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
     <Compile Include="TotalMonitoring.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
-    <Compile Include="WokGroup.cs">
-      <DependentUpon>Mes.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Worker.cs">
-      <DependentUpon>Mes.tt</DependentUpon>
-    </Compile>
     <Compile Include="WorkLog.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkOrder.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="WorkPlace.cs">

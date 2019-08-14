@@ -12,18 +12,20 @@ namespace PCBVI.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Worker
+    public partial class WorkOrder
     {
-        public int WorkerId { get; set; }
-        public int EmployeeId { get; set; }
-        public int ProcessId { get; set; }
-        public int FacilitiesId { get; set; }
-        public System.DateTime WorkDate { get; set; }
+        public int WorkOrderId { get; set; }
+        public int ItemId { get; set; }
+        public System.DateTime OrderDate { get; set; }
         public int RotationGroupId { get; set; }
+        public int TargetQuantity { get; set; }
+        public int ProcessId { get; set; }
+        public int WorkPlaceId { get; set; }
+        public string Note { get; set; }
     
-        public virtual Employee Employee { get; set; }
-        public virtual Facility Facility { get; set; }
+        public virtual Item Item { get; set; }
         public virtual Process Process { get; set; }
         public virtual RotationGroup RotationGroup { get; set; }
+        public virtual WorkPlace WorkPlace { get; set; }
     }
 }

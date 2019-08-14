@@ -17,16 +17,15 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Facility()
         {
-            this.ProductionHistories = new HashSet<ProductionHistory>();
             this.FacilitiesHistories = new HashSet<FacilitiesHistory>();
             this.FacilitiesPowers = new HashSet<FacilitiesPower>();
-            this.Workers = new HashSet<Worker>();
+            this.WorkLogs = new HashSet<WorkLog>();
         }
     
         public int FacilitiesId { get; set; }
-        public int Num { get; set; }
+        public int FacilitiesNo { get; set; }
         public string Name { get; set; }
-        public bool InspectionStatus { get; set; }
+        public bool InspectionState { get; set; }
         public bool UseState { get; set; }
         public double Width { get; set; }
         public double Height { get; set; }
@@ -37,12 +36,10 @@ namespace PCBVI.Data
     
         public virtual Process Process { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductionHistory> ProductionHistories { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FacilitiesHistory> FacilitiesHistories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FacilitiesPower> FacilitiesPowers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Worker> Workers { get; set; }
+        public virtual ICollection<WorkLog> WorkLogs { get; set; }
     }
 }
