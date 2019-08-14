@@ -17,9 +17,29 @@ namespace PCBVI.Controls.Basic.Employee
             InitializeComponent();
         }
 
+        private List<Data.Employee> _employees = new List<Data.Employee>();
+
         public void SetEmployeeDataSource(List<Data.Employee> list)
         {
             dgvList.DataSource = list;
+        }
+
+        public List<Data.Employee> GetUpateList()
+        {
+            return _employees;
+        }
+
+        private void DgvList_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvList.CurrentRow.DataBoundItem is Data.Employee employee)
+            {
+                _employees.Add(employee);
+            }
+            //var employee = dgvList.CurrentRow.DataBoundItem as Data.Employee;
+            //if (employee != null)
+            //{
+            //    _employees.Add(employee);
+            //}
         }
     }
 }

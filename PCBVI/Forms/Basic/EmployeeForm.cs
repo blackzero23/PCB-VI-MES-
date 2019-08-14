@@ -32,5 +32,10 @@ namespace PCBVI.Forms.Basic
         {
             uscTopMenu.OpenInsertForm(new EmployeeInsertForm());
         }
+
+        private void UscTopMenu_UpdateButtonClicked(object sender, Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs e)
+        {
+            uscTopMenu.UpdateAll(uscList.GetUpateList());
+        }
     }
 }

@@ -32,8 +32,8 @@
             this.naviEmployee = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageEmployee = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelSearch = new System.Windows.Forms.Panel();
             this.uscList = new PCBVI.Controls.Basic.Employee.EmployeeList();
+            this.panelSearch = new System.Windows.Forms.Panel();
             this.uscSearch = new PCBVI.Controls.Basic.Employee.EmployeeSearch();
             this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
             this.MainPanel.SuspendLayout();
@@ -98,6 +98,14 @@
             this.panel1.Size = new System.Drawing.Size(798, 325);
             this.panel1.TabIndex = 1;
             // 
+            // uscList
+            // 
+            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscList.Location = new System.Drawing.Point(0, 0);
+            this.uscList.Name = "uscList";
+            this.uscList.Size = new System.Drawing.Size(798, 325);
+            this.uscList.TabIndex = 0;
+            // 
             // panelSearch
             // 
             this.panelSearch.Controls.Add(this.uscSearch);
@@ -106,14 +114,6 @@
             this.panelSearch.Name = "panelSearch";
             this.panelSearch.Size = new System.Drawing.Size(798, 60);
             this.panelSearch.TabIndex = 0;
-            // 
-            // uscList
-            // 
-            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscList.Location = new System.Drawing.Point(0, 0);
-            this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(798, 325);
-            this.uscList.TabIndex = 0;
             // 
             // uscSearch
             // 
@@ -133,6 +133,7 @@
             this.uscTopMenu.Size = new System.Drawing.Size(800, 36);
             this.uscTopMenu.TabIndex = 0;
             this.uscTopMenu.InsertButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs>(this.UscTopMenu_InsertButtonClicked);
+            this.uscTopMenu.UpdateButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs>(this.UscTopMenu_UpdateButtonClicked);
             // 
             // EmployeeForm
             // 

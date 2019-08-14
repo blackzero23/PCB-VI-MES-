@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PCBVI.Data;
+using PCBVI.Data.Data;
 
 namespace PCBVI.Controls.CommonControl
 {
@@ -26,6 +29,20 @@ namespace PCBVI.Controls.CommonControl
         public void OpenInsertForm(Form form)
         {
             form.ShowDialog();
+        }
+
+        public void UpdateAll<T>(List<T> entities) where T : class
+        {
+            var wType = entities.GetType();
+            using (var context = new PCBVIEntities())
+            {
+                foreach (var entity in entities)
+                {
+                    context.Entry(entity).State = EntityState.Modified;
+                }
+
+                context.SaveChanges();
+            }
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
