@@ -33,9 +33,9 @@
             this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.txbName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.cbbDepartment = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbDepartment = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbDepartment)).BeginInit();
@@ -63,6 +63,7 @@
             this.btnSearch.Size = new System.Drawing.Size(90, 30);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Values.Text = "검 색";
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // txbName
             // 
@@ -82,6 +83,10 @@
             this.cbbDepartment.TabIndex = 2;
             this.cbbDepartment.ValueMember = "DepartmentId";
             // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataSource = typeof(PCBVI.Data.Department);
+            // 
             // lbName
             // 
             this.lbName.Location = new System.Drawing.Point(271, 15);
@@ -97,10 +102,6 @@
             this.lbDepartment.Size = new System.Drawing.Size(45, 20);
             this.lbDepartment.TabIndex = 0;
             this.lbDepartment.Values.Text = "부 서 :";
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataSource = typeof(PCBVI.Data.Department);
             // 
             // EmployeeSearch
             // 

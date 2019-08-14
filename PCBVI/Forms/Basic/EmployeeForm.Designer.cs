@@ -122,9 +122,11 @@
             this.uscSearch.Name = "uscSearch";
             this.uscSearch.Size = new System.Drawing.Size(798, 60);
             this.uscSearch.TabIndex = 0;
+            this.uscSearch.SearchCliked += new System.EventHandler<PCBVI.Controls.Basic.Employee.EmployeeSearch.SearchClikedEventArgs>(this.UscSearch_SearchCliked);
             // 
             // uscTopMenu
             // 
+            this.uscTopMenu.BackColor = System.Drawing.Color.White;
             this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
             this.uscTopMenu.Name = "uscTopMenu";

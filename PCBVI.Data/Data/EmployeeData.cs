@@ -25,5 +25,19 @@ namespace PCBVI.Data.Data
                 return query.FirstOrDefault();
             }
         }
+
+        public List<Employee> SeachEmployeeInfo(string employee, string department)
+        {
+            using(PCBVIEntities context = DbContextFactory.Create())
+            {
+                var query = from x in context.Employees
+                            where x.Department.Equals(department) &&                  x.Name.Equals(employee)
+                            select x;
+
+                //나중에 NULL 체크해서 넣어야됨 
+
+                return query.ToList();
+            }
+        }
     }
 }

@@ -38,11 +38,6 @@
             this.employmentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departureDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gradeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.defectiveProductsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstInspectionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalMonitoringsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workLogsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -62,12 +57,7 @@
             this.departmentIdDataGridViewTextBoxColumn,
             this.employmentDateDataGridViewTextBoxColumn,
             this.departureDateDataGridViewTextBoxColumn,
-            this.gradeDataGridViewTextBoxColumn,
-            this.defectiveProductsDataGridViewTextBoxColumn,
-            this.departmentDataGridViewTextBoxColumn,
-            this.firstInspectionsDataGridViewTextBoxColumn,
-            this.totalMonitoringsDataGridViewTextBoxColumn,
-            this.workLogsDataGridViewTextBoxColumn});
+            this.gradeDataGridViewTextBoxColumn});
             this.dgvList.DataSource = this.employeeBindingSource;
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.Location = new System.Drawing.Point(0, 0);
@@ -123,36 +113,6 @@
             this.gradeDataGridViewTextBoxColumn.HeaderText = "Grade";
             this.gradeDataGridViewTextBoxColumn.Name = "gradeDataGridViewTextBoxColumn";
             // 
-            // defectiveProductsDataGridViewTextBoxColumn
-            // 
-            this.defectiveProductsDataGridViewTextBoxColumn.DataPropertyName = "DefectiveProducts";
-            this.defectiveProductsDataGridViewTextBoxColumn.HeaderText = "DefectiveProducts";
-            this.defectiveProductsDataGridViewTextBoxColumn.Name = "defectiveProductsDataGridViewTextBoxColumn";
-            // 
-            // departmentDataGridViewTextBoxColumn
-            // 
-            this.departmentDataGridViewTextBoxColumn.DataPropertyName = "Department";
-            this.departmentDataGridViewTextBoxColumn.HeaderText = "Department";
-            this.departmentDataGridViewTextBoxColumn.Name = "departmentDataGridViewTextBoxColumn";
-            // 
-            // firstInspectionsDataGridViewTextBoxColumn
-            // 
-            this.firstInspectionsDataGridViewTextBoxColumn.DataPropertyName = "FirstInspections";
-            this.firstInspectionsDataGridViewTextBoxColumn.HeaderText = "FirstInspections";
-            this.firstInspectionsDataGridViewTextBoxColumn.Name = "firstInspectionsDataGridViewTextBoxColumn";
-            // 
-            // totalMonitoringsDataGridViewTextBoxColumn
-            // 
-            this.totalMonitoringsDataGridViewTextBoxColumn.DataPropertyName = "TotalMonitorings";
-            this.totalMonitoringsDataGridViewTextBoxColumn.HeaderText = "TotalMonitorings";
-            this.totalMonitoringsDataGridViewTextBoxColumn.Name = "totalMonitoringsDataGridViewTextBoxColumn";
-            // 
-            // workLogsDataGridViewTextBoxColumn
-            // 
-            this.workLogsDataGridViewTextBoxColumn.DataPropertyName = "WorkLogs";
-            this.workLogsDataGridViewTextBoxColumn.HeaderText = "WorkLogs";
-            this.workLogsDataGridViewTextBoxColumn.Name = "workLogsDataGridViewTextBoxColumn";
-            // 
             // EmployeeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -169,6 +129,7 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
+        private System.Windows.Forms.BindingSource employeeBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn employeeIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
@@ -176,11 +137,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn employmentDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departureDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gradeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn defectiveProductsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departmentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstInspectionsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalMonitoringsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn workLogsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource employeeBindingSource;
     }
 }

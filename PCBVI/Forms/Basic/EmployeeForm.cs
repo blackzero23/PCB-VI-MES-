@@ -22,5 +22,10 @@ namespace PCBVI.Forms.Basic
         {
             uscSearch.SetDepartmentSource(DB.Department.GetAll());
         }
+
+        private void UscSearch_SearchCliked(object sender, Controls.Basic.Employee.EmployeeSearch.SearchClikedEventArgs e)
+        {
+           uscList.SetEmployeeDataSource (DB.Employee.SeachEmployeeInfo(e.Employee, e.Department));
+        }
     }
 }
