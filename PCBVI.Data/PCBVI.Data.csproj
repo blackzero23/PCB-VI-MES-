@@ -69,6 +69,7 @@
     <Compile Include="Employee.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\ErrorCode.cs" />
     <Compile Include="ErrorCode.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
@@ -164,9 +165,7 @@
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DLLS\KrytonDLL\AdvancedPageDragAndDrop.exe" />
     <Content Include="DLLS\KrytonDLL\AdvancedPageDragAndDrop.pdb" />

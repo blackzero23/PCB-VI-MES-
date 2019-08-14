@@ -32,7 +32,7 @@
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.errorCodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorKindDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.explanationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
@@ -46,7 +46,7 @@
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codeDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
+            this.errorTypeDataGridViewTextBoxColumn,
             this.errorKindDataGridViewTextBoxColumn,
             this.explanationDataGridViewTextBoxColumn});
             this.dgvList.DataSource = this.errorCodeBindingSource;
@@ -64,25 +64,25 @@
             // codeDataGridViewTextBoxColumn
             // 
             this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "불량코드";
             this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
             // 
-            // nameDataGridViewTextBoxColumn
+            // errorTypeDataGridViewTextBoxColumn
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.errorTypeDataGridViewTextBoxColumn.DataPropertyName = "ErrorType";
+            this.errorTypeDataGridViewTextBoxColumn.HeaderText = "불량유형명";
+            this.errorTypeDataGridViewTextBoxColumn.Name = "errorTypeDataGridViewTextBoxColumn";
             // 
             // errorKindDataGridViewTextBoxColumn
             // 
             this.errorKindDataGridViewTextBoxColumn.DataPropertyName = "ErrorKind";
-            this.errorKindDataGridViewTextBoxColumn.HeaderText = "ErrorKind";
+            this.errorKindDataGridViewTextBoxColumn.HeaderText = "불량군";
             this.errorKindDataGridViewTextBoxColumn.Name = "errorKindDataGridViewTextBoxColumn";
             // 
             // explanationDataGridViewTextBoxColumn
             // 
             this.explanationDataGridViewTextBoxColumn.DataPropertyName = "Explanation";
-            this.explanationDataGridViewTextBoxColumn.HeaderText = "Explanation";
+            this.explanationDataGridViewTextBoxColumn.HeaderText = "불량설명";
             this.explanationDataGridViewTextBoxColumn.Name = "explanationDataGridViewTextBoxColumn";
             // 
             // ErrorCodeList
@@ -101,8 +101,9 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn errorTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn errorKindDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn explanationDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource errorCodeBindingSource;

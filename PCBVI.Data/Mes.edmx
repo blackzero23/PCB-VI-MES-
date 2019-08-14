@@ -42,10 +42,12 @@
           <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="DepartmentId" Type="int" Nullable="false" />
+          <Property Name="DepartmentId" Type="int" />
           <Property Name="EmploymentDate" Type="datetime" Nullable="false" />
           <Property Name="DepartureDate" Type="datetime" />
           <Property Name="Grade" Type="int" Nullable="false" />
+          <Property Name="LoginId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="ErrorCode">
           <Key>
@@ -410,7 +412,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Employee_Department">
-          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Department">
@@ -1227,10 +1229,12 @@
           <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentId" Type="Int32" />
           <Property Name="EmploymentDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="DepartureDate" Type="DateTime" Precision="3" />
           <Property Name="Grade" Type="Int32" Nullable="false" />
+          <Property Name="LoginId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_Employee" FromRole="Employee" ToRole="DefectiveProduct" />
           <NavigationProperty Name="Department" Relationship="Self.FK_Employee_Department" FromRole="Employee" ToRole="Department" />
           <NavigationProperty Name="FirstInspections" Relationship="Self.FK_FirstInspection_Employee" FromRole="Employee" ToRole="FirstInspection" />
@@ -1721,7 +1725,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Employee_Department">
-          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Department">
@@ -2497,6 +2501,8 @@
                 <ScalarProperty Name="EmploymentDate" ColumnName="EmploymentDate" />
                 <ScalarProperty Name="DepartureDate" ColumnName="DepartureDate" />
                 <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

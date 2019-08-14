@@ -26,10 +26,12 @@ namespace PCBVI.Data
         public int EmployeeId { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
-        public int DepartmentId { get; set; }
+        public Nullable<int> DepartmentId { get; set; }
         public System.DateTime EmploymentDate { get; set; }
         public Nullable<System.DateTime> DepartureDate { get; set; }
         public int Grade { get; set; }
+        public string LoginId { get; set; }
+        public string Password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DefectiveProduct> DefectiveProducts { get; set; }

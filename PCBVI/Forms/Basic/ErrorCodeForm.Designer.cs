@@ -30,9 +30,9 @@
         {
             this.naviEmployee = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageEmployee = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.errorCodeList1 = new PCBVI.Controls.Basic.ErrorCode.ErrorCodeList();
             this.uscSearch = new PCBVI.Controls.Basic.ErrorCode.ErrorCodeSearch();
             this.topMenubar1 = new PCBVI.Controls.CommonControl.TopMenubar();
+            this.errorCodeList1 = new PCBVI.Controls.Basic.ErrorCode.ErrorCodeList();
             ((System.ComponentModel.ISupportInitialize)(this.naviEmployee)).BeginInit();
             this.naviEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageEmployee)).BeginInit();
@@ -74,14 +74,6 @@
             this.pageEmployee.ToolTipTitle = "Page ToolTip";
             this.pageEmployee.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
             // 
-            // errorCodeList1
-            // 
-            this.errorCodeList1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.errorCodeList1.Location = new System.Drawing.Point(0, 98);
-            this.errorCodeList1.Name = "errorCodeList1";
-            this.errorCodeList1.Size = new System.Drawing.Size(798, 286);
-            this.errorCodeList1.TabIndex = 1;
-            // 
             // uscSearch
             // 
             this.uscSearch.Dock = System.Windows.Forms.DockStyle.Top;
@@ -92,11 +84,20 @@
             // 
             // topMenubar1
             // 
+            this.topMenubar1.BackColor = System.Drawing.Color.White;
             this.topMenubar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.topMenubar1.Location = new System.Drawing.Point(0, 0);
             this.topMenubar1.Name = "topMenubar1";
             this.topMenubar1.Size = new System.Drawing.Size(800, 35);
             this.topMenubar1.TabIndex = 0;
+            // 
+            // errorCodeList1
+            // 
+            this.errorCodeList1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.errorCodeList1.Location = new System.Drawing.Point(0, 98);
+            this.errorCodeList1.Name = "errorCodeList1";
+            this.errorCodeList1.Size = new System.Drawing.Size(798, 286);
+            this.errorCodeList1.TabIndex = 1;
             // 
             // ErrorCodeForm
             // 
@@ -121,7 +122,7 @@
         private Controls.CommonControl.TopMenubar topMenubar1;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator naviEmployee;
         private ComponentFactory.Krypton.Navigator.KryptonPage pageEmployee;
-        private Controls.Basic.ErrorCode.ErrorCodeList errorCodeList1;
         private Controls.Basic.ErrorCode.ErrorCodeSearch uscSearch;
+        private Controls.Basic.ErrorCode.ErrorCodeList errorCodeList1;
     }
 }
