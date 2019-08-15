@@ -33,9 +33,9 @@
             this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.txbName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.cbbDepartment = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbDepartment = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbDepartment)).BeginInit();
@@ -58,51 +58,50 @@
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Location = new System.Drawing.Point(586, 15);
+            this.btnSearch.Location = new System.Drawing.Point(582, 15);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(90, 30);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Values.Text = "검 색";
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // txbName
             // 
-            this.txbName.Location = new System.Drawing.Point(367, 15);
+            this.txbName.Location = new System.Drawing.Point(331, 15);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(100, 23);
             this.txbName.TabIndex = 3;
             // 
             // cbbDepartment
             // 
-            this.cbbDepartment.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.departmentBindingSource, "DepartmentId", true));
             this.cbbDepartment.DataSource = this.departmentBindingSource;
             this.cbbDepartment.DisplayMember = "Name";
             this.cbbDepartment.DropDownWidth = 121;
-            this.cbbDepartment.Location = new System.Drawing.Point(154, 15);
+            this.cbbDepartment.Location = new System.Drawing.Point(96, 15);
             this.cbbDepartment.Name = "cbbDepartment";
             this.cbbDepartment.Size = new System.Drawing.Size(121, 21);
             this.cbbDepartment.TabIndex = 2;
+            this.cbbDepartment.ValueMember = "DepartmentId";
+            // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataSource = typeof(PCBVI.Data.Department);
             // 
             // lbName
             // 
-            this.lbName.Location = new System.Drawing.Point(307, 15);
-            this.lbName.MinimumSize = new System.Drawing.Size(0, 30);
+            this.lbName.Location = new System.Drawing.Point(271, 15);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(54, 30);
+            this.lbName.Size = new System.Drawing.Size(54, 20);
             this.lbName.TabIndex = 1;
             this.lbName.Values.Text = "사원명 :";
             // 
             // lbDepartment
             // 
             this.lbDepartment.Location = new System.Drawing.Point(45, 15);
-            this.lbDepartment.MinimumSize = new System.Drawing.Size(0, 30);
             this.lbDepartment.Name = "lbDepartment";
-            this.lbDepartment.Size = new System.Drawing.Size(45, 30);
+            this.lbDepartment.Size = new System.Drawing.Size(45, 20);
             this.lbDepartment.TabIndex = 0;
             this.lbDepartment.Values.Text = "부 서 :";
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataSource = typeof(PCBVI.Data.Department);
             // 
             // EmployeeSearch
             // 
