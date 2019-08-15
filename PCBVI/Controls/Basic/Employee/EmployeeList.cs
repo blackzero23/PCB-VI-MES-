@@ -29,6 +29,11 @@ namespace PCBVI.Controls.Basic.Employee
             return _employees;
         }
 
+        public DataGridView GetListView()
+        {
+            return dgvList;
+        }
+
         private void DgvList_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvList.CurrentRow.DataBoundItem is Data.Employee employee)

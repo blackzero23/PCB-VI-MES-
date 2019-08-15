@@ -37,5 +37,10 @@ namespace PCBVI.Forms.Basic
         {
             uscTopMenu.UpdateAll(uscList.GetUpateList());
         }
+
+        private void UscTopMenu_ExcelButtonClicked(object sender, Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs e)
+        {
+            uscTopMenu.SaveExcelFile(uscList.GetListView(), "사원 정보");            
+        }
     }
 }
