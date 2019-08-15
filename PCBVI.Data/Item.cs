@@ -20,7 +20,6 @@ namespace PCBVI.Data
             this.FirstInspections = new HashSet<FirstInspection>();
             this.ProductionHistories = new HashSet<ProductionHistory>();
             this.LastInspections = new HashSet<LastInspection>();
-            this.Lots = new HashSet<Lot>();
             this.ProcessDefects = new HashSet<ProcessDefect>();
             this.TotalMonitorings = new HashSet<TotalMonitoring>();
             this.WorkOrders = new HashSet<WorkOrder>();
@@ -28,7 +27,6 @@ namespace PCBVI.Data
     
         public int ItemId { get; set; }
         public string Code { get; set; }
-        public int BaecodeId { get; set; }
         public string Name { get; set; }
         public int FirstItemDivisionId { get; set; }
         public int SecondItemDivisionId { get; set; }
@@ -36,7 +34,6 @@ namespace PCBVI.Data
         public int Quantity { get; set; }
         public string Note { get; set; }
     
-        public virtual Barcode Barcode { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FirstInspection> FirstInspections { get; set; }
         public virtual FirstItemDivision FirstItemDivision { get; set; }
@@ -45,8 +42,6 @@ namespace PCBVI.Data
         public virtual SecondItemDivision SecondItemDivision { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LastInspection> LastInspections { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Lot> Lots { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProcessDefect> ProcessDefects { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -20,17 +20,20 @@ namespace PCBVI.Controls.Basic.ErrorCode
             InitializeComponent();
         }
 
-        private void ErrorCodeSearch_Load(object sender, EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
-            
+            base.OnLoad(e);
+
+            if (DesignMode)
+                return;
+
             List<Data.ErrorCode> errorCodes = DB.ErrorCode.GetAll();
-            //errorCodes.Add(new Data.ErrorCode("없음"));
-            cbbErrorCode.DataSource = errorCodes; 
+            //errorCodes.IndexOf(0,new Data.ErrorCode("없음"));
+            cbbErrorCode.DataSource = errorCodes;
             List<Data.ErrorType> errorTypes = DB.ErrorType.GetAll();
             cbbErrorType.DataSource = errorTypes;
             var errorKinds = DB.ErrorKind.GetAll();
             cbbErrorKind.DataSource = errorKinds;
-          
         }
 
 
@@ -87,15 +90,10 @@ namespace PCBVI.Controls.Basic.ErrorCode
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             string code = cbbErrorCode.Text;
-            string type = cbbErrorKind.Text;
-            string kind = cbbErrorType.Text;
-
-            MessageBox.Show(code);
-            MessageBox.Show(type);
-            MessageBox.Show(kind);
-
-            OnSearchClicked(code, kind, type);
+            string kind = cbbErrorKind.Text;
+            string type = cbbErrorType.Text;
             
+            OnSearchClicked(code, kind, type);            
         }
     }
 }

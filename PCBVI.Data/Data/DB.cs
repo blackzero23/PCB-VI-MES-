@@ -14,5 +14,6 @@ namespace PCBVI.Data.Data
         public static ErrorCodeData ErrorCode { get; } = new ErrorCodeData();
         public static ErrorTypeData ErrorType { get; } = new ErrorTypeData();
         public static ErrorKindData ErrorKind { get; } = new ErrorKindData();
+        public static LotData Lot { get; } = new LotData();
     }
 }

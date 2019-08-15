@@ -17,22 +17,19 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Lot()
         {
-            this.Barcodes = new HashSet<Barcode>();
             this.DefectiveProducts = new HashSet<DefectiveProduct>();
+            this.LotBarCodes = new HashSet<LotBarCode>();
             this.MaterialHistories = new HashSet<MaterialHistory>();
             this.MaterialsManages = new HashSet<MaterialsManage>();
         }
     
         public int LotId { get; set; }
         public string LotCode { get; set; }
-        public int ItemId { get; set; }
-        public int Quantity { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Barcode> Barcodes { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DefectiveProduct> DefectiveProducts { get; set; }
-        public virtual Item Item { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LotBarCode> LotBarCodes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MaterialHistory> MaterialHistories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

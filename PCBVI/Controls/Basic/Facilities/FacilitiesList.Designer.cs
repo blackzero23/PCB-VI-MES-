@@ -30,10 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.kryptonDataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.facilityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facilitiesIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.facilityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facilityBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -45,19 +44,14 @@
             this.kryptonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.kryptonDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.facilitiesIdDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.numDataGridViewTextBoxColumn});
+            this.nameDataGridViewTextBoxColumn});
             this.kryptonDataGridView1.DataSource = this.facilityBindingSource;
             this.kryptonDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonDataGridView1.Location = new System.Drawing.Point(0, 0);
             this.kryptonDataGridView1.Name = "kryptonDataGridView1";
             this.kryptonDataGridView1.RowTemplate.Height = 23;
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(360, 288);
+            this.kryptonDataGridView1.Size = new System.Drawing.Size(388, 288);
             this.kryptonDataGridView1.TabIndex = 0;
-            // 
-            // facilityBindingSource
-            // 
-            this.facilityBindingSource.DataSource = typeof(PCBVI.Data.Facility);
             // 
             // facilitiesIdDataGridViewTextBoxColumn
             // 
@@ -71,11 +65,9 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // numDataGridViewTextBoxColumn
+            // facilityBindingSource
             // 
-            this.numDataGridViewTextBoxColumn.DataPropertyName = "Num";
-            this.numDataGridViewTextBoxColumn.HeaderText = "Num";
-            this.numDataGridViewTextBoxColumn.Name = "numDataGridViewTextBoxColumn";
+            this.facilityBindingSource.DataSource = typeof(PCBVI.Data.Facility);
             // 
             // FacilitiesList
             // 
@@ -83,7 +75,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.kryptonDataGridView1);
             this.Name = "FacilitiesList";
-            this.Size = new System.Drawing.Size(360, 288);
+            this.Size = new System.Drawing.Size(388, 288);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facilityBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -95,7 +87,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn facilitiesIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource facilityBindingSource;
     }
 }

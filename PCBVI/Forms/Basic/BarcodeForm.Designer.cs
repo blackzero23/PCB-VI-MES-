@@ -28,52 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
-            this.uscSearch = new PCBVI.Controls.Basic.BarCode.BarcodeSearch();
-            this.uscList = new PCBVI.Controls.Basic.BarCode.BarcodeList();
             this.naviBarcode = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageBarcode = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.uscList = new PCBVI.Controls.Basic.BarCode.BarcodeList();
+            this.barcodeSearch1 = new PCBVI.Controls.Basic.BarCode.BarcodeSearch();
+            this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
             ((System.ComponentModel.ISupportInitialize)(this.naviBarcode)).BeginInit();
             this.naviBarcode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageBarcode)).BeginInit();
             this.pageBarcode.SuspendLayout();
             this.SuspendLayout();
             // 
-            // uscTopMenu
-            // 
-            this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
-            this.uscTopMenu.Name = "uscTopMenu";
-            this.uscTopMenu.Size = new System.Drawing.Size(833, 35);
-            this.uscTopMenu.TabIndex = 0;
-            // 
-            // uscSearch
-            // 
-            this.uscSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.uscSearch.Location = new System.Drawing.Point(0, 0);
-            this.uscSearch.Name = "uscSearch";
-            this.uscSearch.Size = new System.Drawing.Size(831, 68);
-            this.uscSearch.TabIndex = 1;
-            // 
-            // uscList
-            // 
-            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscList.Location = new System.Drawing.Point(0, 68);
-            this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(831, 318);
-            this.uscList.TabIndex = 2;
-            // 
             // naviBarcode
             // 
+            this.naviBarcode.Bar.BarMapExtraText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.None;
             this.naviBarcode.Bar.BarMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.SmallMedium;
             this.naviBarcode.Bar.BarMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.Text;
+            this.naviBarcode.Bar.ItemSizing = ComponentFactory.Krypton.Navigator.BarItemSizing.SameHeight;
+            this.naviBarcode.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.Context;
             this.naviBarcode.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.naviBarcode.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.naviBarcode.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.None;
             this.naviBarcode.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.naviBarcode.Button.ContextMenuMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
+            this.naviBarcode.Button.ContextMenuMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
+            this.naviBarcode.Button.NextButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
+            this.naviBarcode.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
+            this.naviBarcode.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
+            this.naviBarcode.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.naviBarcode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.naviBarcode.Location = new System.Drawing.Point(0, 35);
             this.naviBarcode.Name = "naviBarcode";
+            this.naviBarcode.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarTabGroup;
             this.naviBarcode.Padding = new System.Windows.Forms.Padding(3);
             this.naviBarcode.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageBarcode});
@@ -88,7 +74,7 @@
             // 
             this.pageBarcode.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
             this.pageBarcode.Controls.Add(this.uscList);
-            this.pageBarcode.Controls.Add(this.uscSearch);
+            this.pageBarcode.Controls.Add(this.barcodeSearch1);
             this.pageBarcode.Flags = 65534;
             this.pageBarcode.LastVisibleSet = true;
             this.pageBarcode.MinimumSize = new System.Drawing.Size(50, 50);
@@ -97,6 +83,32 @@
             this.pageBarcode.Text = "바코드 정보";
             this.pageBarcode.ToolTipTitle = "Page ToolTip";
             this.pageBarcode.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
+            // 
+            // uscList
+            // 
+            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscList.Location = new System.Drawing.Point(0, 68);
+            this.uscList.Name = "uscList";
+            this.uscList.Size = new System.Drawing.Size(831, 318);
+            this.uscList.TabIndex = 1;
+            // 
+            // barcodeSearch1
+            // 
+            this.barcodeSearch1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barcodeSearch1.Location = new System.Drawing.Point(0, 0);
+            this.barcodeSearch1.Name = "barcodeSearch1";
+            this.barcodeSearch1.Size = new System.Drawing.Size(831, 68);
+            this.barcodeSearch1.TabIndex = 0;
+            this.barcodeSearch1.SeaechButtonClicked += new System.EventHandler<PCBVI.Controls.Basic.BarCode.BarcodeSearch.SeaechButtonClickedEventArgs>(this.BarcodeSearch1_SeaechButtonClicked);
+            // 
+            // uscTopMenu
+            // 
+            this.uscTopMenu.BackColor = System.Drawing.Color.White;
+            this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
+            this.uscTopMenu.Name = "uscTopMenu";
+            this.uscTopMenu.Size = new System.Drawing.Size(833, 35);
+            this.uscTopMenu.TabIndex = 0;
             // 
             // BarcodeForm
             // 
@@ -119,9 +131,9 @@
         #endregion
 
         private Controls.CommonControl.TopMenubar uscTopMenu;
-        private Controls.Basic.BarCode.BarcodeSearch uscSearch;
-        private Controls.Basic.BarCode.BarcodeList uscList;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator naviBarcode;
         private ComponentFactory.Krypton.Navigator.KryptonPage pageBarcode;
+        private Controls.Basic.BarCode.BarcodeSearch barcodeSearch1;
+        private Controls.Basic.BarCode.BarcodeList uscList;
     }
 }

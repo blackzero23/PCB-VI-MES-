@@ -76,6 +76,7 @@
             this.cbbErrorKind.Name = "cbbErrorKind";
             this.cbbErrorKind.Size = new System.Drawing.Size(105, 21);
             this.cbbErrorKind.TabIndex = 24;
+            this.cbbErrorKind.ValueMember = "Name";
             // 
             // errorKindBindingSource
             // 
@@ -92,6 +93,7 @@
             this.cbbErrorType.Name = "cbbErrorType";
             this.cbbErrorType.Size = new System.Drawing.Size(105, 21);
             this.cbbErrorType.TabIndex = 23;
+            this.cbbErrorType.ValueMember = "Name";
             // 
             // errorTypeBindingSource
             // 
@@ -107,8 +109,6 @@
             // 
             // cbbErrorCode
             // 
-            this.cbbErrorCode.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.errorCodeBindingSource, "ErrorCodeId", true));
-            this.cbbErrorCode.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.errorCodeBindingSource, "Code", true));
             this.cbbErrorCode.DataSource = this.errorCodeBindingSource;
             this.cbbErrorCode.DisplayMember = "Code";
             this.cbbErrorCode.DropDownWidth = 121;
@@ -117,6 +117,7 @@
             this.cbbErrorCode.Size = new System.Drawing.Size(105, 21);
             this.cbbErrorCode.TabIndex = 21;
             this.cbbErrorCode.TabStop = false;
+            this.cbbErrorCode.ValueMember = "Code";
             // 
             // errorCodeBindingSource
             // 
@@ -155,7 +156,6 @@
             this.Controls.Add(this.kryptonPanel1);
             this.Name = "ErrorCodeSearch";
             this.Size = new System.Drawing.Size(703, 82);
-            this.Load += new System.EventHandler(this.ErrorCodeSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();

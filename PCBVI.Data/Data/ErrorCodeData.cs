@@ -13,10 +13,25 @@ namespace PCBVI.Data.Data
             using (PCBVIEntities context = DbContextFactory.Create())
             {
                 var query = from x in context.ErrorCodes
-                            where x.Code.Equals(code) && x.ErrorKindName.Equals(kind) && x.ErrorTypeName.Equals(type)
-                            select x;
-                return query.ToList();
+                            where x.Code.Equals(code) &&
+                            x.ErrorKind.Name.Equals(kind) &&
+                            x.ErrorType.Name.Equals(type)
+                            select new
+                            {
+                                ErrorCode = x,
+                                ErrorKindName = x.ErrorKind.Name,
+                                ErrorTypeName = x.ErrorType.Name
+                            };                
 
+                foreach(var x in query)
+                {
+                    x.ErrorCode.ErrorKindName = x.ErrorKindName;
+                    x.ErrorCode.ErrorTypeName = x.ErrorTypeName;
+                }
+
+                var list = query.ToList();
+
+                return list.ConvertAll(x => x.ErrorCode);
             }
         }
     }

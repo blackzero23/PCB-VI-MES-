@@ -43,6 +43,7 @@ namespace PCBVI.Data
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<LastInspection> LastInspections { get; set; }
         public virtual DbSet<Lot> Lots { get; set; }
+        public virtual DbSet<LotBarCode> LotBarCodes { get; set; }
         public virtual DbSet<MaterialHistory> MaterialHistories { get; set; }
         public virtual DbSet<MaterialsInRe> MaterialsInRes { get; set; }
         public virtual DbSet<MaterialsManage> MaterialsManages { get; set; }

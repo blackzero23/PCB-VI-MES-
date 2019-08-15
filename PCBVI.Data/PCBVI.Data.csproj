@@ -61,6 +61,7 @@
     <Compile Include="Data\ErrorCodeData.cs" />
     <Compile Include="Data\ErrorKindData.cs" />
     <Compile Include="Data\ErrorTypeData.cs" />
+    <Compile Include="Data\LotData.cs" />
     <Compile Include="DbContextFactory.cs" />
     <Compile Include="DefectiveProduct.cs">
       <DependentUpon>Mes.tt</DependentUpon>
@@ -71,6 +72,7 @@
     <Compile Include="Employee.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Barcode.cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\ErrorCode.cs" />
     <Compile Include="ErrorCode.cs">
@@ -113,6 +115,9 @@
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="Lot.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LotBarCode.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="MaterialHistory.cs">

@@ -19,12 +19,7 @@ namespace PCBVI.Controls.CommonControl
         {
             InitializeComponent();
         }
-
-        private void BtnInsert_Click(object sender, EventArgs e)
-        {
-            OnInsertButtonClicked();
-        }
-
+                
         //입력 신규 폼 열기.
         public void OpenInsertForm(Form form)
         {
@@ -92,6 +87,11 @@ namespace PCBVI.Controls.CommonControl
             workbook.SaveAs($@"D:\{fileName}.xls", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             // Exit from the application 
             app.Quit();         
+        }
+
+        private void BtnInsert_Click(object sender, EventArgs e)
+        {
+            OnInsertButtonClicked();
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)

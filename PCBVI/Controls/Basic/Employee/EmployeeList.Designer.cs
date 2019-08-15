@@ -62,7 +62,6 @@
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.Location = new System.Drawing.Point(0, 0);
             this.dgvList.Name = "dgvList";
-            this.dgvList.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.dgvList.RowTemplate.Height = 23;
             this.dgvList.Size = new System.Drawing.Size(663, 461);
             this.dgvList.TabIndex = 0;
