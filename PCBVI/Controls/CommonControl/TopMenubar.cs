@@ -34,7 +34,7 @@ namespace PCBVI.Controls.CommonControl
         //변경사항 저장
         public void UpdateAll<T>(List<T> entities) where T : class
         {
-            var wType = entities.GetType();
+            //var wType = entities.GetType();
             using (var context = new PCBVIEntities())
             {
                 foreach (var entity in entities)
@@ -42,6 +42,16 @@ namespace PCBVI.Controls.CommonControl
                     context.Entry(entity).State = EntityState.Modified;
                 }
 
+                context.SaveChanges();
+            }
+        }
+
+        //변경사항 삭제
+        public void DeleteAt<T>(T entity) where T : class
+        {
+            using(var context = DbContextFactory.Create())
+            {
+                context.Entry(entity).State = EntityState.Deleted;
                 context.SaveChanges();
             }
         }

@@ -684,6 +684,9 @@
     <EmbeddedResource Include="Forms\Basic\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\EmployeeInsertForm.resx">
+      <DependentUpon>EmployeeInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\FacilitiesForm.resx">
       <DependentUpon>FacilitiesForm.cs</DependentUpon>
     </EmbeddedResource>

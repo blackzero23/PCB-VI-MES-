@@ -34,6 +34,11 @@ namespace PCBVI.Controls.Basic.Employee
             return dgvList;
         }
 
+        public Data.Employee GetCurrentLow()
+        {
+            return dgvList.CurrentRow.DataBoundItem as Data.Employee;
+        }
+
         private void DgvList_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvList.CurrentRow.DataBoundItem is Data.Employee employee)

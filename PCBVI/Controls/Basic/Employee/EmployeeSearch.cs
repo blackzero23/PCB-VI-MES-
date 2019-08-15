@@ -18,12 +18,19 @@ namespace PCBVI.Controls.Basic.Employee
             InitializeComponent();
         }
 
+        //초기화 
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (DesignMode)
+                return;           
+        }
+
         public void SetDepartmentSource(List<Department> list)
         {
             cbbDepartment.DataSource = list;
         }
-
-
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
