@@ -20,7 +20,7 @@ namespace PCBVI.Forms.Basic
 
         private void BarcodeSearch1_SeaechButtonClicked(object sender, Controls.Basic.BarCode.BarcodeSearch.SeaechButtonClickedEventArgs e)
         {
-            uscList.SetBarcodeDataSource(DB.Lot.Search(e.LotId));
+            uscList.SetBarcodeDataSource(DB.BarCode.Search(e.LotId));
         }
     }
 }

@@ -17,6 +17,7 @@ namespace PCBVI.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Item()
         {
+            this.Barcodes = new HashSet<Barcode>();
             this.FirstInspections = new HashSet<FirstInspection>();
             this.ProductionHistories = new HashSet<ProductionHistory>();
             this.LastInspections = new HashSet<LastInspection>();
@@ -34,6 +35,8 @@ namespace PCBVI.Data
         public int Quantity { get; set; }
         public string Note { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Barcode> Barcodes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FirstInspection> FirstInspections { get; set; }
         public virtual FirstItemDivision FirstItemDivision { get; set; }

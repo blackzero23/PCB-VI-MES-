@@ -345,6 +345,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Barcode_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="Barcode" Type="Self.Barcode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="Barcode">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_DefectiveProduct_Barcode">
           <End Role="Barcode" Type="Self.Barcode" Multiplicity="1" />
           <End Role="DefectiveProduct" Type="Self.DefectiveProduct" Multiplicity="*" />
@@ -969,6 +981,10 @@
             <End Role="ErrorCode" EntitySet="ErrorCode" />
             <End Role="Barcode" EntitySet="Barcode" />
           </AssociationSet>
+          <AssociationSet Name="FK_Barcode_Item" Association="Self.FK_Barcode_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="Barcode" EntitySet="Barcode" />
+          </AssociationSet>
           <AssociationSet Name="FK_DefectiveProduct_Barcode" Association="Self.FK_DefectiveProduct_Barcode">
             <End Role="Barcode" EntitySet="Barcode" />
             <End Role="DefectiveProduct" EntitySet="DefectiveProduct" />
@@ -1181,6 +1197,7 @@
           <Property Name="ErrorCodeId" Type="Int32" />
           <Property Name="ItemId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ErrorCode" Relationship="Self.FK_Barcode_ErrorCode" FromRole="Barcode" ToRole="ErrorCode" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_Barcode_Item" FromRole="Barcode" ToRole="Item" />
           <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_Barcode" FromRole="Barcode" ToRole="DefectiveProduct" />
           <NavigationProperty Name="LotBarCodes" Relationship="Self.FK_LotBarCode_Barcode" FromRole="Barcode" ToRole="LotBarCode" />
           <NavigationProperty Name="MaterialHistories" Relationship="Self.FK_MaterialHistory_Barcode" FromRole="Barcode" ToRole="MaterialHistory" />
@@ -1377,6 +1394,7 @@
           <Property Name="WorkPlaceId" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
           <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Barcodes" Relationship="Self.FK_Barcode_Item" FromRole="Item" ToRole="Barcode" />
           <NavigationProperty Name="FirstInspections" Relationship="Self.FK_FirstInspection_Product" FromRole="Item" ToRole="FirstInspection" />
           <NavigationProperty Name="FirstItemDivision" Relationship="Self.FK_Product_ProductSubJect" FromRole="Item" ToRole="FirstItemDivision" />
           <NavigationProperty Name="ProductionHistories" Relationship="Self.FK_FacilitiesHistory_Product" FromRole="Item" ToRole="ProductionHistory" />
@@ -1608,6 +1626,18 @@
             </Principal>
             <Dependent Role="Barcode">
               <PropertyRef Name="ErrorCodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Barcode_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="Barcode" Type="Self.Barcode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="Barcode">
+              <PropertyRef Name="ItemId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2233,6 +2263,10 @@
           <EntitySet Name="WorkPlaces" EntityType="Self.WorkPlace" />
           <AssociationSet Name="FK_Barcode_ErrorCode" Association="Self.FK_Barcode_ErrorCode">
             <End Role="ErrorCode" EntitySet="ErrorCodes" />
+            <End Role="Barcode" EntitySet="Barcodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Barcode_Item" Association="Self.FK_Barcode_Item">
+            <End Role="Item" EntitySet="Items" />
             <End Role="Barcode" EntitySet="Barcodes" />
           </AssociationSet>
           <AssociationSet Name="FK_DefectiveProduct_Barcode" Association="Self.FK_DefectiveProduct_Barcode">

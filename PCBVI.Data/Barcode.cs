@@ -30,6 +30,7 @@ namespace PCBVI.Data
         public int ItemId { get; set; }
     
         public virtual ErrorCode ErrorCode { get; set; }
+        public virtual Item Item { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DefectiveProduct> DefectiveProducts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
