@@ -171,7 +171,6 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn placeDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bdsFacilities;
         private System.Windows.Forms.BindingSource bdsWorkPlace;
         private System.Windows.Forms.BindingSource bdsFHistoryDivision;
