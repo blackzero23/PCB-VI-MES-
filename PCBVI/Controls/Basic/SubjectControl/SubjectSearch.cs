@@ -16,5 +16,6 @@ namespace PCBVI.Controls.Basic.SubjectControl
         {
             InitializeComponent();
         }
+
     }
 }

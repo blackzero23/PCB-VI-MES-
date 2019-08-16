@@ -792,8 +792,10 @@
     <None Include="Properties\DataSources\PCBVI.Data.FacilitiesHistory.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Facility.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.InspectionStandard.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.Item.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Process.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Product.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.WorkPlace.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
