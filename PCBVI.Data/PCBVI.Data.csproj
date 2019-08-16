@@ -65,9 +65,12 @@
     <Compile Include="Data\FacilitiesData.cs" />
     <Compile Include="Data\FacilitiesHistoryData.cs" />
     <Compile Include="Data\FHistoryDivisionData.cs" />
+    <Compile Include="Data\FirstItemDivisionData.cs" />
+    <Compile Include="Data\ItemData.cs" />
     <Compile Include="Data\LotData.cs" />
     <Compile Include="Data\ProcessData.cs" />
     <Compile Include="Data\WorkPlaceData.cs" />
+    <Compile Include="Data\SecondItemDivisionData.cs" />
     <Compile Include="DbContextFactory.cs" />
     <Compile Include="DefectiveProduct.cs">
       <DependentUpon>Mes.tt</DependentUpon>

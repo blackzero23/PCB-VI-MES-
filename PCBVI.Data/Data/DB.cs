@@ -19,6 +19,10 @@ namespace PCBVI.Data.Data
         public static FHistoryDivisionData FHistoryDivision { get; } = new FHistoryDivisionData();
         public static WorkPlaceData WorkPlace { get; } = new WorkPlaceData();
         public static LotData Lot { get; } = new LotData();
+        public static FirstItemDivisionData FirstItemDivision { get;} = new FirstItemDivisionData();
+        public static SecondItemDivisionData SecondItemDivision
+        { get; } = new SecondItemDivisionData();
+        public static ItemData Item { get; } = new ItemData();
         public static ProcessData Process { get; } = new ProcessData();
 
     }

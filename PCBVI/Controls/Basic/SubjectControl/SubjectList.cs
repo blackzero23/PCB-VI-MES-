@@ -7,18 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PCBVI.Data.Data;
 
 namespace PCBVI.Controls.Basic.SubjectControl
 {
-    public partial class SubjectSearch : UserControl
+    public partial class SubjectList : UserControl
     {
-        public SubjectSearch()
+        public SubjectList()
         {
             InitializeComponent();
         }
 
-        //USC가 로드될때 이용하는곳.
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -26,14 +25,15 @@ namespace PCBVI.Controls.Basic.SubjectControl
             if (DesignMode)
                 return;
             //데이터 바인딩 곳에 데이터를 불러와서 넣는다.
-            bdsFirstDivision.DataSource = DB.FirstItemDivision.GetAll();
 
-            bdsSecondDivision.DataSource =
-                DB.SecondItemDivision.GetAll();
+           // dbsItem.DataSource = 
         }
 
-       
-        
-
+        /*
+        public void SetBarcodeDataSource(List<Item> list)
+        {
+            dgvList.DataSource = list;
+        }
+        */
     }
 }

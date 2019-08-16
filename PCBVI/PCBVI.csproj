@@ -211,11 +211,11 @@
     <Compile Include="Controls\MainControls\MainMenulistControl.Designer.cs">
       <DependentUpon>MainMenulistControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Basic\SubjectControl\SubjectGrid.cs">
+    <Compile Include="Controls\Basic\SubjectControl\SubjectList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Basic\SubjectControl\SubjectGrid.Designer.cs">
-      <DependentUpon>SubjectGrid.cs</DependentUpon>
+    <Compile Include="Controls\Basic\SubjectControl\SubjectList.Designer.cs">
+      <DependentUpon>SubjectList.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Basic\SubjectControl\SubjectSearch.cs">
       <SubType>UserControl</SubType>
@@ -612,8 +612,8 @@
     <EmbeddedResource Include="Controls\MainControls\MainMenulistControl.resx">
       <DependentUpon>MainMenulistControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Basic\SubjectControl\SubjectGrid.resx">
-      <DependentUpon>SubjectGrid.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Basic\SubjectControl\SubjectList.resx">
+      <DependentUpon>SubjectList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Basic\SubjectControl\SubjectSearch.resx">
       <DependentUpon>SubjectSearch.cs</DependentUpon>
@@ -804,12 +804,14 @@
     <None Include="Properties\DataSources\PCBVI.Data.FacilitiesHistory.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Facility.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.FHistoryDivision.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.FirstItemDivision.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.InspectionStandard.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Lot.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.LotBarCode.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Item.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Process.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Product.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.SecondItemDivision.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.WorkPlace.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
