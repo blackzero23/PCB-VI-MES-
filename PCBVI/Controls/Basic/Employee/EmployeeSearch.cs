@@ -19,6 +19,7 @@ namespace PCBVI.Controls.Basic.Employee
         }
 
         //초기화 
+        //dd
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
