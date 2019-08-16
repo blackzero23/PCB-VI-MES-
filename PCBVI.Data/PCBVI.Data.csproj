@@ -61,7 +61,11 @@
     <Compile Include="Data\ErrorCodeData.cs" />
     <Compile Include="Data\ErrorKindData.cs" />
     <Compile Include="Data\ErrorTypeData.cs" />
+    <Compile Include="Data\FacilitiesData.cs" />
+    <Compile Include="Data\FacilitiesHistoryData.cs" />
+    <Compile Include="Data\FHistoryDivisionData.cs" />
     <Compile Include="Data\LotData.cs" />
+    <Compile Include="Data\WorkPlaceData.cs" />
     <Compile Include="DbContextFactory.cs" />
     <Compile Include="DefectiveProduct.cs">
       <DependentUpon>Mes.tt</DependentUpon>
@@ -76,6 +80,9 @@
     <Compile Include="Entities\Department.cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\ErrorCode.cs" />
+    <Compile Include="Entities\Facility.cs" />
+    <Compile Include="Entities\FHistoryDivision.cs" />
+    <Compile Include="Entities\WorkPlace.cs" />
     <Compile Include="ErrorCode.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
