@@ -17,6 +17,7 @@ namespace PCBVI.Controls.Basic.Employee
         {
             InitializeComponent();
         }
+        //dddd
 
         protected override void OnLoad(EventArgs e)
         {
