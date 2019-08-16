@@ -73,6 +73,7 @@
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Barcode.cs" />
+    <Compile Include="Entities\Department.cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\ErrorCode.cs" />
     <Compile Include="ErrorCode.cs">

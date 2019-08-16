@@ -69,13 +69,14 @@
             // 
             this.txbName.Location = new System.Drawing.Point(331, 15);
             this.txbName.Name = "txbName";
-            this.txbName.Size = new System.Drawing.Size(100, 23);
+            this.txbName.Size = new System.Drawing.Size(100, 20);
             this.txbName.TabIndex = 3;
             // 
             // cbbDepartment
             // 
             this.cbbDepartment.DataSource = this.departmentBindingSource;
             this.cbbDepartment.DisplayMember = "Name";
+            this.cbbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbDepartment.DropDownWidth = 121;
             this.cbbDepartment.Location = new System.Drawing.Point(96, 15);
             this.cbbDepartment.Name = "cbbDepartment";

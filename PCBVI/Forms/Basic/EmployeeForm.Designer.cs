@@ -147,7 +147,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeeForm";
             this.Text = "EmployeeForm";
-            this.Load += new System.EventHandler(this.EmployeeForm_Load);
             this.MainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.naviEmployee)).EndInit();
             this.naviEmployee.ResumeLayout(false);
