@@ -1,6 +1,6 @@
 ﻿namespace PCBVI.Controls.Basic.SubjectControl
 {
-    partial class SubjectGrid
+    partial class SubjectList
     {
         /// <summary> 
         /// Required designer variable.
@@ -37,9 +37,9 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbsItem = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbsItem)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonDataGridView1
@@ -59,7 +59,7 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn7});
-            this.kryptonDataGridView1.DataSource = this.itemBindingSource;
+            this.kryptonDataGridView1.DataSource = this.dbsItem;
             this.kryptonDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonDataGridView1.Location = new System.Drawing.Point(0, 0);
             this.kryptonDataGridView1.Name = "kryptonDataGridView1";
@@ -118,19 +118,19 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // itemBindingSource
+            // dbsItem
             // 
-            this.itemBindingSource.DataSource = typeof(PCBVI.Data.Item);
+            this.dbsItem.DataSource = typeof(PCBVI.Data.Item);
             // 
-            // SubjectGrid
+            // SubjectList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.kryptonDataGridView1);
-            this.Name = "SubjectGrid";
+            this.Name = "SubjectList";
             this.Size = new System.Drawing.Size(800, 150);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbsItem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -158,6 +158,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.BindingSource itemBindingSource;
+        private System.Windows.Forms.BindingSource dbsItem;
     }
 }

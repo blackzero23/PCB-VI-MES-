@@ -61,7 +61,10 @@
     <Compile Include="Data\ErrorCodeData.cs" />
     <Compile Include="Data\ErrorKindData.cs" />
     <Compile Include="Data\ErrorTypeData.cs" />
+    <Compile Include="Data\FirstItemDivisionData.cs" />
+    <Compile Include="Data\ItemData.cs" />
     <Compile Include="Data\LotData.cs" />
+    <Compile Include="Data\SecondItemDivisionData.cs" />
     <Compile Include="DbContextFactory.cs" />
     <Compile Include="DefectiveProduct.cs">
       <DependentUpon>Mes.tt</DependentUpon>
@@ -75,6 +78,7 @@
     <Compile Include="Entities\Barcode.cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\ErrorCode.cs" />
+    <Compile Include="Entities\Item.cs" />
     <Compile Include="ErrorCode.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>

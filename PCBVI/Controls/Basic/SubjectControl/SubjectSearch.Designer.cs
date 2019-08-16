@@ -28,23 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SubjectName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.SubjectCodeTxb = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel6 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.SubjectClassifyCbb = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.SubjectSeperateCbb = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.kryptonTextBox3 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.cbbSecondDivision = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.bdsSecondDivision = new System.Windows.Forms.BindingSource(this.components);
+            this.cbbFirstDivision = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.bdsFirstDivision = new System.Windows.Forms.BindingSource(this.components);
+            this.txbItemName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txbItemCode = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel8 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel9 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel10 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel11 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.SubjectClassifyCbb)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubjectSeperateCbb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbSecondDivision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsSecondDivision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbFirstDivision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsFirstDivision)).BeginInit();
             this.SuspendLayout();
             // 
             // SubjectName
@@ -93,44 +98,58 @@
             this.kryptonLabel1.TabIndex = 9;
             this.kryptonLabel1.Values.Text = "품목코드 : ";
             // 
-            // kryptonButton1
+            // btnSearch
             // 
-            this.kryptonButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonButton1.Location = new System.Drawing.Point(707, 47);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(90, 25);
-            this.kryptonButton1.TabIndex = 29;
-            this.kryptonButton1.Values.Text = "검색";
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Location = new System.Drawing.Point(707, 47);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(90, 25);
+            this.btnSearch.TabIndex = 29;
+            this.btnSearch.Values.Text = "검색";
             // 
-            // SubjectClassifyCbb
+            // cbbSecondDivision
             // 
-            this.SubjectClassifyCbb.DropDownWidth = 121;
-            this.SubjectClassifyCbb.Location = new System.Drawing.Point(622, 27);
-            this.SubjectClassifyCbb.Name = "SubjectClassifyCbb";
-            this.SubjectClassifyCbb.Size = new System.Drawing.Size(121, 21);
-            this.SubjectClassifyCbb.TabIndex = 27;
+            this.cbbSecondDivision.DataSource = this.bdsSecondDivision;
+            this.cbbSecondDivision.DisplayMember = "Name";
+            this.cbbSecondDivision.DropDownWidth = 121;
+            this.cbbSecondDivision.Location = new System.Drawing.Point(622, 27);
+            this.cbbSecondDivision.Name = "cbbSecondDivision";
+            this.cbbSecondDivision.Size = new System.Drawing.Size(121, 21);
+            this.cbbSecondDivision.TabIndex = 27;
+            this.cbbSecondDivision.ValueMember = "SecondItemDivisionId";
             // 
-            // SubjectSeperateCbb
+            // bdsSecondDivision
             // 
-            this.SubjectSeperateCbb.DropDownWidth = 121;
-            this.SubjectSeperateCbb.Location = new System.Drawing.Point(423, 27);
-            this.SubjectSeperateCbb.Name = "SubjectSeperateCbb";
-            this.SubjectSeperateCbb.Size = new System.Drawing.Size(121, 21);
-            this.SubjectSeperateCbb.TabIndex = 28;
+            this.bdsSecondDivision.DataSource = typeof(PCBVI.Data.SecondItemDivision);
             // 
-            // kryptonTextBox2
+            // cbbFirstDivision
             // 
-            this.kryptonTextBox2.Location = new System.Drawing.Point(245, 27);
-            this.kryptonTextBox2.Name = "kryptonTextBox2";
-            this.kryptonTextBox2.Size = new System.Drawing.Size(100, 20);
-            this.kryptonTextBox2.TabIndex = 25;
+            this.cbbFirstDivision.DataSource = this.bdsFirstDivision;
+            this.cbbFirstDivision.DisplayMember = "Name";
+            this.cbbFirstDivision.DropDownWidth = 121;
+            this.cbbFirstDivision.Location = new System.Drawing.Point(423, 27);
+            this.cbbFirstDivision.Name = "cbbFirstDivision";
+            this.cbbFirstDivision.Size = new System.Drawing.Size(121, 21);
+            this.cbbFirstDivision.TabIndex = 28;
+            this.cbbFirstDivision.ValueMember = "FirstItemDivisionId";
             // 
-            // kryptonTextBox3
+            // bdsFirstDivision
             // 
-            this.kryptonTextBox3.Location = new System.Drawing.Point(69, 27);
-            this.kryptonTextBox3.Name = "kryptonTextBox3";
-            this.kryptonTextBox3.Size = new System.Drawing.Size(100, 20);
-            this.kryptonTextBox3.TabIndex = 26;
+            this.bdsFirstDivision.DataSource = typeof(PCBVI.Data.FirstItemDivision);
+            // 
+            // txbItemName
+            // 
+            this.txbItemName.Location = new System.Drawing.Point(245, 27);
+            this.txbItemName.Name = "txbItemName";
+            this.txbItemName.Size = new System.Drawing.Size(100, 20);
+            this.txbItemName.TabIndex = 25;
+            // 
+            // txbItemCode
+            // 
+            this.txbItemCode.Location = new System.Drawing.Point(69, 27);
+            this.txbItemCode.Name = "txbItemCode";
+            this.txbItemCode.Size = new System.Drawing.Size(100, 20);
+            this.txbItemCode.TabIndex = 26;
             // 
             // kryptonLabel8
             // 
@@ -168,11 +187,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.kryptonButton1);
-            this.Controls.Add(this.SubjectClassifyCbb);
-            this.Controls.Add(this.SubjectSeperateCbb);
-            this.Controls.Add(this.kryptonTextBox2);
-            this.Controls.Add(this.kryptonTextBox3);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.cbbSecondDivision);
+            this.Controls.Add(this.cbbFirstDivision);
+            this.Controls.Add(this.txbItemName);
+            this.Controls.Add(this.txbItemCode);
             this.Controls.Add(this.kryptonLabel8);
             this.Controls.Add(this.kryptonLabel9);
             this.Controls.Add(this.kryptonLabel10);
@@ -185,8 +204,10 @@
             this.Controls.Add(this.kryptonLabel1);
             this.Name = "SubjectSearch";
             this.Size = new System.Drawing.Size(800, 75);
-            ((System.ComponentModel.ISupportInitialize)(this.SubjectClassifyCbb)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubjectSeperateCbb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbSecondDivision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsSecondDivision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbFirstDivision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsFirstDivision)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,14 +220,16 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox SubjectClassifyCbb;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox SubjectSeperateCbb;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox3;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnSearch;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbSecondDivision;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbFirstDivision;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txbItemName;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txbItemCode;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel8;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel9;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel10;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel11;
+        private System.Windows.Forms.BindingSource bdsFirstDivision;
+        private System.Windows.Forms.BindingSource bdsSecondDivision;
     }
 }

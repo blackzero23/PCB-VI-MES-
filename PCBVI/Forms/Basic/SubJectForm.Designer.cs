@@ -30,7 +30,7 @@
         {
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.uscList = new PCBVI.Controls.Basic.SubjectControl.SubjectGrid();
+            this.uscList = new PCBVI.Controls.Basic.SubjectControl.SubjectList();
             this.uscSearch = new PCBVI.Controls.Basic.SubjectControl.SubjectSearch();
             this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).BeginInit();
@@ -127,6 +127,6 @@
         private Controls.CommonControl.TopMenubar uscTopMenu;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator kryptonNavigator1;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage1;
-        private Controls.Basic.SubjectControl.SubjectGrid uscList;
+        private Controls.Basic.SubjectControl.SubjectList uscList;
     }
 }
