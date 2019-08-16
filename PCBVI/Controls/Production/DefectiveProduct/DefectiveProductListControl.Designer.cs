@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.kryptonDataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.defectiveProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.processIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lotIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorCodeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.defectiveProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.defectiveProductBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -56,13 +56,10 @@
             this.kryptonDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonDataGridView1.Location = new System.Drawing.Point(0, 0);
             this.kryptonDataGridView1.Name = "kryptonDataGridView1";
+            this.kryptonDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.kryptonDataGridView1.RowTemplate.Height = 23;
             this.kryptonDataGridView1.Size = new System.Drawing.Size(800, 150);
             this.kryptonDataGridView1.TabIndex = 0;
-            // 
-            // defectiveProductBindingSource
-            // 
-            this.defectiveProductBindingSource.DataSource = typeof(PCBVI.Data.DefectiveProduct);
             // 
             // processIdDataGridViewTextBoxColumn
             // 
@@ -100,6 +97,10 @@
             this.workDateDataGridViewTextBoxColumn.DataPropertyName = "WorkDate";
             this.workDateDataGridViewTextBoxColumn.HeaderText = "WorkDate";
             this.workDateDataGridViewTextBoxColumn.Name = "workDateDataGridViewTextBoxColumn";
+            // 
+            // defectiveProductBindingSource
+            // 
+            this.defectiveProductBindingSource.DataSource = typeof(PCBVI.Data.DefectiveProduct);
             // 
             // DefectiveProductListControl
             // 

@@ -29,29 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.kryptonDataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.dbsItem = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsFirstDivision = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsSecondDivision = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dbsItem = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbsItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsFirstDivision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsSecondDivision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).BeginInit();
             this.SuspendLayout();
             // 
-            // kryptonDataGridView1
+            // dgvList
             // 
-            this.kryptonDataGridView1.AllowUserToAddRows = false;
-            this.kryptonDataGridView1.AllowUserToDeleteRows = false;
-            this.kryptonDataGridView1.AllowUserToResizeColumns = false;
-            this.kryptonDataGridView1.AllowUserToResizeRows = false;
-            this.kryptonDataGridView1.AutoGenerateColumns = false;
-            this.kryptonDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.kryptonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.kryptonDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvList.AllowUserToAddRows = false;
+            this.dgvList.AllowUserToDeleteRows = false;
+            this.dgvList.AllowUserToResizeColumns = false;
+            this.dgvList.AllowUserToResizeRows = false;
+            this.dgvList.AutoGenerateColumns = false;
+            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn6,
@@ -59,22 +65,43 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn7});
-            this.kryptonDataGridView1.DataSource = this.dbsItem;
-            this.kryptonDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonDataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.ReadOnly = true;
-            this.kryptonDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.kryptonDataGridView1.RowTemplate.Height = 23;
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(800, 150);
-            this.kryptonDataGridView1.TabIndex = 0;
+            this.dgvList.DataSource = this.dbsItem;
+            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvList.Location = new System.Drawing.Point(0, 0);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.ReadOnly = true;
+            this.dgvList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvList.RowTemplate.Height = 23;
+            this.dgvList.Size = new System.Drawing.Size(800, 150);
+            this.dgvList.TabIndex = 0;
+            // 
+            // dbsItem
+            // 
+            this.dbsItem.DataSource = typeof(PCBVI.Data.Item);
+            // 
+            // bdsFirstDivision
+            // 
+            this.bdsFirstDivision.DataSource = typeof(PCBVI.Data.FirstItemDivision);
+            // 
+            // bdsSecondDivision
+            // 
+            this.bdsSecondDivision.DataSource = typeof(PCBVI.Data.SecondItemDivision);
+            // 
+            // bdsWorkPlace
+            // 
+            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
             // 
             // dataGridViewTextBoxColumn10
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "FirstItemDivision";
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "FirstItemDivisionId";
+            this.dataGridViewTextBoxColumn10.DataSource = this.bdsFirstDivision;
+            this.dataGridViewTextBoxColumn10.DisplayMember = "Name";
             this.dataGridViewTextBoxColumn10.HeaderText = "품목구분";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn10.ValueMember = "FirstItemDivisionId";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -92,10 +119,15 @@
             // 
             // dataGridViewTextBoxColumn11
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "SecondItemDivision";
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "SecondItemDivisionId";
+            this.dataGridViewTextBoxColumn11.DataSource = this.bdsSecondDivision;
+            this.dataGridViewTextBoxColumn11.DisplayMember = "Name";
             this.dataGridViewTextBoxColumn11.HeaderText = "품목분류";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn11.ValueMember = "SecondItemDivisionId";
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -114,37 +146,44 @@
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "WorkPlaceId";
+            this.dataGridViewTextBoxColumn7.DataSource = this.bdsWorkPlace;
+            this.dataGridViewTextBoxColumn7.DisplayMember = "Name";
             this.dataGridViewTextBoxColumn7.HeaderText = "위치정보";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dbsItem
-            // 
-            this.dbsItem.DataSource = typeof(PCBVI.Data.Item);
+            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn7.ValueMember = "WorkPlaceId";
             // 
             // SubjectList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.kryptonDataGridView1);
+            this.Controls.Add(this.dgvList);
             this.Name = "SubjectList";
             this.Size = new System.Drawing.Size(800, 150);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbsItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsFirstDivision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsSecondDivision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
        
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
+        private System.Windows.Forms.BindingSource dbsItem;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.BindingSource bdsFirstDivision;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.BindingSource bdsSecondDivision;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.BindingSource dbsItem;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.BindingSource bdsWorkPlace;
     }
 }

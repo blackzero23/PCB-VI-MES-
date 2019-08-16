@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PCBVI.Data.Data;
 
 namespace PCBVI.Controls.Basic.SubjectControl
 {
@@ -23,17 +24,26 @@ namespace PCBVI.Controls.Basic.SubjectControl
             base.OnLoad(e);
 
             if (DesignMode)
-                return;
-            //데이터 바인딩 곳에 데이터를 불러와서 넣는다.
+             return;
 
-           // dbsItem.DataSource = 
+            bdsFirstDivision.DataSource = DB.FirstItemDivision.GetAll();
+            bdsSecondDivision.DataSource = DB.SecondItemDivision.GetAll();
+            bdsWorkPlace.DataSource =
+                DB.WorkPlace.GetAll();
+            
         }
 
-        /*
-        public void SetBarcodeDataSource(List<Item> list)
+        //바인딩된 데이터 리스트 반환.
+        public List<Data.Item> GetUpateList()
+        {
+            return (List<Data.Item>)dgvList.DataSource;
+        }
+        //private void 
+
+        public void SetItemDataSource(List<Data.Item> list)
         {
             dgvList.DataSource = list;
         }
-        */
+
     }
 }
