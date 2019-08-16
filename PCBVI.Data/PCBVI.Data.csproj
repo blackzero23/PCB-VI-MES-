@@ -68,6 +68,7 @@
     <Compile Include="Data\FirstItemDivisionData.cs" />
     <Compile Include="Data\ItemData.cs" />
     <Compile Include="Data\LotData.cs" />
+    <Compile Include="Data\MaterialHistoryData.cs" />
     <Compile Include="Data\ProcessData.cs" />
     <Compile Include="Data\WorkPlaceData.cs" />
     <Compile Include="Data\SecondItemDivisionData.cs" />

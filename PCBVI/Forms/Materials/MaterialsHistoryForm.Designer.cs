@@ -28,47 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
             this.naviMaterialHistory = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageMaterialHistory = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.uscList = new PCBVI.Controls.Materials.MaterialsHLC();
             this.uscSearch = new PCBVI.Controls.Materials.MaterialsHSC();
+            this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
             ((System.ComponentModel.ISupportInitialize)(this.naviMaterialHistory)).BeginInit();
             this.naviMaterialHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageMaterialHistory)).BeginInit();
             this.pageMaterialHistory.SuspendLayout();
             this.SuspendLayout();
             // 
-            // uscTopMenu
-            // 
-            this.uscTopMenu.BackColor = System.Drawing.Color.White;
-            this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
-            this.uscTopMenu.Name = "uscTopMenu";
-            this.uscTopMenu.Size = new System.Drawing.Size(800, 35);
-            this.uscTopMenu.TabIndex = 0;
-            // 
             // naviMaterialHistory
             // 
-            this.naviMaterialHistory.Bar.BarMapExtraText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.None;
             this.naviMaterialHistory.Bar.BarMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.SmallMedium;
             this.naviMaterialHistory.Bar.BarMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.Text;
-            this.naviMaterialHistory.Bar.ItemSizing = ComponentFactory.Krypton.Navigator.BarItemSizing.SameHeight;
-            this.naviMaterialHistory.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.Context;
             this.naviMaterialHistory.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.naviMaterialHistory.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.naviMaterialHistory.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.None;
             this.naviMaterialHistory.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
-            this.naviMaterialHistory.Button.ContextMenuMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
-            this.naviMaterialHistory.Button.ContextMenuMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
-            this.naviMaterialHistory.Button.NextButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
-            this.naviMaterialHistory.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
-            this.naviMaterialHistory.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
-            this.naviMaterialHistory.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.naviMaterialHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.naviMaterialHistory.Location = new System.Drawing.Point(0, 35);
             this.naviMaterialHistory.Name = "naviMaterialHistory";
-            this.naviMaterialHistory.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarTabGroup;
             this.naviMaterialHistory.Padding = new System.Windows.Forms.Padding(3);
             this.naviMaterialHistory.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageMaterialHistory});
@@ -108,6 +89,16 @@
             this.uscSearch.Name = "uscSearch";
             this.uscSearch.Size = new System.Drawing.Size(798, 56);
             this.uscSearch.TabIndex = 0;
+            this.uscSearch.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Materials.MaterialsHSC.SearchButtonClickedEventArgs>(this.UscSearch_SearchButtonClicked);
+            // 
+            // uscTopMenu
+            // 
+            this.uscTopMenu.BackColor = System.Drawing.Color.White;
+            this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
+            this.uscTopMenu.Name = "uscTopMenu";
+            this.uscTopMenu.Size = new System.Drawing.Size(800, 35);
+            this.uscTopMenu.TabIndex = 0;
             // 
             // MaterialsHistoryForm
             // 

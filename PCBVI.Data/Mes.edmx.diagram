@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="29d5f6440c91404bb75fbf3f9dab5495" Name="Diagram1">
+      <Diagram DiagramId="cb45d08d31b9409f9c3929eded1e657b" Name="Diagram1">
         <EntityTypeShape EntityType="PCBVIModel.Barcode" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PCBVIModel.DefectiveProduct" Width="1.5" PointX="7.5" PointY="18.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PCBVIModel.Department" Width="1.5" PointX="3" PointY="25.5" IsExpanded="true" />
@@ -24,7 +24,7 @@
         <EntityTypeShape EntityType="PCBVIModel.LastInspection" Width="1.5" PointX="16.5" PointY="12" IsExpanded="true" />
         <EntityTypeShape EntityType="PCBVIModel.Lot" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
         <EntityTypeShape EntityType="PCBVIModel.LotBarCode" Width="1.5" PointX="10.5" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCBVIModel.MaterialHistory" Width="1.5" PointX="13.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCBVIModel.MaterialHistory" Width="1.5" PointX="13.5" PointY="11.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PCBVIModel.MaterialsInRe" Width="1.5" PointX="10.5" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PCBVIModel.MaterialsManage" Width="1.5" PointX="7.5" PointY="15" IsExpanded="true" />
         <EntityTypeShape EntityType="PCBVIModel.Process" Width="1.5" PointX="5.25" PointY="19.5" IsExpanded="true" />

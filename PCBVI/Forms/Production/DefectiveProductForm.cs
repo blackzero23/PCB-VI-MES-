@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PCBVI.Data.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,10 @@ namespace PCBVI.Forms.Production
             InitializeComponent();
         }
 
-        private void DefectiveProductSearchMenu1_SearchButtonClicked(object sender, Controls.Production.DefectiveProduct.DefectiveProductSearchControl.SearchButtonClickedEventArgs e)
+        private void UscSearch_SearchButtonClicked(object sender, Controls.Production.DefectiveProduct.DefectiveProductSearchControl.SearchButtonClickedEventArgs e)
         {
-            //uscList.SetDataSource();
+            uscList.SetDataSource(DB.DefectiveProduct.Search(e.ProcessId, e.FromDate, e.ToDate));
         }
+
     }
 }

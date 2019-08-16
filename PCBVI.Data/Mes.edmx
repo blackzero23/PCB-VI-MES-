@@ -211,6 +211,7 @@
           <Property Name="MaterialHistoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LotId" Type="int" Nullable="false" />
           <Property Name="BarcodeId" Type="int" Nullable="false" />
+          <Property Name="MaterialState" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="EnterDate" Type="datetime" Nullable="false" />
           <Property Name="EnterQuantity" Type="int" Nullable="false" />
           <Property Name="WorkPlaceId" Type="int" Nullable="false" />
@@ -283,7 +284,7 @@
           <Key>
             <PropertyRef Name="SecondItemDivisionId" />
           </Key>
-          <Property Name="SecondItemDivisionId" Type="int" Nullable="false" />
+          <Property Name="SecondItemDivisionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="TotalMonitoring">
@@ -1451,6 +1452,7 @@
           <Property Name="MaterialHistoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="LotId" Type="Int32" Nullable="false" />
           <Property Name="BarcodeId" Type="Int32" Nullable="false" />
+          <Property Name="MaterialState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="EnterDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="EnterQuantity" Type="Int32" Nullable="false" />
           <Property Name="WorkPlaceId" Type="Int32" Nullable="false" />
@@ -1549,7 +1551,7 @@
           <Key>
             <PropertyRef Name="SecondItemDivisionId" />
           </Key>
-          <Property Name="SecondItemDivisionId" Type="Int32" Nullable="false" />
+          <Property Name="SecondItemDivisionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Items" Relationship="Self.FK_Item_SecondItemDivision" FromRole="SecondItemDivision" ToRole="Item" />
         </EntityType>
@@ -2695,6 +2697,7 @@
                 <ScalarProperty Name="MaterialHistoryId" ColumnName="MaterialHistoryId" />
                 <ScalarProperty Name="LotId" ColumnName="LotId" />
                 <ScalarProperty Name="BarcodeId" ColumnName="BarcodeId" />
+                <ScalarProperty Name="MaterialState" ColumnName="MaterialState" />
                 <ScalarProperty Name="EnterDate" ColumnName="EnterDate" />
                 <ScalarProperty Name="EnterQuantity" ColumnName="EnterQuantity" />
                 <ScalarProperty Name="WorkPlaceId" ColumnName="WorkPlaceId" />

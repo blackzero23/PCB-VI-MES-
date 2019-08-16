@@ -28,21 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.lbLOTNumber = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lsBarcodeNumber = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.bntLOTNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txbBarcodeNo = new ComponentFactory.Krypton.Toolkit.KryptonMaskedTextBox();
+            this.cbbBarcodeName = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.bdsBarCode = new System.Windows.Forms.BindingSource(this.components);
+            this.cbbLotNo = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.bdsLot = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.lsBarcodeNumber = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lbLOTNumber = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbBarcodeName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsBarCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbLotNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLot)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.cbbBarcodeName);
+            this.kryptonPanel1.Controls.Add(this.cbbLotNo);
             this.kryptonPanel1.Controls.Add(this.btnSearch);
-            this.kryptonPanel1.Controls.Add(this.txbBarcodeNo);
-            this.kryptonPanel1.Controls.Add(this.bntLOTNo);
             this.kryptonPanel1.Controls.Add(this.lsBarcodeNumber);
             this.kryptonPanel1.Controls.Add(this.lbLOTNumber);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -51,35 +58,37 @@
             this.kryptonPanel1.Size = new System.Drawing.Size(630, 56);
             this.kryptonPanel1.TabIndex = 0;
             // 
-            // lbLOTNumber
+            // cbbBarcodeName
             // 
-            this.lbLOTNumber.Location = new System.Drawing.Point(28, 16);
-            this.lbLOTNumber.Name = "lbLOTNumber";
-            this.lbLOTNumber.Size = new System.Drawing.Size(55, 20);
-            this.lbLOTNumber.TabIndex = 0;
-            this.lbLOTNumber.Values.Text = "LOT No:";
+            this.cbbBarcodeName.DataSource = this.bdsBarCode;
+            this.cbbBarcodeName.DisplayMember = "BarcodeCode";
+            this.cbbBarcodeName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbBarcodeName.DropDownWidth = 121;
+            this.cbbBarcodeName.Location = new System.Drawing.Point(319, 15);
+            this.cbbBarcodeName.Name = "cbbBarcodeName";
+            this.cbbBarcodeName.Size = new System.Drawing.Size(121, 21);
+            this.cbbBarcodeName.TabIndex = 6;
+            this.cbbBarcodeName.ValueMember = "BarcodeId";
             // 
-            // lsBarcodeNumber
+            // bdsBarCode
             // 
-            this.lsBarcodeNumber.Location = new System.Drawing.Point(247, 16);
-            this.lsBarcodeNumber.Name = "lsBarcodeNumber";
-            this.lsBarcodeNumber.Size = new System.Drawing.Size(66, 20);
-            this.lsBarcodeNumber.TabIndex = 1;
-            this.lsBarcodeNumber.Values.Text = "Serial No :";
+            this.bdsBarCode.DataSource = typeof(PCBVI.Data.Barcode);
             // 
-            // bntLOTNo
+            // cbbLotNo
             // 
-            this.bntLOTNo.Location = new System.Drawing.Point(89, 16);
-            this.bntLOTNo.Name = "bntLOTNo";
-            this.bntLOTNo.Size = new System.Drawing.Size(100, 20);
-            this.bntLOTNo.TabIndex = 2;
+            this.cbbLotNo.DataSource = this.bdsLot;
+            this.cbbLotNo.DisplayMember = "LotCode";
+            this.cbbLotNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbLotNo.DropDownWidth = 121;
+            this.cbbLotNo.Location = new System.Drawing.Point(91, 16);
+            this.cbbLotNo.Name = "cbbLotNo";
+            this.cbbLotNo.Size = new System.Drawing.Size(121, 21);
+            this.cbbLotNo.TabIndex = 5;
+            this.cbbLotNo.ValueMember = "LotId";
             // 
-            // txbBarcodeNo
+            // bdsLot
             // 
-            this.txbBarcodeNo.Location = new System.Drawing.Point(319, 16);
-            this.txbBarcodeNo.Name = "txbBarcodeNo";
-            this.txbBarcodeNo.Size = new System.Drawing.Size(100, 20);
-            this.txbBarcodeNo.TabIndex = 3;
+            this.bdsLot.DataSource = typeof(PCBVI.Data.Lot);
             // 
             // btnSearch
             // 
@@ -89,6 +98,23 @@
             this.btnSearch.Size = new System.Drawing.Size(90, 25);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Values.Text = "검 색";
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // lsBarcodeNumber
+            // 
+            this.lsBarcodeNumber.Location = new System.Drawing.Point(247, 16);
+            this.lsBarcodeNumber.Name = "lsBarcodeNumber";
+            this.lsBarcodeNumber.Size = new System.Drawing.Size(66, 20);
+            this.lsBarcodeNumber.TabIndex = 1;
+            this.lsBarcodeNumber.Values.Text = "바코드명 :";
+            // 
+            // lbLOTNumber
+            // 
+            this.lbLOTNumber.Location = new System.Drawing.Point(28, 16);
+            this.lbLOTNumber.Name = "lbLOTNumber";
+            this.lbLOTNumber.Size = new System.Drawing.Size(57, 20);
+            this.lbLOTNumber.TabIndex = 0;
+            this.lbLOTNumber.Values.Text = "LOT.No :";
             // 
             // MaterialsHSC
             // 
@@ -100,6 +126,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbBarcodeName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsBarCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbLotNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLot)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -110,7 +140,9 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lsBarcodeNumber;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel lbLOTNumber;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSearch;
-        private ComponentFactory.Krypton.Toolkit.KryptonMaskedTextBox txbBarcodeNo;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox bntLOTNo;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbBarcodeName;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbLotNo;
+        private System.Windows.Forms.BindingSource bdsBarCode;
+        private System.Windows.Forms.BindingSource bdsLot;
     }
 }

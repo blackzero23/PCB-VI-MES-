@@ -809,6 +809,7 @@
     <None Include="Properties\DataSources\PCBVI.Data.Lot.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.LotBarCode.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Item.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.MaterialHistory.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Process.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Product.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.SecondItemDivision.datasource" />

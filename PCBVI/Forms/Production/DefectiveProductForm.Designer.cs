@@ -32,7 +32,7 @@
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.uscList = new PCBVI.Controls.Production.DefectiveProduct.DefectiveProductListControl();
-            this.defectiveProductSearchMenu1 = new PCBVI.Controls.Production.DefectiveProduct.DefectiveProductSearchControl();
+            this.uscSearch = new PCBVI.Controls.Production.DefectiveProduct.DefectiveProductSearchControl();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).BeginInit();
             this.kryptonNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).BeginInit();
@@ -67,7 +67,7 @@
             // 
             this.kryptonPage1.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
             this.kryptonPage1.Controls.Add(this.uscList);
-            this.kryptonPage1.Controls.Add(this.defectiveProductSearchMenu1);
+            this.kryptonPage1.Controls.Add(this.uscSearch);
             this.kryptonPage1.Flags = 65534;
             this.kryptonPage1.LastVisibleSet = true;
             this.kryptonPage1.MinimumSize = new System.Drawing.Size(50, 50);
@@ -85,14 +85,14 @@
             this.uscList.Size = new System.Drawing.Size(798, 313);
             this.uscList.TabIndex = 1;
             // 
-            // defectiveProductSearchMenu1
+            // uscSearch
             // 
-            this.defectiveProductSearchMenu1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.defectiveProductSearchMenu1.Location = new System.Drawing.Point(0, 0);
-            this.defectiveProductSearchMenu1.Name = "defectiveProductSearchMenu1";
-            this.defectiveProductSearchMenu1.Size = new System.Drawing.Size(798, 75);
-            this.defectiveProductSearchMenu1.TabIndex = 0;
-            this.defectiveProductSearchMenu1.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Production.DefectiveProduct.DefectiveProductSearchControl.SearchButtonClickedEventArgs>(this.DefectiveProductSearchMenu1_SearchButtonClicked);
+            this.uscSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscSearch.Location = new System.Drawing.Point(0, 0);
+            this.uscSearch.Name = "uscSearch";
+            this.uscSearch.Size = new System.Drawing.Size(798, 75);
+            this.uscSearch.TabIndex = 0;
+            this.uscSearch.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Production.DefectiveProduct.DefectiveProductSearchControl.SearchButtonClickedEventArgs>(this.UscSearch_SearchButtonClicked);
             // 
             // DefectiveProductForm
             // 
@@ -117,7 +117,7 @@
         private Controls.CommonControl.TopMenubar topMenubar1;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator kryptonNavigator1;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage1;
-        private Controls.Production.DefectiveProduct.DefectiveProductSearchControl defectiveProductSearchMenu1;
+        private Controls.Production.DefectiveProduct.DefectiveProductSearchControl uscSearch;
         private Controls.Production.DefectiveProduct.DefectiveProductListControl uscList;
     }
 }
