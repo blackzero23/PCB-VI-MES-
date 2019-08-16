@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace PCBVI.Controls.Production.DefectiveProduct
 {
-    public partial class DefectiveProductSearchMenu : UserControl
+    public partial class DefectiveProductListControl : UserControl
     {
-        public DefectiveProductSearchMenu()
+        public DefectiveProductListControl()
         {
             InitializeComponent();
         }
-
-      
     }
 }

@@ -31,9 +31,8 @@
             this.topMenubar1 = new PCBVI.Controls.CommonControl.TopMenubar();
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.defectiveProductSearchMenu1 = new PCBVI.Controls.Production.DefectiveProduct.DefectiveProductSearchMenu();
-            this.defectiveProductGridView1 = new PCBVI.Controls.Production.DefectiveProduct.DefectiveProductGridView();
-            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.uscList = new PCBVI.Controls.Production.DefectiveProduct.DefectiveProductListControl();
+            this.defectiveProductSearchMenu1 = new PCBVI.Controls.Production.DefectiveProduct.DefectiveProductSearchControl();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).BeginInit();
             this.kryptonNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).BeginInit();
@@ -67,8 +66,7 @@
             // kryptonPage1
             // 
             this.kryptonPage1.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kryptonPage1.Controls.Add(this.kryptonTextBox1);
-            this.kryptonPage1.Controls.Add(this.defectiveProductGridView1);
+            this.kryptonPage1.Controls.Add(this.uscList);
             this.kryptonPage1.Controls.Add(this.defectiveProductSearchMenu1);
             this.kryptonPage1.Flags = 65534;
             this.kryptonPage1.LastVisibleSet = true;
@@ -79,6 +77,14 @@
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "76FA1DE2846C469AB288F7A6D2590FBB";
             // 
+            // uscList
+            // 
+            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscList.Location = new System.Drawing.Point(0, 75);
+            this.uscList.Name = "uscList";
+            this.uscList.Size = new System.Drawing.Size(798, 313);
+            this.uscList.TabIndex = 1;
+            // 
             // defectiveProductSearchMenu1
             // 
             this.defectiveProductSearchMenu1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -86,22 +92,7 @@
             this.defectiveProductSearchMenu1.Name = "defectiveProductSearchMenu1";
             this.defectiveProductSearchMenu1.Size = new System.Drawing.Size(798, 75);
             this.defectiveProductSearchMenu1.TabIndex = 0;
-            // 
-            // defectiveProductGridView1
-            // 
-            this.defectiveProductGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.defectiveProductGridView1.Location = new System.Drawing.Point(0, 75);
-            this.defectiveProductGridView1.Name = "defectiveProductGridView1";
-            this.defectiveProductGridView1.Size = new System.Drawing.Size(798, 313);
-            this.defectiveProductGridView1.TabIndex = 1;
-            // 
-            // kryptonTextBox1
-            // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(35, 111);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(511, 20);
-            this.kryptonTextBox1.TabIndex = 2;
-            this.kryptonTextBox1.Text = "공정명 LOT No 시리얼 No 불량명 작업자 작업일자 제품사진 [재작업]";
+            this.defectiveProductSearchMenu1.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Production.DefectiveProduct.DefectiveProductSearchControl.SearchButtonClickedEventArgs>(this.DefectiveProductSearchMenu1_SearchButtonClicked);
             // 
             // DefectiveProductForm
             // 
@@ -117,7 +108,6 @@
             this.kryptonNavigator1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).EndInit();
             this.kryptonPage1.ResumeLayout(false);
-            this.kryptonPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -127,8 +117,7 @@
         private Controls.CommonControl.TopMenubar topMenubar1;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator kryptonNavigator1;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage1;
-        private Controls.Production.DefectiveProduct.DefectiveProductSearchMenu defectiveProductSearchMenu1;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
-        private Controls.Production.DefectiveProduct.DefectiveProductGridView defectiveProductGridView1;
+        private Controls.Production.DefectiveProduct.DefectiveProductSearchControl defectiveProductSearchMenu1;
+        private Controls.Production.DefectiveProduct.DefectiveProductListControl uscList;
     }
 }

@@ -16,5 +16,10 @@ namespace PCBVI.Forms.Production
         {
             InitializeComponent();
         }
+
+        private void DefectiveProductSearchMenu1_SearchButtonClicked(object sender, Controls.Production.DefectiveProduct.DefectiveProductSearchControl.SearchButtonClickedEventArgs e)
+        {
+            //uscList.SetDataSource();
+        }
     }
 }

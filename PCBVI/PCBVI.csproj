@@ -247,17 +247,17 @@
     <Compile Include="Controls\Production\ProductionHistory\ProductionSearch.Designer.cs">
       <DependentUpon>ProductionSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductGridView.cs">
+    <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductGridView.Designer.cs">
-      <DependentUpon>DefectiveProductGridView.cs</DependentUpon>
+    <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductListControl.Designer.cs">
+      <DependentUpon>DefectiveProductListControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductSearchMenu.cs">
+    <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductSearchControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductSearchMenu.Designer.cs">
-      <DependentUpon>DefectiveProductSearchMenu.cs</DependentUpon>
+    <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductSearchControl.Designer.cs">
+      <DependentUpon>DefectiveProductSearchControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Production\ProcessDefect\ProcessDefectChart.cs">
       <SubType>UserControl</SubType>
@@ -630,11 +630,11 @@
     <EmbeddedResource Include="Controls\Production\ProductionHistory\ProductionSearch.resx">
       <DependentUpon>ProductionSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Production\DefectiveProduct\DefectiveProductGridView.resx">
-      <DependentUpon>DefectiveProductGridView.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Production\DefectiveProduct\DefectiveProductListControl.resx">
+      <DependentUpon>DefectiveProductListControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Production\DefectiveProduct\DefectiveProductSearchMenu.resx">
-      <DependentUpon>DefectiveProductSearchMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Production\DefectiveProduct\DefectiveProductSearchControl.resx">
+      <DependentUpon>DefectiveProductSearchControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Production\ProcessDefect\ProcessDefectChart.resx">
       <DependentUpon>ProcessDefectChart.cs</DependentUpon>
@@ -795,6 +795,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\PCBVI.Data.Barcode.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.DefectiveProduct.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Department.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Employee.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.ErrorCode.datasource" />
