@@ -106,6 +106,7 @@
             this.btnSearch.Size = new System.Drawing.Size(90, 25);
             this.btnSearch.TabIndex = 29;
             this.btnSearch.Values.Text = "검색";
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // cbbSecondDivision
             // 

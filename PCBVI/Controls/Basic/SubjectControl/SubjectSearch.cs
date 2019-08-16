@@ -32,8 +32,61 @@ namespace PCBVI.Controls.Basic.SubjectControl
                 DB.SecondItemDivision.GetAll();
         }
 
-       
-        
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            string itemCode = txbItemCode.Text;
+            string itemName = txbItemName.Text;
+            int firstDivision = (int)cbbFirstDivision.SelectedValue;
+            int secondDivision = (int)
+                cbbSecondDivision.SelectedValue;
 
+            OnSearchButtonClicked(itemCode, itemName, firstDivision, secondDivision);
+        }
+
+        #region SearchButtonClicked event things for C# 3.0
+        public event EventHandler<SearchButtonClickedEventArgs> SearchButtonClicked;
+
+        protected virtual void OnSearchButtonClicked(SearchButtonClickedEventArgs e)
+        {
+            if (SearchButtonClicked != null)
+                SearchButtonClicked(this, e);
+        }
+
+        private SearchButtonClickedEventArgs OnSearchButtonClicked(string itemCode, string itemName, int firstDivision, int secondDivision)
+        {
+            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(itemCode, itemName, firstDivision, secondDivision);
+            OnSearchButtonClicked(args);
+
+            return args;
+        }
+
+        private SearchButtonClickedEventArgs OnSearchButtonClickedForOut()
+        {
+            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs();
+            OnSearchButtonClicked(args);
+
+            return args;
+        }
+
+        public class SearchButtonClickedEventArgs : EventArgs
+        {
+            public string ItemCode { get; set; }
+            public string ItemName { get; set; }
+            public int FirstDivision { get; set; }
+            public int SecondDivision { get; set; }
+
+            public SearchButtonClickedEventArgs()
+            {
+            }
+
+            public SearchButtonClickedEventArgs(string itemCode, string itemName, int firstDivision, int secondDivision)
+            {
+                ItemCode = itemCode;
+                ItemName = itemName;
+                FirstDivision = firstDivision;
+                SecondDivision = secondDivision;
+            }
+        }
+        #endregion
     }
 }
