@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PCBVI.Data.Data;
 
 namespace PCBVI.Controls.Basic.Employee
 {
@@ -15,6 +16,17 @@ namespace PCBVI.Controls.Basic.Employee
         public EmployeeList()
         {
             InitializeComponent();
+        }
+        //dddd
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (DesignMode)
+                return;
+
+            departmentBindingSource.DataSource = DB.Department.GetAll();
         }
 
         private List<Data.Employee> _employees = new List<Data.Employee>();
@@ -26,7 +38,7 @@ namespace PCBVI.Controls.Basic.Employee
 
         public List<Data.Employee> GetUpateList()
         {
-            return _employees;
+            return (List<Data.Employee>)dgvList.DataSource;
         }
 
         public DataGridView GetListView()
@@ -39,17 +51,16 @@ namespace PCBVI.Controls.Basic.Employee
             return dgvList.CurrentRow.DataBoundItem as Data.Employee;
         }
 
+
+        /// <summary>
+        /// 에러 처리 못하면 이 함수는 쓸수없는함수.
+        /// </summary>       
         private void DgvList_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvList.CurrentRow.DataBoundItem is Data.Employee employee)
             {
                 _employees.Add(employee);
-            }
-            //var employee = dgvList.CurrentRow.DataBoundItem as Data.Employee;
-            //if (employee != null)
-            //{
-            //    _employees.Add(employee);
-            //}
+            }           
         }
     }
 }

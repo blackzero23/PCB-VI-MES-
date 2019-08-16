@@ -20,11 +20,7 @@ namespace PCBVI.Forms.Basic
         private int _departmentid;
         private string _name;
 
-        private void EmployeeForm_Load(object sender, EventArgs e)
-        {
-            uscSearch.SetDepartmentSource(DB.Department.GetAll());
-        }
-
+       
         private void UscSearch_SearchButtonClicked(object sender, Controls.Basic.Employee.EmployeeSearch.SearchButtonClickedEventArgs e)
         {
             uscList.SetEmployeeDataSource(DB.Employee.SeachEmployeeInfo(e.DepartmentId,e.Name));

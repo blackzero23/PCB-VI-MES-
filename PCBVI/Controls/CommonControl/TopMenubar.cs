@@ -33,11 +33,12 @@ namespace PCBVI.Controls.CommonControl
             using (var context = new PCBVIEntities())
             {
                 foreach (var entity in entities)
-                {
+                {                    
                     context.Entry(entity).State = EntityState.Modified;
-                }
+                    
 
-                context.SaveChanges();
+                    context.SaveChanges();
+                }
             }
         }
 

@@ -50,25 +50,15 @@
             // 
             // naviFacilitiesHistory
             // 
-            this.naviFacilitiesHistory.Bar.BarMapExtraText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.None;
             this.naviFacilitiesHistory.Bar.BarMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.SmallMedium;
             this.naviFacilitiesHistory.Bar.BarMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.Text;
-            this.naviFacilitiesHistory.Bar.ItemSizing = ComponentFactory.Krypton.Navigator.BarItemSizing.SameHeight;
-            this.naviFacilitiesHistory.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.Context;
             this.naviFacilitiesHistory.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.naviFacilitiesHistory.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.naviFacilitiesHistory.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.None;
             this.naviFacilitiesHistory.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
-            this.naviFacilitiesHistory.Button.ContextMenuMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
-            this.naviFacilitiesHistory.Button.ContextMenuMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
-            this.naviFacilitiesHistory.Button.NextButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
-            this.naviFacilitiesHistory.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
-            this.naviFacilitiesHistory.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
-            this.naviFacilitiesHistory.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.naviFacilitiesHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.naviFacilitiesHistory.Location = new System.Drawing.Point(0, 35);
             this.naviFacilitiesHistory.Name = "naviFacilitiesHistory";
-            this.naviFacilitiesHistory.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarTabGroup;
             this.naviFacilitiesHistory.Padding = new System.Windows.Forms.Padding(3);
             this.naviFacilitiesHistory.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageFacilitiesHistory});
@@ -109,6 +99,7 @@
             this.uscSearch.Name = "uscSearch";
             this.uscSearch.Size = new System.Drawing.Size(798, 109);
             this.uscSearch.TabIndex = 0;
+            this.uscSearch.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Facilities.FacilitiesHSC.SearchButtonClickedEventArgs>(this.UscSearch_SearchButtonClicked);
             // 
             // FacilitiesHistoryForm
             // 

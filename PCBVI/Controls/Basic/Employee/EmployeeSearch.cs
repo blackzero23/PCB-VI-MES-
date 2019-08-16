@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PCBVI.Data;
+using PCBVI.Data.Data;
 
 namespace PCBVI.Controls.Basic.Employee
 {
@@ -18,18 +19,17 @@ namespace PCBVI.Controls.Basic.Employee
             InitializeComponent();
         }
 
-        //초기화 
+        //초기화         
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
 
             if (DesignMode)
-                return;           
-        }
+                return;
 
-        public void SetDepartmentSource(List<Department> list)
-        {
-            cbbDepartment.DataSource = list;
+            List<Department> departments = DB.Department.GetAll();
+            departments.Insert(0, new Department(""));
+            cbbDepartment.DataSource = departments;
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
