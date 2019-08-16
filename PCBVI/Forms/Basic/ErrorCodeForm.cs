@@ -18,6 +18,13 @@ namespace PCBVI.Forms.Basic
             InitializeComponent();
         }
 
-       
+        private void UscSearch_SearchClicked(object sender, Controls.Basic.ErrorCode.ErrorCodeSearch.SearchClickedEventArgs e)
+        {
+            var errorCodes = DB.ErrorCode.Search(e.Code, e.Kind, e.Type);
+            
+            errorCodeList1.SetDataSource(errorCodes);
+        }
+
+
     }
 }

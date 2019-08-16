@@ -122,14 +122,20 @@
             this.uscSearch.Name = "uscSearch";
             this.uscSearch.Size = new System.Drawing.Size(798, 60);
             this.uscSearch.TabIndex = 0;
+            this.uscSearch.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Basic.Employee.EmployeeSearch.SearchButtonClickedEventArgs>(this.UscSearch_SearchButtonClicked);
             // 
             // uscTopMenu
             // 
+            this.uscTopMenu.BackColor = System.Drawing.Color.White;
             this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
             this.uscTopMenu.Name = "uscTopMenu";
             this.uscTopMenu.Size = new System.Drawing.Size(800, 36);
             this.uscTopMenu.TabIndex = 0;
+            this.uscTopMenu.InsertButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs>(this.UscTopMenu_InsertButtonClicked);
+            this.uscTopMenu.DeleteButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.DeleteButtonClickedEventArgs>(this.UscTopMenu_DeleteButtonClicked);
+            this.uscTopMenu.ExcelButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs>(this.UscTopMenu_ExcelButtonClicked);
+            this.uscTopMenu.UpdateButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs>(this.UscTopMenu_UpdateButtonClicked);
             // 
             // EmployeeForm
             // 

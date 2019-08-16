@@ -13,7 +13,7 @@
           <Property Name="BarcodeCode" Type="int" Nullable="false" />
           <Property Name="State" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ErrorCodeId" Type="int" />
-          <Property Name="LotId" Type="int" Nullable="false" />
+          <Property Name="ItemId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="DefectiveProduct">
           <Key>
@@ -42,10 +42,12 @@
           <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="DepartmentId" Type="int" Nullable="false" />
+          <Property Name="DepartmentId" Type="int" />
           <Property Name="EmploymentDate" Type="datetime" Nullable="false" />
           <Property Name="DepartureDate" Type="datetime" />
           <Property Name="Grade" Type="int" Nullable="false" />
+          <Property Name="LoginId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="ErrorCode">
           <Key>
@@ -163,7 +165,6 @@
           </Key>
           <Property Name="ItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="BaecodeId" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="FirstItemDivisionId" Type="int" Nullable="false" />
           <Property Name="SecondItemDivisionId" Type="int" Nullable="false" />
@@ -193,8 +194,15 @@
           </Key>
           <Property Name="LotId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LotCode" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ItemId" Type="int" Nullable="false" />
-          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LotBarCode">
+          <Key>
+            <PropertyRef Name="LotId" />
+            <PropertyRef Name="BarcodeId" />
+          </Key>
+          <Property Name="LotId" Type="int" Nullable="false" />
+          <Property Name="BarcodeId" Type="int" Nullable="false" />
+          <Property Name="dummy" Type="bit" />
         </EntityType>
         <EntityType Name="MaterialHistory">
           <Key>
@@ -337,15 +345,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Barcode_Lot">
-          <End Role="Lot" Type="Self.Lot" Multiplicity="1" />
+        <Association Name="FK_Barcode_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
           <End Role="Barcode" Type="Self.Barcode" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Lot">
-              <PropertyRef Name="LotId" />
+            <Principal Role="Item">
+              <PropertyRef Name="ItemId" />
             </Principal>
             <Dependent Role="Barcode">
-              <PropertyRef Name="LotId" />
+              <PropertyRef Name="ItemId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -410,7 +418,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Employee_Department">
-          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Department">
@@ -613,15 +621,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Lot_Product">
-          <End Role="Item" Type="Self.Item" Multiplicity="1" />
-          <End Role="Lot" Type="Self.Lot" Multiplicity="*" />
+        <Association Name="FK_LotBarCode_Barcode">
+          <End Role="Barcode" Type="Self.Barcode" Multiplicity="1" />
+          <End Role="LotBarCode" Type="Self.LotBarCode" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Item">
-              <PropertyRef Name="ItemId" />
+            <Principal Role="Barcode">
+              <PropertyRef Name="BarcodeId" />
             </Principal>
-            <Dependent Role="Lot">
-              <PropertyRef Name="Quantity" />
+            <Dependent Role="LotBarCode">
+              <PropertyRef Name="BarcodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LotBarCode_Lot">
+          <End Role="Lot" Type="Self.Lot" Multiplicity="1" />
+          <End Role="LotBarCode" Type="Self.LotBarCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lot">
+              <PropertyRef Name="LotId" />
+            </Principal>
+            <Dependent Role="LotBarCode">
+              <PropertyRef Name="LotId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -766,18 +786,6 @@
             </Principal>
             <Dependent Role="ProcessDefect">
               <PropertyRef Name="ProcessId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Product_Barcode">
-          <End Role="Barcode" Type="Self.Barcode" Multiplicity="1" />
-          <End Role="Item" Type="Self.Item" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Barcode">
-              <PropertyRef Name="BarcodeId" />
-            </Principal>
-            <Dependent Role="Item">
-              <PropertyRef Name="BaecodeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -956,6 +964,7 @@
           <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LastInspection" EntityType="Self.LastInspection" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Lot" EntityType="Self.Lot" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LotBarCode" EntityType="Self.LotBarCode" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MaterialHistory" EntityType="Self.MaterialHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MaterialsInRe" EntityType="Self.MaterialsInRe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MaterialsManage" EntityType="Self.MaterialsManage" Schema="dbo" store:Type="Tables" />
@@ -972,8 +981,8 @@
             <End Role="ErrorCode" EntitySet="ErrorCode" />
             <End Role="Barcode" EntitySet="Barcode" />
           </AssociationSet>
-          <AssociationSet Name="FK_Barcode_Lot" Association="Self.FK_Barcode_Lot">
-            <End Role="Lot" EntitySet="Lot" />
+          <AssociationSet Name="FK_Barcode_Item" Association="Self.FK_Barcode_Item">
+            <End Role="Item" EntitySet="Item" />
             <End Role="Barcode" EntitySet="Barcode" />
           </AssociationSet>
           <AssociationSet Name="FK_DefectiveProduct_Barcode" Association="Self.FK_DefectiveProduct_Barcode">
@@ -1064,9 +1073,13 @@
             <End Role="WorkPlace" EntitySet="WorkPlace" />
             <End Role="LastInspection" EntitySet="LastInspection" />
           </AssociationSet>
-          <AssociationSet Name="FK_Lot_Product" Association="Self.FK_Lot_Product">
-            <End Role="Item" EntitySet="Item" />
+          <AssociationSet Name="FK_LotBarCode_Barcode" Association="Self.FK_LotBarCode_Barcode">
+            <End Role="Barcode" EntitySet="Barcode" />
+            <End Role="LotBarCode" EntitySet="LotBarCode" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LotBarCode_Lot" Association="Self.FK_LotBarCode_Lot">
             <End Role="Lot" EntitySet="Lot" />
+            <End Role="LotBarCode" EntitySet="LotBarCode" />
           </AssociationSet>
           <AssociationSet Name="FK_MaterialHistory_Barcode" Association="Self.FK_MaterialHistory_Barcode">
             <End Role="Barcode" EntitySet="Barcode" />
@@ -1115,10 +1128,6 @@
           <AssociationSet Name="FK_ProcessDefect_Process" Association="Self.FK_ProcessDefect_Process">
             <End Role="Process" EntitySet="Process" />
             <End Role="ProcessDefect" EntitySet="ProcessDefect" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Product_Barcode" Association="Self.FK_Product_Barcode">
-            <End Role="Barcode" EntitySet="Barcode" />
-            <End Role="Item" EntitySet="Item" />
           </AssociationSet>
           <AssociationSet Name="FK_Product_ProductSubJect" Association="Self.FK_Product_ProductSubJect">
             <End Role="FirstItemDivision" EntitySet="FirstItemDivision" />
@@ -1186,13 +1195,13 @@
           <Property Name="BarcodeCode" Type="Int32" Nullable="false" />
           <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ErrorCodeId" Type="Int32" />
-          <Property Name="LotId" Type="Int32" Nullable="false" />
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ErrorCode" Relationship="Self.FK_Barcode_ErrorCode" FromRole="Barcode" ToRole="ErrorCode" />
-          <NavigationProperty Name="Lot" Relationship="Self.FK_Barcode_Lot" FromRole="Barcode" ToRole="Lot" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_Barcode_Item" FromRole="Barcode" ToRole="Item" />
           <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_Barcode" FromRole="Barcode" ToRole="DefectiveProduct" />
+          <NavigationProperty Name="LotBarCodes" Relationship="Self.FK_LotBarCode_Barcode" FromRole="Barcode" ToRole="LotBarCode" />
           <NavigationProperty Name="MaterialHistories" Relationship="Self.FK_MaterialHistory_Barcode" FromRole="Barcode" ToRole="MaterialHistory" />
           <NavigationProperty Name="MaterialsInRes" Relationship="Self.FK_MaterialsInRe_Barcode" FromRole="Barcode" ToRole="MaterialsInRe" />
-          <NavigationProperty Name="Items" Relationship="Self.FK_Product_Barcode" FromRole="Barcode" ToRole="Item" />
         </EntityType>
         <EntityType Name="DefectiveProduct">
           <Key>
@@ -1227,10 +1236,12 @@
           <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentId" Type="Int32" />
           <Property Name="EmploymentDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="DepartureDate" Type="DateTime" Precision="3" />
           <Property Name="Grade" Type="Int32" Nullable="false" />
+          <Property Name="LoginId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_Employee" FromRole="Employee" ToRole="DefectiveProduct" />
           <NavigationProperty Name="Department" Relationship="Self.FK_Employee_Department" FromRole="Employee" ToRole="Department" />
           <NavigationProperty Name="FirstInspections" Relationship="Self.FK_FirstInspection_Employee" FromRole="Employee" ToRole="FirstInspection" />
@@ -1377,20 +1388,18 @@
           </Key>
           <Property Name="ItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="BaecodeId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="FirstItemDivisionId" Type="Int32" Nullable="false" />
           <Property Name="SecondItemDivisionId" Type="Int32" Nullable="false" />
           <Property Name="WorkPlaceId" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
           <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Barcode" Relationship="Self.FK_Product_Barcode" FromRole="Item" ToRole="Barcode" />
+          <NavigationProperty Name="Barcodes" Relationship="Self.FK_Barcode_Item" FromRole="Item" ToRole="Barcode" />
           <NavigationProperty Name="FirstInspections" Relationship="Self.FK_FirstInspection_Product" FromRole="Item" ToRole="FirstInspection" />
           <NavigationProperty Name="FirstItemDivision" Relationship="Self.FK_Product_ProductSubJect" FromRole="Item" ToRole="FirstItemDivision" />
           <NavigationProperty Name="ProductionHistories" Relationship="Self.FK_FacilitiesHistory_Product" FromRole="Item" ToRole="ProductionHistory" />
           <NavigationProperty Name="SecondItemDivision" Relationship="Self.FK_Item_SecondItemDivision" FromRole="Item" ToRole="SecondItemDivision" />
           <NavigationProperty Name="LastInspections" Relationship="Self.FK_LastInspection_Product" FromRole="Item" ToRole="LastInspection" />
-          <NavigationProperty Name="Lots" Relationship="Self.FK_Lot_Product" FromRole="Item" ToRole="Lot" />
           <NavigationProperty Name="ProcessDefects" Relationship="Self.FK_ProcessDefect_Item" FromRole="Item" ToRole="ProcessDefect" />
           <NavigationProperty Name="TotalMonitorings" Relationship="Self.FK_TotalMonitoring_Product" FromRole="Item" ToRole="TotalMonitoring" />
           <NavigationProperty Name="WorkOrders" Relationship="Self.FK_WorkOrder_Item" FromRole="Item" ToRole="WorkOrder" />
@@ -1419,13 +1428,21 @@
           </Key>
           <Property Name="LotId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="LotCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ItemId" Type="Int32" Nullable="false" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Barcodes" Relationship="Self.FK_Barcode_Lot" FromRole="Lot" ToRole="Barcode" />
           <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_Lot" FromRole="Lot" ToRole="DefectiveProduct" />
-          <NavigationProperty Name="Item" Relationship="Self.FK_Lot_Product" FromRole="Lot" ToRole="Item" />
+          <NavigationProperty Name="LotBarCodes" Relationship="Self.FK_LotBarCode_Lot" FromRole="Lot" ToRole="LotBarCode" />
           <NavigationProperty Name="MaterialHistories" Relationship="Self.FK_MaterialHistory_Lot" FromRole="Lot" ToRole="MaterialHistory" />
           <NavigationProperty Name="MaterialsManages" Relationship="Self.FK_MaterialsManage_Lot" FromRole="Lot" ToRole="MaterialsManage" />
+        </EntityType>
+        <EntityType Name="LotBarCode">
+          <Key>
+            <PropertyRef Name="LotId" />
+            <PropertyRef Name="BarcodeId" />
+          </Key>
+          <Property Name="LotId" Type="Int32" Nullable="false" />
+          <Property Name="BarcodeId" Type="Int32" Nullable="false" />
+          <Property Name="dummy" Type="Boolean" />
+          <NavigationProperty Name="Barcode" Relationship="Self.FK_LotBarCode_Barcode" FromRole="LotBarCode" ToRole="Barcode" />
+          <NavigationProperty Name="Lot" Relationship="Self.FK_LotBarCode_Lot" FromRole="LotBarCode" ToRole="Lot" />
         </EntityType>
         <EntityType Name="MaterialHistory">
           <Key>
@@ -1612,15 +1629,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Barcode_Lot">
-          <End Role="Lot" Type="Self.Lot" Multiplicity="1" />
+        <Association Name="FK_Barcode_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
           <End Role="Barcode" Type="Self.Barcode" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Lot">
-              <PropertyRef Name="LotId" />
+            <Principal Role="Item">
+              <PropertyRef Name="ItemId" />
             </Principal>
             <Dependent Role="Barcode">
-              <PropertyRef Name="LotId" />
+              <PropertyRef Name="ItemId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1632,6 +1649,18 @@
               <PropertyRef Name="BarcodeId" />
             </Principal>
             <Dependent Role="DefectiveProduct">
+              <PropertyRef Name="BarcodeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LotBarCode_Barcode">
+          <End Role="Barcode" Type="Self.Barcode" Multiplicity="1" />
+          <End Role="LotBarCode" Type="Self.LotBarCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Barcode">
+              <PropertyRef Name="BarcodeId" />
+            </Principal>
+            <Dependent Role="LotBarCode">
               <PropertyRef Name="BarcodeId" />
             </Dependent>
           </ReferentialConstraint>
@@ -1657,18 +1686,6 @@
             </Principal>
             <Dependent Role="MaterialsInRe">
               <PropertyRef Name="BarcodeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Product_Barcode">
-          <End Role="Barcode" Type="Self.Barcode" Multiplicity="1" />
-          <End Role="Item" Type="Self.Item" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Barcode">
-              <PropertyRef Name="BarcodeId" />
-            </Principal>
-            <Dependent Role="Item">
-              <PropertyRef Name="BaecodeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1721,7 +1738,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Employee_Department">
-          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Department">
@@ -1984,18 +2001,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Lot_Product">
-          <End Role="Item" Type="Self.Item" Multiplicity="1" />
-          <End Role="Lot" Type="Self.Lot" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Item">
-              <PropertyRef Name="ItemId" />
-            </Principal>
-            <Dependent Role="Lot">
-              <PropertyRef Name="Quantity" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ProcessDefect_Item">
           <End Role="Item" Type="Self.Item" Multiplicity="1" />
           <End Role="ProcessDefect" Type="Self.ProcessDefect" Multiplicity="*" />
@@ -2041,6 +2046,18 @@
             </Principal>
             <Dependent Role="LastInspection">
               <PropertyRef Name="WorkPlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LotBarCode_Lot">
+          <End Role="Lot" Type="Self.Lot" Multiplicity="1" />
+          <End Role="LotBarCode" Type="Self.LotBarCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lot">
+              <PropertyRef Name="LotId" />
+            </Principal>
+            <Dependent Role="LotBarCode">
+              <PropertyRef Name="LotId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2231,6 +2248,7 @@
           <EntitySet Name="Items" EntityType="Self.Item" />
           <EntitySet Name="LastInspections" EntityType="Self.LastInspection" />
           <EntitySet Name="Lots" EntityType="Self.Lot" />
+          <EntitySet Name="LotBarCodes" EntityType="Self.LotBarCode" />
           <EntitySet Name="MaterialHistories" EntityType="Self.MaterialHistory" />
           <EntitySet Name="MaterialsInRes" EntityType="Self.MaterialsInRe" />
           <EntitySet Name="MaterialsManages" EntityType="Self.MaterialsManage" />
@@ -2247,13 +2265,17 @@
             <End Role="ErrorCode" EntitySet="ErrorCodes" />
             <End Role="Barcode" EntitySet="Barcodes" />
           </AssociationSet>
-          <AssociationSet Name="FK_Barcode_Lot" Association="Self.FK_Barcode_Lot">
-            <End Role="Lot" EntitySet="Lots" />
+          <AssociationSet Name="FK_Barcode_Item" Association="Self.FK_Barcode_Item">
+            <End Role="Item" EntitySet="Items" />
             <End Role="Barcode" EntitySet="Barcodes" />
           </AssociationSet>
           <AssociationSet Name="FK_DefectiveProduct_Barcode" Association="Self.FK_DefectiveProduct_Barcode">
             <End Role="Barcode" EntitySet="Barcodes" />
             <End Role="DefectiveProduct" EntitySet="DefectiveProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LotBarCode_Barcode" Association="Self.FK_LotBarCode_Barcode">
+            <End Role="Barcode" EntitySet="Barcodes" />
+            <End Role="LotBarCode" EntitySet="LotBarCodes" />
           </AssociationSet>
           <AssociationSet Name="FK_MaterialHistory_Barcode" Association="Self.FK_MaterialHistory_Barcode">
             <End Role="Barcode" EntitySet="Barcodes" />
@@ -2262,10 +2284,6 @@
           <AssociationSet Name="FK_MaterialsInRe_Barcode" Association="Self.FK_MaterialsInRe_Barcode">
             <End Role="Barcode" EntitySet="Barcodes" />
             <End Role="MaterialsInRe" EntitySet="MaterialsInRes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Product_Barcode" Association="Self.FK_Product_Barcode">
-            <End Role="Barcode" EntitySet="Barcodes" />
-            <End Role="Item" EntitySet="Items" />
           </AssociationSet>
           <AssociationSet Name="FK_DefectiveProduct_Employee" Association="Self.FK_DefectiveProduct_Employee">
             <End Role="Employee" EntitySet="Employees" />
@@ -2371,10 +2389,6 @@
             <End Role="Item" EntitySet="Items" />
             <End Role="LastInspection" EntitySet="LastInspections" />
           </AssociationSet>
-          <AssociationSet Name="FK_Lot_Product" Association="Self.FK_Lot_Product">
-            <End Role="Item" EntitySet="Items" />
-            <End Role="Lot" EntitySet="Lots" />
-          </AssociationSet>
           <AssociationSet Name="FK_ProcessDefect_Item" Association="Self.FK_ProcessDefect_Item">
             <End Role="Item" EntitySet="Items" />
             <End Role="ProcessDefect" EntitySet="ProcessDefects" />
@@ -2390,6 +2404,10 @@
           <AssociationSet Name="FK_LastInspection_WorkPlace" Association="Self.FK_LastInspection_WorkPlace">
             <End Role="WorkPlace" EntitySet="WorkPlaces" />
             <End Role="LastInspection" EntitySet="LastInspections" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LotBarCode_Lot" Association="Self.FK_LotBarCode_Lot">
+            <End Role="Lot" EntitySet="Lots" />
+            <End Role="LotBarCode" EntitySet="LotBarCodes" />
           </AssociationSet>
           <AssociationSet Name="FK_MaterialHistory_Lot" Association="Self.FK_MaterialHistory_Lot">
             <End Role="Lot" EntitySet="Lots" />
@@ -2461,7 +2479,7 @@
                 <ScalarProperty Name="BarcodeCode" ColumnName="BarcodeCode" />
                 <ScalarProperty Name="State" ColumnName="State" />
                 <ScalarProperty Name="ErrorCodeId" ColumnName="ErrorCodeId" />
-                <ScalarProperty Name="LotId" ColumnName="LotId" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2497,6 +2515,8 @@
                 <ScalarProperty Name="EmploymentDate" ColumnName="EmploymentDate" />
                 <ScalarProperty Name="DepartureDate" ColumnName="DepartureDate" />
                 <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2626,7 +2646,6 @@
               <MappingFragment StoreEntitySet="Item">
                 <ScalarProperty Name="ItemId" ColumnName="ItemId" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="BaecodeId" ColumnName="BaecodeId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="FirstItemDivisionId" ColumnName="FirstItemDivisionId" />
                 <ScalarProperty Name="SecondItemDivisionId" ColumnName="SecondItemDivisionId" />
@@ -2658,8 +2677,15 @@
               <MappingFragment StoreEntitySet="Lot">
                 <ScalarProperty Name="LotId" ColumnName="LotId" />
                 <ScalarProperty Name="LotCode" ColumnName="LotCode" />
-                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LotBarCodes">
+            <EntityTypeMapping TypeName="PCBVIModel.LotBarCode">
+              <MappingFragment StoreEntitySet="LotBarCode">
+                <ScalarProperty Name="LotId" ColumnName="LotId" />
+                <ScalarProperty Name="BarcodeId" ColumnName="BarcodeId" />
+                <ScalarProperty Name="dummy" ColumnName="dummy" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

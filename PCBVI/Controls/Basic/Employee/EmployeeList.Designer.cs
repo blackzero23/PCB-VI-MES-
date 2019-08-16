@@ -32,6 +32,8 @@
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employmentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departureDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gradeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +53,8 @@
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codeDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
+            this.departmentIdDataGridViewTextBoxColumn,
+            this.departmentNameDataGridViewTextBoxColumn,
             this.employmentDateDataGridViewTextBoxColumn,
             this.departureDateDataGridViewTextBoxColumn,
             this.gradeDataGridViewTextBoxColumn});
@@ -58,39 +62,51 @@
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.Location = new System.Drawing.Point(0, 0);
             this.dgvList.Name = "dgvList";
-            this.dgvList.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.dgvList.RowTemplate.Height = 23;
             this.dgvList.Size = new System.Drawing.Size(663, 461);
             this.dgvList.TabIndex = 0;
+            this.dgvList.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvList_CellEndEdit);
             // 
             // codeDataGridViewTextBoxColumn
             // 
             this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "사원코드";
             this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "사원명";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // departmentIdDataGridViewTextBoxColumn
+            // 
+            this.departmentIdDataGridViewTextBoxColumn.DataPropertyName = "DepartmentId";
+            this.departmentIdDataGridViewTextBoxColumn.HeaderText = "부서코드";
+            this.departmentIdDataGridViewTextBoxColumn.Name = "departmentIdDataGridViewTextBoxColumn";
+            // 
+            // departmentNameDataGridViewTextBoxColumn
+            // 
+            this.departmentNameDataGridViewTextBoxColumn.DataPropertyName = "DepartmentName";
+            this.departmentNameDataGridViewTextBoxColumn.HeaderText = "부서명";
+            this.departmentNameDataGridViewTextBoxColumn.Name = "departmentNameDataGridViewTextBoxColumn";
             // 
             // employmentDateDataGridViewTextBoxColumn
             // 
             this.employmentDateDataGridViewTextBoxColumn.DataPropertyName = "EmploymentDate";
-            this.employmentDateDataGridViewTextBoxColumn.HeaderText = "EmploymentDate";
+            this.employmentDateDataGridViewTextBoxColumn.HeaderText = "입사일";
             this.employmentDateDataGridViewTextBoxColumn.Name = "employmentDateDataGridViewTextBoxColumn";
             // 
             // departureDateDataGridViewTextBoxColumn
             // 
             this.departureDateDataGridViewTextBoxColumn.DataPropertyName = "DepartureDate";
-            this.departureDateDataGridViewTextBoxColumn.HeaderText = "DepartureDate";
+            this.departureDateDataGridViewTextBoxColumn.HeaderText = "퇴사일";
             this.departureDateDataGridViewTextBoxColumn.Name = "departureDateDataGridViewTextBoxColumn";
             // 
             // gradeDataGridViewTextBoxColumn
             // 
             this.gradeDataGridViewTextBoxColumn.DataPropertyName = "Grade";
-            this.gradeDataGridViewTextBoxColumn.HeaderText = "Grade";
+            this.gradeDataGridViewTextBoxColumn.HeaderText = "조회권한";
             this.gradeDataGridViewTextBoxColumn.Name = "gradeDataGridViewTextBoxColumn";
             // 
             // employeeBindingSource
@@ -113,11 +129,13 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
+        private System.Windows.Forms.BindingSource employeeBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departmentIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departmentNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn employmentDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departureDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gradeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource employeeBindingSource;
     }
 }

@@ -59,6 +59,9 @@
     <Compile Include="Data\EmployeeData.cs" />
     <Compile Include="Data\EntityData.cs" />
     <Compile Include="Data\ErrorCodeData.cs" />
+    <Compile Include="Data\ErrorKindData.cs" />
+    <Compile Include="Data\ErrorTypeData.cs" />
+    <Compile Include="Data\LotData.cs" />
     <Compile Include="DbContextFactory.cs" />
     <Compile Include="DefectiveProduct.cs">
       <DependentUpon>Mes.tt</DependentUpon>
@@ -69,6 +72,9 @@
     <Compile Include="Employee.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Barcode.cs" />
+    <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Entities\ErrorCode.cs" />
     <Compile Include="ErrorCode.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
@@ -109,6 +115,9 @@
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="Lot.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LotBarCode.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="MaterialHistory.cs">
@@ -164,9 +173,7 @@
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DLLS\KrytonDLL\AdvancedPageDragAndDrop.exe" />
     <Content Include="DLLS\KrytonDLL\AdvancedPageDragAndDrop.pdb" />

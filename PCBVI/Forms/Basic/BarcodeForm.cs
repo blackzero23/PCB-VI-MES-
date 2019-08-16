@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PCBVI.Data.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace PCBVI.Forms.Basic
         public BarcodeForm()
         {
             InitializeComponent();
+        }
+
+        private void BarcodeSearch1_SeaechButtonClicked(object sender, Controls.Basic.BarCode.BarcodeSearch.SeaechButtonClickedEventArgs e)
+        {
+            uscList.SetBarcodeDataSource(DB.BarCode.Search(e.LotId));
         }
     }
 }

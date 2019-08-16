@@ -27,6 +27,17 @@ namespace PCBVI.Forms.Main
             _employee = employee;
         }
 
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (DesignMode)
+                return;
+
+            //로그인 라벨 처리
+            lbLoginId.Text = $"{_employee.Name}님";
+        }
+
         //서브 컨테이너에 띄울 폼 함수.
         private void OpenForm(object subForm)
         {
@@ -190,5 +201,12 @@ namespace PCBVI.Forms.Main
 
 
         #endregion
+
+        private void BtnLogOut_Click(object sender, EventArgs e)
+        {
+            //디테일하게 다시 만들기 아직 안만듬.
+            MessageBox.Show("정말 로그아웃 하시겠습니까?");
+            this.Close();
+        }
     }
 }

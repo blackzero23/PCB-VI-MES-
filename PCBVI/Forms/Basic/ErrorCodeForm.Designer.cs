@@ -89,9 +89,11 @@
             this.uscSearch.Name = "uscSearch";
             this.uscSearch.Size = new System.Drawing.Size(798, 98);
             this.uscSearch.TabIndex = 0;
+            this.uscSearch.SearchClicked += new System.EventHandler<PCBVI.Controls.Basic.ErrorCode.ErrorCodeSearch.SearchClickedEventArgs>(this.UscSearch_SearchClicked);
             // 
             // topMenubar1
             // 
+            this.topMenubar1.BackColor = System.Drawing.Color.White;
             this.topMenubar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.topMenubar1.Location = new System.Drawing.Point(0, 0);
             this.topMenubar1.Name = "topMenubar1";
@@ -121,7 +123,7 @@
         private Controls.CommonControl.TopMenubar topMenubar1;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator naviEmployee;
         private ComponentFactory.Krypton.Navigator.KryptonPage pageEmployee;
-        private Controls.Basic.ErrorCode.ErrorCodeList errorCodeList1;
         private Controls.Basic.ErrorCode.ErrorCodeSearch uscSearch;
+        private Controls.Basic.ErrorCode.ErrorCodeList errorCodeList1;
     }
 }

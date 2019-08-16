@@ -184,4 +184,10 @@
   <data name="icons8_gender_neutral_user_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_gender_neutral_user_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_Logout_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-export-10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_LogOut_20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-LogOut-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
