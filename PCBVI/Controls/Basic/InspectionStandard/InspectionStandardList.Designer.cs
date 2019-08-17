@@ -29,82 +29,88 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.kryptonDataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.inspectionStandardBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.bdsInspectionStandardType = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsInspectionStandard = new System.Windows.Forms.BindingSource(this.components);
             this.inspectionStandardIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inspectionStandardTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inspectionStandardTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inspectionStandardBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsInspectionStandardType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsInspectionStandard)).BeginInit();
             this.SuspendLayout();
             // 
-            // kryptonDataGridView1
+            // dgvList
             // 
-            this.kryptonDataGridView1.AutoGenerateColumns = false;
-            this.kryptonDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.kryptonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.kryptonDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvList.AllowUserToAddRows = false;
+            this.dgvList.AutoGenerateColumns = false;
+            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.inspectionStandardIdDataGridViewTextBoxColumn,
-            this.codeDataGridViewTextBoxColumn,
             this.inspectionStandardTypeDataGridViewTextBoxColumn,
             this.noteDataGridViewTextBoxColumn});
-            this.kryptonDataGridView1.DataSource = this.inspectionStandardBindingSource;
-            this.kryptonDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonDataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.RowTemplate.Height = 23;
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(703, 150);
-            this.kryptonDataGridView1.TabIndex = 0;
+            this.dgvList.DataSource = this.bdsInspectionStandard;
+            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvList.Location = new System.Drawing.Point(0, 0);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.RowTemplate.Height = 23;
+            this.dgvList.Size = new System.Drawing.Size(703, 150);
+            this.dgvList.TabIndex = 0;
             // 
-            // inspectionStandardBindingSource
+            // bdsInspectionStandardType
             // 
-            this.inspectionStandardBindingSource.DataSource = typeof(PCBVI.Data.InspectionStandard);
+            this.bdsInspectionStandardType.DataSource = typeof(PCBVI.Data.InspectionStandardType);
+            // 
+            // bdsInspectionStandard
+            // 
+            this.bdsInspectionStandard.DataSource = typeof(PCBVI.Data.InspectionStandard);
             // 
             // inspectionStandardIdDataGridViewTextBoxColumn
             // 
             this.inspectionStandardIdDataGridViewTextBoxColumn.DataPropertyName = "InspectionStandardId";
-            this.inspectionStandardIdDataGridViewTextBoxColumn.HeaderText = "InspectionStandardId";
+            this.inspectionStandardIdDataGridViewTextBoxColumn.HeaderText = "No";
             this.inspectionStandardIdDataGridViewTextBoxColumn.Name = "inspectionStandardIdDataGridViewTextBoxColumn";
-            // 
-            // codeDataGridViewTextBoxColumn
-            // 
-            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
-            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
             // 
             // inspectionStandardTypeDataGridViewTextBoxColumn
             // 
-            this.inspectionStandardTypeDataGridViewTextBoxColumn.DataPropertyName = "InspectionStandardType";
-            this.inspectionStandardTypeDataGridViewTextBoxColumn.HeaderText = "InspectionStandardType";
+            this.inspectionStandardTypeDataGridViewTextBoxColumn.DataPropertyName = "InspectionStandardTypeId";
+            this.inspectionStandardTypeDataGridViewTextBoxColumn.DataSource = this.bdsInspectionStandardType;
+            this.inspectionStandardTypeDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.inspectionStandardTypeDataGridViewTextBoxColumn.HeaderText = "검사유형명";
             this.inspectionStandardTypeDataGridViewTextBoxColumn.Name = "inspectionStandardTypeDataGridViewTextBoxColumn";
+            this.inspectionStandardTypeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.inspectionStandardTypeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.inspectionStandardTypeDataGridViewTextBoxColumn.ValueMember = "InspectionStandardTypeId";
             // 
             // noteDataGridViewTextBoxColumn
             // 
             this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
-            this.noteDataGridViewTextBoxColumn.HeaderText = "Note";
+            this.noteDataGridViewTextBoxColumn.HeaderText = "비고";
             this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
             // 
             // InspectionStandardList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.kryptonDataGridView1);
+            this.Controls.Add(this.dgvList);
             this.Name = "InspectionStandardList";
             this.Size = new System.Drawing.Size(703, 150);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inspectionStandardBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsInspectionStandardType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsInspectionStandard)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inspectionStandardIdDataGridViewTextBoxColumn;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inspectionStandardTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bdsInspectionStandardType;
+        private System.Windows.Forms.BindingSource bdsInspectionStandard;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inspectionStandardIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn inspectionStandardTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource inspectionStandardBindingSource;
     }
 }

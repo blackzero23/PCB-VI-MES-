@@ -385,6 +385,12 @@
     <Compile Include="Forms\Basic\InspectionStandardForm.Designer.cs">
       <DependentUpon>InspectionStandardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Basic\InspectionStandardInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Basic\InspectionStandardInsertForm.Designer.cs">
+      <DependentUpon>InspectionStandardInsertForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Basic\NonMovingTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -396,6 +402,12 @@
     </Compile>
     <Compile Include="Forms\Basic\SubJectForm.Designer.cs">
       <DependentUpon>SubJectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Basic\SubJectInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Basic\SubJectInsertForm.Designer.cs">
+      <DependentUpon>SubJectInsertForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Facilities\FacilitiesErrorForm.cs">
       <SubType>Form</SubType>
@@ -711,6 +723,9 @@
     <EmbeddedResource Include="Forms\Basic\SubJectForm.resx">
       <DependentUpon>SubJectForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\SubJectInsertForm.resx">
+      <DependentUpon>SubJectInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Facilities\FacilitiesErrorForm.resx">
       <DependentUpon>FacilitiesErrorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -813,8 +828,11 @@
     <None Include="Properties\DataSources\PCBVI.Data.FacilitiesHistory.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Facility.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.FHistoryDivision.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.FirstInspection.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.FirstItemDivision.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.InspectionStandard.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.LastInspection.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.InspectionStandardType.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Lot.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.LotBarCode.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Item.datasource" />

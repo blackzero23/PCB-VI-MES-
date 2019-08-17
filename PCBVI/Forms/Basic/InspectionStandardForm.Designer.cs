@@ -55,6 +55,7 @@
             this.pageEmployee});
             this.naviEmployee.SelectedIndex = 0;
             this.naviEmployee.Size = new System.Drawing.Size(800, 415);
+            this.naviEmployee.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("HCR Dotum", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.naviEmployee.TabIndex = 2;
             this.naviEmployee.Text = "navi";
             // 
@@ -87,6 +88,7 @@
             this.uscSearch.Name = "uscSearch";
             this.uscSearch.Size = new System.Drawing.Size(798, 69);
             this.uscSearch.TabIndex = 0;
+            this.uscSearch.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Basic.InspectionStandard.InspectionStandardSearch.SearchButtonClickedEventArgs>(this.UscSearch_SearchButtonClicked);
             // 
             // uscTopMenu
             // 
