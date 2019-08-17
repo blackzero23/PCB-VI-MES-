@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.cbbErrorCode = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.bdsInspectionStandarType = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbErrorCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsInspectionStandarType)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
@@ -50,12 +53,18 @@
             // 
             // cbbErrorCode
             // 
+            this.cbbErrorCode.DataSource = this.bdsInspectionStandarType;
             this.cbbErrorCode.DisplayMember = "Code";
             this.cbbErrorCode.DropDownWidth = 121;
             this.cbbErrorCode.Location = new System.Drawing.Point(85, 26);
             this.cbbErrorCode.Name = "cbbErrorCode";
             this.cbbErrorCode.Size = new System.Drawing.Size(105, 21);
             this.cbbErrorCode.TabIndex = 21;
+            this.cbbErrorCode.ValueMember = "InspectionStandardTypeId";
+            // 
+            // bdsInspectionStandarType
+            // 
+            this.bdsInspectionStandarType.DataSource = typeof(PCBVI.Data.InspectionStandardType);
             // 
             // kryptonLabel2
             // 
@@ -73,6 +82,7 @@
             this.btnSearch.Size = new System.Drawing.Size(90, 30);
             this.btnSearch.TabIndex = 18;
             this.btnSearch.Values.Text = "검 색";
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // InspectionStandardSearch
             // 
@@ -85,6 +95,7 @@
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbErrorCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsInspectionStandarType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -95,5 +106,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbErrorCode;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSearch;
+        private System.Windows.Forms.BindingSource bdsInspectionStandarType;
     }
 }

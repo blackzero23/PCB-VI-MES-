@@ -66,6 +66,8 @@
     <Compile Include="Data\FacilitiesHistoryData.cs" />
     <Compile Include="Data\FHistoryDivisionData.cs" />
     <Compile Include="Data\FirstItemDivisionData.cs" />
+    <Compile Include="Data\InspectionStandardData.cs" />
+    <Compile Include="Data\InspectionStandardTypeData.cs" />
     <Compile Include="Data\ItemData.cs" />
     <Compile Include="Data\LotData.cs" />
     <Compile Include="Data\MaterialHistoryData.cs" />

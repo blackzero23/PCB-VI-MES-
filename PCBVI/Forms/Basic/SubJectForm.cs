@@ -32,7 +32,7 @@ namespace PCBVI.Forms.Basic
         private void UscTopMenu_InsertButtonClicked(object sender, Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs e)
         {
             //차후 수정이 필요함
-            uscTopMenu.OpenInsertForm(new EmployeeInsertForm());
+            uscTopMenu.OpenInsertForm(new SubJectInsertForm());
         }
     }
 }

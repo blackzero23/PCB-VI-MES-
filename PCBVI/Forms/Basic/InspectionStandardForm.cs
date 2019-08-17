@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PCBVI.Data.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace PCBVI.Forms.Basic
         public InspectionStForm()
         {
             InitializeComponent();
+        }
+
+        private void UscSearch_SearchButtonClicked(object sender, Controls.Basic.InspectionStandard.InspectionStandardSearch.SearchButtonClickedEventArgs e)
+        {
+
+            uscList.SetItemDataSource(DB.InspectionStandard.Search(e.InspectionStandardType));
+
         }
     }
 }
