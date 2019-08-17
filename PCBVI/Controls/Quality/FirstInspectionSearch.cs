@@ -25,7 +25,7 @@ namespace PCBVI.Controls.Quality
             if (DesignMode)
                 return;
 
-
+            InitSetDataSource();
         }
         private void InitSetDataSource()
         {

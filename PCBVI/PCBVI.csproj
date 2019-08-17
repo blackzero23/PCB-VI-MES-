@@ -813,6 +813,7 @@
     <None Include="Properties\DataSources\PCBVI.Data.FirstInspection.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.FirstItemDivision.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.InspectionStandard.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.LastInspection.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Lot.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.LotBarCode.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Item.datasource" />

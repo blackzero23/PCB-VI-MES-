@@ -74,11 +74,13 @@
             // cbbProductName
             // 
             this.cbbProductName.DataSource = this.bdsItem;
+            this.cbbProductName.DisplayMember = "Name";
             this.cbbProductName.DropDownWidth = 105;
             this.cbbProductName.Location = new System.Drawing.Point(232, 22);
             this.cbbProductName.Name = "cbbProductName";
             this.cbbProductName.Size = new System.Drawing.Size(105, 21);
             this.cbbProductName.TabIndex = 8;
+            this.cbbProductName.ValueMember = "ItemId";
             // 
             // btnSearch
             // 
@@ -95,6 +97,7 @@
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpToDate.Location = new System.Drawing.Point(527, 23);
             this.dtpToDate.Name = "dtpToDate";
+            this.dtpToDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpToDate.Size = new System.Drawing.Size(81, 21);
             this.dtpToDate.TabIndex = 6;
             // 
@@ -103,6 +106,7 @@
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFromDate.Location = new System.Drawing.Point(418, 22);
             this.dtpFromDate.Name = "dtpFromDate";
+            this.dtpFromDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpFromDate.Size = new System.Drawing.Size(78, 21);
             this.dtpFromDate.TabIndex = 5;
             // 

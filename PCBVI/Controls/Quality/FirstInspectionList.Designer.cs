@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
             this.bdsFirstInspection = new System.Windows.Forms.BindingSource(this.components);
-            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.workPlaceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oCompanyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.enterDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,13 +40,12 @@
             this.enterQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkQuantiyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workPlaceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.passQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFirstInspection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workPlaceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvList
@@ -62,7 +61,6 @@
             this.enterQuantityDataGridViewTextBoxColumn,
             this.checkQuantiyDataGridViewTextBoxColumn,
             this.workPlaceIdDataGridViewTextBoxColumn,
-            this.passQuantityDataGridViewTextBoxColumn,
             this.errorQuantityDataGridViewTextBoxColumn,
             this.employeeIdDataGridViewTextBoxColumn});
             this.dgvList.DataSource = this.bdsFirstInspection;
@@ -73,17 +71,17 @@
             this.dgvList.Size = new System.Drawing.Size(742, 408);
             this.dgvList.TabIndex = 0;
             // 
+            // bdsItem
+            // 
+            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
+            // 
+            // bdsWorkPlace
+            // 
+            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
+            // 
             // bdsFirstInspection
             // 
             this.bdsFirstInspection.DataSource = typeof(PCBVI.Data.FirstInspection);
-            // 
-            // itemBindingSource
-            // 
-            this.itemBindingSource.DataSource = typeof(PCBVI.Data.Item);
-            // 
-            // workPlaceBindingSource
-            // 
-            this.workPlaceBindingSource.DataSource = typeof(PCBVI.Data.WorkPlace);
             // 
             // oCompanyNameDataGridViewTextBoxColumn
             // 
@@ -94,7 +92,7 @@
             // itemIdDataGridViewTextBoxColumn
             // 
             this.itemIdDataGridViewTextBoxColumn.DataPropertyName = "ItemId";
-            this.itemIdDataGridViewTextBoxColumn.DataSource = this.itemBindingSource;
+            this.itemIdDataGridViewTextBoxColumn.DataSource = this.bdsItem;
             this.itemIdDataGridViewTextBoxColumn.DisplayMember = "Name";
             this.itemIdDataGridViewTextBoxColumn.HeaderText = "품목명";
             this.itemIdDataGridViewTextBoxColumn.Name = "itemIdDataGridViewTextBoxColumn";
@@ -129,19 +127,13 @@
             // workPlaceIdDataGridViewTextBoxColumn
             // 
             this.workPlaceIdDataGridViewTextBoxColumn.DataPropertyName = "WorkPlaceId";
-            this.workPlaceIdDataGridViewTextBoxColumn.DataSource = this.workPlaceBindingSource;
+            this.workPlaceIdDataGridViewTextBoxColumn.DataSource = this.bdsWorkPlace;
             this.workPlaceIdDataGridViewTextBoxColumn.DisplayMember = "Name";
             this.workPlaceIdDataGridViewTextBoxColumn.HeaderText = "위치 정보";
             this.workPlaceIdDataGridViewTextBoxColumn.Name = "workPlaceIdDataGridViewTextBoxColumn";
             this.workPlaceIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.workPlaceIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.workPlaceIdDataGridViewTextBoxColumn.ValueMember = "WorkPlaceId";
-            // 
-            // passQuantityDataGridViewTextBoxColumn
-            // 
-            this.passQuantityDataGridViewTextBoxColumn.DataPropertyName = "passQuantity";
-            this.passQuantityDataGridViewTextBoxColumn.HeaderText = "합격수량";
-            this.passQuantityDataGridViewTextBoxColumn.Name = "passQuantityDataGridViewTextBoxColumn";
             // 
             // errorQuantityDataGridViewTextBoxColumn
             // 
@@ -151,7 +143,7 @@
             // 
             // employeeIdDataGridViewTextBoxColumn
             // 
-            this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "EmployeeId";
+            this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "EmployeeName";
             this.employeeIdDataGridViewTextBoxColumn.HeaderText = "검사자";
             this.employeeIdDataGridViewTextBoxColumn.Name = "employeeIdDataGridViewTextBoxColumn";
             // 
@@ -163,9 +155,9 @@
             this.Name = "FirstInspectionList";
             this.Size = new System.Drawing.Size(742, 408);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFirstInspection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workPlaceBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -174,16 +166,16 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
         private System.Windows.Forms.BindingSource bdsFirstInspection;
+        private System.Windows.Forms.BindingSource bdsItem;
+        private System.Windows.Forms.BindingSource bdsWorkPlace;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oCompanyNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn itemIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource itemBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn enterDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn checkDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn enterQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn checkQuantiyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn workPlaceIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource workPlaceBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn errorQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn employeeIdDataGridViewTextBoxColumn;
     }

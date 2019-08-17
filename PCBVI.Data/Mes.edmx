@@ -11,7 +11,7 @@
           </Key>
           <Property Name="BarcodeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="BarcodeCode" Type="int" Nullable="false" />
-          <Property Name="State" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
           <Property Name="ErrorCodeId" Type="int" />
           <Property Name="ItemId" Type="int" Nullable="false" />
         </EntityType>
@@ -131,7 +131,7 @@
           <Property Name="CheckDate" Type="datetime" />
           <Property Name="EnterQuantity" Type="int" Nullable="false" />
           <Property Name="CheckQuantiy" Type="int" />
-          <Property Name="passQuantity" Type="bit" />
+          <Property Name="PassQuantity" Type="int" />
           <Property Name="ErrorQuantity" Type="int" />
           <Property Name="EmployeeId" Type="int" Nullable="false" />
           <Property Name="WorkPlaceId" Type="int" Nullable="false" />
@@ -1194,7 +1194,7 @@
           </Key>
           <Property Name="BarcodeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="BarcodeCode" Type="Int32" Nullable="false" />
-          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ErrorCodeId" Type="Int32" />
           <Property Name="ItemId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ErrorCode" Relationship="Self.FK_Barcode_ErrorCode" FromRole="Barcode" ToRole="ErrorCode" />
@@ -1348,7 +1348,7 @@
           <Property Name="CheckDate" Type="DateTime" Precision="3" />
           <Property Name="EnterQuantity" Type="Int32" Nullable="false" />
           <Property Name="CheckQuantiy" Type="Int32" />
-          <Property Name="passQuantity" Type="Boolean" />
+          <Property Name="PassQuantity" Type="Int32" />
           <Property Name="ErrorQuantity" Type="Int32" />
           <Property Name="EmployeeId" Type="Int32" Nullable="false" />
           <Property Name="WorkPlaceId" Type="Int32" Nullable="false" />
@@ -2610,7 +2610,7 @@
                 <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
                 <ScalarProperty Name="EnterQuantity" ColumnName="EnterQuantity" />
                 <ScalarProperty Name="CheckQuantiy" ColumnName="CheckQuantiy" />
-                <ScalarProperty Name="passQuantity" ColumnName="passQuantity" />
+                <ScalarProperty Name="PassQuantity" ColumnName="PassQuantity" />
                 <ScalarProperty Name="ErrorQuantity" ColumnName="ErrorQuantity" />
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
                 <ScalarProperty Name="WorkPlaceId" ColumnName="WorkPlaceId" />

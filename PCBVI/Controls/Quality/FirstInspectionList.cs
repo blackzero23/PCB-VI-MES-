@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PCBVI.Data.Data;
 
 namespace PCBVI.Controls.Quality
 {
@@ -30,7 +31,8 @@ namespace PCBVI.Controls.Quality
 
         private void InitSetDataSource()
         {
-           
+            bdsItem.DataSource = DB.Item.GetAll();
+            bdsWorkPlace.DataSource = DB.WorkPlace.GetAll();
         }
 
         public void SetDataSource(List<Data.FirstInspection> list)
