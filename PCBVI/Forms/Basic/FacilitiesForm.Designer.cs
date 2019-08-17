@@ -49,18 +49,38 @@
             // 
             // naviEmployee
             // 
+            this.naviEmployee.Bar.BarMapExtraText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.None;
             this.naviEmployee.Bar.BarMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.SmallMedium;
             this.naviEmployee.Bar.BarMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.Text;
+            this.naviEmployee.Bar.CheckButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
+            this.naviEmployee.Bar.ItemSizing = ComponentFactory.Krypton.Navigator.BarItemSizing.SameHeight;
+            this.naviEmployee.Bar.TabBorderStyle = ComponentFactory.Krypton.Toolkit.TabBorderStyle.RoundedOutsizeMedium;
+            this.naviEmployee.Bar.TabStyle = ComponentFactory.Krypton.Toolkit.TabStyle.HighProfile;
+            this.naviEmployee.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.Context;
             this.naviEmployee.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.naviEmployee.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.naviEmployee.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.None;
             this.naviEmployee.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.naviEmployee.Button.ContextMenuMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
+            this.naviEmployee.Button.ContextMenuMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
+            this.naviEmployee.Button.NextButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
+            this.naviEmployee.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
+            this.naviEmployee.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
+            this.naviEmployee.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.naviEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.naviEmployee.Group.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
+            this.naviEmployee.Group.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ControlClient;
+            this.naviEmployee.Header.HeaderStyleBar = ComponentFactory.Krypton.Toolkit.HeaderStyle.Secondary;
+            this.naviEmployee.Header.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Primary;
+            this.naviEmployee.Header.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Secondary;
             this.naviEmployee.Location = new System.Drawing.Point(0, 35);
             this.naviEmployee.Name = "naviEmployee";
+            this.naviEmployee.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarTabGroup;
             this.naviEmployee.Padding = new System.Windows.Forms.Padding(3);
+            this.naviEmployee.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
             this.naviEmployee.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageEmployee});
+            this.naviEmployee.Panel.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
             this.naviEmployee.SelectedIndex = 0;
             this.naviEmployee.Size = new System.Drawing.Size(800, 415);
             this.naviEmployee.TabIndex = 3;
@@ -77,6 +97,7 @@
             this.pageEmployee.Name = "pageEmployee";
             this.pageEmployee.Size = new System.Drawing.Size(798, 388);
             this.pageEmployee.Text = "설비정보";
+            this.pageEmployee.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.pageEmployee.ToolTipTitle = "Page ToolTip";
             this.pageEmployee.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
             // 
@@ -84,7 +105,7 @@
             // 
             this.kryptonSplitContainer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.kryptonSplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonSplitContainer1.Location = new System.Drawing.Point(0, 66);
+            this.kryptonSplitContainer1.Location = new System.Drawing.Point(0, 75);
             this.kryptonSplitContainer1.Name = "kryptonSplitContainer1";
             // 
             // kryptonSplitContainer1.Panel1
@@ -94,7 +115,7 @@
             // kryptonSplitContainer1.Panel2
             // 
             this.kryptonSplitContainer1.Panel2.Controls.Add(this.uscSpec);
-            this.kryptonSplitContainer1.Size = new System.Drawing.Size(798, 322);
+            this.kryptonSplitContainer1.Size = new System.Drawing.Size(798, 313);
             this.kryptonSplitContainer1.SplitterDistance = 396;
             this.kryptonSplitContainer1.TabIndex = 3;
             // 
@@ -103,7 +124,7 @@
             this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscList.Location = new System.Drawing.Point(0, 0);
             this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(396, 322);
+            this.uscList.Size = new System.Drawing.Size(396, 313);
             this.uscList.TabIndex = 0;
             this.uscList.CellContentClicked += new System.EventHandler<PCBVI.Controls.Basic.Facilities.FacilitiesList.CellContentClickedEventArgs>(this.UscList_CellContentClicked);
             // 
@@ -112,7 +133,7 @@
             this.uscSpec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscSpec.Location = new System.Drawing.Point(0, 0);
             this.uscSpec.Name = "uscSpec";
-            this.uscSpec.Size = new System.Drawing.Size(397, 322);
+            this.uscSpec.Size = new System.Drawing.Size(397, 313);
             this.uscSpec.TabIndex = 0;
             // 
             // facilitiesSearch1
@@ -120,7 +141,7 @@
             this.facilitiesSearch1.Dock = System.Windows.Forms.DockStyle.Top;
             this.facilitiesSearch1.Location = new System.Drawing.Point(0, 0);
             this.facilitiesSearch1.Name = "facilitiesSearch1";
-            this.facilitiesSearch1.Size = new System.Drawing.Size(798, 66);
+            this.facilitiesSearch1.Size = new System.Drawing.Size(798, 75);
             this.facilitiesSearch1.TabIndex = 0;
             this.facilitiesSearch1.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Basic.Facilities.FacilitiesSearch.SearchButtonClickedEventArgs>(this.FacilitiesSearch1_SearchButtonClicked);
             // 
