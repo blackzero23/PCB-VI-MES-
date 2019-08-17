@@ -74,6 +74,8 @@
     <Compile Include="Data\LotData.cs" />
     <Compile Include="Data\MaterialHistoryData.cs" />
     <Compile Include="Data\ProcessData.cs" />
+    <Compile Include="Data\RotationGroupData.cs" />
+    <Compile Include="Data\WorkOrderData.cs" />
     <Compile Include="Data\WorkPlaceData.cs" />
     <Compile Include="Data\SecondItemDivisionData.cs" />
     <Compile Include="DbContextFactory.cs" />

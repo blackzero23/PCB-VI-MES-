@@ -7,14 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PCBVI.Data.Data;
 
 namespace PCBVI.Controls.Production.WorkLog
 {
-    public partial class WorkLogInquire : UserControl
+    public partial class WorkLogListControl : UserControl
     {
-        public WorkLogInquire()
+        public WorkLogListControl()
         {
             InitializeComponent();
         }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (DesignMode)
+                return;
+        }
+
     }
 }

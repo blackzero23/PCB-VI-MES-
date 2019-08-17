@@ -125,6 +125,11 @@ namespace PCBVI.Controls.MainControls
 
         #region ClickEventHandler
 
+        private void BtnWorkOrder_Click(object sender, EventArgs e)
+        {
+            OnWorkLogButtonClicked(new WorkOrderForm());
+        }
+
         private void BtnEmployee_Click(object sender, EventArgs e)
         {
             OnEmployeeButtonClicked(new EmployeeForm());
@@ -1398,8 +1403,48 @@ namespace PCBVI.Controls.MainControls
                 StockStatistics = stockStatistics;
             }
         }
+
+        #endregion
+        #region WorkOrderButtonClicked event things for C# 3.0
+        public event EventHandler<WorkOrderButtonClickedEventArgs> WorkOrderButtonClicked;
+
+        protected virtual void OnWorkOrderButtonClicked(WorkOrderButtonClickedEventArgs e)
+        {
+            if (WorkOrderButtonClicked != null)
+                WorkOrderButtonClicked(this, e);
+        }
+
+        private WorkOrderButtonClickedEventArgs OnWorkOrderButtonClicked()
+        {
+            WorkOrderButtonClickedEventArgs args = new WorkOrderButtonClickedEventArgs();
+            OnWorkOrderButtonClicked(args);
+
+            return args;
+        }
+
+        /*private WorkOrderButtonClickedEventArgs OnWorkOrderButtonClickedForOut()
+        {
+            WorkOrderButtonClickedEventArgs args = new WorkOrderButtonClickedEventArgs();
+            OnWorkOrderButtonClicked(args);
+
+            return args;
+        }*/
+
+        public class WorkOrderButtonClickedEventArgs : EventArgs
+        {
+
+
+            /*public WorkOrderButtonClickedEventArgs()
+            {
+            }
+
+            public WorkOrderButtonClickedEventArgs()
+            {
+
+            }*/
+        }
         #endregion
 
-     
+        
     }
 }

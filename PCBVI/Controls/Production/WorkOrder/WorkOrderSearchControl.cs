@@ -9,16 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PCBVI.Data.Data;
 
-namespace PCBVI.Controls.Production.Worker
+namespace PCBVI.Controls.Production.WorkOrder
 {
-    public partial class WorkerSearch : UserControl
+    public partial class WorkOrderSearchControl : UserControl
     {
-        public WorkerSearch()
+        public WorkOrderSearchControl()
         {
             InitializeComponent();
         }
-
-
+     
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -37,7 +36,7 @@ namespace PCBVI.Controls.Production.Worker
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             int itemId = (int)cbbItemName.SelectedValue;
-            int rotationId = (int)cbbRotation.SelectedValue;
+            int rotationId = (int) cbbRotation.SelectedValue;
             DateTime fromDate = dtpFromDate.Value;
             DateTime toDate = dtpToDate.Value;
             OnSearchButtonClicked(itemId, rotationId, fromDate, toDate);

@@ -277,11 +277,11 @@
     <Compile Include="Controls\Production\ProcessDefect\ProcessDefectSearch.Designer.cs">
       <DependentUpon>ProcessDefectSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Production\Worker\WorkerGridView.cs">
+    <Compile Include="Controls\Production\Worker\WorkerListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Production\Worker\WorkerGridView.Designer.cs">
-      <DependentUpon>WorkerGridView.cs</DependentUpon>
+    <Compile Include="Controls\Production\Worker\WorkerListControl.Designer.cs">
+      <DependentUpon>WorkerListControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Production\Worker\WorkerSearch.cs">
       <SubType>UserControl</SubType>
@@ -289,29 +289,29 @@
     <Compile Include="Controls\Production\Worker\WorkerSearch.Designer.cs">
       <DependentUpon>WorkerSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Production\WorkLog\WorkLogCommonMenu.cs">
+    <Compile Include="Controls\Production\WorkLog\WorkLogListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Production\WorkLog\WorkLogCommonMenu.Designer.cs">
-      <DependentUpon>WorkLogCommonMenu.cs</DependentUpon>
+    <Compile Include="Controls\Production\WorkLog\WorkLogListControl.Designer.cs">
+      <DependentUpon>WorkLogListControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Production\WorkLog\WorkLogEnrollment.cs">
+    <Compile Include="Controls\Production\WorkLog\WorkLogSearchControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Production\WorkLog\WorkLogEnrollment.Designer.cs">
-      <DependentUpon>WorkLogEnrollment.cs</DependentUpon>
+    <Compile Include="Controls\Production\WorkLog\WorkLogSearchControl.Designer.cs">
+      <DependentUpon>WorkLogSearchControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Production\WorkLog\WorkLogInquire.cs">
+    <Compile Include="Controls\Production\WorkOrder\WorkOrderListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Production\WorkLog\WorkLogInquire.Designer.cs">
-      <DependentUpon>WorkLogInquire.cs</DependentUpon>
+    <Compile Include="Controls\Production\WorkOrder\WorkOrderListControl.Designer.cs">
+      <DependentUpon>WorkOrderListControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Production\WorkLog\WorkLogInquirePopUp.cs">
+    <Compile Include="Controls\Production\WorkOrder\WorkOrderSearchControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Production\WorkLog\WorkLogInquirePopUp.Designer.cs">
-      <DependentUpon>WorkLogInquirePopUp.cs</DependentUpon>
+    <Compile Include="Controls\Production\WorkOrder\WorkOrderSearchControl.Designer.cs">
+      <DependentUpon>WorkOrderSearchControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Quality\FirstInspectionList.cs">
       <SubType>UserControl</SubType>
@@ -535,6 +535,12 @@
     <Compile Include="Forms\Production\WorkLogForm.Designer.cs">
       <DependentUpon>WorkLogForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Production\WorkOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\WorkOrderForm.Designer.cs">
+      <DependentUpon>WorkOrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Quality\FirstInspectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -663,23 +669,23 @@
     <EmbeddedResource Include="Controls\Production\ProcessDefect\ProcessDefectSearch.resx">
       <DependentUpon>ProcessDefectSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Production\Worker\WorkerGridView.resx">
-      <DependentUpon>WorkerGridView.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Production\Worker\WorkerListControl.resx">
+      <DependentUpon>WorkerListControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Production\Worker\WorkerSearch.resx">
       <DependentUpon>WorkerSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Production\WorkLog\WorkLogCommonMenu.resx">
-      <DependentUpon>WorkLogCommonMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Production\WorkLog\WorkLogListControl.resx">
+      <DependentUpon>WorkLogListControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Production\WorkLog\WorkLogEnrollment.resx">
-      <DependentUpon>WorkLogEnrollment.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Production\WorkLog\WorkLogSearchControl.resx">
+      <DependentUpon>WorkLogSearchControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Production\WorkLog\WorkLogInquire.resx">
-      <DependentUpon>WorkLogInquire.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Production\WorkOrder\WorkOrderListControl.resx">
+      <DependentUpon>WorkOrderListControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Production\WorkLog\WorkLogInquirePopUp.resx">
-      <DependentUpon>WorkLogInquirePopUp.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Production\WorkOrder\WorkOrderSearchControl.resx">
+      <DependentUpon>WorkOrderSearchControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Quality\FirstInspectionList.resx">
       <DependentUpon>FirstInspectionList.cs</DependentUpon>
@@ -789,6 +795,9 @@
     <EmbeddedResource Include="Forms\Production\WorkLogForm.resx">
       <DependentUpon>WorkLogForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\WorkOrderForm.resx">
+      <DependentUpon>WorkOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Quality\FirstInspectionForm.resx">
       <DependentUpon>FirstInspectionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -839,7 +848,9 @@
     <None Include="Properties\DataSources\PCBVI.Data.MaterialHistory.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Process.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Product.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.RotationGroup.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.SecondItemDivision.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.WorkOrder.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.WorkPlace.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -11,16 +11,16 @@ using PCBVI.Data.Data;
 
 namespace PCBVI.Forms.Production
 {
-    public partial class WorkerForm : Form
+    public partial class WorkOrderForm : Form
     {
-        public WorkerForm()
+        public WorkOrderForm()
         {
             InitializeComponent();
         }
 
-        private void UscSearch_SearchButtonClicked(object sender, Controls.Production.Worker.WorkerSearch.SearchButtonClickedEventArgs e)
+        private void WorkOrderSearchControl1_SearchButtonClicked(object sender, Controls.Production.WorkOrder.WorkOrderSearchControl.SearchButtonClickedEventArgs e)
         {
-            uscList.SetDataSource(DB.WorkOrder.Search(e.ItemId, e.RotationId, e.FromDate, e.ToDate));
+            uscList.SetDataSource(DB.WorkOrder.Search(e.ItemId,e.RotationId,e.FromDate,e.ToDate));
         }
     }
 }

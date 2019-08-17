@@ -23,12 +23,12 @@ namespace PCBVI.Data.Data
         public static SecondItemDivisionData SecondItemDivision { get; } = new SecondItemDivisionData();
         public static ItemData Item { get; } = new ItemData();
         public static ProcessData Process { get; } = new ProcessData();
-        public static DefectiveProductData DefectiveProduct = new DefectiveProductData();
-        public static MaterialHistoryData MaterialHistory = new MaterialHistoryData();
-
-        public static FirstInspectionData FirstInspection = new FirstInspectionData();
+        public static DefectiveProductData DefectiveProduct { get; } = new DefectiveProductData();
+        public static MaterialHistoryData MaterialHistory { get; } = new MaterialHistoryData();
+        public static FirstInspectionData FirstInspection { get; } = new FirstInspectionData();
         public static InspectionStandardTypeData InspectionStandardType { get; } = new InspectionStandardTypeData();
-        public static InspectionStandardData InspectionStandard
-        { get; } = new InspectionStandardData();
+        public static InspectionStandardData InspectionStandard { get; } = new InspectionStandardData();
+        public static RotationGroupData RotationGroup { get; } = new RotationGroupData();
+        public static WorkOrderData WorkOrder { get; } = new WorkOrderData();
     }
 }

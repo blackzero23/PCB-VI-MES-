@@ -31,19 +31,9 @@
             this.topMenubar1 = new PCBVI.Controls.CommonControl.TopMenubar();
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.WorkLogEnrollment = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.workLogEnrollment1 = new PCBVI.Controls.Production.WorkLog.WorkLogEnrollment();
-            this.workLogCommonMenu1 = new PCBVI.Controls.Production.WorkLog.WorkLogCommonMenu();
-            this.WorkLogInquire = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.workLogInquire1 = new PCBVI.Controls.Production.WorkLog.WorkLogInquire();
-            this.workLogCommonMenu2 = new PCBVI.Controls.Production.WorkLog.WorkLogCommonMenu();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).BeginInit();
             this.kryptonNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WorkLogEnrollment)).BeginInit();
-            this.WorkLogEnrollment.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WorkLogInquire)).BeginInit();
-            this.WorkLogInquire.SuspendLayout();
             this.SuspendLayout();
             // 
             // topMenubar1
@@ -60,30 +50,12 @@
             this.kryptonNavigator1.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.None;
             this.kryptonNavigator1.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.kryptonNavigator1.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
-            this.kryptonNavigator1.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.SelectPage;
-            this.kryptonNavigator1.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
-            this.kryptonNavigator1.Button.ContextMenuMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
-            this.kryptonNavigator1.Button.ContextMenuMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
-            this.kryptonNavigator1.Button.NextButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
-            this.kryptonNavigator1.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
-            this.kryptonNavigator1.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
-            this.kryptonNavigator1.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.kryptonNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonNavigator1.Group.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
-            this.kryptonNavigator1.Group.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ControlClient;
-            this.kryptonNavigator1.Header.HeaderStyleBar = ComponentFactory.Krypton.Toolkit.HeaderStyle.Secondary;
-            this.kryptonNavigator1.Header.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Primary;
-            this.kryptonNavigator1.Header.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Secondary;
             this.kryptonNavigator1.Location = new System.Drawing.Point(0, 35);
             this.kryptonNavigator1.Name = "kryptonNavigator1";
-            this.kryptonNavigator1.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarTabGroup;
-            this.kryptonNavigator1.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
             this.kryptonNavigator1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
-            this.kryptonPage1,
-            this.WorkLogEnrollment,
-            this.WorkLogInquire});
-            this.kryptonNavigator1.Panel.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
-            this.kryptonNavigator1.SelectedIndex = 1;
+            this.kryptonPage1});
+            this.kryptonNavigator1.SelectedIndex = 0;
             this.kryptonNavigator1.Size = new System.Drawing.Size(800, 415);
             this.kryptonNavigator1.TabIndex = 1;
             this.kryptonNavigator1.Text = "kryptonNavigator1";
@@ -98,71 +70,8 @@
             this.kryptonPage1.Name = "kryptonPage1";
             this.kryptonPage1.Size = new System.Drawing.Size(798, 388);
             this.kryptonPage1.Text = "작업일지";
-            this.kryptonPage1.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "A39FBF88B0584D7E8F87C787287F24B0";
-            // 
-            // WorkLogEnrollment
-            // 
-            this.WorkLogEnrollment.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.WorkLogEnrollment.Controls.Add(this.workLogEnrollment1);
-            this.WorkLogEnrollment.Controls.Add(this.workLogCommonMenu1);
-            this.WorkLogEnrollment.Flags = 65534;
-            this.WorkLogEnrollment.LastVisibleSet = true;
-            this.WorkLogEnrollment.MinimumSize = new System.Drawing.Size(50, 50);
-            this.WorkLogEnrollment.Name = "WorkLogEnrollment";
-            this.WorkLogEnrollment.Size = new System.Drawing.Size(798, 388);
-            this.WorkLogEnrollment.Text = "등록";
-            this.WorkLogEnrollment.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
-            this.WorkLogEnrollment.ToolTipTitle = "Page ToolTip";
-            this.WorkLogEnrollment.UniqueName = "30631063436B41A1E1AABA2D53F97292";
-            // 
-            // workLogEnrollment1
-            // 
-            this.workLogEnrollment1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.workLogEnrollment1.Location = new System.Drawing.Point(0, 75);
-            this.workLogEnrollment1.Name = "workLogEnrollment1";
-            this.workLogEnrollment1.Size = new System.Drawing.Size(798, 313);
-            this.workLogEnrollment1.TabIndex = 3;
-            // 
-            // workLogCommonMenu1
-            // 
-            this.workLogCommonMenu1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.workLogCommonMenu1.Location = new System.Drawing.Point(0, 0);
-            this.workLogCommonMenu1.Name = "workLogCommonMenu1";
-            this.workLogCommonMenu1.Size = new System.Drawing.Size(798, 75);
-            this.workLogCommonMenu1.TabIndex = 2;
-            // 
-            // WorkLogInquire
-            // 
-            this.WorkLogInquire.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.WorkLogInquire.Controls.Add(this.workLogInquire1);
-            this.WorkLogInquire.Controls.Add(this.workLogCommonMenu2);
-            this.WorkLogInquire.Flags = 65534;
-            this.WorkLogInquire.LastVisibleSet = true;
-            this.WorkLogInquire.MinimumSize = new System.Drawing.Size(50, 50);
-            this.WorkLogInquire.Name = "WorkLogInquire";
-            this.WorkLogInquire.Size = new System.Drawing.Size(798, 388);
-            this.WorkLogInquire.Text = "조회";
-            this.WorkLogInquire.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
-            this.WorkLogInquire.ToolTipTitle = "Page ToolTip";
-            this.WorkLogInquire.UniqueName = "9A9A8FEB6DFA4B6A539304514B8721ED";
-            // 
-            // workLogInquire1
-            // 
-            this.workLogInquire1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.workLogInquire1.Location = new System.Drawing.Point(0, 75);
-            this.workLogInquire1.Name = "workLogInquire1";
-            this.workLogInquire1.Size = new System.Drawing.Size(798, 313);
-            this.workLogInquire1.TabIndex = 1;
-            // 
-            // workLogCommonMenu2
-            // 
-            this.workLogCommonMenu2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.workLogCommonMenu2.Location = new System.Drawing.Point(0, 0);
-            this.workLogCommonMenu2.Name = "workLogCommonMenu2";
-            this.workLogCommonMenu2.Size = new System.Drawing.Size(798, 75);
-            this.workLogCommonMenu2.TabIndex = 0;
             // 
             // WorkLogForm
             // 
@@ -177,10 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).EndInit();
             this.kryptonNavigator1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WorkLogEnrollment)).EndInit();
-            this.WorkLogEnrollment.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.WorkLogInquire)).EndInit();
-            this.WorkLogInquire.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -190,11 +95,6 @@
         private Controls.CommonControl.TopMenubar topMenubar1;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator kryptonNavigator1;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage1;
-        private ComponentFactory.Krypton.Navigator.KryptonPage WorkLogEnrollment;
-        private ComponentFactory.Krypton.Navigator.KryptonPage WorkLogInquire;
-        private Controls.Production.WorkLog.WorkLogCommonMenu workLogCommonMenu1;
-        private Controls.Production.WorkLog.WorkLogCommonMenu workLogCommonMenu2;
-        private Controls.Production.WorkLog.WorkLogEnrollment workLogEnrollment1;
-        private Controls.Production.WorkLog.WorkLogInquire workLogInquire1;
+       
     }
 }
