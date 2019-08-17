@@ -53,10 +53,8 @@
             this.naviEmployee.Padding = new System.Windows.Forms.Padding(3);
             this.naviEmployee.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageEmployee});
-            this.naviEmployee.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.naviEmployee.SelectedIndex = 0;
             this.naviEmployee.Size = new System.Drawing.Size(800, 415);
-            this.naviEmployee.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.naviEmployee.TabIndex = 1;
             this.naviEmployee.Text = "navi";
             // 
@@ -69,7 +67,7 @@
             this.pageEmployee.LastVisibleSet = true;
             this.pageEmployee.MinimumSize = new System.Drawing.Size(50, 50);
             this.pageEmployee.Name = "pageEmployee";
-            this.pageEmployee.Size = new System.Drawing.Size(798, 384);
+            this.pageEmployee.Size = new System.Drawing.Size(798, 388);
             this.pageEmployee.Text = "불량 정보";
             this.pageEmployee.ToolTipTitle = "Page ToolTip";
             this.pageEmployee.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
@@ -77,9 +75,9 @@
             // errorCodeList1
             // 
             this.errorCodeList1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.errorCodeList1.Location = new System.Drawing.Point(0, 98);
+            this.errorCodeList1.Location = new System.Drawing.Point(0, 75);
             this.errorCodeList1.Name = "errorCodeList1";
-            this.errorCodeList1.Size = new System.Drawing.Size(798, 286);
+            this.errorCodeList1.Size = new System.Drawing.Size(798, 313);
             this.errorCodeList1.TabIndex = 1;
             // 
             // uscSearch
@@ -87,7 +85,7 @@
             this.uscSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.uscSearch.Location = new System.Drawing.Point(0, 0);
             this.uscSearch.Name = "uscSearch";
-            this.uscSearch.Size = new System.Drawing.Size(798, 98);
+            this.uscSearch.Size = new System.Drawing.Size(798, 75);
             this.uscSearch.TabIndex = 0;
             this.uscSearch.SearchClicked += new System.EventHandler<PCBVI.Controls.Basic.ErrorCode.ErrorCodeSearch.SearchClickedEventArgs>(this.UscSearch_SearchClicked);
             // 

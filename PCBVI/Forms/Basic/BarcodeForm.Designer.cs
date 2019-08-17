@@ -53,10 +53,8 @@
             this.naviBarcode.Padding = new System.Windows.Forms.Padding(3);
             this.naviBarcode.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageBarcode});
-            this.naviBarcode.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.naviBarcode.SelectedIndex = 0;
             this.naviBarcode.Size = new System.Drawing.Size(833, 415);
-            this.naviBarcode.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("HY헤드라인M", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.naviBarcode.TabIndex = 3;
             this.naviBarcode.Text = "navi";
             // 
@@ -69,7 +67,7 @@
             this.pageBarcode.LastVisibleSet = true;
             this.pageBarcode.MinimumSize = new System.Drawing.Size(50, 50);
             this.pageBarcode.Name = "pageBarcode";
-            this.pageBarcode.Size = new System.Drawing.Size(831, 386);
+            this.pageBarcode.Size = new System.Drawing.Size(831, 388);
             this.pageBarcode.Text = "바코드 정보";
             this.pageBarcode.ToolTipTitle = "Page ToolTip";
             this.pageBarcode.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
@@ -79,7 +77,7 @@
             this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscList.Location = new System.Drawing.Point(0, 68);
             this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(831, 318);
+            this.uscList.Size = new System.Drawing.Size(831, 320);
             this.uscList.TabIndex = 1;
             // 
             // barcodeSearch1
@@ -100,6 +98,9 @@
             this.uscTopMenu.Size = new System.Drawing.Size(833, 35);
             this.uscTopMenu.TabIndex = 0;
             this.uscTopMenu.InsertButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs>(this.UscTopMenu_InsertButtonClicked);
+            this.uscTopMenu.DeleteButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.DeleteButtonClickedEventArgs>(this.UscTopMenu_DeleteButtonClicked);
+            this.uscTopMenu.ExcelButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs>(this.UscTopMenu_ExcelButtonClicked);
+            this.uscTopMenu.UpdateButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs>(this.UscTopMenu_UpdateButtonClicked);
             // 
             // BarcodeForm
             // 

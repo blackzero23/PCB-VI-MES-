@@ -55,7 +55,9 @@
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(703, 70);
+            this.kryptonPanel1.Size = new System.Drawing.Size(703, 75);
+            this.kryptonPanel1.StateCommon.Color1 = System.Drawing.SystemColors.Control;
+            this.kryptonPanel1.StateCommon.Color2 = System.Drawing.SystemColors.Control;
             this.kryptonPanel1.TabIndex = 0;
             // 
             // cbbProcess
@@ -63,7 +65,7 @@
             this.cbbProcess.DataSource = this.processBindingSource;
             this.cbbProcess.DisplayMember = "Name";
             this.cbbProcess.DropDownWidth = 121;
-            this.cbbProcess.Location = new System.Drawing.Point(287, 23);
+            this.cbbProcess.Location = new System.Drawing.Point(268, 28);
             this.cbbProcess.Name = "cbbProcess";
             this.cbbProcess.Size = new System.Drawing.Size(105, 21);
             this.cbbProcess.TabIndex = 26;
@@ -75,7 +77,7 @@
             // 
             // kryptonLabel1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(230, 24);
+            this.kryptonLabel1.Location = new System.Drawing.Point(211, 29);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(60, 20);
             this.kryptonLabel1.TabIndex = 25;
@@ -86,7 +88,7 @@
             this.cbbFacilities.DataSource = this.facilityBindingSource;
             this.cbbFacilities.DisplayMember = "Name";
             this.cbbFacilities.DropDownWidth = 121;
-            this.cbbFacilities.Location = new System.Drawing.Point(75, 23);
+            this.cbbFacilities.Location = new System.Drawing.Point(78, 29);
             this.cbbFacilities.Name = "cbbFacilities";
             this.cbbFacilities.Size = new System.Drawing.Size(105, 21);
             this.cbbFacilities.TabIndex = 24;
@@ -98,7 +100,7 @@
             // 
             // kryptonLabel2
             // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(32, 23);
+            this.kryptonLabel2.Location = new System.Drawing.Point(35, 29);
             this.kryptonLabel2.Name = "kryptonLabel2";
             this.kryptonLabel2.Size = new System.Drawing.Size(48, 20);
             this.kryptonLabel2.TabIndex = 23;
@@ -120,7 +122,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.kryptonPanel1);
             this.Name = "FacilitiesSearch";
-            this.Size = new System.Drawing.Size(703, 70);
+            this.Size = new System.Drawing.Size(703, 75);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();

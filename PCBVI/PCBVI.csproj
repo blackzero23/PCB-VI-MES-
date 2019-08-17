@@ -687,6 +687,9 @@
     <EmbeddedResource Include="Forms\Basic\BarcodeForm.resx">
       <DependentUpon>BarcodeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\BarcodeInsertForm.resx">
+      <DependentUpon>BarcodeInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -61,10 +61,8 @@
             this.naviEmployee.Padding = new System.Windows.Forms.Padding(3);
             this.naviEmployee.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageEmployee});
-            this.naviEmployee.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.naviEmployee.SelectedIndex = 0;
             this.naviEmployee.Size = new System.Drawing.Size(800, 415);
-            this.naviEmployee.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.naviEmployee.TabIndex = 3;
             this.naviEmployee.Text = "navi";
             // 
@@ -77,7 +75,7 @@
             this.pageEmployee.LastVisibleSet = true;
             this.pageEmployee.MinimumSize = new System.Drawing.Size(50, 50);
             this.pageEmployee.Name = "pageEmployee";
-            this.pageEmployee.Size = new System.Drawing.Size(798, 384);
+            this.pageEmployee.Size = new System.Drawing.Size(798, 388);
             this.pageEmployee.Text = "설비정보";
             this.pageEmployee.ToolTipTitle = "Page ToolTip";
             this.pageEmployee.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
@@ -96,7 +94,7 @@
             // kryptonSplitContainer1.Panel2
             // 
             this.kryptonSplitContainer1.Panel2.Controls.Add(this.uscSpec);
-            this.kryptonSplitContainer1.Size = new System.Drawing.Size(798, 318);
+            this.kryptonSplitContainer1.Size = new System.Drawing.Size(798, 322);
             this.kryptonSplitContainer1.SplitterDistance = 396;
             this.kryptonSplitContainer1.TabIndex = 3;
             // 
@@ -105,7 +103,7 @@
             this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscList.Location = new System.Drawing.Point(0, 0);
             this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(396, 318);
+            this.uscList.Size = new System.Drawing.Size(396, 322);
             this.uscList.TabIndex = 0;
             this.uscList.CellContentClicked += new System.EventHandler<PCBVI.Controls.Basic.Facilities.FacilitiesList.CellContentClickedEventArgs>(this.UscList_CellContentClicked);
             // 
@@ -114,7 +112,7 @@
             this.uscSpec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscSpec.Location = new System.Drawing.Point(0, 0);
             this.uscSpec.Name = "uscSpec";
-            this.uscSpec.Size = new System.Drawing.Size(397, 318);
+            this.uscSpec.Size = new System.Drawing.Size(397, 322);
             this.uscSpec.TabIndex = 0;
             // 
             // facilitiesSearch1

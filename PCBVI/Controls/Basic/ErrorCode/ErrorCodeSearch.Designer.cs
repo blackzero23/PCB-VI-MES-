@@ -62,7 +62,9 @@
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(703, 82);
+            this.kryptonPanel1.Size = new System.Drawing.Size(703, 75);
+            this.kryptonPanel1.StateCommon.Color1 = System.Drawing.SystemColors.Control;
+            this.kryptonPanel1.StateCommon.Color2 = System.Drawing.SystemColors.Control;
             this.kryptonPanel1.TabIndex = 0;
             // 
             // cbbErrorKind
@@ -72,7 +74,7 @@
             this.cbbErrorKind.DataSource = this.errorKindBindingSource;
             this.cbbErrorKind.DisplayMember = "Name";
             this.cbbErrorKind.DropDownWidth = 121;
-            this.cbbErrorKind.Location = new System.Drawing.Point(450, 34);
+            this.cbbErrorKind.Location = new System.Drawing.Point(445, 29);
             this.cbbErrorKind.Name = "cbbErrorKind";
             this.cbbErrorKind.Size = new System.Drawing.Size(105, 21);
             this.cbbErrorKind.TabIndex = 24;
@@ -89,7 +91,7 @@
             this.cbbErrorType.DataSource = this.errorTypeBindingSource;
             this.cbbErrorType.DisplayMember = "Name";
             this.cbbErrorType.DropDownWidth = 121;
-            this.cbbErrorType.Location = new System.Drawing.Point(280, 35);
+            this.cbbErrorType.Location = new System.Drawing.Point(273, 29);
             this.cbbErrorType.Name = "cbbErrorType";
             this.cbbErrorType.Size = new System.Drawing.Size(105, 21);
             this.cbbErrorType.TabIndex = 23;
@@ -101,7 +103,7 @@
             // 
             // kryptonLabel3
             // 
-            this.kryptonLabel3.Location = new System.Drawing.Point(211, 35);
+            this.kryptonLabel3.Location = new System.Drawing.Point(204, 29);
             this.kryptonLabel3.Name = "kryptonLabel3";
             this.kryptonLabel3.Size = new System.Drawing.Size(72, 20);
             this.kryptonLabel3.TabIndex = 22;
@@ -112,7 +114,7 @@
             this.cbbErrorCode.DataSource = this.errorCodeBindingSource;
             this.cbbErrorCode.DisplayMember = "Code";
             this.cbbErrorCode.DropDownWidth = 121;
-            this.cbbErrorCode.Location = new System.Drawing.Point(87, 35);
+            this.cbbErrorCode.Location = new System.Drawing.Point(80, 29);
             this.cbbErrorCode.Name = "cbbErrorCode";
             this.cbbErrorCode.Size = new System.Drawing.Size(105, 21);
             this.cbbErrorCode.TabIndex = 21;
@@ -125,7 +127,7 @@
             // 
             // kryptonLabel1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(405, 35);
+            this.kryptonLabel1.Location = new System.Drawing.Point(400, 30);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(48, 20);
             this.kryptonLabel1.TabIndex = 20;
@@ -133,7 +135,7 @@
             // 
             // kryptonLabel2
             // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(30, 35);
+            this.kryptonLabel2.Location = new System.Drawing.Point(23, 29);
             this.kryptonLabel2.Name = "kryptonLabel2";
             this.kryptonLabel2.Size = new System.Drawing.Size(60, 20);
             this.kryptonLabel2.TabIndex = 19;
@@ -142,7 +144,7 @@
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Location = new System.Drawing.Point(583, 26);
+            this.btnSearch.Location = new System.Drawing.Point(582, 26);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(90, 30);
             this.btnSearch.TabIndex = 18;
@@ -155,7 +157,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.kryptonPanel1);
             this.Name = "ErrorCodeSearch";
-            this.Size = new System.Drawing.Size(703, 82);
+            this.Size = new System.Drawing.Size(703, 75);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
