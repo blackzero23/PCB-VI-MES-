@@ -8,6 +8,10 @@ namespace PCBVI.Data
 {
     public partial class Barcode
     {
+        public Barcode(int code)
+        {
+            this.BarcodeCode = code;
+        }
         //Lot No
         public string LotName { get; set; }
         public string ErrorTypeName { get; set; }

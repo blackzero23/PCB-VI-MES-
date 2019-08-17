@@ -24,47 +24,55 @@ namespace PCBVI.Controls.Basic.BarCode
             base.OnLoad(e);
             if (DesignMode)
                 return;
-            cbbBarcodeName.DataSource = DB.BarCode.GetAll();
-            cbbLotNo.DataSource = DB.Lot.GetAll();
+
+            List<Barcode> barcodes = DB.BarCode.GetAll();
+            //barcodes.Insert(0, new Barcode(""));
+            cbbBarcodeName.DataSource = barcodes;
+
+            List<Lot> lots = DB.Lot.GetAll();
+            lots.Insert(0, new Lot(""));
+            cbbLotNo.DataSource = lots;
 
         }
 
-        #region SeaechButtonClicked event things for C# 3.0
-        public event EventHandler<SeaechButtonClickedEventArgs> SeaechButtonClicked;
+        #region SearchButtonClicked event things for C# 3.0
+        public event EventHandler<SearchButtonClickedEventArgs> SearchButtonClicked;
 
-        protected virtual void OnSeaechButtonClicked(SeaechButtonClickedEventArgs e)
+        protected virtual void OnSearchButtonClicked(SearchButtonClickedEventArgs e)
         {
-            if (SeaechButtonClicked != null)
-                SeaechButtonClicked(this, e);
+            if (SearchButtonClicked != null)
+                SearchButtonClicked(this, e);
         }
 
-        private SeaechButtonClickedEventArgs OnSeaechButtonClicked(int lotId)
+        private SearchButtonClickedEventArgs OnSearchButtonClicked(int lotId, int barcodeId)
         {
-            SeaechButtonClickedEventArgs args = new SeaechButtonClickedEventArgs(lotId);
-            OnSeaechButtonClicked(args);
+            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(lotId, barcodeId);
+            OnSearchButtonClicked(args);
 
             return args;
         }
 
-        private SeaechButtonClickedEventArgs OnSeaechButtonClickedForOut()
+        private SearchButtonClickedEventArgs OnSearchButtonClickedForOut()
         {
-            SeaechButtonClickedEventArgs args = new SeaechButtonClickedEventArgs();
-            OnSeaechButtonClicked(args);
+            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs();
+            OnSearchButtonClicked(args);
 
             return args;
         }
 
-        public class SeaechButtonClickedEventArgs : EventArgs
+        public class SearchButtonClickedEventArgs : EventArgs
         {
             public int LotId { get; set; }
+            public int BarcodeId { get; set; }
 
-            public SeaechButtonClickedEventArgs()
+            public SearchButtonClickedEventArgs()
             {
             }
 
-            public SeaechButtonClickedEventArgs(int lotId)
+            public SearchButtonClickedEventArgs(int lotId, int barcodeId)
             {
                 LotId = lotId;
+                BarcodeId = barcodeId;
             }
         }
         #endregion
@@ -72,8 +80,9 @@ namespace PCBVI.Controls.Basic.BarCode
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             int lotId = (int)cbbLotNo.SelectedValue;
+            int barcodeId = (int)cbbBarcodeName.SelectedValue;
 
-            OnSeaechButtonClicked(lotId);
+            OnSearchButtonClicked(lotId, barcodeId);
         }
     }
 }
