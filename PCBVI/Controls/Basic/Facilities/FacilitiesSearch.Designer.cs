@@ -28,23 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.cbbErrorCode = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.cbbProcess = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.processBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.cbbFacilities = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.facilityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonComboBox1 = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbErrorCode)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbProcess)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.processBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbFacilities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facilityBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
             // 
-            this.kryptonPanel1.Controls.Add(this.kryptonComboBox1);
+            this.kryptonPanel1.Controls.Add(this.cbbProcess);
             this.kryptonPanel1.Controls.Add(this.kryptonLabel1);
-            this.kryptonPanel1.Controls.Add(this.cbbErrorCode);
+            this.kryptonPanel1.Controls.Add(this.cbbFacilities);
             this.kryptonPanel1.Controls.Add(this.kryptonLabel2);
             this.kryptonPanel1.Controls.Add(this.btnSearch);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -53,14 +58,43 @@
             this.kryptonPanel1.Size = new System.Drawing.Size(703, 70);
             this.kryptonPanel1.TabIndex = 0;
             // 
-            // cbbErrorCode
+            // cbbProcess
             // 
-            this.cbbErrorCode.DisplayMember = "Code";
-            this.cbbErrorCode.DropDownWidth = 121;
-            this.cbbErrorCode.Location = new System.Drawing.Point(75, 23);
-            this.cbbErrorCode.Name = "cbbErrorCode";
-            this.cbbErrorCode.Size = new System.Drawing.Size(105, 21);
-            this.cbbErrorCode.TabIndex = 24;
+            this.cbbProcess.DataSource = this.processBindingSource;
+            this.cbbProcess.DisplayMember = "Name";
+            this.cbbProcess.DropDownWidth = 121;
+            this.cbbProcess.Location = new System.Drawing.Point(287, 23);
+            this.cbbProcess.Name = "cbbProcess";
+            this.cbbProcess.Size = new System.Drawing.Size(105, 21);
+            this.cbbProcess.TabIndex = 26;
+            this.cbbProcess.ValueMember = "ProcessId";
+            // 
+            // processBindingSource
+            // 
+            this.processBindingSource.DataSource = typeof(PCBVI.Data.Process);
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(230, 24);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(60, 20);
+            this.kryptonLabel1.TabIndex = 25;
+            this.kryptonLabel1.Values.Text = "공정구분";
+            // 
+            // cbbFacilities
+            // 
+            this.cbbFacilities.DataSource = this.facilityBindingSource;
+            this.cbbFacilities.DisplayMember = "Name";
+            this.cbbFacilities.DropDownWidth = 121;
+            this.cbbFacilities.Location = new System.Drawing.Point(75, 23);
+            this.cbbFacilities.Name = "cbbFacilities";
+            this.cbbFacilities.Size = new System.Drawing.Size(105, 21);
+            this.cbbFacilities.TabIndex = 24;
+            this.cbbFacilities.ValueMember = "FacilitiesId";
+            // 
+            // facilityBindingSource
+            // 
+            this.facilityBindingSource.DataSource = typeof(PCBVI.Data.Facility);
             // 
             // kryptonLabel2
             // 
@@ -78,23 +112,7 @@
             this.btnSearch.Size = new System.Drawing.Size(90, 30);
             this.btnSearch.TabIndex = 22;
             this.btnSearch.Values.Text = "검 색";
-            // 
-            // kryptonComboBox1
-            // 
-            this.kryptonComboBox1.DisplayMember = "Code";
-            this.kryptonComboBox1.DropDownWidth = 121;
-            this.kryptonComboBox1.Location = new System.Drawing.Point(276, 23);
-            this.kryptonComboBox1.Name = "kryptonComboBox1";
-            this.kryptonComboBox1.Size = new System.Drawing.Size(105, 21);
-            this.kryptonComboBox1.TabIndex = 26;
-            // 
-            // kryptonLabel1
-            // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(221, 23);
-            this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(60, 20);
-            this.kryptonLabel1.TabIndex = 25;
-            this.kryptonLabel1.Values.Text = "계정구분";
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // FacilitiesSearch
             // 
@@ -106,8 +124,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbErrorCode)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbProcess)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.processBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbFacilities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facilityBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -115,10 +135,12 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox kryptonComboBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbProcess;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbErrorCode;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbFacilities;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSearch;
+        private System.Windows.Forms.BindingSource facilityBindingSource;
+        private System.Windows.Forms.BindingSource processBindingSource;
     }
 }

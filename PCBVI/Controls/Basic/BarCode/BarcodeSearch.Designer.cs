@@ -34,9 +34,13 @@
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.cbbLotNo = new System.Windows.Forms.ComboBox();
             this.lotBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbbBarcodeName = new System.Windows.Forms.ComboBox();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.barcodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lotBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barcodeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -51,7 +55,7 @@
             // 
             // lbLOTNo
             // 
-            this.lbLOTNo.Location = new System.Drawing.Point(44, 24);
+            this.lbLOTNo.Location = new System.Drawing.Point(275, 24);
             this.lbLOTNo.Name = "lbLOTNo";
             this.lbLOTNo.Size = new System.Drawing.Size(58, 20);
             this.lbLOTNo.TabIndex = 3;
@@ -59,6 +63,8 @@
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.cbbBarcodeName);
+            this.kryptonPanel1.Controls.Add(this.kryptonLabel1);
             this.kryptonPanel1.Controls.Add(this.cbbLotNo);
             this.kryptonPanel1.Controls.Add(this.btnSearch);
             this.kryptonPanel1.Controls.Add(this.lbLOTNo);
@@ -73,7 +79,7 @@
             this.cbbLotNo.DataSource = this.lotBindingSource;
             this.cbbLotNo.DisplayMember = "LotCode";
             this.cbbLotNo.FormattingEnabled = true;
-            this.cbbLotNo.Location = new System.Drawing.Point(108, 24);
+            this.cbbLotNo.Location = new System.Drawing.Point(339, 24);
             this.cbbLotNo.Name = "cbbLotNo";
             this.cbbLotNo.Size = new System.Drawing.Size(121, 20);
             this.cbbLotNo.TabIndex = 5;
@@ -82,6 +88,29 @@
             // lotBindingSource
             // 
             this.lotBindingSource.DataSource = typeof(PCBVI.Data.Lot);
+            // 
+            // cbbBarcodeName
+            // 
+            this.cbbBarcodeName.DataSource = this.barcodeBindingSource;
+            this.cbbBarcodeName.DisplayMember = "BarcodeCode";
+            this.cbbBarcodeName.FormattingEnabled = true;
+            this.cbbBarcodeName.Location = new System.Drawing.Point(104, 24);
+            this.cbbBarcodeName.Name = "cbbBarcodeName";
+            this.cbbBarcodeName.Size = new System.Drawing.Size(121, 20);
+            this.cbbBarcodeName.TabIndex = 7;
+            this.cbbBarcodeName.ValueMember = "BarcodeId";
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(40, 24);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(66, 20);
+            this.kryptonLabel1.TabIndex = 6;
+            this.kryptonLabel1.Values.Text = "바코드명 :";
+            // 
+            // barcodeBindingSource
+            // 
+            this.barcodeBindingSource.DataSource = typeof(PCBVI.Data.Barcode);
             // 
             // BarcodeSearch
             // 
@@ -94,6 +123,7 @@
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lotBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barcodeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -104,5 +134,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private System.Windows.Forms.ComboBox cbbLotNo;
         private System.Windows.Forms.BindingSource lotBindingSource;
+        private System.Windows.Forms.ComboBox cbbBarcodeName;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private System.Windows.Forms.BindingSource barcodeBindingSource;
     }
 }

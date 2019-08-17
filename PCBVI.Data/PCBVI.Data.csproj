@@ -65,10 +65,12 @@
     <Compile Include="Data\FacilitiesData.cs" />
     <Compile Include="Data\FacilitiesHistoryData.cs" />
     <Compile Include="Data\FHistoryDivisionData.cs" />
+    <Compile Include="Data\FirstInspectionData.cs" />
     <Compile Include="Data\FirstItemDivisionData.cs" />
     <Compile Include="Data\InspectionStandardData.cs" />
     <Compile Include="Data\InspectionStandardTypeData.cs" />
     <Compile Include="Data\ItemData.cs" />
+    <Compile Include="Data\LastInspectionData.cs" />
     <Compile Include="Data\LotData.cs" />
     <Compile Include="Data\MaterialHistoryData.cs" />
     <Compile Include="Data\ProcessData.cs" />
@@ -90,6 +92,8 @@
     <Compile Include="Entities\ErrorCode.cs" />
     <Compile Include="Entities\Facility.cs" />
     <Compile Include="Entities\FHistoryDivision.cs" />
+    <Compile Include="Entities\Lot.cs" />
+    <Compile Include="Entities\FirstInspection.cs" />
     <Compile Include="Entities\Process.cs" />
     <Compile Include="Entities\WorkPlace.cs" />
     <Compile Include="ErrorCode.cs">

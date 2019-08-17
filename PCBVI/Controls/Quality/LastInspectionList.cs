@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PCBVI.Data.Data;
 
 namespace PCBVI.Controls.Quality
 {
@@ -15,6 +16,27 @@ namespace PCBVI.Controls.Quality
         public LastInspectionList()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (DesignMode)
+                return;
+
+            InitSetDataSource();
+        }
+
+        private void InitSetDataSource()
+        {
+            bdsItem.DataSource = DB.Item.GetAll();
+            bdsWorkPlace.DataSource = DB.WorkPlace.GetAll();
+        }
+
+        public void SetDataSource(List<Data.LastInspection> list)
+        {
+            dgvList.DataSource = list;
         }
     }
 }

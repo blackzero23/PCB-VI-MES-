@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbWorkPlace = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbCompanyName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbEmployeeName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -39,17 +40,24 @@
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.dtpInspectionTo = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.dtpInspectionFrom = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
-            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.dtpProductionTo = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
-            this.dtpProductionFrom = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.dtpProductionToDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.dtpProductionFromDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.cbbEmployeeName = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.txbCompanyName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.cbbItemCode = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.bdsEmployee = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbWorkPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbEmployeeName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbItemCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).BeginInit();
             this.SuspendLayout();
             // 
             // lbWorkPlace
@@ -102,14 +110,14 @@
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.cbbItemCode);
             this.kryptonPanel1.Controls.Add(this.cbbWorkPlace);
             this.kryptonPanel1.Controls.Add(this.kryptonLabel2);
             this.kryptonPanel1.Controls.Add(this.dtpInspectionTo);
             this.kryptonPanel1.Controls.Add(this.dtpInspectionFrom);
-            this.kryptonPanel1.Controls.Add(this.kryptonTextBox1);
             this.kryptonPanel1.Controls.Add(this.kryptonLabel1);
-            this.kryptonPanel1.Controls.Add(this.dtpProductionTo);
-            this.kryptonPanel1.Controls.Add(this.dtpProductionFrom);
+            this.kryptonPanel1.Controls.Add(this.dtpProductionToDate);
+            this.kryptonPanel1.Controls.Add(this.dtpProductionFromDate);
             this.kryptonPanel1.Controls.Add(this.cbbEmployeeName);
             this.kryptonPanel1.Controls.Add(this.txbCompanyName);
             this.kryptonPanel1.Controls.Add(this.btnSearch);
@@ -127,11 +135,14 @@
             // 
             // cbbWorkPlace
             // 
+            this.cbbWorkPlace.DataSource = this.bdsWorkPlace;
+            this.cbbWorkPlace.DisplayMember = "Name";
             this.cbbWorkPlace.DropDownWidth = 121;
             this.cbbWorkPlace.Location = new System.Drawing.Point(74, 94);
             this.cbbWorkPlace.Name = "cbbWorkPlace";
             this.cbbWorkPlace.Size = new System.Drawing.Size(101, 21);
             this.cbbWorkPlace.TabIndex = 17;
+            this.cbbWorkPlace.ValueMember = "WorkPlaceId";
             // 
             // kryptonLabel2
             // 
@@ -146,6 +157,7 @@
             this.dtpInspectionTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpInspectionTo.Location = new System.Drawing.Point(379, 58);
             this.dtpInspectionTo.Name = "dtpInspectionTo";
+            this.dtpInspectionTo.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpInspectionTo.Size = new System.Drawing.Size(86, 21);
             this.dtpInspectionTo.TabIndex = 15;
             // 
@@ -154,15 +166,9 @@
             this.dtpInspectionFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpInspectionFrom.Location = new System.Drawing.Point(267, 58);
             this.dtpInspectionFrom.Name = "dtpInspectionFrom";
+            this.dtpInspectionFrom.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpInspectionFrom.Size = new System.Drawing.Size(92, 21);
             this.dtpInspectionFrom.TabIndex = 14;
-            // 
-            // kryptonTextBox1
-            // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(74, 58);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.kryptonTextBox1.TabIndex = 13;
             // 
             // kryptonLabel1
             // 
@@ -172,29 +178,34 @@
             this.kryptonLabel1.TabIndex = 12;
             this.kryptonLabel1.Values.Text = "~";
             // 
-            // dtpProductionTo
+            // dtpProductionToDate
             // 
-            this.dtpProductionTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpProductionTo.Location = new System.Drawing.Point(566, 15);
-            this.dtpProductionTo.Name = "dtpProductionTo";
-            this.dtpProductionTo.Size = new System.Drawing.Size(86, 21);
-            this.dtpProductionTo.TabIndex = 11;
+            this.dtpProductionToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpProductionToDate.Location = new System.Drawing.Point(566, 15);
+            this.dtpProductionToDate.Name = "dtpProductionToDate";
+            this.dtpProductionToDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.dtpProductionToDate.Size = new System.Drawing.Size(86, 21);
+            this.dtpProductionToDate.TabIndex = 11;
             // 
-            // dtpProductionFrom
+            // dtpProductionFromDate
             // 
-            this.dtpProductionFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpProductionFrom.Location = new System.Drawing.Point(445, 15);
-            this.dtpProductionFrom.Name = "dtpProductionFrom";
-            this.dtpProductionFrom.Size = new System.Drawing.Size(90, 21);
-            this.dtpProductionFrom.TabIndex = 10;
+            this.dtpProductionFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpProductionFromDate.Location = new System.Drawing.Point(445, 15);
+            this.dtpProductionFromDate.Name = "dtpProductionFromDate";
+            this.dtpProductionFromDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
+            this.dtpProductionFromDate.Size = new System.Drawing.Size(90, 21);
+            this.dtpProductionFromDate.TabIndex = 10;
             // 
             // cbbEmployeeName
             // 
+            this.cbbEmployeeName.DataSource = this.bdsEmployee;
+            this.cbbEmployeeName.DisplayMember = "Name";
             this.cbbEmployeeName.DropDownWidth = 121;
             this.cbbEmployeeName.Location = new System.Drawing.Point(257, 17);
             this.cbbEmployeeName.Name = "cbbEmployeeName";
             this.cbbEmployeeName.Size = new System.Drawing.Size(121, 21);
             this.cbbEmployeeName.TabIndex = 9;
+            this.cbbEmployeeName.ValueMember = "EmployeeId";
             // 
             // txbCompanyName
             // 
@@ -210,6 +221,30 @@
             this.btnSearch.Size = new System.Drawing.Size(90, 40);
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Values.Text = "검 색";
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // cbbItemCode
+            // 
+            this.cbbItemCode.DataSource = this.bdsItem;
+            this.cbbItemCode.DisplayMember = "Code";
+            this.cbbItemCode.DropDownWidth = 100;
+            this.cbbItemCode.Location = new System.Drawing.Point(75, 59);
+            this.cbbItemCode.Name = "cbbItemCode";
+            this.cbbItemCode.Size = new System.Drawing.Size(100, 21);
+            this.cbbItemCode.TabIndex = 18;
+            this.cbbItemCode.ValueMember = "ItemId";
+            // 
+            // bdsEmployee
+            // 
+            this.bdsEmployee.DataSource = typeof(PCBVI.Data.Employee);
+            // 
+            // bdsItem
+            // 
+            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
+            // 
+            // bdsWorkPlace
+            // 
+            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
             // 
             // LastInspectionSearch
             // 
@@ -223,6 +258,10 @@
             this.kryptonPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbWorkPlace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbEmployeeName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbItemCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -239,13 +278,16 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSearch;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txbCompanyName;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpProductionTo;
-        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpProductionFrom;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpProductionToDate;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpProductionFromDate;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbEmployeeName;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpInspectionTo;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpInspectionFrom;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbWorkPlace;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbItemCode;
+        private System.Windows.Forms.BindingSource bdsEmployee;
+        private System.Windows.Forms.BindingSource bdsItem;
+        private System.Windows.Forms.BindingSource bdsWorkPlace;
     }
 }

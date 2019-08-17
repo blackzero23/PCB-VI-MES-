@@ -8,12 +8,12 @@ namespace PCBVI.Data.Data
 {
    public class BarCodeData : EntityData<Barcode>
     {
-        public List<Barcode> Search(int lotId)
+        public List<Barcode> Search(int barcodeId, int lotId)
         {
             using (PCBVIEntities context = DbContextFactory.Create())
             {
                 var query = from x in context.LotBarCodes
-                            where x.Lot.LotId == lotId
+                            where x.Lot.LotId == lotId || x.Barcode.BarcodeId==barcodeId
                             select new
                             {
                                 Barcode = x.Barcode,
@@ -27,7 +27,7 @@ namespace PCBVI.Data.Data
                     x.Barcode.LotName = x.LotName;
                     x.Barcode.ItemName = x.ItemName;
                     x.Barcode.ErrorTypeName = x.ErrorType;
-                }
+                } 
 
                 var list = query.ToList();
 
