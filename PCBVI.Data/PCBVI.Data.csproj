@@ -88,6 +88,7 @@
     <Compile Include="Entities\ErrorCode.cs" />
     <Compile Include="Entities\Facility.cs" />
     <Compile Include="Entities\FHistoryDivision.cs" />
+    <Compile Include="Entities\Lot.cs" />
     <Compile Include="Entities\Process.cs" />
     <Compile Include="Entities\WorkPlace.cs" />
     <Compile Include="ErrorCode.cs">

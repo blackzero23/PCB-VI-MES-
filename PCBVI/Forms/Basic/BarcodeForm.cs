@@ -18,14 +18,15 @@ namespace PCBVI.Forms.Basic
             InitializeComponent();
         }
 
-        private void BarcodeSearch1_SeaechButtonClicked(object sender, Controls.Basic.BarCode.BarcodeSearch.SeaechButtonClickedEventArgs e)
+        private void BarcodeSearch1_SearchButtonClicked(object sender, Controls.Basic.BarCode.BarcodeSearch.SearchButtonClickedEventArgs e)
         {
-            uscList.SetBarcodeDataSource(DB.BarCode.Search(e.LotId));
+            uscList.SetBarcodeDataSource(DB.BarCode.Search(e.BarcodeId, e.LotId));
         }
 
         private void UscTopMenu_InsertButtonClicked(object sender, Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs e)
         {
             uscTopMenu.OpenInsertForm(new BarcodeInsertForm());
         }
+
     }
 }

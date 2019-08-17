@@ -89,7 +89,7 @@
             this.barcodeSearch1.Name = "barcodeSearch1";
             this.barcodeSearch1.Size = new System.Drawing.Size(831, 68);
             this.barcodeSearch1.TabIndex = 0;
-            this.barcodeSearch1.SeaechButtonClicked += new System.EventHandler<PCBVI.Controls.Basic.BarCode.BarcodeSearch.SeaechButtonClickedEventArgs>(this.BarcodeSearch1_SeaechButtonClicked);
+            this.barcodeSearch1.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Basic.BarCode.BarcodeSearch.SearchButtonClickedEventArgs>(this.BarcodeSearch1_SearchButtonClicked);
             // 
             // uscTopMenu
             // 
