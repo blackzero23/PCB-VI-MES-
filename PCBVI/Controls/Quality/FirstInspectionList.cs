@@ -16,5 +16,26 @@ namespace PCBVI.Controls.Quality
         {
             InitializeComponent();
         }
+
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (DesignMode)
+                return;
+
+            InitSetDataSource();
+        }
+
+        private void InitSetDataSource()
+        {
+           
+        }
+
+        public void SetDataSource(List<Data.FirstInspection> list)
+        {
+            dgvList.DataSource = list;
+        }
     }
 }

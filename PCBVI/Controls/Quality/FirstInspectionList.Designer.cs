@@ -28,34 +28,163 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.kryptonDataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.bdsFirstInspection = new System.Windows.Forms.BindingSource(this.components);
+            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.workPlaceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oCompanyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.enterDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enterQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkQuantiyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workPlaceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.passQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsFirstInspection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workPlaceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // kryptonDataGridView1
+            // dgvList
             // 
-            this.kryptonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.kryptonDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonDataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.RowTemplate.Height = 23;
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(578, 408);
-            this.kryptonDataGridView1.TabIndex = 0;
+            this.dgvList.AllowUserToAddRows = false;
+            this.dgvList.AutoGenerateColumns = false;
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.oCompanyNameDataGridViewTextBoxColumn,
+            this.itemIdDataGridViewTextBoxColumn,
+            this.enterDateDataGridViewTextBoxColumn,
+            this.checkDateDataGridViewTextBoxColumn,
+            this.enterQuantityDataGridViewTextBoxColumn,
+            this.checkQuantiyDataGridViewTextBoxColumn,
+            this.workPlaceIdDataGridViewTextBoxColumn,
+            this.passQuantityDataGridViewTextBoxColumn,
+            this.errorQuantityDataGridViewTextBoxColumn,
+            this.employeeIdDataGridViewTextBoxColumn});
+            this.dgvList.DataSource = this.bdsFirstInspection;
+            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvList.Location = new System.Drawing.Point(0, 0);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.RowTemplate.Height = 23;
+            this.dgvList.Size = new System.Drawing.Size(742, 408);
+            this.dgvList.TabIndex = 0;
+            // 
+            // bdsFirstInspection
+            // 
+            this.bdsFirstInspection.DataSource = typeof(PCBVI.Data.FirstInspection);
+            // 
+            // itemBindingSource
+            // 
+            this.itemBindingSource.DataSource = typeof(PCBVI.Data.Item);
+            // 
+            // workPlaceBindingSource
+            // 
+            this.workPlaceBindingSource.DataSource = typeof(PCBVI.Data.WorkPlace);
+            // 
+            // oCompanyNameDataGridViewTextBoxColumn
+            // 
+            this.oCompanyNameDataGridViewTextBoxColumn.DataPropertyName = "OCompanyName";
+            this.oCompanyNameDataGridViewTextBoxColumn.HeaderText = "업체명";
+            this.oCompanyNameDataGridViewTextBoxColumn.Name = "oCompanyNameDataGridViewTextBoxColumn";
+            // 
+            // itemIdDataGridViewTextBoxColumn
+            // 
+            this.itemIdDataGridViewTextBoxColumn.DataPropertyName = "ItemId";
+            this.itemIdDataGridViewTextBoxColumn.DataSource = this.itemBindingSource;
+            this.itemIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.itemIdDataGridViewTextBoxColumn.HeaderText = "품목명";
+            this.itemIdDataGridViewTextBoxColumn.Name = "itemIdDataGridViewTextBoxColumn";
+            this.itemIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.itemIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.itemIdDataGridViewTextBoxColumn.ValueMember = "ItemId";
+            // 
+            // enterDateDataGridViewTextBoxColumn
+            // 
+            this.enterDateDataGridViewTextBoxColumn.DataPropertyName = "EnterDate";
+            this.enterDateDataGridViewTextBoxColumn.HeaderText = "입고일";
+            this.enterDateDataGridViewTextBoxColumn.Name = "enterDateDataGridViewTextBoxColumn";
+            // 
+            // checkDateDataGridViewTextBoxColumn
+            // 
+            this.checkDateDataGridViewTextBoxColumn.DataPropertyName = "CheckDate";
+            this.checkDateDataGridViewTextBoxColumn.HeaderText = "검사일";
+            this.checkDateDataGridViewTextBoxColumn.Name = "checkDateDataGridViewTextBoxColumn";
+            // 
+            // enterQuantityDataGridViewTextBoxColumn
+            // 
+            this.enterQuantityDataGridViewTextBoxColumn.DataPropertyName = "EnterQuantity";
+            this.enterQuantityDataGridViewTextBoxColumn.HeaderText = "입고수량";
+            this.enterQuantityDataGridViewTextBoxColumn.Name = "enterQuantityDataGridViewTextBoxColumn";
+            // 
+            // checkQuantiyDataGridViewTextBoxColumn
+            // 
+            this.checkQuantiyDataGridViewTextBoxColumn.DataPropertyName = "CheckQuantiy";
+            this.checkQuantiyDataGridViewTextBoxColumn.HeaderText = "검사수량";
+            this.checkQuantiyDataGridViewTextBoxColumn.Name = "checkQuantiyDataGridViewTextBoxColumn";
+            // 
+            // workPlaceIdDataGridViewTextBoxColumn
+            // 
+            this.workPlaceIdDataGridViewTextBoxColumn.DataPropertyName = "WorkPlaceId";
+            this.workPlaceIdDataGridViewTextBoxColumn.DataSource = this.workPlaceBindingSource;
+            this.workPlaceIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.workPlaceIdDataGridViewTextBoxColumn.HeaderText = "위치 정보";
+            this.workPlaceIdDataGridViewTextBoxColumn.Name = "workPlaceIdDataGridViewTextBoxColumn";
+            this.workPlaceIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.workPlaceIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.workPlaceIdDataGridViewTextBoxColumn.ValueMember = "WorkPlaceId";
+            // 
+            // passQuantityDataGridViewTextBoxColumn
+            // 
+            this.passQuantityDataGridViewTextBoxColumn.DataPropertyName = "passQuantity";
+            this.passQuantityDataGridViewTextBoxColumn.HeaderText = "합격수량";
+            this.passQuantityDataGridViewTextBoxColumn.Name = "passQuantityDataGridViewTextBoxColumn";
+            // 
+            // errorQuantityDataGridViewTextBoxColumn
+            // 
+            this.errorQuantityDataGridViewTextBoxColumn.DataPropertyName = "ErrorQuantity";
+            this.errorQuantityDataGridViewTextBoxColumn.HeaderText = "불량수량";
+            this.errorQuantityDataGridViewTextBoxColumn.Name = "errorQuantityDataGridViewTextBoxColumn";
+            // 
+            // employeeIdDataGridViewTextBoxColumn
+            // 
+            this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "EmployeeId";
+            this.employeeIdDataGridViewTextBoxColumn.HeaderText = "검사자";
+            this.employeeIdDataGridViewTextBoxColumn.Name = "employeeIdDataGridViewTextBoxColumn";
             // 
             // FirstInspectionList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.kryptonDataGridView1);
+            this.Controls.Add(this.dgvList);
             this.Name = "FirstInspectionList";
-            this.Size = new System.Drawing.Size(578, 408);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
+            this.Size = new System.Drawing.Size(742, 408);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsFirstInspection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workPlaceBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
+        private System.Windows.Forms.BindingSource bdsFirstInspection;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oCompanyNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn itemIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource itemBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enterDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn checkDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enterQuantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn checkQuantiyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn workPlaceIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource workPlaceBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passQuantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn errorQuantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeIdDataGridViewTextBoxColumn;
     }
 }

@@ -810,6 +810,7 @@
     <None Include="Properties\DataSources\PCBVI.Data.FacilitiesHistory.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Facility.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.FHistoryDivision.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.FirstInspection.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.FirstItemDivision.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.InspectionStandard.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Lot.datasource" />

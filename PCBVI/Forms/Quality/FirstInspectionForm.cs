@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PCBVI.Data.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace PCBVI.Forms.Quality
         public FirstInspectionForm()
         {
             InitializeComponent();
+        }
+
+        private void UscSearch_SearchButtonClicked(object sender, Controls.Quality.FirstInspectionSearch.SearchButtonClickedEventArgs e)
+        {
+            uscList.SetDataSource(DB.FirstInspection.Search(e.OutCompanName,e.ItemId,e.FromDate,e.ToDate));
         }
     }
 }

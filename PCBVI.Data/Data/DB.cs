@@ -26,5 +26,6 @@ namespace PCBVI.Data.Data
         public static DefectiveProductData DefectiveProduct = new DefectiveProductData();
         public static MaterialHistoryData MaterialHistory = new MaterialHistoryData();
 
+        public static FirstInspectionData FirstInspection = new FirstInspectionData();
     }
 }

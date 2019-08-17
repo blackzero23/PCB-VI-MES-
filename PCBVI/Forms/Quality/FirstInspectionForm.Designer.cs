@@ -30,9 +30,9 @@
         {
             this.naviFirstInspection = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageFirstInspection = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
-            this.uscSearch = new PCBVI.Controls.Quality.FirstInspectionSearch();
             this.uscList = new PCBVI.Controls.Quality.FirstInspectionList();
+            this.uscSearch = new PCBVI.Controls.Quality.FirstInspectionSearch();
+            this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
             ((System.ComponentModel.ISupportInitialize)(this.naviFirstInspection)).BeginInit();
             this.naviFirstInspection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageFirstInspection)).BeginInit();
@@ -41,25 +41,15 @@
             // 
             // naviFirstInspection
             // 
-            this.naviFirstInspection.Bar.BarMapExtraText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.None;
             this.naviFirstInspection.Bar.BarMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.SmallMedium;
             this.naviFirstInspection.Bar.BarMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.Text;
-            this.naviFirstInspection.Bar.ItemSizing = ComponentFactory.Krypton.Navigator.BarItemSizing.SameHeight;
-            this.naviFirstInspection.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.Context;
             this.naviFirstInspection.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.naviFirstInspection.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.naviFirstInspection.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.None;
             this.naviFirstInspection.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
-            this.naviFirstInspection.Button.ContextMenuMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
-            this.naviFirstInspection.Button.ContextMenuMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
-            this.naviFirstInspection.Button.NextButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
-            this.naviFirstInspection.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
-            this.naviFirstInspection.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
-            this.naviFirstInspection.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.naviFirstInspection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.naviFirstInspection.Location = new System.Drawing.Point(0, 35);
             this.naviFirstInspection.Name = "naviFirstInspection";
-            this.naviFirstInspection.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarTabGroup;
             this.naviFirstInspection.Padding = new System.Windows.Forms.Padding(3);
             this.naviFirstInspection.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageFirstInspection});
@@ -84,14 +74,13 @@
             this.pageFirstInspection.ToolTipTitle = "Page ToolTip";
             this.pageFirstInspection.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
             // 
-            // uscTopMenu
+            // uscList
             // 
-            this.uscTopMenu.BackColor = System.Drawing.Color.White;
-            this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
-            this.uscTopMenu.Name = "uscTopMenu";
-            this.uscTopMenu.Size = new System.Drawing.Size(800, 35);
-            this.uscTopMenu.TabIndex = 0;
+            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscList.Location = new System.Drawing.Point(0, 60);
+            this.uscList.Name = "uscList";
+            this.uscList.Size = new System.Drawing.Size(798, 326);
+            this.uscList.TabIndex = 1;
             // 
             // uscSearch
             // 
@@ -100,14 +89,16 @@
             this.uscSearch.Name = "uscSearch";
             this.uscSearch.Size = new System.Drawing.Size(798, 60);
             this.uscSearch.TabIndex = 0;
+            this.uscSearch.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Quality.FirstInspectionSearch.SearchButtonClickedEventArgs>(this.UscSearch_SearchButtonClicked);
             // 
-            // uscList
+            // uscTopMenu
             // 
-            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscList.Location = new System.Drawing.Point(0, 60);
-            this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(798, 326);
-            this.uscList.TabIndex = 1;
+            this.uscTopMenu.BackColor = System.Drawing.Color.White;
+            this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
+            this.uscTopMenu.Name = "uscTopMenu";
+            this.uscTopMenu.Size = new System.Drawing.Size(800, 35);
+            this.uscTopMenu.TabIndex = 0;
             // 
             // FirstInspectionForm
             // 
