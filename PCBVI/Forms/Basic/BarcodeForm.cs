@@ -22,5 +22,10 @@ namespace PCBVI.Forms.Basic
         {
             uscList.SetBarcodeDataSource(DB.BarCode.Search(e.LotId));
         }
+
+        private void UscTopMenu_InsertButtonClicked(object sender, Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs e)
+        {
+            uscTopMenu.OpenInsertForm(new BarcodeInsertForm());
+        }
     }
 }

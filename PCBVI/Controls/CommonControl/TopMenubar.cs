@@ -34,8 +34,7 @@ namespace PCBVI.Controls.CommonControl
             {
                 foreach (var entity in entities)
                 {                    
-                    context.Entry(entity).State = EntityState.Modified;
-                    
+                    context.Entry(entity).State = EntityState.Modified;                    
 
                     context.SaveChanges();
                 }

@@ -24,7 +24,9 @@ namespace PCBVI.Controls.Basic.BarCode
             base.OnLoad(e);
             if (DesignMode)
                 return;
+            cbbBarcodeName.DataSource = DB.BarCode.GetAll();
             cbbLotNo.DataSource = DB.Lot.GetAll();
+
         }
 
         #region SeaechButtonClicked event things for C# 3.0
