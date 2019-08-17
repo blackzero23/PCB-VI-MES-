@@ -30,17 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.errorCodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.explanationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.errorKindNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.errorTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorKindNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.explanationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorCodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCodeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvList
             // 
+            this.dgvList.AllowUserToAddRows = false;
             this.dgvList.AutoGenerateColumns = false;
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -57,21 +58,11 @@
             this.dgvList.Size = new System.Drawing.Size(703, 150);
             this.dgvList.TabIndex = 0;
             // 
-            // errorCodeBindingSource
+            // codeDataGridViewTextBoxColumn
             // 
-            this.errorCodeBindingSource.DataSource = typeof(PCBVI.Data.ErrorCode);
-            // 
-            // explanationDataGridViewTextBoxColumn
-            // 
-            this.explanationDataGridViewTextBoxColumn.DataPropertyName = "Explanation";
-            this.explanationDataGridViewTextBoxColumn.HeaderText = "불량설명";
-            this.explanationDataGridViewTextBoxColumn.Name = "explanationDataGridViewTextBoxColumn";
-            // 
-            // errorKindNameDataGridViewTextBoxColumn
-            // 
-            this.errorKindNameDataGridViewTextBoxColumn.DataPropertyName = "ErrorKindName";
-            this.errorKindNameDataGridViewTextBoxColumn.HeaderText = "불량군";
-            this.errorKindNameDataGridViewTextBoxColumn.Name = "errorKindNameDataGridViewTextBoxColumn";
+            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "불량코드";
+            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
             // 
             // errorTypeNameDataGridViewTextBoxColumn
             // 
@@ -79,11 +70,21 @@
             this.errorTypeNameDataGridViewTextBoxColumn.HeaderText = "불량유형명";
             this.errorTypeNameDataGridViewTextBoxColumn.Name = "errorTypeNameDataGridViewTextBoxColumn";
             // 
-            // codeDataGridViewTextBoxColumn
+            // errorKindNameDataGridViewTextBoxColumn
             // 
-            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "불량코드";
-            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
+            this.errorKindNameDataGridViewTextBoxColumn.DataPropertyName = "ErrorKindName";
+            this.errorKindNameDataGridViewTextBoxColumn.HeaderText = "불량군";
+            this.errorKindNameDataGridViewTextBoxColumn.Name = "errorKindNameDataGridViewTextBoxColumn";
+            // 
+            // explanationDataGridViewTextBoxColumn
+            // 
+            this.explanationDataGridViewTextBoxColumn.DataPropertyName = "Explanation";
+            this.explanationDataGridViewTextBoxColumn.HeaderText = "불량설명";
+            this.explanationDataGridViewTextBoxColumn.Name = "explanationDataGridViewTextBoxColumn";
+            // 
+            // errorCodeBindingSource
+            // 
+            this.errorCodeBindingSource.DataSource = typeof(PCBVI.Data.ErrorCode);
             // 
             // ErrorCodeList
             // 

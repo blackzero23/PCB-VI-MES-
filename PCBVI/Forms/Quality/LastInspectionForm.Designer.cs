@@ -41,32 +41,20 @@
             // 
             // naviLastInspection
             // 
-            this.naviLastInspection.Bar.BarMapExtraText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.None;
             this.naviLastInspection.Bar.BarMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.SmallMedium;
             this.naviLastInspection.Bar.BarMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.Text;
-            this.naviLastInspection.Bar.ItemSizing = ComponentFactory.Krypton.Navigator.BarItemSizing.SameHeight;
-            this.naviLastInspection.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.Context;
             this.naviLastInspection.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.naviLastInspection.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.naviLastInspection.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.None;
             this.naviLastInspection.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
-            this.naviLastInspection.Button.ContextMenuMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
-            this.naviLastInspection.Button.ContextMenuMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
-            this.naviLastInspection.Button.NextButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
-            this.naviLastInspection.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
-            this.naviLastInspection.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
-            this.naviLastInspection.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.naviLastInspection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.naviLastInspection.Location = new System.Drawing.Point(0, 35);
             this.naviLastInspection.Name = "naviLastInspection";
-            this.naviLastInspection.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarTabGroup;
             this.naviLastInspection.Padding = new System.Windows.Forms.Padding(3);
             this.naviLastInspection.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageLastInspection});
-            this.naviLastInspection.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.naviLastInspection.SelectedIndex = 0;
             this.naviLastInspection.Size = new System.Drawing.Size(800, 415);
-            this.naviLastInspection.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("HY헤드라인M", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.naviLastInspection.TabIndex = 1;
             this.naviLastInspection.Text = "navi";
             // 
@@ -79,7 +67,7 @@
             this.pageLastInspection.LastVisibleSet = true;
             this.pageLastInspection.MinimumSize = new System.Drawing.Size(50, 50);
             this.pageLastInspection.Name = "pageLastInspection";
-            this.pageLastInspection.Size = new System.Drawing.Size(798, 386);
+            this.pageLastInspection.Size = new System.Drawing.Size(798, 388);
             this.pageLastInspection.Text = "출하검사관리";
             this.pageLastInspection.ToolTipTitle = "Page ToolTip";
             this.pageLastInspection.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
@@ -89,7 +77,7 @@
             this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscList.Location = new System.Drawing.Point(0, 123);
             this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(798, 263);
+            this.uscList.Size = new System.Drawing.Size(798, 265);
             this.uscList.TabIndex = 1;
             // 
             // uscSearch

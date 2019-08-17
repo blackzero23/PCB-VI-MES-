@@ -30,18 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.barcodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lotNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodeCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barcodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barcodeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvList
             // 
+            this.dgvList.AllowUserToAddRows = false;
             this.dgvList.AutoGenerateColumns = false;
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -58,10 +59,6 @@
             this.dgvList.RowTemplate.Height = 23;
             this.dgvList.Size = new System.Drawing.Size(719, 482);
             this.dgvList.TabIndex = 0;
-            // 
-            // barcodeBindingSource
-            // 
-            this.barcodeBindingSource.DataSource = typeof(PCBVI.Data.Barcode);
             // 
             // lotNameDataGridViewTextBoxColumn
             // 
@@ -92,6 +89,10 @@
             this.errorTypeNameDataGridViewTextBoxColumn.DataPropertyName = "ErrorTypeName";
             this.errorTypeNameDataGridViewTextBoxColumn.HeaderText = "불량명";
             this.errorTypeNameDataGridViewTextBoxColumn.Name = "errorTypeNameDataGridViewTextBoxColumn";
+            // 
+            // barcodeBindingSource
+            // 
+            this.barcodeBindingSource.DataSource = typeof(PCBVI.Data.Barcode);
             // 
             // BarcodeList
             // 

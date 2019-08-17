@@ -53,10 +53,8 @@
             this.naviFirstInspection.Padding = new System.Windows.Forms.Padding(3);
             this.naviFirstInspection.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageFirstInspection});
-            this.naviFirstInspection.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.naviFirstInspection.SelectedIndex = 0;
             this.naviFirstInspection.Size = new System.Drawing.Size(800, 415);
-            this.naviFirstInspection.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("HY헤드라인M", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.naviFirstInspection.TabIndex = 1;
             this.naviFirstInspection.Text = "navi";
             // 
@@ -69,7 +67,7 @@
             this.pageFirstInspection.LastVisibleSet = true;
             this.pageFirstInspection.MinimumSize = new System.Drawing.Size(50, 50);
             this.pageFirstInspection.Name = "pageFirstInspection";
-            this.pageFirstInspection.Size = new System.Drawing.Size(798, 386);
+            this.pageFirstInspection.Size = new System.Drawing.Size(798, 388);
             this.pageFirstInspection.Text = "수입 검사 관리";
             this.pageFirstInspection.ToolTipTitle = "Page ToolTip";
             this.pageFirstInspection.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
@@ -79,7 +77,7 @@
             this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscList.Location = new System.Drawing.Point(0, 60);
             this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(798, 326);
+            this.uscList.Size = new System.Drawing.Size(798, 328);
             this.uscList.TabIndex = 1;
             // 
             // uscSearch
