@@ -266,6 +266,7 @@
             // 
             // btnConfirm
             // 
+            this.btnConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConfirm.Location = new System.Drawing.Point(604, 43);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(90, 25);

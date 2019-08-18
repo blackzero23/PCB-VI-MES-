@@ -173,11 +173,13 @@
             // 
             // BtnConfirm
             // 
+            this.BtnConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnConfirm.Location = new System.Drawing.Point(697, 25);
             this.BtnConfirm.Name = "BtnConfirm";
             this.BtnConfirm.Size = new System.Drawing.Size(90, 25);
             this.BtnConfirm.TabIndex = 4;
             this.BtnConfirm.Values.Text = "등록";
+            this.BtnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
             // grvInspection
             // 

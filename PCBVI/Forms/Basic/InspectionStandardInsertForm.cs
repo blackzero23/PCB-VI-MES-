@@ -29,7 +29,19 @@ namespace PCBVI.Forms.Basic
                 DB.InspectionStandard.GetAll();
             bdsType.DataSource =
                 DB.InspectionStandardType.GetAll();
+            
+            
 
+        }
+
+        private void BtnConfirm_Click(object sender, EventArgs e)
+        {
+            if(txbCode.Text.Length <= 0 || txbName.Text.Length <= 0)
+            {
+                MessageBox.Show("입력 상황을 다시 확인하시기 바랍니다.");
+                
+                return;
+            }
         }
     }
 }
