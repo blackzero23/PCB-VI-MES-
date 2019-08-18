@@ -76,10 +76,13 @@ namespace PCBVI.Controls.CommonControl
                 worksheet.Cells[1, i] = dgv.Columns[i - 1].HeaderText;
             }
             // storing Each row and column value to excel sheet 
-            for (int i = 0; i < dgv.Rows.Count - 1; i++)
+            //변경사항 dgvList 의 로우수 -1 인것을 삭제
+            //해당 셀값이 null경우의 조건을 추가.
+            for (int i = 0; i < dgv.Rows.Count; i++)
             {
                 for (int j = 0; j < dgv.Columns.Count; j++)
                 {
+                    if(dgv.Rows[i].Cells[j].Value != null)
                     worksheet.Cells[i + 2, j + 1] = dgv.Rows[i].Cells[j].Value.ToString();
                 }
             }
