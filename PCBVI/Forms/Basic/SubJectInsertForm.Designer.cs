@@ -48,25 +48,25 @@
             this.BtnConfirm = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.kryptonDataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsFirst = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsSecond = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsPlace = new System.Windows.Forms.BindingSource(this.components);
             this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstItemDivisionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsFirst = new System.Windows.Forms.BindingSource(this.components);
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.secondItemDivisionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsSecond = new System.Windows.Forms.BindingSource(this.components);
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workPlaceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsPlace = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFirst)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsPlace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonLabel1
@@ -86,7 +86,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(12, 38);
+            this.materialLabel1.Location = new System.Drawing.Point(27, 12);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(85, 19);
@@ -95,7 +95,7 @@
             // 
             // TxbFirst
             // 
-            this.TxbFirst.Location = new System.Drawing.Point(103, 37);
+            this.TxbFirst.Location = new System.Drawing.Point(118, 11);
             this.TxbFirst.Name = "TxbFirst";
             this.TxbFirst.Size = new System.Drawing.Size(100, 20);
             this.TxbFirst.TabIndex = 1;
@@ -107,7 +107,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(209, 37);
+            this.materialLabel2.Location = new System.Drawing.Point(224, 11);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(51, 19);
@@ -116,7 +116,7 @@
             // 
             // TxbCode
             // 
-            this.TxbCode.Location = new System.Drawing.Point(266, 37);
+            this.TxbCode.Location = new System.Drawing.Point(281, 11);
             this.TxbCode.Name = "TxbCode";
             this.TxbCode.Size = new System.Drawing.Size(100, 20);
             this.TxbCode.TabIndex = 2;
@@ -128,7 +128,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(372, 38);
+            this.materialLabel3.Location = new System.Drawing.Point(387, 12);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(82, 19);
@@ -137,7 +137,7 @@
             // 
             // TxbName
             // 
-            this.TxbName.Location = new System.Drawing.Point(459, 37);
+            this.TxbName.Location = new System.Drawing.Point(474, 11);
             this.TxbName.Name = "TxbName";
             this.TxbName.Size = new System.Drawing.Size(100, 20);
             this.TxbName.TabIndex = 3;
@@ -149,7 +149,7 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(565, 37);
+            this.materialLabel4.Location = new System.Drawing.Point(580, 11);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(81, 19);
@@ -158,7 +158,7 @@
             // 
             // TxbSecond
             // 
-            this.TxbSecond.Location = new System.Drawing.Point(652, 36);
+            this.TxbSecond.Location = new System.Drawing.Point(667, 10);
             this.TxbSecond.Name = "TxbSecond";
             this.TxbSecond.Size = new System.Drawing.Size(100, 20);
             this.TxbSecond.TabIndex = 4;
@@ -170,7 +170,7 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(12, 71);
+            this.materialLabel5.Location = new System.Drawing.Point(27, 45);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(83, 19);
@@ -179,10 +179,12 @@
             // 
             // TxbQuantity
             // 
-            this.TxbQuantity.Location = new System.Drawing.Point(103, 70);
+            this.TxbQuantity.Location = new System.Drawing.Point(118, 44);
             this.TxbQuantity.Name = "TxbQuantity";
             this.TxbQuantity.Size = new System.Drawing.Size(100, 20);
             this.TxbQuantity.TabIndex = 5;
+            this.TxbQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxbQuantity_KeyPress);
+            this.TxbQuantity.Leave += new System.EventHandler(this.TxbQuantity_Leave);
             // 
             // materialLabel6
             // 
@@ -191,7 +193,7 @@
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel6.Location = new System.Drawing.Point(209, 70);
+            this.materialLabel6.Location = new System.Drawing.Point(224, 44);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(51, 19);
@@ -200,7 +202,7 @@
             // 
             // TxbNote
             // 
-            this.TxbNote.Location = new System.Drawing.Point(266, 71);
+            this.TxbNote.Location = new System.Drawing.Point(281, 45);
             this.TxbNote.Name = "TxbNote";
             this.TxbNote.Size = new System.Drawing.Size(100, 20);
             this.TxbNote.TabIndex = 6;
@@ -212,7 +214,7 @@
             this.materialLabel7.Depth = 0;
             this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel7.Location = new System.Drawing.Point(372, 72);
+            this.materialLabel7.Location = new System.Drawing.Point(387, 46);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
             this.materialLabel7.Size = new System.Drawing.Size(81, 19);
@@ -221,14 +223,14 @@
             // 
             // TxbWorkPlace
             // 
-            this.TxbWorkPlace.Location = new System.Drawing.Point(459, 70);
+            this.TxbWorkPlace.Location = new System.Drawing.Point(474, 44);
             this.TxbWorkPlace.Name = "TxbWorkPlace";
             this.TxbWorkPlace.Size = new System.Drawing.Size(100, 20);
             this.TxbWorkPlace.TabIndex = 7;
             // 
             // BtnConfirm
             // 
-            this.BtnConfirm.Location = new System.Drawing.Point(652, 71);
+            this.BtnConfirm.Location = new System.Drawing.Point(667, 45);
             this.BtnConfirm.Name = "BtnConfirm";
             this.BtnConfirm.Size = new System.Drawing.Size(100, 25);
             this.BtnConfirm.TabIndex = 8;
@@ -256,7 +258,10 @@
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 29);
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelRibbonInactive;
-            this.kryptonPanel1.Size = new System.Drawing.Size(800, 127);
+            this.kryptonPanel1.Size = new System.Drawing.Size(800, 75);
+            this.kryptonPanel1.StateCommon.Color1 = System.Drawing.SystemColors.Control;
+            this.kryptonPanel1.StateCommon.Color2 = System.Drawing.SystemColors.Control;
+            this.kryptonPanel1.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel1.TabIndex = 9;
             // 
             // kryptonDataGridView1
@@ -275,27 +280,11 @@
             this.workPlaceIdDataGridViewTextBoxColumn});
             this.kryptonDataGridView1.DataSource = this.bdsItem;
             this.kryptonDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonDataGridView1.Location = new System.Drawing.Point(0, 156);
+            this.kryptonDataGridView1.Location = new System.Drawing.Point(0, 104);
             this.kryptonDataGridView1.Name = "kryptonDataGridView1";
             this.kryptonDataGridView1.RowTemplate.Height = 23;
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(800, 294);
+            this.kryptonDataGridView1.Size = new System.Drawing.Size(800, 346);
             this.kryptonDataGridView1.TabIndex = 10;
-            // 
-            // bdsItem
-            // 
-            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
-            // 
-            // bdsFirst
-            // 
-            this.bdsFirst.DataSource = typeof(PCBVI.Data.FirstItemDivision);
-            // 
-            // bdsSecond
-            // 
-            this.bdsSecond.DataSource = typeof(PCBVI.Data.SecondItemDivision);
-            // 
-            // bdsPlace
-            // 
-            this.bdsPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
             // 
             // itemIdDataGridViewTextBoxColumn
             // 
@@ -313,6 +302,10 @@
             this.firstItemDivisionIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.firstItemDivisionIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.firstItemDivisionIdDataGridViewTextBoxColumn.ValueMember = "FirstItemDivisionId";
+            // 
+            // bdsFirst
+            // 
+            this.bdsFirst.DataSource = typeof(PCBVI.Data.FirstItemDivision);
             // 
             // codeDataGridViewTextBoxColumn
             // 
@@ -337,6 +330,10 @@
             this.secondItemDivisionIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.secondItemDivisionIdDataGridViewTextBoxColumn.ValueMember = "SecondItemDivisionId";
             // 
+            // bdsSecond
+            // 
+            this.bdsSecond.DataSource = typeof(PCBVI.Data.SecondItemDivision);
+            // 
             // quantityDataGridViewTextBoxColumn
             // 
             this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
@@ -360,6 +357,14 @@
             this.workPlaceIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.workPlaceIdDataGridViewTextBoxColumn.ValueMember = "WorkPlaceId";
             // 
+            // bdsPlace
+            // 
+            this.bdsPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
+            // 
+            // bdsItem
+            // 
+            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
+            // 
             // SubJectInsertForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -375,10 +380,10 @@
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFirst)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSecond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsPlace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
