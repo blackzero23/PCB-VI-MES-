@@ -68,5 +68,25 @@ namespace PCBVI.Controls.Basic.Facilities
         {
             OnCellContentClicked(dgvList.CurrentRow.DataBoundItem as Facility);
         }
+
+        private List<Facility> _facilities = new List<Facility>();
+
+        public DataGridView GetListView()
+        {
+            return dgvList;
+        }
+
+        public Facility GetCurrentLow()
+        {
+            return dgvList.CurrentRow.DataBoundItem as Facility;
+        }
+
+        private void DgvList_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvList.CurrentRow.DataBoundItem is Facility list)
+            {
+                _facilities.Add(list);
+            }
+        }
     }
 }

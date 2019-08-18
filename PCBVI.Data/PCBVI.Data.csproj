@@ -93,6 +93,8 @@
     <Compile Include="Entities\Department.cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\ErrorCode.cs" />
+    <Compile Include="Entities\ErrorKind.cs" />
+    <Compile Include="Entities\ErrorType.cs" />
     <Compile Include="Entities\Facility.cs" />
     <Compile Include="Entities\FHistoryDivision.cs" />
     <Compile Include="Entities\Lot.cs" />

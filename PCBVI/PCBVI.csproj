@@ -367,6 +367,12 @@
     <Compile Include="Forms\Basic\EmployeeInsertForm.Designer.cs">
       <DependentUpon>EmployeeInsertForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Basic\ErrorcodeInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Basic\ErrorcodeInsertForm.Designer.cs">
+      <DependentUpon>ErrorcodeInsertForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Basic\FacilitiesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -378,6 +384,12 @@
     </Compile>
     <Compile Include="Forms\Basic\ErrorCodeForm.Designer.cs">
       <DependentUpon>ErrorCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Basic\FacilitiesInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Basic\FacilitiesInsertForm.Designer.cs">
+      <DependentUpon>FacilitiesInsertForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Basic\InspectionStandardForm.cs">
       <SubType>Form</SubType>

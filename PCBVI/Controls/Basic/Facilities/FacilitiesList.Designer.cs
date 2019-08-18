@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.facilityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facilitiesIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.facilityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facilityBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -57,21 +57,23 @@
             this.dgvList.TabIndex = 0;
             this.dgvList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvList_CellMouseClick);
             // 
-            // facilityBindingSource
-            // 
-            this.facilityBindingSource.DataSource = typeof(PCBVI.Data.Facility);
-            // 
             // facilitiesIdDataGridViewTextBoxColumn
             // 
             this.facilitiesIdDataGridViewTextBoxColumn.DataPropertyName = "FacilitiesId";
             this.facilitiesIdDataGridViewTextBoxColumn.HeaderText = "설비번호";
             this.facilitiesIdDataGridViewTextBoxColumn.Name = "facilitiesIdDataGridViewTextBoxColumn";
+            this.facilitiesIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "설비명";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // facilityBindingSource
+            // 
+            this.facilityBindingSource.DataSource = typeof(PCBVI.Data.Facility);
             // 
             // FacilitiesList
             // 

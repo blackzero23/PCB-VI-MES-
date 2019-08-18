@@ -1,6 +1,6 @@
 ﻿namespace PCBVI.Controls.Basic.Facilities
 {
-    partial class FacilitiesSpec
+    partial class facilitiesSpec
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.kryptonPanel3 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.txbUseState = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txbState = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txbName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txbNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.txbWeight = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.txbLength = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel11 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -40,6 +44,7 @@
             this.txbWidth = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel9 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.cbbProcess = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.bdsProcess = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonLabel8 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel7 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel6 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -49,19 +54,14 @@
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.txbNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txbName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.bdsProcess = new System.Windows.Forms.BindingSource(this.components);
-            this.txbState = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txbUseState = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel3)).BeginInit();
             this.kryptonPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbProcess)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
             this.kryptonPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
@@ -72,6 +72,7 @@
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.Size = new System.Drawing.Size(410, 322);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.kryptonPanel1.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel1.TabIndex = 24;
             // 
             // kryptonPanel3
@@ -101,7 +102,36 @@
             this.kryptonPanel3.Name = "kryptonPanel3";
             this.kryptonPanel3.Size = new System.Drawing.Size(410, 322);
             this.kryptonPanel3.StateCommon.Color1 = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.kryptonPanel3.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel3.TabIndex = 25;
+            // 
+            // txbUseState
+            // 
+            this.txbUseState.Location = new System.Drawing.Point(272, 137);
+            this.txbUseState.Name = "txbUseState";
+            this.txbUseState.Size = new System.Drawing.Size(78, 20);
+            this.txbUseState.TabIndex = 26;
+            // 
+            // txbState
+            // 
+            this.txbState.Location = new System.Drawing.Point(122, 167);
+            this.txbState.Name = "txbState";
+            this.txbState.Size = new System.Drawing.Size(78, 20);
+            this.txbState.TabIndex = 25;
+            // 
+            // txbName
+            // 
+            this.txbName.Location = new System.Drawing.Point(122, 107);
+            this.txbName.Name = "txbName";
+            this.txbName.Size = new System.Drawing.Size(228, 20);
+            this.txbName.TabIndex = 24;
+            // 
+            // txbNo
+            // 
+            this.txbNo.Location = new System.Drawing.Point(122, 77);
+            this.txbNo.Name = "txbNo";
+            this.txbNo.Size = new System.Drawing.Size(228, 20);
+            this.txbNo.TabIndex = 23;
             // 
             // txbWeight
             // 
@@ -172,6 +202,10 @@
             this.cbbProcess.Size = new System.Drawing.Size(78, 21);
             this.cbbProcess.TabIndex = 10;
             this.cbbProcess.ValueMember = "ProcessId";
+            // 
+            // bdsProcess
+            // 
+            this.bdsProcess.DataSource = typeof(PCBVI.Data.Process);
             // 
             // kryptonLabel8
             // 
@@ -247,47 +281,16 @@
             this.kryptonPanel2.Name = "kryptonPanel2";
             this.kryptonPanel2.Size = new System.Drawing.Size(410, 28);
             this.kryptonPanel2.StateCommon.Color1 = System.Drawing.SystemColors.ActiveCaption;
+            this.kryptonPanel2.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel2.TabIndex = 25;
             // 
-            // txbNo
-            // 
-            this.txbNo.Location = new System.Drawing.Point(122, 77);
-            this.txbNo.Name = "txbNo";
-            this.txbNo.Size = new System.Drawing.Size(228, 20);
-            this.txbNo.TabIndex = 23;
-            // 
-            // txbName
-            // 
-            this.txbName.Location = new System.Drawing.Point(122, 107);
-            this.txbName.Name = "txbName";
-            this.txbName.Size = new System.Drawing.Size(228, 20);
-            this.txbName.TabIndex = 24;
-            // 
-            // bdsProcess
-            // 
-            this.bdsProcess.DataSource = typeof(PCBVI.Data.Process);
-            // 
-            // txbState
-            // 
-            this.txbState.Location = new System.Drawing.Point(122, 167);
-            this.txbState.Name = "txbState";
-            this.txbState.Size = new System.Drawing.Size(78, 20);
-            this.txbState.TabIndex = 25;
-            // 
-            // txbUseState
-            // 
-            this.txbUseState.Location = new System.Drawing.Point(272, 137);
-            this.txbUseState.Name = "txbUseState";
-            this.txbUseState.Size = new System.Drawing.Size(78, 20);
-            this.txbUseState.TabIndex = 26;
-            // 
-            // FacilitiesSpec
+            // facilitiesSpec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.kryptonPanel2);
             this.Controls.Add(this.kryptonPanel1);
-            this.Name = "FacilitiesSpec";
+            this.Name = "facilitiesSpec";
             this.Size = new System.Drawing.Size(410, 322);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
@@ -295,10 +298,10 @@
             this.kryptonPanel3.ResumeLayout(false);
             this.kryptonPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbProcess)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).EndInit();
             this.kryptonPanel2.ResumeLayout(false);
             this.kryptonPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).EndInit();
             this.ResumeLayout(false);
 
         }

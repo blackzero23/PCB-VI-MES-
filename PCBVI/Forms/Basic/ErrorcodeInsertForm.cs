@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace PCBVI.Forms.Basic
 {
-    public partial class BarcodeInsertForm : Form
+    public partial class ErrorcodeInsertForm : Form
     {
-        public BarcodeInsertForm()
+        public ErrorcodeInsertForm()
         {
             InitializeComponent();
-        }
-
-        private void BtnInsert_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }
