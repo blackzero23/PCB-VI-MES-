@@ -723,6 +723,9 @@
     <EmbeddedResource Include="Forms\Basic\InspectionStandardForm.resx">
       <DependentUpon>InspectionStandardForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\InspectionStandardInsertForm.resx">
+      <DependentUpon>InspectionStandardInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\NonMovingTypeForm.resx">
       <DependentUpon>NonMovingTypeForm.cs</DependentUpon>
     </EmbeddedResource>

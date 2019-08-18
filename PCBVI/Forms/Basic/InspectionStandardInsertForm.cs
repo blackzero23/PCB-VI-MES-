@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PCBVI.Data.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,20 @@ namespace PCBVI.Forms.Basic
         public InspectionStandardInsertForm()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (DesignMode)
+                return;
+
+            bdsStandard.DataSource =
+                DB.InspectionStandard.GetAll();
+            bdsType.DataSource =
+                DB.InspectionStandardType.GetAll();
+
         }
     }
 }
