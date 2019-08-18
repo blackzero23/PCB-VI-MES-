@@ -28,6 +28,7 @@ namespace PCBVI.Data
         public int ProcessId { get; set; }
         public int WorkPlaceId { get; set; }
         public string Note { get; set; }
+        public string WorkerName { get; set; }
     
         public virtual Item Item { get; set; }
         public virtual Process Process { get; set; }

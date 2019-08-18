@@ -335,6 +335,7 @@
           <Property Name="ProcessId" Type="int" Nullable="false" />
           <Property Name="WorkPlaceId" Type="int" Nullable="false" />
           <Property Name="Note" Type="nvarchar" MaxLength="100" />
+          <Property Name="WorkerName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="WorkPlace">
           <Key>
@@ -1694,6 +1695,7 @@
           <Property Name="ProcessId" Type="Int32" Nullable="false" />
           <Property Name="WorkPlaceId" Type="Int32" Nullable="false" />
           <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WorkerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Item" Relationship="Self.FK_WorkOrder_Item" FromRole="WorkOrder" ToRole="Item" />
           <NavigationProperty Name="Process" Relationship="Self.FK_WorkOrder_Process" FromRole="WorkOrder" ToRole="Process" />
           <NavigationProperty Name="RotationGroup" Relationship="Self.FK_WorkOrder_RotationGroup" FromRole="WorkOrder" ToRole="RotationGroup" />
@@ -2992,6 +2994,7 @@
                 <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
                 <ScalarProperty Name="WorkPlaceId" ColumnName="WorkPlaceId" />
                 <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="WorkerName" ColumnName="WorkerName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
