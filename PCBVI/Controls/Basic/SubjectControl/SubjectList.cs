@@ -45,5 +45,10 @@ namespace PCBVI.Controls.Basic.SubjectControl
             dgvList.DataSource = list;
         }
 
+        public DataGridView GetListView()
+        {
+            return dgvList;
+        }
+
     }
 }

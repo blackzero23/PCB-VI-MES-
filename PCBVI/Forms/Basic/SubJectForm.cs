@@ -34,5 +34,11 @@ namespace PCBVI.Forms.Basic
             
             uscTopMenu.OpenInsertForm(new SubJectInsertForm());
         }
+
+        private void UscTopMenu_ExcelButtonClicked(object sender, Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs e)
+        {
+            DataGridView data = uscList.GetListView();
+            uscTopMenu.SaveExcelFile(data, "품목 정보");
+        }
     }
 }
