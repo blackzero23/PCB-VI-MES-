@@ -70,7 +70,7 @@
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(410, 322);
+            this.kryptonPanel1.Size = new System.Drawing.Size(601, 443);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.SystemColors.GradientInactiveCaption;
             this.kryptonPanel1.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel1.TabIndex = 24;
@@ -100,56 +100,63 @@
             this.kryptonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonPanel3.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel3.Name = "kryptonPanel3";
-            this.kryptonPanel3.Size = new System.Drawing.Size(410, 322);
+            this.kryptonPanel3.Size = new System.Drawing.Size(601, 443);
             this.kryptonPanel3.StateCommon.Color1 = System.Drawing.SystemColors.GradientInactiveCaption;
             this.kryptonPanel3.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel3.TabIndex = 25;
             // 
             // txbUseState
             // 
-            this.txbUseState.Location = new System.Drawing.Point(272, 137);
+            this.txbUseState.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txbUseState.Location = new System.Drawing.Point(367, 197);
             this.txbUseState.Name = "txbUseState";
             this.txbUseState.Size = new System.Drawing.Size(78, 20);
             this.txbUseState.TabIndex = 26;
             // 
             // txbState
             // 
-            this.txbState.Location = new System.Drawing.Point(122, 167);
+            this.txbState.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txbState.Location = new System.Drawing.Point(217, 227);
             this.txbState.Name = "txbState";
             this.txbState.Size = new System.Drawing.Size(78, 20);
             this.txbState.TabIndex = 25;
             // 
             // txbName
             // 
-            this.txbName.Location = new System.Drawing.Point(122, 107);
+            this.txbName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txbName.Location = new System.Drawing.Point(217, 167);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(228, 20);
             this.txbName.TabIndex = 24;
             // 
             // txbNo
             // 
-            this.txbNo.Location = new System.Drawing.Point(122, 77);
+            this.txbNo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txbNo.Location = new System.Drawing.Point(217, 137);
             this.txbNo.Name = "txbNo";
             this.txbNo.Size = new System.Drawing.Size(228, 20);
             this.txbNo.TabIndex = 23;
             // 
             // txbWeight
             // 
-            this.txbWeight.Location = new System.Drawing.Point(272, 193);
+            this.txbWeight.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txbWeight.Location = new System.Drawing.Point(367, 253);
             this.txbWeight.Name = "txbWeight";
             this.txbWeight.Size = new System.Drawing.Size(78, 20);
             this.txbWeight.TabIndex = 22;
             // 
             // txbLength
             // 
-            this.txbLength.Location = new System.Drawing.Point(272, 167);
+            this.txbLength.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txbLength.Location = new System.Drawing.Point(367, 227);
             this.txbLength.Name = "txbLength";
             this.txbLength.Size = new System.Drawing.Size(78, 20);
             this.txbLength.TabIndex = 21;
             // 
             // kryptonLabel11
             // 
-            this.kryptonLabel11.Location = new System.Drawing.Point(231, 193);
+            this.kryptonLabel11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kryptonLabel11.Location = new System.Drawing.Point(326, 253);
             this.kryptonLabel11.Name = "kryptonLabel11";
             this.kryptonLabel11.Size = new System.Drawing.Size(35, 20);
             this.kryptonLabel11.TabIndex = 20;
@@ -157,7 +164,8 @@
             // 
             // kryptonLabel12
             // 
-            this.kryptonLabel12.Location = new System.Drawing.Point(231, 167);
+            this.kryptonLabel12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kryptonLabel12.Location = new System.Drawing.Point(326, 227);
             this.kryptonLabel12.Name = "kryptonLabel12";
             this.kryptonLabel12.Size = new System.Drawing.Size(35, 20);
             this.kryptonLabel12.TabIndex = 19;
@@ -165,28 +173,32 @@
             // 
             // txbvolume
             // 
-            this.txbvolume.Location = new System.Drawing.Point(272, 219);
+            this.txbvolume.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txbvolume.Location = new System.Drawing.Point(367, 279);
             this.txbvolume.Name = "txbvolume";
             this.txbvolume.Size = new System.Drawing.Size(78, 20);
             this.txbvolume.TabIndex = 18;
             // 
             // txbHeight
             // 
-            this.txbHeight.Location = new System.Drawing.Point(122, 219);
+            this.txbHeight.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txbHeight.Location = new System.Drawing.Point(217, 279);
             this.txbHeight.Name = "txbHeight";
             this.txbHeight.Size = new System.Drawing.Size(78, 20);
             this.txbHeight.TabIndex = 17;
             // 
             // txbWidth
             // 
-            this.txbWidth.Location = new System.Drawing.Point(122, 193);
+            this.txbWidth.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txbWidth.Location = new System.Drawing.Point(217, 253);
             this.txbWidth.Name = "txbWidth";
             this.txbWidth.Size = new System.Drawing.Size(78, 20);
             this.txbWidth.TabIndex = 16;
             // 
             // kryptonLabel9
             // 
-            this.kryptonLabel9.Location = new System.Drawing.Point(206, 139);
+            this.kryptonLabel9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kryptonLabel9.Location = new System.Drawing.Point(301, 199);
             this.kryptonLabel9.Name = "kryptonLabel9";
             this.kryptonLabel9.Size = new System.Drawing.Size(60, 20);
             this.kryptonLabel9.TabIndex = 12;
@@ -194,10 +206,11 @@
             // 
             // cbbProcess
             // 
+            this.cbbProcess.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbbProcess.DataSource = this.bdsProcess;
             this.cbbProcess.DisplayMember = "Name";
             this.cbbProcess.DropDownWidth = 170;
-            this.cbbProcess.Location = new System.Drawing.Point(122, 136);
+            this.cbbProcess.Location = new System.Drawing.Point(217, 196);
             this.cbbProcess.Name = "cbbProcess";
             this.cbbProcess.Size = new System.Drawing.Size(78, 21);
             this.cbbProcess.TabIndex = 10;
@@ -209,7 +222,8 @@
             // 
             // kryptonLabel8
             // 
-            this.kryptonLabel8.Location = new System.Drawing.Point(231, 219);
+            this.kryptonLabel8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kryptonLabel8.Location = new System.Drawing.Point(326, 279);
             this.kryptonLabel8.Name = "kryptonLabel8";
             this.kryptonLabel8.Size = new System.Drawing.Size(35, 20);
             this.kryptonLabel8.TabIndex = 7;
@@ -217,7 +231,8 @@
             // 
             // kryptonLabel7
             // 
-            this.kryptonLabel7.Location = new System.Drawing.Point(81, 219);
+            this.kryptonLabel7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kryptonLabel7.Location = new System.Drawing.Point(176, 279);
             this.kryptonLabel7.Name = "kryptonLabel7";
             this.kryptonLabel7.Size = new System.Drawing.Size(35, 20);
             this.kryptonLabel7.TabIndex = 6;
@@ -225,7 +240,8 @@
             // 
             // kryptonLabel6
             // 
-            this.kryptonLabel6.Location = new System.Drawing.Point(93, 193);
+            this.kryptonLabel6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kryptonLabel6.Location = new System.Drawing.Point(188, 253);
             this.kryptonLabel6.Name = "kryptonLabel6";
             this.kryptonLabel6.Size = new System.Drawing.Size(23, 20);
             this.kryptonLabel6.TabIndex = 5;
@@ -233,7 +249,8 @@
             // 
             // kryptonLabel5
             // 
-            this.kryptonLabel5.Location = new System.Drawing.Point(56, 166);
+            this.kryptonLabel5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kryptonLabel5.Location = new System.Drawing.Point(151, 226);
             this.kryptonLabel5.Name = "kryptonLabel5";
             this.kryptonLabel5.Size = new System.Drawing.Size(60, 20);
             this.kryptonLabel5.TabIndex = 4;
@@ -241,7 +258,8 @@
             // 
             // kryptonLabel4
             // 
-            this.kryptonLabel4.Location = new System.Drawing.Point(56, 138);
+            this.kryptonLabel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kryptonLabel4.Location = new System.Drawing.Point(151, 198);
             this.kryptonLabel4.Name = "kryptonLabel4";
             this.kryptonLabel4.Size = new System.Drawing.Size(60, 20);
             this.kryptonLabel4.TabIndex = 3;
@@ -249,7 +267,8 @@
             // 
             // kryptonLabel3
             // 
-            this.kryptonLabel3.Location = new System.Drawing.Point(68, 107);
+            this.kryptonLabel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kryptonLabel3.Location = new System.Drawing.Point(163, 167);
             this.kryptonLabel3.Name = "kryptonLabel3";
             this.kryptonLabel3.Size = new System.Drawing.Size(48, 20);
             this.kryptonLabel3.TabIndex = 2;
@@ -257,9 +276,14 @@
             // 
             // kryptonLabel2
             // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(56, 77);
+            this.kryptonLabel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kryptonLabel2.Location = new System.Drawing.Point(151, 137);
             this.kryptonLabel2.Name = "kryptonLabel2";
-            this.kryptonLabel2.Size = new System.Drawing.Size(60, 20);
+            this.kryptonLabel2.Size = new System.Drawing.Size(60, 18);
+            this.kryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.Navy;
+            this.kryptonLabel2.StateCommon.ShortText.Font = new System.Drawing.Font("굴림체", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.kryptonLabel2.StateCommon.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonLabel2.StateCommon.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonLabel2.TabIndex = 1;
             this.kryptonLabel2.Values.Text = "설비번호";
             // 
@@ -279,7 +303,7 @@
             this.kryptonPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonPanel2.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel2.Name = "kryptonPanel2";
-            this.kryptonPanel2.Size = new System.Drawing.Size(410, 28);
+            this.kryptonPanel2.Size = new System.Drawing.Size(601, 28);
             this.kryptonPanel2.StateCommon.Color1 = System.Drawing.SystemColors.ActiveCaption;
             this.kryptonPanel2.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel2.TabIndex = 25;
@@ -291,7 +315,7 @@
             this.Controls.Add(this.kryptonPanel2);
             this.Controls.Add(this.kryptonPanel1);
             this.Name = "facilitiesSpec";
-            this.Size = new System.Drawing.Size(410, 322);
+            this.Size = new System.Drawing.Size(601, 443);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel3)).EndInit();

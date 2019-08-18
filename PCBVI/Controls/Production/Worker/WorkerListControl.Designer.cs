@@ -45,6 +45,8 @@
             this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
             this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bdsWorkOrder = new System.Windows.Forms.BindingSource(this.components);
+            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
@@ -57,17 +59,22 @@
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.kryptonLabel1);
+            this.kryptonPanel1.Controls.Add(this.kryptonTextBox1);
             this.kryptonPanel1.Controls.Add(this.kryptonButton2);
             this.kryptonPanel1.Controls.Add(this.kryptonButton1);
-            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.kryptonPanel1.Location = new System.Drawing.Point(0, 310);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(947, 38);
+            this.kryptonPanel1.Size = new System.Drawing.Size(947, 66);
+            this.kryptonPanel1.StateCommon.Color1 = System.Drawing.SystemColors.ControlLight;
+            this.kryptonPanel1.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel1.TabIndex = 3;
             // 
             // kryptonButton2
             // 
-            this.kryptonButton2.Location = new System.Drawing.Point(841, 7);
+            this.kryptonButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.kryptonButton2.Location = new System.Drawing.Point(826, 19);
             this.kryptonButton2.Name = "kryptonButton2";
             this.kryptonButton2.Size = new System.Drawing.Size(90, 25);
             this.kryptonButton2.TabIndex = 1;
@@ -75,7 +82,8 @@
             // 
             // kryptonButton1
             // 
-            this.kryptonButton1.Location = new System.Drawing.Point(713, 7);
+            this.kryptonButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.kryptonButton1.Location = new System.Drawing.Point(715, 20);
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.Size = new System.Drawing.Size(90, 25);
             this.kryptonButton1.TabIndex = 0;
@@ -97,10 +105,10 @@
             this.noteDataGridViewTextBoxColumn});
             this.dgvList.DataSource = this.bdsWorkOrder;
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvList.Location = new System.Drawing.Point(0, 38);
+            this.dgvList.Location = new System.Drawing.Point(0, 0);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(947, 338);
+            this.dgvList.Size = new System.Drawing.Size(947, 310);
             this.dgvList.TabIndex = 4;
             // 
             // itemIdDataGridViewTextBoxColumn
@@ -129,7 +137,7 @@
             this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
             this.orderDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.orderDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.orderDateDataGridViewTextBoxColumn.Width = 130;
+            this.orderDateDataGridViewTextBoxColumn.Width = 129;
             // 
             // rotationGroupIdDataGridViewTextBoxColumn
             // 
@@ -202,6 +210,23 @@
             // 
             this.bdsWorkOrder.DataSource = typeof(PCBVI.Data.WorkOrder);
             // 
+            // kryptonTextBox1
+            // 
+            this.kryptonTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.kryptonTextBox1.Location = new System.Drawing.Point(575, 25);
+            this.kryptonTextBox1.Name = "kryptonTextBox1";
+            this.kryptonTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.kryptonTextBox1.TabIndex = 5;
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.kryptonLabel1.Location = new System.Drawing.Point(524, 25);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(54, 20);
+            this.kryptonLabel1.TabIndex = 6;
+            this.kryptonLabel1.Values.Text = "작업자 : ";
+            // 
             // WorkerListControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -212,6 +237,7 @@
             this.Size = new System.Drawing.Size(947, 376);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
+            this.kryptonPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsRotationGroup)).EndInit();
@@ -240,5 +266,7 @@
         private System.Windows.Forms.BindingSource bdsWorkPlace;
         private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bdsWorkOrder;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
     }
 }
