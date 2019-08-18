@@ -26,5 +26,10 @@ namespace PCBVI.Controls.Production.WorkLog
                 return;
         }
 
+        public void SetDataSource(List<Data.WorkLog> list)
+        {
+            dgvList.DataSource = list;
+        }
+
     }
 }

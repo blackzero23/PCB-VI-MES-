@@ -30,5 +30,7 @@ namespace PCBVI.Data.Data
         public static InspectionStandardData InspectionStandard { get; } = new InspectionStandardData();
         public static RotationGroupData RotationGroup { get; } = new RotationGroupData();
         public static WorkOrderData WorkOrder { get; } = new WorkOrderData();
+
+        public static WorkLogData WorkLog { get; } = new WorkLogData();
     }
 }

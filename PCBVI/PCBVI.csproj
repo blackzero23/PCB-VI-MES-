@@ -850,6 +850,7 @@
     <None Include="Properties\DataSources\PCBVI.Data.Product.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.RotationGroup.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.SecondItemDivision.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.WorkLog.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.WorkOrder.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.WorkPlace.datasource" />
     <None Include="Properties\Settings.settings">

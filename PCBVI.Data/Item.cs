@@ -23,6 +23,7 @@ namespace PCBVI.Data
             this.LastInspections = new HashSet<LastInspection>();
             this.ProcessDefects = new HashSet<ProcessDefect>();
             this.TotalMonitorings = new HashSet<TotalMonitoring>();
+            this.WorkLogs = new HashSet<WorkLog>();
             this.WorkOrders = new HashSet<WorkOrder>();
         }
     
@@ -49,6 +50,8 @@ namespace PCBVI.Data
         public virtual ICollection<ProcessDefect> ProcessDefects { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TotalMonitoring> TotalMonitorings { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<WorkLog> WorkLogs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }
     }
