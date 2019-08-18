@@ -34,13 +34,13 @@ namespace PCBVI.Controls.Basic.SubjectControl
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            string itemCode = txbItemCode.Text;
-            string itemName = txbItemName.Text;
+            //string itemCode = txbItemCode.Text;
+            //string itemName = txbItemName.Text;
             int firstDivision = (int)cbbFirstDivision.SelectedValue;
             int secondDivision = (int)
                 cbbSecondDivision.SelectedValue;
 
-            OnSearchButtonClicked(itemCode, itemName, firstDivision, secondDivision);
+           // OnSearchButtonClicked(itemCode, itemName, firstDivision, secondDivision);
         }
 
         #region SearchButtonClicked event things for C# 3.0

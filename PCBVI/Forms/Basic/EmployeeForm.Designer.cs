@@ -66,12 +66,11 @@
             this.naviEmployee.Location = new System.Drawing.Point(0, 0);
             this.naviEmployee.Name = "naviEmployee";
             this.naviEmployee.Padding = new System.Windows.Forms.Padding(3);
+            this.naviEmployee.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonCommand;
             this.naviEmployee.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageEmployee});
-            this.naviEmployee.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.naviEmployee.SelectedIndex = 0;
             this.naviEmployee.Size = new System.Drawing.Size(800, 414);
-            this.naviEmployee.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("HY헤드라인M", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.naviEmployee.TabIndex = 0;
             this.naviEmployee.Text = "navi";
             // 
@@ -84,7 +83,7 @@
             this.pageEmployee.LastVisibleSet = true;
             this.pageEmployee.MinimumSize = new System.Drawing.Size(50, 50);
             this.pageEmployee.Name = "pageEmployee";
-            this.pageEmployee.Size = new System.Drawing.Size(798, 385);
+            this.pageEmployee.Size = new System.Drawing.Size(798, 387);
             this.pageEmployee.Text = "사원 정보";
             this.pageEmployee.ToolTipTitle = "Page ToolTip";
             this.pageEmployee.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
@@ -93,9 +92,9 @@
             // 
             this.panel1.Controls.Add(this.uscList);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 60);
+            this.panel1.Location = new System.Drawing.Point(0, 75);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(798, 325);
+            this.panel1.Size = new System.Drawing.Size(798, 312);
             this.panel1.TabIndex = 1;
             // 
             // uscList
@@ -103,7 +102,7 @@
             this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscList.Location = new System.Drawing.Point(0, 0);
             this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(798, 325);
+            this.uscList.Size = new System.Drawing.Size(798, 312);
             this.uscList.TabIndex = 0;
             // 
             // panelSearch
@@ -112,7 +111,7 @@
             this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSearch.Location = new System.Drawing.Point(0, 0);
             this.panelSearch.Name = "panelSearch";
-            this.panelSearch.Size = new System.Drawing.Size(798, 60);
+            this.panelSearch.Size = new System.Drawing.Size(798, 75);
             this.panelSearch.TabIndex = 0;
             // 
             // uscSearch
@@ -120,7 +119,7 @@
             this.uscSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscSearch.Location = new System.Drawing.Point(0, 0);
             this.uscSearch.Name = "uscSearch";
-            this.uscSearch.Size = new System.Drawing.Size(798, 60);
+            this.uscSearch.Size = new System.Drawing.Size(798, 75);
             this.uscSearch.TabIndex = 0;
             this.uscSearch.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Basic.Employee.EmployeeSearch.SearchButtonClickedEventArgs>(this.UscSearch_SearchButtonClicked);
             // 

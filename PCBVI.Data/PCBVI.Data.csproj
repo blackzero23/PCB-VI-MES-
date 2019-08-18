@@ -74,6 +74,9 @@
     <Compile Include="Data\LotData.cs" />
     <Compile Include="Data\MaterialHistoryData.cs" />
     <Compile Include="Data\ProcessData.cs" />
+    <Compile Include="Data\RotationGroupData.cs" />
+    <Compile Include="Data\WorkLogData.cs" />
+    <Compile Include="Data\WorkOrderData.cs" />
     <Compile Include="Data\WorkPlaceData.cs" />
     <Compile Include="Data\SecondItemDivisionData.cs" />
     <Compile Include="DbContextFactory.cs" />
@@ -95,6 +98,7 @@
     <Compile Include="Entities\Lot.cs" />
     <Compile Include="Entities\FirstInspection.cs" />
     <Compile Include="Entities\Process.cs" />
+    <Compile Include="Entities\WorkLog.cs" />
     <Compile Include="Entities\WorkPlace.cs" />
     <Compile Include="ErrorCode.cs">
       <DependentUpon>Mes.tt</DependentUpon>

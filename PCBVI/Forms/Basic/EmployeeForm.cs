@@ -40,7 +40,8 @@ namespace PCBVI.Forms.Basic
 
         private void UscTopMenu_ExcelButtonClicked(object sender, Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs e)
         {
-            uscTopMenu.SaveExcelFile(uscList.GetListView(), "사원 정보");            
+            DataGridView data = uscList.GetListView();
+           uscTopMenu.SaveExcelFile(data, "사원 정보");            
         }
 
         private void UscTopMenu_DeleteButtonClicked(object sender, Controls.CommonControl.TopMenubar.DeleteButtonClickedEventArgs e)
@@ -51,5 +52,6 @@ namespace PCBVI.Forms.Basic
            uscTopMenu.DeleteAt(employee);
            uscList.SetEmployeeDataSource(DB.Employee.SeachEmployeeInfo(_departmentid, _name));
         }
+
     }
 }

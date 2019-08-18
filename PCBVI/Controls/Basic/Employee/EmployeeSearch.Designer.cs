@@ -49,16 +49,19 @@
             this.kryptonPanel1.Controls.Add(this.cbbDepartment);
             this.kryptonPanel1.Controls.Add(this.lbName);
             this.kryptonPanel1.Controls.Add(this.lbDepartment);
-            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(703, 60);
+            this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Silver;
+            this.kryptonPanel1.Size = new System.Drawing.Size(703, 75);
+            this.kryptonPanel1.StateCommon.Color1 = System.Drawing.SystemColors.Control;
+            this.kryptonPanel1.StateCommon.Color2 = System.Drawing.SystemColors.Control;
             this.kryptonPanel1.TabIndex = 0;
             // 
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Location = new System.Drawing.Point(582, 15);
+            this.btnSearch.Location = new System.Drawing.Point(581, 24);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(90, 30);
             this.btnSearch.TabIndex = 4;
@@ -67,7 +70,7 @@
             // 
             // txbName
             // 
-            this.txbName.Location = new System.Drawing.Point(331, 15);
+            this.txbName.Location = new System.Drawing.Point(337, 27);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(100, 20);
             this.txbName.TabIndex = 3;
@@ -78,7 +81,7 @@
             this.cbbDepartment.DisplayMember = "Name";
             this.cbbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbDepartment.DropDownWidth = 121;
-            this.cbbDepartment.Location = new System.Drawing.Point(96, 15);
+            this.cbbDepartment.Location = new System.Drawing.Point(102, 27);
             this.cbbDepartment.Name = "cbbDepartment";
             this.cbbDepartment.Size = new System.Drawing.Size(121, 21);
             this.cbbDepartment.TabIndex = 2;
@@ -90,7 +93,7 @@
             // 
             // lbName
             // 
-            this.lbName.Location = new System.Drawing.Point(271, 15);
+            this.lbName.Location = new System.Drawing.Point(277, 27);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(54, 20);
             this.lbName.TabIndex = 1;
@@ -98,7 +101,7 @@
             // 
             // lbDepartment
             // 
-            this.lbDepartment.Location = new System.Drawing.Point(45, 15);
+            this.lbDepartment.Location = new System.Drawing.Point(51, 27);
             this.lbDepartment.Name = "lbDepartment";
             this.lbDepartment.Size = new System.Drawing.Size(45, 20);
             this.lbDepartment.TabIndex = 0;
@@ -110,7 +113,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.kryptonPanel1);
             this.Name = "EmployeeSearch";
-            this.Size = new System.Drawing.Size(703, 60);
+            this.Size = new System.Drawing.Size(703, 75);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();

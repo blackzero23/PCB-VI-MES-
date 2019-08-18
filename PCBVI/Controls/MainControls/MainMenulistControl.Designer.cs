@@ -46,6 +46,7 @@
             this.btnWorker = new System.Windows.Forms.Button();
             this.btnMaterialsManage = new System.Windows.Forms.Button();
             this.btnWorkLog = new System.Windows.Forms.Button();
+            this.btnWorkOrder = new System.Windows.Forms.Button();
             this.btnProductionHistory = new System.Windows.Forms.Button();
             this.btnProduction = new System.Windows.Forms.Button();
             this.panelMaterials = new System.Windows.Forms.Panel();
@@ -265,9 +266,10 @@
             // 
             this.panelProduction.Controls.Add(this.btnProcessDefect);
             this.panelProduction.Controls.Add(this.btnDefectiveProduct);
-            this.panelProduction.Controls.Add(this.btnWorker);
             this.panelProduction.Controls.Add(this.btnMaterialsManage);
+            this.panelProduction.Controls.Add(this.btnWorker);
             this.panelProduction.Controls.Add(this.btnWorkLog);
+            this.panelProduction.Controls.Add(this.btnWorkOrder);
             this.panelProduction.Controls.Add(this.btnProductionHistory);
             this.panelProduction.Controls.Add(this.btnProduction);
             this.panelProduction.Location = new System.Drawing.Point(3, 60);
@@ -285,7 +287,7 @@
             this.btnProcessDefect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcessDefect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnProcessDefect.ForeColor = System.Drawing.Color.White;
-            this.btnProcessDefect.Location = new System.Drawing.Point(0, 196);
+            this.btnProcessDefect.Location = new System.Drawing.Point(0, 225);
             this.btnProcessDefect.Name = "btnProcessDefect";
             this.btnProcessDefect.Size = new System.Drawing.Size(168, 29);
             this.btnProcessDefect.TabIndex = 18;
@@ -301,7 +303,7 @@
             this.btnDefectiveProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDefectiveProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDefectiveProduct.ForeColor = System.Drawing.Color.White;
-            this.btnDefectiveProduct.Location = new System.Drawing.Point(0, 167);
+            this.btnDefectiveProduct.Location = new System.Drawing.Point(0, 196);
             this.btnDefectiveProduct.Name = "btnDefectiveProduct";
             this.btnDefectiveProduct.Size = new System.Drawing.Size(168, 29);
             this.btnDefectiveProduct.TabIndex = 16;
@@ -333,7 +335,7 @@
             this.btnMaterialsManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaterialsManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnMaterialsManage.ForeColor = System.Drawing.Color.White;
-            this.btnMaterialsManage.Location = new System.Drawing.Point(0, 109);
+            this.btnMaterialsManage.Location = new System.Drawing.Point(0, 167);
             this.btnMaterialsManage.Name = "btnMaterialsManage";
             this.btnMaterialsManage.Size = new System.Drawing.Size(168, 29);
             this.btnMaterialsManage.TabIndex = 14;
@@ -349,13 +351,29 @@
             this.btnWorkLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnWorkLog.ForeColor = System.Drawing.Color.White;
-            this.btnWorkLog.Location = new System.Drawing.Point(0, 80);
+            this.btnWorkLog.Location = new System.Drawing.Point(0, 109);
             this.btnWorkLog.Name = "btnWorkLog";
             this.btnWorkLog.Size = new System.Drawing.Size(168, 29);
             this.btnWorkLog.TabIndex = 13;
             this.btnWorkLog.Text = "작업 일지";
             this.btnWorkLog.UseVisualStyleBackColor = false;
             this.btnWorkLog.Click += new System.EventHandler(this.BtnWorkLog_Click);
+            // 
+            // btnWorkOrder
+            // 
+            this.btnWorkOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.btnWorkOrder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnWorkOrder.FlatAppearance.BorderSize = 0;
+            this.btnWorkOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWorkOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnWorkOrder.ForeColor = System.Drawing.Color.White;
+            this.btnWorkOrder.Location = new System.Drawing.Point(0, 80);
+            this.btnWorkOrder.Name = "btnWorkOrder";
+            this.btnWorkOrder.Size = new System.Drawing.Size(168, 29);
+            this.btnWorkOrder.TabIndex = 19;
+            this.btnWorkOrder.Text = "작업지시관리";
+            this.btnWorkOrder.UseVisualStyleBackColor = false;
+            this.btnWorkOrder.Click += new System.EventHandler(this.BtnWorkOrder_Click);
             // 
             // btnProductionHistory
             // 
@@ -910,5 +928,6 @@
         private System.Windows.Forms.Button btnQualityMonitoring;
         private System.Windows.Forms.Timer timerMonitoring;
         private System.Windows.Forms.Timer timerStatistics;
+        private System.Windows.Forms.Button btnWorkOrder;
     }
 }

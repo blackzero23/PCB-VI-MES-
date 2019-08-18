@@ -313,6 +313,8 @@
           <Property Name="TargetQuantity" Type="int" Nullable="false" />
           <Property Name="ProcessId" Type="int" Nullable="false" />
           <Property Name="FacilitiesId" Type="int" Nullable="false" />
+          <Property Name="WorkOrderId" Type="int" />
+          <Property Name="ItemId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="WorkOrder">
           <Key>
@@ -623,7 +625,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LotBarCode_Barcode">
-          <End Role="Barcode" Type="Self.Barcode" Multiplicity="1" />
+          <End Role="Barcode" Type="Self.Barcode" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="LotBarCode" Type="Self.LotBarCode" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Barcode">
@@ -886,6 +890,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_WorkLog_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="WorkLog" Type="Self.WorkLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="WorkLog">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkLog_Process">
+          <End Role="Process" Type="Self.Process" Multiplicity="1" />
+          <End Role="WorkLog" Type="Self.WorkLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Process">
+              <PropertyRef Name="ProcessId" />
+            </Principal>
+            <Dependent Role="WorkLog">
+              <PropertyRef Name="ProcessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_WorkLog_RotationGroup">
           <End Role="RotationGroup" Type="Self.RotationGroup" Multiplicity="1" />
           <End Role="WorkLog" Type="Self.WorkLog" Multiplicity="*" />
@@ -895,6 +923,18 @@
             </Principal>
             <Dependent Role="WorkLog">
               <PropertyRef Name="RotationGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkLog_WorkOrder">
+          <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="0..1" />
+          <End Role="WorkLog" Type="Self.WorkLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkOrder">
+              <PropertyRef Name="WorkOrderId" />
+            </Principal>
+            <Dependent Role="WorkLog">
+              <PropertyRef Name="WorkOrderId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1162,8 +1202,20 @@
             <End Role="Facilities" EntitySet="Facilities" />
             <End Role="WorkLog" EntitySet="WorkLog" />
           </AssociationSet>
+          <AssociationSet Name="FK_WorkLog_Item" Association="Self.FK_WorkLog_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="WorkLog" EntitySet="WorkLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkLog_Process" Association="Self.FK_WorkLog_Process">
+            <End Role="Process" EntitySet="Process" />
+            <End Role="WorkLog" EntitySet="WorkLog" />
+          </AssociationSet>
           <AssociationSet Name="FK_WorkLog_RotationGroup" Association="Self.FK_WorkLog_RotationGroup">
             <End Role="RotationGroup" EntitySet="RotationGroup" />
+            <End Role="WorkLog" EntitySet="WorkLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkLog_WorkOrder" Association="Self.FK_WorkLog_WorkOrder">
+            <End Role="WorkOrder" EntitySet="WorkOrder" />
             <End Role="WorkLog" EntitySet="WorkLog" />
           </AssociationSet>
           <AssociationSet Name="FK_WorkOrder_Item" Association="Self.FK_WorkOrder_Item">
@@ -1403,6 +1455,7 @@
           <NavigationProperty Name="LastInspections" Relationship="Self.FK_LastInspection_Product" FromRole="Item" ToRole="LastInspection" />
           <NavigationProperty Name="ProcessDefects" Relationship="Self.FK_ProcessDefect_Item" FromRole="Item" ToRole="ProcessDefect" />
           <NavigationProperty Name="TotalMonitorings" Relationship="Self.FK_TotalMonitoring_Product" FromRole="Item" ToRole="TotalMonitoring" />
+          <NavigationProperty Name="WorkLogs" Relationship="Self.FK_WorkLog_Item" FromRole="Item" ToRole="WorkLog" />
           <NavigationProperty Name="WorkOrders" Relationship="Self.FK_WorkOrder_Item" FromRole="Item" ToRole="WorkOrder" />
         </EntityType>
         <EntityType Name="LastInspection">
@@ -1506,6 +1559,7 @@
           <NavigationProperty Name="ProcessDefects" Relationship="Self.FK_ProcessDefect_Process" FromRole="Process" ToRole="ProcessDefect" />
           <NavigationProperty Name="ProductionHistories" Relationship="Self.FK_ProductionHistory_Process" FromRole="Process" ToRole="ProductionHistory" />
           <NavigationProperty Name="TotalMonitorings" Relationship="Self.FK_TotalMonitoring_Process" FromRole="Process" ToRole="TotalMonitoring" />
+          <NavigationProperty Name="WorkLogs" Relationship="Self.FK_WorkLog_Process" FromRole="Process" ToRole="WorkLog" />
           <NavigationProperty Name="WorkOrders" Relationship="Self.FK_WorkOrder_Process" FromRole="Process" ToRole="WorkOrder" />
         </EntityType>
         <EntityType Name="ProcessDefect">
@@ -1585,10 +1639,15 @@
           <Property Name="TargetQuantity" Type="Int32" Nullable="false" />
           <Property Name="ProcessId" Type="Int32" Nullable="false" />
           <Property Name="FacilitiesId" Type="Int32" Nullable="false" />
+          <Property Name="WorkOrderId" Type="Int32" />
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_WorkLog_Employee" FromRole="WorkLog" ToRole="Employee" />
           <NavigationProperty Name="Facility" Relationship="Self.FK_WorkLog_Facilities" FromRole="WorkLog" ToRole="Facilities" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_WorkLog_Item" FromRole="WorkLog" ToRole="Item" />
+          <NavigationProperty Name="Process" Relationship="Self.FK_WorkLog_Process" FromRole="WorkLog" ToRole="Process" />
           <NavigationProperty Name="RotationGroup" Relationship="Self.FK_WorkLog_RotationGroup" FromRole="WorkLog" ToRole="RotationGroup" />
           <NavigationProperty Name="TotalMonitorings" Relationship="Self.FK_TotalMonitoring_WorkLog" FromRole="WorkLog" ToRole="TotalMonitoring" />
+          <NavigationProperty Name="WorkOrder" Relationship="Self.FK_WorkLog_WorkOrder" FromRole="WorkLog" ToRole="WorkOrder" />
         </EntityType>
         <EntityType Name="WorkOrder">
           <Key>
@@ -1605,6 +1664,7 @@
           <NavigationProperty Name="Item" Relationship="Self.FK_WorkOrder_Item" FromRole="WorkOrder" ToRole="Item" />
           <NavigationProperty Name="Process" Relationship="Self.FK_WorkOrder_Process" FromRole="WorkOrder" ToRole="Process" />
           <NavigationProperty Name="RotationGroup" Relationship="Self.FK_WorkOrder_RotationGroup" FromRole="WorkOrder" ToRole="RotationGroup" />
+          <NavigationProperty Name="WorkLogs" Relationship="Self.FK_WorkLog_WorkOrder" FromRole="WorkOrder" ToRole="WorkLog" />
           <NavigationProperty Name="WorkPlace" Relationship="Self.FK_WorkOrder_WorkPlace" FromRole="WorkOrder" ToRole="WorkPlace" />
         </EntityType>
         <EntityType Name="WorkPlace">
@@ -1656,7 +1716,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LotBarCode_Barcode">
-          <End Role="Barcode" Type="Self.Barcode" Multiplicity="1" />
+          <End Role="Barcode" Type="Self.Barcode" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="LotBarCode" Type="Self.LotBarCode" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Barcode">
@@ -2027,6 +2089,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_WorkLog_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="WorkLog" Type="Self.WorkLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="WorkLog">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_WorkOrder_Item">
           <End Role="Item" Type="Self.Item" Multiplicity="1" />
           <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="*" />
@@ -2171,6 +2245,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_WorkLog_Process">
+          <End Role="Process" Type="Self.Process" Multiplicity="1" />
+          <End Role="WorkLog" Type="Self.WorkLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Process">
+              <PropertyRef Name="ProcessId" />
+            </Principal>
+            <Dependent Role="WorkLog">
+              <PropertyRef Name="ProcessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_WorkOrder_Process">
           <End Role="Process" Type="Self.Process" Multiplicity="1" />
           <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="*" />
@@ -2216,6 +2302,18 @@
             </Principal>
             <Dependent Role="TotalMonitoring">
               <PropertyRef Name="WorkLogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkLog_WorkOrder">
+          <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="0..1" />
+          <End Role="WorkLog" Type="Self.WorkLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkOrder">
+              <PropertyRef Name="WorkOrderId" />
+            </Principal>
+            <Dependent Role="WorkLog">
+              <PropertyRef Name="WorkOrderId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2399,6 +2497,10 @@
             <End Role="Item" EntitySet="Items" />
             <End Role="TotalMonitoring" EntitySet="TotalMonitorings" />
           </AssociationSet>
+          <AssociationSet Name="FK_WorkLog_Item" Association="Self.FK_WorkLog_Item">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="WorkLog" EntitySet="WorkLogs" />
+          </AssociationSet>
           <AssociationSet Name="FK_WorkOrder_Item" Association="Self.FK_WorkOrder_Item">
             <End Role="Item" EntitySet="Items" />
             <End Role="WorkOrder" EntitySet="WorkOrders" />
@@ -2447,6 +2549,10 @@
             <End Role="Process" EntitySet="Processes" />
             <End Role="TotalMonitoring" EntitySet="TotalMonitorings" />
           </AssociationSet>
+          <AssociationSet Name="FK_WorkLog_Process" Association="Self.FK_WorkLog_Process">
+            <End Role="Process" EntitySet="Processes" />
+            <End Role="WorkLog" EntitySet="WorkLogs" />
+          </AssociationSet>
           <AssociationSet Name="FK_WorkOrder_Process" Association="Self.FK_WorkOrder_Process">
             <End Role="Process" EntitySet="Processes" />
             <End Role="WorkOrder" EntitySet="WorkOrders" />
@@ -2462,6 +2568,10 @@
           <AssociationSet Name="FK_TotalMonitoring_WorkLog" Association="Self.FK_TotalMonitoring_WorkLog">
             <End Role="WorkLog" EntitySet="WorkLogs" />
             <End Role="TotalMonitoring" EntitySet="TotalMonitorings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkLog_WorkOrder" Association="Self.FK_WorkLog_WorkOrder">
+            <End Role="WorkOrder" EntitySet="WorkOrders" />
+            <End Role="WorkLog" EntitySet="WorkLogs" />
           </AssociationSet>
           <AssociationSet Name="FK_WorkOrder_WorkPlace" Association="Self.FK_WorkOrder_WorkPlace">
             <End Role="WorkPlace" EntitySet="WorkPlaces" />
@@ -2808,6 +2918,8 @@
                 <ScalarProperty Name="TargetQuantity" ColumnName="TargetQuantity" />
                 <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
                 <ScalarProperty Name="FacilitiesId" ColumnName="FacilitiesId" />
+                <ScalarProperty Name="WorkOrderId" ColumnName="WorkOrderId" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

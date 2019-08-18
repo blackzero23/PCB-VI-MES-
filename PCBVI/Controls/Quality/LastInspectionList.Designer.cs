@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bdsLastInspection = new System.Windows.Forms.BindingSource(this.components);
             this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
             this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsLastInspection = new System.Windows.Forms.BindingSource(this.components);
             this.productionDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workPlaceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -44,9 +44,9 @@
             this.failQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.finalQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLastInspection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLastInspection)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvList
@@ -70,12 +70,8 @@
             this.dgvList.Location = new System.Drawing.Point(0, 0);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(565, 466);
+            this.dgvList.Size = new System.Drawing.Size(1043, 466);
             this.dgvList.TabIndex = 0;
-            // 
-            // bdsLastInspection
-            // 
-            this.bdsLastInspection.DataSource = typeof(PCBVI.Data.LastInspection);
             // 
             // bdsWorkPlace
             // 
@@ -84,6 +80,10 @@
             // bdsItem
             // 
             this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
+            // 
+            // bdsLastInspection
+            // 
+            this.bdsLastInspection.DataSource = typeof(PCBVI.Data.LastInspection);
             // 
             // productionDateDataGridViewTextBoxColumn
             // 
@@ -96,6 +96,8 @@
             this.workPlaceIdDataGridViewTextBoxColumn.DataPropertyName = "WorkPlaceId";
             this.workPlaceIdDataGridViewTextBoxColumn.DataSource = this.bdsWorkPlace;
             this.workPlaceIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.workPlaceIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.workPlaceIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.workPlaceIdDataGridViewTextBoxColumn.HeaderText = "작업장";
             this.workPlaceIdDataGridViewTextBoxColumn.Name = "workPlaceIdDataGridViewTextBoxColumn";
             this.workPlaceIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -107,6 +109,8 @@
             this.itemIdDataGridViewTextBoxColumn.DataPropertyName = "ItemId";
             this.itemIdDataGridViewTextBoxColumn.DataSource = this.bdsItem;
             this.itemIdDataGridViewTextBoxColumn.DisplayMember = "Code";
+            this.itemIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.itemIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.itemIdDataGridViewTextBoxColumn.HeaderText = "품목코드";
             this.itemIdDataGridViewTextBoxColumn.Name = "itemIdDataGridViewTextBoxColumn";
             this.itemIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -161,11 +165,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvList);
             this.Name = "LastInspectionList";
-            this.Size = new System.Drawing.Size(565, 466);
+            this.Size = new System.Drawing.Size(1043, 466);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLastInspection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLastInspection)).EndInit();
             this.ResumeLayout(false);
 
         }

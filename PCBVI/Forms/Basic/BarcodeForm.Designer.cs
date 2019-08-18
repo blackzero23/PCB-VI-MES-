@@ -41,22 +41,40 @@
             // 
             // naviBarcode
             // 
+            this.naviBarcode.Bar.BarMapExtraText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.None;
             this.naviBarcode.Bar.BarMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.SmallMedium;
             this.naviBarcode.Bar.BarMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.Text;
+            this.naviBarcode.Bar.CheckButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
+            this.naviBarcode.Bar.ItemSizing = ComponentFactory.Krypton.Navigator.BarItemSizing.SameHeight;
+            this.naviBarcode.Bar.TabBorderStyle = ComponentFactory.Krypton.Toolkit.TabBorderStyle.RoundedOutsizeMedium;
+            this.naviBarcode.Bar.TabStyle = ComponentFactory.Krypton.Toolkit.TabStyle.HighProfile;
+            this.naviBarcode.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.Context;
             this.naviBarcode.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.naviBarcode.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.naviBarcode.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.None;
             this.naviBarcode.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.naviBarcode.Button.ContextMenuMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
+            this.naviBarcode.Button.ContextMenuMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
+            this.naviBarcode.Button.NextButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
+            this.naviBarcode.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
+            this.naviBarcode.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
+            this.naviBarcode.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.naviBarcode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.naviBarcode.Group.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
+            this.naviBarcode.Group.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ControlClient;
+            this.naviBarcode.Header.HeaderStyleBar = ComponentFactory.Krypton.Toolkit.HeaderStyle.Secondary;
+            this.naviBarcode.Header.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Primary;
+            this.naviBarcode.Header.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Secondary;
             this.naviBarcode.Location = new System.Drawing.Point(0, 35);
             this.naviBarcode.Name = "naviBarcode";
+            this.naviBarcode.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarTabGroup;
             this.naviBarcode.Padding = new System.Windows.Forms.Padding(3);
+            this.naviBarcode.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
             this.naviBarcode.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageBarcode});
-            this.naviBarcode.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.naviBarcode.Panel.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
             this.naviBarcode.SelectedIndex = 0;
             this.naviBarcode.Size = new System.Drawing.Size(833, 415);
-            this.naviBarcode.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("HY헤드라인M", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.naviBarcode.TabIndex = 3;
             this.naviBarcode.Text = "navi";
             // 
@@ -69,17 +87,18 @@
             this.pageBarcode.LastVisibleSet = true;
             this.pageBarcode.MinimumSize = new System.Drawing.Size(50, 50);
             this.pageBarcode.Name = "pageBarcode";
-            this.pageBarcode.Size = new System.Drawing.Size(831, 386);
+            this.pageBarcode.Size = new System.Drawing.Size(831, 388);
             this.pageBarcode.Text = "바코드 정보";
+            this.pageBarcode.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.pageBarcode.ToolTipTitle = "Page ToolTip";
             this.pageBarcode.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
             // 
             // uscList
             // 
             this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscList.Location = new System.Drawing.Point(0, 68);
+            this.uscList.Location = new System.Drawing.Point(0, 75);
             this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(831, 318);
+            this.uscList.Size = new System.Drawing.Size(831, 313);
             this.uscList.TabIndex = 1;
             // 
             // barcodeSearch1
@@ -87,7 +106,7 @@
             this.barcodeSearch1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barcodeSearch1.Location = new System.Drawing.Point(0, 0);
             this.barcodeSearch1.Name = "barcodeSearch1";
-            this.barcodeSearch1.Size = new System.Drawing.Size(831, 68);
+            this.barcodeSearch1.Size = new System.Drawing.Size(831, 75);
             this.barcodeSearch1.TabIndex = 0;
             this.barcodeSearch1.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Basic.BarCode.BarcodeSearch.SearchButtonClickedEventArgs>(this.BarcodeSearch1_SearchButtonClicked);
             // 
@@ -100,6 +119,9 @@
             this.uscTopMenu.Size = new System.Drawing.Size(833, 35);
             this.uscTopMenu.TabIndex = 0;
             this.uscTopMenu.InsertButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs>(this.UscTopMenu_InsertButtonClicked);
+            this.uscTopMenu.DeleteButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.DeleteButtonClickedEventArgs>(this.UscTopMenu_DeleteButtonClicked);
+            this.uscTopMenu.ExcelButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs>(this.UscTopMenu_ExcelButtonClicked);
+            this.uscTopMenu.UpdateButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs>(this.UscTopMenu_UpdateButtonClicked);
             // 
             // BarcodeForm
             // 

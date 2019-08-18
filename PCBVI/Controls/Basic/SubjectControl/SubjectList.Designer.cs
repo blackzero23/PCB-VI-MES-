@@ -30,28 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.dbsItem = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsFirstDivision = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsSecondDivision = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsFirstDivision = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsSecondDivision = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
+            this.dbsItem = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbsItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFirstDivision)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSecondDivision)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbsItem)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvList
             // 
             this.dgvList.AllowUserToAddRows = false;
-            this.dgvList.AllowUserToDeleteRows = false;
             this.dgvList.AllowUserToResizeColumns = false;
             this.dgvList.AllowUserToResizeRows = false;
             this.dgvList.AutoGenerateColumns = false;
@@ -75,22 +74,6 @@
             this.dgvList.Size = new System.Drawing.Size(800, 150);
             this.dgvList.TabIndex = 0;
             // 
-            // dbsItem
-            // 
-            this.dbsItem.DataSource = typeof(PCBVI.Data.Item);
-            // 
-            // bdsFirstDivision
-            // 
-            this.bdsFirstDivision.DataSource = typeof(PCBVI.Data.FirstItemDivision);
-            // 
-            // bdsSecondDivision
-            // 
-            this.bdsSecondDivision.DataSource = typeof(PCBVI.Data.SecondItemDivision);
-            // 
-            // bdsWorkPlace
-            // 
-            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
-            // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "FirstItemDivisionId";
@@ -102,6 +85,10 @@
             this.dataGridViewTextBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn10.ValueMember = "FirstItemDivisionId";
+            // 
+            // bdsFirstDivision
+            // 
+            this.bdsFirstDivision.DataSource = typeof(PCBVI.Data.FirstItemDivision);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -129,6 +116,10 @@
             this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn11.ValueMember = "SecondItemDivisionId";
             // 
+            // bdsSecondDivision
+            // 
+            this.bdsSecondDivision.DataSource = typeof(PCBVI.Data.SecondItemDivision);
+            // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Quantity";
@@ -155,6 +146,14 @@
             this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn7.ValueMember = "WorkPlaceId";
             // 
+            // bdsWorkPlace
+            // 
+            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
+            // 
+            // dbsItem
+            // 
+            this.dbsItem.DataSource = typeof(PCBVI.Data.Item);
+            // 
             // SubjectList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -163,10 +162,10 @@
             this.Name = "SubjectList";
             this.Size = new System.Drawing.Size(800, 150);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbsItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFirstDivision)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSecondDivision)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbsItem)).EndInit();
             this.ResumeLayout(false);
 
         }

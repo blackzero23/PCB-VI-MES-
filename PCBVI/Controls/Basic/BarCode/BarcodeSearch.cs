@@ -25,9 +25,6 @@ namespace PCBVI.Controls.Basic.BarCode
             if (DesignMode)
                 return;
 
-            List<Barcode> barcodes = DB.BarCode.GetAll();
-            //barcodes.Insert(0, new Barcode(""));
-            cbbBarcodeName.DataSource = barcodes;
 
             List<Lot> lots = DB.Lot.GetAll();
             lots.Insert(0, new Lot(""));
@@ -44,9 +41,9 @@ namespace PCBVI.Controls.Basic.BarCode
                 SearchButtonClicked(this, e);
         }
 
-        private SearchButtonClickedEventArgs OnSearchButtonClicked(int lotId, int barcodeId)
+        private SearchButtonClickedEventArgs OnSearchButtonClicked(int lotId)
         {
-            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(lotId, barcodeId);
+            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(lotId);
             OnSearchButtonClicked(args);
 
             return args;
@@ -63,26 +60,23 @@ namespace PCBVI.Controls.Basic.BarCode
         public class SearchButtonClickedEventArgs : EventArgs
         {
             public int LotId { get; set; }
-            public int BarcodeId { get; set; }
 
             public SearchButtonClickedEventArgs()
             {
             }
 
-            public SearchButtonClickedEventArgs(int lotId, int barcodeId)
+            public SearchButtonClickedEventArgs(int lotId)
             {
                 LotId = lotId;
-                BarcodeId = barcodeId;
             }
         }
         #endregion
-
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            int lotId = (int)cbbLotNo.SelectedValue;
-            int barcodeId = (int)cbbBarcodeName.SelectedValue;
+            int lotId = (int)cbbLotNo.SelectedValue;           
 
-            OnSearchButtonClicked(lotId, barcodeId);
+            OnSearchButtonClicked(lotId);
+
         }
     }
 }

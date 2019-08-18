@@ -77,6 +77,8 @@
             this.inspectionStandardTypeDataGridViewTextBoxColumn.DataPropertyName = "InspectionStandardTypeId";
             this.inspectionStandardTypeDataGridViewTextBoxColumn.DataSource = this.bdsInspectionStandardType;
             this.inspectionStandardTypeDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.inspectionStandardTypeDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.inspectionStandardTypeDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.inspectionStandardTypeDataGridViewTextBoxColumn.HeaderText = "검사유형명";
             this.inspectionStandardTypeDataGridViewTextBoxColumn.Name = "inspectionStandardTypeDataGridViewTextBoxColumn";
             this.inspectionStandardTypeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -106,7 +108,6 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bdsInspectionStandardType;
         private System.Windows.Forms.BindingSource bdsInspectionStandard;
         private System.Windows.Forms.DataGridViewTextBoxColumn inspectionStandardIdDataGridViewTextBoxColumn;
