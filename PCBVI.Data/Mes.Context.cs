@@ -47,6 +47,7 @@ namespace PCBVI.Data
         public virtual DbSet<MaterialHistory> MaterialHistories { get; set; }
         public virtual DbSet<MaterialsInRe> MaterialsInRes { get; set; }
         public virtual DbSet<MaterialsManage> MaterialsManages { get; set; }
+        public virtual DbSet<MaterialState> MaterialStates { get; set; }
         public virtual DbSet<Process> Processes { get; set; }
         public virtual DbSet<ProcessDefect> ProcessDefects { get; set; }
         public virtual DbSet<ProductionHistory> ProductionHistories { get; set; }

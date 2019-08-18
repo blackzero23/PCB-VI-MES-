@@ -32,5 +32,9 @@ namespace PCBVI.Data.Data
         public static WorkOrderData WorkOrder { get; } = new WorkOrderData();
 
         public static WorkLogData WorkLog { get; } = new WorkLogData();
+
+        public static MaterialStateData MaterialState { get; } = new MaterialStateData();
+        public static MaterialsManageData MaterialsManage { get; } = new MaterialsManageData();
+
     }
 }

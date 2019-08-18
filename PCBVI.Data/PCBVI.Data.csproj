@@ -73,6 +73,8 @@
     <Compile Include="Data\LastInspectionData.cs" />
     <Compile Include="Data\LotData.cs" />
     <Compile Include="Data\MaterialHistoryData.cs" />
+    <Compile Include="Data\MaterialsManageData.cs" />
+    <Compile Include="Data\MaterialStateData.cs" />
     <Compile Include="Data\ProcessData.cs" />
     <Compile Include="Data\RotationGroupData.cs" />
     <Compile Include="Data\WorkLogData.cs" />
@@ -97,6 +99,7 @@
     <Compile Include="Entities\FHistoryDivision.cs" />
     <Compile Include="Entities\Lot.cs" />
     <Compile Include="Entities\FirstInspection.cs" />
+    <Compile Include="Entities\MaterialsManage.cs" />
     <Compile Include="Entities\Process.cs" />
     <Compile Include="Entities\WorkLog.cs" />
     <Compile Include="Entities\WorkPlace.cs" />
@@ -152,6 +155,9 @@
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="MaterialsManage.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialState.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="Mes.Context.cs">
