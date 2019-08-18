@@ -32,9 +32,9 @@
             this.pageEmployee = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonSplitContainer1 = new ComponentFactory.Krypton.Toolkit.KryptonSplitContainer();
             this.uscList = new PCBVI.Controls.Basic.Facilities.FacilitiesList();
-            this.uscSpec = new PCBVI.Controls.Basic.Facilities.FacilitiesSpec();
-            this.facilitiesSearch1 = new PCBVI.Controls.Basic.Facilities.FacilitiesSearch();
-            this.topMenubar1 = new PCBVI.Controls.CommonControl.TopMenubar();
+            this.uscSpec = new PCBVI.Controls.Basic.Facilities.facilitiesSpec();
+            this.uscSearch = new PCBVI.Controls.Basic.Facilities.FacilitiesSearch();
+            this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
             ((System.ComponentModel.ISupportInitialize)(this.naviEmployee)).BeginInit();
             this.naviEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageEmployee)).BeginInit();
@@ -52,10 +52,7 @@
             this.naviEmployee.Bar.BarMapExtraText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.None;
             this.naviEmployee.Bar.BarMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.SmallMedium;
             this.naviEmployee.Bar.BarMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.Text;
-            this.naviEmployee.Bar.CheckButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
             this.naviEmployee.Bar.ItemSizing = ComponentFactory.Krypton.Navigator.BarItemSizing.SameHeight;
-            this.naviEmployee.Bar.TabBorderStyle = ComponentFactory.Krypton.Toolkit.TabBorderStyle.RoundedOutsizeMedium;
-            this.naviEmployee.Bar.TabStyle = ComponentFactory.Krypton.Toolkit.TabStyle.HighProfile;
             this.naviEmployee.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.Context;
             this.naviEmployee.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.naviEmployee.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
@@ -68,19 +65,12 @@
             this.naviEmployee.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
             this.naviEmployee.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.naviEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.naviEmployee.Group.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
-            this.naviEmployee.Group.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ControlClient;
-            this.naviEmployee.Header.HeaderStyleBar = ComponentFactory.Krypton.Toolkit.HeaderStyle.Secondary;
-            this.naviEmployee.Header.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Primary;
-            this.naviEmployee.Header.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Secondary;
             this.naviEmployee.Location = new System.Drawing.Point(0, 35);
             this.naviEmployee.Name = "naviEmployee";
             this.naviEmployee.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarTabGroup;
             this.naviEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.naviEmployee.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
             this.naviEmployee.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageEmployee});
-            this.naviEmployee.Panel.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
             this.naviEmployee.SelectedIndex = 0;
             this.naviEmployee.Size = new System.Drawing.Size(800, 415);
             this.naviEmployee.TabIndex = 3;
@@ -90,14 +80,13 @@
             // 
             this.pageEmployee.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
             this.pageEmployee.Controls.Add(this.kryptonSplitContainer1);
-            this.pageEmployee.Controls.Add(this.facilitiesSearch1);
+            this.pageEmployee.Controls.Add(this.uscSearch);
             this.pageEmployee.Flags = 65534;
             this.pageEmployee.LastVisibleSet = true;
             this.pageEmployee.MinimumSize = new System.Drawing.Size(50, 50);
             this.pageEmployee.Name = "pageEmployee";
             this.pageEmployee.Size = new System.Drawing.Size(798, 388);
             this.pageEmployee.Text = "설비정보";
-            this.pageEmployee.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.pageEmployee.ToolTipTitle = "Page ToolTip";
             this.pageEmployee.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
             // 
@@ -136,23 +125,27 @@
             this.uscSpec.Size = new System.Drawing.Size(397, 313);
             this.uscSpec.TabIndex = 0;
             // 
-            // facilitiesSearch1
+            // uscSearch
             // 
-            this.facilitiesSearch1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.facilitiesSearch1.Location = new System.Drawing.Point(0, 0);
-            this.facilitiesSearch1.Name = "facilitiesSearch1";
-            this.facilitiesSearch1.Size = new System.Drawing.Size(798, 75);
-            this.facilitiesSearch1.TabIndex = 0;
-            this.facilitiesSearch1.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Basic.Facilities.FacilitiesSearch.SearchButtonClickedEventArgs>(this.FacilitiesSearch1_SearchButtonClicked);
+            this.uscSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscSearch.Location = new System.Drawing.Point(0, 0);
+            this.uscSearch.Name = "uscSearch";
+            this.uscSearch.Size = new System.Drawing.Size(798, 75);
+            this.uscSearch.TabIndex = 0;
+            this.uscSearch.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Basic.Facilities.FacilitiesSearch.SearchButtonClickedEventArgs>(this.FacilitiesSearch1_SearchButtonClicked);
             // 
-            // topMenubar1
+            // uscTopMenu
             // 
-            this.topMenubar1.BackColor = System.Drawing.Color.White;
-            this.topMenubar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topMenubar1.Location = new System.Drawing.Point(0, 0);
-            this.topMenubar1.Name = "topMenubar1";
-            this.topMenubar1.Size = new System.Drawing.Size(800, 35);
-            this.topMenubar1.TabIndex = 0;
+            this.uscTopMenu.BackColor = System.Drawing.Color.White;
+            this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
+            this.uscTopMenu.Name = "uscTopMenu";
+            this.uscTopMenu.Size = new System.Drawing.Size(800, 35);
+            this.uscTopMenu.TabIndex = 0;
+            this.uscTopMenu.InsertButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs>(this.UscTopMenu_InsertButtonClicked);
+            this.uscTopMenu.DeleteButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.DeleteButtonClickedEventArgs>(this.UscTopMenu_DeleteButtonClicked);
+            this.uscTopMenu.ExcelButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs>(this.UscTopMenu_ExcelButtonClicked);
+            this.uscTopMenu.UpdateButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs>(this.UscTopMenu_UpdateButtonClicked_1);
             // 
             // FacilitiesForm
             // 
@@ -160,7 +153,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.naviEmployee);
-            this.Controls.Add(this.topMenubar1);
+            this.Controls.Add(this.uscTopMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FacilitiesForm";
             this.Text = "EquipmentForm";
@@ -180,12 +173,12 @@
 
         #endregion
 
-        private Controls.CommonControl.TopMenubar topMenubar1;
+        private Controls.CommonControl.TopMenubar uscTopMenu;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator naviEmployee;
         private ComponentFactory.Krypton.Navigator.KryptonPage pageEmployee;
-        private Controls.Basic.Facilities.FacilitiesSearch facilitiesSearch1;
+        private Controls.Basic.Facilities.FacilitiesSearch uscSearch;
         private ComponentFactory.Krypton.Toolkit.KryptonSplitContainer kryptonSplitContainer1;
         private Controls.Basic.Facilities.FacilitiesList uscList;
-        private Controls.Basic.Facilities.FacilitiesSpec uscSpec;
+        private Controls.Basic.Facilities.facilitiesSpec uscSpec;
     }
 }

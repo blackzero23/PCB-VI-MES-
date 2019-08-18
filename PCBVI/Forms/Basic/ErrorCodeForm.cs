@@ -18,13 +18,41 @@ namespace PCBVI.Forms.Basic
             InitializeComponent();
         }
 
+        private string _code;
+        private string _kind;
+        private string _type;
+
         private void UscSearch_SearchClicked(object sender, Controls.Basic.ErrorCode.ErrorCodeSearch.SearchClickedEventArgs e)
         {
-            var errorCodes = DB.ErrorCode.Search(e.Code, e.Kind, e.Type);
-            
-            errorCodeList1.SetDataSource(errorCodes);
+            uscList.SetDataSource(DB.ErrorCode.Search(e.Code, e.Kind, e.Type));
+            _code = e.Code;
+            _kind = e.Kind;
+            _type = e.Type;
         }
 
+        private void UscTopMenu_InsertButtonClicked(object sender, Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs e)
+        {
+            uscTopMenu.OpenInsertForm(new ErrorcodeInsertForm());
+        }
+
+        private void UscTopMenu_ExcelButtonClicked(object sender, Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs e)
+        {
+            uscTopMenu.SaveExcelFile(uscList.GetListView(), "불량 정보");
+        }
+
+        private void UscTopMenu_UpdateButtonClicked(object sender, Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs e)
+        {
+            uscTopMenu.UpdateAll(uscList.GetUpateList());
+            MessageBox.Show("저장이 완료되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void UscTopMenu_DeleteButtonClicked(object sender, Controls.CommonControl.TopMenubar.DeleteButtonClickedEventArgs e)
+        {
+            Data.ErrorCode errorCodes = uscList.GetCurrentLow();
+            uscTopMenu.DeleteAt(errorCodes);
+            uscList.SetDataSource(DB.ErrorCode.Search(_code, _kind, _type));
+            MessageBox.Show("삭제가 완료되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
     }
 }

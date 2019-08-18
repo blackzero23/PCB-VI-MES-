@@ -236,10 +236,17 @@
           <Property Name="MaterialsManageId" Type="int" Nullable="false" />
           <Property Name="LotId" Type="int" Nullable="false" />
           <Property Name="ProcessId" Type="int" Nullable="false" />
-          <Property Name="CurrentState" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialStateId" Type="int" Nullable="false" />
           <Property Name="PassQuantity" Type="int" Nullable="false" />
           <Property Name="ErrorQuantity" Type="int" Nullable="false" />
           <Property Name="TotalQuantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MaterialState">
+          <Key>
+            <PropertyRef Name="MaterialStateId" />
+          </Key>
+          <Property Name="MaterialStateId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Process">
           <Key>
@@ -734,6 +741,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_MaterialsManage_MaterialState">
+          <End Role="MaterialState" Type="Self.MaterialState" Multiplicity="1" />
+          <End Role="MaterialsManage" Type="Self.MaterialsManage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialState">
+              <PropertyRef Name="MaterialStateId" />
+            </Principal>
+            <Dependent Role="MaterialsManage">
+              <PropertyRef Name="MaterialStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_MaterialsManage_Process">
           <End Role="Process" Type="Self.Process" Multiplicity="1" />
           <End Role="MaterialsManage" Type="Self.MaterialsManage" Multiplicity="*" />
@@ -1009,6 +1028,7 @@
           <EntitySet Name="MaterialHistory" EntityType="Self.MaterialHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MaterialsInRe" EntityType="Self.MaterialsInRe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MaterialsManage" EntityType="Self.MaterialsManage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaterialState" EntityType="Self.MaterialState" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Process" EntityType="Self.Process" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProcessDefect" EntityType="Self.ProcessDefect" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductionHistory" EntityType="Self.ProductionHistory" Schema="dbo" store:Type="Tables" />
@@ -1148,6 +1168,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_MaterialsManage_Lot" Association="Self.FK_MaterialsManage_Lot">
             <End Role="Lot" EntitySet="Lot" />
+            <End Role="MaterialsManage" EntitySet="MaterialsManage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialsManage_MaterialState" Association="Self.FK_MaterialsManage_MaterialState">
+            <End Role="MaterialState" EntitySet="MaterialState" />
             <End Role="MaterialsManage" EntitySet="MaterialsManage" />
           </AssociationSet>
           <AssociationSet Name="FK_MaterialsManage_Process" Association="Self.FK_MaterialsManage_Process">
@@ -1536,12 +1560,21 @@
           <Property Name="MaterialsManageId" Type="Int32" Nullable="false" />
           <Property Name="LotId" Type="Int32" Nullable="false" />
           <Property Name="ProcessId" Type="Int32" Nullable="false" />
-          <Property Name="CurrentState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaterialStateId" Type="Int32" Nullable="false" />
           <Property Name="PassQuantity" Type="Int32" Nullable="false" />
           <Property Name="ErrorQuantity" Type="Int32" Nullable="false" />
           <Property Name="TotalQuantity" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Lot" Relationship="Self.FK_MaterialsManage_Lot" FromRole="MaterialsManage" ToRole="Lot" />
+          <NavigationProperty Name="MaterialState" Relationship="Self.FK_MaterialsManage_MaterialState" FromRole="MaterialsManage" ToRole="MaterialState" />
           <NavigationProperty Name="Process" Relationship="Self.FK_MaterialsManage_Process" FromRole="MaterialsManage" ToRole="Process" />
+        </EntityType>
+        <EntityType Name="MaterialState">
+          <Key>
+            <PropertyRef Name="MaterialStateId" />
+          </Key>
+          <Property Name="MaterialStateId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="MaterialsManages" Relationship="Self.FK_MaterialsManage_MaterialState" FromRole="MaterialState" ToRole="MaterialsManage" />
         </EntityType>
         <EntityType Name="Process">
           <Key>
@@ -2197,6 +2230,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_MaterialsManage_MaterialState">
+          <End Role="MaterialState" Type="Self.MaterialState" Multiplicity="1" />
+          <End Role="MaterialsManage" Type="Self.MaterialsManage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialState">
+              <PropertyRef Name="MaterialStateId" />
+            </Principal>
+            <Dependent Role="MaterialsManage">
+              <PropertyRef Name="MaterialStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_MaterialsManage_Process">
           <End Role="Process" Type="Self.Process" Multiplicity="1" />
           <End Role="MaterialsManage" Type="Self.MaterialsManage" Multiplicity="*" />
@@ -2352,6 +2397,7 @@
           <EntitySet Name="MaterialHistories" EntityType="Self.MaterialHistory" />
           <EntitySet Name="MaterialsInRes" EntityType="Self.MaterialsInRe" />
           <EntitySet Name="MaterialsManages" EntityType="Self.MaterialsManage" />
+          <EntitySet Name="MaterialStates" EntityType="Self.MaterialState" />
           <EntitySet Name="Processes" EntityType="Self.Process" />
           <EntitySet Name="ProcessDefects" EntityType="Self.ProcessDefect" />
           <EntitySet Name="ProductionHistories" EntityType="Self.ProductionHistory" />
@@ -2532,6 +2578,10 @@
           <AssociationSet Name="FK_MaterialsInRe_WorkPlace" Association="Self.FK_MaterialsInRe_WorkPlace">
             <End Role="WorkPlace" EntitySet="WorkPlaces" />
             <End Role="MaterialsInRe" EntitySet="MaterialsInRes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialsManage_MaterialState" Association="Self.FK_MaterialsManage_MaterialState">
+            <End Role="MaterialState" EntitySet="MaterialStates" />
+            <End Role="MaterialsManage" EntitySet="MaterialsManages" />
           </AssociationSet>
           <AssociationSet Name="FK_MaterialsManage_Process" Association="Self.FK_MaterialsManage_Process">
             <End Role="Process" EntitySet="Processes" />
@@ -2834,10 +2884,18 @@
                 <ScalarProperty Name="MaterialsManageId" ColumnName="MaterialsManageId" />
                 <ScalarProperty Name="LotId" ColumnName="LotId" />
                 <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
-                <ScalarProperty Name="CurrentState" ColumnName="CurrentState" />
+                <ScalarProperty Name="MaterialStateId" ColumnName="MaterialStateId" />
                 <ScalarProperty Name="PassQuantity" ColumnName="PassQuantity" />
                 <ScalarProperty Name="ErrorQuantity" ColumnName="ErrorQuantity" />
                 <ScalarProperty Name="TotalQuantity" ColumnName="TotalQuantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialStates">
+            <EntityTypeMapping TypeName="PCBVIModel.MaterialState">
+              <MappingFragment StoreEntitySet="MaterialState">
+                <ScalarProperty Name="MaterialStateId" ColumnName="MaterialStateId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

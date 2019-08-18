@@ -168,7 +168,6 @@
         private System.Windows.Forms.BindingSource bdsFirstInspection;
         private System.Windows.Forms.BindingSource bdsItem;
         private System.Windows.Forms.BindingSource bdsWorkPlace;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oCompanyNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn itemIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn enterDateDataGridViewTextBoxColumn;

@@ -235,6 +235,18 @@
     <Compile Include="Controls\Materials\MaterialsHSC.Designer.cs">
       <DependentUpon>MaterialsHSC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Production\MaterialsManage\MaterialManageSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\MaterialsManage\MaterialManageSearch.Designer.cs">
+      <DependentUpon>MaterialManageSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Production\MaterialsManage\MateriaMangeListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\MaterialsManage\MateriaMangeListControl.Designer.cs">
+      <DependentUpon>MateriaMangeListControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Production\ProductionHistory\ProductionList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -367,6 +379,12 @@
     <Compile Include="Forms\Basic\EmployeeInsertForm.Designer.cs">
       <DependentUpon>EmployeeInsertForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Basic\ErrorcodeInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Basic\ErrorcodeInsertForm.Designer.cs">
+      <DependentUpon>ErrorcodeInsertForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Basic\FacilitiesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -378,6 +396,12 @@
     </Compile>
     <Compile Include="Forms\Basic\ErrorCodeForm.Designer.cs">
       <DependentUpon>ErrorCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Basic\FacilitiesInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Basic\FacilitiesInsertForm.Designer.cs">
+      <DependentUpon>FacilitiesInsertForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Basic\InspectionStandardForm.cs">
       <SubType>Form</SubType>
@@ -648,6 +672,12 @@
     <EmbeddedResource Include="Controls\Materials\MaterialsHSC.resx">
       <DependentUpon>MaterialsHSC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\MaterialsManage\MaterialManageSearch.resx">
+      <DependentUpon>MaterialManageSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\MaterialsManage\MateriaMangeListControl.resx">
+      <DependentUpon>MateriaMangeListControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Production\ProductionHistory\ProductionList.resx">
       <DependentUpon>ProductionList.cs</DependentUpon>
     </EmbeddedResource>
@@ -849,6 +879,9 @@
     <None Include="Properties\DataSources\PCBVI.Data.LotBarCode.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Item.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.MaterialHistory.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.MaterialManageState.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.MaterialsManage.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.MaterialState.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Process.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Product.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.RotationGroup.datasource" />

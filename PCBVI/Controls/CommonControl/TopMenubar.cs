@@ -41,6 +41,15 @@ namespace PCBVI.Controls.CommonControl
             }
         }
 
+        public void Update<T>(T entity) where T : class
+        {
+            using (var context = new PCBVIEntities())
+            {
+                context.Entry(entity).State = EntityState.Modified;
+                context.SaveChanges();
+            }
+        }
+
         //변경사항 삭제
         public void DeleteAt<T>(T entity) where T : class
         {

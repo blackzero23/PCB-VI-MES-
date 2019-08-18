@@ -12,23 +12,27 @@ using PCBVI.Data.Data;
 
 namespace PCBVI.Controls.Basic.Facilities
 {
-    public partial class FacilitiesSpec : UserControl
+    public partial class facilitiesSpec : UserControl
     {
-        public FacilitiesSpec()
+        public facilitiesSpec()
         {
             InitializeComponent();
         }
 
+        Facility _facility;
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
             if (DesignMode)
                 return;
-            bdsProcess.DataSource = DB.Process.GetAll();
+            List<Process> processes=DB.Process.GetAll();
+            processes.Insert(0, new Process(""));
+            bdsProcess.DataSource = processes;
+
         }
-        internal void setDataInfo(Facility facilities)
+        public void setDataInfo(Facility facilities)
         {
- 
+            _facility = facilities;
             txbNo.Text = facilities.FacilitiesNo.ToString();
             txbName.Text = facilities.Name;
             cbbProcess.SelectedValue = facilities.ProcessId;
@@ -41,5 +45,29 @@ namespace PCBVI.Controls.Basic.Facilities
             txbvolume.Text = facilities.volume.ToString();
 
         }
+        
+        public Facility GetUpateInfo()
+        {
+
+            _facility.FacilitiesNo = int.Parse(txbNo.Text);
+            _facility.Name = txbName.Text;
+            _facility.ProcessId = (int)cbbProcess.SelectedValue;
+            if (txbState.Text == "검사")
+                _facility.InspectionState = true;
+            else if(txbState.Text=="미검사")
+                _facility.InspectionState = false;
+            if (txbUseState.Text == "사용")
+                _facility.UseState = true;
+            else if (txbUseState.Text == "미사용")
+                _facility.UseState = false;
+            _facility.Width = double.Parse(txbWidth.Text);
+            _facility.length= double.Parse(txbLength.Text);
+            _facility.Height= double.Parse(txbHeight.Text);
+            _facility.Weight= double.Parse(txbWeight.Text);
+            _facility.volume= double.Parse(txbvolume.Text);
+
+            return _facility;
+        }
+
     }
 }

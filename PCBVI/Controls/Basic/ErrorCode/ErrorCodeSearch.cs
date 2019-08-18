@@ -28,11 +28,15 @@ namespace PCBVI.Controls.Basic.ErrorCode
                 return;
 
             List<Data.ErrorCode> errorCodes = DB.ErrorCode.GetAll();
-            //errorCodes.IndexOf(0,new Data.ErrorCode("없음"));
+            errorCodes.Insert(0, new Data.ErrorCode(""));
             cbbErrorCode.DataSource = errorCodes;
+
             List<Data.ErrorType> errorTypes = DB.ErrorType.GetAll();
+            errorTypes.Insert(0, new Data.ErrorType(""));
             cbbErrorType.DataSource = errorTypes;
+
             var errorKinds = DB.ErrorKind.GetAll();
+            errorKinds.Insert(0, new Data.ErrorKind(""));
             cbbErrorKind.DataSource = errorKinds;
         }
 

@@ -41,38 +41,18 @@
             // 
             // naviBarcode
             // 
-            this.naviBarcode.Bar.BarMapExtraText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.None;
             this.naviBarcode.Bar.BarMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.SmallMedium;
             this.naviBarcode.Bar.BarMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.Text;
-            this.naviBarcode.Bar.CheckButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
-            this.naviBarcode.Bar.ItemSizing = ComponentFactory.Krypton.Navigator.BarItemSizing.SameHeight;
-            this.naviBarcode.Bar.TabBorderStyle = ComponentFactory.Krypton.Toolkit.TabBorderStyle.RoundedOutsizeMedium;
-            this.naviBarcode.Bar.TabStyle = ComponentFactory.Krypton.Toolkit.TabStyle.HighProfile;
-            this.naviBarcode.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.Context;
             this.naviBarcode.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.naviBarcode.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.naviBarcode.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.None;
             this.naviBarcode.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
-            this.naviBarcode.Button.ContextMenuMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
-            this.naviBarcode.Button.ContextMenuMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
-            this.naviBarcode.Button.NextButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
-            this.naviBarcode.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
-            this.naviBarcode.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
-            this.naviBarcode.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.naviBarcode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.naviBarcode.Group.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
-            this.naviBarcode.Group.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ControlClient;
-            this.naviBarcode.Header.HeaderStyleBar = ComponentFactory.Krypton.Toolkit.HeaderStyle.Secondary;
-            this.naviBarcode.Header.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Primary;
-            this.naviBarcode.Header.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Secondary;
             this.naviBarcode.Location = new System.Drawing.Point(0, 35);
             this.naviBarcode.Name = "naviBarcode";
-            this.naviBarcode.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarTabGroup;
             this.naviBarcode.Padding = new System.Windows.Forms.Padding(3);
-            this.naviBarcode.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
             this.naviBarcode.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageBarcode});
-            this.naviBarcode.Panel.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
             this.naviBarcode.SelectedIndex = 0;
             this.naviBarcode.Size = new System.Drawing.Size(833, 415);
             this.naviBarcode.TabIndex = 3;
@@ -89,7 +69,6 @@
             this.pageBarcode.Name = "pageBarcode";
             this.pageBarcode.Size = new System.Drawing.Size(831, 388);
             this.pageBarcode.Text = "바코드 정보";
-            this.pageBarcode.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.pageBarcode.ToolTipTitle = "Page ToolTip";
             this.pageBarcode.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
             // 
