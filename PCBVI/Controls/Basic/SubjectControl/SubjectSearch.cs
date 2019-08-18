@@ -30,17 +30,20 @@ namespace PCBVI.Controls.Basic.SubjectControl
 
             bdsSecondDivision.DataSource =
                 DB.SecondItemDivision.GetAll();
+
+            bdsItem.DataSource =
+                DB.Item.GetAll();
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            //string itemCode = txbItemCode.Text;
-            //string itemName = txbItemName.Text;
+           
+            int itemName = (int)cbbName.SelectedValue;
             int firstDivision = (int)cbbFirstDivision.SelectedValue;
             int secondDivision = (int)
                 cbbSecondDivision.SelectedValue;
 
-           // OnSearchButtonClicked(itemCode, itemName, firstDivision, secondDivision);
+            OnSearchButtonClicked( itemName, firstDivision, secondDivision);
         }
 
         #region SearchButtonClicked event things for C# 3.0
@@ -52,9 +55,9 @@ namespace PCBVI.Controls.Basic.SubjectControl
                 SearchButtonClicked(this, e);
         }
 
-        private SearchButtonClickedEventArgs OnSearchButtonClicked(string itemCode, string itemName, int firstDivision, int secondDivision)
+        private SearchButtonClickedEventArgs OnSearchButtonClicked(int itemName, int firstDivision, int secondDivision)
         {
-            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(itemCode, itemName, firstDivision, secondDivision);
+            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs( itemName, firstDivision, secondDivision);
             OnSearchButtonClicked(args);
 
             return args;
@@ -70,8 +73,8 @@ namespace PCBVI.Controls.Basic.SubjectControl
 
         public class SearchButtonClickedEventArgs : EventArgs
         {
-            public string ItemCode { get; set; }
-            public string ItemName { get; set; }
+           
+            public int ItemName { get; set; }
             public int FirstDivision { get; set; }
             public int SecondDivision { get; set; }
 
@@ -79,9 +82,8 @@ namespace PCBVI.Controls.Basic.SubjectControl
             {
             }
 
-            public SearchButtonClickedEventArgs(string itemCode, string itemName, int firstDivision, int secondDivision)
+            public SearchButtonClickedEventArgs(int itemName, int firstDivision, int secondDivision)
             {
-                ItemCode = itemCode;
                 ItemName = itemName;
                 FirstDivision = firstDivision;
                 SecondDivision = secondDivision;
