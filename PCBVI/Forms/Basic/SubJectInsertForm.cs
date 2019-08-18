@@ -16,7 +16,7 @@ namespace PCBVI.Forms.Basic
         public SubJectInsertForm()
         {
             InitializeComponent();
-
+          
         }
 
         protected override void OnLoad(EventArgs e)
@@ -37,40 +37,46 @@ namespace PCBVI.Forms.Basic
 
         }
 
-        private void BtnConfirm_Click(object sender, EventArgs e)
+        private void BtnConfirm_Click_1(object sender, EventArgs e)
         {
             //널 값을 체크하고 거부할 수 있는 능력을 배양해야 할 것이다.
             //하나하나 if hasValue를 해야 하나?
-            string first = TxbFirst.Text;
-            string code = TxbCode.Text;
-            string name = TxbName.Text;
-            string second = TxbSecond.Text;
-            string quantity = TxbQuantity.Text;
-            string note = TxbNote.Text;
-            string place = TxbWorkPlace.Text;
+            string first = txbFirst.Text;
+            string code = txbCode.Text;
+            string name = txbName.Text;
+            string second = txbSecond.Text;
+            string quantity = txbQuantity.Text;
+            string note = txbNote.Text;
+            string place = txbPlace.Text;
 
-            
-            if(first.Length <= 0 || code.Length <= 0 || name.Length <= 0 || second.Length <= 0 || quantity.Length <= 0 || place.Length <=0)
+
+            if (first.Length <= 0 || code.Length <= 0 || name.Length <= 0 || second.Length <= 0 || quantity.Length <= 0 || place.Length <= 0)
             {
                 MessageBox.Show("입력값을 확인해주세요.");
                 return;
             }
 
             int test = 0;
-            bool isNum = int.TryParse(TxbQuantity.Text, out test);
+            bool isNum = int.TryParse(txbQuantity.Text, out test);
 
-            if(!isNum || test < 0)
+            if (!isNum || test < 0)
             {
                 MessageBox.Show("정수만 입력 가능합니다.");
 
-                TxbQuantity.Text = "";
+                txbQuantity.Text = "";
+                return;
             }
 
             MessageBox.Show("네 이놈!");
 
+            // 여기서 DB에 넣는 작업을 하고 그 후에
+
+
+            // 다시 DB 내용 다시 싹다 불러오게끔?
+            // 가능하다면 방금 넣은 것을 제일 상단에 표시하게끔
         }
 
-        private void TxbQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxbQuantity_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -79,18 +85,17 @@ namespace PCBVI.Forms.Basic
 
         }
 
-        
-        private void TxbQuantity_Leave(object sender, EventArgs e)
+        private void TxbQuantity_Leave_1(object sender, EventArgs e)
         {
-             int test = 0;
+            int test = 0;
 
-            bool isNum = int.TryParse(TxbQuantity.Text, out test);
+            bool isNum = int.TryParse(txbQuantity.Text, out test);
 
             if (!isNum || test < 0)
             {
                 MessageBox.Show("정수만 입력 가능합니다.");
 
-                TxbQuantity.Text = "";
+                txbQuantity.Text = "";
             }
 
         }

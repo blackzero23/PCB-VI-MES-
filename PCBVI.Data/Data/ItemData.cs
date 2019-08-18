@@ -8,12 +8,12 @@ namespace PCBVI.Data.Data
 {
     public class ItemData : EntityData<Item>
     {
-        public List<Item> Search(string itemCode, string itemName, int firstDivisionId, int secondDivisionId)
+        public List<Item> Search(int itemName, int firstDivisionId, int secondDivisionId)
         {
             using (PCBVIEntities context = DbContextFactory.Create())
             {
                 var query = from item in context.Items
-                            where item.Code.Equals(itemCode) && item.Name.Equals(itemName)
+                            where item.ItemId == itemName
                             && item.FirstItemDivisionId == firstDivisionId
                             && item.SecondItemDivisionId == secondDivisionId
                             select item;

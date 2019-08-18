@@ -24,5 +24,10 @@ namespace PCBVI.Forms.Basic
             uscList.SetItemDataSource(DB.InspectionStandard.Search(e.InspectionStandardType));
 
         }
+
+        private void UscTopMenu_InsertButtonClicked(object sender, Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs e)
+        {
+            uscTopMenu.OpenInsertForm(new InspectionStandardInsertForm());
+        }
     }
 }
