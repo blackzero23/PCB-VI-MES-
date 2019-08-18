@@ -43,10 +43,14 @@
             this.kryptonLabel8 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel9 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel10 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.cbbName = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cbbSecondDivision)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSecondDivision)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbFirstDivision)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFirstDivision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
             this.SuspendLayout();
             // 
             // SubjectName
@@ -101,7 +105,7 @@
             this.btnSearch.Location = new System.Drawing.Point(694, 29);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(90, 25);
-            this.btnSearch.TabIndex = 29;
+            this.btnSearch.TabIndex = 30;
             this.btnSearch.Values.Text = "검색";
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
@@ -110,10 +114,10 @@
             this.cbbSecondDivision.DataSource = this.bdsSecondDivision;
             this.cbbSecondDivision.DisplayMember = "Name";
             this.cbbSecondDivision.DropDownWidth = 121;
-            this.cbbSecondDivision.Location = new System.Drawing.Point(472, 28);
+            this.cbbSecondDivision.Location = new System.Drawing.Point(480, 28);
             this.cbbSecondDivision.Name = "cbbSecondDivision";
             this.cbbSecondDivision.Size = new System.Drawing.Size(121, 21);
-            this.cbbSecondDivision.TabIndex = 27;
+            this.cbbSecondDivision.TabIndex = 29;
             this.cbbSecondDivision.ValueMember = "SecondItemDivisionId";
             // 
             // bdsSecondDivision
@@ -125,7 +129,7 @@
             this.cbbFirstDivision.DataSource = this.bdsFirstDivision;
             this.cbbFirstDivision.DisplayMember = "Name";
             this.cbbFirstDivision.DropDownWidth = 121;
-            this.cbbFirstDivision.Location = new System.Drawing.Point(273, 28);
+            this.cbbFirstDivision.Location = new System.Drawing.Point(281, 28);
             this.cbbFirstDivision.Name = "cbbFirstDivision";
             this.cbbFirstDivision.Size = new System.Drawing.Size(121, 21);
             this.cbbFirstDivision.TabIndex = 28;
@@ -137,7 +141,7 @@
             // 
             // kryptonLabel8
             // 
-            this.kryptonLabel8.Location = new System.Drawing.Point(400, 29);
+            this.kryptonLabel8.Location = new System.Drawing.Point(408, 29);
             this.kryptonLabel8.Name = "kryptonLabel8";
             this.kryptonLabel8.Size = new System.Drawing.Size(66, 20);
             this.kryptonLabel8.TabIndex = 18;
@@ -145,7 +149,7 @@
             // 
             // kryptonLabel9
             // 
-            this.kryptonLabel9.Location = new System.Drawing.Point(22, 28);
+            this.kryptonLabel9.Location = new System.Drawing.Point(15, 28);
             this.kryptonLabel9.Name = "kryptonLabel9";
             this.kryptonLabel9.Size = new System.Drawing.Size(64, 20);
             this.kryptonLabel9.TabIndex = 19;
@@ -153,16 +157,32 @@
             // 
             // kryptonLabel10
             // 
-            this.kryptonLabel10.Location = new System.Drawing.Point(201, 28);
+            this.kryptonLabel10.Location = new System.Drawing.Point(209, 28);
             this.kryptonLabel10.Name = "kryptonLabel10";
             this.kryptonLabel10.Size = new System.Drawing.Size(66, 20);
             this.kryptonLabel10.TabIndex = 20;
             this.kryptonLabel10.Values.Text = "품목구분 : ";
             // 
+            // cbbName
+            // 
+            this.cbbName.DataSource = this.bdsItem;
+            this.cbbName.DisplayMember = "Name";
+            this.cbbName.DropDownWidth = 121;
+            this.cbbName.Location = new System.Drawing.Point(85, 27);
+            this.cbbName.Name = "cbbName";
+            this.cbbName.Size = new System.Drawing.Size(121, 21);
+            this.cbbName.TabIndex = 27;
+            this.cbbName.ValueMember = "ItemId";
+            // 
+            // bdsItem
+            // 
+            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
+            // 
             // SubjectSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbbName);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.cbbSecondDivision);
             this.Controls.Add(this.cbbFirstDivision);
@@ -181,6 +201,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bdsSecondDivision)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbFirstDivision)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFirstDivision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,5 +223,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel10;
         private System.Windows.Forms.BindingSource bdsFirstDivision;
         private System.Windows.Forms.BindingSource bdsSecondDivision;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbName;
+        private System.Windows.Forms.BindingSource bdsItem;
     }
 }

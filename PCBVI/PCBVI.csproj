@@ -235,6 +235,18 @@
     <Compile Include="Controls\Materials\MaterialsHSC.Designer.cs">
       <DependentUpon>MaterialsHSC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Production\MaterialsManage\MaterialManageSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\MaterialsManage\MaterialManageSearch.Designer.cs">
+      <DependentUpon>MaterialManageSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Production\MaterialsManage\MateriaMangeListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Production\MaterialsManage\MateriaMangeListControl.Designer.cs">
+      <DependentUpon>MateriaMangeListControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Production\ProductionHistory\ProductionList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -660,6 +672,12 @@
     <EmbeddedResource Include="Controls\Materials\MaterialsHSC.resx">
       <DependentUpon>MaterialsHSC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\MaterialsManage\MaterialManageSearch.resx">
+      <DependentUpon>MaterialManageSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Production\MaterialsManage\MateriaMangeListControl.resx">
+      <DependentUpon>MateriaMangeListControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Production\ProductionHistory\ProductionList.resx">
       <DependentUpon>ProductionList.cs</DependentUpon>
     </EmbeddedResource>
@@ -734,6 +752,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\InspectionStandardForm.resx">
       <DependentUpon>InspectionStandardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\InspectionStandardInsertForm.resx">
+      <DependentUpon>InspectionStandardInsertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\NonMovingTypeForm.resx">
       <DependentUpon>NonMovingTypeForm.cs</DependentUpon>
@@ -858,6 +879,9 @@
     <None Include="Properties\DataSources\PCBVI.Data.LotBarCode.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Item.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.MaterialHistory.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.MaterialManageState.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.MaterialsManage.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.MaterialState.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Process.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Product.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.RotationGroup.datasource" />
