@@ -146,6 +146,8 @@ namespace PCBVI.Forms.Basic
                 }
 
             }
+            
+
             if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("비밀번호"))
             {
                 if (e.FormattedValue.ToString().Length < 5)
