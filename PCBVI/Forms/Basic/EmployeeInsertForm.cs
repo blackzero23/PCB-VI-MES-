@@ -25,15 +25,6 @@ namespace PCBVI.Forms.Basic
             bdsDepartMent.DataSource = DB.Department.GetAll();
         }
 
-        private void DgvList_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            //int a = int.Parse((string)dgvList.Rows[e.RowIndex].Cells[0].Value);
-
-            //for(e.ColumnIndex.)
-            //if(a != 1)
-            //    MessageBox.Show("1이 아니야~");
-
-        }
 
         private void DgvList_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
