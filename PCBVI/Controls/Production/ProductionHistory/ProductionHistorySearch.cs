@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PCBVI.Data.Data;
 
-namespace PCBVI.Controls.Facilities
+namespace PCBVI.Controls.Production.ProductionHistory
 {
-    public partial class FacilitiesPSC : UserControl
+    public partial class ProductionHistorySearch : UserControl
     {
-        public FacilitiesPSC()
+        public ProductionHistorySearch()
         {
             InitializeComponent();
         }
@@ -25,13 +25,20 @@ namespace PCBVI.Controls.Facilities
             if (DesignMode)
                 return;
 
-            InitSetDataSource();
         }
 
         private void InitSetDataSource()
         {
             bdsProcess.DataSource = DB.Process.GetAll();
-            bdsFacilities.DataSource = DB.Facilities.GetAll();
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            int processId = (int)cbbProcess.SelectedValue;
+            DateTime fromDate = dtpFromDate.Value;
+            DateTime toDate = dtpToDate.Value;
+
+            OnSearchButtonClicked(processId, fromDate, toDate);
         }
 
         #region SearchButtonClicked event things for C# 3.0
@@ -43,9 +50,9 @@ namespace PCBVI.Controls.Facilities
                 SearchButtonClicked(this, e);
         }
 
-        private SearchButtonClickedEventArgs OnSearchButtonClicked(int processId, int facilitiesId, DateTime fromDate, DateTime toDate)
+        private SearchButtonClickedEventArgs OnSearchButtonClicked(int processId, DateTime fromDate, DateTime toDate)
         {
-            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(processId, facilitiesId, fromDate, toDate);
+            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(processId, fromDate, toDate);
             OnSearchButtonClicked(args);
 
             return args;
@@ -62,7 +69,6 @@ namespace PCBVI.Controls.Facilities
         public class SearchButtonClickedEventArgs : EventArgs
         {
             public int ProcessId { get; set; }
-            public int FacilitiesId { get; set; }
             public DateTime FromDate { get; set; }
             public DateTime ToDate { get; set; }
 
@@ -70,23 +76,13 @@ namespace PCBVI.Controls.Facilities
             {
             }
 
-            public SearchButtonClickedEventArgs(int processId, int facilitiesId, DateTime fromDate, DateTime toDate)
+            public SearchButtonClickedEventArgs(int processId, DateTime fromDate, DateTime toDate)
             {
                 ProcessId = processId;
-                FacilitiesId = facilitiesId;
                 FromDate = fromDate;
                 ToDate = toDate;
             }
         }
         #endregion
-
-        private void BtnSearch_Click(object sender, EventArgs e)
-        {
-            int processId = (int)cbbProcess.SelectedValue;
-            int facilitesId = (int)cbbFacilities.SelectedValue;
-            DateTime fromDate = dtpFromDate.Value;
-            DateTime toDate = dtpToDate.Value;
-            OnSearchButtonClicked(processId,facilitesId,fromDate,toDate);
-        }
     }
 }

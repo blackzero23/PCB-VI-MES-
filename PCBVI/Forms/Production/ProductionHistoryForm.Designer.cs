@@ -30,9 +30,9 @@
         {
             this.naviProductionHistory = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageProductionHistory = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.topMenubar1 = new PCBVI.Controls.CommonControl.TopMenubar();
-            this.productionList1 = new PCBVI.Controls.Production.ProductionHistory.ProductionList();
-            this.productionSearch1 = new PCBVI.Controls.Production.ProductionHistory.ProductionSearch();
+            this.uscSearch = new PCBVI.Controls.Production.ProductionHistory.ProductionHistorySearch();
+            this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
+            this.uscList = new PCBVI.Controls.Production.ProductionHistory.ProductionHistoryList();
             ((System.ComponentModel.ISupportInitialize)(this.naviProductionHistory)).BeginInit();
             this.naviProductionHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageProductionHistory)).BeginInit();
@@ -53,51 +53,50 @@
             this.naviProductionHistory.Padding = new System.Windows.Forms.Padding(3);
             this.naviProductionHistory.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageProductionHistory});
-            this.naviProductionHistory.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.naviProductionHistory.SelectedIndex = 0;
             this.naviProductionHistory.Size = new System.Drawing.Size(800, 415);
-            this.naviProductionHistory.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("HY헤드라인M", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.naviProductionHistory.TabIndex = 1;
             this.naviProductionHistory.Text = "navi";
             // 
             // pageProductionHistory
             // 
             this.pageProductionHistory.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.pageProductionHistory.Controls.Add(this.productionSearch1);
-            this.pageProductionHistory.Controls.Add(this.productionList1);
+            this.pageProductionHistory.Controls.Add(this.uscList);
+            this.pageProductionHistory.Controls.Add(this.uscSearch);
             this.pageProductionHistory.Flags = 65534;
             this.pageProductionHistory.LastVisibleSet = true;
             this.pageProductionHistory.MinimumSize = new System.Drawing.Size(50, 50);
             this.pageProductionHistory.Name = "pageProductionHistory";
-            this.pageProductionHistory.Size = new System.Drawing.Size(798, 386);
+            this.pageProductionHistory.Size = new System.Drawing.Size(798, 388);
             this.pageProductionHistory.Text = "생산 이력";
             this.pageProductionHistory.ToolTipTitle = "Page ToolTip";
             this.pageProductionHistory.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
             // 
-            // topMenubar1
+            // uscSearch
             // 
-            this.topMenubar1.BackColor = System.Drawing.Color.White;
-            this.topMenubar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topMenubar1.Location = new System.Drawing.Point(0, 0);
-            this.topMenubar1.Name = "topMenubar1";
-            this.topMenubar1.Size = new System.Drawing.Size(800, 35);
-            this.topMenubar1.TabIndex = 0;
+            this.uscSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscSearch.Location = new System.Drawing.Point(0, 0);
+            this.uscSearch.Name = "uscSearch";
+            this.uscSearch.Size = new System.Drawing.Size(798, 64);
+            this.uscSearch.TabIndex = 1;
+            this.uscSearch.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Production.ProductionHistory.ProductionHistorySearch.SearchButtonClickedEventArgs>(this.UscSearch_SearchButtonClicked);
             // 
-            // productionList1
+            // uscTopMenu
             // 
-            this.productionList1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productionList1.Location = new System.Drawing.Point(0, 0);
-            this.productionList1.Name = "productionList1";
-            this.productionList1.Size = new System.Drawing.Size(798, 386);
-            this.productionList1.TabIndex = 0;
+            this.uscTopMenu.BackColor = System.Drawing.Color.White;
+            this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
+            this.uscTopMenu.Name = "uscTopMenu";
+            this.uscTopMenu.Size = new System.Drawing.Size(800, 35);
+            this.uscTopMenu.TabIndex = 0;
             // 
-            // productionSearch1
+            // uscList
             // 
-            this.productionSearch1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.productionSearch1.Location = new System.Drawing.Point(0, 0);
-            this.productionSearch1.Name = "productionSearch1";
-            this.productionSearch1.Size = new System.Drawing.Size(798, 64);
-            this.productionSearch1.TabIndex = 1;
+            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscList.Location = new System.Drawing.Point(0, 64);
+            this.uscList.Name = "uscList";
+            this.uscList.Size = new System.Drawing.Size(798, 324);
+            this.uscList.TabIndex = 2;
             // 
             // ProductionHistoryForm
             // 
@@ -105,7 +104,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.naviProductionHistory);
-            this.Controls.Add(this.topMenubar1);
+            this.Controls.Add(this.uscTopMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProductionHistoryForm";
             this.Text = "ProductionHistoryForm";
@@ -119,10 +118,10 @@
 
         #endregion
 
-        private Controls.CommonControl.TopMenubar topMenubar1;
+        private Controls.CommonControl.TopMenubar uscTopMenu;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator naviProductionHistory;
         private ComponentFactory.Krypton.Navigator.KryptonPage pageProductionHistory;
-        private Controls.Production.ProductionHistory.ProductionSearch productionSearch1;
-        private Controls.Production.ProductionHistory.ProductionList productionList1;
+        private Controls.Production.ProductionHistory.ProductionHistorySearch uscSearch;
+        private Controls.Production.ProductionHistory.ProductionHistoryList uscList;
     }
 }
