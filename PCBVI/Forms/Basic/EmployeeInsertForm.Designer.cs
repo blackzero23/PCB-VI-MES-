@@ -33,16 +33,16 @@
             this.btnCancle = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnInsert = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bdsDepartMent = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsEmployee = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsDepartMent = new System.Windows.Forms.BindingSource(this.components);
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employmentDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
             this.departureDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
             this.gradeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdsEmployee = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
@@ -67,6 +67,7 @@
             this.btnCancle.Size = new System.Drawing.Size(130, 34);
             this.btnCancle.TabIndex = 1;
             this.btnCancle.Values.Text = "취 소";
+            this.btnCancle.Click += new System.EventHandler(this.BtnCancle_Click);
             // 
             // btnInsert
             // 
@@ -97,16 +98,7 @@
             this.dgvList.RowTemplate.Height = 23;
             this.dgvList.Size = new System.Drawing.Size(847, 191);
             this.dgvList.TabIndex = 1;
-           
             this.dgvList.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.DgvList_CellValidating);
-            // 
-            // bdsDepartMent
-            // 
-            this.bdsDepartMent.DataSource = typeof(PCBVI.Data.Department);
-            // 
-            // bdsEmployee
-            // 
-            this.bdsEmployee.DataSource = typeof(PCBVI.Data.Employee);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -126,6 +118,10 @@
             this.departmentIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.departmentIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.departmentIdDataGridViewTextBoxColumn.ValueMember = "DepartmentId";
+            // 
+            // bdsDepartMent
+            // 
+            this.bdsDepartMent.DataSource = typeof(PCBVI.Data.Department);
             // 
             // codeDataGridViewTextBoxColumn
             // 
@@ -174,6 +170,10 @@
             this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
             this.passwordDataGridViewTextBoxColumn.HeaderText = "비밀번호";
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            // 
+            // bdsEmployee
+            // 
+            this.bdsEmployee.DataSource = typeof(PCBVI.Data.Employee);
             // 
             // EmployeeInsertForm
             // 

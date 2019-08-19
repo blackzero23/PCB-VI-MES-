@@ -88,6 +88,15 @@ namespace PCBVI.Forms.Basic
                     // dgvList.Rows[e.RowIndex].ErrorText = "사원이름은 3자리까지 입력가능합니다";
 
                 }
+
+                Employee employee = DB.Employee.CheckEmployeeCode(e.FormattedValue.ToString());
+                
+                if (employee != null)
+                {
+                    MessageBox.Show("중복된 코드입니다.");
+                    e.Cancel = true;
+                }
+
             }
             // 등급에 대한 유효성 검사
             if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("등 급"))
@@ -108,7 +117,7 @@ namespace PCBVI.Forms.Basic
                 }
 
 
-                if (newInteger > 7)
+                if (newInteger > 6 || newInteger < 0)
                 {
                     MessageBox.Show("등급 1~6 까지 설정 가능합니다.");
                     e.Cancel = true;
@@ -127,6 +136,13 @@ namespace PCBVI.Forms.Basic
                         MessageBox.Show("영어와 숫자만 입력해주세요");
                         e.Cancel = true;
                     }
+                }
+                //중복체크
+                Employee employee = DB.Employee.CheckLoginId(id);
+                if(employee != null)
+                {
+                    MessageBox.Show("중복된 아이디 입니다.");
+                    e.Cancel = true;
                 }
 
             }
@@ -205,6 +221,9 @@ namespace PCBVI.Forms.Basic
             MessageBox.Show("입력 완료");
         }
 
-
+        private void BtnCancle_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

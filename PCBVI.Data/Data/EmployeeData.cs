@@ -21,6 +21,30 @@ namespace PCBVI.Data.Data
                 var query = from x in context.Employees
                     where x.LoginId.Equals(id) && x.Password.Equals(password)
                     select x;
+               
+                return query.FirstOrDefault();
+            }
+        }
+
+        public Employee CheckLoginId(string id)
+        {
+            using(var context = DbContextFactory.Create())
+            {
+                var query = from x in context.Employees
+                            where x.LoginId.Equals(id)
+                            select x;
+
+                return query.FirstOrDefault();
+            }
+        }
+        
+        public Employee CheckEmployeeCode(string code)
+        {
+            using (var context = DbContextFactory.Create())
+            {
+                var query = from x in context.Employees
+                            where x.Code.Equals(code)
+                            select x;
 
                 return query.FirstOrDefault();
             }
