@@ -130,6 +130,8 @@ namespace PCBVI.Forms.Basic
                 }
 
             }
+            
+
             if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("비밀번호"))
             {
                 if (e.FormattedValue.ToString().Length < 5)
@@ -205,6 +207,9 @@ namespace PCBVI.Forms.Basic
             MessageBox.Show("입력 완료");
         }
 
-
+        private void BtnCancle_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

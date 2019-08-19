@@ -35,8 +35,8 @@
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employmentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departureDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employmentDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
+            this.departureDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
             this.gradeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
@@ -102,15 +102,23 @@
             // 
             // employmentDateDataGridViewTextBoxColumn
             // 
+            this.employmentDateDataGridViewTextBoxColumn.Checked = false;
             this.employmentDateDataGridViewTextBoxColumn.DataPropertyName = "EmploymentDate";
             this.employmentDateDataGridViewTextBoxColumn.HeaderText = "입사일";
             this.employmentDateDataGridViewTextBoxColumn.Name = "employmentDateDataGridViewTextBoxColumn";
+            this.employmentDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.employmentDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.employmentDateDataGridViewTextBoxColumn.Width = 104;
             // 
             // departureDateDataGridViewTextBoxColumn
             // 
+            this.departureDateDataGridViewTextBoxColumn.Checked = false;
             this.departureDateDataGridViewTextBoxColumn.DataPropertyName = "DepartureDate";
             this.departureDateDataGridViewTextBoxColumn.HeaderText = "퇴사일";
             this.departureDateDataGridViewTextBoxColumn.Name = "departureDateDataGridViewTextBoxColumn";
+            this.departureDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.departureDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.departureDateDataGridViewTextBoxColumn.Width = 103;
             // 
             // gradeDataGridViewTextBoxColumn
             // 
@@ -140,8 +148,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn departmentIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employmentDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departureDateDataGridViewTextBoxColumn;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn employmentDateDataGridViewTextBoxColumn;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn departureDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gradeDataGridViewTextBoxColumn;
     }
 }
