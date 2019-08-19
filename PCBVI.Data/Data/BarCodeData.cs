@@ -37,5 +37,17 @@ namespace PCBVI.Data.Data
 
             }
         }
+
+        public Barcode CheckBarcode(int code)
+        {
+            using (var context = DbContextFactory.Create())
+            {
+                var query = from x in context.Barcodes
+                            where x.BarcodeCode.Equals(code)
+                            select x;
+
+                return query.FirstOrDefault();
+            }
+        }
     }
 }

@@ -43,11 +43,13 @@
             this.loginIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bdsEmployee = new System.Windows.Forms.BindingSource(this.components);
+            this.barcodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsDepartMent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barcodeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
@@ -175,6 +177,10 @@
             // 
             this.bdsEmployee.DataSource = typeof(PCBVI.Data.Employee);
             // 
+            // barcodeBindingSource
+            // 
+            this.barcodeBindingSource.DataSource = typeof(PCBVI.Data.Barcode);
+            // 
             // EmployeeInsertForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -190,6 +196,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsDepartMent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barcodeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -210,5 +217,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gradeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource barcodeBindingSource;
     }
 }

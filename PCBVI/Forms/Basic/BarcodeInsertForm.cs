@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ComponentFactory.Krypton.Toolkit;
+using PCBVI.Data.Data;
+using System.Windows.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,25 +9,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace PCBVI.Forms.Basic
 {
-    public partial class BarcodeInsertForm : Form
+    public partial class BarCodeInsertForm : KryptonForm
     {
-        public BarcodeInsertForm()
+        public BarCodeInsertForm()
         {
             InitializeComponent();
         }
 
-        private void BtnInsert_Click(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void BtnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+       
     }
 }

@@ -361,11 +361,11 @@
     <Compile Include="Forms\Basic\BarcodeForm.Designer.cs">
       <DependentUpon>BarcodeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Basic\BarcodeInsertForm.cs">
+    <Compile Include="Forms\Basic\BarCodeInsertForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Basic\BarcodeInsertForm.Designer.cs">
-      <DependentUpon>BarcodeInsertForm.cs</DependentUpon>
+    <Compile Include="Forms\Basic\BarCodeInsertForm.Designer.cs">
+      <DependentUpon>BarCodeInsertForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Basic\EmployeeForm.cs">
       <SubType>Form</SubType>
@@ -741,8 +741,8 @@
     <EmbeddedResource Include="Forms\Basic\BarcodeForm.resx">
       <DependentUpon>BarcodeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Basic\BarcodeInsertForm.resx">
-      <DependentUpon>BarcodeInsertForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Basic\BarCodeInsertForm.resx">
+      <DependentUpon>BarCodeInsertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
