@@ -54,7 +54,7 @@
             this.naviWorkOrder.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageWorkOrder});
             this.naviWorkOrder.SelectedIndex = 0;
-            this.naviWorkOrder.Size = new System.Drawing.Size(800, 414);
+            this.naviWorkOrder.Size = new System.Drawing.Size(884, 445);
             this.naviWorkOrder.TabIndex = 4;
             this.naviWorkOrder.Text = "navi";
             // 
@@ -67,8 +67,8 @@
             this.pageWorkOrder.LastVisibleSet = true;
             this.pageWorkOrder.MinimumSize = new System.Drawing.Size(50, 50);
             this.pageWorkOrder.Name = "pageWorkOrder";
-            this.pageWorkOrder.Size = new System.Drawing.Size(798, 387);
-            this.pageWorkOrder.Text = "바코드 정보";
+            this.pageWorkOrder.Size = new System.Drawing.Size(882, 418);
+            this.pageWorkOrder.Text = "작업 지시 관리";
             this.pageWorkOrder.ToolTipTitle = "Page ToolTip";
             this.pageWorkOrder.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
             // 
@@ -77,7 +77,7 @@
             this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscList.Location = new System.Drawing.Point(0, 75);
             this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(798, 312);
+            this.uscList.Size = new System.Drawing.Size(882, 343);
             this.uscList.TabIndex = 1;
             // 
             // uscSearch
@@ -85,7 +85,7 @@
             this.uscSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.uscSearch.Location = new System.Drawing.Point(0, 0);
             this.uscSearch.Name = "uscSearch";
-            this.uscSearch.Size = new System.Drawing.Size(798, 75);
+            this.uscSearch.Size = new System.Drawing.Size(882, 75);
             this.uscSearch.TabIndex = 0;
             this.uscSearch.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Production.WorkOrder.WorkOrderSearchControl.SearchButtonClickedEventArgs>(this.WorkOrderSearchControl1_SearchButtonClicked);
             // 
@@ -95,14 +95,18 @@
             this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
             this.uscTopMenu.Name = "uscTopMenu";
-            this.uscTopMenu.Size = new System.Drawing.Size(800, 36);
+            this.uscTopMenu.Size = new System.Drawing.Size(884, 36);
             this.uscTopMenu.TabIndex = 0;
+            this.uscTopMenu.InsertButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs>(this.UscTopMenu_InsertButtonClicked);
+            this.uscTopMenu.DeleteButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.DeleteButtonClickedEventArgs>(this.UscTopMenu_DeleteButtonClicked);
+            this.uscTopMenu.ExcelButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs>(this.UscTopMenu_ExcelButtonClicked);
+            this.uscTopMenu.UpdateButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs>(this.UscTopMenu_UpdateButtonClicked);
             // 
             // WorkOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(884, 481);
             this.Controls.Add(this.naviWorkOrder);
             this.Controls.Add(this.uscTopMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

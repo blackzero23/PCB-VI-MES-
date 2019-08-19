@@ -22,5 +22,25 @@ namespace PCBVI.Forms.Production
         {
             uscList.SetDataSource(DB.WorkOrder.Search(e.ItemId,e.RotationId,e.FromDate,e.ToDate));
         }
+
+        private void UscTopMenu_InsertButtonClicked(object sender, Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs e)
+        {
+
+        }
+
+        private void UscTopMenu_UpdateButtonClicked(object sender, Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs e)
+        {
+
+        }
+
+        private void UscTopMenu_ExcelButtonClicked(object sender, Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs e)
+        {
+
+        }
+
+        private void UscTopMenu_DeleteButtonClicked(object sender, Controls.CommonControl.TopMenubar.DeleteButtonClickedEventArgs e)
+        {
+
+        }
     }
 }

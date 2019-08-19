@@ -565,6 +565,12 @@
     <Compile Include="Forms\Production\WorkOrderForm.Designer.cs">
       <DependentUpon>WorkOrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Production\WorkOrderInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\WorkOrderInsertForm.Designer.cs">
+      <DependentUpon>WorkOrderInsertForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Quality\FirstInspectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -830,6 +836,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\WorkOrderForm.resx">
       <DependentUpon>WorkOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\WorkOrderInsertForm.resx">
+      <DependentUpon>WorkOrderInsertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Quality\FirstInspectionForm.resx">
       <DependentUpon>FirstInspectionForm.cs</DependentUpon>
