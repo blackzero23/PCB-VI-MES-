@@ -312,7 +312,6 @@
           <Property Name="WorkLogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="RotationGroupId" Type="int" Nullable="false" />
           <Property Name="WorkDate" Type="datetime" Nullable="false" />
-          <Property Name="EmployeeId" Type="int" Nullable="false" />
           <Property Name="SartTime" Type="datetime" Nullable="false" />
           <Property Name="EndTime" Type="datetime" />
           <Property Name="ProductionQuantity" Type="int" />
@@ -320,7 +319,7 @@
           <Property Name="TargetQuantity" Type="int" Nullable="false" />
           <Property Name="ProcessId" Type="int" Nullable="false" />
           <Property Name="FacilitiesId" Type="int" Nullable="false" />
-          <Property Name="WorkOrderId" Type="int" />
+          <Property Name="WorkOrderId" Type="int" Nullable="false" />
           <Property Name="ItemId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="WorkOrder">
@@ -335,6 +334,7 @@
           <Property Name="ProcessId" Type="int" Nullable="false" />
           <Property Name="WorkPlaceId" Type="int" Nullable="false" />
           <Property Name="Note" Type="nvarchar" MaxLength="100" />
+          <Property Name="WorkerName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="WorkPlace">
           <Key>
@@ -885,18 +885,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_WorkLog_Employee">
-          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
-          <End Role="WorkLog" Type="Self.WorkLog" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="EmployeeId" />
-            </Principal>
-            <Dependent Role="WorkLog">
-              <PropertyRef Name="EmployeeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_WorkLog_Facilities">
           <End Role="Facilities" Type="Self.Facilities" Multiplicity="1" />
           <End Role="WorkLog" Type="Self.WorkLog" Multiplicity="*" />
@@ -946,7 +934,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_WorkLog_WorkOrder">
-          <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="0..1" />
+          <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="1" />
           <End Role="WorkLog" Type="Self.WorkLog" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="WorkOrder">
@@ -1218,10 +1206,6 @@
             <End Role="WorkLog" EntitySet="WorkLog" />
             <End Role="TotalMonitoring" EntitySet="TotalMonitoring" />
           </AssociationSet>
-          <AssociationSet Name="FK_WorkLog_Employee" Association="Self.FK_WorkLog_Employee">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="WorkLog" EntitySet="WorkLog" />
-          </AssociationSet>
           <AssociationSet Name="FK_WorkLog_Facilities" Association="Self.FK_WorkLog_Facilities">
             <End Role="Facilities" EntitySet="Facilities" />
             <End Role="WorkLog" EntitySet="WorkLog" />
@@ -1323,7 +1307,6 @@
           <NavigationProperty Name="Department" Relationship="Self.FK_Employee_Department" FromRole="Employee" ToRole="Department" />
           <NavigationProperty Name="FirstInspections" Relationship="Self.FK_FirstInspection_Employee" FromRole="Employee" ToRole="FirstInspection" />
           <NavigationProperty Name="TotalMonitorings" Relationship="Self.FK_TotalMonitoring_Employee" FromRole="Employee" ToRole="TotalMonitoring" />
-          <NavigationProperty Name="WorkLogs" Relationship="Self.FK_WorkLog_Employee" FromRole="Employee" ToRole="WorkLog" />
         </EntityType>
         <EntityType Name="ErrorCode">
           <Key>
@@ -1664,7 +1647,6 @@
           <Property Name="WorkLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RotationGroupId" Type="Int32" Nullable="false" />
           <Property Name="WorkDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
           <Property Name="SartTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="EndTime" Type="DateTime" Precision="3" />
           <Property Name="ProductionQuantity" Type="Int32" />
@@ -1672,9 +1654,8 @@
           <Property Name="TargetQuantity" Type="Int32" Nullable="false" />
           <Property Name="ProcessId" Type="Int32" Nullable="false" />
           <Property Name="FacilitiesId" Type="Int32" Nullable="false" />
-          <Property Name="WorkOrderId" Type="Int32" />
+          <Property Name="WorkOrderId" Type="Int32" Nullable="false" />
           <Property Name="ItemId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Employee" Relationship="Self.FK_WorkLog_Employee" FromRole="WorkLog" ToRole="Employee" />
           <NavigationProperty Name="Facility" Relationship="Self.FK_WorkLog_Facilities" FromRole="WorkLog" ToRole="Facilities" />
           <NavigationProperty Name="Item" Relationship="Self.FK_WorkLog_Item" FromRole="WorkLog" ToRole="Item" />
           <NavigationProperty Name="Process" Relationship="Self.FK_WorkLog_Process" FromRole="WorkLog" ToRole="Process" />
@@ -1694,6 +1675,7 @@
           <Property Name="ProcessId" Type="Int32" Nullable="false" />
           <Property Name="WorkPlaceId" Type="Int32" Nullable="false" />
           <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WorkerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Item" Relationship="Self.FK_WorkOrder_Item" FromRole="WorkOrder" ToRole="Item" />
           <NavigationProperty Name="Process" Relationship="Self.FK_WorkOrder_Process" FromRole="WorkOrder" ToRole="Process" />
           <NavigationProperty Name="RotationGroup" Relationship="Self.FK_WorkOrder_RotationGroup" FromRole="WorkOrder" ToRole="RotationGroup" />
@@ -1866,18 +1848,6 @@
               <PropertyRef Name="EmployeeId" />
             </Principal>
             <Dependent Role="TotalMonitoring">
-              <PropertyRef Name="EmployeeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_WorkLog_Employee">
-          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
-          <End Role="WorkLog" Type="Self.WorkLog" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="EmployeeId" />
-            </Principal>
-            <Dependent Role="WorkLog">
               <PropertyRef Name="EmployeeId" />
             </Dependent>
           </ReferentialConstraint>
@@ -2351,7 +2321,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_WorkLog_WorkOrder">
-          <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="0..1" />
+          <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="1" />
           <End Role="WorkLog" Type="Self.WorkLog" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="WorkOrder">
@@ -2458,10 +2428,6 @@
           <AssociationSet Name="FK_TotalMonitoring_Employee" Association="Self.FK_TotalMonitoring_Employee">
             <End Role="Employee" EntitySet="Employees" />
             <End Role="TotalMonitoring" EntitySet="TotalMonitorings" />
-          </AssociationSet>
-          <AssociationSet Name="FK_WorkLog_Employee" Association="Self.FK_WorkLog_Employee">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="WorkLog" EntitySet="WorkLogs" />
           </AssociationSet>
           <AssociationSet Name="FK_ErrorCode_ErrorKind" Association="Self.FK_ErrorCode_ErrorKind">
             <End Role="ErrorKind" EntitySet="ErrorKinds" />
@@ -2968,7 +2934,6 @@
                 <ScalarProperty Name="WorkLogId" ColumnName="WorkLogId" />
                 <ScalarProperty Name="RotationGroupId" ColumnName="RotationGroupId" />
                 <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
-                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
                 <ScalarProperty Name="SartTime" ColumnName="SartTime" />
                 <ScalarProperty Name="EndTime" ColumnName="EndTime" />
                 <ScalarProperty Name="ProductionQuantity" ColumnName="ProductionQuantity" />
@@ -2992,6 +2957,7 @@
                 <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
                 <ScalarProperty Name="WorkPlaceId" ColumnName="WorkPlaceId" />
                 <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="WorkerName" ColumnName="WorkerName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

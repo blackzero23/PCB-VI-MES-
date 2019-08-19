@@ -42,5 +42,10 @@ namespace PCBVI.Controls.Basic.InspectionStandard
             dgvList.DataSource = list;
         }
 
+        public DataGridView GetListView()
+        {
+            return dgvList;
+        }
+
     }
 }

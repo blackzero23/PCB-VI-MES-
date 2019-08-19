@@ -247,17 +247,17 @@
     <Compile Include="Controls\Production\MaterialsManage\MateriaMangeListControl.Designer.cs">
       <DependentUpon>MateriaMangeListControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Production\ProductionHistory\ProductionList.cs">
+    <Compile Include="Controls\Production\ProductionHistory\ProductionHistoryList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Production\ProductionHistory\ProductionList.Designer.cs">
-      <DependentUpon>ProductionList.cs</DependentUpon>
+    <Compile Include="Controls\Production\ProductionHistory\ProductionHistoryList.Designer.cs">
+      <DependentUpon>ProductionHistoryList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Production\ProductionHistory\ProductionSearch.cs">
+    <Compile Include="Controls\Production\ProductionHistory\ProductionHistorySearch.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Production\ProductionHistory\ProductionSearch.Designer.cs">
-      <DependentUpon>ProductionSearch.cs</DependentUpon>
+    <Compile Include="Controls\Production\ProductionHistory\ProductionHistorySearch.Designer.cs">
+      <DependentUpon>ProductionHistorySearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Production\DefectiveProduct\DefectiveProductListControl.cs">
       <SubType>UserControl</SubType>
@@ -565,6 +565,12 @@
     <Compile Include="Forms\Production\WorkOrderForm.Designer.cs">
       <DependentUpon>WorkOrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Production\WorkOrderInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\WorkOrderInsertForm.Designer.cs">
+      <DependentUpon>WorkOrderInsertForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Quality\FirstInspectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -678,11 +684,11 @@
     <EmbeddedResource Include="Controls\Production\MaterialsManage\MateriaMangeListControl.resx">
       <DependentUpon>MateriaMangeListControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Production\ProductionHistory\ProductionList.resx">
-      <DependentUpon>ProductionList.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Production\ProductionHistory\ProductionHistoryList.resx">
+      <DependentUpon>ProductionHistoryList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Production\ProductionHistory\ProductionSearch.resx">
-      <DependentUpon>ProductionSearch.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Production\ProductionHistory\ProductionHistorySearch.resx">
+      <DependentUpon>ProductionHistorySearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Production\DefectiveProduct\DefectiveProductListControl.resx">
       <DependentUpon>DefectiveProductListControl.cs</DependentUpon>
@@ -831,6 +837,9 @@
     <EmbeddedResource Include="Forms\Production\WorkOrderForm.resx">
       <DependentUpon>WorkOrderForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\WorkOrderInsertForm.resx">
+      <DependentUpon>WorkOrderInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Quality\FirstInspectionForm.resx">
       <DependentUpon>FirstInspectionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -868,6 +877,7 @@
     <None Include="Properties\DataSources\PCBVI.Data.ErrorKind.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.ErrorType.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.FacilitiesHistory.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.FacilitiesPower.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Facility.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.FHistoryDivision.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.FirstInspection.datasource" />
@@ -884,6 +894,7 @@
     <None Include="Properties\DataSources\PCBVI.Data.MaterialState.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Process.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.Product.datasource" />
+    <None Include="Properties\DataSources\PCBVI.Data.ProductionHistory.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.RotationGroup.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.SecondItemDivision.datasource" />
     <None Include="Properties\DataSources\PCBVI.Data.WorkLog.datasource" />

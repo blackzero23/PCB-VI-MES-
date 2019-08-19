@@ -64,6 +64,7 @@
             // 
             this.cbbProcess.DataSource = this.processBindingSource;
             this.cbbProcess.DisplayMember = "Name";
+            this.cbbProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbProcess.DropDownWidth = 121;
             this.cbbProcess.Location = new System.Drawing.Point(268, 28);
             this.cbbProcess.Name = "cbbProcess";
@@ -87,6 +88,7 @@
             // 
             this.cbbFacilities.DataSource = this.facilityBindingSource;
             this.cbbFacilities.DisplayMember = "Name";
+            this.cbbFacilities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbFacilities.DropDownWidth = 121;
             this.cbbFacilities.Location = new System.Drawing.Point(78, 29);
             this.cbbFacilities.Name = "cbbFacilities";

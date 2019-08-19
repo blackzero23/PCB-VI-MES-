@@ -76,6 +76,7 @@
     <Compile Include="Data\MaterialsManageData.cs" />
     <Compile Include="Data\MaterialStateData.cs" />
     <Compile Include="Data\ProcessData.cs" />
+    <Compile Include="Data\ProductionHistoryData.cs" />
     <Compile Include="Data\RotationGroupData.cs" />
     <Compile Include="Data\WorkLogData.cs" />
     <Compile Include="Data\WorkOrderData.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Entities\FirstInspection.cs" />
     <Compile Include="Entities\MaterialsManage.cs" />
     <Compile Include="Entities\Process.cs" />
+    <Compile Include="Entities\ProductionHistory.cs" />
     <Compile Include="Entities\WorkLog.cs" />
     <Compile Include="Entities\WorkPlace.cs" />
     <Compile Include="ErrorCode.cs">

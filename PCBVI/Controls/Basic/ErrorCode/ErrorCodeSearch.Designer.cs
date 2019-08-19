@@ -73,6 +73,7 @@
             this.cbbErrorKind.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.errorKindBindingSource, "Name", true));
             this.cbbErrorKind.DataSource = this.errorKindBindingSource;
             this.cbbErrorKind.DisplayMember = "Name";
+            this.cbbErrorKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbErrorKind.DropDownWidth = 121;
             this.cbbErrorKind.Location = new System.Drawing.Point(445, 29);
             this.cbbErrorKind.Name = "cbbErrorKind";
@@ -90,6 +91,7 @@
             this.cbbErrorType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.errorTypeBindingSource, "Name", true));
             this.cbbErrorType.DataSource = this.errorTypeBindingSource;
             this.cbbErrorType.DisplayMember = "Name";
+            this.cbbErrorType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbErrorType.DropDownWidth = 121;
             this.cbbErrorType.Location = new System.Drawing.Point(273, 29);
             this.cbbErrorType.Name = "cbbErrorType";
@@ -113,6 +115,7 @@
             // 
             this.cbbErrorCode.DataSource = this.errorCodeBindingSource;
             this.cbbErrorCode.DisplayMember = "Code";
+            this.cbbErrorCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbErrorCode.DropDownWidth = 121;
             this.cbbErrorCode.Location = new System.Drawing.Point(80, 29);
             this.cbbErrorCode.Name = "cbbErrorCode";

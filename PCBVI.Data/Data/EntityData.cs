@@ -25,13 +25,25 @@ namespace PCBVI.Data.Data
                 return context.Set<T>().Count();
             }
         }
-        //삽입
+        //등록
         public void Insert(T entity)
         {
             using (PCBVIEntities context = DbContextFactory.Create())
             {
                 context.Set<T>().Add(entity);
                 context.SaveChanges();
+            }
+        }
+
+        //리스트 등록
+
+        public void InsertALL(List<T> entiList)
+        {
+            using (PCBVIEntities context = DbContextFactory.Create())
+            {
+                entiList.ForEach(n=> context.Set<T>().Add(n));
+                context.SaveChanges();
+                // companies.ForEach(n => context.AddToCompanies(n));
             }
         }
         //수정

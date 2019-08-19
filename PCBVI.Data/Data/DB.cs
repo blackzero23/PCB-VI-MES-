@@ -36,5 +36,7 @@ namespace PCBVI.Data.Data
         public static MaterialStateData MaterialState { get; } = new MaterialStateData();
         public static MaterialsManageData MaterialsManage { get; } = new MaterialsManageData();
 
+        public static ProductionHistoryData ProductionHistory { get; }
+        = new ProductionHistoryData();
     }
 }

@@ -62,10 +62,8 @@
             this.naviFacilitiesHistory.Padding = new System.Windows.Forms.Padding(3);
             this.naviFacilitiesHistory.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.pageFacilitiesHistory});
-            this.naviFacilitiesHistory.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.naviFacilitiesHistory.SelectedIndex = 0;
             this.naviFacilitiesHistory.Size = new System.Drawing.Size(800, 415);
-            this.naviFacilitiesHistory.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("HY헤드라인M", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.naviFacilitiesHistory.TabIndex = 1;
             this.naviFacilitiesHistory.Text = "navi";
             // 
@@ -78,7 +76,7 @@
             this.pageFacilitiesHistory.LastVisibleSet = true;
             this.pageFacilitiesHistory.MinimumSize = new System.Drawing.Size(50, 50);
             this.pageFacilitiesHistory.Name = "pageFacilitiesHistory";
-            this.pageFacilitiesHistory.Size = new System.Drawing.Size(798, 386);
+            this.pageFacilitiesHistory.Size = new System.Drawing.Size(798, 388);
             this.pageFacilitiesHistory.Text = "설비 이력";
             this.pageFacilitiesHistory.ToolTipTitle = "Page ToolTip";
             this.pageFacilitiesHistory.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
@@ -89,7 +87,7 @@
             this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscList.Location = new System.Drawing.Point(0, 109);
             this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(798, 277);
+            this.uscList.Size = new System.Drawing.Size(798, 279);
             this.uscList.TabIndex = 1;
             // 
             // uscSearch

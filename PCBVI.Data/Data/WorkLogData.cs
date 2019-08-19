@@ -18,7 +18,7 @@ namespace PCBVI.Data.Data
                             select new
                             {
                                 WorkLog = x,
-                                EmployeeName = x.Employee.Name,
+                                EmployeeName = x.WorkOrder.WorkerName,
                                 Processname = x.Process.Name,
                                 FaciliesName = x.Facility.Name,
                                 RotaionGroupname = x.RotationGroup.Name

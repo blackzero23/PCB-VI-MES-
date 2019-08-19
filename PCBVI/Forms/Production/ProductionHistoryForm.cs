@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PCBVI.Data.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace PCBVI.Forms.Production
         public ProductionHistoryForm()
         {
             InitializeComponent();
+        }
+
+        private void UscSearch_SearchButtonClicked(object sender, Controls.Production.ProductionHistory.ProductionHistorySearch.SearchButtonClickedEventArgs e)
+        {
+            uscList.SetDataSource(DB.ProductionHistory.Search(e.ProcessId, e.FromDate, e.ToDate));
         }
     }
 }

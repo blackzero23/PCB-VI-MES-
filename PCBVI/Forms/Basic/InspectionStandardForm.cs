@@ -29,5 +29,11 @@ namespace PCBVI.Forms.Basic
         {
             uscTopMenu.OpenInsertForm(new InspectionStandardInsertForm());
         }
+
+        private void UscTopMenu_ExcelButtonClicked(object sender, Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs e)
+        {
+            DataGridView data = uscList.GetListView();
+            uscTopMenu.SaveExcelFile(data, "검사 기준 정보");
+        }
     }
 }

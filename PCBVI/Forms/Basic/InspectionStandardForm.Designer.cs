@@ -108,6 +108,7 @@
             this.uscTopMenu.Size = new System.Drawing.Size(800, 35);
             this.uscTopMenu.TabIndex = 0;
             this.uscTopMenu.InsertButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs>(this.UscTopMenu_InsertButtonClicked);
+            this.uscTopMenu.ExcelButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs>(this.UscTopMenu_ExcelButtonClicked);
             // 
             // InspectionStForm
             // 
