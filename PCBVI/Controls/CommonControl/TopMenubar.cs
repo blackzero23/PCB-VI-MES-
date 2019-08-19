@@ -28,8 +28,7 @@ namespace PCBVI.Controls.CommonControl
 
         //변경사항 저장
         public void UpdateAll<T>(List<T> entities) where T : class
-        {
-            //var wType = entities.GetType();
+        {            //var wType = entities.GetType();
             using (var context = new PCBVIEntities())
             {
                 foreach (var entity in entities)

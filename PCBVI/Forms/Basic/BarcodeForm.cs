@@ -28,7 +28,7 @@ namespace PCBVI.Forms.Basic
 
         private void UscTopMenu_InsertButtonClicked(object sender, Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs e)
         {
-            uscTopMenu.OpenInsertForm(new BarcodeInsertForm());
+            uscTopMenu.OpenInsertForm(new BarCodeInsertForm());
         }
 
         private void UscTopMenu_UpdateButtonClicked(object sender, Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs e)
