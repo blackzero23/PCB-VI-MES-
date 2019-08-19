@@ -28,17 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.kryptonDataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.barcodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.btnInsert = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.lotNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BarcodeCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnInsert = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barcodeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -48,23 +43,21 @@
             this.kryptonDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonDataGridView1.AutoGenerateColumns = false;
             this.kryptonDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.kryptonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.kryptonDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.lotNameDataGridViewTextBoxColumn,
-            this.itemNameDataGridViewTextBoxColumn,
             this.BarcodeCode});
-            this.kryptonDataGridView1.DataSource = this.barcodeBindingSource;
             this.kryptonDataGridView1.Location = new System.Drawing.Point(32, 31);
             this.kryptonDataGridView1.Name = "kryptonDataGridView1";
             this.kryptonDataGridView1.RowTemplate.Height = 23;
             this.kryptonDataGridView1.Size = new System.Drawing.Size(541, 131);
             this.kryptonDataGridView1.TabIndex = 0;
             // 
-            // barcodeBindingSource
+            // BarcodeCode
             // 
-            this.barcodeBindingSource.DataSource = typeof(PCBVI.Data.Barcode);
+            this.BarcodeCode.DataPropertyName = "BarcodeCode";
+            this.BarcodeCode.HeaderText = "바코드명";
+            this.BarcodeCode.Name = "BarcodeCode";
             // 
             // kryptonPanel1
             // 
@@ -77,15 +70,6 @@
             this.kryptonPanel1.Size = new System.Drawing.Size(602, 71);
             this.kryptonPanel1.TabIndex = 1;
             // 
-            // btnInsert
-            // 
-            this.btnInsert.Location = new System.Drawing.Point(409, 20);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(79, 29);
-            this.btnInsert.TabIndex = 0;
-            this.btnInsert.Values.Text = "등록";
-            this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
-            // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(502, 20);
@@ -95,23 +79,14 @@
             this.btnCancel.Values.Text = "취소";
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // lotNameDataGridViewTextBoxColumn
+            // btnInsert
             // 
-            this.lotNameDataGridViewTextBoxColumn.DataPropertyName = "LotName";
-            this.lotNameDataGridViewTextBoxColumn.HeaderText = "Lot No";
-            this.lotNameDataGridViewTextBoxColumn.Name = "lotNameDataGridViewTextBoxColumn";
-            // 
-            // itemNameDataGridViewTextBoxColumn
-            // 
-            this.itemNameDataGridViewTextBoxColumn.DataPropertyName = "ItemName";
-            this.itemNameDataGridViewTextBoxColumn.HeaderText = "품목명";
-            this.itemNameDataGridViewTextBoxColumn.Name = "itemNameDataGridViewTextBoxColumn";
-            // 
-            // BarcodeCode
-            // 
-            this.BarcodeCode.DataPropertyName = "BarcodeCode";
-            this.BarcodeCode.HeaderText = "바코드명";
-            this.BarcodeCode.Name = "BarcodeCode";
+            this.btnInsert.Location = new System.Drawing.Point(409, 20);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(79, 29);
+            this.btnInsert.TabIndex = 0;
+            this.btnInsert.Values.Text = "등록";
+            this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
             // 
             // BarcodeInsertForm
             // 
@@ -123,7 +98,6 @@
             this.Name = "BarcodeInsertForm";
             this.Text = "신규 등록";
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barcodeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -133,7 +107,6 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
-        private System.Windows.Forms.BindingSource barcodeBindingSource;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnCancel;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnInsert;
