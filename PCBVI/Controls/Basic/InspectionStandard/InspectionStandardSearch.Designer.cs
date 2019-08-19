@@ -57,6 +57,7 @@
             // 
             this.cbbErrorCode.DataSource = this.bdsInspectionStandarType;
             this.cbbErrorCode.DisplayMember = "Code";
+            this.cbbErrorCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbErrorCode.DropDownWidth = 121;
             this.cbbErrorCode.Location = new System.Drawing.Point(85, 26);
             this.cbbErrorCode.Name = "cbbErrorCode";

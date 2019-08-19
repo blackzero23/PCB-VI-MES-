@@ -20,7 +20,6 @@ namespace PCBVI.Data
             this.DefectiveProducts = new HashSet<DefectiveProduct>();
             this.FirstInspections = new HashSet<FirstInspection>();
             this.TotalMonitorings = new HashSet<TotalMonitoring>();
-            this.WorkLogs = new HashSet<WorkLog>();
         }
     
         public int EmployeeId { get; set; }
@@ -40,7 +39,5 @@ namespace PCBVI.Data
         public virtual ICollection<FirstInspection> FirstInspections { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TotalMonitoring> TotalMonitorings { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<WorkLog> WorkLogs { get; set; }
     }
 }

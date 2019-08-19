@@ -113,6 +113,7 @@
             // 
             this.cbbSecondDivision.DataSource = this.bdsSecondDivision;
             this.cbbSecondDivision.DisplayMember = "Name";
+            this.cbbSecondDivision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSecondDivision.DropDownWidth = 121;
             this.cbbSecondDivision.Location = new System.Drawing.Point(480, 28);
             this.cbbSecondDivision.Name = "cbbSecondDivision";
@@ -128,6 +129,7 @@
             // 
             this.cbbFirstDivision.DataSource = this.bdsFirstDivision;
             this.cbbFirstDivision.DisplayMember = "Name";
+            this.cbbFirstDivision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbFirstDivision.DropDownWidth = 121;
             this.cbbFirstDivision.Location = new System.Drawing.Point(281, 28);
             this.cbbFirstDivision.Name = "cbbFirstDivision";
@@ -167,6 +169,7 @@
             // 
             this.cbbName.DataSource = this.bdsItem;
             this.cbbName.DisplayMember = "Name";
+            this.cbbName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbName.DropDownWidth = 121;
             this.cbbName.Location = new System.Drawing.Point(85, 27);
             this.cbbName.Name = "cbbName";
