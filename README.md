@@ -43,7 +43,8 @@
 
 전체적인 솔루션 구성은 메인 프로그램, 클래스 라이브러리, 유닛테스트용(콘솔프로젝트)로 구성하였습니다.
 
- 
+![Project](https://user-images.githubusercontent.com/49605999/63368503-06aedd00-c3b9-11e9-97be-03f6ffd12b98.png)
+
  
 2.3 개발 환경
 --
