@@ -45,5 +45,40 @@ namespace PCBVI.Data.Data
             //public string FaciliesName { get; set; }
             //public string RotaionGroupName { get; set; }
         }
+
+        /// <summary>
+        /// 해당 작업지시 가지고 있으면 true. 없으면 false.
+        /// </summary>       
+        public bool HasWorkOrderId(int workOrderId)
+        {
+            using(var context = DbContextFactory.Create())
+            {
+                var qurey = from x in context.WorkOrders
+                            where x.WorkOrderId == workOrderId
+                            select x;
+                var list = qurey.ToList();
+
+                if (list.FirstOrDefault() == null)
+                    return false;
+                else
+                    return true;
+            }
+        }
+
+        /// <summary>
+        /// 작업일지에 등록된 작업지시서ID를 검색 반환.
+        /// </summary>      
+        public WorkLog SearhWorkDateFirst(int workOrderId)
+        {
+           using(var context = DbContextFactory.Create())
+            {
+                var query = from x in context.WorkLogs
+                            where x.WorkOrderId == workOrderId
+                            select x;
+                var list = query.ToList();
+
+                return list.FirstOrDefault();
+            }
+        }
     }
 }

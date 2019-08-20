@@ -21,6 +21,30 @@ namespace PCBVI.Data.Data
                 var query = from x in context.Employees
                     where x.LoginId.Equals(id) && x.Password.Equals(password)
                     select x;
+               
+                return query.FirstOrDefault();
+            }
+        }
+
+        public Employee CheckLoginId(string id)
+        {
+            using(var context = DbContextFactory.Create())
+            {
+                var query = from x in context.Employees
+                            where x.LoginId.Equals(id)
+                            select x;
+
+                return query.FirstOrDefault();
+            }
+        }
+        
+        public Employee CheckEmployeeCode(string code)
+        {
+            using (var context = DbContextFactory.Create())
+            {
+                var query = from x in context.Employees
+                            where x.Code.Equals(code)
+                            select x;
 
                 return query.FirstOrDefault();
             }
@@ -32,23 +56,32 @@ namespace PCBVI.Data.Data
         /// </summary>
         public List<Employee> SeachEmployeeInfo(int id, string name)
         {
-            using(PCBVIEntities context = DbContextFactory.Create())
+            using(var context = DbContextFactory.Create())
             {
                 var query = from x in context.Employees
-                             where x.DepartmentId == id
+                            where x.DepartmentId == id
                             select new
                             {
                                 Employee = x,
                                 DepartmentName =x.Department.Name
                             };
+
+
+                if (string.IsNullOrWhiteSpace(name) == false)
+                    query = query.Where(x => x.Employee.Name.Contains(name));
+
                 foreach (var item in query)
                 {
                     item.Employee.DepartmentName = item.DepartmentName;
                 }
+
                 //나중에 NULL 체크해서 넣어야됨 
-                if (string.IsNullOrWhiteSpace(name) == false)
-                    query = query.Where(x => x.Employee.Name.Contains(name));
+               
+
+
                 var list = query.ToList();
+
+
                 return list.ConvertAll(x => x.Employee);
             }
         }

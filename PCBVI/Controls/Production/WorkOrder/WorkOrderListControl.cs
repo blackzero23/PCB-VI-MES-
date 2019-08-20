@@ -34,6 +34,8 @@ namespace PCBVI.Controls.Production.WorkOrder
             bdsProcess.DataSource = DB.Process.GetAll();
             bdsRotationGroup.DataSource = DB.RotationGroup.GetAll();
             bdsWorkPlace.DataSource = DB.WorkPlace.GetAll();
+
+            bdsWorkOrder.DataSource = DB.WorkOrder.ToDayWorkOrderList();
         }
 
         public void SetDataSource(List<Data.WorkOrder> list)
@@ -41,5 +43,19 @@ namespace PCBVI.Controls.Production.WorkOrder
             dgvList.DataSource = list;
         }
 
+        public List<Data.WorkOrder> GetUpateList()
+        {
+            return (List<Data.WorkOrder>)dgvList.DataSource;
+        }
+
+        public DataGridView GetListView()
+        {
+            return dgvList;
+        }
+
+        public Data.WorkOrder GetCurrentLow()
+        {
+            return dgvList.CurrentRow.DataBoundItem as Data.WorkOrder;
+        }
     }
 }

@@ -18,6 +18,16 @@ namespace PCBVI.Forms.Production
             InitializeComponent();
         }
 
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (DesignMode)
+                return;
+
+            uscTopMenu.BtnExcel_OnlyShowVisible();
+        }
+
         private void UscSearch_SearchButtonClicked(object sender, Controls.Production.WorkLog.WorkLogSearchControl.SearchButtonClickedEventArgs e)
         {
             uscList.SetDataSource(DB.WorkLog.Search

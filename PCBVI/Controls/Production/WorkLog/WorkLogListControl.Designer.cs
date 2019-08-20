@@ -30,18 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bdsWorkLog = new System.Windows.Forms.BindingSource(this.components);
             this.rotationGroupIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.facilitiesIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.processIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sartTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productionQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.targetQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdsWorkLog = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsWorkLog)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +49,7 @@
             // 
             this.dgvList.AllowUserToAddRows = false;
             this.dgvList.AutoGenerateColumns = false;
+            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.rotationGroupIdDataGridViewTextBoxColumn,
@@ -57,7 +57,6 @@
             this.processIdDataGridViewTextBoxColumn,
             this.itemIdDataGridViewTextBoxColumn,
             this.workDateDataGridViewTextBoxColumn,
-            this.employeeIdDataGridViewTextBoxColumn,
             this.sartTimeDataGridViewTextBoxColumn,
             this.endTimeDataGridViewTextBoxColumn,
             this.productionQuantityDataGridViewTextBoxColumn,
@@ -68,12 +67,8 @@
             this.dgvList.Location = new System.Drawing.Point(0, 0);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(607, 443);
+            this.dgvList.Size = new System.Drawing.Size(978, 574);
             this.dgvList.TabIndex = 0;
-            // 
-            // bdsWorkLog
-            // 
-            this.bdsWorkLog.DataSource = typeof(PCBVI.Data.WorkLog);
             // 
             // rotationGroupIdDataGridViewTextBoxColumn
             // 
@@ -105,12 +100,6 @@
             this.workDateDataGridViewTextBoxColumn.HeaderText = "작업일";
             this.workDateDataGridViewTextBoxColumn.Name = "workDateDataGridViewTextBoxColumn";
             // 
-            // employeeIdDataGridViewTextBoxColumn
-            // 
-            this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "EmployeeId";
-            this.employeeIdDataGridViewTextBoxColumn.HeaderText = "작업자";
-            this.employeeIdDataGridViewTextBoxColumn.Name = "employeeIdDataGridViewTextBoxColumn";
-            // 
             // sartTimeDataGridViewTextBoxColumn
             // 
             this.sartTimeDataGridViewTextBoxColumn.DataPropertyName = "SartTime";
@@ -141,13 +130,17 @@
             this.targetQuantityDataGridViewTextBoxColumn.HeaderText = "목표수량";
             this.targetQuantityDataGridViewTextBoxColumn.Name = "targetQuantityDataGridViewTextBoxColumn";
             // 
+            // bdsWorkLog
+            // 
+            this.bdsWorkLog.DataSource = typeof(PCBVI.Data.WorkLog);
+            // 
             // WorkLogListControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvList);
             this.Name = "WorkLogListControl";
-            this.Size = new System.Drawing.Size(607, 443);
+            this.Size = new System.Drawing.Size(978, 574);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsWorkLog)).EndInit();
             this.ResumeLayout(false);
@@ -163,7 +156,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn processIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn workDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeIdDataGridViewTextBoxColumn;
+      
         private System.Windows.Forms.DataGridViewTextBoxColumn sartTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn endTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productionQuantityDataGridViewTextBoxColumn;

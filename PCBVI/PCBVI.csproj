@@ -361,11 +361,11 @@
     <Compile Include="Forms\Basic\BarcodeForm.Designer.cs">
       <DependentUpon>BarcodeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Basic\BarcodeInsertForm.cs">
+    <Compile Include="Forms\Basic\BarCodeInsertForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Basic\BarcodeInsertForm.Designer.cs">
-      <DependentUpon>BarcodeInsertForm.cs</DependentUpon>
+    <Compile Include="Forms\Basic\BarCodeInsertForm.Designer.cs">
+      <DependentUpon>BarCodeInsertForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Basic\EmployeeForm.cs">
       <SubType>Form</SubType>
@@ -577,6 +577,12 @@
     <Compile Include="Forms\Production\WorkOrderForm.Designer.cs">
       <DependentUpon>WorkOrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Production\WorkOrderInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\WorkOrderInsertForm.Designer.cs">
+      <DependentUpon>WorkOrderInsertForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Quality\FirstInspectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -747,9 +753,6 @@
     <EmbeddedResource Include="Forms\Basic\BarcodeForm.resx">
       <DependentUpon>BarcodeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Basic\BarcodeInsertForm.resx">
-      <DependentUpon>BarcodeInsertForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -848,6 +851,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\WorkOrderForm.resx">
       <DependentUpon>WorkOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\WorkOrderInsertForm.resx">
+      <DependentUpon>WorkOrderInsertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Quality\FirstInspectionForm.resx">
       <DependentUpon>FirstInspectionForm.cs</DependentUpon>

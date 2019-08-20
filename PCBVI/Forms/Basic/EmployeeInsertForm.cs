@@ -61,6 +61,7 @@ namespace PCBVI.Forms.Basic
                     e.Cancel = true;
                 }             
             }
+
             ///부서 에 대한 유효성 검사
             if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("부서"))
             {
@@ -88,6 +89,15 @@ namespace PCBVI.Forms.Basic
                     // dgvList.Rows[e.RowIndex].ErrorText = "사원이름은 3자리까지 입력가능합니다";
 
                 }
+
+                Employee employee = DB.Employee.CheckEmployeeCode(e.FormattedValue.ToString());
+                
+                if (employee != null)
+                {
+                    MessageBox.Show("중복된 코드입니다.");
+                    e.Cancel = true;
+                }
+
             }
             // 등급에 대한 유효성 검사
             if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("등 급"))
@@ -108,7 +118,7 @@ namespace PCBVI.Forms.Basic
                 }
 
 
-                if (newInteger > 7)
+                if (newInteger > 6 || newInteger < 0)
                 {
                     MessageBox.Show("등급 1~6 까지 설정 가능합니다.");
                     e.Cancel = true;
@@ -127,6 +137,13 @@ namespace PCBVI.Forms.Basic
                         MessageBox.Show("영어와 숫자만 입력해주세요");
                         e.Cancel = true;
                     }
+                }
+                //중복체크
+                Employee employee = DB.Employee.CheckLoginId(id);
+                if(employee != null)
+                {
+                    MessageBox.Show("중복된 아이디 입니다.");
+                    e.Cancel = true;
                 }
 
             }
@@ -166,7 +183,7 @@ namespace PCBVI.Forms.Basic
             foreach (DataGridViewRow dr in dgvList.Rows)
             {
 
-                Data.Employee employee = dr.DataBoundItem as Employee;               
+                Data.Employee employee = dr.DataBoundItem as Employee;              
                     
                 if (employee == null || string.IsNullOrWhiteSpace(employee.Name) || employee.DepartmentId == 0 || string.IsNullOrWhiteSpace(employee.Code) || employee.Grade == 0 ||
                     string.IsNullOrWhiteSpace(employee.LoginId) || string.IsNullOrWhiteSpace(employee.Password))
@@ -176,18 +193,7 @@ namespace PCBVI.Forms.Basic
                     return;
                 }
 
-                // MessageBox.Show("Test");
-                ////이름, 부서,코드, 사원, 입사일,퇴사일,등급,아이디,비번
-                //employee.Name = dr.Cells[0].Value.ToString();               
-                //employee.DepartmentId = (int)dr.Cells[1].;
-                //employee.Code = dr.Cells[2].Value.ToString();
-                //employee.EmploymentDate = (DateTime)dr.Cells[3].Value;
-                //employee.DepartureDate = (DateTime)dr.Cells[4].Value;
-                //employee.Grade = (int)dr.Cells[5].Value;
-                //employee.LoginId = dr.Cells[6].Value.ToString();
-                //employee.Password = dr.Cells[7].Value.ToString();
-
-                ////employee =  as Employee;
+               
 
 
                 DB.Employee.Insert(employee);
@@ -203,8 +209,18 @@ namespace PCBVI.Forms.Basic
 
 
             //List<Data.Employee> employees = dgvList.DataSource as List<Data.Employee>;
+            // MessageBox.Show("Test");
+            ////이름, 부서,코드, 사원, 입사일,퇴사일,등급,아이디,비번
+            //employee.Name = dr.Cells[0].Value.ToString();               
+            //employee.DepartmentId = (int)dr.Cells[1].;
+            //employee.Code = dr.Cells[2].Value.ToString();
+            //employee.EmploymentDate = (DateTime)dr.Cells[3].Value;
+            //employee.DepartureDate = (DateTime)dr.Cells[4].Value;
+            //employee.Grade = (int)dr.Cells[5].Value;
+            //employee.LoginId = dr.Cells[6].Value.ToString();
+            //employee.Password = dr.Cells[7].Value.ToString();
 
-            MessageBox.Show("입력 완료");
+            ////employee =  as Employee;
         }
 
         private void BtnCancle_Click(object sender, EventArgs e)

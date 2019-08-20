@@ -22,5 +22,17 @@ namespace PCBVI.Data.Data
                 return query.ToList();
             }
         }
+
+        public List<WorkOrder> ToDayWorkOrderList()
+        {
+            using(var context = DbContextFactory.Create())
+            {
+                var query = from x in context.WorkOrders
+                            where x.OrderDate == DateTime.Today
+                            select x;
+
+                return query.ToList();
+            }
+        }
     }
 }

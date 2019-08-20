@@ -28,8 +28,7 @@ namespace PCBVI.Controls.CommonControl
 
         //변경사항 저장
         public void UpdateAll<T>(List<T> entities) where T : class
-        {
-            //var wType = entities.GetType();
+        {            //var wType = entities.GetType();
             using (var context = new PCBVIEntities())
             {
                 foreach (var entity in entities)
@@ -100,6 +99,35 @@ namespace PCBVI.Controls.CommonControl
             // Exit from the application 
             app.Quit();         
         }
+
+
+        #region 각 버튼 Visible처리
+        public void BtnInsert_FalseVisible()
+        {
+            btnInsert.Visible = false;
+        }
+        public void BtnUpdate_FalseVisible()
+        {
+            btnUpdate.Visible = false;
+        }
+
+        public void BtnDelete_FalseVisible()
+        {
+            btnDelete.Visible = false;
+        }
+
+        public void BtnExcel_FalseVisible()
+        {
+            btnExcel.Visible = false;
+        }
+
+        public void BtnExcel_OnlyShowVisible()
+        {
+            btnDelete.Visible = false;
+            btnUpdate.Visible = false;
+            btnInsert.Visible = false;
+        }
+        #endregion
 
         private void BtnInsert_Click(object sender, EventArgs e)
         {

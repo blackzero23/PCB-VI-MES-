@@ -25,7 +25,7 @@ namespace PCBVI.Controls.Basic.BarCode
             if (DesignMode)
                 return;
 
-
+             
             List<Lot> lots = DB.Lot.GetAll();
             lots.Insert(0, new Lot(""));
             cbbLotNo.DataSource = lots;
