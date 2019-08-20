@@ -100,6 +100,35 @@ namespace PCBVI.Controls.CommonControl
             app.Quit();         
         }
 
+
+        #region 각 버튼 Visible처리
+        public void BtnInsert_FalseVisible()
+        {
+            btnInsert.Visible = false;
+        }
+        public void BtnUpdate_FalseVisible()
+        {
+            btnUpdate.Visible = false;
+        }
+
+        public void BtnDelete_FalseVisible()
+        {
+            btnDelete.Visible = false;
+        }
+
+        public void BtnExcel_FalseVisible()
+        {
+            btnExcel.Visible = false;
+        }
+
+        public void BtnExcel_OnlyShowVisible()
+        {
+            btnDelete.Visible = false;
+            btnUpdate.Visible = false;
+            btnInsert.Visible = false;
+        }
+        #endregion
+
         private void BtnInsert_Click(object sender, EventArgs e)
         {
             OnInsertButtonClicked();

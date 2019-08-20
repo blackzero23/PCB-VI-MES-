@@ -30,27 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bdsMaterialHistory = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsLot = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsBarcode = new System.Windows.Forms.BindingSource(this.components);
             this.lotIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsLot = new System.Windows.Forms.BindingSource(this.components);
             this.barcodeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsBarcode = new System.Windows.Forms.BindingSource(this.components);
             this.materialStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enterDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enterQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workPlaceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsMaterialHistory = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsMaterialHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBarcode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsMaterialHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvList
             // 
             this.dgvList.AllowUserToAddRows = false;
             this.dgvList.AutoGenerateColumns = false;
+            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.lotIdDataGridViewTextBoxColumn,
@@ -67,22 +68,6 @@
             this.dgvList.Size = new System.Drawing.Size(630, 305);
             this.dgvList.TabIndex = 0;
             // 
-            // bdsMaterialHistory
-            // 
-            this.bdsMaterialHistory.DataSource = typeof(PCBVI.Data.MaterialHistory);
-            // 
-            // bdsWorkPlace
-            // 
-            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
-            // 
-            // bdsLot
-            // 
-            this.bdsLot.DataSource = typeof(PCBVI.Data.Lot);
-            // 
-            // bdsBarcode
-            // 
-            this.bdsBarcode.DataSource = typeof(PCBVI.Data.Barcode);
-            // 
             // lotIdDataGridViewTextBoxColumn
             // 
             this.lotIdDataGridViewTextBoxColumn.DataPropertyName = "LotId";
@@ -94,6 +79,10 @@
             this.lotIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.lotIdDataGridViewTextBoxColumn.ValueMember = "LotId";
             // 
+            // bdsLot
+            // 
+            this.bdsLot.DataSource = typeof(PCBVI.Data.Lot);
+            // 
             // barcodeIdDataGridViewTextBoxColumn
             // 
             this.barcodeIdDataGridViewTextBoxColumn.DataPropertyName = "BarcodeId";
@@ -104,6 +93,10 @@
             this.barcodeIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.barcodeIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.barcodeIdDataGridViewTextBoxColumn.ValueMember = "BarcodeId";
+            // 
+            // bdsBarcode
+            // 
+            this.bdsBarcode.DataSource = typeof(PCBVI.Data.Barcode);
             // 
             // materialStateDataGridViewTextBoxColumn
             // 
@@ -134,6 +127,14 @@
             this.workPlaceIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.workPlaceIdDataGridViewTextBoxColumn.ValueMember = "WorkPlaceId";
             // 
+            // bdsWorkPlace
+            // 
+            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
+            // 
+            // bdsMaterialHistory
+            // 
+            this.bdsMaterialHistory.DataSource = typeof(PCBVI.Data.MaterialHistory);
+            // 
             // MaterialsHLC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -142,10 +143,10 @@
             this.Name = "MaterialsHLC";
             this.Size = new System.Drawing.Size(630, 305);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsMaterialHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBarcode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsMaterialHistory)).EndInit();
             this.ResumeLayout(false);
 
         }

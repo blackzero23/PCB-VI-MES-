@@ -28,34 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.kryptonDataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.bdsFacilitiesPower = new System.Windows.Forms.BindingSource(this.components);
+            this.FacilitiesName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProcessName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WorkDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsFacilitiesPower)).BeginInit();
             this.SuspendLayout();
             // 
-            // kryptonDataGridView1
+            // dgvList
             // 
-            this.kryptonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.kryptonDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonDataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.RowTemplate.Height = 23;
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(613, 388);
-            this.kryptonDataGridView1.TabIndex = 0;
+            this.dgvList.AllowUserToAddRows = false;
+            this.dgvList.AllowUserToDeleteRows = false;
+            this.dgvList.AutoGenerateColumns = false;
+            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FacilitiesName,
+            this.ProcessName,
+            this.WorkDate,
+            this.workTimeDataGridViewTextBoxColumn});
+            this.dgvList.DataSource = this.bdsFacilitiesPower;
+            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvList.Location = new System.Drawing.Point(0, 0);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.ReadOnly = true;
+            this.dgvList.RowTemplate.Height = 23;
+            this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvList.Size = new System.Drawing.Size(613, 388);
+            this.dgvList.TabIndex = 0;
+            
+            // 
+            // bdsFacilitiesPower
+            // 
+            this.bdsFacilitiesPower.DataSource = typeof(PCBVI.Data.FacilitiesPower);
+            // 
+            // FacilitiesName
+            // 
+            this.FacilitiesName.DataPropertyName = "FacilitiesName";
+            this.FacilitiesName.HeaderText = "설비명";
+            this.FacilitiesName.Name = "FacilitiesName";
+            this.FacilitiesName.ReadOnly = true;
+            // 
+            // ProcessName
+            // 
+            this.ProcessName.DataPropertyName = "ProcessName";
+            this.ProcessName.HeaderText = "공정명";
+            this.ProcessName.Name = "ProcessName";
+            this.ProcessName.ReadOnly = true;
+            // 
+            // WorkDate
+            // 
+            this.WorkDate.DataPropertyName = "WorkDate";
+            this.WorkDate.HeaderText = "작업일";
+            this.WorkDate.Name = "WorkDate";
+            this.WorkDate.ReadOnly = true;
+            // 
+            // workTimeDataGridViewTextBoxColumn
+            // 
+            this.workTimeDataGridViewTextBoxColumn.DataPropertyName = "WorkTime";
+            this.workTimeDataGridViewTextBoxColumn.HeaderText = "작업시간";
+            this.workTimeDataGridViewTextBoxColumn.Name = "workTimeDataGridViewTextBoxColumn";
+            this.workTimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FacilitiesPLC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.kryptonDataGridView1);
+            this.Controls.Add(this.dgvList);
             this.Name = "FacilitiesPLC";
             this.Size = new System.Drawing.Size(613, 388);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsFacilitiesPower)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
+        private System.Windows.Forms.BindingSource bdsFacilitiesPower;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FacilitiesName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProcessName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WorkDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workTimeDataGridViewTextBoxColumn;
     }
 }

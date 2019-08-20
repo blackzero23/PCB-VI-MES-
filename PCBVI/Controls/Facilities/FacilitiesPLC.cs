@@ -16,5 +16,10 @@ namespace PCBVI.Controls.Facilities
         {
             InitializeComponent();
         }
+
+        public void SetDataSource(List<Data.FacilitiesPower> list)
+        {
+            dgvList.DataSource = list;
+        }
     }
 }

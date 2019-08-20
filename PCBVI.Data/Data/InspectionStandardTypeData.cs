@@ -9,8 +9,5 @@ namespace PCBVI.Data.Data
     public class InspectionStandardTypeData : EntityData <InspectionStandardType>
     {
         
-        
-
-  
     }
 }

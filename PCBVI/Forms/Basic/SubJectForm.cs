@@ -18,27 +18,45 @@ namespace PCBVI.Forms.Basic
             InitializeComponent();
         }
 
+        private int itemName;
+        private int firstDivision;
+        private int secondDivision;
+
         private void UscSearch_SearchButtonClicked(object sender, Controls.Basic.SubjectControl.SubjectSearch.SearchButtonClickedEventArgs e)
         {
             uscList.SetItemDataSource(DB.Item.Search(e.ItemName, e.FirstDivision, e.SecondDivision));
+            itemName = e.ItemName;
+            firstDivision = e.FirstDivision;
+            secondDivision = e.SecondDivision;
         }
 
         private void UscTopMenu_UpdateButtonClicked(object sender, Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs e)
         {
-            List<Data.Item> items = uscList.GetUpateList();
-            uscTopMenu.UpdateAll(items);
+           
+            uscTopMenu.UpdateAll(uscList.GetUpateList());
         }
+
 
         private void UscTopMenu_InsertButtonClicked(object sender, Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs e)
         {
             
-            uscTopMenu.OpenInsertForm(new SubJectInsertForm());
+            uscTopMenu.OpenInsertForm(new SubjectInsertNewForm());
         }
 
         private void UscTopMenu_ExcelButtonClicked(object sender, Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs e)
         {
             DataGridView data = uscList.GetListView();
             uscTopMenu.SaveExcelFile(data, "품목 정보");
+        }
+
+        private void UscTopMenu_DeleteButtonClicked(object sender, Controls.CommonControl.TopMenubar.DeleteButtonClickedEventArgs e)
+        {
+           
+            Data.Item item = uscList.GetCurrentLow();
+            //uscTopMenu.DeleteAt(barcode.LotBarCodes);
+            uscTopMenu.DeleteAt(item);
+            uscList.SetItemDataSource(DB.Item.Search(itemName,firstDivision,secondDivision));
+            MessageBox.Show("삭제가 완료되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
