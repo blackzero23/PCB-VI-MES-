@@ -31,7 +31,11 @@
 
 2.1 DB 설계
 --
-
+![Left_up](https://user-images.githubusercontent.com/49605999/63368336-a7e96380-c3b8-11e9-9f5e-cf61a22a8c7d.png)
+![Right_Up](https://user-images.githubusercontent.com/49605999/63368339-a91a9080-c3b8-11e9-8726-c1068f923ec3.png)
+![Left_Down](https://user-images.githubusercontent.com/49605999/63368342-aa4bbd80-c3b8-11e9-8821-e504f839f9ba.png)
+![Right_Down](https://user-images.githubusercontent.com/49605999/63368345-ac158100-c3b8-11e9-94d8-9407e885e664.png)
+![Relation_ALL](https://user-images.githubusercontent.com/49605999/63368350-ad46ae00-c3b8-11e9-9ac4-3e57fd4b5b60.png)
 
 
 2.2 전체 솔루션 구성
