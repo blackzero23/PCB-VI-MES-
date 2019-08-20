@@ -111,7 +111,8 @@
           <Property Name="FacilitiesPowerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProcessId" Type="int" Nullable="false" />
           <Property Name="FacilitiesId" Type="int" Nullable="false" />
-          <Property Name="ProductionHistoryId" Type="int" Nullable="false" />
+          <Property Name="WorkTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="WorkDate" Type="datetime2" Precision="1" Nullable="false" />
         </EntityType>
         <EntityType Name="FHistoryDivision">
           <Key>
@@ -194,6 +195,7 @@
           </Key>
           <Property Name="LotId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LotCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="WorkPlaceId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="LotBarCode">
           <Key>
@@ -277,8 +279,9 @@
           <Property Name="ItemId" Type="int" Nullable="false" />
           <Property Name="PassQuantity" Type="int" Nullable="false" />
           <Property Name="ErrorQuantity" Type="int" Nullable="false" />
-          <Property Name="StartTime" Type="datetime" Nullable="false" />
-          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="StartTime" Type="datetime2" Precision="1" Nullable="false" />
+          <Property Name="EndTime" Type="datetime2" Precision="1" Nullable="false" />
+          <Property Name="FacilitiesId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="RotationGroup">
           <Key>
@@ -311,7 +314,7 @@
           </Key>
           <Property Name="WorkLogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="RotationGroupId" Type="int" Nullable="false" />
-          <Property Name="WorkDate" Type="datetime" Nullable="false" />
+          <Property Name="WorkDate" Type="datetime2" Precision="1" Nullable="false" />
           <Property Name="SartTime" Type="datetime" Nullable="false" />
           <Property Name="EndTime" Type="datetime" />
           <Property Name="ProductionQuantity" Type="int" />
@@ -321,6 +324,7 @@
           <Property Name="FacilitiesId" Type="int" Nullable="false" />
           <Property Name="WorkOrderId" Type="int" Nullable="false" />
           <Property Name="ItemId" Type="int" Nullable="false" />
+          <Property Name="WorkerName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="WorkOrder">
           <Key>
@@ -328,13 +332,14 @@
           </Key>
           <Property Name="WorkOrderId" Type="int" Nullable="false" />
           <Property Name="ItemId" Type="int" Nullable="false" />
-          <Property Name="OrderDate" Type="datetime" Nullable="false" />
+          <Property Name="OrderDate" Type="datetime2" Precision="1" Nullable="false" />
           <Property Name="RotationGroupId" Type="int" Nullable="false" />
           <Property Name="TargetQuantity" Type="int" Nullable="false" />
           <Property Name="ProcessId" Type="int" Nullable="false" />
           <Property Name="WorkPlaceId" Type="int" Nullable="false" />
           <Property Name="Note" Type="nvarchar" MaxLength="100" />
           <Property Name="WorkerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FacilitiesId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="WorkPlace">
           <Key>
@@ -535,18 +540,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_FacilitiesPower_ProductionHistory">
-          <End Role="ProductionHistory" Type="Self.ProductionHistory" Multiplicity="1" />
-          <End Role="FacilitiesPower" Type="Self.FacilitiesPower" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ProductionHistory">
-              <PropertyRef Name="ProductionHistoryId" />
-            </Principal>
-            <Dependent Role="FacilitiesPower">
-              <PropertyRef Name="ProductionHistoryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_FirstInspection_Employee">
           <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
           <End Role="FirstInspection" Type="Self.FirstInspection" Multiplicity="*" />
@@ -627,6 +620,18 @@
               <PropertyRef Name="WorkPlaceId" />
             </Principal>
             <Dependent Role="LastInspection">
+              <PropertyRef Name="WorkPlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lot_WorkPlace">
+          <End Role="WorkPlace" Type="Self.WorkPlace" Multiplicity="1" />
+          <End Role="Lot" Type="Self.Lot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkPlace">
+              <PropertyRef Name="WorkPlaceId" />
+            </Principal>
+            <Dependent Role="Lot">
               <PropertyRef Name="WorkPlaceId" />
             </Dependent>
           </ReferentialConstraint>
@@ -825,6 +830,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ProductionHistory_Facilities">
+          <End Role="Facilities" Type="Self.Facilities" Multiplicity="1" />
+          <End Role="ProductionHistory" Type="Self.ProductionHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facilities">
+              <PropertyRef Name="FacilitiesId" />
+            </Principal>
+            <Dependent Role="ProductionHistory">
+              <PropertyRef Name="FacilitiesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ProductionHistory_Process">
           <End Role="Process" Type="Self.Process" Multiplicity="1" />
           <End Role="ProductionHistory" Type="Self.ProductionHistory" Multiplicity="*" />
@@ -942,6 +959,18 @@
             </Principal>
             <Dependent Role="WorkLog">
               <PropertyRef Name="WorkOrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkOrder_Facilities">
+          <End Role="Facilities" Type="Self.Facilities" Multiplicity="1" />
+          <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facilities">
+              <PropertyRef Name="FacilitiesId" />
+            </Principal>
+            <Dependent Role="WorkOrder">
+              <PropertyRef Name="FacilitiesId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1090,10 +1119,6 @@
             <End Role="Process" EntitySet="Process" />
             <End Role="FacilitiesPower" EntitySet="FacilitiesPower" />
           </AssociationSet>
-          <AssociationSet Name="FK_FacilitiesPower_ProductionHistory" Association="Self.FK_FacilitiesPower_ProductionHistory">
-            <End Role="ProductionHistory" EntitySet="ProductionHistory" />
-            <End Role="FacilitiesPower" EntitySet="FacilitiesPower" />
-          </AssociationSet>
           <AssociationSet Name="FK_FirstInspection_Employee" Association="Self.FK_FirstInspection_Employee">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="FirstInspection" EntitySet="FirstInspection" />
@@ -1121,6 +1146,10 @@
           <AssociationSet Name="FK_LastInspection_WorkPlace" Association="Self.FK_LastInspection_WorkPlace">
             <End Role="WorkPlace" EntitySet="WorkPlace" />
             <End Role="LastInspection" EntitySet="LastInspection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Lot_WorkPlace" Association="Self.FK_Lot_WorkPlace">
+            <End Role="WorkPlace" EntitySet="WorkPlace" />
+            <End Role="Lot" EntitySet="Lot" />
           </AssociationSet>
           <AssociationSet Name="FK_LotBarCode_Barcode" Association="Self.FK_LotBarCode_Barcode">
             <End Role="Barcode" EntitySet="Barcode" />
@@ -1186,6 +1215,10 @@
             <End Role="FirstItemDivision" EntitySet="FirstItemDivision" />
             <End Role="Item" EntitySet="Item" />
           </AssociationSet>
+          <AssociationSet Name="FK_ProductionHistory_Facilities" Association="Self.FK_ProductionHistory_Facilities">
+            <End Role="Facilities" EntitySet="Facilities" />
+            <End Role="ProductionHistory" EntitySet="ProductionHistory" />
+          </AssociationSet>
           <AssociationSet Name="FK_ProductionHistory_Process" Association="Self.FK_ProductionHistory_Process">
             <End Role="Process" EntitySet="Process" />
             <End Role="ProductionHistory" EntitySet="ProductionHistory" />
@@ -1225,6 +1258,10 @@
           <AssociationSet Name="FK_WorkLog_WorkOrder" Association="Self.FK_WorkLog_WorkOrder">
             <End Role="WorkOrder" EntitySet="WorkOrder" />
             <End Role="WorkLog" EntitySet="WorkLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkOrder_Facilities" Association="Self.FK_WorkOrder_Facilities">
+            <End Role="Facilities" EntitySet="Facilities" />
+            <End Role="WorkOrder" EntitySet="WorkOrder" />
           </AssociationSet>
           <AssociationSet Name="FK_WorkOrder_Item" Association="Self.FK_WorkOrder_Item">
             <End Role="Item" EntitySet="Item" />
@@ -1357,7 +1394,9 @@
           <NavigationProperty Name="Process" Relationship="Self.FK_Facilities_Process" FromRole="Facilities" ToRole="Process" />
           <NavigationProperty Name="FacilitiesHistories" Relationship="Self.FK_FacilitiesHistory_Facilities1" FromRole="Facilities" ToRole="FacilitiesHistory" />
           <NavigationProperty Name="FacilitiesPowers" Relationship="Self.FK_FacilitiesPower_Facilities" FromRole="Facilities" ToRole="FacilitiesPower" />
+          <NavigationProperty Name="ProductionHistories" Relationship="Self.FK_ProductionHistory_Facilities" FromRole="Facilities" ToRole="ProductionHistory" />
           <NavigationProperty Name="WorkLogs" Relationship="Self.FK_WorkLog_Facilities" FromRole="Facilities" ToRole="WorkLog" />
+          <NavigationProperty Name="WorkOrders" Relationship="Self.FK_WorkOrder_Facilities" FromRole="Facilities" ToRole="WorkOrder" />
         </EntityType>
         <EntityType Name="FacilitiesHistory">
           <Key>
@@ -1383,10 +1422,10 @@
           <Property Name="FacilitiesPowerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ProcessId" Type="Int32" Nullable="false" />
           <Property Name="FacilitiesId" Type="Int32" Nullable="false" />
-          <Property Name="ProductionHistoryId" Type="Int32" Nullable="false" />
+          <Property Name="WorkTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="WorkDate" Type="DateTime" Nullable="false" Precision="1" />
           <NavigationProperty Name="Facility" Relationship="Self.FK_FacilitiesPower_Facilities" FromRole="FacilitiesPower" ToRole="Facilities" />
           <NavigationProperty Name="Process" Relationship="Self.FK_FacilitiesPower_Process" FromRole="FacilitiesPower" ToRole="Process" />
-          <NavigationProperty Name="ProductionHistory" Relationship="Self.FK_FacilitiesPower_ProductionHistory" FromRole="FacilitiesPower" ToRole="ProductionHistory" />
         </EntityType>
         <EntityType Name="FHistoryDivision">
           <Key>
@@ -1489,7 +1528,9 @@
           </Key>
           <Property Name="LotId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="LotCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="WorkPlaceId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_Lot" FromRole="Lot" ToRole="DefectiveProduct" />
+          <NavigationProperty Name="WorkPlace" Relationship="Self.FK_Lot_WorkPlace" FromRole="Lot" ToRole="WorkPlace" />
           <NavigationProperty Name="LotBarCodes" Relationship="Self.FK_LotBarCode_Lot" FromRole="Lot" ToRole="LotBarCode" />
           <NavigationProperty Name="MaterialHistories" Relationship="Self.FK_MaterialHistory_Lot" FromRole="Lot" ToRole="MaterialHistory" />
           <NavigationProperty Name="MaterialsManages" Relationship="Self.FK_MaterialsManage_Lot" FromRole="Lot" ToRole="MaterialsManage" />
@@ -1602,9 +1643,10 @@
           <Property Name="ItemId" Type="Int32" Nullable="false" />
           <Property Name="PassQuantity" Type="Int32" Nullable="false" />
           <Property Name="ErrorQuantity" Type="Int32" Nullable="false" />
-          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="FacilitiesPowers" Relationship="Self.FK_FacilitiesPower_ProductionHistory" FromRole="ProductionHistory" ToRole="FacilitiesPower" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="1" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="1" />
+          <Property Name="FacilitiesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Facility" Relationship="Self.FK_ProductionHistory_Facilities" FromRole="ProductionHistory" ToRole="Facilities" />
           <NavigationProperty Name="Item" Relationship="Self.FK_FacilitiesHistory_Product" FromRole="ProductionHistory" ToRole="Item" />
           <NavigationProperty Name="Process" Relationship="Self.FK_ProductionHistory_Process" FromRole="ProductionHistory" ToRole="Process" />
         </EntityType>
@@ -1646,7 +1688,7 @@
           </Key>
           <Property Name="WorkLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RotationGroupId" Type="Int32" Nullable="false" />
-          <Property Name="WorkDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="WorkDate" Type="DateTime" Nullable="false" Precision="1" />
           <Property Name="SartTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="EndTime" Type="DateTime" Precision="3" />
           <Property Name="ProductionQuantity" Type="Int32" />
@@ -1656,6 +1698,7 @@
           <Property Name="FacilitiesId" Type="Int32" Nullable="false" />
           <Property Name="WorkOrderId" Type="Int32" Nullable="false" />
           <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="WorkerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Facility" Relationship="Self.FK_WorkLog_Facilities" FromRole="WorkLog" ToRole="Facilities" />
           <NavigationProperty Name="Item" Relationship="Self.FK_WorkLog_Item" FromRole="WorkLog" ToRole="Item" />
           <NavigationProperty Name="Process" Relationship="Self.FK_WorkLog_Process" FromRole="WorkLog" ToRole="Process" />
@@ -1669,13 +1712,15 @@
           </Key>
           <Property Name="WorkOrderId" Type="Int32" Nullable="false" />
           <Property Name="ItemId" Type="Int32" Nullable="false" />
-          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="1" />
           <Property Name="RotationGroupId" Type="Int32" Nullable="false" />
           <Property Name="TargetQuantity" Type="Int32" Nullable="false" />
           <Property Name="ProcessId" Type="Int32" Nullable="false" />
           <Property Name="WorkPlaceId" Type="Int32" Nullable="false" />
           <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="WorkerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FacilitiesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Facility" Relationship="Self.FK_WorkOrder_Facilities" FromRole="WorkOrder" ToRole="Facilities" />
           <NavigationProperty Name="Item" Relationship="Self.FK_WorkOrder_Item" FromRole="WorkOrder" ToRole="Item" />
           <NavigationProperty Name="Process" Relationship="Self.FK_WorkOrder_Process" FromRole="WorkOrder" ToRole="Process" />
           <NavigationProperty Name="RotationGroup" Relationship="Self.FK_WorkOrder_RotationGroup" FromRole="WorkOrder" ToRole="RotationGroup" />
@@ -1690,6 +1735,7 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="FirstInspections" Relationship="Self.FK_FirstInspection_WorkPlace" FromRole="WorkPlace" ToRole="FirstInspection" />
           <NavigationProperty Name="LastInspections" Relationship="Self.FK_LastInspection_WorkPlace" FromRole="WorkPlace" ToRole="LastInspection" />
+          <NavigationProperty Name="Lots" Relationship="Self.FK_Lot_WorkPlace" FromRole="WorkPlace" ToRole="Lot" />
           <NavigationProperty Name="MaterialHistories" Relationship="Self.FK_MaterialHistory_WorkPlace" FromRole="WorkPlace" ToRole="MaterialHistory" />
           <NavigationProperty Name="MaterialsInRes" Relationship="Self.FK_MaterialsInRe_WorkPlace" FromRole="WorkPlace" ToRole="MaterialsInRe" />
           <NavigationProperty Name="WorkOrders" Relationship="Self.FK_WorkOrder_WorkPlace" FromRole="WorkPlace" ToRole="WorkOrder" />
@@ -1924,6 +1970,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ProductionHistory_Facilities">
+          <End Role="Facilities" Type="Self.Facility" Multiplicity="1" />
+          <End Role="ProductionHistory" Type="Self.ProductionHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facilities">
+              <PropertyRef Name="FacilitiesId" />
+            </Principal>
+            <Dependent Role="ProductionHistory">
+              <PropertyRef Name="FacilitiesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_WorkLog_Facilities">
           <End Role="Facilities" Type="Self.Facility" Multiplicity="1" />
           <End Role="WorkLog" Type="Self.WorkLog" Multiplicity="*" />
@@ -1932,6 +1990,18 @@
               <PropertyRef Name="FacilitiesId" />
             </Principal>
             <Dependent Role="WorkLog">
+              <PropertyRef Name="FacilitiesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkOrder_Facilities">
+          <End Role="Facilities" Type="Self.Facility" Multiplicity="1" />
+          <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facilities">
+              <PropertyRef Name="FacilitiesId" />
+            </Principal>
+            <Dependent Role="WorkOrder">
               <PropertyRef Name="FacilitiesId" />
             </Dependent>
           </ReferentialConstraint>
@@ -1957,18 +2027,6 @@
             </Principal>
             <Dependent Role="FacilitiesPower">
               <PropertyRef Name="ProcessId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_FacilitiesPower_ProductionHistory">
-          <End Role="ProductionHistory" Type="Self.ProductionHistory" Multiplicity="1" />
-          <End Role="FacilitiesPower" Type="Self.FacilitiesPower" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ProductionHistory">
-              <PropertyRef Name="ProductionHistoryId" />
-            </Principal>
-            <Dependent Role="FacilitiesPower">
-              <PropertyRef Name="ProductionHistoryId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2124,6 +2182,18 @@
               <PropertyRef Name="WorkPlaceId" />
             </Principal>
             <Dependent Role="LastInspection">
+              <PropertyRef Name="WorkPlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lot_WorkPlace">
+          <End Role="WorkPlace" Type="Self.WorkPlace" Multiplicity="1" />
+          <End Role="Lot" Type="Self.Lot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkPlace">
+              <PropertyRef Name="WorkPlaceId" />
+            </Principal>
+            <Dependent Role="Lot">
               <PropertyRef Name="WorkPlaceId" />
             </Dependent>
           </ReferentialConstraint>
@@ -2453,9 +2523,17 @@
             <End Role="Facilities" EntitySet="Facilities" />
             <End Role="FacilitiesPower" EntitySet="FacilitiesPowers" />
           </AssociationSet>
+          <AssociationSet Name="FK_ProductionHistory_Facilities" Association="Self.FK_ProductionHistory_Facilities">
+            <End Role="Facilities" EntitySet="Facilities" />
+            <End Role="ProductionHistory" EntitySet="ProductionHistories" />
+          </AssociationSet>
           <AssociationSet Name="FK_WorkLog_Facilities" Association="Self.FK_WorkLog_Facilities">
             <End Role="Facilities" EntitySet="Facilities" />
             <End Role="WorkLog" EntitySet="WorkLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkOrder_Facilities" Association="Self.FK_WorkOrder_Facilities">
+            <End Role="Facilities" EntitySet="Facilities" />
+            <End Role="WorkOrder" EntitySet="WorkOrders" />
           </AssociationSet>
           <AssociationSet Name="FK_FacilitiesHistory_FHistoryDivision" Association="Self.FK_FacilitiesHistory_FHistoryDivision">
             <End Role="FHistoryDivision" EntitySet="FHistoryDivisions" />
@@ -2463,10 +2541,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_FacilitiesPower_Process" Association="Self.FK_FacilitiesPower_Process">
             <End Role="Process" EntitySet="Processes" />
-            <End Role="FacilitiesPower" EntitySet="FacilitiesPowers" />
-          </AssociationSet>
-          <AssociationSet Name="FK_FacilitiesPower_ProductionHistory" Association="Self.FK_FacilitiesPower_ProductionHistory">
-            <End Role="ProductionHistory" EntitySet="ProductionHistories" />
             <End Role="FacilitiesPower" EntitySet="FacilitiesPowers" />
           </AssociationSet>
           <AssociationSet Name="FK_FirstInspection_Product" Association="Self.FK_FirstInspection_Product">
@@ -2520,6 +2594,10 @@
           <AssociationSet Name="FK_LastInspection_WorkPlace" Association="Self.FK_LastInspection_WorkPlace">
             <End Role="WorkPlace" EntitySet="WorkPlaces" />
             <End Role="LastInspection" EntitySet="LastInspections" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Lot_WorkPlace" Association="Self.FK_Lot_WorkPlace">
+            <End Role="WorkPlace" EntitySet="WorkPlaces" />
+            <End Role="Lot" EntitySet="Lots" />
           </AssociationSet>
           <AssociationSet Name="FK_LotBarCode_Lot" Association="Self.FK_LotBarCode_Lot">
             <End Role="Lot" EntitySet="Lots" />
@@ -2714,7 +2792,8 @@
                 <ScalarProperty Name="FacilitiesPowerId" ColumnName="FacilitiesPowerId" />
                 <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
                 <ScalarProperty Name="FacilitiesId" ColumnName="FacilitiesId" />
-                <ScalarProperty Name="ProductionHistoryId" ColumnName="ProductionHistoryId" />
+                <ScalarProperty Name="WorkTime" ColumnName="WorkTime" />
+                <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2805,6 +2884,7 @@
               <MappingFragment StoreEntitySet="Lot">
                 <ScalarProperty Name="LotId" ColumnName="LotId" />
                 <ScalarProperty Name="LotCode" ColumnName="LotCode" />
+                <ScalarProperty Name="WorkPlaceId" ColumnName="WorkPlaceId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2897,6 +2977,7 @@
                 <ScalarProperty Name="ErrorQuantity" ColumnName="ErrorQuantity" />
                 <ScalarProperty Name="StartTime" ColumnName="StartTime" />
                 <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="FacilitiesId" ColumnName="FacilitiesId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2943,6 +3024,7 @@
                 <ScalarProperty Name="FacilitiesId" ColumnName="FacilitiesId" />
                 <ScalarProperty Name="WorkOrderId" ColumnName="WorkOrderId" />
                 <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="WorkerName" ColumnName="WorkerName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2958,6 +3040,7 @@
                 <ScalarProperty Name="WorkPlaceId" ColumnName="WorkPlaceId" />
                 <ScalarProperty Name="Note" ColumnName="Note" />
                 <ScalarProperty Name="WorkerName" ColumnName="WorkerName" />
+                <ScalarProperty Name="FacilitiesId" ColumnName="FacilitiesId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -64,6 +64,7 @@
     <Compile Include="Data\ErrorTypeData.cs" />
     <Compile Include="Data\FacilitiesData.cs" />
     <Compile Include="Data\FacilitiesHistoryData.cs" />
+    <Compile Include="Data\FacilitiesPowerData.cs" />
     <Compile Include="Data\FHistoryDivisionData.cs" />
     <Compile Include="Data\FirstInspectionData.cs" />
     <Compile Include="Data\FirstItemDivisionData.cs" />

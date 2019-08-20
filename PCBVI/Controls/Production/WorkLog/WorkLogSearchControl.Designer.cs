@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.dtpToDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.dtpFromDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
@@ -38,7 +39,6 @@
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
             this.bdsRotation = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
@@ -64,7 +64,19 @@
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.Size = new System.Drawing.Size(942, 75);
+            this.kryptonPanel1.StateCommon.Color1 = System.Drawing.SystemColors.Control;
+            this.kryptonPanel1.StateCommon.Color2 = System.Drawing.SystemColors.Control;
+            this.kryptonPanel1.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel1.TabIndex = 0;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Location = new System.Drawing.Point(831, 26);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(90, 25);
+            this.btnSearch.TabIndex = 16;
+            this.btnSearch.Values.Text = "검 색";
             // 
             // kryptonLabel4
             // 
@@ -79,6 +91,7 @@
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpToDate.Location = new System.Drawing.Point(609, 26);
             this.dtpToDate.Name = "dtpToDate";
+            this.dtpToDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpToDate.Size = new System.Drawing.Size(132, 21);
             this.dtpToDate.TabIndex = 14;
             // 
@@ -87,6 +100,7 @@
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFromDate.Location = new System.Drawing.Point(465, 26);
             this.dtpFromDate.Name = "dtpFromDate";
+            this.dtpFromDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpFromDate.Size = new System.Drawing.Size(113, 21);
             this.dtpFromDate.TabIndex = 13;
             // 
@@ -133,15 +147,6 @@
             this.kryptonLabel1.Size = new System.Drawing.Size(54, 20);
             this.kryptonLabel1.TabIndex = 8;
             this.kryptonLabel1.Values.Text = "품목명 :";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Location = new System.Drawing.Point(831, 26);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(90, 25);
-            this.btnSearch.TabIndex = 16;
-            this.btnSearch.Values.Text = "검 색";
             // 
             // bdsItem
             // 

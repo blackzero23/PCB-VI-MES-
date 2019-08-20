@@ -25,22 +25,22 @@ namespace PCBVI.Forms.Production
 
         private void UscTopMenu_InsertButtonClicked(object sender, Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs e)
         {
-
+            uscTopMenu.OpenInsertForm(new WorkOrderInsertForm());
         }
 
         private void UscTopMenu_UpdateButtonClicked(object sender, Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs e)
         {
-
+            uscTopMenu.UpdateAll(uscList.GetUpateList());
         }
 
         private void UscTopMenu_ExcelButtonClicked(object sender, Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs e)
         {
-
+            uscTopMenu.SaveExcelFile(uscList.GetListView(), "작업 지시 목록");
         }
 
         private void UscTopMenu_DeleteButtonClicked(object sender, Controls.CommonControl.TopMenubar.DeleteButtonClickedEventArgs e)
         {
-
+            uscTopMenu.DeleteAt(uscList.GetCurrentLow());
         }
     }
 }

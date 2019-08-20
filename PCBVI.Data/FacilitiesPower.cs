@@ -17,10 +17,10 @@ namespace PCBVI.Data
         public int FacilitiesPowerId { get; set; }
         public int ProcessId { get; set; }
         public int FacilitiesId { get; set; }
-        public int ProductionHistoryId { get; set; }
+        public System.TimeSpan WorkTime { get; set; }
+        public System.DateTime WorkDate { get; set; }
     
         public virtual Facility Facility { get; set; }
         public virtual Process Process { get; set; }
-        public virtual ProductionHistory ProductionHistory { get; set; }
     }
 }

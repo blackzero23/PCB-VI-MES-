@@ -28,32 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.btnExcel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnInsert = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnUpdate = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnDelete = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
-            this.kryptonPanel1.SuspendLayout();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // kryptonPanel1
-            // 
-            this.kryptonPanel1.Controls.Add(this.btnExcel);
-            this.kryptonPanel1.Controls.Add(this.btnInsert);
-            this.kryptonPanel1.Controls.Add(this.btnUpdate);
-            this.kryptonPanel1.Controls.Add(this.btnDelete);
-            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(316, 35);
-            this.kryptonPanel1.TabIndex = 0;
             // 
             // btnExcel
             // 
             this.btnExcel.AutoSize = true;
-            this.btnExcel.Location = new System.Drawing.Point(236, 0);
+            this.btnExcel.Location = new System.Drawing.Point(201, 3);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(80, 38);
+            this.btnExcel.Size = new System.Drawing.Size(56, 26);
             this.btnExcel.TabIndex = 5;
             this.btnExcel.Values.Image = global::PCBVI.Properties.Resources.icons8_ms_excel_20px;
             this.btnExcel.Values.Text = "엑셀";
@@ -62,9 +50,9 @@
             // btnInsert
             // 
             this.btnInsert.AutoSize = true;
-            this.btnInsert.Location = new System.Drawing.Point(157, 0);
+            this.btnInsert.Location = new System.Drawing.Point(135, 3);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(80, 38);
+            this.btnInsert.Size = new System.Drawing.Size(60, 26);
             this.btnInsert.TabIndex = 3;
             this.btnInsert.Values.Image = global::PCBVI.Properties.Resources.icons8_add_database_20px;
             this.btnInsert.Values.Text = "신 규";
@@ -73,9 +61,9 @@
             // btnUpdate
             // 
             this.btnUpdate.AutoSize = true;
-            this.btnUpdate.Location = new System.Drawing.Point(0, -1);
+            this.btnUpdate.Location = new System.Drawing.Point(3, 3);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(80, 38);
+            this.btnUpdate.Size = new System.Drawing.Size(60, 26);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Values.Image = global::PCBVI.Properties.Resources.icons8_save_20px;
             this.btnUpdate.Values.Text = "저 장";
@@ -84,35 +72,44 @@
             // btnDelete
             // 
             this.btnDelete.AutoSize = true;
-            this.btnDelete.Location = new System.Drawing.Point(79, -1);
+            this.btnDelete.Location = new System.Drawing.Point(69, 3);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(80, 38);
+            this.btnDelete.Size = new System.Drawing.Size(60, 26);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Values.Image = global::PCBVI.Properties.Resources.icons8_delete_20px;
             this.btnDelete.Values.Text = "삭 제";
             this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnUpdate);
+            this.flowLayoutPanel1.Controls.Add(this.btnDelete);
+            this.flowLayoutPanel1.Controls.Add(this.btnInsert);
+            this.flowLayoutPanel1.Controls.Add(this.btnExcel);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(261, 35);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // TopMenubar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.kryptonPanel1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "TopMenubar";
-            this.Size = new System.Drawing.Size(318, 36);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
-            this.kryptonPanel1.ResumeLayout(false);
-            this.kryptonPanel1.PerformLayout();
+            this.Size = new System.Drawing.Size(261, 35);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnExcel;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnInsert;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnUpdate;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnDelete;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

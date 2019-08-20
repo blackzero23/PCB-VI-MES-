@@ -32,6 +32,7 @@
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.uscList = new PCBVI.Controls.Production.WorkLog.WorkLogListControl();
             this.uscSearch = new PCBVI.Controls.Production.WorkLog.WorkLogSearchControl();
+            this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).BeginInit();
             this.kryptonNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).BeginInit();
@@ -84,11 +85,21 @@
             this.uscSearch.TabIndex = 0;
             this.uscSearch.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Production.WorkLog.WorkLogSearchControl.SearchButtonClickedEventArgs>(this.UscSearch_SearchButtonClicked);
             // 
+            // uscTopMenu
+            // 
+            this.uscTopMenu.BackColor = System.Drawing.Color.White;
+            this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
+            this.uscTopMenu.Name = "uscTopMenu";
+            this.uscTopMenu.Size = new System.Drawing.Size(800, 35);
+            this.uscTopMenu.TabIndex = 2;
+            // 
             // WorkLogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.uscTopMenu);
             this.Controls.Add(this.kryptonNavigator1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WorkLogForm";
@@ -106,5 +117,6 @@
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage1;
         private Controls.Production.WorkLog.WorkLogSearchControl uscSearch;
         private Controls.Production.WorkLog.WorkLogListControl uscList;
+        private Controls.CommonControl.TopMenubar uscTopMenu;
     }
 }

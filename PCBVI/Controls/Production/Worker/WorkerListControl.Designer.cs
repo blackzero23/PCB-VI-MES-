@@ -31,23 +31,23 @@
             this.components = new System.ComponentModel.Container();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.txbWorker = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.btnStop = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnStart = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsRotationGroup = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsProcess = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsWorkOrder = new System.Windows.Forms.BindingSource(this.components);
             this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
             this.orderDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
             this.rotationGroupIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsRotationGroup = new System.Windows.Forms.BindingSource(this.components);
             this.processIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsProcess = new System.Windows.Forms.BindingSource(this.components);
             this.WorkerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.targetQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workPlaceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
             this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdsWorkOrder = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
@@ -61,14 +61,15 @@
             // kryptonPanel1
             // 
             this.kryptonPanel1.Controls.Add(this.kryptonLabel1);
-            this.kryptonPanel1.Controls.Add(this.kryptonTextBox1);
-            this.kryptonPanel1.Controls.Add(this.kryptonButton2);
-            this.kryptonPanel1.Controls.Add(this.kryptonButton1);
+            this.kryptonPanel1.Controls.Add(this.txbWorker);
+            this.kryptonPanel1.Controls.Add(this.btnStop);
+            this.kryptonPanel1.Controls.Add(this.btnStart);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 310);
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.Size = new System.Drawing.Size(947, 66);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.SystemColors.ControlLight;
+            this.kryptonPanel1.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel1.TabIndex = 3;
             // 
             // kryptonLabel1
@@ -80,31 +81,33 @@
             this.kryptonLabel1.TabIndex = 6;
             this.kryptonLabel1.Values.Text = "작업자 : ";
             // 
-            // kryptonTextBox1
+            // txbWorker
             // 
-            this.kryptonTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonTextBox1.Location = new System.Drawing.Point(575, 25);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(100, 23);
-            this.kryptonTextBox1.TabIndex = 5;
+            this.txbWorker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbWorker.Location = new System.Drawing.Point(575, 25);
+            this.txbWorker.Name = "txbWorker";
+            this.txbWorker.Size = new System.Drawing.Size(100, 20);
+            this.txbWorker.TabIndex = 5;
             // 
-            // kryptonButton2
+            // btnStop
             // 
-            this.kryptonButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonButton2.Location = new System.Drawing.Point(826, 19);
-            this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(90, 25);
-            this.kryptonButton2.TabIndex = 1;
-            this.kryptonButton2.Values.Text = "작업 종료";
+            this.btnStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStop.Location = new System.Drawing.Point(826, 19);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(90, 25);
+            this.btnStop.TabIndex = 1;
+            this.btnStop.Values.Text = "작업 종료";
+            this.btnStop.Click += new System.EventHandler(this.BtnStop_Click);
             // 
-            // kryptonButton1
+            // btnStart
             // 
-            this.kryptonButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonButton1.Location = new System.Drawing.Point(715, 20);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(90, 25);
-            this.kryptonButton1.TabIndex = 0;
-            this.kryptonButton1.Values.Text = "작업 시작";
+            this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStart.Location = new System.Drawing.Point(715, 20);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(90, 25);
+            this.btnStart.TabIndex = 0;
+            this.btnStart.Values.Text = "작업 시작";
+            this.btnStart.Click += new System.EventHandler(this.BtnStart_Click);
             // 
             // dgvList
             // 
@@ -129,26 +132,6 @@
             this.dgvList.Size = new System.Drawing.Size(947, 310);
             this.dgvList.TabIndex = 4;
             // 
-            // bdsItem
-            // 
-            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
-            // 
-            // bdsRotationGroup
-            // 
-            this.bdsRotationGroup.DataSource = typeof(PCBVI.Data.RotationGroup);
-            // 
-            // bdsProcess
-            // 
-            this.bdsProcess.DataSource = typeof(PCBVI.Data.Process);
-            // 
-            // bdsWorkPlace
-            // 
-            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
-            // 
-            // bdsWorkOrder
-            // 
-            this.bdsWorkOrder.DataSource = typeof(PCBVI.Data.WorkOrder);
-            // 
             // itemIdDataGridViewTextBoxColumn
             // 
             this.itemIdDataGridViewTextBoxColumn.DataPropertyName = "ItemId";
@@ -161,6 +144,10 @@
             this.itemIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.itemIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.itemIdDataGridViewTextBoxColumn.ValueMember = "ItemId";
+            // 
+            // bdsItem
+            // 
+            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
             // 
             // orderDateDataGridViewTextBoxColumn
             // 
@@ -187,6 +174,10 @@
             this.rotationGroupIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.rotationGroupIdDataGridViewTextBoxColumn.ValueMember = "RotationGroupId";
             // 
+            // bdsRotationGroup
+            // 
+            this.bdsRotationGroup.DataSource = typeof(PCBVI.Data.RotationGroup);
+            // 
             // processIdDataGridViewTextBoxColumn
             // 
             this.processIdDataGridViewTextBoxColumn.DataPropertyName = "ProcessId";
@@ -200,6 +191,10 @@
             this.processIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.processIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.processIdDataGridViewTextBoxColumn.ValueMember = "ProcessId";
+            // 
+            // bdsProcess
+            // 
+            this.bdsProcess.DataSource = typeof(PCBVI.Data.Process);
             // 
             // WorkerName
             // 
@@ -227,12 +222,20 @@
             this.workPlaceIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.workPlaceIdDataGridViewTextBoxColumn.ValueMember = "WorkPlaceId";
             // 
+            // bdsWorkPlace
+            // 
+            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
+            // 
             // noteDataGridViewTextBoxColumn
             // 
             this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
             this.noteDataGridViewTextBoxColumn.FillWeight = 99.82687F;
             this.noteDataGridViewTextBoxColumn.HeaderText = "비고";
             this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
+            // 
+            // bdsWorkOrder
+            // 
+            this.bdsWorkOrder.DataSource = typeof(PCBVI.Data.WorkOrder);
             // 
             // WorkerListControl
             // 
@@ -258,8 +261,8 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnStop;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnStart;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
         private System.Windows.Forms.BindingSource bdsItem;
         private System.Windows.Forms.BindingSource bdsRotationGroup;
@@ -267,7 +270,7 @@
         private System.Windows.Forms.BindingSource bdsWorkPlace;
         private System.Windows.Forms.BindingSource bdsWorkOrder;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txbWorker;
         private System.Windows.Forms.DataGridViewComboBoxColumn itemIdDataGridViewTextBoxColumn;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn orderDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn rotationGroupIdDataGridViewTextBoxColumn;

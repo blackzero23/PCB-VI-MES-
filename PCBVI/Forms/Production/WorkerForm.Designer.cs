@@ -30,11 +30,9 @@
         {
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.uscSearch = new PCBVI.Controls.Production.Worker.WorkerSearch();
-            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.topMenubar1 = new PCBVI.Controls.CommonControl.TopMenubar();
-            this.workerGridView1 = new PCBVI.Controls.Production.Worker.WorkerListControl();
             this.uscList = new PCBVI.Controls.Production.Worker.WorkerListControl();
+            this.uscSearch = new PCBVI.Controls.Production.Worker.WorkerSearch();
+            this.workerGridView1 = new PCBVI.Controls.Production.Worker.WorkerListControl();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).BeginInit();
             this.kryptonNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).BeginInit();
@@ -47,12 +45,12 @@
             this.kryptonNavigator1.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.kryptonNavigator1.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.kryptonNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonNavigator1.Location = new System.Drawing.Point(0, 35);
+            this.kryptonNavigator1.Location = new System.Drawing.Point(0, 0);
             this.kryptonNavigator1.Name = "kryptonNavigator1";
             this.kryptonNavigator1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage1});
             this.kryptonNavigator1.SelectedIndex = 0;
-            this.kryptonNavigator1.Size = new System.Drawing.Size(978, 415);
+            this.kryptonNavigator1.Size = new System.Drawing.Size(978, 450);
             this.kryptonNavigator1.TabIndex = 1;
             // 
             // kryptonPage1
@@ -64,10 +62,18 @@
             this.kryptonPage1.LastVisibleSet = true;
             this.kryptonPage1.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage1.Name = "kryptonPage1";
-            this.kryptonPage1.Size = new System.Drawing.Size(976, 388);
+            this.kryptonPage1.Size = new System.Drawing.Size(976, 423);
             this.kryptonPage1.Text = "작업자관리";
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "46942E835518403356AE5BDA050D0BC4";
+            // 
+            // uscList
+            // 
+            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscList.Location = new System.Drawing.Point(0, 71);
+            this.uscList.Name = "uscList";
+            this.uscList.Size = new System.Drawing.Size(976, 352);
+            this.uscList.TabIndex = 3;
             // 
             // uscSearch
             // 
@@ -78,23 +84,6 @@
             this.uscSearch.TabIndex = 2;
             this.uscSearch.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Production.Worker.WorkerSearch.SearchButtonClickedEventArgs>(this.UscSearch_SearchButtonClicked);
             // 
-            // kryptonTextBox1
-            // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(483, 9);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(415, 23);
-            this.kryptonTextBox1.TabIndex = 2;
-            this.kryptonTextBox1.Text = "작업자 사원번호 직책 공정 설비 작업일자";
-            // 
-            // topMenubar1
-            // 
-            this.topMenubar1.BackColor = System.Drawing.Color.White;
-            this.topMenubar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topMenubar1.Location = new System.Drawing.Point(0, 0);
-            this.topMenubar1.Name = "topMenubar1";
-            this.topMenubar1.Size = new System.Drawing.Size(978, 35);
-            this.topMenubar1.TabIndex = 0;
-            // 
             // workerGridView1
             // 
             this.workerGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -103,22 +92,12 @@
             this.workerGridView1.Size = new System.Drawing.Size(798, 317);
             this.workerGridView1.TabIndex = 3;
             // 
-            // uscList
-            // 
-            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscList.Location = new System.Drawing.Point(0, 71);
-            this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(976, 317);
-            this.uscList.TabIndex = 3;
-            // 
             // WorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 450);
-            this.Controls.Add(this.kryptonTextBox1);
             this.Controls.Add(this.kryptonNavigator1);
-            this.Controls.Add(this.topMenubar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WorkerForm";
             this.Text = "WorkerForm";
@@ -127,16 +106,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).EndInit();
             this.kryptonPage1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Controls.CommonControl.TopMenubar topMenubar1;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator kryptonNavigator1;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage1;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private Controls.Production.Worker.WorkerListControl workerGridView1;
         private Controls.Production.Worker.WorkerSearch uscSearch;
         private Controls.Production.Worker.WorkerListControl uscList;
