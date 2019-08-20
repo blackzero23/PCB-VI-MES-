@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PCBVI.Data.Data;
+using PCBVI.Data;
 
 namespace PCBVI.Controls.Basic.InspectionStandard
 {
@@ -31,9 +32,9 @@ namespace PCBVI.Controls.Basic.InspectionStandard
             
         }
 
-        public List<Data.InspectionStandardType> GetUpateList()
+        public List<Data.InspectionStandard> GetUpateList()
         {
-            return (List<Data.InspectionStandardType>)dgvList.DataSource;
+            return (List<Data.InspectionStandard>)dgvList.DataSource;
         }
         
 
@@ -45,6 +46,23 @@ namespace PCBVI.Controls.Basic.InspectionStandard
         public DataGridView GetListView()
         {
             return dgvList;
+        }
+
+
+        public Data.InspectionStandard GetCurrentLow()
+        {
+            return dgvList.CurrentRow.DataBoundItem as Data.InspectionStandard;
+        }
+
+
+        private List<Data.InspectionStandard> _inspectionStandard = new List<Data.InspectionStandard>();
+
+        private void DgvList_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvList.CurrentRow.DataBoundItem is Data.InspectionStandard inspectionStandard)
+            {
+                _inspectionStandard.Add(inspectionStandard);
+            }
         }
 
     }

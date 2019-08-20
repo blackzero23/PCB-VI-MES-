@@ -102,6 +102,7 @@
     <Compile Include="Entities\FacilitiesPower.cs" />
     <Compile Include="Entities\Facility.cs" />
     <Compile Include="Entities\FHistoryDivision.cs" />
+    <Compile Include="Entities\InspectionStandard.cs" />
     <Compile Include="Entities\Lot.cs" />
     <Compile Include="Entities\FirstInspection.cs" />
     <Compile Include="Entities\MaterialsManage.cs" />

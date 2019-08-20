@@ -50,5 +50,20 @@ namespace PCBVI.Controls.Basic.SubjectControl
             return dgvList;
         }
 
+        public Data.Item GetCurrentLow()
+        {
+            return dgvList.CurrentRow.DataBoundItem as Data.Item;
+        }
+
+
+        private List<Data.Item> _itemes = new List<Data.Item>();
+
+        private void DgvList_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvList.CurrentRow.DataBoundItem is Data.Item item)
+            {
+                _itemes.Add(item);
+            }
+        }
     }
 }

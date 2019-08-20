@@ -26,7 +26,7 @@ namespace PCBVI.Data.Data
         public static DefectiveProductData DefectiveProduct { get; } = new DefectiveProductData();
         public static MaterialHistoryData MaterialHistory { get; } = new MaterialHistoryData();
         public static FirstInspectionData FirstInspection { get; } = new FirstInspectionData();
-        public static InspectionStandardTypeData InspectionStandardType { get; } = new InspectionStandardTypeData();
+        public static InspectionStandardTypeData InspectionStandardType { get; set; } = new InspectionStandardTypeData();
         public static InspectionStandardData InspectionStandard { get; } = new InspectionStandardData();
         public static RotationGroupData RotationGroup { get; } = new RotationGroupData();
         public static WorkOrderData WorkOrder { get; } = new WorkOrderData();
