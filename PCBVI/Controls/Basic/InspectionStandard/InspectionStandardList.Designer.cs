@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bdsInspectionStandardType = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsInspectionStandard = new System.Windows.Forms.BindingSource(this.components);
             this.inspectionStandardIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inspectionStandardTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsInspectionStandardType = new System.Windows.Forms.BindingSource(this.components);
             this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdsInspectionStandard = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsInspectionStandardType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsInspectionStandard)).BeginInit();
@@ -43,6 +43,8 @@
             // dgvList
             // 
             this.dgvList.AllowUserToAddRows = false;
+            this.dgvList.AllowUserToResizeColumns = false;
+            this.dgvList.AllowUserToResizeRows = false;
             this.dgvList.AutoGenerateColumns = false;
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -57,14 +59,6 @@
             this.dgvList.RowTemplate.Height = 23;
             this.dgvList.Size = new System.Drawing.Size(703, 150);
             this.dgvList.TabIndex = 0;
-            // 
-            // bdsInspectionStandardType
-            // 
-            this.bdsInspectionStandardType.DataSource = typeof(PCBVI.Data.InspectionStandardType);
-            // 
-            // bdsInspectionStandard
-            // 
-            this.bdsInspectionStandard.DataSource = typeof(PCBVI.Data.InspectionStandard);
             // 
             // inspectionStandardIdDataGridViewTextBoxColumn
             // 
@@ -85,11 +79,19 @@
             this.inspectionStandardTypeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.inspectionStandardTypeDataGridViewTextBoxColumn.ValueMember = "InspectionStandardTypeId";
             // 
+            // bdsInspectionStandardType
+            // 
+            this.bdsInspectionStandardType.DataSource = typeof(PCBVI.Data.InspectionStandardType);
+            // 
             // noteDataGridViewTextBoxColumn
             // 
             this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
             this.noteDataGridViewTextBoxColumn.HeaderText = "비고";
             this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
+            // 
+            // bdsInspectionStandard
+            // 
+            this.bdsInspectionStandard.DataSource = typeof(PCBVI.Data.InspectionStandard);
             // 
             // InspectionStandardList
             // 

@@ -403,6 +403,12 @@
     <Compile Include="Forms\Basic\FacilitiesInsertForm.Designer.cs">
       <DependentUpon>FacilitiesInsertForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Basic\InspectionStandardInsertNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Basic\InspectionStandardInsertNew.Designer.cs">
+      <DependentUpon>InspectionStandardInsertNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Basic\InspectionStandardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -432,6 +438,12 @@
     </Compile>
     <Compile Include="Forms\Basic\SubJectInsertForm.Designer.cs">
       <DependentUpon>SubJectInsertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Basic\SubjectInsertNewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Basic\SubjectInsertNewForm.Designer.cs">
+      <DependentUpon>SubjectInsertNewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Facilities\FacilitiesErrorForm.cs">
       <SubType>Form</SubType>
@@ -756,6 +768,9 @@
     <EmbeddedResource Include="Forms\Basic\InspectionStandardInsertForm.resx">
       <DependentUpon>InspectionStandardInsertForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\InspectionStandardInsertNew.resx">
+      <DependentUpon>InspectionStandardInsertNew.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\NonMovingTypeForm.resx">
       <DependentUpon>NonMovingTypeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -764,6 +779,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\SubJectInsertForm.resx">
       <DependentUpon>SubJectInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\SubjectInsertNewForm.resx">
+      <DependentUpon>SubjectInsertNewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Facilities\FacilitiesErrorForm.resx">
       <DependentUpon>FacilitiesErrorForm.cs</DependentUpon>
