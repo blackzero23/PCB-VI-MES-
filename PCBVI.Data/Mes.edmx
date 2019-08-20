@@ -10,7 +10,7 @@
             <PropertyRef Name="BarcodeId" />
           </Key>
           <Property Name="BarcodeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BarcodeCode" Type="int" Nullable="false" />
+          <Property Name="BarcodeCode" Type="int" />
           <Property Name="State" Type="nvarchar" MaxLength="50" />
           <Property Name="ErrorCodeId" Type="int" />
           <Property Name="ItemId" Type="int" Nullable="false" />
@@ -194,6 +194,7 @@
           </Key>
           <Property Name="LotId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LotCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="WorkPlaceId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="LotBarCode">
           <Key>
@@ -328,7 +329,7 @@
           </Key>
           <Property Name="WorkOrderId" Type="int" Nullable="false" />
           <Property Name="ItemId" Type="int" Nullable="false" />
-          <Property Name="OrderDate" Type="datetime" Nullable="false" />
+          <Property Name="OrderDate" Type="datetime2" Precision="1" Nullable="false" />
           <Property Name="RotationGroupId" Type="int" Nullable="false" />
           <Property Name="TargetQuantity" Type="int" Nullable="false" />
           <Property Name="ProcessId" Type="int" Nullable="false" />
@@ -627,6 +628,18 @@
               <PropertyRef Name="WorkPlaceId" />
             </Principal>
             <Dependent Role="LastInspection">
+              <PropertyRef Name="WorkPlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lot_WorkPlace">
+          <End Role="WorkPlace" Type="Self.WorkPlace" Multiplicity="1" />
+          <End Role="Lot" Type="Self.Lot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkPlace">
+              <PropertyRef Name="WorkPlaceId" />
+            </Principal>
+            <Dependent Role="Lot">
               <PropertyRef Name="WorkPlaceId" />
             </Dependent>
           </ReferentialConstraint>
@@ -1122,6 +1135,10 @@
             <End Role="WorkPlace" EntitySet="WorkPlace" />
             <End Role="LastInspection" EntitySet="LastInspection" />
           </AssociationSet>
+          <AssociationSet Name="FK_Lot_WorkPlace" Association="Self.FK_Lot_WorkPlace">
+            <End Role="WorkPlace" EntitySet="WorkPlace" />
+            <End Role="Lot" EntitySet="Lot" />
+          </AssociationSet>
           <AssociationSet Name="FK_LotBarCode_Barcode" Association="Self.FK_LotBarCode_Barcode">
             <End Role="Barcode" EntitySet="Barcode" />
             <End Role="LotBarCode" EntitySet="LotBarCode" />
@@ -1253,7 +1270,7 @@
             <PropertyRef Name="BarcodeId" />
           </Key>
           <Property Name="BarcodeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BarcodeCode" Type="Int32" Nullable="false" />
+          <Property Name="BarcodeCode" Type="Int32" />
           <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ErrorCodeId" Type="Int32" />
           <Property Name="ItemId" Type="Int32" Nullable="false" />
@@ -1489,7 +1506,9 @@
           </Key>
           <Property Name="LotId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="LotCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="WorkPlaceId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_Lot" FromRole="Lot" ToRole="DefectiveProduct" />
+          <NavigationProperty Name="WorkPlace" Relationship="Self.FK_Lot_WorkPlace" FromRole="Lot" ToRole="WorkPlace" />
           <NavigationProperty Name="LotBarCodes" Relationship="Self.FK_LotBarCode_Lot" FromRole="Lot" ToRole="LotBarCode" />
           <NavigationProperty Name="MaterialHistories" Relationship="Self.FK_MaterialHistory_Lot" FromRole="Lot" ToRole="MaterialHistory" />
           <NavigationProperty Name="MaterialsManages" Relationship="Self.FK_MaterialsManage_Lot" FromRole="Lot" ToRole="MaterialsManage" />
@@ -1669,7 +1688,7 @@
           </Key>
           <Property Name="WorkOrderId" Type="Int32" Nullable="false" />
           <Property Name="ItemId" Type="Int32" Nullable="false" />
-          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="1" />
           <Property Name="RotationGroupId" Type="Int32" Nullable="false" />
           <Property Name="TargetQuantity" Type="Int32" Nullable="false" />
           <Property Name="ProcessId" Type="Int32" Nullable="false" />
@@ -1690,6 +1709,7 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="FirstInspections" Relationship="Self.FK_FirstInspection_WorkPlace" FromRole="WorkPlace" ToRole="FirstInspection" />
           <NavigationProperty Name="LastInspections" Relationship="Self.FK_LastInspection_WorkPlace" FromRole="WorkPlace" ToRole="LastInspection" />
+          <NavigationProperty Name="Lots" Relationship="Self.FK_Lot_WorkPlace" FromRole="WorkPlace" ToRole="Lot" />
           <NavigationProperty Name="MaterialHistories" Relationship="Self.FK_MaterialHistory_WorkPlace" FromRole="WorkPlace" ToRole="MaterialHistory" />
           <NavigationProperty Name="MaterialsInRes" Relationship="Self.FK_MaterialsInRe_WorkPlace" FromRole="WorkPlace" ToRole="MaterialsInRe" />
           <NavigationProperty Name="WorkOrders" Relationship="Self.FK_WorkOrder_WorkPlace" FromRole="WorkPlace" ToRole="WorkOrder" />
@@ -2128,6 +2148,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Lot_WorkPlace">
+          <End Role="WorkPlace" Type="Self.WorkPlace" Multiplicity="1" />
+          <End Role="Lot" Type="Self.Lot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkPlace">
+              <PropertyRef Name="WorkPlaceId" />
+            </Principal>
+            <Dependent Role="Lot">
+              <PropertyRef Name="WorkPlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_LotBarCode_Lot">
           <End Role="Lot" Type="Self.Lot" Multiplicity="1" />
           <End Role="LotBarCode" Type="Self.LotBarCode" Multiplicity="*" />
@@ -2521,6 +2553,10 @@
             <End Role="WorkPlace" EntitySet="WorkPlaces" />
             <End Role="LastInspection" EntitySet="LastInspections" />
           </AssociationSet>
+          <AssociationSet Name="FK_Lot_WorkPlace" Association="Self.FK_Lot_WorkPlace">
+            <End Role="WorkPlace" EntitySet="WorkPlaces" />
+            <End Role="Lot" EntitySet="Lots" />
+          </AssociationSet>
           <AssociationSet Name="FK_LotBarCode_Lot" Association="Self.FK_LotBarCode_Lot">
             <End Role="Lot" EntitySet="Lots" />
             <End Role="LotBarCode" EntitySet="LotBarCodes" />
@@ -2805,6 +2841,7 @@
               <MappingFragment StoreEntitySet="Lot">
                 <ScalarProperty Name="LotId" ColumnName="LotId" />
                 <ScalarProperty Name="LotCode" ColumnName="LotCode" />
+                <ScalarProperty Name="WorkPlaceId" ColumnName="WorkPlaceId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

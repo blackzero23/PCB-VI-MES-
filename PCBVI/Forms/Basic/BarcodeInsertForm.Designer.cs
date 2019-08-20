@@ -31,12 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.barcodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.barcodeCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barcodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.barcodeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barcodeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barcodeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
@@ -54,12 +56,16 @@
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.barcodeCodeDataGridViewTextBoxColumn,
             this.itemIdDataGridViewTextBoxColumn});
-            this.dgvList.DataSource = this.barcodeBindingSource;
+            this.dgvList.DataSource = this.barcodeBindingSource1;
             this.dgvList.Location = new System.Drawing.Point(51, 91);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
             this.dgvList.Size = new System.Drawing.Size(522, 180);
             this.dgvList.TabIndex = 1;
+            // 
+            // barcodeBindingSource
+            // 
+            this.barcodeBindingSource.DataSource = typeof(PCBVI.Data.Barcode);
             // 
             // barcodeCodeDataGridViewTextBoxColumn
             // 
@@ -73,9 +79,9 @@
             this.itemIdDataGridViewTextBoxColumn.HeaderText = "ItemId";
             this.itemIdDataGridViewTextBoxColumn.Name = "itemIdDataGridViewTextBoxColumn";
             // 
-            // barcodeBindingSource
+            // barcodeBindingSource1
             // 
-            this.barcodeBindingSource.DataSource = typeof(PCBVI.Data.Barcode);
+            this.barcodeBindingSource1.DataSource = typeof(PCBVI.Data.Barcode);
             // 
             // BarCodeInsertForm
             // 
@@ -89,6 +95,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barcodeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barcodeBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -97,8 +104,9 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
+        private System.Windows.Forms.BindingSource barcodeBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn barcodeCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource barcodeBindingSource;
+        private System.Windows.Forms.BindingSource barcodeBindingSource1;
     }
 }

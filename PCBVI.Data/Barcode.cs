@@ -24,10 +24,10 @@ namespace PCBVI.Data
         }
     
         public int BarcodeId { get; set; }
-        public int BarcodeCode { get; set; }
+        public Nullable<int> BarcodeCode { get; set; }
         public string State { get; set; }
         public Nullable<int> ErrorCodeId { get; set; }
-        public int ItemId { get; set; }
+        public int? ItemId { get; set; }
     
         public virtual ErrorCode ErrorCode { get; set; }
         public virtual Item Item { get; set; }
