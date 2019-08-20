@@ -60,7 +60,7 @@ DB : MSSQL
 3.사용 방법
 ==
 
-스키마 - 
+스키마 - [PCB(3.6).zip](https://github.com/blackzero23/PCB-VI-MES-/files/3521776/PCB.3.6.zip)
 
 데이터 - 가상 데이터 업데이트 예정입니다.
 
