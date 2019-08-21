@@ -72,6 +72,7 @@
     <Compile Include="Data\InspectionStandardTypeData.cs" />
     <Compile Include="Data\ItemData.cs" />
     <Compile Include="Data\LastInspectionData.cs" />
+    <Compile Include="Data\LotBarCodeData.cs" />
     <Compile Include="Data\LotData.cs" />
     <Compile Include="Data\MaterialHistoryData.cs" />
     <Compile Include="Data\MaterialsManageData.cs" />

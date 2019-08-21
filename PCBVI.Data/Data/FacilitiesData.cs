@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,5 +21,18 @@ namespace PCBVI.Data.Data
             }
         }
 
+       public Facility CheckFacilitiesNo(int facilitiesNo)
+       {
+           using (var context = DbContextFactory.Create())
+           {
+               var query = from x in context.Facilities
+                           where x.FacilitiesNo == facilitiesNo
+                        select x;
+
+               var list = query.ToList();
+
+               return list.FirstOrDefault();
+           }
+       }
     }
 }

@@ -34,5 +34,19 @@ namespace PCBVI.Data.Data
                 return list.ConvertAll(x => x.ErrorCode);
             }
         }
+
+        public ErrorCode CheckErroCode(string errorCodeName)
+        {
+            using (var context = DbContextFactory.Create())
+            {
+                var query = from x in context.ErrorCodes
+                    where x.Code.Equals(errorCodeName)
+                    select x;
+
+                var list = query.ToList();
+
+                return list.FirstOrDefault();
+            }
+        }
     }
 }

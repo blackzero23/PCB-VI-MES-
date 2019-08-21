@@ -36,5 +36,7 @@ namespace PCBVI.Data.Data
         public static ProductionHistoryData ProductionHistory { get; }
         = new ProductionHistoryData();
         public static FacilitiesPowerData FacilitiesPower { get; } = new FacilitiesPowerData();
+
+        public static LotBarCodeData LotBarCode { get; } = new LotBarCodeData();
     }
 }

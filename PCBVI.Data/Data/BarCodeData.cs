@@ -38,6 +38,7 @@ namespace PCBVI.Data.Data
             }
         }
 
+        //있는걸 들고옴
         public Barcode CheckBarcode(int code)
         {
             using (var context = DbContextFactory.Create())

@@ -33,7 +33,7 @@ namespace PCBVI.Data
         public double Height { get; set; }
         public double length { get; set; }
         public double volume { get; set; }
-        public int ProcessId { get; set; }
+        public int? ProcessId { get; set; }
         public double Weight { get; set; }
     
         public virtual Process Process { get; set; }

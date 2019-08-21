@@ -49,6 +49,7 @@
             this.txbId.TabIndex = 1;
             this.txbId.Text = "아이디";
             this.txbId.Enter += new System.EventHandler(this.TxbId_Enter);
+            this.txbId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxbId_KeyDown);
             this.txbId.Leave += new System.EventHandler(this.TxbId_Leave);
             // 
             // txbPassword

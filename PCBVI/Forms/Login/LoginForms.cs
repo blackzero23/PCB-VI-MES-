@@ -89,6 +89,7 @@ namespace PCBVI.Forms.Login
                 MessageBox.Show($"{employee.Name}님 반갑습니다.");
                 MainForm loginSuccess = new MainForm(employee);
                 loginSuccess.FormClosed += new FormClosedEventHandler(LoginSuccessFormClosed);
+                //lloginSuccess.cli
                 loginSuccess.Show();
                 this.Hide();
                 this.txbId.Clear();
@@ -124,6 +125,14 @@ namespace PCBVI.Forms.Login
         }
 
         private void TxbPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+            }
+        }
+
+        private void TxbId_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {

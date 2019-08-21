@@ -753,17 +753,26 @@
     <EmbeddedResource Include="Forms\Basic\BarcodeForm.resx">
       <DependentUpon>BarcodeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\BarcodeInsertForm.resx">
+      <DependentUpon>BarcodeInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\EmployeeInsertForm.resx">
       <DependentUpon>EmployeeInsertForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\ErrorcodeInsertForm.resx">
+      <DependentUpon>ErrorcodeInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\FacilitiesForm.resx">
       <DependentUpon>FacilitiesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\ErrorCodeForm.resx">
       <DependentUpon>ErrorCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Basic\FacilitiesInsertForm.resx">
+      <DependentUpon>FacilitiesInsertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Basic\InspectionStandardForm.resx">
       <DependentUpon>InspectionStandardForm.cs</DependentUpon>

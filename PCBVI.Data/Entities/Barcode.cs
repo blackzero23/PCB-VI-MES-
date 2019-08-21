@@ -13,6 +13,6 @@ namespace PCBVI.Data
         public string LotName { get; set; }
         public string ErrorTypeName { get; set; }
         public string ItemName { get; set; }
-        public string LotId { get; set; }
+        public int? LotId { get; set; }
     }
 }
