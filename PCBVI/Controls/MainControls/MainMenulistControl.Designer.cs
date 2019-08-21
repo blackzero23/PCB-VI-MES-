@@ -43,8 +43,8 @@
             this.panelProduction = new System.Windows.Forms.Panel();
             this.btnProcessDefect = new System.Windows.Forms.Button();
             this.btnDefectiveProduct = new System.Windows.Forms.Button();
-            this.btnWorker = new System.Windows.Forms.Button();
             this.btnMaterialsManage = new System.Windows.Forms.Button();
+            this.btnWorker = new System.Windows.Forms.Button();
             this.btnWorkLog = new System.Windows.Forms.Button();
             this.btnWorkOrder = new System.Windows.Forms.Button();
             this.btnProductionHistory = new System.Windows.Forms.Button();
@@ -311,22 +311,6 @@
             this.btnDefectiveProduct.UseVisualStyleBackColor = false;
             this.btnDefectiveProduct.Click += new System.EventHandler(this.BtnDefectiveProduct_Click);
             // 
-            // btnWorker
-            // 
-            this.btnWorker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.btnWorker.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnWorker.FlatAppearance.BorderSize = 0;
-            this.btnWorker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnWorker.ForeColor = System.Drawing.Color.White;
-            this.btnWorker.Location = new System.Drawing.Point(0, 138);
-            this.btnWorker.Name = "btnWorker";
-            this.btnWorker.Size = new System.Drawing.Size(168, 29);
-            this.btnWorker.TabIndex = 15;
-            this.btnWorker.Text = "작업자";
-            this.btnWorker.UseVisualStyleBackColor = false;
-            this.btnWorker.Click += new System.EventHandler(this.BtnWorker_Click);
-            // 
             // btnMaterialsManage
             // 
             this.btnMaterialsManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
@@ -342,6 +326,22 @@
             this.btnMaterialsManage.Text = "자재 투입";
             this.btnMaterialsManage.UseVisualStyleBackColor = false;
             this.btnMaterialsManage.Click += new System.EventHandler(this.BtnMaterialsManage_Click);
+            // 
+            // btnWorker
+            // 
+            this.btnWorker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.btnWorker.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnWorker.FlatAppearance.BorderSize = 0;
+            this.btnWorker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnWorker.ForeColor = System.Drawing.Color.White;
+            this.btnWorker.Location = new System.Drawing.Point(0, 138);
+            this.btnWorker.Name = "btnWorker";
+            this.btnWorker.Size = new System.Drawing.Size(168, 29);
+            this.btnWorker.TabIndex = 15;
+            this.btnWorker.Text = "작업자";
+            this.btnWorker.UseVisualStyleBackColor = false;
+            this.btnWorker.Click += new System.EventHandler(this.BtnWorker_Click);
             // 
             // btnWorkLog
             // 
@@ -417,7 +417,7 @@
             this.panelMaterials.Controls.Add(this.btnMaterialsInOut);
             this.panelMaterials.Controls.Add(this.btnMaterials);
             this.panelMaterials.Location = new System.Drawing.Point(3, 117);
-            this.panelMaterials.MaximumSize = new System.Drawing.Size(168, 138);
+            this.panelMaterials.MaximumSize = new System.Drawing.Size(168, 79);
             this.panelMaterials.MinimumSize = new System.Drawing.Size(168, 51);
             this.panelMaterials.Name = "panelMaterials";
             this.panelMaterials.Size = new System.Drawing.Size(168, 51);
@@ -453,6 +453,7 @@
             this.btnMaterialsInRe.TabIndex = 13;
             this.btnMaterialsInRe.Text = "자재투입반품";
             this.btnMaterialsInRe.UseVisualStyleBackColor = false;
+            this.btnMaterialsInRe.Visible = false;
             this.btnMaterialsInRe.Click += new System.EventHandler(this.BtnMaterialsInRe_Click);
             // 
             // btnMaterialsInOut
@@ -469,6 +470,7 @@
             this.btnMaterialsInOut.TabIndex = 12;
             this.btnMaterialsInOut.Text = "자재 입출고";
             this.btnMaterialsInOut.UseVisualStyleBackColor = false;
+            this.btnMaterialsInOut.Visible = false;
             this.btnMaterialsInOut.Click += new System.EventHandler(this.BtnMaterialsInOut_Click);
             // 
             // btnMaterials
@@ -497,7 +499,7 @@
             this.panelFacilities.Controls.Add(this.btnFacilitiesPower);
             this.panelFacilities.Controls.Add(this.btnFacilities);
             this.panelFacilities.Location = new System.Drawing.Point(3, 174);
-            this.panelFacilities.MaximumSize = new System.Drawing.Size(168, 138);
+            this.panelFacilities.MaximumSize = new System.Drawing.Size(168, 111);
             this.panelFacilities.MinimumSize = new System.Drawing.Size(168, 51);
             this.panelFacilities.Name = "panelFacilities";
             this.panelFacilities.Size = new System.Drawing.Size(168, 51);
@@ -577,7 +579,7 @@
             this.panelQuality.Controls.Add(this.btnFirstInspection);
             this.panelQuality.Controls.Add(this.btnQuality);
             this.panelQuality.Location = new System.Drawing.Point(3, 231);
-            this.panelQuality.MaximumSize = new System.Drawing.Size(168, 138);
+            this.panelQuality.MaximumSize = new System.Drawing.Size(168, 111);
             this.panelQuality.MinimumSize = new System.Drawing.Size(168, 51);
             this.panelQuality.Name = "panelQuality";
             this.panelQuality.Size = new System.Drawing.Size(168, 51);
@@ -613,6 +615,7 @@
             this.btnProcessInspection.TabIndex = 13;
             this.btnProcessInspection.Text = "공정 검사";
             this.btnProcessInspection.UseVisualStyleBackColor = false;
+            this.btnProcessInspection.Visible = false;
             this.btnProcessInspection.Click += new System.EventHandler(this.BtnProcessInspection_Click);
             // 
             // btnFirstInspection
@@ -678,6 +681,7 @@
             this.btnQualityMonitoring.TabIndex = 15;
             this.btnQualityMonitoring.Text = "품질검사모니터링";
             this.btnQualityMonitoring.UseVisualStyleBackColor = false;
+            this.btnQualityMonitoring.Visible = false;
             this.btnQualityMonitoring.Click += new System.EventHandler(this.BtnQualityMonitoring_Click);
             // 
             // btnFacilitiesMonitoring
@@ -726,6 +730,7 @@
             this.btnProPerformanceMonitoring.TabIndex = 12;
             this.btnProPerformanceMonitoring.Text = "생산실적모니터링";
             this.btnProPerformanceMonitoring.UseVisualStyleBackColor = false;
+            this.btnProPerformanceMonitoring.Visible = false;
             this.btnProPerformanceMonitoring.Click += new System.EventHandler(this.BtnProPerformanceMonitoring_Click);
             // 
             // btnMonitoring
@@ -759,6 +764,7 @@
             this.panelStatistics.Name = "panelStatistics";
             this.panelStatistics.Size = new System.Drawing.Size(168, 51);
             this.panelStatistics.TabIndex = 20;
+            this.panelStatistics.Visible = false;
             // 
             // btnStockStatistics
             // 

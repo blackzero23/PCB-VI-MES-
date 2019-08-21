@@ -11,5 +11,7 @@ namespace PCBVI.Data
         public string ProcessName { get; set; }
 
         public string FacilitiesName { get; set; }
+
+        public DateTime NonWorkTime { get; set; }
     }
 }

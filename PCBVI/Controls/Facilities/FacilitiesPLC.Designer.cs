@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bdsFacilitiesPower = new System.Windows.Forms.BindingSource(this.components);
             this.FacilitiesName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProcessName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WorkDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdsFacilitiesPower = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFacilitiesPower)).BeginInit();
             this.SuspendLayout();
@@ -60,11 +60,7 @@
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(613, 388);
             this.dgvList.TabIndex = 0;
-            
-            // 
-            // bdsFacilitiesPower
-            // 
-            this.bdsFacilitiesPower.DataSource = typeof(PCBVI.Data.FacilitiesPower);
+            this.dgvList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvList_CellMouseClick);
             // 
             // FacilitiesName
             // 
@@ -93,6 +89,10 @@
             this.workTimeDataGridViewTextBoxColumn.HeaderText = "작업시간";
             this.workTimeDataGridViewTextBoxColumn.Name = "workTimeDataGridViewTextBoxColumn";
             this.workTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bdsFacilitiesPower
+            // 
+            this.bdsFacilitiesPower.DataSource = typeof(PCBVI.Data.FacilitiesPower);
             // 
             // FacilitiesPLC
             // 

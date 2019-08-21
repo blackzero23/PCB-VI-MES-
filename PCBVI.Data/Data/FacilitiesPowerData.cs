@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,38 @@ namespace PCBVI.Data.Data
                 var list = query.ToList();
 
                 return list.FirstOrDefault();
+            }
+        }
+
+        /// <summary>
+        /// 검색창 조회
+        /// </summary>
+        public List<FacilitiesPower> Search(int processId, int facilitiesId, DateTime fromDate, DateTime toDate)
+        {
+            using (var context = DbContextFactory.Create())
+            {
+                var query = from x in context.FacilitiesPowers
+                    where x.ProcessId == processId && x.FacilitiesId == facilitiesId
+                                                   && (x.WorkDate >= fromDate.Date || x.WorkDate <= toDate.Date)
+                    select x;
+
+             
+
+                return query.ToList();
+            }
+        }
+
+        public List<FacilitiesPower> TodayFacilitiesList()
+        {
+            var today = DateTime.Today;
+            var answer = today.AddDays(-7);
+            using (var context = DbContextFactory.Create())
+            {
+                var query = from x in context.FacilitiesPowers
+                    where x.WorkDate <= answer || x.WorkDate >= today
+                    select x;
+
+                return query.ToList();
             }
         }
     }

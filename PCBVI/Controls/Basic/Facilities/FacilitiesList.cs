@@ -66,7 +66,7 @@ namespace PCBVI.Controls.Basic.Facilities
 
         private void DgvList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            OnCellContentClicked(dgvList.CurrentRow.DataBoundItem as Facility);
+            if (dgvList.CurrentRow != null) OnCellContentClicked(dgvList.CurrentRow.DataBoundItem as Facility);
         }
 
         private List<Facility> _facilities = new List<Facility>();
