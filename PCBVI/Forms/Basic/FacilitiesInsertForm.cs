@@ -107,7 +107,7 @@ namespace PCBVI.Forms.Basic
             foreach (DataGridViewRow dr in dgvList.Rows)
             {
 
-                Data.Facility facilities = dgvList.Rows[0].DataBoundItem as Facility;
+                Data.Facility facilities = dr.DataBoundItem as Facility;
                 if (facilities == null || facilities.FacilitiesNo == 0 || string.IsNullOrWhiteSpace(facilities.Name)
                     || facilities.ProcessId == null)
                 {

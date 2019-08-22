@@ -24,7 +24,7 @@ namespace PCBVI.Controls.Production.ProductionHistory
 
             if (DesignMode)
                 return;
-
+            InitSetDataSource();
         }
 
         private void InitSetDataSource()

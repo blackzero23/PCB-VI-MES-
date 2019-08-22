@@ -66,7 +66,6 @@
             this.kryptonPanel1.Size = new System.Drawing.Size(942, 75);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.SystemColors.Control;
             this.kryptonPanel1.StateCommon.Color2 = System.Drawing.SystemColors.Control;
-            this.kryptonPanel1.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel1.TabIndex = 0;
             // 
             // btnSearch
@@ -91,7 +90,6 @@
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpToDate.Location = new System.Drawing.Point(609, 26);
             this.dtpToDate.Name = "dtpToDate";
-            this.dtpToDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpToDate.Size = new System.Drawing.Size(132, 21);
             this.dtpToDate.TabIndex = 14;
             // 
@@ -100,12 +98,12 @@
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFromDate.Location = new System.Drawing.Point(465, 26);
             this.dtpFromDate.Name = "dtpFromDate";
-            this.dtpFromDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpFromDate.Size = new System.Drawing.Size(113, 21);
             this.dtpFromDate.TabIndex = 13;
             // 
             // cbbRotation
             // 
+            this.cbbRotation.DataSource = this.bdsRotation;
             this.cbbRotation.DisplayMember = "Name";
             this.cbbRotation.DropDownWidth = 121;
             this.cbbRotation.Location = new System.Drawing.Point(280, 27);
@@ -116,6 +114,7 @@
             // 
             // cbbItemName
             // 
+            this.cbbItemName.DataSource = this.bdsItem;
             this.cbbItemName.DisplayMember = "Name";
             this.cbbItemName.DropDownWidth = 121;
             this.cbbItemName.Location = new System.Drawing.Point(75, 27);

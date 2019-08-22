@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bdsFirstDivision = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsSecondDivision = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
+            this.dbsItem = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.bdsSecondDivision = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
-            this.dbsItem = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFirstDivision)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSecondDivision)).BeginInit();
@@ -68,27 +68,39 @@
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.Location = new System.Drawing.Point(0, 0);
             this.dgvList.Name = "dgvList";
-            this.dgvList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvList.RowTemplate.Height = 23;
             this.dgvList.Size = new System.Drawing.Size(800, 150);
             this.dgvList.TabIndex = 0;
             this.dgvList.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvList_CellEndEdit);
+            // 
+            // bdsFirstDivision
+            // 
+            this.bdsFirstDivision.DataSource = typeof(PCBVI.Data.FirstItemDivision);
+            // 
+            // bdsSecondDivision
+            // 
+            this.bdsSecondDivision.DataSource = typeof(PCBVI.Data.SecondItemDivision);
+            // 
+            // bdsWorkPlace
+            // 
+            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
+            // 
+            // dbsItem
+            // 
+            this.dbsItem.DataSource = typeof(PCBVI.Data.Item);
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "FirstItemDivisionId";
             this.dataGridViewTextBoxColumn10.DataSource = this.bdsFirstDivision;
             this.dataGridViewTextBoxColumn10.DisplayMember = "Name";
+            this.dataGridViewTextBoxColumn10.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn10.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.dataGridViewTextBoxColumn10.HeaderText = "품목구분";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn10.ValueMember = "FirstItemDivisionId";
-            // 
-            // bdsFirstDivision
-            // 
-            this.bdsFirstDivision.DataSource = typeof(PCBVI.Data.FirstItemDivision);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -102,57 +114,44 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Name";
             this.dataGridViewTextBoxColumn6.HeaderText = "품목명";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "SecondItemDivisionId";
             this.dataGridViewTextBoxColumn11.DataSource = this.bdsSecondDivision;
             this.dataGridViewTextBoxColumn11.DisplayMember = "Name";
+            this.dataGridViewTextBoxColumn11.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn11.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.dataGridViewTextBoxColumn11.HeaderText = "품목분류";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             this.dataGridViewTextBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn11.ValueMember = "SecondItemDivisionId";
-            // 
-            // bdsSecondDivision
-            // 
-            this.bdsSecondDivision.DataSource = typeof(PCBVI.Data.SecondItemDivision);
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Quantity";
             this.dataGridViewTextBoxColumn8.HeaderText = "수량";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Note";
             this.dataGridViewTextBoxColumn9.HeaderText = "비고";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "WorkPlaceId";
             this.dataGridViewTextBoxColumn7.DataSource = this.bdsWorkPlace;
             this.dataGridViewTextBoxColumn7.DisplayMember = "Name";
+            this.dataGridViewTextBoxColumn7.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn7.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.dataGridViewTextBoxColumn7.HeaderText = "위치정보";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn7.ValueMember = "WorkPlaceId";
-            // 
-            // bdsWorkPlace
-            // 
-            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
-            // 
-            // dbsItem
-            // 
-            this.dbsItem.DataSource = typeof(PCBVI.Data.Item);
             // 
             // SubjectList
             // 
@@ -174,15 +173,15 @@
        
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
         private System.Windows.Forms.BindingSource dbsItem;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.BindingSource bdsFirstDivision;
+        private System.Windows.Forms.BindingSource bdsSecondDivision;
+        private System.Windows.Forms.BindingSource bdsWorkPlace;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.BindingSource bdsSecondDivision;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.BindingSource bdsWorkPlace;
     }
 }

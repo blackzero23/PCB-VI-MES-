@@ -27,6 +27,11 @@ namespace PCBVI.Controls.Basic.Employee
             if (DesignMode)
                 return;
 
+            InitDatasource();
+        }
+
+        private void InitDatasource()
+        {
             List<Department> departments = DB.Department.GetAll();
             departments.Insert(0, new Department(""));
             cbbDepartment.DataSource = departments;

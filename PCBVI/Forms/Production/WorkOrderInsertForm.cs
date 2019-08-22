@@ -143,6 +143,7 @@ namespace PCBVI.Forms.Production
                     return;
                 }
 
+                workOrder.OrderDate = DateTime.Today;
                 DB.WorkOrder.Insert(workOrder);
 
             }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -47,13 +48,13 @@ namespace PCBVI.Data.Data
         }
 
         /// <summary>
-        /// 해당 작업지시 가지고 있으면 true. 없으면 false.
+        /// 작업일보에 해당 작업지시를 가지고 있으면 true. 없으면 false.
         /// </summary>       
         public bool HasWorkOrderId(int workOrderId)
         {
             using(var context = DbContextFactory.Create())
             {
-                var qurey = from x in context.WorkOrders
+                var qurey = from x in context.WorkLogs
                             where x.WorkOrderId == workOrderId
                             select x;
                 var list = qurey.ToList();
@@ -78,6 +79,22 @@ namespace PCBVI.Data.Data
                 var list = query.ToList();
 
                 return list.FirstOrDefault();
+            }
+        }
+
+        /// <summary>
+        /// 오늘 해당 작업 일지 목록
+        /// </summary>
+        
+        public List<WorkLog> SetTodayWorkLogList()
+        {
+            using (var context = DbContextFactory.Create())
+            {
+                var query = from x in context.WorkLogs
+                    where x.WorkDate <= DateTime.Today || x.WorkDate >= DateTime.Today
+                    select x;
+
+                return query.ToList();
             }
         }
     }

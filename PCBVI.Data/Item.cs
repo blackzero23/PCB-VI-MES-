@@ -30,10 +30,10 @@ namespace PCBVI.Data
         public int ItemId { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
-        public int FirstItemDivisionId { get; set; }
-        public int SecondItemDivisionId { get; set; }
-        public int WorkPlaceId { get; set; }
-        public int Quantity { get; set; }
+        public int? FirstItemDivisionId { get; set; }
+        public int? SecondItemDivisionId { get; set; }
+        public int? WorkPlaceId { get; set; }
+        public Nullable<int> Quantity { get; set; }
         public string Note { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

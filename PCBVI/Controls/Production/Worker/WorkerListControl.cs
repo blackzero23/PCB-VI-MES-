@@ -19,6 +19,18 @@ namespace PCBVI.Controls.Production.Worker
             InitializeComponent();
         }
 
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (DesignMode)
+                return;
+
+            InitSetDataSource();
+        }
+
+        
+
         private void InitSetDataSource()
         {
             bdsItem.DataSource = DB.Item.GetAll();
@@ -28,6 +40,8 @@ namespace PCBVI.Controls.Production.Worker
             //오늘 작업 목록 만 들고오기.
             bdsWorkOrder.DataSource = DB.WorkOrder.ToDayWorkOrderList();
         }
+
+
 
         public void SetDataSource(List<Data.WorkOrder> list)
         {
@@ -48,17 +62,21 @@ namespace PCBVI.Controls.Production.Worker
 
             //이미 시작하고있는지 없는지 체크
             Data.WorkOrder workOrder = dgvList.CurrentRow.DataBoundItem as Data.WorkOrder;
-            if (DB.WorkLog.HasWorkOrderId(workOrder.WorkOrderId.GetValueOrDefault()))
+
+            if (DB.WorkLog.HasWorkOrderId(workOrder.WorkOrderId))
             {
                 MessageBox.Show("해당 시설은 이미 작업 시작중입니다.");
                 return;
             }
 
+            
+
             //시작하지 않았으면 작업일보 작성 등록.
             SetStartWorkLog(workOrder);
             //수정
+            workOrder.WorkerName = txbWorker.Text;
             DB.WorkOrder.Update(workOrder);
-
+            dgvList.DataSource = DB.WorkOrder.ToDayWorkOrderList();
         }
 
 
@@ -72,11 +90,11 @@ namespace PCBVI.Controls.Production.Worker
             //v2 = v1.GetValueOrDefault();
 
             workLog.RotationGroupId = workOrder.RotationGroupId.GetValueOrDefault();
-            workLog.WorkDate = workOrder.OrderDate;
+            workLog.WorkDate = DateTime.Today;
             workLog.SartTime = DateTime.Now;
             workLog.TargetQuantity = workOrder.TargetQuantity;
             workLog.ProcessId = workOrder.ProcessId.GetValueOrDefault();
-            workLog.WorkOrderId = workOrder.WorkOrderId.GetValueOrDefault();
+            workLog.WorkOrderId = workOrder.WorkOrderId;
             workLog.ItemId = workOrder.ItemId.GetValueOrDefault();
             workLog.FacilitiesId = workOrder.FacilitiesId.GetValueOrDefault();
             workLog.WorkerName = txbWorker.Text;
@@ -91,35 +109,60 @@ namespace PCBVI.Controls.Production.Worker
 
             //통신을 통해서 라즈베리파이에서 시간과 생산수량 불량 수량을 넣을수 있는지 체크 
             //아니면 새창을 통해서 직접작성 하도록.
-            try
-            {
-                //해당 시설이 작업중인지 체크
-                Data.WorkOrder workOrder = dgvList.CurrentRow.DataBoundItem as Data.WorkOrder;
+            //try
+            //{
+            //    //해당 시설이 작업중인지 체크
+            //   // Data.WorkOrder workOrder = dgvList.CurrentRow.DataBoundItem as Data.WorkOrder;
+            //    Data.WorkOrder workOrder = dgvList.CurrentRow.DataBoundItem as Data.WorkOrder;
 
-                if (DB.WorkLog.HasWorkOrderId(workOrder.WorkOrderId.GetValueOrDefault()) == false)
-                {
-                    MessageBox.Show("해당 시설은 가동중이지 않습니다.");
-                    return;
-                }
-                //작업일보 종료된 데이터 작성.
-                //일단 임시 값을 넘기는걸로 종료는 현재 시각, 생산량 : 10 불량 : 10
-                SetEndWorkLog(workOrder);
-                //생산 이력 작성.
-                //작업일,공정,품목,양품,불량품,시작시간,종료시간
-                SetProductionHistory(workOrder);
+            //    if (DB.WorkLog.HasWorkOrderId(workOrder.WorkOrderId) == false)
+            //    {
+            //        MessageBox.Show("해당 시설은 가동중이지 않습니다.");
+            //        return;
+            //    }
 
-                //설비 가동 / 비가동 작성.
-                SetFacilitiesPower(workOrder);
 
-            }
-            catch (NullReferenceException)
+
+            //    //생산 이력 작성.
+            //    //작업일,공정,품목,양품,불량품,시작시간,종료시간
+            //    SetProductionHistory(workOrder);
+
+            //    //설비 가동 / 비가동 작성.
+            //    SetFacilitiesPower(workOrder);
+
+            //    //작업일보 종료된 데이터 작성.
+            //    //일단 임시 값을 넘기는걸로 종료는 현재 시각, 생산량 : 10 불량 : 10
+            //    SetEndWorkLog(workOrder);
+
+            //}
+            //catch (NullReferenceException)
+            //{
+            //    MessageBox.Show("작업을 선택 해 주세요.");
+            //}
+
+            //해당 시설이 작업중인지 체크
+            // Data.WorkOrder workOrder = dgvList.CurrentRow.DataBoundItem as Data.WorkOrder;
+            Data.WorkOrder workOrder = dgvList.CurrentRow.DataBoundItem as Data.WorkOrder;
+
+            if (DB.WorkLog.HasWorkOrderId(workOrder.WorkOrderId) == false)
             {
-                MessageBox.Show("작업을 선택 해 주세요.");
+                MessageBox.Show("해당 시설은 가동중이지 않습니다.");
+                return;
             }
-            catch
-            {
-                MessageBox.Show("그 외");
-            }
+
+
+
+            //생산 이력 작성.
+            //작업일,공정,품목,양품,불량품,시작시간,종료시간
+            SetProductionHistory(workOrder);
+
+            //설비 가동 / 비가동 작성.
+            SetFacilitiesPower(workOrder);
+
+            //작업일보 종료된 데이터 작성.
+            //일단 임시 값을 넘기는걸로 종료는 현재 시각, 생산량 : 10 불량 : 10
+            SetEndWorkLog(workOrder);
+
 
             //설비 가동 / 비가동 작성.
             //공정명, 설비명, 작업일, 총작업시간
@@ -135,7 +178,7 @@ namespace PCBVI.Controls.Production.Worker
         private void SetEndWorkLog(Data.WorkOrder workOrder)
         {
             //작업일보에서 작업지시id로 등록된 일보를 불러온다.
-            Data.WorkLog workLog = DB.WorkLog.SearhWorkDateFirst(workOrder.WorkOrderId.GetValueOrDefault());
+            Data.WorkLog workLog = DB.WorkLog.SearhWorkDateFirst(workOrder.WorkOrderId);
             //일단 임시 값을 넘기는걸로 종료는 현재 시각, 생산량 : 10 불량 : 10
 
             workLog.EndTime = DateTime.Now;
@@ -148,7 +191,7 @@ namespace PCBVI.Controls.Production.Worker
         private void SetFacilitiesPower(Data.WorkOrder workOrder)
         {
             //공정명, 설비명, 작업일, 총작업시간
-            DateTime workOrderDate = workOrder.OrderDate;
+            DateTime workOrderDate = DateTime.Today;
             int facilitiesId = workOrder.FacilitiesId.GetValueOrDefault();
             int processId = workOrder.ProcessId.GetValueOrDefault();
             int itemId = workOrder.ItemId.GetValueOrDefault();
@@ -171,6 +214,7 @@ namespace PCBVI.Controls.Production.Worker
             //없다면 등록.
             if (facilitiesPower == null)
             {
+                facilitiesPower = new FacilitiesPower();
                 facilitiesPower.ProcessId = processId;
                 facilitiesPower.FacilitiesId = facilitiesId;
                 facilitiesPower.WorkDate = workOrderDate;
@@ -225,22 +269,23 @@ namespace PCBVI.Controls.Production.Worker
             var productionHistory = DB.ProductionHistory.DuplicateCheck(workOrderDate, facilitiesId, processId, itemId);
             //없다면 등록.
             //해당 작업지시로 등록된 작업일지를 찾아온다.
-            Data.WorkLog workLog = DB.WorkLog.SearhWorkDateFirst(workOrder.WorkOrderId.GetValueOrDefault());
+            Data.WorkLog workLog = DB.WorkLog.SearhWorkDateFirst(workOrder.WorkOrderId);
             if (productionHistory == null)
             {
                 //그 작업일지의 기준으로 새로은 이력서 작성.
                 //작업일,공정,품목,양품,불량품,시작시간,종료시간
                 productionHistory = new Data.ProductionHistory();
                 productionHistory.ProductionDate = workLog.WorkDate.Date;
-                productionHistory.ProcessId = workLog.ProcessId;
-                productionHistory.ItemId = workLog.ItemId;
+                productionHistory.ProcessId = workLog.ProcessId.GetValueOrDefault();
+                productionHistory.ItemId = workLog.ItemId.GetValueOrDefault();
                 productionHistory.PassQuantity = workLog.ProductionQuantity.GetValueOrDefault();
                 productionHistory.ErrorQuantity = workLog.ErrorQuantity.GetValueOrDefault();
                 productionHistory.StartTime = workLog.SartTime;
                 productionHistory.EndTime = workLog.EndTime.GetValueOrDefault();
+                productionHistory.FacilitiesId = workLog.FacilitiesId.GetValueOrDefault();
+
                 DB.ProductionHistory.Insert(productionHistory);
             }
-
             else
             {
                 //있다면 업데이트

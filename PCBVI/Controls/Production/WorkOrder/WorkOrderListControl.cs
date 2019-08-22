@@ -28,7 +28,7 @@ namespace PCBVI.Controls.Production.WorkOrder
             InitSetDataSource();
         }
 
-        private void InitSetDataSource()
+        public void InitSetDataSource()
         {
             bdsItem.DataSource = DB.Item.GetAll();
             bdsProcess.DataSource = DB.Process.GetAll();

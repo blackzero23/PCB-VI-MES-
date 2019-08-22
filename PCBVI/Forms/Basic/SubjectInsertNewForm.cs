@@ -41,36 +41,13 @@ namespace PCBVI.Forms.Basic
         
 
         private void GrvItem_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
-        {
-            // dgvList.Rows[e.RowIndex].ErrorText = "";
-
-
-            // Don't try to validate the 'new row' until finished 
-            // editing since there
-            // is not any point in validating its initial value.
-            //정체 아직 모름.
-
-            
+        { 
             if (dgvList.Rows[e.RowIndex].IsNewRow)
             {
                 return;
             }
 
-            
-            
-
-            //최소한의 입력셀의 개수 체크 하기위한 변수.
-
-
-            //if (!int.TryParse(e.FormattedValue.ToString(),
-            //        out newInteger) || newInteger < 0)
-            //{
-            //    e.Cancel = true;
-            //    dgvList.Rows[e.RowIndex].ErrorText = "the value must be a non-negative integer";
-            //}
-
-            ////이름, 부서,코드, 사원, 입사일,퇴사일,등급,아이디,비번
-            ///
+          
             //이름 란 에 대한 유효성 검사
             if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("품목구분"))
             {
@@ -89,6 +66,15 @@ namespace PCBVI.Forms.Basic
                     MessageBox.Show("코드를 입력해주세요.");
                     e.Cancel = true;
                 }
+
+                Item item = DB.Item.CheckDuplicate(e.FormattedValue.ToString());
+
+                if (item != null)
+                {
+                    MessageBox.Show("중복된 코드 입니다.");
+                    e.Cancel = true;
+                }
+
             }
 
             if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("품목명"))

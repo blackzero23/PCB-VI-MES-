@@ -535,6 +535,7 @@
             this.btnFacilitiesError.TabIndex = 13;
             this.btnFacilitiesError.Text = "설비 이상 관리";
             this.btnFacilitiesError.UseVisualStyleBackColor = false;
+            this.btnFacilitiesError.Visible = false;
             this.btnFacilitiesError.Click += new System.EventHandler(this.BtnFacilitiesError_Click);
             // 
             // btnFacilitiesPower

@@ -163,6 +163,8 @@
             this.firstItemDivisionIdDataGridViewTextBoxColumn.DataPropertyName = "FirstItemDivisionId";
             this.firstItemDivisionIdDataGridViewTextBoxColumn.DataSource = this.bdsFirst;
             this.firstItemDivisionIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.firstItemDivisionIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.firstItemDivisionIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.firstItemDivisionIdDataGridViewTextBoxColumn.HeaderText = "품목구분";
             this.firstItemDivisionIdDataGridViewTextBoxColumn.Name = "firstItemDivisionIdDataGridViewTextBoxColumn";
             this.firstItemDivisionIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -187,6 +189,8 @@
             this.secondItemDivisionIdDataGridViewTextBoxColumn.DataPropertyName = "SecondItemDivisionId";
             this.secondItemDivisionIdDataGridViewTextBoxColumn.DataSource = this.bdsSecond;
             this.secondItemDivisionIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.secondItemDivisionIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.secondItemDivisionIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.secondItemDivisionIdDataGridViewTextBoxColumn.HeaderText = "품목분류";
             this.secondItemDivisionIdDataGridViewTextBoxColumn.Name = "secondItemDivisionIdDataGridViewTextBoxColumn";
             this.secondItemDivisionIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -211,6 +215,8 @@
             this.workPlaceIdDataGridViewTextBoxColumn.DataPropertyName = "WorkPlaceId";
             this.workPlaceIdDataGridViewTextBoxColumn.DataSource = this.bdsPlace;
             this.workPlaceIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.workPlaceIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.workPlaceIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.workPlaceIdDataGridViewTextBoxColumn.HeaderText = "위치정보";
             this.workPlaceIdDataGridViewTextBoxColumn.Name = "workPlaceIdDataGridViewTextBoxColumn";
             this.workPlaceIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;

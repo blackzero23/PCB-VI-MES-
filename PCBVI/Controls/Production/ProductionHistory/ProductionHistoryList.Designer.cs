@@ -31,15 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.bdsProductionHistory = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsProcess = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
             this.productionDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProcessName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProcessName = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.passQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProductionHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvList
@@ -67,6 +71,14 @@
             // 
             this.bdsProductionHistory.DataSource = typeof(PCBVI.Data.ProductionHistory);
             // 
+            // bdsProcess
+            // 
+            this.bdsProcess.DataSource = typeof(PCBVI.Data.Process);
+            // 
+            // bdsItem
+            // 
+            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
+            // 
             // productionDateDataGridViewTextBoxColumn
             // 
             this.productionDateDataGridViewTextBoxColumn.DataPropertyName = "ProductionDate";
@@ -75,15 +87,31 @@
             // 
             // ProcessName
             // 
-            this.ProcessName.DataPropertyName = "ProcessName";
+            this.ProcessName.DataPropertyName = "ProcessId";
+            this.ProcessName.DataSource = this.bdsProcess;
+            this.ProcessName.DisplayMember = "Name";
+            this.ProcessName.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.ProcessName.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ProcessName.HeaderText = "공정";
             this.ProcessName.Name = "ProcessName";
+            this.ProcessName.ReadOnly = true;
+            this.ProcessName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProcessName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ProcessName.ValueMember = "ProcessId";
             // 
             // ItemName
             // 
-            this.ItemName.DataPropertyName = "ItemName";
+            this.ItemName.DataPropertyName = "ItemId";
+            this.ItemName.DataSource = this.bdsItem;
+            this.ItemName.DisplayMember = "Name";
+            this.ItemName.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.ItemName.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ItemName.HeaderText = "품목명";
             this.ItemName.Name = "ItemName";
+            this.ItemName.ReadOnly = true;
+            this.ItemName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ItemName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ItemName.ValueMember = "ItemId";
             // 
             // passQuantityDataGridViewTextBoxColumn
             // 
@@ -118,6 +146,8 @@
             this.Size = new System.Drawing.Size(808, 266);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProductionHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -126,9 +156,11 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
         private System.Windows.Forms.BindingSource bdsProductionHistory;
+        private System.Windows.Forms.BindingSource bdsProcess;
+        private System.Windows.Forms.BindingSource bdsItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn productionDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProcessName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ProcessName;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ItemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn passQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn errorQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn startTimeDataGridViewTextBoxColumn;

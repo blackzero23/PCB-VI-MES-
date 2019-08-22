@@ -30,6 +30,8 @@ namespace PCBVI.Controls.Production.ProductionHistory
         private void InitSetDataSource()
         {
             bdsProductionHistory.DataSource = DB.ProductionHistory.GetAll();
+            bdsItem.DataSource = DB.Item.GetAll();
+            bdsProcess.DataSource = DB.Process.GetAll();
         }
 
         public void SetDataSource(List<Data.ProductionHistory> list)

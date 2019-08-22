@@ -32,7 +32,6 @@ namespace PCBVI.Forms.Basic
 
         private void UscTopMenu_UpdateButtonClicked(object sender, Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs e)
         {
-           
             uscTopMenu.UpdateAll(uscList.GetUpateList());
         }
 
@@ -41,6 +40,7 @@ namespace PCBVI.Forms.Basic
         {
             
             uscTopMenu.OpenInsertForm(new SubjectInsertNewForm());
+            uscSearch.InitDatasource();
         }
 
         private void UscTopMenu_ExcelButtonClicked(object sender, Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs e)

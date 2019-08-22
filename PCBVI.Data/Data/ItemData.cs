@@ -21,5 +21,17 @@ namespace PCBVI.Data.Data
                 return query.ToList();
             }
         }
+
+        public Item CheckDuplicate(string itemCode)
+        {
+            using (var context = DbContextFactory.Create())
+            {
+                var query = from x in context.Items
+                    where x.Code.Equals(itemCode)
+                    select x;
+
+                return query.FirstOrDefault();
+            }
+        }
     }
 }

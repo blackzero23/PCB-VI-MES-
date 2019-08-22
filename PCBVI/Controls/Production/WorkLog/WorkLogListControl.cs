@@ -24,6 +24,18 @@ namespace PCBVI.Controls.Production.WorkLog
 
             if (DesignMode)
                 return;
+            InitSetDataSource();
+        }
+
+        public void InitSetDataSource()
+        {
+            bdsProcess.DataSource = DB.Process.GetAll();
+            bdsFacility.DataSource = DB.Facilities.GetAll();
+            bdsItem.DataSource = DB.Item.GetAll();
+            bdsRotationGroup.DataSource = DB.RotationGroup.GetAll();
+            
+            dgvList.DataSource = DB.WorkLog.SetTodayWorkLogList();
+            
         }
 
         public void SetDataSource(List<Data.WorkLog> list)

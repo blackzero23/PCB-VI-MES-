@@ -99,11 +99,11 @@ namespace PCBVI.Forms.Basic
             foreach (DataGridViewRow dr in dgvList.Rows)
             {
 
-                Data.ErrorCode errorCode = dgvList.Rows[0].DataBoundItem as ErrorCode;
+                Data.ErrorCode errorCode = dr.DataBoundItem as ErrorCode;
+              
 
                 if (errorCode == null || string.IsNullOrWhiteSpace(errorCode.Code) || errorCode.ErrorKindId == null ||
                     errorCode.ErrorTypeId == null)
-
                 {
                     MessageBox.Show("등록완료!");
                     Close();
@@ -112,6 +112,12 @@ namespace PCBVI.Forms.Basic
 
                 DB.ErrorCode.Insert(errorCode);
             }
+        }
+
+        private void ErrorcodeInsertForm_Load(object sender, EventArgs e)
+        {
+            bdsErrorType.DataSource = DB.ErrorType.GetAll();
+            bdsErrorKind.DataSource = DB.ErrorKind.GetAll();
         }
     }
 }

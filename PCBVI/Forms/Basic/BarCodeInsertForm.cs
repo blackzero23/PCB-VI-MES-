@@ -117,7 +117,7 @@ namespace PCBVI.Forms.Basic
                 LotBarCode lotBarCode = new LotBarCode();
                 lotBarCode.LotId = barcode.LotId.GetValueOrDefault();
 
-                barcode = DB.BarCode.CheckBarcode(barcode.BarcodeCode.GetValueOrDefault());
+                barcode = DB.BarCode.CheckBarcode(barcode.BarcodeCode);
                 
                 lotBarCode.BarcodeId = barcode.BarcodeId;
 

@@ -74,6 +74,7 @@
             this.btnSearch.Size = new System.Drawing.Size(90, 25);
             this.btnSearch.TabIndex = 26;
             this.btnSearch.Values.Text = "검 색";
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // kryptonLabel4
             // 
@@ -101,6 +102,7 @@
             // 
             // cbbRotation
             // 
+            this.cbbRotation.DataSource = this.bdsRotation;
             this.cbbRotation.DisplayMember = "Name";
             this.cbbRotation.DropDownWidth = 121;
             this.cbbRotation.Location = new System.Drawing.Point(267, 28);
@@ -111,6 +113,7 @@
             // 
             // cbbItemName
             // 
+            this.cbbItemName.DataSource = this.bdsItem;
             this.cbbItemName.DisplayMember = "Name";
             this.cbbItemName.DropDownWidth = 121;
             this.cbbItemName.Location = new System.Drawing.Point(80, 27);

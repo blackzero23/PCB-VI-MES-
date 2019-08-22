@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,11 +29,26 @@ namespace PCBVI.Data.Data
             using(var context = DbContextFactory.Create())
             {
                 var query = from x in context.WorkOrders
-                            where x.OrderDate == DateTime.Today
+                   // join y in context.WorkLogs on x.WorkOrderId equals y.WorkOrderId 
+                            where (x.OrderDate<= DateTime.Today || x.OrderDate >=DateTime.Today) 
                             select x;
 
                 return query.ToList();
             }
         }
+
+        public List<WorkOrder> TodayWorkerList()
+        {
+            using (var context = DbContextFactory.Create())
+            {
+                var query = from x in context.WorkOrders
+                     join y in context.WorkLogs on x.WorkOrderId equals y.WorkOrderId 
+                    where (x.OrderDate <= DateTime.Today || x.OrderDate >= DateTime.Today) && y.EndTime == null
+                    select x;
+
+                return query.ToList();
+            }
+        }
+
     }
 }

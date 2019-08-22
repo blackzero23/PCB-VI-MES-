@@ -33,6 +33,7 @@ namespace PCBVI.Forms.Basic
         private void UscTopMenu_InsertButtonClicked(object sender, Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs e)
         {
             uscTopMenu.OpenInsertForm(new ErrorcodeInsertForm());
+            uscSearch.InitSetDataSource();
         }
 
         private void UscTopMenu_ExcelButtonClicked(object sender, Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs e)

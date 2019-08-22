@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.lotNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barcodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodeCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barcodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.InspectionDate = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barcodeBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -47,11 +47,11 @@
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.lotNameDataGridViewTextBoxColumn,
             this.itemNameDataGridViewTextBoxColumn,
             this.barcodeCodeDataGridViewTextBoxColumn,
             this.stateDataGridViewTextBoxColumn,
-            this.errorTypeNameDataGridViewTextBoxColumn});
+            this.errorTypeNameDataGridViewTextBoxColumn,
+            this.InspectionDate});
             this.dgvList.DataSource = this.barcodeBindingSource;
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.Location = new System.Drawing.Point(0, 0);
@@ -60,17 +60,16 @@
             this.dgvList.Size = new System.Drawing.Size(719, 482);
             this.dgvList.TabIndex = 0;
             // 
-            // lotNameDataGridViewTextBoxColumn
+            // barcodeBindingSource
             // 
-            this.lotNameDataGridViewTextBoxColumn.DataPropertyName = "LotName";
-            this.lotNameDataGridViewTextBoxColumn.HeaderText = "Lot No";
-            this.lotNameDataGridViewTextBoxColumn.Name = "lotNameDataGridViewTextBoxColumn";
+            this.barcodeBindingSource.DataSource = typeof(PCBVI.Data.Barcode);
             // 
             // itemNameDataGridViewTextBoxColumn
             // 
             this.itemNameDataGridViewTextBoxColumn.DataPropertyName = "ItemName";
             this.itemNameDataGridViewTextBoxColumn.HeaderText = "품목명";
             this.itemNameDataGridViewTextBoxColumn.Name = "itemNameDataGridViewTextBoxColumn";
+            this.itemNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // barcodeCodeDataGridViewTextBoxColumn
             // 
@@ -83,16 +82,25 @@
             this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
             this.stateDataGridViewTextBoxColumn.HeaderText = "상태";
             this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
+            this.stateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // errorTypeNameDataGridViewTextBoxColumn
             // 
-            this.errorTypeNameDataGridViewTextBoxColumn.DataPropertyName = "ErrorTypeName";
+            this.errorTypeNameDataGridViewTextBoxColumn.DataPropertyName = "ErrorCodeId";
             this.errorTypeNameDataGridViewTextBoxColumn.HeaderText = "불량명";
             this.errorTypeNameDataGridViewTextBoxColumn.Name = "errorTypeNameDataGridViewTextBoxColumn";
+            this.errorTypeNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.errorTypeNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // barcodeBindingSource
+            // InspectionDate
             // 
-            this.barcodeBindingSource.DataSource = typeof(PCBVI.Data.Barcode);
+            this.InspectionDate.Checked = false;
+            this.InspectionDate.DataPropertyName = "InspectionDate";
+            this.InspectionDate.HeaderText = "검사 일자";
+            this.InspectionDate.Name = "InspectionDate";
+            this.InspectionDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.InspectionDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.InspectionDate.Width = 136;
             // 
             // BarcodeList
             // 
@@ -110,11 +118,11 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lotNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource barcodeBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn barcodeCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn errorTypeNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource barcodeBindingSource;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn InspectionDate;
     }
 }

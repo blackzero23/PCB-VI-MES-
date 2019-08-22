@@ -64,13 +64,13 @@
             // cbbProcess
             // 
             this.cbbProcess.DataSource = this.bdsProcess;
-            this.cbbProcess.DisplayMember = "ItemId";
+            this.cbbProcess.DisplayMember = "Name";
             this.cbbProcess.DropDownWidth = 121;
             this.cbbProcess.Location = new System.Drawing.Point(80, 25);
             this.cbbProcess.Name = "cbbProcess";
             this.cbbProcess.Size = new System.Drawing.Size(121, 21);
             this.cbbProcess.TabIndex = 7;
-            this.cbbProcess.ValueMember = "ItemId";
+            this.cbbProcess.ValueMember = "ProcessId";
             // 
             // bdsProcess
             // 

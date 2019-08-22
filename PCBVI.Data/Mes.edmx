@@ -10,10 +10,11 @@
             <PropertyRef Name="BarcodeId" />
           </Key>
           <Property Name="BarcodeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BarcodeCode" Type="int" />
+          <Property Name="BarcodeCode" Type="int" Nullable="false" />
           <Property Name="State" Type="nvarchar" MaxLength="50" />
           <Property Name="ErrorCodeId" Type="int" />
           <Property Name="ItemId" Type="int" Nullable="false" />
+          <Property Name="InspectionDate" Type="datetime2" Precision="1" />
         </EntityType>
         <EntityType Name="DefectiveProduct">
           <Key>
@@ -170,7 +171,7 @@
           <Property Name="FirstItemDivisionId" Type="int" Nullable="false" />
           <Property Name="SecondItemDivisionId" Type="int" Nullable="false" />
           <Property Name="WorkPlaceId" Type="int" Nullable="false" />
-          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" />
           <Property Name="Note" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="LastInspection">
@@ -322,7 +323,7 @@
           <Property Name="TargetQuantity" Type="int" Nullable="false" />
           <Property Name="ProcessId" Type="int" Nullable="false" />
           <Property Name="FacilitiesId" Type="int" Nullable="false" />
-          <Property Name="WorkOrderId" Type="int" Nullable="false" />
+          <Property Name="WorkOrderId" Type="int" />
           <Property Name="ItemId" Type="int" Nullable="false" />
           <Property Name="WorkerName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -330,7 +331,7 @@
           <Key>
             <PropertyRef Name="WorkOrderId" />
           </Key>
-          <Property Name="WorkOrderId" Type="int" Nullable="false" />
+          <Property Name="WorkOrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ItemId" Type="int" Nullable="false" />
           <Property Name="OrderDate" Type="datetime2" Precision="1" Nullable="false" />
           <Property Name="RotationGroupId" Type="int" Nullable="false" />
@@ -951,7 +952,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_WorkLog_WorkOrder">
-          <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="1" />
+          <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="0..1" />
           <End Role="WorkLog" Type="Self.WorkLog" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="WorkOrder">
@@ -1290,10 +1291,11 @@
             <PropertyRef Name="BarcodeId" />
           </Key>
           <Property Name="BarcodeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BarcodeCode" Type="Int32" />
+          <Property Name="BarcodeCode" Type="Int32" Nullable="false" />
           <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ErrorCodeId" Type="Int32" />
           <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="InspectionDate" Type="DateTime" Precision="1" />
           <NavigationProperty Name="ErrorCode" Relationship="Self.FK_Barcode_ErrorCode" FromRole="Barcode" ToRole="ErrorCode" />
           <NavigationProperty Name="Item" Relationship="Self.FK_Barcode_Item" FromRole="Barcode" ToRole="Item" />
           <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_Barcode" FromRole="Barcode" ToRole="DefectiveProduct" />
@@ -1491,7 +1493,7 @@
           <Property Name="FirstItemDivisionId" Type="Int32" Nullable="false" />
           <Property Name="SecondItemDivisionId" Type="Int32" Nullable="false" />
           <Property Name="WorkPlaceId" Type="Int32" Nullable="false" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" />
           <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Barcodes" Relationship="Self.FK_Barcode_Item" FromRole="Item" ToRole="Barcode" />
           <NavigationProperty Name="FirstInspections" Relationship="Self.FK_FirstInspection_Product" FromRole="Item" ToRole="FirstInspection" />
@@ -1696,7 +1698,7 @@
           <Property Name="TargetQuantity" Type="Int32" Nullable="false" />
           <Property Name="ProcessId" Type="Int32" Nullable="false" />
           <Property Name="FacilitiesId" Type="Int32" Nullable="false" />
-          <Property Name="WorkOrderId" Type="Int32" Nullable="false" />
+          <Property Name="WorkOrderId" Type="Int32" />
           <Property Name="ItemId" Type="Int32" Nullable="false" />
           <Property Name="WorkerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Facility" Relationship="Self.FK_WorkLog_Facilities" FromRole="WorkLog" ToRole="Facilities" />
@@ -1710,7 +1712,7 @@
           <Key>
             <PropertyRef Name="WorkOrderId" />
           </Key>
-          <Property Name="WorkOrderId" Type="Int32" Nullable="false" />
+          <Property Name="WorkOrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ItemId" Type="Int32" Nullable="false" />
           <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="1" />
           <Property Name="RotationGroupId" Type="Int32" Nullable="false" />
@@ -2391,7 +2393,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_WorkLog_WorkOrder">
-          <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="1" />
+          <End Role="WorkOrder" Type="Self.WorkOrder" Multiplicity="0..1" />
           <End Role="WorkLog" Type="Self.WorkLog" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="WorkOrder">
@@ -2686,6 +2688,7 @@
                 <ScalarProperty Name="State" ColumnName="State" />
                 <ScalarProperty Name="ErrorCodeId" ColumnName="ErrorCodeId" />
                 <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="InspectionDate" ColumnName="InspectionDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

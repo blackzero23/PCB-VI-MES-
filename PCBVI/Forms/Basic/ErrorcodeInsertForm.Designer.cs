@@ -31,17 +31,21 @@
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.errorCodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnInsert = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.bdsErrorType = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsErrorKind = new System.Windows.Forms.BindingSource(this.components);
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorTypeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.errorKindIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.explanationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.btnInsert = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCodeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsErrorType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsErrorKind)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvList
@@ -66,38 +70,6 @@
             // 
             this.errorCodeBindingSource.DataSource = typeof(PCBVI.Data.ErrorCode);
             // 
-            // codeDataGridViewTextBoxColumn
-            // 
-            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "에러코드";
-            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
-            // 
-            // errorTypeIdDataGridViewTextBoxColumn
-            // 
-            this.errorTypeIdDataGridViewTextBoxColumn.DataPropertyName = "ErrorTypeId";
-            this.errorTypeIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.errorTypeIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.errorTypeIdDataGridViewTextBoxColumn.HeaderText = "에러유형";
-            this.errorTypeIdDataGridViewTextBoxColumn.Name = "errorTypeIdDataGridViewTextBoxColumn";
-            this.errorTypeIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.errorTypeIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // errorKindIdDataGridViewTextBoxColumn
-            // 
-            this.errorKindIdDataGridViewTextBoxColumn.DataPropertyName = "ErrorKindId";
-            this.errorKindIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.errorKindIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.errorKindIdDataGridViewTextBoxColumn.HeaderText = "에러군";
-            this.errorKindIdDataGridViewTextBoxColumn.Name = "errorKindIdDataGridViewTextBoxColumn";
-            this.errorKindIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.errorKindIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // explanationDataGridViewTextBoxColumn
-            // 
-            this.explanationDataGridViewTextBoxColumn.DataPropertyName = "Explanation";
-            this.explanationDataGridViewTextBoxColumn.HeaderText = "설명";
-            this.explanationDataGridViewTextBoxColumn.Name = "explanationDataGridViewTextBoxColumn";
-            // 
             // kryptonPanel1
             // 
             this.kryptonPanel1.Controls.Add(this.kryptonButton2);
@@ -108,6 +80,15 @@
             this.kryptonPanel1.Size = new System.Drawing.Size(800, 55);
             this.kryptonPanel1.TabIndex = 1;
             // 
+            // kryptonButton2
+            // 
+            this.kryptonButton2.Location = new System.Drawing.Point(664, 18);
+            this.kryptonButton2.Name = "kryptonButton2";
+            this.kryptonButton2.Size = new System.Drawing.Size(90, 25);
+            this.kryptonButton2.TabIndex = 1;
+            this.kryptonButton2.Values.Text = "취 소";
+            this.kryptonButton2.Click += new System.EventHandler(this.KryptonButton2_Click);
+            // 
             // btnInsert
             // 
             this.btnInsert.Location = new System.Drawing.Point(533, 18);
@@ -117,14 +98,51 @@
             this.btnInsert.Values.Text = "등 록";
             this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
             // 
-            // kryptonButton2
+            // bdsErrorType
             // 
-            this.kryptonButton2.Location = new System.Drawing.Point(664, 18);
-            this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(90, 25);
-            this.kryptonButton2.TabIndex = 1;
-            this.kryptonButton2.Values.Text = "취 소";
-            this.kryptonButton2.Click += new System.EventHandler(this.KryptonButton2_Click);
+            this.bdsErrorType.DataSource = typeof(PCBVI.Data.ErrorType);
+            // 
+            // bdsErrorKind
+            // 
+            this.bdsErrorKind.DataSource = typeof(PCBVI.Data.ErrorKind);
+            // 
+            // codeDataGridViewTextBoxColumn
+            // 
+            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "에러코드";
+            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
+            // 
+            // errorTypeIdDataGridViewTextBoxColumn
+            // 
+            this.errorTypeIdDataGridViewTextBoxColumn.DataPropertyName = "ErrorTypeId";
+            this.errorTypeIdDataGridViewTextBoxColumn.DataSource = this.bdsErrorType;
+            this.errorTypeIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.errorTypeIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.errorTypeIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.errorTypeIdDataGridViewTextBoxColumn.HeaderText = "에러유형";
+            this.errorTypeIdDataGridViewTextBoxColumn.Name = "errorTypeIdDataGridViewTextBoxColumn";
+            this.errorTypeIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.errorTypeIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.errorTypeIdDataGridViewTextBoxColumn.ValueMember = "ErrorTypeId";
+            // 
+            // errorKindIdDataGridViewTextBoxColumn
+            // 
+            this.errorKindIdDataGridViewTextBoxColumn.DataPropertyName = "ErrorKindId";
+            this.errorKindIdDataGridViewTextBoxColumn.DataSource = this.bdsErrorKind;
+            this.errorKindIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.errorKindIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.errorKindIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.errorKindIdDataGridViewTextBoxColumn.HeaderText = "에러군";
+            this.errorKindIdDataGridViewTextBoxColumn.Name = "errorKindIdDataGridViewTextBoxColumn";
+            this.errorKindIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.errorKindIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.errorKindIdDataGridViewTextBoxColumn.ValueMember = "ErrorKindId";
+            // 
+            // explanationDataGridViewTextBoxColumn
+            // 
+            this.explanationDataGridViewTextBoxColumn.DataPropertyName = "Explanation";
+            this.explanationDataGridViewTextBoxColumn.HeaderText = "설명";
+            this.explanationDataGridViewTextBoxColumn.Name = "explanationDataGridViewTextBoxColumn";
             // 
             // ErrorcodeInsertForm
             // 
@@ -135,10 +153,13 @@
             this.Controls.Add(this.dgvList);
             this.Name = "ErrorcodeInsertForm";
             this.Text = "ErrorcodeInsertForm";
+            this.Load += new System.EventHandler(this.ErrorcodeInsertForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCodeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bdsErrorType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsErrorKind)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,12 +168,14 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
         private System.Windows.Forms.BindingSource errorCodeBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn errorTypeIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn errorKindIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn explanationDataGridViewTextBoxColumn;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnInsert;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn errorTypeIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bdsErrorType;
+        private System.Windows.Forms.DataGridViewComboBoxColumn errorKindIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bdsErrorKind;
+        private System.Windows.Forms.DataGridViewTextBoxColumn explanationDataGridViewTextBoxColumn;
     }
 }

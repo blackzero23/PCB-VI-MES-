@@ -20,7 +20,7 @@ namespace PCBVI.Data
             this.WorkLogs = new HashSet<WorkLog>();
         }
     
-        public int? WorkOrderId { get; set; }
+        public int WorkOrderId { get; set; }
         public int? ItemId { get; set; }
         public System.DateTime OrderDate { get; set; }
         public int? RotationGroupId { get; set; }

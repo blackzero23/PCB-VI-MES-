@@ -25,6 +25,11 @@ namespace PCBVI.Controls.Basic.SubjectControl
 
             if (DesignMode)
                 return;
+            InitDatasource();
+        }
+
+        public void InitDatasource()
+        {
             //데이터 바인딩 곳에 데이터를 불러와서 넣는다.
             bdsFirstDivision.DataSource = DB.FirstItemDivision.GetAll();
 

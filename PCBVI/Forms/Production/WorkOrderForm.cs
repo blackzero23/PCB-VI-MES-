@@ -26,6 +26,7 @@ namespace PCBVI.Forms.Production
         private void UscTopMenu_InsertButtonClicked(object sender, Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs e)
         {
             uscTopMenu.OpenInsertForm(new WorkOrderInsertForm());
+            uscList.InitSetDataSource();
         }
 
         private void UscTopMenu_UpdateButtonClicked(object sender, Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs e)

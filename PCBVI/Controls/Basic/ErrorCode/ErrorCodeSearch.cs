@@ -27,6 +27,11 @@ namespace PCBVI.Controls.Basic.ErrorCode
             if (DesignMode)
                 return;
 
+            InitSetDataSource();
+        }
+
+        public void InitSetDataSource()
+        {
             List<Data.ErrorCode> errorCodes = DB.ErrorCode.GetAll();
             errorCodes.Insert(0, new Data.ErrorCode(""));
             cbbErrorCode.DataSource = errorCodes;
@@ -39,7 +44,6 @@ namespace PCBVI.Controls.Basic.ErrorCode
             errorKinds.Insert(0, new Data.ErrorKind(""));
             cbbErrorKind.DataSource = errorKinds;
         }
-
 
 
         //usc형태의 콤보박스바인딩

@@ -31,6 +31,7 @@ namespace PCBVI.Controls.Production.WorkLog
         {
             bdsItem.DataSource = DB.Item.GetAll();
             bdsRotation.DataSource = DB.RotationGroup.GetAll();
+            
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
