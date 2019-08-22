@@ -109,59 +109,40 @@ namespace PCBVI.Controls.Production.Worker
 
             //통신을 통해서 라즈베리파이에서 시간과 생산수량 불량 수량을 넣을수 있는지 체크 
             //아니면 새창을 통해서 직접작성 하도록.
-            //try
-            //{
-            //    //해당 시설이 작업중인지 체크
-            //   // Data.WorkOrder workOrder = dgvList.CurrentRow.DataBoundItem as Data.WorkOrder;
-            //    Data.WorkOrder workOrder = dgvList.CurrentRow.DataBoundItem as Data.WorkOrder;
-
-            //    if (DB.WorkLog.HasWorkOrderId(workOrder.WorkOrderId) == false)
-            //    {
-            //        MessageBox.Show("해당 시설은 가동중이지 않습니다.");
-            //        return;
-            //    }
-
-
-
-            //    //생산 이력 작성.
-            //    //작업일,공정,품목,양품,불량품,시작시간,종료시간
-            //    SetProductionHistory(workOrder);
-
-            //    //설비 가동 / 비가동 작성.
-            //    SetFacilitiesPower(workOrder);
-
-            //    //작업일보 종료된 데이터 작성.
-            //    //일단 임시 값을 넘기는걸로 종료는 현재 시각, 생산량 : 10 불량 : 10
-            //    SetEndWorkLog(workOrder);
-
-            //}
-            //catch (NullReferenceException)
-            //{
-            //    MessageBox.Show("작업을 선택 해 주세요.");
-            //}
-
-            //해당 시설이 작업중인지 체크
-            // Data.WorkOrder workOrder = dgvList.CurrentRow.DataBoundItem as Data.WorkOrder;
-            Data.WorkOrder workOrder = dgvList.CurrentRow.DataBoundItem as Data.WorkOrder;
-
-            if (DB.WorkLog.HasWorkOrderId(workOrder.WorkOrderId) == false)
+            try
             {
-                MessageBox.Show("해당 시설은 가동중이지 않습니다.");
-                return;
+                //해당 시설이 작업중인지 체크
+                // Data.WorkOrder workOrder = dgvList.CurrentRow.DataBoundItem as Data.WorkOrder;
+                Data.WorkOrder workOrder = dgvList.CurrentRow.DataBoundItem as Data.WorkOrder;
+
+                if (DB.WorkLog.HasWorkOrderId(workOrder.WorkOrderId) == false)
+                {
+                    MessageBox.Show("해당 시설은 가동중이지 않습니다.");
+                    return;
+                }
+
+                //작업일보 종료된 데이터 작성.
+                //일단 임시 값을 넘기는걸로 종료는 현재 시각, 생산량 : 10 불량 : 10
+                SetEndWorkLog(workOrder);
+
+                //생산 이력 작성.
+                //작업일,공정,품목,양품,불량품,시작시간,종료시간
+                SetProductionHistory(workOrder);
+
+                //설비 가동 / 비가동 작성.
+                SetFacilitiesPower(workOrder);
+
+                
+
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("작업을 선택 해 주세요.");
             }
 
 
 
-            //생산 이력 작성.
-            //작업일,공정,품목,양품,불량품,시작시간,종료시간
-            SetProductionHistory(workOrder);
 
-            //설비 가동 / 비가동 작성.
-            SetFacilitiesPower(workOrder);
-
-            //작업일보 종료된 데이터 작성.
-            //일단 임시 값을 넘기는걸로 종료는 현재 시각, 생산량 : 10 불량 : 10
-            SetEndWorkLog(workOrder);
 
 
             //설비 가동 / 비가동 작성.
@@ -227,10 +208,10 @@ namespace PCBVI.Controls.Production.Worker
                 //마지막시간
                 DateTime end = productHistoryList.Select(x => x.EndTime).Max();
 
-                ts = start - end;
+                ts = end - start;
 
                 //에러 나것지.
-                facilitiesPower.WorkTime = TimeSpan.Parse(ts.Hours.ToString());
+                facilitiesPower.WorkTime = ts;
 
                 DB.FacilitiesPower.Insert(facilitiesPower);
 
@@ -248,7 +229,7 @@ namespace PCBVI.Controls.Production.Worker
                 DateTime end = productHistoryList.Select(x => x.EndTime).Max();
 
                 ts = end - start;
-                facilitiesPower.WorkTime = TimeSpan.Parse(ts.Hours.ToString());
+                facilitiesPower.WorkTime = ts;
 
                 DB.FacilitiesPower.Update(facilitiesPower);
             }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PCBVI.Data;
+using PCBVI.Data.Data;
 
 namespace PCBVI.Controls.Facilities
 {
@@ -16,6 +17,22 @@ namespace PCBVI.Controls.Facilities
         public FacilitiesPLC()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (DesignMode)
+                return;
+
+            InitSetDataSource();
+        }
+
+        private void InitSetDataSource()
+        {
+            bdsProcess.DataSource = DB.Process.GetAll();
+            bdsFacilities.DataSource = DB.Facilities.GetAll();
         }
 
         public void SetDataSource(List<Data.FacilitiesPower> list)

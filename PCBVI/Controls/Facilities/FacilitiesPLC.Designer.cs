@@ -30,13 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.FacilitiesName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProcessName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdsFacilitiesPower = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsFacilities = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsProcess = new System.Windows.Forms.BindingSource(this.components);
+            this.FacilitiesName = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ProcessName = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.WorkDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bdsFacilitiesPower = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFacilitiesPower)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsFacilities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvList
@@ -62,19 +66,45 @@
             this.dgvList.TabIndex = 0;
             this.dgvList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvList_CellMouseClick);
             // 
+            // bdsFacilitiesPower
+            // 
+            this.bdsFacilitiesPower.DataSource = typeof(PCBVI.Data.FacilitiesPower);
+            // 
+            // bdsFacilities
+            // 
+            this.bdsFacilities.DataSource = typeof(PCBVI.Data.Facility);
+            // 
+            // bdsProcess
+            // 
+            this.bdsProcess.DataSource = typeof(PCBVI.Data.Process);
+            // 
             // FacilitiesName
             // 
-            this.FacilitiesName.DataPropertyName = "FacilitiesName";
+            this.FacilitiesName.DataPropertyName = "FacilitiesId";
+            this.FacilitiesName.DataSource = this.bdsFacilities;
+            this.FacilitiesName.DisplayMember = "Name";
+            this.FacilitiesName.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.FacilitiesName.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.FacilitiesName.HeaderText = "설비명";
             this.FacilitiesName.Name = "FacilitiesName";
             this.FacilitiesName.ReadOnly = true;
+            this.FacilitiesName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.FacilitiesName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.FacilitiesName.ValueMember = "FacilitiesId";
             // 
             // ProcessName
             // 
-            this.ProcessName.DataPropertyName = "ProcessName";
+            this.ProcessName.DataPropertyName = "ProcessId";
+            this.ProcessName.DataSource = this.bdsProcess;
+            this.ProcessName.DisplayMember = "Name";
+            this.ProcessName.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.ProcessName.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ProcessName.HeaderText = "공정명";
             this.ProcessName.Name = "ProcessName";
             this.ProcessName.ReadOnly = true;
+            this.ProcessName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProcessName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ProcessName.ValueMember = "ProcessId";
             // 
             // WorkDate
             // 
@@ -90,10 +120,6 @@
             this.workTimeDataGridViewTextBoxColumn.Name = "workTimeDataGridViewTextBoxColumn";
             this.workTimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // bdsFacilitiesPower
-            // 
-            this.bdsFacilitiesPower.DataSource = typeof(PCBVI.Data.FacilitiesPower);
-            // 
             // FacilitiesPLC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -103,6 +129,8 @@
             this.Size = new System.Drawing.Size(613, 388);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFacilitiesPower)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsFacilities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -111,8 +139,10 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
         private System.Windows.Forms.BindingSource bdsFacilitiesPower;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FacilitiesName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProcessName;
+        private System.Windows.Forms.DataGridViewComboBoxColumn FacilitiesName;
+        private System.Windows.Forms.BindingSource bdsFacilities;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ProcessName;
+        private System.Windows.Forms.BindingSource bdsProcess;
         private System.Windows.Forms.DataGridViewTextBoxColumn WorkDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn workTimeDataGridViewTextBoxColumn;
     }
