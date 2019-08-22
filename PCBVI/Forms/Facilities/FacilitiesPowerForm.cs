@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Core;
 using PCBVI.Data;
 using PCBVI.Data.Data;
 
@@ -29,12 +30,23 @@ namespace PCBVI.Forms.Facilities
             uscList.SetDataSource(DB.FacilitiesPower.Search(e.ProcessId,e.FacilitiesId,e.FromDate,e.ToDate));
         }
 
+
+
         private void UscList_CellMouceClicked(object sender, Controls.Facilities.FacilitiesPLC.CellMouceClickedEventArgs e)
         {
-            List<FacilitiesPower> facilitiesPowers = new List<FacilitiesPower> {e.Facilities};
-            bdsFacilitiesPower.DataSource = facilitiesPowers;
+            double power = (e.Facilities.WorkTime.TotalHours / 24) * 1.0;
+            double nonPower = ((24 - e.Facilities.WorkTime.TotalHours) / 24 ) * 1.0;
 
             
+
+            chartCircle.Series["Series1"].Points.Clear();
+            chartCircle.Series["Series1"].Points.AddXY("가동률",power);
+            chartCircle.Series["Series1"].Points.AddXY("비가동율", nonPower);
+
+           
+            // bdsFacilitiesPower.DataSource = facilitiesPowers;
+            //chartCircle.DataSource = e.Facilities;
+
         }
     }
 }

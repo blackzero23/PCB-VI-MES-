@@ -32,73 +32,52 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            this.chartGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.bdsTodayFacilitiesList = new System.Windows.Forms.BindingSource(this.components);
             this.chartCircle = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.bdsFacilitiesPower = new System.Windows.Forms.BindingSource(this.components);
             this.naviFacilitiesPower = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageFacilitiesPower = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.uscList = new PCBVI.Controls.Facilities.FacilitiesPLC();
             this.uscSearch = new PCBVI.Controls.Facilities.FacilitiesPSC();
-            this.bdsTodayFacilitiesList = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.chartGraph)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsTodayFacilitiesList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCircle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFacilitiesPower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.naviFacilitiesPower)).BeginInit();
             this.naviFacilitiesPower.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageFacilitiesPower)).BeginInit();
             this.pageFacilitiesPower.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsTodayFacilitiesList)).BeginInit();
             this.SuspendLayout();
             // 
-            // chartGraph
+            // bdsTodayFacilitiesList
             // 
-            this.chartGraph.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea1.Name = "ChartArea1";
-            this.chartGraph.ChartAreas.Add(chartArea1);
-            this.chartGraph.DataSource = this.bdsTodayFacilitiesList;
-            this.chartGraph.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend1.Name = "Legend1";
-            this.chartGraph.Legends.Add(legend1);
-            this.chartGraph.Location = new System.Drawing.Point(0, 306);
-            this.chartGraph.Name = "chartGraph";
-            this.chartGraph.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.XValueMember = "WorkDate";
-            series1.YValueMembers = "WorkTime";
-            this.chartGraph.Series.Add(series1);
-            this.chartGraph.Size = new System.Drawing.Size(798, 117);
-            this.chartGraph.TabIndex = 0;
-            this.chartGraph.Text = "chart1";
+            this.bdsTodayFacilitiesList.DataSource = typeof(PCBVI.Data.FacilitiesPower);
             // 
             // chartCircle
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartCircle.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chartCircle.ChartAreas.Add(chartArea1);
             this.chartCircle.DataSource = this.bdsFacilitiesPower;
             this.chartCircle.Dock = System.Windows.Forms.DockStyle.Right;
-            legend2.Name = "rrr";
-            this.chartCircle.Legends.Add(legend2);
-            this.chartCircle.Location = new System.Drawing.Point(555, 63);
+            legend1.Name = "Legend1";
+            this.chartCircle.Legends.Add(legend1);
+            this.chartCircle.Location = new System.Drawing.Point(464, 63);
             this.chartCircle.Name = "chartCircle";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "rrr";
-            series2.Name = "Series1";
-            series2.XValueMember = "FacilitiesName";
-            series2.YValueMembers = "WorkTime";
-            this.chartCircle.Series.Add(series2);
-            this.chartCircle.Size = new System.Drawing.Size(243, 243);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.IsValueShownAsLabel = true;
+            series1.IsXValueIndexed = true;
+            series1.LabelFormat = "#.##%";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.XValueMember = "FacilitiesName";
+            series1.YValueMembers = "WorkTime";
+            this.chartCircle.Series.Add(series1);
+            this.chartCircle.Size = new System.Drawing.Size(334, 360);
             this.chartCircle.TabIndex = 1;
             this.chartCircle.Text = "chartCircle";
-            title1.BackColor = System.Drawing.Color.White;
-            title1.Name = "설비가동율";
+            title1.Name = "Title1";
+            title1.Text = "설비 가동율";
             this.chartCircle.Titles.Add(title1);
             // 
             // bdsFacilitiesPower
@@ -129,7 +108,6 @@
             this.pageFacilitiesPower.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
             this.pageFacilitiesPower.Controls.Add(this.uscList);
             this.pageFacilitiesPower.Controls.Add(this.chartCircle);
-            this.pageFacilitiesPower.Controls.Add(this.chartGraph);
             this.pageFacilitiesPower.Controls.Add(this.uscSearch);
             this.pageFacilitiesPower.Flags = 65534;
             this.pageFacilitiesPower.LastVisibleSet = true;
@@ -145,7 +123,7 @@
             this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscList.Location = new System.Drawing.Point(0, 63);
             this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(555, 243);
+            this.uscList.Size = new System.Drawing.Size(464, 360);
             this.uscList.TabIndex = 3;
             this.uscList.CellMouceClicked += new System.EventHandler<PCBVI.Controls.Facilities.FacilitiesPLC.CellMouceClickedEventArgs>(this.UscList_CellMouceClicked);
             // 
@@ -158,10 +136,6 @@
             this.uscSearch.TabIndex = 2;
             this.uscSearch.SearchButtonClicked += new System.EventHandler<PCBVI.Controls.Facilities.FacilitiesPSC.SearchButtonClickedEventArgs>(this.UscSearch_SearchButtonClicked);
             // 
-            // bdsTodayFacilitiesList
-            // 
-            this.bdsTodayFacilitiesList.DataSource = typeof(PCBVI.Data.FacilitiesPower);
-            // 
             // FacilitiesPowerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -172,21 +146,18 @@
             this.Name = "FacilitiesPowerForm";
             this.Text = "FacilitiesPowerForm";
             this.Load += new System.EventHandler(this.FacilitiesPowerForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.chartGraph)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsTodayFacilitiesList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCircle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFacilitiesPower)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.naviFacilitiesPower)).EndInit();
             this.naviFacilitiesPower.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pageFacilitiesPower)).EndInit();
             this.pageFacilitiesPower.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bdsTodayFacilitiesList)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartGraph;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartCircle;
         private Controls.Facilities.FacilitiesPSC uscSearch;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator naviFacilitiesPower;
