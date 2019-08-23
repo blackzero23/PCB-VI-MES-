@@ -46,7 +46,7 @@
             this.vspLineTv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.vspLineTv.Location = new System.Drawing.Point(0, 26);
             this.vspLineTv.Name = "vspLineTv";
-            this.vspLineTv.Size = new System.Drawing.Size(776, 346);
+            this.vspLineTv.Size = new System.Drawing.Size(798, 397);
             this.vspLineTv.TabIndex = 0;
             this.vspLineTv.Text = "videoSourcePlayer1";
             this.vspLineTv.VideoSource = null;
@@ -57,7 +57,7 @@
             this.btnSetting.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSetting.Location = new System.Drawing.Point(0, 0);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(776, 26);
+            this.btnSetting.Size = new System.Drawing.Size(798, 26);
             this.btnSetting.TabIndex = 1;
             this.btnSetting.Values.Image = global::PCBVI.Properties.Resources.icons8_settings_20px;
             this.btnSetting.Values.Text = "";
@@ -67,9 +67,10 @@
             // 
             this.kryptonPanel1.Controls.Add(this.vspLineTv);
             this.kryptonPanel1.Controls.Add(this.btnSetting);
-            this.kryptonPanel1.Location = new System.Drawing.Point(11, 18);
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(776, 372);
+            this.kryptonPanel1.Size = new System.Drawing.Size(798, 423);
             this.kryptonPanel1.TabIndex = 2;
             // 
             // naviEmployee

@@ -20,7 +20,7 @@ namespace PCBVI.Forms.Production
 
         private void UscSearch_SearchButtonClicked(object sender, Controls.Production.DefectiveProduct.DefectiveProductSearchControl.SearchButtonClickedEventArgs e)
         {
-            uscList.SetDataSource(DB.DefectiveProduct.Search(e.ProcessId, e.FromDate, e.ToDate));
+            //uscList.SetDataSource(DB.DefectiveProduct.Search(e.ProcessId, e.FromDate, e.ToDate));
         }
 
     }

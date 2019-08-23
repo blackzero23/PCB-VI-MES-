@@ -59,13 +59,14 @@ namespace PCBVI.Data.Data
             using(var context = DbContextFactory.Create())
             {
                 var query = from x in context.Employees
-                            where x.DepartmentId == id
+                            //where x.DepartmentId == id
                             select new
                             {
                                 Employee = x,
                                 DepartmentName =x.Department.Name
                             };
-
+                if (id != 0)
+                    query = query.Where(x => x.Employee.DepartmentId == id);
 
                 if (string.IsNullOrWhiteSpace(name) == false)
                     query = query.Where(x => x.Employee.Name.Contains(name));
