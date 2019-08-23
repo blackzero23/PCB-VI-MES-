@@ -32,6 +32,7 @@
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.facilityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facilitiesIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FacilitiesSerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facilityBindingSource)).BeginInit();
@@ -45,6 +46,7 @@
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.facilitiesIdDataGridViewTextBoxColumn,
+            this.FacilitiesSerialNo,
             this.nameDataGridViewTextBoxColumn});
             this.dgvList.DataSource = this.facilityBindingSource;
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -67,6 +69,13 @@
             this.facilitiesIdDataGridViewTextBoxColumn.HeaderText = "설비번호";
             this.facilitiesIdDataGridViewTextBoxColumn.Name = "facilitiesIdDataGridViewTextBoxColumn";
             this.facilitiesIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // FacilitiesSerialNo
+            // 
+            this.FacilitiesSerialNo.DataPropertyName = "FacilitiesSerialNo";
+            this.FacilitiesSerialNo.HeaderText = "설비고유번호";
+            this.FacilitiesSerialNo.Name = "FacilitiesSerialNo";
+            this.FacilitiesSerialNo.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -93,6 +102,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
         private System.Windows.Forms.BindingSource facilityBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn facilitiesIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FacilitiesSerialNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
     }
 }

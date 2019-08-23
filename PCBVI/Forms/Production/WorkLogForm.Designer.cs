@@ -45,12 +45,12 @@
             this.kryptonNavigator1.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.kryptonNavigator1.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.kryptonNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonNavigator1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonNavigator1.Location = new System.Drawing.Point(0, 35);
             this.kryptonNavigator1.Name = "kryptonNavigator1";
             this.kryptonNavigator1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage1});
             this.kryptonNavigator1.SelectedIndex = 0;
-            this.kryptonNavigator1.Size = new System.Drawing.Size(800, 450);
+            this.kryptonNavigator1.Size = new System.Drawing.Size(800, 415);
             this.kryptonNavigator1.TabIndex = 1;
             this.kryptonNavigator1.Text = "kryptonNavigator1";
             // 
@@ -63,7 +63,7 @@
             this.kryptonPage1.LastVisibleSet = true;
             this.kryptonPage1.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage1.Name = "kryptonPage1";
-            this.kryptonPage1.Size = new System.Drawing.Size(798, 423);
+            this.kryptonPage1.Size = new System.Drawing.Size(798, 388);
             this.kryptonPage1.Text = "작업일지";
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "A39FBF88B0584D7E8F87C787287F24B0";
@@ -73,7 +73,7 @@
             this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscList.Location = new System.Drawing.Point(0, 75);
             this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(798, 348);
+            this.uscList.Size = new System.Drawing.Size(798, 313);
             this.uscList.TabIndex = 1;
             // 
             // uscSearch
@@ -99,8 +99,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.uscTopMenu);
             this.Controls.Add(this.kryptonNavigator1);
+            this.Controls.Add(this.uscTopMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WorkLogForm";
             this.Text = "WorkLogForm";

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PCBVI.Data;
 using PCBVI.Data.Data;
 
 namespace PCBVI.Controls.Production.ProductionHistory
@@ -29,7 +30,9 @@ namespace PCBVI.Controls.Production.ProductionHistory
 
         private void InitSetDataSource()
         {
-            bdsProcess.DataSource = DB.Process.GetAll();
+            var processes = DB.Process.GetAll();
+            processes.Insert(0,new Process(""));
+            bdsProcess.DataSource = processes;
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)

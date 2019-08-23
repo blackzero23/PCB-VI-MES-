@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.processIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bdsProcess = new System.Windows.Forms.BindingSource(this.components);
-            this.lotIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bdsLot = new System.Windows.Forms.BindingSource(this.components);
-            this.barcodeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bdsBarcode = new System.Windows.Forms.BindingSource(this.components);
-            this.errorCodeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bdsErrorCode = new System.Windows.Forms.BindingSource(this.components);
-            this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bdsEmployee = new System.Windows.Forms.BindingSource(this.components);
-            this.workDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bdsDefectiveProduction = new System.Windows.Forms.BindingSource(this.components);
+            this.lotIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.processIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.barcodeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.errorCodeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.workDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLot)).BeginInit();
@@ -58,8 +58,8 @@
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.processIdDataGridViewTextBoxColumn,
             this.lotIdDataGridViewTextBoxColumn,
+            this.processIdDataGridViewTextBoxColumn,
             this.barcodeIdDataGridViewTextBoxColumn,
             this.errorCodeIdDataGridViewTextBoxColumn,
             this.employeeIdDataGridViewTextBoxColumn,
@@ -73,90 +73,100 @@
             this.dgvList.Size = new System.Drawing.Size(800, 150);
             this.dgvList.TabIndex = 0;
             // 
-            // processIdDataGridViewTextBoxColumn
-            // 
-            this.processIdDataGridViewTextBoxColumn.DataPropertyName = "ProcessId";
-            this.processIdDataGridViewTextBoxColumn.DataSource = this.bdsProcess;
-            this.processIdDataGridViewTextBoxColumn.DisplayMember = "Name";
-            this.processIdDataGridViewTextBoxColumn.HeaderText = "공정명";
-            this.processIdDataGridViewTextBoxColumn.Name = "processIdDataGridViewTextBoxColumn";
-            this.processIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.processIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.processIdDataGridViewTextBoxColumn.ValueMember = "ProcessId";
-            // 
             // bdsProcess
             // 
             this.bdsProcess.DataSource = typeof(PCBVI.Data.Process);
+            // 
+            // bdsLot
+            // 
+            this.bdsLot.DataSource = typeof(PCBVI.Data.Lot);
+            // 
+            // bdsBarcode
+            // 
+            this.bdsBarcode.DataSource = typeof(PCBVI.Data.Barcode);
+            // 
+            // bdsErrorCode
+            // 
+            this.bdsErrorCode.DataSource = typeof(PCBVI.Data.ErrorCode);
+            // 
+            // bdsEmployee
+            // 
+            this.bdsEmployee.DataSource = typeof(PCBVI.Data.Employee);
+            // 
+            // bdsDefectiveProduction
+            // 
+            this.bdsDefectiveProduction.DataSource = typeof(PCBVI.Data.DefectiveProduct);
             // 
             // lotIdDataGridViewTextBoxColumn
             // 
             this.lotIdDataGridViewTextBoxColumn.DataPropertyName = "LotId";
             this.lotIdDataGridViewTextBoxColumn.DataSource = this.bdsLot;
             this.lotIdDataGridViewTextBoxColumn.DisplayMember = "LotCode";
+            this.lotIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.lotIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lotIdDataGridViewTextBoxColumn.HeaderText = "LOT.No";
             this.lotIdDataGridViewTextBoxColumn.Name = "lotIdDataGridViewTextBoxColumn";
             this.lotIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.lotIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.lotIdDataGridViewTextBoxColumn.ValueMember = "LotId";
             // 
-            // bdsLot
+            // processIdDataGridViewTextBoxColumn
             // 
-            this.bdsLot.DataSource = typeof(PCBVI.Data.Lot);
+            this.processIdDataGridViewTextBoxColumn.DataPropertyName = "ProcessId";
+            this.processIdDataGridViewTextBoxColumn.DataSource = this.bdsProcess;
+            this.processIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.processIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.processIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.processIdDataGridViewTextBoxColumn.HeaderText = "공정명";
+            this.processIdDataGridViewTextBoxColumn.Name = "processIdDataGridViewTextBoxColumn";
+            this.processIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.processIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.processIdDataGridViewTextBoxColumn.ValueMember = "ProcessId";
             // 
             // barcodeIdDataGridViewTextBoxColumn
             // 
             this.barcodeIdDataGridViewTextBoxColumn.DataPropertyName = "BarcodeId";
             this.barcodeIdDataGridViewTextBoxColumn.DataSource = this.bdsBarcode;
             this.barcodeIdDataGridViewTextBoxColumn.DisplayMember = "BarcodeCode";
+            this.barcodeIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.barcodeIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.barcodeIdDataGridViewTextBoxColumn.HeaderText = "바코드명";
             this.barcodeIdDataGridViewTextBoxColumn.Name = "barcodeIdDataGridViewTextBoxColumn";
             this.barcodeIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.barcodeIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.barcodeIdDataGridViewTextBoxColumn.ValueMember = "BarcodeId";
             // 
-            // bdsBarcode
-            // 
-            this.bdsBarcode.DataSource = typeof(PCBVI.Data.Barcode);
-            // 
             // errorCodeIdDataGridViewTextBoxColumn
             // 
             this.errorCodeIdDataGridViewTextBoxColumn.DataPropertyName = "ErrorCodeId";
             this.errorCodeIdDataGridViewTextBoxColumn.DataSource = this.bdsErrorCode;
             this.errorCodeIdDataGridViewTextBoxColumn.DisplayMember = "Code";
+            this.errorCodeIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.errorCodeIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.errorCodeIdDataGridViewTextBoxColumn.HeaderText = "불량명";
             this.errorCodeIdDataGridViewTextBoxColumn.Name = "errorCodeIdDataGridViewTextBoxColumn";
             this.errorCodeIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.errorCodeIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.errorCodeIdDataGridViewTextBoxColumn.ValueMember = "ErrorCodeId";
             // 
-            // bdsErrorCode
-            // 
-            this.bdsErrorCode.DataSource = typeof(PCBVI.Data.ErrorCode);
-            // 
             // employeeIdDataGridViewTextBoxColumn
             // 
             this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "EmployeeId";
             this.employeeIdDataGridViewTextBoxColumn.DataSource = this.bdsEmployee;
             this.employeeIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.employeeIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.employeeIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.employeeIdDataGridViewTextBoxColumn.HeaderText = "직원명";
             this.employeeIdDataGridViewTextBoxColumn.Name = "employeeIdDataGridViewTextBoxColumn";
             this.employeeIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.employeeIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.employeeIdDataGridViewTextBoxColumn.ValueMember = "EmployeeId";
             // 
-            // bdsEmployee
-            // 
-            this.bdsEmployee.DataSource = typeof(PCBVI.Data.Employee);
-            // 
             // workDateDataGridViewTextBoxColumn
             // 
             this.workDateDataGridViewTextBoxColumn.DataPropertyName = "WorkDate";
-            this.workDateDataGridViewTextBoxColumn.HeaderText = "작업자";
+            this.workDateDataGridViewTextBoxColumn.HeaderText = "작업일";
             this.workDateDataGridViewTextBoxColumn.Name = "workDateDataGridViewTextBoxColumn";
-            // 
-            // bdsDefectiveProduction
-            // 
-            this.bdsDefectiveProduction.DataSource = typeof(PCBVI.Data.DefectiveProduct);
             // 
             // DefectiveProductListControl
             // 
@@ -181,15 +191,15 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
         private System.Windows.Forms.BindingSource bdsDefectiveProduction;
         private System.Windows.Forms.BindingSource bdsProcess;
-        private System.Windows.Forms.DataGridViewComboBoxColumn processIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn lotIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bdsLot;
-        private System.Windows.Forms.DataGridViewComboBoxColumn barcodeIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bdsBarcode;
-        private System.Windows.Forms.DataGridViewComboBoxColumn errorCodeIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bdsErrorCode;
-        private System.Windows.Forms.DataGridViewComboBoxColumn employeeIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bdsEmployee;
+        private System.Windows.Forms.DataGridViewComboBoxColumn lotIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn processIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn barcodeIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn errorCodeIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn employeeIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn workDateDataGridViewTextBoxColumn;
     }
 }

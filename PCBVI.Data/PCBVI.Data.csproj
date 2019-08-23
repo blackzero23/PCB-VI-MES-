@@ -103,12 +103,17 @@
     <Compile Include="Entities\FacilitiesPower.cs" />
     <Compile Include="Entities\Facility.cs" />
     <Compile Include="Entities\FHistoryDivision.cs" />
+    <Compile Include="Entities\FirstItemDivision.cs" />
     <Compile Include="Entities\InspectionStandard.cs" />
+    <Compile Include="Entities\InspectionStandardType.cs" />
+    <Compile Include="Entities\Item.cs" />
     <Compile Include="Entities\Lot.cs" />
     <Compile Include="Entities\FirstInspection.cs" />
     <Compile Include="Entities\MaterialsManage.cs" />
     <Compile Include="Entities\Process.cs" />
     <Compile Include="Entities\ProductionHistory.cs" />
+    <Compile Include="Entities\RotationGroup.cs" />
+    <Compile Include="Entities\SecondItemDivision.cs" />
     <Compile Include="Entities\WorkLog.cs" />
     <Compile Include="Entities\WorkPlace.cs" />
     <Compile Include="ErrorCode.cs">

@@ -65,6 +65,7 @@
             // 
             this.cbbProcess.DataSource = this.bdsProcess;
             this.cbbProcess.DisplayMember = "Name";
+            this.cbbProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbProcess.DropDownWidth = 121;
             this.cbbProcess.Location = new System.Drawing.Point(80, 25);
             this.cbbProcess.Name = "cbbProcess";

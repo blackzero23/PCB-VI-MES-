@@ -18,16 +18,16 @@ namespace PCBVI.Forms.Basic
             InitializeComponent();
         }
 
-        private string _code;
-        private string _kind;
-        private string _type;
+        private int _code;
+        private int _kind;
+        private int _type;
 
         private void UscSearch_SearchClicked(object sender, Controls.Basic.ErrorCode.ErrorCodeSearch.SearchClickedEventArgs e)
         {
-            uscList.SetDataSource(DB.ErrorCode.Search(e.Code, e.Kind, e.Type));
-            _code = e.Code;
-            _kind = e.Kind;
-            _type = e.Type;
+            uscList.SetDataSource(DB.ErrorCode.Search(e.ErrorCodeId, e.ErrorTypeId, e.ErrorKindId));
+            _code = e.ErrorCodeId;
+            _type = e.ErrorTypeId;
+            _kind = e.ErrorKindId;
         }
 
         private void UscTopMenu_InsertButtonClicked(object sender, Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs e)

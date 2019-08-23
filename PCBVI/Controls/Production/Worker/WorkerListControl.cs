@@ -121,6 +121,14 @@ namespace PCBVI.Controls.Production.Worker
                     return;
                 }
 
+                if (DB.WorkLog.IsOver(workOrder.WorkOrderId))
+                {
+                    MessageBox.Show("해당 시설은 이미 작업이 종료 되었습니다.");
+                    return;
+                }
+                
+
+
                 //작업일보 종료된 데이터 작성.
                 //일단 임시 값을 넘기는걸로 종료는 현재 시각, 생산량 : 10 불량 : 10
                 SetEndWorkLog(workOrder);
@@ -132,7 +140,7 @@ namespace PCBVI.Controls.Production.Worker
                 //설비 가동 / 비가동 작성.
                 SetFacilitiesPower(workOrder);
 
-                
+                MessageBox.Show("작업종료");
 
             }
             catch (NullReferenceException)

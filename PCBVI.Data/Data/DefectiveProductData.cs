@@ -8,15 +8,20 @@ namespace PCBVI.Data.Data
 {
     public class DefectiveProductData :EntityData<DefectiveProduct>
     {
-        public List<DefectiveProduct> Search(int processId , DateTime fromDate, DateTime toDate)
+        public List<DefectiveProduct> Search(int lotId , DateTime fromDate, DateTime toDate)
         {
             using(var context = DbContextFactory.Create())
             {
                 //바코드에서 불량
 
                 var query = from x in context.DefectiveProducts
-                            where x.ProcessId == processId && (x.WorkDate <= fromDate || x.WorkDate >= toDate)
+                            where x.WorkDate <= fromDate || x.WorkDate >= toDate
                             select x;
+
+                if (lotId != 0)
+                {
+                    query = query.Where(x => x.LotId == lotId);
+                }
 
                 return query.ToList();
             }

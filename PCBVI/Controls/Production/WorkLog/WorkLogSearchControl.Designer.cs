@@ -35,18 +35,18 @@
             this.dtpToDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.dtpFromDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.cbbRotation = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.bdsRotation = new System.Windows.Forms.BindingSource(this.components);
             this.cbbItemName = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsRotation = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbRotation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsRotation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbItemName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsRotation)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
@@ -76,6 +76,7 @@
             this.btnSearch.Size = new System.Drawing.Size(90, 25);
             this.btnSearch.TabIndex = 16;
             this.btnSearch.Values.Text = "검 색";
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // kryptonLabel4
             // 
@@ -105,6 +106,7 @@
             // 
             this.cbbRotation.DataSource = this.bdsRotation;
             this.cbbRotation.DisplayMember = "Name";
+            this.cbbRotation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbRotation.DropDownWidth = 121;
             this.cbbRotation.Location = new System.Drawing.Point(280, 27);
             this.cbbRotation.Name = "cbbRotation";
@@ -112,16 +114,25 @@
             this.cbbRotation.TabIndex = 12;
             this.cbbRotation.ValueMember = "RotationGroupId";
             // 
+            // bdsRotation
+            // 
+            this.bdsRotation.DataSource = typeof(PCBVI.Data.RotationGroup);
+            // 
             // cbbItemName
             // 
             this.cbbItemName.DataSource = this.bdsItem;
             this.cbbItemName.DisplayMember = "Name";
+            this.cbbItemName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbItemName.DropDownWidth = 121;
             this.cbbItemName.Location = new System.Drawing.Point(75, 27);
             this.cbbItemName.Name = "cbbItemName";
             this.cbbItemName.Size = new System.Drawing.Size(121, 21);
             this.cbbItemName.TabIndex = 11;
             this.cbbItemName.ValueMember = "ItemId";
+            // 
+            // bdsItem
+            // 
+            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
             // 
             // kryptonLabel3
             // 
@@ -147,14 +158,6 @@
             this.kryptonLabel1.TabIndex = 8;
             this.kryptonLabel1.Values.Text = "품목명 :";
             // 
-            // bdsItem
-            // 
-            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
-            // 
-            // bdsRotation
-            // 
-            this.bdsRotation.DataSource = typeof(PCBVI.Data.RotationGroup);
-            // 
             // WorkLogSearchControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -166,9 +169,9 @@
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbRotation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsRotation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbItemName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsRotation)).EndInit();
             this.ResumeLayout(false);
 
         }

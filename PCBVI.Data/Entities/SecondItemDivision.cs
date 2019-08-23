@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PCBVI.Data
 {
-    public partial class Item
+    public partial class SecondItemDivision
     {
-        public Item(string name)
+        public SecondItemDivision(string name)
         {
             this.Name = name;
         }

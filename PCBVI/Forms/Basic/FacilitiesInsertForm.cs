@@ -25,7 +25,7 @@ namespace PCBVI.Forms.Basic
             bdsProcess.DataSource = DB.Process.GetAll();
         }
 
-       
+
 
         private void BtnCancle_Click(object sender, EventArgs e)
         {
@@ -46,7 +46,7 @@ namespace PCBVI.Forms.Basic
                 if (!int.TryParse(e.FormattedValue.ToString(), out facilitiesNo))
                 {
                     MessageBox.Show("숫자만 입력가능");
-                 
+
                     e.Cancel = true;
                 }
 
@@ -57,23 +57,39 @@ namespace PCBVI.Forms.Basic
                     e.Cancel = true;
                 }
 
-                Facility facility = DB.Facilities.CheckFacilitiesNo(facilitiesNo);
 
-                if (facility != null)
+            }
+
+
+            if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("공정구분"))
+            {
+                if (string.IsNullOrWhiteSpace(e.FormattedValue.ToString()))
                 {
-                    MessageBox.Show("중복된 설비 번호 입니다.");
+                    MessageBox.Show("공정을 선택해주세요.");
+                    e.Cancel = true;
+                }
+            }
+
+
+
+            if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("설비고유번호"))
+            {
+                int facilitiesNo;
+                //if (e.FormattedValue.ToString().Length > 3)
+                if (!int.TryParse(e.FormattedValue.ToString(), out facilitiesNo))
+                {
+                    MessageBox.Show("숫자만 입력가능");
+
                     e.Cancel = true;
                 }
 
-                if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("공정구분"))
-                {
-                    if (string.IsNullOrWhiteSpace(e.FormattedValue.ToString()))
-                    {
-                        MessageBox.Show("공정을 선택해주세요.");
-                        e.Cancel = true;
-                    }
-                }
+                Facility facility = DB.Facilities.CheckSerialNo(facilitiesNo);
 
+                if (facility != null)
+                {
+                    MessageBox.Show("중복된 시리얼 번호 입니다.");
+                    e.Cancel = true;
+                }
 
             }
 

@@ -31,8 +31,8 @@ namespace PCBVI.Controls.Production.DefectiveProduct
 
         private void InitSetDataSource()
         {
-            List<Data.Process> processes = DB.Process.GetAll();
-            processes.Insert(0, new Data.Process(""));
+            List<Data.Lot> processes = DB.Lot.GetAll();
+            processes.Insert(0, new Data.Lot(""));
             cbbProcess.DataSource = processes;
         }
 

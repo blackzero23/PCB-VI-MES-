@@ -15,9 +15,18 @@ namespace PCBVI.Data.Data
             using (PCBVIEntities context = DbContextFactory.Create())
             {
                 var query = from x in context.WorkOrders
-                    where x.ItemId == itemId && x.RotationGroupId == rotationId
-                                             && (x.OrderDate >= fromDate || x.OrderDate <= ToDate)
+                    where x.OrderDate >= fromDate || x.OrderDate <= ToDate
                     select x;
+
+                if (itemId != 0)
+                {
+                    query = query.Where(x => x.ItemId == itemId);
+                }
+
+                if (rotationId != 0)
+                {
+                    query = query.Where(x => x.RotationGroupId == rotationId);
+                }
 
                 
                 return query.ToList();

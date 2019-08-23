@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace PCBVI.Data
 {
-    public partial class Item
+    public partial class InspectionStandardType
     {
-        public Item(string name)
+        public InspectionStandardType(string code)
         {
-            this.Name = name;
+            this.Code = code;
         }
     }
 }

@@ -60,9 +60,9 @@ namespace PCBVI.Controls.Basic.ErrorCode
                 SearchClicked(this, e);
         }
 
-        private SearchClickedEventArgs OnSearchClicked(string code, string kind, string type)
+        private SearchClickedEventArgs OnSearchClicked(int errorCodeId, int errorTypeId, int errorKindId)
         {
-            SearchClickedEventArgs args = new SearchClickedEventArgs(code, kind, type);
+            SearchClickedEventArgs args = new SearchClickedEventArgs(errorCodeId, errorTypeId, errorKindId);
             OnSearchClicked(args);
 
             return args;
@@ -78,29 +78,29 @@ namespace PCBVI.Controls.Basic.ErrorCode
 
         public class SearchClickedEventArgs : EventArgs
         {
-            public string Code { get; set; }
-            public string Kind { get; set; }
-            public string Type { get; set; }
+            public int ErrorCodeId { get; set; }
+            public int ErrorTypeId { get; set; }
+            public int ErrorKindId { get; set; }
 
             public SearchClickedEventArgs()
             {
             }
 
-            public SearchClickedEventArgs(string code, string kind, string type)
+            public SearchClickedEventArgs(int errorCodeId, int errorTypeId, int errorKindId)
             {
-                Code = code;
-                Kind = kind;
-                Type = type;
+                ErrorCodeId = errorCodeId;
+                ErrorTypeId = errorTypeId;
+                ErrorKindId = errorKindId;
             }
         }
         #endregion
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            string code = cbbErrorCode.Text;
-            string kind = cbbErrorKind.Text;
-            string type = cbbErrorType.Text;
-            
+            int code = (int)cbbErrorCode.SelectedValue;
+            int kind = (int)cbbErrorKind.SelectedValue;
+            int type = (int)cbbErrorType.SelectedValue;
+
             OnSearchClicked(code, kind, type);            
         }
     }

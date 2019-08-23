@@ -74,6 +74,7 @@
             // 
             this.cbbItemName.DataSource = this.bdsItem;
             this.cbbItemName.DisplayMember = "Name";
+            this.cbbItemName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbItemName.DropDownWidth = 121;
             this.cbbItemName.Location = new System.Drawing.Point(85, 31);
             this.cbbItemName.Name = "cbbItemName";
@@ -89,6 +90,7 @@
             // 
             this.cbbRotation.DataSource = this.bdsRotation;
             this.cbbRotation.DisplayMember = "Name";
+            this.cbbRotation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbRotation.DropDownWidth = 121;
             this.cbbRotation.Location = new System.Drawing.Point(290, 31);
             this.cbbRotation.Name = "cbbRotation";

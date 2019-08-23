@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bdsProductionHistory = new System.Windows.Forms.BindingSource(this.components);
             this.bdsProcess = new System.Windows.Forms.BindingSource(this.components);
             this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsProductionHistory = new System.Windows.Forms.BindingSource(this.components);
             this.productionDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProcessName = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ItemName = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -41,9 +41,9 @@
             this.startTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsProductionHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsProductionHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvList
@@ -67,10 +67,6 @@
             this.dgvList.Size = new System.Drawing.Size(808, 266);
             this.dgvList.TabIndex = 0;
             // 
-            // bdsProductionHistory
-            // 
-            this.bdsProductionHistory.DataSource = typeof(PCBVI.Data.ProductionHistory);
-            // 
             // bdsProcess
             // 
             this.bdsProcess.DataSource = typeof(PCBVI.Data.Process);
@@ -79,11 +75,16 @@
             // 
             this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
             // 
+            // bdsProductionHistory
+            // 
+            this.bdsProductionHistory.DataSource = typeof(PCBVI.Data.ProductionHistory);
+            // 
             // productionDateDataGridViewTextBoxColumn
             // 
             this.productionDateDataGridViewTextBoxColumn.DataPropertyName = "ProductionDate";
             this.productionDateDataGridViewTextBoxColumn.HeaderText = "생산일자";
             this.productionDateDataGridViewTextBoxColumn.Name = "productionDateDataGridViewTextBoxColumn";
+            this.productionDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ProcessName
             // 
@@ -130,12 +131,14 @@
             this.startTimeDataGridViewTextBoxColumn.DataPropertyName = "StartTime";
             this.startTimeDataGridViewTextBoxColumn.HeaderText = "작업시작 시간";
             this.startTimeDataGridViewTextBoxColumn.Name = "startTimeDataGridViewTextBoxColumn";
+            this.startTimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // endTimeDataGridViewTextBoxColumn
             // 
             this.endTimeDataGridViewTextBoxColumn.DataPropertyName = "EndTime";
             this.endTimeDataGridViewTextBoxColumn.HeaderText = "작업종료 시간";
             this.endTimeDataGridViewTextBoxColumn.Name = "endTimeDataGridViewTextBoxColumn";
+            this.endTimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ProductionHistoryList
             // 
@@ -145,9 +148,9 @@
             this.Name = "ProductionHistoryList";
             this.Size = new System.Drawing.Size(808, 266);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsProductionHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsProductionHistory)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PCBVI.Data;
 using PCBVI.Data.Data;
 
 namespace PCBVI.Controls.Basic.InspectionStandard
@@ -24,10 +25,16 @@ namespace PCBVI.Controls.Basic.InspectionStandard
 
             if (DesignMode)
                 return;
-            //데이터 바인딩 곳에 데이터를 불러와서 넣는다.
 
-            bdsInspectionStandarType.DataSource = DB.InspectionStandardType.GetAll();
+            InitDataSource();
 
+        }
+
+        private void InitDataSource()
+        {
+            List<Data.InspectionStandardType> inspections = DB.InspectionStandardType.GetAll();
+            inspections.Insert(0, new InspectionStandardType(""));
+            bdsInspectionStandarType.DataSource = inspections;
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)

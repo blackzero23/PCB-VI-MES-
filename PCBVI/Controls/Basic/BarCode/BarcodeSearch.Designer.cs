@@ -32,12 +32,12 @@
             this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lbLOTNo = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.lotBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbbLotNo = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.lotBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lotBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbLotNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lotBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -69,23 +69,23 @@
             this.kryptonPanel1.Size = new System.Drawing.Size(854, 75);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.SystemColors.Control;
             this.kryptonPanel1.StateCommon.Color2 = System.Drawing.SystemColors.Control;
-            this.kryptonPanel1.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel1.TabIndex = 5;
-            // 
-            // lotBindingSource
-            // 
-            this.lotBindingSource.DataSource = typeof(PCBVI.Data.Lot);
             // 
             // cbbLotNo
             // 
             this.cbbLotNo.DataSource = this.lotBindingSource;
             this.cbbLotNo.DisplayMember = "LotCode";
+            this.cbbLotNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLotNo.DropDownWidth = 121;
             this.cbbLotNo.Location = new System.Drawing.Point(96, 24);
             this.cbbLotNo.Name = "cbbLotNo";
             this.cbbLotNo.Size = new System.Drawing.Size(121, 21);
             this.cbbLotNo.TabIndex = 4;
             this.cbbLotNo.ValueMember = "LotId";
+            // 
+            // lotBindingSource
+            // 
+            this.lotBindingSource.DataSource = typeof(PCBVI.Data.Lot);
             // 
             // BarcodeSearch
             // 
@@ -97,8 +97,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lotBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbLotNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lotBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

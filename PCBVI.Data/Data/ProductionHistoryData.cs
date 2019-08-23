@@ -14,13 +14,19 @@ namespace PCBVI.Data.Data
             using (var context = DbContextFactory.Create())
             {
                 var query = from x in context.ProductionHistories
-                            where x.ProcessId == processId && (x.ProductionDate >= fromDate || x.ProductionDate <= toDate)
+                            where x.ProductionDate >= fromDate || x.ProductionDate <= toDate
                             select new
                             {
                                 ProductionHistory = x,
                                 processName = x.Process.Name,
                                 itemName = x.Item.Name
                             };
+
+
+                if (processId != 0)
+                {
+                    query = query.Where(x => x.ProductionHistory.ProcessId == processId);
+                }
 
                 foreach (var x in query)
                 {

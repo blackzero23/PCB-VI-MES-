@@ -69,7 +69,6 @@
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.Size = new System.Drawing.Size(947, 66);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.SystemColors.ControlLight;
-            this.kryptonPanel1.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel1.TabIndex = 3;
             // 
             // kryptonLabel1
@@ -86,7 +85,7 @@
             this.txbWorker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txbWorker.Location = new System.Drawing.Point(575, 25);
             this.txbWorker.Name = "txbWorker";
-            this.txbWorker.Size = new System.Drawing.Size(100, 20);
+            this.txbWorker.Size = new System.Drawing.Size(100, 23);
             this.txbWorker.TabIndex = 5;
             // 
             // btnStop
@@ -129,6 +128,7 @@
             this.dgvList.Location = new System.Drawing.Point(0, 0);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
+            this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(947, 310);
             this.dgvList.TabIndex = 4;
             // 

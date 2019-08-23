@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PCBVI.Data;
 using PCBVI.Data.Data;
 
 namespace PCBVI.Controls.Production.WorkLog
@@ -29,9 +30,14 @@ namespace PCBVI.Controls.Production.WorkLog
 
         private void InitSetDataSource()
         {
-            bdsItem.DataSource = DB.Item.GetAll();
-            bdsRotation.DataSource = DB.RotationGroup.GetAll();
-            
+            var items = DB.Item.GetAll();
+            items.Insert(0,new Item(""));
+            bdsItem.DataSource = items;
+
+            var rotations = DB.RotationGroup.GetAll();
+            rotations.Insert(0,new RotationGroup(""));
+            bdsRotation.DataSource = rotations;
+
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)

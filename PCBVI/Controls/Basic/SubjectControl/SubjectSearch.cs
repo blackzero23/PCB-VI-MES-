@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PCBVI.Data;
 using PCBVI.Data.Data;
 
 namespace PCBVI.Controls.Basic.SubjectControl
@@ -28,16 +29,23 @@ namespace PCBVI.Controls.Basic.SubjectControl
             InitDatasource();
         }
 
+
+        //초기화
         public void InitDatasource()
         {
-            //데이터 바인딩 곳에 데이터를 불러와서 넣는다.
-            bdsFirstDivision.DataSource = DB.FirstItemDivision.GetAll();
+            var items = DB.Item.GetAll();
+            items.Insert(0, new Item(""));
+            bdsItem.DataSource = items;
 
-            bdsSecondDivision.DataSource =
-                DB.SecondItemDivision.GetAll();
+            var firstDivisions = DB.FirstItemDivision.GetAll();
+            firstDivisions.Insert(0, new FirstItemDivision(""));
+            bdsFirstDivision.DataSource = firstDivisions;
 
-            bdsItem.DataSource =
-                DB.Item.GetAll();
+            var secondDivisions = DB.SecondItemDivision.GetAll();
+            secondDivisions.Insert(0, new SecondItemDivision(""));
+            bdsSecondDivision.DataSource = secondDivisions;
+
+
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)

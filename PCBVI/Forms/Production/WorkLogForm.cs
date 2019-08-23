@@ -30,8 +30,7 @@ namespace PCBVI.Forms.Production
 
         private void UscSearch_SearchButtonClicked(object sender, Controls.Production.WorkLog.WorkLogSearchControl.SearchButtonClickedEventArgs e)
         {
-            uscList.SetDataSource(DB.WorkLog.Search
-                (e.ItemId, e.RotationId, e.FromDate, e.ToDate));
+            uscList.SetDataSource(DB.WorkLog.Search(e.ItemId, e.RotationId, e.FromDate, e.ToDate));
         }
     }
 }

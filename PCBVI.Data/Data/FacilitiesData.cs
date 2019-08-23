@@ -14,20 +14,29 @@ namespace PCBVI.Data.Data
             using (PCBVIEntities context = DbContextFactory.Create())
             {
                 var query = from x in context.Facilities
-                            where x.FacilitiesId == facilitiesId && x.ProcessId == processId
                             select x;
+
+                if (facilitiesId != 0)
+                {
+                    query = query.Where(x => x.FacilitiesId == facilitiesId);
+                }
+
+                if (processId != 0)
+                {
+                    query = query.Where(x => x.ProcessId == processId);
+                }
 
                 return query.ToList();
             }
         }
 
-       public Facility CheckFacilitiesNo(int facilitiesNo)
+       public Facility CheckSerialNo(int serialNo)
        {
            using (var context = DbContextFactory.Create())
            {
                var query = from x in context.Facilities
-                           where x.FacilitiesNo == facilitiesNo
-                        select x;
+                           where x.FacilitiesSerialNo == serialNo
+                           select x;
 
                var list = query.ToList();
 

@@ -8,20 +8,35 @@ namespace PCBVI.Data.Data
 {
     public class ErrorCodeData : EntityData<ErrorCode>
     {
-        public List<ErrorCode> Search(string code, string kind, string type)
+        public List<ErrorCode> Search(int codeId, int typeId, int kindId)
         {
             using (PCBVIEntities context = DbContextFactory.Create())
             {
                 var query = from x in context.ErrorCodes
-                            where x.Code.Equals(code) &&
-                            x.ErrorKind.Name.Equals(kind) &&
-                            x.ErrorType.Name.Equals(type)
+                            //where x.Code.Equals(code) &&
+                            //x.ErrorKind.Name.Equals(kind) &&
+                            //x.ErrorType.Name.Equals(type)
                             select new
                             {
                                 ErrorCode = x,
                                 ErrorKindName = x.ErrorKind.Name,
                                 ErrorTypeName = x.ErrorType.Name
-                            };                
+                            };
+
+                if (codeId != 0)
+                {
+                    query = query.Where(x => x.ErrorCode.ErrorCodeId == codeId);
+                }
+
+                if (typeId != 0)
+                {
+                    query = query.Where(x => x.ErrorCode.ErrorTypeId == typeId);
+                }
+
+                if (kindId != 0)
+                {
+                    query = query.Where(x => x.ErrorCode.ErrorKindId == kindId);
+                }
 
                 foreach(var x in query)
                 {

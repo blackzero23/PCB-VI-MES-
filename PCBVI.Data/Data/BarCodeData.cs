@@ -14,14 +14,19 @@ namespace PCBVI.Data.Data
             {
 
                 var query = from x in context.LotBarCodes
-                            where x.Lot.LotId == lotId
                             select new
                             {
+                                Lot = x.Lot,
                                 Barcode = x.Barcode,
                                 LotName = x.Lot.LotCode,
                                 ItemName = x.Barcode.Item.Name,
                                 ErrorType = x.Barcode.ErrorCode.ErrorType.Name
                             };
+
+                if (lotId != 0)
+                {
+                  query =  query.Where(x => x.Lot.LotId == lotId);
+                }
 
 
                 foreach (var x in query)

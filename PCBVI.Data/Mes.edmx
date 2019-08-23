@@ -15,6 +15,7 @@
           <Property Name="ErrorCodeId" Type="int" />
           <Property Name="ItemId" Type="int" Nullable="false" />
           <Property Name="InspectionDate" Type="datetime2" Precision="1" />
+          <Property Name="ProcessId" Type="int" />
         </EntityType>
         <EntityType Name="DefectiveProduct">
           <Key>
@@ -80,6 +81,7 @@
           </Key>
           <Property Name="FacilitiesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FacilitiesNo" Type="int" Nullable="false" />
+          <Property Name="FacilitiesSerialNo" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="InspectionState" Type="bit" Nullable="false" />
           <Property Name="UseState" Type="bit" Nullable="false" />
@@ -370,6 +372,18 @@
             </Principal>
             <Dependent Role="Barcode">
               <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Barcode_Process">
+          <End Role="Process" Type="Self.Process" Multiplicity="0..1" />
+          <End Role="Barcode" Type="Self.Barcode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Process">
+              <PropertyRef Name="ProcessId" />
+            </Principal>
+            <Dependent Role="Barcode">
+              <PropertyRef Name="ProcessId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1064,6 +1078,10 @@
             <End Role="Item" EntitySet="Item" />
             <End Role="Barcode" EntitySet="Barcode" />
           </AssociationSet>
+          <AssociationSet Name="FK_Barcode_Process" Association="Self.FK_Barcode_Process">
+            <End Role="Process" EntitySet="Process" />
+            <End Role="Barcode" EntitySet="Barcode" />
+          </AssociationSet>
           <AssociationSet Name="FK_DefectiveProduct_Barcode" Association="Self.FK_DefectiveProduct_Barcode">
             <End Role="Barcode" EntitySet="Barcode" />
             <End Role="DefectiveProduct" EntitySet="DefectiveProduct" />
@@ -1296,8 +1314,10 @@
           <Property Name="ErrorCodeId" Type="Int32" />
           <Property Name="ItemId" Type="Int32" Nullable="false" />
           <Property Name="InspectionDate" Type="DateTime" Precision="1" />
+          <Property Name="ProcessId" Type="Int32" />
           <NavigationProperty Name="ErrorCode" Relationship="Self.FK_Barcode_ErrorCode" FromRole="Barcode" ToRole="ErrorCode" />
           <NavigationProperty Name="Item" Relationship="Self.FK_Barcode_Item" FromRole="Barcode" ToRole="Item" />
+          <NavigationProperty Name="Process" Relationship="Self.FK_Barcode_Process" FromRole="Barcode" ToRole="Process" />
           <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_Barcode" FromRole="Barcode" ToRole="DefectiveProduct" />
           <NavigationProperty Name="LotBarCodes" Relationship="Self.FK_LotBarCode_Barcode" FromRole="Barcode" ToRole="LotBarCode" />
           <NavigationProperty Name="MaterialHistories" Relationship="Self.FK_MaterialHistory_Barcode" FromRole="Barcode" ToRole="MaterialHistory" />
@@ -1384,6 +1404,7 @@
           </Key>
           <Property Name="FacilitiesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FacilitiesNo" Type="Int32" Nullable="false" />
+          <Property Name="FacilitiesSerialNo" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="InspectionState" Type="Boolean" Nullable="false" />
           <Property Name="UseState" Type="Boolean" Nullable="false" />
@@ -1609,6 +1630,7 @@
           <Property Name="ProcessId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="InspectionStandardId" Type="Int32" />
+          <NavigationProperty Name="Barcodes" Relationship="Self.FK_Barcode_Process" FromRole="Process" ToRole="Barcode" />
           <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_Process" FromRole="Process" ToRole="DefectiveProduct" />
           <NavigationProperty Name="Facilities" Relationship="Self.FK_Facilities_Process" FromRole="Process" ToRole="Facilities" />
           <NavigationProperty Name="FacilitiesPowers" Relationship="Self.FK_FacilitiesPower_Process" FromRole="Process" ToRole="FacilitiesPower" />
@@ -1763,6 +1785,18 @@
             </Principal>
             <Dependent Role="Barcode">
               <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Barcode_Process">
+          <End Role="Process" Type="Self.Process" Multiplicity="0..1" />
+          <End Role="Barcode" Type="Self.Barcode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Process">
+              <PropertyRef Name="ProcessId" />
+            </Principal>
+            <Dependent Role="Barcode">
+              <PropertyRef Name="ProcessId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2457,6 +2491,10 @@
             <End Role="Item" EntitySet="Items" />
             <End Role="Barcode" EntitySet="Barcodes" />
           </AssociationSet>
+          <AssociationSet Name="FK_Barcode_Process" Association="Self.FK_Barcode_Process">
+            <End Role="Process" EntitySet="Processes" />
+            <End Role="Barcode" EntitySet="Barcodes" />
+          </AssociationSet>
           <AssociationSet Name="FK_DefectiveProduct_Barcode" Association="Self.FK_DefectiveProduct_Barcode">
             <End Role="Barcode" EntitySet="Barcodes" />
             <End Role="DefectiveProduct" EntitySet="DefectiveProducts" />
@@ -2689,6 +2727,7 @@
                 <ScalarProperty Name="ErrorCodeId" ColumnName="ErrorCodeId" />
                 <ScalarProperty Name="ItemId" ColumnName="ItemId" />
                 <ScalarProperty Name="InspectionDate" ColumnName="InspectionDate" />
+                <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2761,6 +2800,7 @@
               <MappingFragment StoreEntitySet="Facilities">
                 <ScalarProperty Name="FacilitiesId" ColumnName="FacilitiesId" />
                 <ScalarProperty Name="FacilitiesNo" ColumnName="FacilitiesNo" />
+                <ScalarProperty Name="FacilitiesSerialNo" ColumnName="FacilitiesSerialNo" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="InspectionState" ColumnName="InspectionState" />
                 <ScalarProperty Name="UseState" ColumnName="UseState" />

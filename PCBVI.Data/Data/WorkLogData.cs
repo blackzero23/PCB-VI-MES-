@@ -14,8 +14,7 @@ namespace PCBVI.Data.Data
             using (PCBVIEntities context = DbContextFactory.Create())
             {
                 var query = from x in context.WorkLogs
-                            where x.ItemId == itemId && x.RotationGroupId == rotationId
-                            && (x.WorkDate >= fromDate || x.WorkDate <= toDate)
+                            where x.WorkDate >= fromDate || x.WorkDate <= toDate
                             select new
                             {
                                 WorkLog = x,
@@ -24,6 +23,16 @@ namespace PCBVI.Data.Data
                                 FaciliesName = x.Facility.Name,
                                 RotaionGroupname = x.RotationGroup.Name
                             };
+
+                if (itemId != 0)
+                {
+                    query = query.Where(x => x.WorkLog.ItemId == itemId);
+                }
+
+                if (rotationId != 0)
+                {
+                    query = query.Where(x => x.WorkLog.RotationGroupId == rotationId);
+                }
 
 
                 foreach (var x in query)
@@ -95,6 +104,21 @@ namespace PCBVI.Data.Data
                     select x;
 
                 return query.ToList();
+            }
+        }
+
+        /// <summary>
+        /// 작업이 끝났으면 true 
+        /// </summary>
+        public bool IsOver(int workOrderId)
+        {
+            using (var context = DbContextFactory.Create())
+            {
+                var query = from x in context.WorkLogs
+                    where x.WorkOrderId == workOrderId && x.EndTime == null
+                    select x;
+
+                return query.FirstOrDefault() == null;
             }
         }
     }

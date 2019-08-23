@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PCBVI.Data
 {
-    public partial class Item
+    public partial class RotationGroup
     {
-        public Item(string name)
+        public RotationGroup(string name)
         {
             this.Name = name;
         }
