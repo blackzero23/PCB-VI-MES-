@@ -54,9 +54,9 @@ namespace PCBVI.Controls.Production.DefectiveProduct
                 SearchButtonClicked(this, e);
         }
 
-        private SearchButtonClickedEventArgs OnSearchButtonClicked(int processId, DateTime fromDate, DateTime toDate)
+        private SearchButtonClickedEventArgs OnSearchButtonClicked(int lotId, DateTime fromDate, DateTime toDate)
         {
-            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(processId, fromDate, toDate);
+            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(lotId, fromDate, toDate);
             OnSearchButtonClicked(args);
 
             return args;
@@ -72,7 +72,7 @@ namespace PCBVI.Controls.Production.DefectiveProduct
 
         public class SearchButtonClickedEventArgs : EventArgs
         {
-            public int ProcessId { get; set; }
+            public int LotId { get; set; }
             public DateTime FromDate { get; set; }
             public DateTime ToDate { get; set; }
 
@@ -80,9 +80,9 @@ namespace PCBVI.Controls.Production.DefectiveProduct
             {
             }
 
-            public SearchButtonClickedEventArgs(int processId, DateTime fromDate, DateTime toDate)
+            public SearchButtonClickedEventArgs(int lotId, DateTime fromDate, DateTime toDate)
             {
-                ProcessId = processId;
+                LotId = lotId;
                 FromDate = fromDate;
                 ToDate = toDate;
             }
