@@ -583,11 +583,23 @@
     <Compile Include="Forms\Production\WorkOrderInsertForm.Designer.cs">
       <DependentUpon>WorkOrderInsertForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Quality\FirstInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Quality\FirstInsertForm.Designer.cs">
+      <DependentUpon>FirstInsertForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Quality\FirstInspectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Quality\FirstInspectionForm.Designer.cs">
       <DependentUpon>FirstInspectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Quality\LastInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Quality\LastInsertForm.Designer.cs">
+      <DependentUpon>LastInsertForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Quality\LastInspectionForm.cs">
       <SubType>Form</SubType>
@@ -864,8 +876,14 @@
     <EmbeddedResource Include="Forms\Production\WorkOrderInsertForm.resx">
       <DependentUpon>WorkOrderInsertForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Quality\FirstInsertForm.resx">
+      <DependentUpon>FirstInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Quality\FirstInspectionForm.resx">
       <DependentUpon>FirstInspectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Quality\LastInsertForm.resx">
+      <DependentUpon>LastInsertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Quality\LastInspectionForm.resx">
       <DependentUpon>LastInspectionForm.cs</DependentUpon>

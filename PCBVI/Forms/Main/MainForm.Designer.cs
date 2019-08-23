@@ -44,7 +44,6 @@
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(175, 43);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
             this.panelContainer.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonBreadCrumb;
             this.panelContainer.Size = new System.Drawing.Size(1009, 614);
             this.panelContainer.TabIndex = 1;

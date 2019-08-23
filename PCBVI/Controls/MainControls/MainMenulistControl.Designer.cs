@@ -588,12 +588,12 @@
             // 
             // btnLastInspection
             // 
-            this.btnLastInspection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
+            this.btnLastInspection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.btnLastInspection.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLastInspection.FlatAppearance.BorderSize = 0;
             this.btnLastInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLastInspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnLastInspection.ForeColor = System.Drawing.Color.Black;
+            this.btnLastInspection.ForeColor = System.Drawing.Color.White;
             this.btnLastInspection.Location = new System.Drawing.Point(0, 109);
             this.btnLastInspection.Name = "btnLastInspection";
             this.btnLastInspection.Size = new System.Drawing.Size(168, 29);
@@ -604,12 +604,12 @@
             // 
             // btnProcessInspection
             // 
-            this.btnProcessInspection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
+            this.btnProcessInspection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.btnProcessInspection.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProcessInspection.FlatAppearance.BorderSize = 0;
             this.btnProcessInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcessInspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnProcessInspection.ForeColor = System.Drawing.Color.Black;
+            this.btnProcessInspection.ForeColor = System.Drawing.Color.White;
             this.btnProcessInspection.Location = new System.Drawing.Point(0, 80);
             this.btnProcessInspection.Name = "btnProcessInspection";
             this.btnProcessInspection.Size = new System.Drawing.Size(168, 29);
@@ -621,12 +621,12 @@
             // 
             // btnFirstInspection
             // 
-            this.btnFirstInspection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
+            this.btnFirstInspection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.btnFirstInspection.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFirstInspection.FlatAppearance.BorderSize = 0;
             this.btnFirstInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirstInspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnFirstInspection.ForeColor = System.Drawing.Color.Black;
+            this.btnFirstInspection.ForeColor = System.Drawing.Color.White;
             this.btnFirstInspection.Location = new System.Drawing.Point(0, 51);
             this.btnFirstInspection.Name = "btnFirstInspection";
             this.btnFirstInspection.Size = new System.Drawing.Size(168, 29);
@@ -637,12 +637,12 @@
             // 
             // btnQuality
             // 
-            this.btnQuality.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnQuality.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
             this.btnQuality.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQuality.FlatAppearance.BorderSize = 0;
             this.btnQuality.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuality.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnQuality.ForeColor = System.Drawing.Color.Black;
+            this.btnQuality.ForeColor = System.Drawing.Color.White;
             this.btnQuality.Image = global::PCBVI.Properties.Resources.Expand_Arrow_20px;
             this.btnQuality.Location = new System.Drawing.Point(0, 0);
             this.btnQuality.Name = "btnQuality";
@@ -670,12 +670,12 @@
             // 
             // btnQualityMonitoring
             // 
-            this.btnQualityMonitoring.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
+            this.btnQualityMonitoring.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.btnQualityMonitoring.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnQualityMonitoring.FlatAppearance.BorderSize = 0;
             this.btnQualityMonitoring.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQualityMonitoring.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnQualityMonitoring.ForeColor = System.Drawing.Color.Black;
+            this.btnQualityMonitoring.ForeColor = System.Drawing.Color.White;
             this.btnQualityMonitoring.Location = new System.Drawing.Point(0, 138);
             this.btnQualityMonitoring.Name = "btnQualityMonitoring";
             this.btnQualityMonitoring.Size = new System.Drawing.Size(168, 29);
@@ -687,12 +687,12 @@
             // 
             // btnFacilitiesMonitoring
             // 
-            this.btnFacilitiesMonitoring.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
+            this.btnFacilitiesMonitoring.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.btnFacilitiesMonitoring.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFacilitiesMonitoring.FlatAppearance.BorderSize = 0;
             this.btnFacilitiesMonitoring.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFacilitiesMonitoring.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnFacilitiesMonitoring.ForeColor = System.Drawing.Color.Black;
+            this.btnFacilitiesMonitoring.ForeColor = System.Drawing.Color.White;
             this.btnFacilitiesMonitoring.Location = new System.Drawing.Point(0, 109);
             this.btnFacilitiesMonitoring.Name = "btnFacilitiesMonitoring";
             this.btnFacilitiesMonitoring.Size = new System.Drawing.Size(168, 29);
@@ -703,12 +703,12 @@
             // 
             // btnProStatusMonitoring
             // 
-            this.btnProStatusMonitoring.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
+            this.btnProStatusMonitoring.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.btnProStatusMonitoring.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProStatusMonitoring.FlatAppearance.BorderSize = 0;
             this.btnProStatusMonitoring.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProStatusMonitoring.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnProStatusMonitoring.ForeColor = System.Drawing.Color.Black;
+            this.btnProStatusMonitoring.ForeColor = System.Drawing.Color.White;
             this.btnProStatusMonitoring.Location = new System.Drawing.Point(0, 80);
             this.btnProStatusMonitoring.Name = "btnProStatusMonitoring";
             this.btnProStatusMonitoring.Size = new System.Drawing.Size(168, 29);
@@ -719,12 +719,12 @@
             // 
             // btnProPerformanceMonitoring
             // 
-            this.btnProPerformanceMonitoring.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
+            this.btnProPerformanceMonitoring.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.btnProPerformanceMonitoring.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProPerformanceMonitoring.FlatAppearance.BorderSize = 0;
             this.btnProPerformanceMonitoring.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProPerformanceMonitoring.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnProPerformanceMonitoring.ForeColor = System.Drawing.Color.Black;
+            this.btnProPerformanceMonitoring.ForeColor = System.Drawing.Color.White;
             this.btnProPerformanceMonitoring.Location = new System.Drawing.Point(0, 51);
             this.btnProPerformanceMonitoring.Name = "btnProPerformanceMonitoring";
             this.btnProPerformanceMonitoring.Size = new System.Drawing.Size(168, 29);
@@ -736,12 +736,12 @@
             // 
             // btnMonitoring
             // 
-            this.btnMonitoring.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnMonitoring.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
             this.btnMonitoring.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMonitoring.FlatAppearance.BorderSize = 0;
             this.btnMonitoring.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMonitoring.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnMonitoring.ForeColor = System.Drawing.Color.Black;
+            this.btnMonitoring.ForeColor = System.Drawing.Color.White;
             this.btnMonitoring.Image = global::PCBVI.Properties.Resources.Expand_Arrow_20px;
             this.btnMonitoring.Location = new System.Drawing.Point(0, 0);
             this.btnMonitoring.Name = "btnMonitoring";

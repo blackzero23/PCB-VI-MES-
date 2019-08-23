@@ -29,41 +29,37 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ProcessLb = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lbLot = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.cbbProcess = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.bdsProcess = new System.Windows.Forms.BindingSource(this.components);
             this.ProcessSearchLb = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.dtpFromDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.dtpToDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.bdsLot = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cbbProcess)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLot)).BeginInit();
             this.SuspendLayout();
             // 
-            // ProcessLb
+            // lbLot
             // 
-            this.ProcessLb.Location = new System.Drawing.Point(17, 26);
-            this.ProcessLb.Name = "ProcessLb";
-            this.ProcessLb.Size = new System.Drawing.Size(54, 20);
-            this.ProcessLb.TabIndex = 0;
-            this.ProcessLb.Values.Text = "공정명 : ";
+            this.lbLot.Location = new System.Drawing.Point(17, 26);
+            this.lbLot.Name = "lbLot";
+            this.lbLot.Size = new System.Drawing.Size(57, 20);
+            this.lbLot.TabIndex = 0;
+            this.lbLot.Values.Text = "LOT.No : ";
             // 
             // cbbProcess
             // 
-            this.cbbProcess.DataSource = this.bdsProcess;
-            this.cbbProcess.DisplayMember = "Name";
+            this.cbbProcess.DataSource = this.bdsLot;
+            this.cbbProcess.DisplayMember = "LotCode";
             this.cbbProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbProcess.DropDownWidth = 121;
             this.cbbProcess.Location = new System.Drawing.Point(77, 26);
             this.cbbProcess.Name = "cbbProcess";
             this.cbbProcess.Size = new System.Drawing.Size(121, 21);
             this.cbbProcess.TabIndex = 1;
-            this.cbbProcess.ValueMember = "ProcessId";
-            // 
-            // bdsProcess
-            // 
-            this.bdsProcess.DataSource = typeof(PCBVI.Data.Process);
+            this.cbbProcess.ValueMember = "LotId";
             // 
             // ProcessSearchLb
             // 
@@ -107,6 +103,10 @@
             this.btnSearch.Values.Text = "검 색";
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
+            // bdsLot
+            // 
+            this.bdsLot.DataSource = typeof(PCBVI.Data.Lot);
+            // 
             // DefectiveProductSearchControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -117,11 +117,11 @@
             this.Controls.Add(this.cbbProcess);
             this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.ProcessSearchLb);
-            this.Controls.Add(this.ProcessLb);
+            this.Controls.Add(this.lbLot);
             this.Name = "DefectiveProductSearchControl";
             this.Size = new System.Drawing.Size(800, 75);
             ((System.ComponentModel.ISupportInitialize)(this.cbbProcess)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLot)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,13 +129,13 @@
 
         #endregion
 
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel ProcessLb;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel lbLot;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbProcess;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel ProcessSearchLb;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpFromDate;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpToDate;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSearch;
-        private System.Windows.Forms.BindingSource bdsProcess;
+        private System.Windows.Forms.BindingSource bdsLot;
     }
 }

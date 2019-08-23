@@ -38,11 +38,11 @@ namespace PCBVI.Controls.Production.DefectiveProduct
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            int processId = (int)cbbProcess.SelectedValue;
+            int lotId = (int)cbbProcess.SelectedValue;
             DateTime fromDate = dtpFromDate.Value;
             DateTime toDate = dtpToDate.Value;
 
-            OnSearchButtonClicked(processId, fromDate, toDate);
+            OnSearchButtonClicked(lotId, fromDate, toDate);
         }
 
         #region SearchButtonClicked event things for C# 3.0

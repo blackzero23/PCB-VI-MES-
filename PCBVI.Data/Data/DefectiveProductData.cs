@@ -12,6 +12,8 @@ namespace PCBVI.Data.Data
         {
             using(var context = DbContextFactory.Create())
             {
+                //바코드에서 불량
+
                 var query = from x in context.DefectiveProducts
                             where x.ProcessId == processId && (x.WorkDate <= fromDate || x.WorkDate >= toDate)
                             select x;

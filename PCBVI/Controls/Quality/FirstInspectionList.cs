@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PCBVI.Data.Data;
+using PCBVI.Data;
 
 namespace PCBVI.Controls.Quality
 {
@@ -39,5 +40,22 @@ namespace PCBVI.Controls.Quality
         {
             dgvList.DataSource = list;
         }
+
+        public List<Data.FirstInspection> GetUpateList()
+        {
+            return (List<Data.FirstInspection>)dgvList.DataSource;
+        }
+
+        public DataGridView GetListView()
+        {
+            return dgvList;
+        }
+
+        public FirstInspection GetCurrentLow()
+        {
+            return dgvList.CurrentRow.DataBoundItem as Data.FirstInspection;
+        }
+
+        
     }
 }
