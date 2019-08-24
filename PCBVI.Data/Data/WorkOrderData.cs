@@ -14,9 +14,11 @@ namespace PCBVI.Data.Data
         {
             using (PCBVIEntities context = DbContextFactory.Create())
             {
+               // TimeSpan ondDay = new System.TimeSpan(1, 0, 0, 0);
+                var toDateAddOneDay =ToDate.Add(new System.TimeSpan(1, 0, 0, 0));
                 var query = from x in context.WorkOrders
-                    where x.OrderDate >= fromDate || x.OrderDate <= ToDate
-                    select x;
+                    where x.OrderDate >= fromDate.Date.Date && x.OrderDate < toDateAddOneDay.Date
+                            select x;
 
                 if (itemId != 0)
                 {

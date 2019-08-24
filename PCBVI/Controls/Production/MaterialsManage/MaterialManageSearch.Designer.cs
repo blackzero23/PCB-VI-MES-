@@ -32,6 +32,7 @@
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.cbbMaterialState = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.bdsMaterialState = new System.Windows.Forms.BindingSource(this.components);
             this.cbbProcess = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.bdsProcess = new System.Windows.Forms.BindingSource(this.components);
             this.cbbLotNo = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
@@ -39,15 +40,14 @@
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.bdsMaterialState = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbMaterialState)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsMaterialState)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbProcess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbLotNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLot)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsMaterialState)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
@@ -80,6 +80,7 @@
             // 
             this.cbbMaterialState.DataSource = this.bdsMaterialState;
             this.cbbMaterialState.DisplayMember = "Name";
+            this.cbbMaterialState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbMaterialState.DropDownWidth = 121;
             this.cbbMaterialState.Location = new System.Drawing.Point(462, 32);
             this.cbbMaterialState.Name = "cbbMaterialState";
@@ -87,10 +88,15 @@
             this.cbbMaterialState.TabIndex = 5;
             this.cbbMaterialState.ValueMember = "MaterialStateId";
             // 
+            // bdsMaterialState
+            // 
+            this.bdsMaterialState.DataSource = typeof(PCBVI.Data.MaterialState);
+            // 
             // cbbProcess
             // 
             this.cbbProcess.DataSource = this.bdsProcess;
             this.cbbProcess.DisplayMember = "Name";
+            this.cbbProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbProcess.DropDownWidth = 121;
             this.cbbProcess.Location = new System.Drawing.Point(263, 32);
             this.cbbProcess.Name = "cbbProcess";
@@ -106,6 +112,7 @@
             // 
             this.cbbLotNo.DataSource = this.bdsLot;
             this.cbbLotNo.DisplayMember = "LotCode";
+            this.cbbLotNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLotNo.DropDownWidth = 121;
             this.cbbLotNo.Location = new System.Drawing.Point(76, 32);
             this.cbbLotNo.Name = "cbbLotNo";
@@ -141,10 +148,6 @@
             this.kryptonLabel1.TabIndex = 0;
             this.kryptonLabel1.Values.Text = "LOT.No";
             // 
-            // bdsMaterialState
-            // 
-            this.bdsMaterialState.DataSource = typeof(PCBVI.Data.MaterialState);
-            // 
             // MaterialManageSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -156,11 +159,11 @@
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbMaterialState)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsMaterialState)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbProcess)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbLotNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLot)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsMaterialState)).EndInit();
             this.ResumeLayout(false);
 
         }
