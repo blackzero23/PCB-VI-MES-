@@ -13,41 +13,41 @@ namespace PCBVI.Data
 
         private static readonly string[] PrefixList = { "SELECT", "INSERT", "UPDATE", "DELETE" };
 
-        private static void Write(string log)
-        {
-            /*
-            for (int i = 0; i < PrefixList.Length; i++)
-            {
-                if (log.StartsWith(PrefixList[i]))
-                {
-                    //
-                }
-            }
-            */
-            //if (PrefixList.All(x => log.StartsWith(x) == false))
-            //return;
-            //if (log.StartsWith("SELECT ") == false)
-            //return;
+        //private static void Write(string log)
+        //{
+        //    /*
+        //    for (int i = 0; i < PrefixList.Length; i++)
+        //    {
+        //        if (log.StartsWith(PrefixList[i]))
+        //        {
+        //            //
+        //        }
+        //    }
+        //    */
+        //    //if (PrefixList.All(x => log.StartsWith(x) == false))
+        //    //return;
+        //    //if (log.StartsWith("SELECT ") == false)
+        //    //return;
 
-            string contents;
-            if (File.Exists(FilePath))
-                contents = File.ReadAllText(FilePath);
-            else
-                contents = "";
+        //    string contents;
+        //    if (File.Exists(FilePath))
+        //        contents = File.ReadAllText(FilePath);
+        //    else
+        //        contents = "";
 
-            string time = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
-            string formattedLog = $"[{time}]\r\n{log}\r\n------------------------------\r\n\r\n";
+        //    string time = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+        //    string formattedLog = $"[{time}]\r\n{log}\r\n------------------------------\r\n\r\n";
 
-            contents = formattedLog + contents; // 성능 구림
+        //    contents = formattedLog + contents; // 성능 구림
 
-            File.WriteAllText(FilePath, contents);
-        }
+        //    File.WriteAllText(FilePath, contents);
+        //}
 
         public static PCBVIEntities Create()
         {
             PCBVIEntities context = new PCBVIEntities();
 
-            context.Database.Log = Write;
+           // context.Database.Log = Write;
 
             return context;
         }

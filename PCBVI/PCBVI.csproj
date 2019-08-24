@@ -457,6 +457,12 @@
     <Compile Include="Forms\Facilities\FacilitiesHistoryForm.Designer.cs">
       <DependentUpon>FacilitiesHistoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Facilities\FacilitiesHistoryInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Facilities\FacilitiesHistoryInsertForm.Designer.cs">
+      <DependentUpon>FacilitiesHistoryInsertForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Facilities\FacilitiesPowerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -540,6 +546,12 @@
     </Compile>
     <Compile Include="Forms\Production\MaterialsManageForm.Designer.cs">
       <DependentUpon>MaterialsManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Production\MaterialsManageInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\MaterialsManageInsertForm.Designer.cs">
+      <DependentUpon>MaterialsManageInsertForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Production\ProcessDefectForm.cs">
       <SubType>Form</SubType>
@@ -854,6 +866,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\MaterialsManageForm.resx">
       <DependentUpon>MaterialsManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\MaterialsManageInsertForm.resx">
+      <DependentUpon>MaterialsManageInsertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\ProcessDefectForm.resx">
       <DependentUpon>ProcessDefectForm.cs</DependentUpon>

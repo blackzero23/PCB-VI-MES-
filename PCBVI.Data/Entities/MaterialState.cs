@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace PCBVI.Data
 {
-    public partial class Employee
+    public partial class MaterialState
     {
-        public Employee(string name)
+        public MaterialState(string name)
         {
             this.Name = name;
         }
-        public string DepartmentName { get; set; }  
+
     }
 }

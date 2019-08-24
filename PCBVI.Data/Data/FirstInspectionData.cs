@@ -12,14 +12,25 @@ namespace PCBVI.Data.Data
         {
             using(PCBVIEntities context = DbContextFactory.Create())
             {
+                var _toDateAdd = toDate.AddDays(1);
+
                 var query = from x in context.FirstInspections
-                            where x.OCompanyName.Equals(outCompanName)
-                            && x.ItemId == itemId && (x.EnterDate <= fromDate || x.EnterDate >= toDate)
+                            where x.EnterDate >= fromDate.Date && x.EnterDate < _toDateAdd.Date
                             select new
                             {
                                 FirstInspection = x,
                                   EmployeeName = x.Employee.Name
                             };
+
+                if(string.IsNullOrWhiteSpace(outCompanName) == false)
+                {
+                    query = query.Where(x => x.FirstInspection.OCompanyName.Contains(outCompanName));
+                }
+
+                if(itemId != 0)
+                {
+                    query = query.Where(x => x.FirstInspection.ItemId == itemId);
+                }
 
                 foreach (var x in query)
                 {

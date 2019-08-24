@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PCBVI.Data.Data;
+using PCBVI.Data;
 
 namespace PCBVI.Controls.Production.MaterialsManage
 {
@@ -37,6 +38,21 @@ namespace PCBVI.Controls.Production.MaterialsManage
         public void SetDataSource(List<Data.MaterialsManage> list)
         {
             dgvList.DataSource = list;
+        }
+
+        public List<Data.MaterialsManage> GetUpateList()
+        {
+            return (List<Data.MaterialsManage>)dgvList.DataSource;
+        }
+
+        public DataGridView GetListView()
+        {
+            return dgvList;
+        }
+
+        public Data.MaterialsManage GetCurrentLow()
+        {
+            return dgvList.CurrentRow.DataBoundItem as Data.MaterialsManage;
         }
     }
 }

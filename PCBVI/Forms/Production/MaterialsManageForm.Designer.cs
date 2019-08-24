@@ -69,7 +69,7 @@
             this.pageMateriaManage.MinimumSize = new System.Drawing.Size(50, 50);
             this.pageMateriaManage.Name = "pageMateriaManage";
             this.pageMateriaManage.Size = new System.Drawing.Size(798, 387);
-            this.pageMateriaManage.Text = "자재 이력 관리";
+            this.pageMateriaManage.Text = "자재 투입 관리";
             this.pageMateriaManage.ToolTipTitle = "Page ToolTip";
             this.pageMateriaManage.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
             // 
@@ -98,6 +98,10 @@
             this.uscTopMenu.Name = "uscTopMenu";
             this.uscTopMenu.Size = new System.Drawing.Size(800, 36);
             this.uscTopMenu.TabIndex = 0;
+            this.uscTopMenu.InsertButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs>(this.UscTopMenu_InsertButtonClicked);
+            this.uscTopMenu.DeleteButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.DeleteButtonClickedEventArgs>(this.UscTopMenu_DeleteButtonClicked);
+            this.uscTopMenu.ExcelButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs>(this.UscTopMenu_ExcelButtonClicked);
+            this.uscTopMenu.UpdateButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs>(this.UscTopMenu_UpdateButtonClicked);
             // 
             // MaterialsManageForm
             // 

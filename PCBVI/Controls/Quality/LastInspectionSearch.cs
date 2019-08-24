@@ -32,9 +32,17 @@ namespace PCBVI.Controls.Quality
         {
             List<Data.Employee> employees = DB.Employee.GetAll();
             employees.Remove(employees.Select(x=>x).Where(x => x.Name == "관리자").FirstOrDefault());
+            employees.Insert(0, new Data.Employee(""));
             bdsEmployee.DataSource = employees;
-            bdsItem.DataSource = DB.Item.GetAll();
-            bdsWorkPlace.DataSource = DB.WorkPlace.GetAll();
+
+
+            List<Data.Item> items = DB.Item.GetAll();
+            items.Insert(0, new Data.Item(""));
+            bdsItem.DataSource = items;
+
+            List<Data.WorkPlace> workPlaces = DB.WorkPlace.GetAll();
+            workPlaces.Insert(0, new Data.WorkPlace(""));
+            bdsWorkPlace.DataSource = workPlaces;
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)

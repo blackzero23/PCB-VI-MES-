@@ -15,12 +15,12 @@ namespace PCBVI.Data
     public partial class MaterialsManage
     {
         public int MaterialsManageId { get; set; }
-        public int LotId { get; set; }
-        public int ProcessId { get; set; }
-        public int MaterialStateId { get; set; }
-        public int PassQuantity { get; set; }
-        public int ErrorQuantity { get; set; }
-        public int TotalQuantity { get; set; }
+        public int? LotId { get; set; }
+        public int? ProcessId { get; set; }
+        public int? MaterialStateId { get; set; }
+        public int? PassQuantity { get; set; }
+        public int? ErrorQuantity { get; set; }
+        public int? TotalQuantity { get; set; }
     
         public virtual Lot Lot { get; set; }
         public virtual MaterialState MaterialState { get; set; }

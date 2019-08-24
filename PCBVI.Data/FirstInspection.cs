@@ -16,15 +16,15 @@ namespace PCBVI.Data
     {
         public int FirstInspectionId { get; set; }
         public string OCompanyName { get; set; }
-        public int ItemId { get; set; }
+        public int? ItemId { get; set; }
         public System.DateTime EnterDate { get; set; }
         public Nullable<System.DateTime> CheckDate { get; set; }
-        public int EnterQuantity { get; set; }
+        public int? EnterQuantity { get; set; }
         public Nullable<int> CheckQuantiy { get; set; }
         public Nullable<int> PassQuantity { get; set; }
         public Nullable<int> ErrorQuantity { get; set; }
-        public int EmployeeId { get; set; }
-        public int WorkPlaceId { get; set; }
+        public int? EmployeeId { get; set; }
+        public int? WorkPlaceId { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual Item Item { get; set; }

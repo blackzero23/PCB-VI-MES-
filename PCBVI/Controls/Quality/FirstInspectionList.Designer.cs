@@ -35,8 +35,8 @@
             this.bdsFirstInspection = new System.Windows.Forms.BindingSource(this.components);
             this.oCompanyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.enterDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enterDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
+            this.checkDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
             this.enterQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkQuantiyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workPlaceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -52,6 +52,7 @@
             // 
             this.dgvList.AllowUserToAddRows = false;
             this.dgvList.AutoGenerateColumns = false;
+            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.oCompanyNameDataGridViewTextBoxColumn,
@@ -94,6 +95,8 @@
             this.itemIdDataGridViewTextBoxColumn.DataPropertyName = "ItemId";
             this.itemIdDataGridViewTextBoxColumn.DataSource = this.bdsItem;
             this.itemIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.itemIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.itemIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.itemIdDataGridViewTextBoxColumn.HeaderText = "품목명";
             this.itemIdDataGridViewTextBoxColumn.Name = "itemIdDataGridViewTextBoxColumn";
             this.itemIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -102,15 +105,23 @@
             // 
             // enterDateDataGridViewTextBoxColumn
             // 
+            this.enterDateDataGridViewTextBoxColumn.Checked = false;
             this.enterDateDataGridViewTextBoxColumn.DataPropertyName = "EnterDate";
             this.enterDateDataGridViewTextBoxColumn.HeaderText = "입고일";
             this.enterDateDataGridViewTextBoxColumn.Name = "enterDateDataGridViewTextBoxColumn";
+            this.enterDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.enterDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.enterDateDataGridViewTextBoxColumn.Width = 78;
             // 
             // checkDateDataGridViewTextBoxColumn
             // 
+            this.checkDateDataGridViewTextBoxColumn.Checked = false;
             this.checkDateDataGridViewTextBoxColumn.DataPropertyName = "CheckDate";
             this.checkDateDataGridViewTextBoxColumn.HeaderText = "검사일";
             this.checkDateDataGridViewTextBoxColumn.Name = "checkDateDataGridViewTextBoxColumn";
+            this.checkDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.checkDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.checkDateDataGridViewTextBoxColumn.Width = 78;
             // 
             // enterQuantityDataGridViewTextBoxColumn
             // 
@@ -129,6 +140,8 @@
             this.workPlaceIdDataGridViewTextBoxColumn.DataPropertyName = "WorkPlaceId";
             this.workPlaceIdDataGridViewTextBoxColumn.DataSource = this.bdsWorkPlace;
             this.workPlaceIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.workPlaceIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.workPlaceIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.workPlaceIdDataGridViewTextBoxColumn.HeaderText = "위치 정보";
             this.workPlaceIdDataGridViewTextBoxColumn.Name = "workPlaceIdDataGridViewTextBoxColumn";
             this.workPlaceIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -170,8 +183,8 @@
         private System.Windows.Forms.BindingSource bdsWorkPlace;
         private System.Windows.Forms.DataGridViewTextBoxColumn oCompanyNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn itemIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn enterDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn checkDateDataGridViewTextBoxColumn;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn enterDateDataGridViewTextBoxColumn;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn checkDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn enterQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn checkQuantiyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn workPlaceIdDataGridViewTextBoxColumn;

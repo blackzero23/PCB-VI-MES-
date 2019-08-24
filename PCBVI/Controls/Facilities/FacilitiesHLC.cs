@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PCBVI.Data.Data;
+using PCBVI.Data;
 
 namespace PCBVI.Controls.Facilities
 {
@@ -39,6 +40,21 @@ namespace PCBVI.Controls.Facilities
         public void SetDataSource(List<Data.FacilitiesHistory> list)
         {
             dgvList.DataSource = list;
+        }
+
+        public DataGridView GetListView()
+        {
+            return dgvList;
+        }
+
+        public List<Data.FacilitiesHistory> GetUpateList()
+        {
+            return (List<Data.FacilitiesHistory>)dgvList.DataSource;
+        }
+
+        public FacilitiesHistory GetCurrentLow()
+        {
+            return dgvList.CurrentRow.DataBoundItem as Data.FacilitiesHistory;
         }
     }
 }

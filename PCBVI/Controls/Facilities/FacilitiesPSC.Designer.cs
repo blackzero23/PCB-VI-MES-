@@ -66,13 +66,13 @@
             this.kryptonPanel1.Size = new System.Drawing.Size(760, 63);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.SystemColors.Control;
             this.kryptonPanel1.StateCommon.Color2 = System.Drawing.SystemColors.Control;
-            this.kryptonPanel1.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel1.TabIndex = 0;
             // 
             // cbbFacilities
             // 
             this.cbbFacilities.DataSource = this.bdsFacilities;
             this.cbbFacilities.DisplayMember = "Name";
+            this.cbbFacilities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbFacilities.DropDownWidth = 121;
             this.cbbFacilities.Location = new System.Drawing.Point(244, 22);
             this.cbbFacilities.Name = "cbbFacilities";
@@ -88,6 +88,7 @@
             // 
             this.cbbProcess.DataSource = this.bdsProcess;
             this.cbbProcess.DisplayMember = "Name";
+            this.cbbProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbProcess.DropDownWidth = 93;
             this.cbbProcess.Location = new System.Drawing.Point(82, 23);
             this.cbbProcess.Name = "cbbProcess";
@@ -121,7 +122,6 @@
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpToDate.Location = new System.Drawing.Point(546, 23);
             this.dtpToDate.Name = "dtpToDate";
-            this.dtpToDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpToDate.Size = new System.Drawing.Size(90, 21);
             this.dtpToDate.TabIndex = 6;
             // 
@@ -130,7 +130,6 @@
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFromDate.Location = new System.Drawing.Point(429, 22);
             this.dtpFromDate.Name = "dtpFromDate";
-            this.dtpFromDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpFromDate.Size = new System.Drawing.Size(86, 21);
             this.dtpFromDate.TabIndex = 5;
             // 

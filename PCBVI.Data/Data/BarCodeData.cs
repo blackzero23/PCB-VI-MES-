@@ -43,6 +43,36 @@ namespace PCBVI.Data.Data
             }
         }
 
+        //불량인 애들만
+        public List<Barcode> SearchFail(int lotId, DateTime fromDate, DateTime toDate)
+        {
+            using(var context = DbContextFactory.Create())
+            {
+                var query = from x in context.LotBarCodes
+                            where x.Barcode.State.Equals("Fail")
+                            select new
+                            {
+                                Barcode = x.Barcode,
+                                LotBarCode = x
+                            };
+
+                if(lotId != 0)
+                {
+                    query = query.Where(x => x.LotBarCode.LotId == lotId);
+                }
+
+
+                foreach (var x in query)
+                {
+                    x.Barcode.LotId = x.LotBarCode.LotId;
+                }
+
+                var list = query.ToList();
+
+                return list.ConvertAll(x => x.Barcode);
+            }
+        }
+
         //있는걸 들고옴
         public Barcode CheckBarcode(int code)
         {

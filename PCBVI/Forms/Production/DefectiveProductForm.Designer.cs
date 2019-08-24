@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.topMenubar1 = new PCBVI.Controls.CommonControl.TopMenubar();
+            this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.uscList = new PCBVI.Controls.Production.DefectiveProduct.DefectiveProductListControl();
@@ -39,14 +39,18 @@
             this.kryptonPage1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // topMenubar1
+            // uscTopMenu
             // 
-            this.topMenubar1.BackColor = System.Drawing.Color.White;
-            this.topMenubar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topMenubar1.Location = new System.Drawing.Point(0, 0);
-            this.topMenubar1.Name = "topMenubar1";
-            this.topMenubar1.Size = new System.Drawing.Size(800, 35);
-            this.topMenubar1.TabIndex = 0;
+            this.uscTopMenu.BackColor = System.Drawing.Color.White;
+            this.uscTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uscTopMenu.Location = new System.Drawing.Point(0, 0);
+            this.uscTopMenu.Name = "uscTopMenu";
+            this.uscTopMenu.Size = new System.Drawing.Size(800, 35);
+            this.uscTopMenu.TabIndex = 0;
+            this.uscTopMenu.InsertButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs>(this.UscTopmenu_InsertButtonClicked);
+            this.uscTopMenu.DeleteButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.DeleteButtonClickedEventArgs>(this.UscTopmenu_DeleteButtonClicked);
+            this.uscTopMenu.ExcelButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs>(this.UscTopmenu_ExcelButtonClicked);
+            this.uscTopMenu.UpdateButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs>(this.UscTopmenu_UpdateButtonClicked);
             // 
             // kryptonNavigator1
             // 
@@ -100,7 +104,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.kryptonNavigator1);
-            this.Controls.Add(this.topMenubar1);
+            this.Controls.Add(this.uscTopMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DefectiveProductForm";
             this.Text = "DefectiveProductForm";
@@ -114,7 +118,7 @@
 
         #endregion
 
-        private Controls.CommonControl.TopMenubar topMenubar1;
+        private Controls.CommonControl.TopMenubar uscTopMenu;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator kryptonNavigator1;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage1;
         private Controls.Production.DefectiveProduct.DefectiveProductSearchControl uscSearch;

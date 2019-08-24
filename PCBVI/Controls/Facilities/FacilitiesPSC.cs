@@ -30,8 +30,13 @@ namespace PCBVI.Controls.Facilities
 
         private void InitSetDataSource()
         {
-            bdsProcess.DataSource = DB.Process.GetAll();
-            bdsFacilities.DataSource = DB.Facilities.GetAll();
+            List<Data.Process> processes = DB.Process.GetAll();
+            processes.Insert(0, new Data.Process(""));
+            bdsProcess.DataSource = processes;
+
+            List<Data.Facility> facilities = DB.Facilities.GetAll();
+            facilities.Insert(0, new Data.Facility(""));
+            bdsFacilities.DataSource = facilities;
         }
 
         #region SearchButtonClicked event things for C# 3.0

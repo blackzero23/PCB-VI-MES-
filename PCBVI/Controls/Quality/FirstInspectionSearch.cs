@@ -29,7 +29,9 @@ namespace PCBVI.Controls.Quality
         }
         private void InitSetDataSource()
         {
-            bdsItem.DataSource = DB.Item.GetAll();
+            List<Data.Item> items = DB.Item.GetAll();
+            items.Insert(0, new Data.Item(""));
+            bdsItem.DataSource = items;
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)

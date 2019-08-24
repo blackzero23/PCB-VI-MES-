@@ -36,7 +36,10 @@
             this.lbInspectionDate = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbProductionDate = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.cbbItemCode = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
             this.cbbWorkPlace = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.dtpInspectionTo = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.dtpInspectionFrom = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
@@ -44,20 +47,17 @@
             this.dtpProductionToDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.dtpProductionFromDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.cbbEmployeeName = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.bdsEmployee = new System.Windows.Forms.BindingSource(this.components);
             this.txbCompanyName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.cbbItemCode = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.bdsEmployee = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbWorkPlace)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbEmployeeName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbItemCode)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbWorkPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbEmployeeName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // lbWorkPlace
@@ -133,16 +133,37 @@
             this.kryptonPanel1.Size = new System.Drawing.Size(655, 129);
             this.kryptonPanel1.TabIndex = 7;
             // 
+            // cbbItemCode
+            // 
+            this.cbbItemCode.DataSource = this.bdsItem;
+            this.cbbItemCode.DisplayMember = "Code";
+            this.cbbItemCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbItemCode.DropDownWidth = 100;
+            this.cbbItemCode.Location = new System.Drawing.Point(75, 59);
+            this.cbbItemCode.Name = "cbbItemCode";
+            this.cbbItemCode.Size = new System.Drawing.Size(100, 21);
+            this.cbbItemCode.TabIndex = 18;
+            this.cbbItemCode.ValueMember = "ItemId";
+            // 
+            // bdsItem
+            // 
+            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
+            // 
             // cbbWorkPlace
             // 
             this.cbbWorkPlace.DataSource = this.bdsWorkPlace;
             this.cbbWorkPlace.DisplayMember = "Name";
+            this.cbbWorkPlace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbWorkPlace.DropDownWidth = 121;
             this.cbbWorkPlace.Location = new System.Drawing.Point(74, 94);
             this.cbbWorkPlace.Name = "cbbWorkPlace";
             this.cbbWorkPlace.Size = new System.Drawing.Size(101, 21);
             this.cbbWorkPlace.TabIndex = 17;
             this.cbbWorkPlace.ValueMember = "WorkPlaceId";
+            // 
+            // bdsWorkPlace
+            // 
+            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
             // 
             // kryptonLabel2
             // 
@@ -157,7 +178,6 @@
             this.dtpInspectionTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpInspectionTo.Location = new System.Drawing.Point(379, 58);
             this.dtpInspectionTo.Name = "dtpInspectionTo";
-            this.dtpInspectionTo.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpInspectionTo.Size = new System.Drawing.Size(86, 21);
             this.dtpInspectionTo.TabIndex = 15;
             // 
@@ -166,7 +186,6 @@
             this.dtpInspectionFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpInspectionFrom.Location = new System.Drawing.Point(267, 58);
             this.dtpInspectionFrom.Name = "dtpInspectionFrom";
-            this.dtpInspectionFrom.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpInspectionFrom.Size = new System.Drawing.Size(92, 21);
             this.dtpInspectionFrom.TabIndex = 14;
             // 
@@ -183,7 +202,6 @@
             this.dtpProductionToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpProductionToDate.Location = new System.Drawing.Point(566, 15);
             this.dtpProductionToDate.Name = "dtpProductionToDate";
-            this.dtpProductionToDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpProductionToDate.Size = new System.Drawing.Size(86, 21);
             this.dtpProductionToDate.TabIndex = 11;
             // 
@@ -192,7 +210,6 @@
             this.dtpProductionFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpProductionFromDate.Location = new System.Drawing.Point(445, 15);
             this.dtpProductionFromDate.Name = "dtpProductionFromDate";
-            this.dtpProductionFromDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpProductionFromDate.Size = new System.Drawing.Size(90, 21);
             this.dtpProductionFromDate.TabIndex = 10;
             // 
@@ -200,12 +217,17 @@
             // 
             this.cbbEmployeeName.DataSource = this.bdsEmployee;
             this.cbbEmployeeName.DisplayMember = "Name";
+            this.cbbEmployeeName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbEmployeeName.DropDownWidth = 121;
             this.cbbEmployeeName.Location = new System.Drawing.Point(257, 17);
             this.cbbEmployeeName.Name = "cbbEmployeeName";
             this.cbbEmployeeName.Size = new System.Drawing.Size(121, 21);
             this.cbbEmployeeName.TabIndex = 9;
             this.cbbEmployeeName.ValueMember = "EmployeeId";
+            // 
+            // bdsEmployee
+            // 
+            this.bdsEmployee.DataSource = typeof(PCBVI.Data.Employee);
             // 
             // txbCompanyName
             // 
@@ -223,29 +245,6 @@
             this.btnSearch.Values.Text = "검 색";
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
-            // cbbItemCode
-            // 
-            this.cbbItemCode.DataSource = this.bdsItem;
-            this.cbbItemCode.DisplayMember = "Code";
-            this.cbbItemCode.DropDownWidth = 100;
-            this.cbbItemCode.Location = new System.Drawing.Point(75, 59);
-            this.cbbItemCode.Name = "cbbItemCode";
-            this.cbbItemCode.Size = new System.Drawing.Size(100, 21);
-            this.cbbItemCode.TabIndex = 18;
-            this.cbbItemCode.ValueMember = "ItemId";
-            // 
-            // bdsEmployee
-            // 
-            this.bdsEmployee.DataSource = typeof(PCBVI.Data.Employee);
-            // 
-            // bdsItem
-            // 
-            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
-            // 
-            // bdsWorkPlace
-            // 
-            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
-            // 
             // LastInspectionSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -256,12 +255,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbWorkPlace)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbEmployeeName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbItemCode)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbWorkPlace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbEmployeeName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsEmployee)).EndInit();
             this.ResumeLayout(false);
 
         }

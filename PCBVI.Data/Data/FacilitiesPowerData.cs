@@ -32,11 +32,22 @@ namespace PCBVI.Data.Data
         {
             using (var context = DbContextFactory.Create())
             {
-                var query = from x in context.FacilitiesPowers
-                    where x.ProcessId == processId && x.FacilitiesId == facilitiesId
-                                                   && (x.WorkDate >= fromDate.Date || x.WorkDate <= toDate.Date)
-                    select x;
+                var _toDate = toDate.Add(new System.TimeSpan(1, 0, 0, 0));
+                
 
+                var query = from x in context.FacilitiesPowers
+                            where x.WorkDate >= fromDate.Date && x.WorkDate <= _toDate
+                            select x;
+
+                if(processId != 0)
+                {
+                    query = query.Where(x => x.ProcessId == processId);
+                }
+
+                if(facilitiesId != 0)
+                {
+                    query = query.Where(x => x.FacilitiesId == facilitiesId);
+                }
              
 
                 return query.ToList();

@@ -17,16 +17,27 @@ namespace PCBVI.Data.Data
         //        var query = 
         //    }
         //}
-        public List<LastInspection> Search(string companyname, int employeeId, DateTime productionFrom, DateTime productionTo, int itemId, DateTime inspectionFrom, DateTime inspectionTo, int workPlaceId)
+        public List<LastInspection> Search(string companyName, int employeeId, DateTime productionFrom, DateTime productionTo, int itemId, DateTime inspectionFrom, DateTime inspectionTo, int workPlaceId)
         {
            using(var context = DbContextFactory.Create())
             {
                 //데이터 베이스 수정해야됨.
                 var query = from x in context.LastInspections
-                            where x.OCompanyName.Equals(companyname)
+                            where x.OCompanyName.Equals(companyName)
                             && (x.ProductionDate >= productionFrom || x.ProductionDate <= productionTo)
                             && x.ItemId == itemId
                             select x;
+
+                if(string.IsNullOrWhiteSpace(companyName) == false)
+                {
+                    query = query.Where(x => x.OCompanyName.Contains(companyName));
+                }
+
+                //if(employeeId != 0)
+                //{
+                //    query = query.Where(x=>x.emp)
+                //}
+
 
                 return query.ToList();
             }

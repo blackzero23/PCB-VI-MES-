@@ -30,16 +30,28 @@ namespace PCBVI.Controls.Production.DefectiveProduct
 
         public void InitSetDataSource()
         {
-            bdsBarcode.DataSource = DB.BarCode.GetAll();
-            bdsEmployee.DataSource = DB.Employee.GetAll();
+            bdsItem.DataSource = DB.Item.GetAll();
             bdsProcess.DataSource = DB.Process.GetAll();
             bdsLot.DataSource = DB.Lot.GetAll();
-            bdsErrorCode.DataSource = DB.ErrorCode.GetAll();
+
+            List<Data.ErrorCode> errorCodes = DB.ErrorCode.GetAll();
+            errorCodes.Insert(0, new Data.ErrorCode(""));
+            bdsErrorCode.DataSource = errorCodes;
         }
 
-        public void SetDataSource(List<Data.DefectiveProduct> list)
+        public void SetDataSource(List<Data.Barcode> list)
         {
             dgvList.DataSource = list;
+        }
+
+        public List<Data.Barcode> GetUpateList()
+        {
+            return (List<Data.Barcode>)dgvList.DataSource;
+        }
+
+        public DataGridView GetListView()
+        {
+            return dgvList;
         }
     }
 }

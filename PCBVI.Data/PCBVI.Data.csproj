@@ -110,6 +110,7 @@
     <Compile Include="Entities\Lot.cs" />
     <Compile Include="Entities\FirstInspection.cs" />
     <Compile Include="Entities\MaterialsManage.cs" />
+    <Compile Include="Entities\MaterialState.cs" />
     <Compile Include="Entities\Process.cs" />
     <Compile Include="Entities\ProductionHistory.cs" />
     <Compile Include="Entities\RotationGroup.cs" />

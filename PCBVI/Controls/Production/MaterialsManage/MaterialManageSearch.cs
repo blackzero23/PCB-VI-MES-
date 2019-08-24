@@ -38,9 +38,9 @@ namespace PCBVI.Controls.Production.MaterialsManage
             processes.Insert(0, new Data.Process(""));
             bdsProcess.DataSource = processes;
 
-            //List<Data.MaterialState> materialStates = DB.MaterialState.GetAll();
-            //materialStates.Insert(0, new Data.WorkPlace(""));
-            bdsMaterialState.DataSource = DB.MaterialState.GetAll();
+            List<Data.MaterialState> materialStates = DB.MaterialState.GetAll();
+            materialStates.Insert(0, new Data.MaterialState(""));
+            bdsMaterialState.DataSource = materialStates;
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)

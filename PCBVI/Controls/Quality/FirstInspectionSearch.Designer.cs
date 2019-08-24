@@ -32,6 +32,7 @@
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.cbbProductName = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.dtpToDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.dtpFromDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
@@ -39,7 +40,6 @@
             this.lbEnterDate = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbProductName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbCompanyName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbProductName)).BeginInit();
@@ -75,12 +75,17 @@
             // 
             this.cbbProductName.DataSource = this.bdsItem;
             this.cbbProductName.DisplayMember = "Name";
+            this.cbbProductName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbProductName.DropDownWidth = 105;
             this.cbbProductName.Location = new System.Drawing.Point(232, 22);
             this.cbbProductName.Name = "cbbProductName";
             this.cbbProductName.Size = new System.Drawing.Size(105, 21);
             this.cbbProductName.TabIndex = 8;
             this.cbbProductName.ValueMember = "ItemId";
+            // 
+            // bdsItem
+            // 
+            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
             // 
             // btnSearch
             // 
@@ -97,7 +102,6 @@
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpToDate.Location = new System.Drawing.Point(527, 23);
             this.dtpToDate.Name = "dtpToDate";
-            this.dtpToDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpToDate.Size = new System.Drawing.Size(81, 21);
             this.dtpToDate.TabIndex = 6;
             // 
@@ -106,7 +110,6 @@
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFromDate.Location = new System.Drawing.Point(418, 22);
             this.dtpFromDate.Name = "dtpFromDate";
-            this.dtpFromDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
             this.dtpFromDate.Size = new System.Drawing.Size(78, 21);
             this.dtpFromDate.TabIndex = 5;
             // 
@@ -140,10 +143,6 @@
             this.lbCompanyName.Size = new System.Drawing.Size(54, 20);
             this.lbCompanyName.TabIndex = 0;
             this.lbCompanyName.Values.Text = "업체명 :";
-            // 
-            // bdsItem
-            // 
-            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
             // 
             // FirstInspectionSearch
             // 

@@ -273,7 +273,7 @@
             this.panelProduction.Controls.Add(this.btnProductionHistory);
             this.panelProduction.Controls.Add(this.btnProduction);
             this.panelProduction.Location = new System.Drawing.Point(3, 60);
-            this.panelProduction.MaximumSize = new System.Drawing.Size(168, 256);
+            this.panelProduction.MaximumSize = new System.Drawing.Size(168, 227);
             this.panelProduction.MinimumSize = new System.Drawing.Size(168, 51);
             this.panelProduction.Name = "panelProduction";
             this.panelProduction.Size = new System.Drawing.Size(168, 51);
@@ -293,6 +293,7 @@
             this.btnProcessDefect.TabIndex = 18;
             this.btnProcessDefect.Text = "공정 불량";
             this.btnProcessDefect.UseVisualStyleBackColor = false;
+            this.btnProcessDefect.Visible = false;
             this.btnProcessDefect.Click += new System.EventHandler(this.BtnProcessDefect_Click);
             // 
             // btnDefectiveProduct

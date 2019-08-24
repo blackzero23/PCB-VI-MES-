@@ -20,10 +20,10 @@ namespace PCBVI.Forms.Basic
         private int _departmentid;
         private string _name;
 
-       
+
         private void UscSearch_SearchButtonClicked(object sender, Controls.Basic.Employee.EmployeeSearch.SearchButtonClickedEventArgs e)
         {
-            uscList.SetEmployeeDataSource(DB.Employee.SeachEmployeeInfo(e.DepartmentId,e.Name));
+            uscList.SetEmployeeDataSource(DB.Employee.SeachEmployeeInfo(e.DepartmentId, e.Name));
             _departmentid = e.DepartmentId;
             _name = e.Name;
         }
@@ -41,16 +41,16 @@ namespace PCBVI.Forms.Basic
         private void UscTopMenu_ExcelButtonClicked(object sender, Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs e)
         {
             DataGridView data = uscList.GetListView();
-           uscTopMenu.SaveExcelFile(data, "사원 정보");            
+            uscTopMenu.SaveExcelFile(data, "사원 정보");
         }
 
         private void UscTopMenu_DeleteButtonClicked(object sender, Controls.CommonControl.TopMenubar.DeleteButtonClickedEventArgs e)
         {
-           //에러 익셉션 처리 꼭해야됨.
-           //고치고싶다.
-           Data.Employee employee =  uscList.GetCurrentLow();
-           uscTopMenu.DeleteAt(employee);
-           uscList.SetEmployeeDataSource(DB.Employee.SeachEmployeeInfo(_departmentid, _name));
+            //에러 익셉션 처리 꼭해야됨.
+            //고치고싶다.
+            Data.Employee employee = uscList.GetCurrentLow();
+            uscTopMenu.DeleteAt(employee);
+            uscList.SetEmployeeDataSource(DB.Employee.SeachEmployeeInfo(_departmentid, _name));
         }
 
     }

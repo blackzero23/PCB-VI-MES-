@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.workDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.facilitiesIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bdsFacilities = new System.Windows.Forms.BindingSource(this.components);
-            this.workPlaceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
-            this.fHistoryDivisionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bdsFHistoryDivision = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsFacilitiesHistory = new System.Windows.Forms.BindingSource(this.components);
+            this.workDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
+            this.facilitiesIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.workPlaceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.fHistoryDivisionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.historyContentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oCompanyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oCompanyEmployeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oCompanyPhoneNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bdsFacilitiesHistory = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFacilities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).BeginInit();
@@ -72,56 +72,70 @@
             this.dgvList.Size = new System.Drawing.Size(832, 495);
             this.dgvList.TabIndex = 0;
             // 
+            // bdsFacilities
+            // 
+            this.bdsFacilities.DataSource = typeof(PCBVI.Data.Facility);
+            // 
+            // bdsWorkPlace
+            // 
+            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
+            // 
+            // bdsFHistoryDivision
+            // 
+            this.bdsFHistoryDivision.DataSource = typeof(PCBVI.Data.FHistoryDivision);
+            // 
+            // bdsFacilitiesHistory
+            // 
+            this.bdsFacilitiesHistory.DataSource = typeof(PCBVI.Data.FacilitiesHistory);
+            // 
             // workDateDataGridViewTextBoxColumn
             // 
+            this.workDateDataGridViewTextBoxColumn.Checked = false;
             this.workDateDataGridViewTextBoxColumn.DataPropertyName = "WorkDate";
             this.workDateDataGridViewTextBoxColumn.HeaderText = "일 자";
             this.workDateDataGridViewTextBoxColumn.Name = "workDateDataGridViewTextBoxColumn";
+            this.workDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.workDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.workDateDataGridViewTextBoxColumn.Width = 99;
             // 
             // facilitiesIdDataGridViewTextBoxColumn
             // 
             this.facilitiesIdDataGridViewTextBoxColumn.DataPropertyName = "FacilitiesId";
             this.facilitiesIdDataGridViewTextBoxColumn.DataSource = this.bdsFacilities;
             this.facilitiesIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.facilitiesIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.facilitiesIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.facilitiesIdDataGridViewTextBoxColumn.HeaderText = "설비명";
             this.facilitiesIdDataGridViewTextBoxColumn.Name = "facilitiesIdDataGridViewTextBoxColumn";
             this.facilitiesIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.facilitiesIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.facilitiesIdDataGridViewTextBoxColumn.ValueMember = "FacilitiesId";
             // 
-            // bdsFacilities
-            // 
-            this.bdsFacilities.DataSource = typeof(PCBVI.Data.Facility);
-            // 
             // workPlaceIdDataGridViewTextBoxColumn
             // 
             this.workPlaceIdDataGridViewTextBoxColumn.DataPropertyName = "WorkPlaceId";
             this.workPlaceIdDataGridViewTextBoxColumn.DataSource = this.bdsWorkPlace;
             this.workPlaceIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.workPlaceIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.workPlaceIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.workPlaceIdDataGridViewTextBoxColumn.HeaderText = "설치 장소";
             this.workPlaceIdDataGridViewTextBoxColumn.Name = "workPlaceIdDataGridViewTextBoxColumn";
             this.workPlaceIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.workPlaceIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.workPlaceIdDataGridViewTextBoxColumn.ValueMember = "WorkPlaceId";
             // 
-            // bdsWorkPlace
-            // 
-            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
-            // 
             // fHistoryDivisionIdDataGridViewTextBoxColumn
             // 
             this.fHistoryDivisionIdDataGridViewTextBoxColumn.DataPropertyName = "FHistoryDivisionId";
             this.fHistoryDivisionIdDataGridViewTextBoxColumn.DataSource = this.bdsFHistoryDivision;
             this.fHistoryDivisionIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.fHistoryDivisionIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.fHistoryDivisionIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.fHistoryDivisionIdDataGridViewTextBoxColumn.HeaderText = "구 분";
             this.fHistoryDivisionIdDataGridViewTextBoxColumn.Name = "fHistoryDivisionIdDataGridViewTextBoxColumn";
             this.fHistoryDivisionIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.fHistoryDivisionIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.fHistoryDivisionIdDataGridViewTextBoxColumn.ValueMember = "FHistoryDivisionId";
-            // 
-            // bdsFHistoryDivision
-            // 
-            this.bdsFHistoryDivision.DataSource = typeof(PCBVI.Data.FHistoryDivision);
             // 
             // historyContentDataGridViewTextBoxColumn
             // 
@@ -147,10 +161,6 @@
             this.oCompanyPhoneNumDataGridViewTextBoxColumn.HeaderText = "담당자 번호";
             this.oCompanyPhoneNumDataGridViewTextBoxColumn.Name = "oCompanyPhoneNumDataGridViewTextBoxColumn";
             // 
-            // bdsFacilitiesHistory
-            // 
-            this.bdsFacilitiesHistory.DataSource = typeof(PCBVI.Data.FacilitiesHistory);
-            // 
             // FacilitiesHLC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -174,7 +184,8 @@
         private System.Windows.Forms.BindingSource bdsFacilities;
         private System.Windows.Forms.BindingSource bdsWorkPlace;
         private System.Windows.Forms.BindingSource bdsFHistoryDivision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn workDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bdsFacilitiesHistory;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn workDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn facilitiesIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn workPlaceIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn fHistoryDivisionIdDataGridViewTextBoxColumn;
@@ -182,6 +193,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn oCompanyNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oCompanyEmployeeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oCompanyPhoneNumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource bdsFacilitiesHistory;
     }
 }

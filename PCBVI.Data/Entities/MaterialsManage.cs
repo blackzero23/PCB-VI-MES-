@@ -8,6 +8,8 @@ namespace PCBVI.Data
 {
     public partial class MaterialsManage
     {
+        
+
         public string LotName { get; set; }
         public string BarcodeName { get; set; }
         public string ProcessName { get; set; }
