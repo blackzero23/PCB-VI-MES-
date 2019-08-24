@@ -88,12 +88,10 @@ namespace PCBVI.Forms.Login
                 //싱글톤 적용 생각.
                 MessageBox.Show($"{employee.Name}님 반갑습니다.");
                 MainForm loginSuccess = new MainForm(employee);
-                loginSuccess.FormClosed += new FormClosedEventHandler(LoginSuccessFormClosed);
+                //loginSuccess.FormClosed += new FormClosedEventHandler(LoginSuccessFormClosed);
                 //lloginSuccess.cli
                 loginSuccess.Show();
                 this.Hide();
-                this.txbId.Clear();
-                this.txbPassword.Clear();
             }
             else
             {
