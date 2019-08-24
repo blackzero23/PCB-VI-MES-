@@ -37,7 +37,6 @@
             this.lbProductionDate = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.cbbItemCode = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
             this.cbbWorkPlace = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -50,14 +49,15 @@
             this.bdsEmployee = new System.Windows.Forms.BindingSource(this.components);
             this.txbCompanyName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btnSearch = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbItemCode)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbWorkPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbEmployeeName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
             this.SuspendLayout();
             // 
             // lbWorkPlace
@@ -86,11 +86,11 @@
             // 
             // lbProductCode
             // 
-            this.lbProductCode.Location = new System.Drawing.Point(2, 58);
+            this.lbProductCode.Location = new System.Drawing.Point(14, 59);
             this.lbProductCode.Name = "lbProductCode";
-            this.lbProductCode.Size = new System.Drawing.Size(66, 20);
+            this.lbProductCode.Size = new System.Drawing.Size(45, 20);
             this.lbProductCode.TabIndex = 3;
-            this.lbProductCode.Values.Text = "품목코드 :";
+            this.lbProductCode.Values.Text = "품 목 :";
             // 
             // lbInspectionDate
             // 
@@ -136,7 +136,7 @@
             // cbbItemCode
             // 
             this.cbbItemCode.DataSource = this.bdsItem;
-            this.cbbItemCode.DisplayMember = "Code";
+            this.cbbItemCode.DisplayMember = "Name";
             this.cbbItemCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbItemCode.DropDownWidth = 100;
             this.cbbItemCode.Location = new System.Drawing.Point(75, 59);
@@ -144,10 +144,6 @@
             this.cbbItemCode.Size = new System.Drawing.Size(100, 21);
             this.cbbItemCode.TabIndex = 18;
             this.cbbItemCode.ValueMember = "ItemId";
-            // 
-            // bdsItem
-            // 
-            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
             // 
             // cbbWorkPlace
             // 
@@ -245,6 +241,10 @@
             this.btnSearch.Values.Text = "검 색";
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
+            // bdsItem
+            // 
+            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
+            // 
             // LastInspectionSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -256,11 +256,11 @@
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbItemCode)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbWorkPlace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbEmployeeName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -286,7 +286,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbWorkPlace;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbbItemCode;
         private System.Windows.Forms.BindingSource bdsEmployee;
-        private System.Windows.Forms.BindingSource bdsItem;
         private System.Windows.Forms.BindingSource bdsWorkPlace;
+        private System.Windows.Forms.BindingSource bdsItem;
     }
 }
