@@ -12,10 +12,11 @@ namespace PCBVI.Data.Data
         {
             using(var context = DbContextFactory.Create())
             {
-                //바코드에서 불량
+                //바코드에서옴 여기서 안쓰인다.
+                DateTime addToDate = toDate.AddDays(1);
 
                 var query = from x in context.DefectiveProducts
-                            where x.WorkDate <= fromDate || x.WorkDate >= toDate
+                    where x.WorkDate >= fromDate.Date || x.WorkDate < addToDate
                             select x;
 
                 if (lotId != 0)

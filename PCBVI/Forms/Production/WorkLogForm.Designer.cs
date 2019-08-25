@@ -93,6 +93,7 @@
             this.uscTopMenu.Name = "uscTopMenu";
             this.uscTopMenu.Size = new System.Drawing.Size(800, 35);
             this.uscTopMenu.TabIndex = 2;
+            this.uscTopMenu.ExcelButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs>(this.UscTopMenu_ExcelButtonClicked);
             // 
             // WorkLogForm
             // 

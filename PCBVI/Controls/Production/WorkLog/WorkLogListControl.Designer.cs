@@ -30,15 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bdsWorkLog = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsRotationGroup = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsFacility = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsProcess = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
             this.rotationGroupIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsRotationGroup = new System.Windows.Forms.BindingSource(this.components);
             this.facilitiesIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsFacility = new System.Windows.Forms.BindingSource(this.components);
             this.processIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsProcess = new System.Windows.Forms.BindingSource(this.components);
             this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
             this.workDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
             this.WorkerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sartTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,12 +45,13 @@
             this.productionQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.targetQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdsWorkLog = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsWorkLog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsRotationGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFacility)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsWorkLog)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvList
@@ -77,28 +77,9 @@
             this.dgvList.Location = new System.Drawing.Point(0, 0);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
+            this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(978, 574);
             this.dgvList.TabIndex = 0;
-            // 
-            // bdsWorkLog
-            // 
-            this.bdsWorkLog.DataSource = typeof(PCBVI.Data.WorkLog);
-            // 
-            // bdsRotationGroup
-            // 
-            this.bdsRotationGroup.DataSource = typeof(PCBVI.Data.RotationGroup);
-            // 
-            // bdsFacility
-            // 
-            this.bdsFacility.DataSource = typeof(PCBVI.Data.Facility);
-            // 
-            // bdsProcess
-            // 
-            this.bdsProcess.DataSource = typeof(PCBVI.Data.Process);
-            // 
-            // bdsItem
-            // 
-            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
             // 
             // rotationGroupIdDataGridViewTextBoxColumn
             // 
@@ -114,6 +95,10 @@
             this.rotationGroupIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.rotationGroupIdDataGridViewTextBoxColumn.ValueMember = "RotationGroupId";
             // 
+            // bdsRotationGroup
+            // 
+            this.bdsRotationGroup.DataSource = typeof(PCBVI.Data.RotationGroup);
+            // 
             // facilitiesIdDataGridViewTextBoxColumn
             // 
             this.facilitiesIdDataGridViewTextBoxColumn.DataPropertyName = "FacilitiesId";
@@ -127,6 +112,10 @@
             this.facilitiesIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.facilitiesIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.facilitiesIdDataGridViewTextBoxColumn.ValueMember = "FacilitiesId";
+            // 
+            // bdsFacility
+            // 
+            this.bdsFacility.DataSource = typeof(PCBVI.Data.Facility);
             // 
             // processIdDataGridViewTextBoxColumn
             // 
@@ -142,6 +131,10 @@
             this.processIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.processIdDataGridViewTextBoxColumn.ValueMember = "ProcessId";
             // 
+            // bdsProcess
+            // 
+            this.bdsProcess.DataSource = typeof(PCBVI.Data.Process);
+            // 
             // itemIdDataGridViewTextBoxColumn
             // 
             this.itemIdDataGridViewTextBoxColumn.DataPropertyName = "ItemId";
@@ -155,6 +148,10 @@
             this.itemIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.itemIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.itemIdDataGridViewTextBoxColumn.ValueMember = "ItemId";
+            // 
+            // bdsItem
+            // 
+            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
             // 
             // workDateDataGridViewTextBoxColumn
             // 
@@ -209,6 +206,10 @@
             this.targetQuantityDataGridViewTextBoxColumn.Name = "targetQuantityDataGridViewTextBoxColumn";
             this.targetQuantityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // bdsWorkLog
+            // 
+            this.bdsWorkLog.DataSource = typeof(PCBVI.Data.WorkLog);
+            // 
             // WorkLogListControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -217,11 +218,11 @@
             this.Name = "WorkLogListControl";
             this.Size = new System.Drawing.Size(978, 574);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsWorkLog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsRotationGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsFacility)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsWorkLog)).EndInit();
             this.ResumeLayout(false);
 
         }

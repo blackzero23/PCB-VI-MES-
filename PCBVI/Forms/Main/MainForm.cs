@@ -205,9 +205,12 @@ namespace PCBVI.Forms.Main
         private void BtnLogOut_Click(object sender, EventArgs e)
         {
             //디테일하게 다시 만들기 아직 안만듬.
-            MessageBox.Show("정말 로그아웃 하시겠습니까?");
-            this.Close();
-            Application.Restart();
+            if (MessageBox.Show("정말로그아웃 하시겠습니까?", "질문", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                this.Close();
+                Application.Restart();
+            }
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

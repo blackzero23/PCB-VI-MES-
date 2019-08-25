@@ -34,6 +34,7 @@ namespace PCBVI.Controls.Production.WorkOrder
             bdsProcess.DataSource = DB.Process.GetAll();
             bdsRotationGroup.DataSource = DB.RotationGroup.GetAll();
             bdsWorkPlace.DataSource = DB.WorkPlace.GetAll();
+            bdsFacilities.DataSource = DB.Facilities.GetAll();
 
             bdsWorkOrder.DataSource = DB.WorkOrder.ToDayWorkOrderList();
         }
@@ -45,7 +46,17 @@ namespace PCBVI.Controls.Production.WorkOrder
 
         public List<Data.WorkOrder> GetUpateList()
         {
-            return (List<Data.WorkOrder>)dgvList.DataSource;
+            List<Data.WorkOrder> workOrders = null;
+            try
+            {
+                workOrders = (List<Data.WorkOrder>)dgvList.DataSource;
+            }
+            catch (InvalidCastException)
+            {
+                MessageBox.Show("수정할 목록이 없습니다.");
+            }
+
+            return workOrders;
         }
 
         public DataGridView GetListView()
@@ -55,7 +66,17 @@ namespace PCBVI.Controls.Production.WorkOrder
 
         public Data.WorkOrder GetCurrentLow()
         {
-            return dgvList.CurrentRow.DataBoundItem as Data.WorkOrder;
+            Data.WorkOrder workOrder = null;
+            try
+            {
+                workOrder = dgvList.CurrentRow.DataBoundItem as Data.WorkOrder;
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("삭제할 요소가 없습니다.");
+            }
+            
+            return workOrder;
         }
     }
 }

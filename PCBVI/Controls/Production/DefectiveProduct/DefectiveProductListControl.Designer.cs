@@ -33,11 +33,11 @@
             this.bdsProcess = new System.Windows.Forms.BindingSource(this.components);
             this.bdsErrorCode = new System.Windows.Forms.BindingSource(this.components);
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bdsBarcodList = new System.Windows.Forms.BindingSource(this.components);
             this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsBarcodList = new System.Windows.Forms.BindingSource(this.components);
             this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.lotIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.processIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.lotIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.barcodeCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorCodeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -46,8 +46,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsErrorCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsBarcodList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsBarcodList)).BeginInit();
             this.SuspendLayout();
             // 
             // bdsLot
@@ -70,8 +70,8 @@
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.itemIdDataGridViewTextBoxColumn,
-            this.lotIdDataGridViewTextBoxColumn,
             this.processIdDataGridViewTextBoxColumn,
+            this.lotIdDataGridViewTextBoxColumn,
             this.barcodeCodeDataGridViewTextBoxColumn,
             this.stateDataGridViewTextBoxColumn,
             this.errorCodeIdDataGridViewTextBoxColumn,
@@ -84,13 +84,13 @@
             this.dgvList.Size = new System.Drawing.Size(800, 150);
             this.dgvList.TabIndex = 0;
             // 
-            // bdsBarcodList
-            // 
-            this.bdsBarcodList.DataSource = typeof(PCBVI.Data.Barcode);
-            // 
             // bdsItem
             // 
             this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
+            // 
+            // bdsBarcodList
+            // 
+            this.bdsBarcodList.DataSource = typeof(PCBVI.Data.Barcode);
             // 
             // itemIdDataGridViewTextBoxColumn
             // 
@@ -106,20 +106,6 @@
             this.itemIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.itemIdDataGridViewTextBoxColumn.ValueMember = "ItemId";
             // 
-            // lotIdDataGridViewTextBoxColumn
-            // 
-            this.lotIdDataGridViewTextBoxColumn.DataPropertyName = "LotId";
-            this.lotIdDataGridViewTextBoxColumn.DataSource = this.bdsLot;
-            this.lotIdDataGridViewTextBoxColumn.DisplayMember = "LotCode";
-            this.lotIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.lotIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lotIdDataGridViewTextBoxColumn.HeaderText = "LOT.No";
-            this.lotIdDataGridViewTextBoxColumn.Name = "lotIdDataGridViewTextBoxColumn";
-            this.lotIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lotIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.lotIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.lotIdDataGridViewTextBoxColumn.ValueMember = "LotId";
-            // 
             // processIdDataGridViewTextBoxColumn
             // 
             this.processIdDataGridViewTextBoxColumn.DataPropertyName = "ProcessId";
@@ -133,6 +119,20 @@
             this.processIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.processIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.processIdDataGridViewTextBoxColumn.ValueMember = "ProcessId";
+            // 
+            // lotIdDataGridViewTextBoxColumn
+            // 
+            this.lotIdDataGridViewTextBoxColumn.DataPropertyName = "LotId";
+            this.lotIdDataGridViewTextBoxColumn.DataSource = this.bdsLot;
+            this.lotIdDataGridViewTextBoxColumn.DisplayMember = "LotCode";
+            this.lotIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.lotIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lotIdDataGridViewTextBoxColumn.HeaderText = "LOT.No";
+            this.lotIdDataGridViewTextBoxColumn.Name = "lotIdDataGridViewTextBoxColumn";
+            this.lotIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lotIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.lotIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.lotIdDataGridViewTextBoxColumn.ValueMember = "LotId";
             // 
             // barcodeCodeDataGridViewTextBoxColumn
             // 
@@ -178,8 +178,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsErrorCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsBarcodList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsBarcodList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,10 +190,10 @@
         private System.Windows.Forms.BindingSource bdsErrorCode;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
         private System.Windows.Forms.BindingSource bdsBarcodList;
-        private System.Windows.Forms.DataGridViewComboBoxColumn itemIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bdsItem;
-        private System.Windows.Forms.DataGridViewComboBoxColumn lotIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn itemIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn processIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn lotIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn barcodeCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn errorCodeIdDataGridViewTextBoxColumn;

@@ -48,8 +48,11 @@ namespace PCBVI.Data.Data
         {
             using(var context = DbContextFactory.Create())
             {
+                DateTime addToDate = toDate.AddDays(1);
+
                 var query = from x in context.LotBarCodes
                             where x.Barcode.State.Equals("Fail")
+                            && (x.Barcode.InspectionDate>=fromDate.Date && x.Barcode.InspectionDate <addToDate.Date)
                             select new
                             {
                                 Barcode = x.Barcode,

@@ -13,8 +13,10 @@ namespace PCBVI.Data.Data
         {
             using (var context = DbContextFactory.Create())
             {
+                DateTime _toDate = toDate.AddDays(1);
+
                 var query = from x in context.ProductionHistories
-                            where x.ProductionDate >= fromDate || x.ProductionDate <= toDate
+                            where x.ProductionDate >= fromDate.Date && x.ProductionDate < _toDate.Date
                             select new
                             {
                                 ProductionHistory = x,

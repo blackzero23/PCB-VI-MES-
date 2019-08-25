@@ -51,7 +51,7 @@ namespace PCBVI.Controls.Production.DefectiveProduct
 
             foreach (var barcode in barcodes)
             {
-                if (barcode.ErrorCodeId == 0)
+                if (barcode.ErrorCodeId == null)
                 {
                     barcode.State = "Pass";
                 }

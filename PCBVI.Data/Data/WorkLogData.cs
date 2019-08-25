@@ -13,8 +13,10 @@ namespace PCBVI.Data.Data
         {
             using (PCBVIEntities context = DbContextFactory.Create())
             {
+                DateTime addTodate = toDate.AddDays(1);
+
                 var query = from x in context.WorkLogs
-                            where x.WorkDate >= fromDate || x.WorkDate <= toDate
+                            where x.WorkDate >= fromDate.Date && x.WorkDate < addTodate
                             select new
                             {
                                 WorkLog = x,
@@ -95,12 +97,12 @@ namespace PCBVI.Data.Data
         /// 오늘 해당 작업 일지 목록
         /// </summary>
         
-        public List<WorkLog> SetTodayWorkLogList()
+        public List<WorkLog> SetWorkLogList()
         {
             using (var context = DbContextFactory.Create())
             {
                 var query = from x in context.WorkLogs
-                    where x.WorkDate <= DateTime.Today || x.WorkDate >= DateTime.Today
+                    orderby x.WorkDate descending 
                     select x;
 
                 return query.ToList();

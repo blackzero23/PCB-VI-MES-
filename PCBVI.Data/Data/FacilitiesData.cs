@@ -30,7 +30,21 @@ namespace PCBVI.Data.Data
             }
         }
 
-       public Facility CheckSerialNo(int serialNo)
+       public Facility Search(int facilitiesNo, string facilitiesName)
+       {
+           using (PCBVIEntities context = DbContextFactory.Create())
+           {
+               var query = from x in context.Facilities
+                           where x.FacilitiesNo ==facilitiesNo && x.Name.Equals(facilitiesName)
+                   select x;
+
+               return query.FirstOrDefault();
+           }
+       }
+
+
+
+        public Facility CheckSerialNo(int serialNo)
        {
            using (var context = DbContextFactory.Create())
            {

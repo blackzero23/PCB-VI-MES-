@@ -29,7 +29,7 @@ namespace PCBVI.Controls.Production.ProductionHistory
         }
         private void InitSetDataSource()
         {
-            bdsProductionHistory.DataSource = DB.ProductionHistory.GetAll();
+            bdsProductionHistory.DataSource = DB.ProductionHistory.GetAll().OrderByDescending(x=>x.ProductionDate);
             bdsItem.DataSource = DB.Item.GetAll();
             bdsProcess.DataSource = DB.Process.GetAll();
         }
@@ -37,6 +37,11 @@ namespace PCBVI.Controls.Production.ProductionHistory
         public void SetDataSource(List<Data.ProductionHistory> list)
         {
             bdsProductionHistory.DataSource = list;
+        }
+
+        public DataGridView GetListView()
+        {
+            return dgvList;
         }
     }
 }

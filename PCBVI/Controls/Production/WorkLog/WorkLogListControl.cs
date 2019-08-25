@@ -33,9 +33,9 @@ namespace PCBVI.Controls.Production.WorkLog
             bdsFacility.DataSource = DB.Facilities.GetAll();
             bdsItem.DataSource = DB.Item.GetAll();
             bdsRotationGroup.DataSource = DB.RotationGroup.GetAll();
-            
-            dgvList.DataSource = DB.WorkLog.SetTodayWorkLogList();
-            
+
+            dgvList.DataSource = DB.WorkLog.SetWorkLogList();
+
         }
 
         public void SetDataSource(List<Data.WorkLog> list)
@@ -43,5 +43,9 @@ namespace PCBVI.Controls.Production.WorkLog
             dgvList.DataSource = list;
         }
 
+        public DataGridView GetListView()
+        {
+            return dgvList;
+        }
     }
 }

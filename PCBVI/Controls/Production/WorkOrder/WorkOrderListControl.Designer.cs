@@ -34,20 +34,22 @@
             this.bdsProcess = new System.Windows.Forms.BindingSource(this.components);
             this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
             this.bdsWorkOrder = new System.Windows.Forms.BindingSource(this.components);
-            this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workPlaceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.targetQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.processIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.rotationGroupIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.orderDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
-            this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.bdsFacilities = new System.Windows.Forms.BindingSource(this.components);
+            this.FacilitiesId = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.processIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.orderDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
+            this.rotationGroupIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.targetQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsRotationGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsWorkOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsFacilities)).BeginInit();
             this.SuspendLayout();
             // 
             // bdsItem
@@ -70,32 +72,57 @@
             // 
             this.bdsWorkOrder.DataSource = typeof(PCBVI.Data.WorkOrder);
             // 
-            // noteDataGridViewTextBoxColumn
+            // dgvList
             // 
-            this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
-            this.noteDataGridViewTextBoxColumn.FillWeight = 99.75554F;
-            this.noteDataGridViewTextBoxColumn.HeaderText = "비고";
-            this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
+            this.dgvList.AllowUserToAddRows = false;
+            this.dgvList.AutoGenerateColumns = false;
+            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FacilitiesId,
+            this.itemIdDataGridViewTextBoxColumn,
+            this.processIdDataGridViewTextBoxColumn,
+            this.orderDateDataGridViewTextBoxColumn,
+            this.rotationGroupIdDataGridViewTextBoxColumn,
+            this.targetQuantityDataGridViewTextBoxColumn,
+            this.noteDataGridViewTextBoxColumn});
+            this.dgvList.DataSource = this.bdsWorkOrder;
+            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvList.Location = new System.Drawing.Point(0, 0);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.RowTemplate.Height = 23;
+            this.dgvList.Size = new System.Drawing.Size(946, 458);
+            this.dgvList.TabIndex = 0;
             // 
-            // workPlaceIdDataGridViewTextBoxColumn
+            // bdsFacilities
             // 
-            this.workPlaceIdDataGridViewTextBoxColumn.DataPropertyName = "WorkPlaceId";
-            this.workPlaceIdDataGridViewTextBoxColumn.DataSource = this.bdsWorkPlace;
-            this.workPlaceIdDataGridViewTextBoxColumn.DisplayMember = "Name";
-            this.workPlaceIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.workPlaceIdDataGridViewTextBoxColumn.FillWeight = 99.75554F;
-            this.workPlaceIdDataGridViewTextBoxColumn.HeaderText = "위치";
-            this.workPlaceIdDataGridViewTextBoxColumn.Name = "workPlaceIdDataGridViewTextBoxColumn";
-            this.workPlaceIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.workPlaceIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.workPlaceIdDataGridViewTextBoxColumn.ValueMember = "WorkPlaceId";
+            this.bdsFacilities.DataSource = typeof(PCBVI.Data.Facility);
             // 
-            // targetQuantityDataGridViewTextBoxColumn
+            // FacilitiesId
             // 
-            this.targetQuantityDataGridViewTextBoxColumn.DataPropertyName = "TargetQuantity";
-            this.targetQuantityDataGridViewTextBoxColumn.FillWeight = 99.75554F;
-            this.targetQuantityDataGridViewTextBoxColumn.HeaderText = "목표수량";
-            this.targetQuantityDataGridViewTextBoxColumn.Name = "targetQuantityDataGridViewTextBoxColumn";
+            this.FacilitiesId.DataPropertyName = "FacilitiesId";
+            this.FacilitiesId.DataSource = this.bdsFacilities;
+            this.FacilitiesId.DisplayMember = "Name";
+            this.FacilitiesId.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.FacilitiesId.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.FacilitiesId.HeaderText = "설 비";
+            this.FacilitiesId.Name = "FacilitiesId";
+            this.FacilitiesId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.FacilitiesId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.FacilitiesId.ValueMember = "FacilitiesId";
+            // 
+            // itemIdDataGridViewTextBoxColumn
+            // 
+            this.itemIdDataGridViewTextBoxColumn.DataPropertyName = "ItemId";
+            this.itemIdDataGridViewTextBoxColumn.DataSource = this.bdsItem;
+            this.itemIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.itemIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.itemIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.itemIdDataGridViewTextBoxColumn.HeaderText = "품목명";
+            this.itemIdDataGridViewTextBoxColumn.Name = "itemIdDataGridViewTextBoxColumn";
+            this.itemIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.itemIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.itemIdDataGridViewTextBoxColumn.ValueMember = "ItemId";
             // 
             // processIdDataGridViewTextBoxColumn
             // 
@@ -111,6 +138,17 @@
             this.processIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.processIdDataGridViewTextBoxColumn.ValueMember = "ProcessId";
             // 
+            // orderDateDataGridViewTextBoxColumn
+            // 
+            this.orderDateDataGridViewTextBoxColumn.Checked = false;
+            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
+            this.orderDateDataGridViewTextBoxColumn.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.orderDateDataGridViewTextBoxColumn.HeaderText = "날짜";
+            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
+            this.orderDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.orderDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.orderDateDataGridViewTextBoxColumn.Width = 130;
+            // 
             // rotationGroupIdDataGridViewTextBoxColumn
             // 
             this.rotationGroupIdDataGridViewTextBoxColumn.DataPropertyName = "RotationGroupId";
@@ -125,51 +163,19 @@
             this.rotationGroupIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.rotationGroupIdDataGridViewTextBoxColumn.ValueMember = "RotationGroupId";
             // 
-            // orderDateDataGridViewTextBoxColumn
+            // targetQuantityDataGridViewTextBoxColumn
             // 
-            this.orderDateDataGridViewTextBoxColumn.Checked = false;
-            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
-            this.orderDateDataGridViewTextBoxColumn.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.orderDateDataGridViewTextBoxColumn.HeaderText = "날짜";
-            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
-            this.orderDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.orderDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.orderDateDataGridViewTextBoxColumn.Width = 129;
+            this.targetQuantityDataGridViewTextBoxColumn.DataPropertyName = "TargetQuantity";
+            this.targetQuantityDataGridViewTextBoxColumn.FillWeight = 99.75554F;
+            this.targetQuantityDataGridViewTextBoxColumn.HeaderText = "목표수량";
+            this.targetQuantityDataGridViewTextBoxColumn.Name = "targetQuantityDataGridViewTextBoxColumn";
             // 
-            // itemIdDataGridViewTextBoxColumn
+            // noteDataGridViewTextBoxColumn
             // 
-            this.itemIdDataGridViewTextBoxColumn.DataPropertyName = "ItemId";
-            this.itemIdDataGridViewTextBoxColumn.DataSource = this.bdsItem;
-            this.itemIdDataGridViewTextBoxColumn.DisplayMember = "Name";
-            this.itemIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.itemIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.itemIdDataGridViewTextBoxColumn.HeaderText = "품목명";
-            this.itemIdDataGridViewTextBoxColumn.Name = "itemIdDataGridViewTextBoxColumn";
-            this.itemIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.itemIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.itemIdDataGridViewTextBoxColumn.ValueMember = "ItemId";
-            // 
-            // dgvList
-            // 
-            this.dgvList.AllowUserToAddRows = false;
-            this.dgvList.AutoGenerateColumns = false;
-            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.itemIdDataGridViewTextBoxColumn,
-            this.orderDateDataGridViewTextBoxColumn,
-            this.rotationGroupIdDataGridViewTextBoxColumn,
-            this.processIdDataGridViewTextBoxColumn,
-            this.targetQuantityDataGridViewTextBoxColumn,
-            this.workPlaceIdDataGridViewTextBoxColumn,
-            this.noteDataGridViewTextBoxColumn});
-            this.dgvList.DataSource = this.bdsWorkOrder;
-            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvList.Location = new System.Drawing.Point(0, 0);
-            this.dgvList.Name = "dgvList";
-            this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(946, 458);
-            this.dgvList.TabIndex = 0;
+            this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
+            this.noteDataGridViewTextBoxColumn.FillWeight = 99.75554F;
+            this.noteDataGridViewTextBoxColumn.HeaderText = "비고";
+            this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
             // 
             // WorkOrderListControl
             // 
@@ -184,6 +190,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsWorkOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsFacilities)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -195,13 +202,14 @@
         private System.Windows.Forms.BindingSource bdsProcess;
         private System.Windows.Forms.BindingSource bdsWorkPlace;
         private System.Windows.Forms.BindingSource bdsWorkOrder;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn workPlaceIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn targetQuantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn processIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn rotationGroupIdDataGridViewTextBoxColumn;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn orderDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn itemIdDataGridViewTextBoxColumn;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
+        private System.Windows.Forms.BindingSource bdsFacilities;
+        private System.Windows.Forms.DataGridViewComboBoxColumn FacilitiesId;
+        private System.Windows.Forms.DataGridViewComboBoxColumn itemIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn processIdDataGridViewTextBoxColumn;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn orderDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn rotationGroupIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn targetQuantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
     }
 }

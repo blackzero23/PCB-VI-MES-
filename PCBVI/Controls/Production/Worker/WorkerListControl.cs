@@ -37,8 +37,9 @@ namespace PCBVI.Controls.Production.Worker
             bdsProcess.DataSource = DB.Process.GetAll();
             bdsRotationGroup.DataSource = DB.RotationGroup.GetAll();
             bdsWorkPlace.DataSource = DB.WorkPlace.GetAll();
+            bdsFacilities.DataSource = DB.Facilities.GetAll();
             //오늘 작업 목록 만 들고오기.
-            bdsWorkOrder.DataSource = DB.WorkOrder.ToDayWorkOrderList();
+            bdsWorkOrder.DataSource = DB.WorkOrder.TodayWorkerListALL();
         }
 
 

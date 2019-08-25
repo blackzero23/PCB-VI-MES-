@@ -30,9 +30,9 @@
         {
             this.naviProductionHistory = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.pageProductionHistory = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.uscList = new PCBVI.Controls.Production.ProductionHistory.ProductionHistoryList();
             this.uscSearch = new PCBVI.Controls.Production.ProductionHistory.ProductionHistorySearch();
             this.uscTopMenu = new PCBVI.Controls.CommonControl.TopMenubar();
-            this.uscList = new PCBVI.Controls.Production.ProductionHistory.ProductionHistoryList();
             ((System.ComponentModel.ISupportInitialize)(this.naviProductionHistory)).BeginInit();
             this.naviProductionHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pageProductionHistory)).BeginInit();
@@ -72,6 +72,14 @@
             this.pageProductionHistory.ToolTipTitle = "Page ToolTip";
             this.pageProductionHistory.UniqueName = "B16A5854167348FF14A9DF677D016AAF";
             // 
+            // uscList
+            // 
+            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscList.Location = new System.Drawing.Point(0, 64);
+            this.uscList.Name = "uscList";
+            this.uscList.Size = new System.Drawing.Size(798, 324);
+            this.uscList.TabIndex = 2;
+            // 
             // uscSearch
             // 
             this.uscSearch.Dock = System.Windows.Forms.DockStyle.Top;
@@ -89,14 +97,8 @@
             this.uscTopMenu.Name = "uscTopMenu";
             this.uscTopMenu.Size = new System.Drawing.Size(800, 35);
             this.uscTopMenu.TabIndex = 0;
-            // 
-            // uscList
-            // 
-            this.uscList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscList.Location = new System.Drawing.Point(0, 64);
-            this.uscList.Name = "uscList";
-            this.uscList.Size = new System.Drawing.Size(798, 324);
-            this.uscList.TabIndex = 2;
+            this.uscTopMenu.ExcelButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs>(this.UscTopMenu_ExcelButtonClicked);
+            this.uscTopMenu.UpdateButtonClicked += new System.EventHandler<PCBVI.Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs>(this.UscTopMenu_UpdateButtonClicked);
             // 
             // ProductionHistoryForm
             // 
