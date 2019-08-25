@@ -78,7 +78,17 @@ namespace PCBVI.Controls.Basic.Facilities
 
         public Facility GetCurrentLow()
         {
-            return dgvList.CurrentRow.DataBoundItem as Facility;
+            Data.Facility facility = null;
+            try
+            {
+                facility = dgvList.CurrentRow.DataBoundItem as Facility;
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("삭제할 요소가 없습니다.");
+            }
+
+            return facility;
         }
 
         private void DgvList_CellEndEdit(object sender, DataGridViewCellEventArgs e)

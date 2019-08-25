@@ -94,12 +94,51 @@ namespace PCBVI.Controls.CommonControl
                     worksheet.Cells[i + 2, j + 1] = dgv.Rows[i].Cells[j].Value.ToString();
                 }
             }
+
             // save the application 
             workbook.SaveAs($@"D:\{fileName}.xls", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             // Exit from the application 
             app.Quit();         
         }
 
+        public void SaveExcelFile(DataGridView dgv,string filePath ,string fileName)
+        {
+            // creating Excel Application 
+            Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+            // creating new WorkBook within Excel application 
+            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
+            // creating new Excelsheet in workbook 
+            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+            // see the excel sheet behind the program 
+            app.Visible = false;
+            // get the reference of first sheet. By default its name is Sheet1. 
+            // store its reference to worksheet 
+            worksheet = workbook.Sheets["Sheet1"];
+            worksheet = workbook.ActiveSheet;
+            // changing the name of active sheet 
+            worksheet.Name = "Exported from gridview";
+            // storing header part in Excel 
+            for (int i = 1; i < dgv.Columns.Count + 1; i++)
+            {
+                worksheet.Cells[1, i] = dgv.Columns[i - 1].HeaderText;
+            }
+            // storing Each row and column value to excel sheet 
+            //변경사항 dgvList 의 로우수 -1 인것을 삭제
+            //해당 셀값이 null경우의 조건을 추가.
+            for (int i = 0; i < dgv.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgv.Columns.Count; j++)
+                {
+                    if (dgv.Rows[i].Cells[j].Value != null)
+                        worksheet.Cells[i + 2, j + 1] = dgv.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+
+            // save the application 
+            workbook.SaveAs($@"{filePath}", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            // Exit from the application 
+            app.Quit();
+        }
 
         #region 각 버튼 Visible처리
         public void BtnInsert_FalseVisible()
@@ -147,6 +186,8 @@ namespace PCBVI.Controls.CommonControl
         private void BtnExcel_Click(object sender, EventArgs e)
         {
             OnExcelButtonClicked();
+           
+
         }
 
         #region InsertButtonClicked event things for C# 3.0

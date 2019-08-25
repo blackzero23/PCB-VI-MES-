@@ -46,7 +46,18 @@ namespace PCBVI.Controls.Production.DefectiveProduct
 
         public List<Data.Barcode> GetUpateList()
         {
-            return (List<Data.Barcode>)dgvList.DataSource;
+
+            List<Data.Barcode> barcodes = (List<Data.Barcode>)dgvList.DataSource;
+
+            foreach (var barcode in barcodes)
+            {
+                if (barcode.ErrorCodeId == 0)
+                {
+                    barcode.State = "Pass";
+                }
+            }
+
+            return barcodes;
         }
 
         public DataGridView GetListView()

@@ -61,9 +61,16 @@ namespace PCBVI.Forms.Basic
             
             if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("코드"))
             {
-                if (e.FormattedValue.ToString().Length <= 0)
+                string code = e.FormattedValue.ToString();
+                if (code.Length <= 0)
                 {
                     MessageBox.Show("코드를 입력해주세요.");
+                    e.Cancel = true;
+                }
+
+                if (code[0].Equals("-"))
+                {
+                    MessageBox.Show(" 처음 문자로 - 가 올수 없습니다.");
                     e.Cancel = true;
                 }
 
@@ -99,17 +106,21 @@ namespace PCBVI.Forms.Basic
             {
                 int newInteger = 9876;
                 //if (e.FormattedValue.ToString().Length > 3)
-                if (!int.TryParse(e.FormattedValue.ToString(), out newInteger) || newInteger <= 0)
+
+                
+
+                if (!int.TryParse(e.FormattedValue.ToString(), out newInteger))
                 {
-
-
                     MessageBox.Show("숫자만 입력가능합니다");
-                    // 유효성 검사에서 실패시 취소시킴
-
+                   
                     e.Cancel = true;
+                }
 
-                    // dgvList.Rows[e.RowIndex].ErrorText = "사원이름은 3자리까지 입력가능합니다";
 
+                if (e.FormattedValue.ToString().Length < 0)
+                {
+                    MessageBox.Show("수량을 입력해주세요.");
+                    e.Cancel = true;
                 }
             }
 

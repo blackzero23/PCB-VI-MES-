@@ -30,12 +30,6 @@ namespace PCBVI.Controls.Quality
 
         private void InitSetDataSource()
         {
-            List<Data.Employee> employees = DB.Employee.GetAll();
-            employees.Remove(employees.Select(x=>x).Where(x => x.Name == "관리자").FirstOrDefault());
-            employees.Insert(0, new Data.Employee(""));
-            bdsEmployee.DataSource = employees;
-
-
             List<Data.Item> items = DB.Item.GetAll();
             items.Insert(0, new Data.Item(""));
             bdsItem.DataSource = items;
@@ -49,15 +43,14 @@ namespace PCBVI.Controls.Quality
         {
 
             string companyName = txbCompanyName.Text;
-            int employeeId = (int)cbbEmployeeName.SelectedValue;
+            string workerName = txbWorker.Text;
             int itemId = (int)cbbItemCode.SelectedValue;
             int workPlaceId = (int)cbbWorkPlace.SelectedValue;
             DateTime productionFrom = dtpProductionFromDate.Value;
             DateTime productionTo = dtpProductionToDate.Value;
-            DateTime InspectionFrom = dtpInspectionFrom.Value;
-            DateTime InspectionTo = dtpInspectionTo.Value;
+           
 
-            OnSearchButtonClicked(companyName, employeeId, itemId, workPlaceId, productionFrom, productionTo, InspectionFrom, InspectionTo);
+            OnSearchButtonClicked(companyName, workerName, itemId, workPlaceId, productionFrom, productionTo);
         }
 
 
@@ -70,9 +63,9 @@ namespace PCBVI.Controls.Quality
                 SearchButtonClicked(this, e);
         }
 
-        private SearchButtonClickedEventArgs OnSearchButtonClicked(string companyname, int employeeId, int itemId, int workPlaceId, DateTime productionFrom, DateTime productionTo, DateTime inspectionFrom, DateTime inspectionTo)
+        private SearchButtonClickedEventArgs OnSearchButtonClicked(string companyName, string employeeName, int itemId, int workPlaceId, DateTime productionFrom, DateTime productionTo)
         {
-            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(companyname, employeeId, itemId, workPlaceId, productionFrom, productionTo, inspectionFrom, inspectionTo);
+            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(companyName, employeeName, itemId, workPlaceId, productionFrom, productionTo);
             OnSearchButtonClicked(args);
 
             return args;
@@ -88,31 +81,28 @@ namespace PCBVI.Controls.Quality
 
         public class SearchButtonClickedEventArgs : EventArgs
         {
-            public string Companyname { get; set; }
-            public int EmployeeId { get; set; }
+            public string CompanyName { get; set; }
+            public string EmployeeName { get; set; }
             public int ItemId { get; set; }
             public int WorkPlaceId { get; set; }
             public DateTime ProductionFrom { get; set; }
             public DateTime ProductionTo { get; set; }
-            public DateTime InspectionFrom { get; set; }
-            public DateTime InspectionTo { get; set; }
 
             public SearchButtonClickedEventArgs()
             {
             }
 
-            public SearchButtonClickedEventArgs(string companyname, int employeeId, int itemId, int workPlaceId, DateTime productionFrom, DateTime productionTo, DateTime inspectionFrom, DateTime inspectionTo)
+            public SearchButtonClickedEventArgs(string companyName, string employeeName, int itemId, int workPlaceId, DateTime productionFrom, DateTime productionTo)
             {
-                Companyname = companyname;
-                EmployeeId = employeeId;
+                CompanyName = companyName;
+                EmployeeName = employeeName;
                 ItemId = itemId;
                 WorkPlaceId = workPlaceId;
                 ProductionFrom = productionFrom;
                 ProductionTo = productionTo;
-                InspectionFrom = inspectionFrom;
-                InspectionTo = inspectionTo;
             }
         }
         #endregion
+
     }
 }

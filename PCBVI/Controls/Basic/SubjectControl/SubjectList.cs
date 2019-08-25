@@ -36,7 +36,17 @@ namespace PCBVI.Controls.Basic.SubjectControl
         //바인딩된 데이터 리스트 반환.
         public List<Data.Item> GetUpateList()
         {
-            return (List<Data.Item>)dgvList.DataSource;
+            List<Data.Item> items = null;
+            try
+            {
+                items = (List<Data.Item>)dgvList.DataSource;
+            }
+            catch (InvalidCastException)
+            {
+                MessageBox.Show("수정 할 목록이 없습니다.");
+            }
+
+            return items;
         }
         //private void 
 
@@ -52,7 +62,17 @@ namespace PCBVI.Controls.Basic.SubjectControl
 
         public Data.Item GetCurrentLow()
         {
-            return dgvList.CurrentRow.DataBoundItem as Data.Item;
+            Data.Item item = null;
+            try
+            {
+                item = dgvList.CurrentRow.DataBoundItem as Data.Item;
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("삭제할 요소가 없습니다.");
+            }
+
+            return item;
         }
 
 

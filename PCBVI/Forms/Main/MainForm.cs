@@ -209,5 +209,10 @@ namespace PCBVI.Forms.Main
             this.Close();
             Application.Restart();
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

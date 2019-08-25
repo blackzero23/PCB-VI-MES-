@@ -118,7 +118,7 @@ namespace PCBVI.Forms.Quality
 
                 Data.FirstInspection firstInspection = dgvList.Rows[0].DataBoundItem as Data.FirstInspection;
                 if (firstInspection == null || string.IsNullOrWhiteSpace(firstInspection.OCompanyName)
-                    || firstInspection.ItemId == null || firstInspection.WorkPlaceId == null || firstInspection.EnterQuantity == null || firstInspection.EmployeeId == null)
+                    || firstInspection.ItemId == null || firstInspection.WorkPlaceId == null || firstInspection.EnterQuantity == null || (string.IsNullOrWhiteSpace(firstInspection.WorkerName) == false))
                 {
                     MessageBox.Show("등록 할 수있는 내용이 없습니다.");
                     return;
@@ -130,7 +130,7 @@ namespace PCBVI.Forms.Quality
 
                 Data.FirstInspection firstInspection = dgvList.Rows[0].DataBoundItem as Data.FirstInspection;
                 if (firstInspection == null || string.IsNullOrWhiteSpace(firstInspection.OCompanyName)
-                    || firstInspection.ItemId == null || firstInspection.WorkPlaceId == null || firstInspection.EnterQuantity == null || firstInspection.EmployeeId == null)
+                    || firstInspection.ItemId == null || firstInspection.WorkPlaceId == null || firstInspection.EnterQuantity == null || (string.IsNullOrWhiteSpace(firstInspection.WorkerName) == false))
                 {
                     MessageBox.Show("등록완료!");
                     Close();

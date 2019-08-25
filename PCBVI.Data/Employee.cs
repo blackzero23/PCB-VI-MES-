@@ -18,7 +18,6 @@ namespace PCBVI.Data
         public Employee()
         {
             this.DefectiveProducts = new HashSet<DefectiveProduct>();
-            this.FirstInspections = new HashSet<FirstInspection>();
             this.TotalMonitorings = new HashSet<TotalMonitoring>();
         }
     
@@ -26,17 +25,15 @@ namespace PCBVI.Data
         public string Code { get; set; }
         public string Name { get; set; }
         public Nullable<int> DepartmentId { get; set; }
-        public System.DateTime EmploymentDate { get; set; }
+        public System.DateTime? EmploymentDate { get; set; }
         public Nullable<System.DateTime> DepartureDate { get; set; }
-        public int Grade { get; set; }
+        public int? Grade { get; set; }
         public string LoginId { get; set; }
         public string Password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DefectiveProduct> DefectiveProducts { get; set; }
         public virtual Department Department { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FirstInspection> FirstInspections { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TotalMonitoring> TotalMonitorings { get; set; }
     }

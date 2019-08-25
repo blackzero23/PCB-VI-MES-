@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.barcodeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.LotName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodeCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +48,7 @@
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.LotName,
             this.itemNameDataGridViewTextBoxColumn,
             this.barcodeCodeDataGridViewTextBoxColumn,
             this.stateDataGridViewTextBoxColumn,
@@ -63,6 +65,14 @@
             // barcodeBindingSource
             // 
             this.barcodeBindingSource.DataSource = typeof(PCBVI.Data.Barcode);
+            // 
+            // LotName
+            // 
+            this.LotName.DataPropertyName = "LotName";
+            this.LotName.HeaderText = "LOT.No";
+            this.LotName.Name = "LotName";
+            this.LotName.ReadOnly = true;
+            this.LotName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // itemNameDataGridViewTextBoxColumn
             // 
@@ -98,9 +108,10 @@
             this.InspectionDate.DataPropertyName = "InspectionDate";
             this.InspectionDate.HeaderText = "검사 일자";
             this.InspectionDate.Name = "InspectionDate";
+            this.InspectionDate.ReadOnly = true;
             this.InspectionDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.InspectionDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.InspectionDate.Width = 136;
+            this.InspectionDate.Width = 113;
             // 
             // BarcodeList
             // 
@@ -119,6 +130,7 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
         private System.Windows.Forms.BindingSource barcodeBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LotName;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn barcodeCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;

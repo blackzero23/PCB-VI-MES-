@@ -30,12 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsLastInspection = new System.Windows.Forms.BindingSource(this.components);
             this.productionDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workPlaceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
             this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
             this.oCompanyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unCheckedQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkedQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +42,7 @@
             this.passQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.failQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.finalQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdsLastInspection = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsWorkPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
@@ -53,6 +53,7 @@
             // 
             this.dgvList.AllowUserToAddRows = false;
             this.dgvList.AutoGenerateColumns = false;
+            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productionDateDataGridViewTextBoxColumn,
@@ -73,18 +74,6 @@
             this.dgvList.Size = new System.Drawing.Size(1043, 466);
             this.dgvList.TabIndex = 0;
             // 
-            // bdsWorkPlace
-            // 
-            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
-            // 
-            // bdsItem
-            // 
-            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
-            // 
-            // bdsLastInspection
-            // 
-            this.bdsLastInspection.DataSource = typeof(PCBVI.Data.LastInspection);
-            // 
             // productionDateDataGridViewTextBoxColumn
             // 
             this.productionDateDataGridViewTextBoxColumn.DataPropertyName = "ProductionDate";
@@ -104,6 +93,10 @@
             this.workPlaceIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.workPlaceIdDataGridViewTextBoxColumn.ValueMember = "WorkPlaceId";
             // 
+            // bdsWorkPlace
+            // 
+            this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
+            // 
             // itemIdDataGridViewTextBoxColumn
             // 
             this.itemIdDataGridViewTextBoxColumn.DataPropertyName = "ItemId";
@@ -116,6 +109,10 @@
             this.itemIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.itemIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.itemIdDataGridViewTextBoxColumn.ValueMember = "ItemId";
+            // 
+            // bdsItem
+            // 
+            this.bdsItem.DataSource = typeof(PCBVI.Data.Item);
             // 
             // oCompanyNameDataGridViewTextBoxColumn
             // 
@@ -158,6 +155,10 @@
             this.finalQuantityDataGridViewTextBoxColumn.DataPropertyName = "FinalQuantity";
             this.finalQuantityDataGridViewTextBoxColumn.HeaderText = "최종출하량";
             this.finalQuantityDataGridViewTextBoxColumn.Name = "finalQuantityDataGridViewTextBoxColumn";
+            // 
+            // bdsLastInspection
+            // 
+            this.bdsLastInspection.DataSource = typeof(PCBVI.Data.LastInspection);
             // 
             // LastInspectionList
             // 

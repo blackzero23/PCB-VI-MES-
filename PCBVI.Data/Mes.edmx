@@ -97,7 +97,7 @@
             <PropertyRef Name="FacilitiesHistoryId" />
           </Key>
           <Property Name="FacilitiesHistoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="WorkDate" Type="datetime" Nullable="false" />
+          <Property Name="WorkDate" Type="datetime2" Precision="1" Nullable="false" />
           <Property Name="FacilitiesId" Type="int" Nullable="false" />
           <Property Name="WorkPlaceId" Type="int" Nullable="false" />
           <Property Name="FHistoryDivisionId" Type="int" Nullable="false" />
@@ -131,14 +131,14 @@
           <Property Name="FirstInspectionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OCompanyName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ItemId" Type="int" Nullable="false" />
-          <Property Name="EnterDate" Type="datetime" Nullable="false" />
-          <Property Name="CheckDate" Type="datetime" />
+          <Property Name="EnterDate" Type="datetime2" Precision="1" Nullable="false" />
+          <Property Name="CheckDate" Type="datetime2" Precision="1" />
           <Property Name="EnterQuantity" Type="int" Nullable="false" />
           <Property Name="CheckQuantiy" Type="int" />
           <Property Name="PassQuantity" Type="int" />
           <Property Name="ErrorQuantity" Type="int" />
-          <Property Name="EmployeeId" Type="int" Nullable="false" />
           <Property Name="WorkPlaceId" Type="int" Nullable="false" />
+          <Property Name="WorkerName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="FirstItemDivision">
           <Key>
@@ -191,6 +191,7 @@
           <Property Name="PassQuantity" Type="int" Nullable="false" />
           <Property Name="failQuantity" Type="int" Nullable="false" />
           <Property Name="FinalQuantity" Type="int" Nullable="false" />
+          <Property Name="WorkerName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Lot">
           <Key>
@@ -250,7 +251,7 @@
           <Key>
             <PropertyRef Name="MaterialStateId" />
           </Key>
-          <Property Name="MaterialStateId" Type="int" Nullable="false" />
+          <Property Name="MaterialStateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Process">
@@ -552,18 +553,6 @@
             </Principal>
             <Dependent Role="FacilitiesPower">
               <PropertyRef Name="ProcessId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_FirstInspection_Employee">
-          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
-          <End Role="FirstInspection" Type="Self.FirstInspection" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="EmployeeId" />
-            </Principal>
-            <Dependent Role="FirstInspection">
-              <PropertyRef Name="EmployeeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1138,10 +1127,6 @@
             <End Role="Process" EntitySet="Process" />
             <End Role="FacilitiesPower" EntitySet="FacilitiesPower" />
           </AssociationSet>
-          <AssociationSet Name="FK_FirstInspection_Employee" Association="Self.FK_FirstInspection_Employee">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="FirstInspection" EntitySet="FirstInspection" />
-          </AssociationSet>
           <AssociationSet Name="FK_FirstInspection_Product" Association="Self.FK_FirstInspection_Product">
             <End Role="Item" EntitySet="Item" />
             <End Role="FirstInspection" EntitySet="FirstInspection" />
@@ -1364,7 +1349,6 @@
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="DefectiveProducts" Relationship="Self.FK_DefectiveProduct_Employee" FromRole="Employee" ToRole="DefectiveProduct" />
           <NavigationProperty Name="Department" Relationship="Self.FK_Employee_Department" FromRole="Employee" ToRole="Department" />
-          <NavigationProperty Name="FirstInspections" Relationship="Self.FK_FirstInspection_Employee" FromRole="Employee" ToRole="FirstInspection" />
           <NavigationProperty Name="TotalMonitorings" Relationship="Self.FK_TotalMonitoring_Employee" FromRole="Employee" ToRole="TotalMonitoring" />
         </EntityType>
         <EntityType Name="ErrorCode">
@@ -1426,7 +1410,7 @@
             <PropertyRef Name="FacilitiesHistoryId" />
           </Key>
           <Property Name="FacilitiesHistoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="WorkDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="WorkDate" Type="DateTime" Nullable="false" Precision="1" />
           <Property Name="FacilitiesId" Type="Int32" Nullable="false" />
           <Property Name="WorkPlaceId" Type="Int32" Nullable="false" />
           <Property Name="FHistoryDivisionId" Type="Int32" Nullable="false" />
@@ -1465,15 +1449,14 @@
           <Property Name="FirstInspectionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OCompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ItemId" Type="Int32" Nullable="false" />
-          <Property Name="EnterDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="CheckDate" Type="DateTime" Precision="3" />
+          <Property Name="EnterDate" Type="DateTime" Nullable="false" Precision="1" />
+          <Property Name="CheckDate" Type="DateTime" Precision="1" />
           <Property Name="EnterQuantity" Type="Int32" Nullable="false" />
           <Property Name="CheckQuantiy" Type="Int32" />
           <Property Name="PassQuantity" Type="Int32" />
           <Property Name="ErrorQuantity" Type="Int32" />
-          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
           <Property Name="WorkPlaceId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Employee" Relationship="Self.FK_FirstInspection_Employee" FromRole="FirstInspection" ToRole="Employee" />
+          <Property Name="WorkerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Item" Relationship="Self.FK_FirstInspection_Product" FromRole="FirstInspection" ToRole="Item" />
           <NavigationProperty Name="WorkPlace" Relationship="Self.FK_FirstInspection_WorkPlace" FromRole="FirstInspection" ToRole="WorkPlace" />
         </EntityType>
@@ -1542,6 +1525,7 @@
           <Property Name="PassQuantity" Type="Int32" Nullable="false" />
           <Property Name="failQuantity" Type="Int32" Nullable="false" />
           <Property Name="FinalQuantity" Type="Int32" Nullable="false" />
+          <Property Name="WorkerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Item" Relationship="Self.FK_LastInspection_Product" FromRole="LastInspection" ToRole="Item" />
           <NavigationProperty Name="WorkPlace" Relationship="Self.FK_LastInspection_WorkPlace" FromRole="LastInspection" ToRole="WorkPlace" />
         </EntityType>
@@ -1619,7 +1603,7 @@
           <Key>
             <PropertyRef Name="MaterialStateId" />
           </Key>
-          <Property Name="MaterialStateId" Type="Int32" Nullable="false" />
+          <Property Name="MaterialStateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="MaterialsManages" Relationship="Self.FK_MaterialsManage_MaterialState" FromRole="MaterialState" ToRole="MaterialsManage" />
         </EntityType>
@@ -1907,18 +1891,6 @@
             </Principal>
             <Dependent Role="Employee">
               <PropertyRef Name="DepartmentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_FirstInspection_Employee">
-          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
-          <End Role="FirstInspection" Type="Self.FirstInspection" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="EmployeeId" />
-            </Principal>
-            <Dependent Role="FirstInspection">
-              <PropertyRef Name="EmployeeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2531,10 +2503,6 @@
             <End Role="Department" EntitySet="Departments" />
             <End Role="Employee" EntitySet="Employees" />
           </AssociationSet>
-          <AssociationSet Name="FK_FirstInspection_Employee" Association="Self.FK_FirstInspection_Employee">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="FirstInspection" EntitySet="FirstInspections" />
-          </AssociationSet>
           <AssociationSet Name="FK_TotalMonitoring_Employee" Association="Self.FK_TotalMonitoring_Employee">
             <End Role="Employee" EntitySet="Employees" />
             <End Role="TotalMonitoring" EntitySet="TotalMonitorings" />
@@ -2860,8 +2828,8 @@
                 <ScalarProperty Name="CheckQuantiy" ColumnName="CheckQuantiy" />
                 <ScalarProperty Name="PassQuantity" ColumnName="PassQuantity" />
                 <ScalarProperty Name="ErrorQuantity" ColumnName="ErrorQuantity" />
-                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
                 <ScalarProperty Name="WorkPlaceId" ColumnName="WorkPlaceId" />
+                <ScalarProperty Name="WorkerName" ColumnName="WorkerName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2919,6 +2887,7 @@
                 <ScalarProperty Name="PassQuantity" ColumnName="PassQuantity" />
                 <ScalarProperty Name="failQuantity" ColumnName="failQuantity" />
                 <ScalarProperty Name="FinalQuantity" ColumnName="FinalQuantity" />
+                <ScalarProperty Name="WorkerName" ColumnName="WorkerName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

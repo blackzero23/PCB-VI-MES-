@@ -41,7 +41,7 @@ namespace PCBVI.Forms.Basic
             }
 
             //최소한의 입력셀의 개수 체크 하기위한 변수.
-           
+
 
             //if (!int.TryParse(e.FormattedValue.ToString(),
             //        out newInteger) || newInteger < 0)
@@ -55,11 +55,21 @@ namespace PCBVI.Forms.Basic
             //이름 란 에 대한 유효성 검사
             if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("이름"))
             {
+                int newInteger;
+
+                if (int.TryParse(e.FormattedValue.ToString(), out newInteger))
+                {
+                    MessageBox.Show("숫자는 입력 불가능!");
+
+                    e.Cancel = true;
+
+                }
+
                 if (e.FormattedValue.ToString().Length > 7)
                 {
                     MessageBox.Show("7글자 이하로만 입력가능.");
                     e.Cancel = true;
-                }             
+                }
             }
 
             ///부서 에 대한 유효성 검사
@@ -90,8 +100,14 @@ namespace PCBVI.Forms.Basic
 
                 }
 
+                if (newInteger < 0)
+                {
+                    MessageBox.Show("사원번호 음수는 입력이 불가능합니다.");
+                    e.Cancel = true;
+                }
+
                 Employee employee = DB.Employee.CheckEmployeeCode(e.FormattedValue.ToString());
-                
+
                 if (employee != null)
                 {
                     MessageBox.Show("중복된 코드입니다.");
@@ -103,24 +119,30 @@ namespace PCBVI.Forms.Basic
             if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("등 급"))
             {
                 int newInteger;
-                //if (e.FormattedValue.ToString().Length > 3)
+              
                 if (!int.TryParse(e.FormattedValue.ToString(), out newInteger))
                 {
-                    
-
                     MessageBox.Show("숫자만 입력가능!");
-                    // 유효성 검사에서 실패시 취소시킴
-
+                    
                     e.Cancel = true;
-
-                    // dgvList.Rows[e.RowIndex].ErrorText = "사원이름은 3자리까지 입력가능합니다";
-
                 }
 
 
-                if (newInteger > 6 || newInteger < 0)
+                if ((newInteger > 0 && newInteger < 7) == false)
                 {
                     MessageBox.Show("등급 1~6 까지 설정 가능합니다.");
+                    e.Cancel = true;
+                }
+            }
+
+            //입사일 에 대한 유효성 검사
+            if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("입사일"))
+            {
+                string employeeMentDate = e.FormattedValue.ToString();
+
+                if (string.IsNullOrWhiteSpace(employeeMentDate))
+                {
+                    MessageBox.Show("입사일을 입력해주세요.");
                     e.Cancel = true;
                 }
             }
@@ -136,18 +158,24 @@ namespace PCBVI.Forms.Basic
                     {
                         MessageBox.Show("영어와 숫자만 입력해주세요");
                         e.Cancel = true;
+                        return;
                     }
                 }
                 //중복체크
                 Employee employee = DB.Employee.CheckLoginId(id);
-                if(employee != null)
+                if (employee != null)
                 {
                     MessageBox.Show("중복된 아이디 입니다.");
                     e.Cancel = true;
                 }
 
+                if (e.FormattedValue.ToString().Length < 5)
+                {
+                    MessageBox.Show("8글자 이하로만 입력 해주세요.");
+                    e.Cancel = true;
+                }
             }
-            
+
 
             if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("비밀번호"))
             {
@@ -169,33 +197,29 @@ namespace PCBVI.Forms.Basic
 
 
             //List<Data.Employee> newEmployees = new List<Employee>();
-            if(dgvList.Rows.Count>0)
+            if (dgvList.Rows.Count > 0)
             {
                 Data.Employee employee = dgvList.Rows[0].DataBoundItem as Employee;
-                if (employee == null || string.IsNullOrWhiteSpace(employee.Name) || employee.DepartmentId == 0 || string.IsNullOrWhiteSpace(employee.Code) || employee.Grade == 0 ||
+                if (employee == null || string.IsNullOrWhiteSpace(employee.Name) || employee.DepartmentId == 0 || string.IsNullOrWhiteSpace(employee.Code) || employee.Grade == 0 || employee.Grade == null ||
                     string.IsNullOrWhiteSpace(employee.LoginId) || string.IsNullOrWhiteSpace(employee.Password))
                 {
                     MessageBox.Show("등록 할 수있는 회원이 없습니다.");
                     return;
                 }
-                
+
             }
             foreach (DataGridViewRow dr in dgvList.Rows)
             {
 
-                Data.Employee employee = dr.DataBoundItem as Employee;              
-                    
-                if (employee == null || string.IsNullOrWhiteSpace(employee.Name) || employee.DepartmentId == 0 || string.IsNullOrWhiteSpace(employee.Code) || employee.Grade == 0 ||
+                Data.Employee employee = dr.DataBoundItem as Employee;
+
+                if (employee == null || string.IsNullOrWhiteSpace(employee.Name) || employee.DepartmentId == 0 || string.IsNullOrWhiteSpace(employee.Code) || employee.Grade == 0 || employee.Grade == null ||
                     string.IsNullOrWhiteSpace(employee.LoginId) || string.IsNullOrWhiteSpace(employee.Password))
                 {
                     MessageBox.Show("등록완료!");
                     Close();
                     return;
                 }
-
-               
-
-
                 DB.Employee.Insert(employee);
             }
 

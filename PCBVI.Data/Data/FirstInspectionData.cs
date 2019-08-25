@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,32 +16,21 @@ namespace PCBVI.Data.Data
                 var _toDateAdd = toDate.AddDays(1);
 
                 var query = from x in context.FirstInspections
-                            where x.EnterDate >= fromDate.Date && x.EnterDate < _toDateAdd.Date
-                            select new
-                            {
-                                FirstInspection = x,
-                                  EmployeeName = x.Employee.Name
-                            };
+                    where x.EnterDate >= fromDate.Date && x.EnterDate < _toDateAdd.Date
+                    select x;
 
                 if(string.IsNullOrWhiteSpace(outCompanName) == false)
                 {
-                    query = query.Where(x => x.FirstInspection.OCompanyName.Contains(outCompanName));
+                    query = query.Where(x => x.OCompanyName.Contains(outCompanName));
                 }
 
                 if(itemId != 0)
                 {
-                    query = query.Where(x => x.FirstInspection.ItemId == itemId);
+                    query = query.Where(x => x.ItemId == itemId);
                 }
+                
 
-                foreach (var x in query)
-                {
-                    x.FirstInspection.EmployeeName = x.EmployeeName;
-                }
-
-                var list = query.ToList();
-
-
-                return list.ConvertAll(x => x.FirstInspection);
+                return query.ToList();
             }
         }
     }

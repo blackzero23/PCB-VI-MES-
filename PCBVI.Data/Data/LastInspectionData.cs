@@ -17,15 +17,15 @@ namespace PCBVI.Data.Data
         //        var query = 
         //    }
         //}
-        public List<LastInspection> Search(string companyName, int employeeId, DateTime productionFrom, DateTime productionTo, int itemId, DateTime inspectionFrom, DateTime inspectionTo, int workPlaceId)
+        public List<LastInspection> Search(string companyName, string workerName, DateTime productionFrom, DateTime productionTo, int itemId,  int workPlaceId)
         {
            using(var context = DbContextFactory.Create())
             {
                 //데이터 베이스 수정해야됨.
+                var toAddDate = productionTo.AddDays(1);
+
                 var query = from x in context.LastInspections
-                            where x.OCompanyName.Equals(companyName)
-                            && (x.ProductionDate >= productionFrom || x.ProductionDate <= productionTo)
-                            && x.ItemId == itemId
+                            where x.ProductionDate >= productionFrom.Date && x.ProductionDate < toAddDate.Date
                             select x;
 
                 if(string.IsNullOrWhiteSpace(companyName) == false)
@@ -33,11 +33,20 @@ namespace PCBVI.Data.Data
                     query = query.Where(x => x.OCompanyName.Contains(companyName));
                 }
 
-                //if(employeeId != 0)
-                //{
-                //    query = query.Where(x=>x.emp)
-                //}
+                if (string.IsNullOrWhiteSpace(workerName) == false)
+                {
+                    query = query.Where(x => x.WorkerName.Contains(workerName));
+                }
 
+                if (itemId != 0)
+                {
+                    query = query.Where(x => x.ItemId == itemId);
+                }
+
+                if (workPlaceId != 0)
+                {
+                    query = query.Where(x => x.WorkPlaceId == workPlaceId);
+                }
 
                 return query.ToList();
             }

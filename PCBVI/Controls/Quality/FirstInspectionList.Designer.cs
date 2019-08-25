@@ -156,7 +156,7 @@
             // 
             // employeeIdDataGridViewTextBoxColumn
             // 
-            this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "EmployeeName";
+            this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "WorkerName";
             this.employeeIdDataGridViewTextBoxColumn.HeaderText = "검사자";
             this.employeeIdDataGridViewTextBoxColumn.Name = "employeeIdDataGridViewTextBoxColumn";
             // 

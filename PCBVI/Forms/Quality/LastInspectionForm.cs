@@ -20,9 +20,9 @@ namespace PCBVI.Forms.Quality
 
         private void UscSearch_SearchButtonClicked(object sender, Controls.Quality.LastInspectionSearch.SearchButtonClickedEventArgs e)
         {
-            uscList.SetDataSource(DB.LastInspection.Search(e.Companyname, e.EmployeeId,
-                e.ProductionFrom, e.ProductionTo, e.ItemId, e.InspectionFrom, e.InspectionTo
-                , e.WorkPlaceId));
+            uscList.SetDataSource(DB.LastInspection.Search(e.CompanyName, e.EmployeeName,
+                e.ProductionFrom, e.ProductionTo, e.ItemId,
+                e.WorkPlaceId));
         }
 
         private void UscTopMenu_InsertButtonClicked(object sender, Controls.CommonControl.TopMenubar.InsertButtonClickedEventArgs e)

@@ -25,16 +25,29 @@ namespace PCBVI.Controls.Basic.InspectionStandard
 
             if (DesignMode)
                 return;
-            //bdsInspectionStandard.DataSource = DB.InspectionStandardType.GetAll();
 
-            bdsInspectionStandardType.DataSource =
-                DB.InspectionStandardType.GetAll();
-            
+            InitDataSource();
+        }
+
+        private void InitDataSource()
+        {
+            bdsInspectionStandardType.DataSource = DB.InspectionStandardType.GetAll();
+
         }
 
         public List<Data.InspectionStandard> GetUpateList()
         {
-            return (List<Data.InspectionStandard>)dgvList.DataSource;
+            List<Data.InspectionStandard> inspectionStandards = null;
+            try
+            {
+                inspectionStandards = (List<Data.InspectionStandard>)dgvList.DataSource;
+            }
+            catch (InvalidCastException)
+            {
+                MessageBox.Show("수정할 목록이 없습니다.");
+            }
+
+            return inspectionStandards;
         }
         
 
@@ -51,7 +64,17 @@ namespace PCBVI.Controls.Basic.InspectionStandard
 
         public Data.InspectionStandard GetCurrentLow()
         {
-            return dgvList.CurrentRow.DataBoundItem as Data.InspectionStandard;
+            Data.InspectionStandard inspectionStandard = null;
+            try
+            {
+                inspectionStandard = dgvList.CurrentRow.DataBoundItem as Data.InspectionStandard;
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("삭제할 요소가 없습니다.");
+            }
+
+            return inspectionStandard;
         }
 
 

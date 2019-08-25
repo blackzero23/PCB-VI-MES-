@@ -38,7 +38,18 @@ namespace PCBVI.Controls.Basic.Employee
 
         public List<Data.Employee> GetUpateList()
         {
-            return (List<Data.Employee>)dgvList.DataSource;
+            List<Data.Employee> employees = null;
+            try
+            {
+                employees = (List<Data.Employee>)dgvList.DataSource;
+            }
+            catch (InvalidCastException)
+            {
+                MessageBox.Show(@"수정할 목록이 없습니다.");    
+            }
+
+            return employees;
+            
         }
 
         public DataGridView GetListView()
@@ -48,7 +59,17 @@ namespace PCBVI.Controls.Basic.Employee
 
         public Data.Employee GetCurrentLow()
         {
-            return dgvList.CurrentRow.DataBoundItem as Data.Employee;
+            Data.Employee employee = null;
+            try
+            {
+                employee = dgvList.CurrentRow.DataBoundItem as Data.Employee;
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("삭제할 요소가 없습니다.");
+            }
+
+            return employee;
         }
 
 

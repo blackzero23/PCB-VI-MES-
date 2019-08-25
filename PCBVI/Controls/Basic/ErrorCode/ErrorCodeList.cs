@@ -27,7 +27,17 @@ namespace PCBVI.Controls.Basic.ErrorCode
 
         public List<Data.ErrorCode> GetUpateList()
         {
-            return (List<Data.ErrorCode>)dgvList.DataSource;
+            List<Data.ErrorCode> errorCodes = null;
+            try
+            {
+                errorCodes = (List<Data.ErrorCode>)dgvList.DataSource;
+            }
+            catch (InvalidCastException)
+            {
+                MessageBox.Show("수정할 목록이 없습니다.");
+            }
+
+            return errorCodes;
         }
 
         public DataGridView GetListView()
@@ -37,7 +47,17 @@ namespace PCBVI.Controls.Basic.ErrorCode
 
         public Data.ErrorCode GetCurrentLow()
         {
-            return dgvList.CurrentRow.DataBoundItem as Data.ErrorCode;
+            Data.ErrorCode errorCode = null;
+            try
+            {
+                errorCode = dgvList.CurrentRow.DataBoundItem as Data.ErrorCode;
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("삭제할 요소가 없습니다.");
+            }
+
+            return errorCode;
         }
 
         private void DgvList_CellEndEdit(object sender, DataGridViewCellEventArgs e)
