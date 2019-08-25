@@ -42,7 +42,18 @@ namespace PCBVI.Controls.Production.MaterialsManage
 
         public List<Data.MaterialsManage> GetUpateList()
         {
-            return (List<Data.MaterialsManage>)dgvList.DataSource;
+            List<Data.MaterialsManage> materialsManages = null;
+
+            try
+            {
+                materialsManages = (List<Data.MaterialsManage>)dgvList.DataSource;
+            }
+            catch (InvalidCastException)
+            {
+                MessageBox.Show("수정할 목록이 없습니다.");
+            }
+
+            return materialsManages;
         }
 
         public DataGridView GetListView()
@@ -52,7 +63,17 @@ namespace PCBVI.Controls.Production.MaterialsManage
 
         public Data.MaterialsManage GetCurrentLow()
         {
-            return dgvList.CurrentRow.DataBoundItem as Data.MaterialsManage;
+            Data.MaterialsManage materialsManage = null;
+            try
+            {
+                materialsManage = dgvList.CurrentRow.DataBoundItem as Data.MaterialsManage;
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("삭제할 요소가 없습니다.");
+            }
+
+            return materialsManage;
         }
     }
 }

@@ -29,7 +29,7 @@ namespace PCBVI.Controls.Production.ProductionHistory
         }
         private void InitSetDataSource()
         {
-            bdsProductionHistory.DataSource = DB.ProductionHistory.GetAll().OrderByDescending(x=>x.ProductionDate);
+            bdsProductionHistory.DataSource = DB.ProductionHistory.GetAll().OrderByDescending(x => x.ProductionDate);
             bdsItem.DataSource = DB.Item.GetAll();
             bdsProcess.DataSource = DB.Process.GetAll();
         }
@@ -42,6 +42,21 @@ namespace PCBVI.Controls.Production.ProductionHistory
         public DataGridView GetListView()
         {
             return dgvList;
+        }
+
+        public List<Data.ProductionHistory> GetUpateList()
+        {
+            List<Data.ProductionHistory> productionHistories = null;
+            try
+            {
+                productionHistories = (List<Data.ProductionHistory>)dgvList.DataSource;
+            }
+            catch (InvalidCastException)
+            {
+                MessageBox.Show("수정할 목록이 없습니다.");
+            }
+
+            return productionHistories;
         }
     }
 }

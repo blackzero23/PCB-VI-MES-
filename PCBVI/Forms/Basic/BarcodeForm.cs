@@ -74,10 +74,11 @@ namespace PCBVI.Forms.Basic
             {
                 fileName = saveFileDialog.FileName;
                 filePath = Path.GetFullPath(saveFileDialog.FileName);
+                uscTopMenu.SaveExcelFile(data, filePath, fileName);
             }
 
 
-            uscTopMenu.SaveExcelFile(data, filePath, fileName);
+            
         }
     }
 }

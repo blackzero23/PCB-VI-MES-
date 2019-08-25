@@ -28,7 +28,12 @@ namespace PCBVI.Forms.Production
 
         private void UscTopMenu_UpdateButtonClicked(object sender, Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs e)
         {
+            List<Data.ProductionHistory> productionHistories =  uscList.GetUpateList();
 
+            if(productionHistories == null)
+                return;
+            
+            uscTopMenu.UpdateAll(productionHistories);
         }
 
         private void UscTopMenu_ExcelButtonClicked(object sender, Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs e)
@@ -47,10 +52,9 @@ namespace PCBVI.Forms.Production
             {
                 fileName = saveFileDialog.FileName;
                 filePath = Path.GetFullPath(saveFileDialog.FileName);
+                uscTopMenu.SaveExcelFile(data, filePath, fileName);
             }
-
-
-            uscTopMenu.SaveExcelFile(data, filePath, fileName);
+           
         }
     }
 }

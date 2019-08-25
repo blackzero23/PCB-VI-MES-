@@ -65,10 +65,9 @@ namespace PCBVI.Forms.Basic
             {
                 fileName = saveFileDialog.FileName;
                 filePath = Path.GetFullPath(saveFileDialog.FileName);
+                uscTopMenu.SaveExcelFile(data, filePath, fileName);
             }
-
-
-            uscTopMenu.SaveExcelFile(data, filePath, fileName);
+           
         }
 
         private void UscTopMenu_UpdateButtonClicked_1(object sender, Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs e)
