@@ -825,6 +825,9 @@
     <EmbeddedResource Include="Forms\Facilities\FacilitiesHistoryForm.resx">
       <DependentUpon>FacilitiesHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Facilities\FacilitiesHistoryInsertForm.resx">
+      <DependentUpon>FacilitiesHistoryInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Facilities\FacilitiesPowerForm.resx">
       <DependentUpon>FacilitiesPowerForm.cs</DependentUpon>
     </EmbeddedResource>

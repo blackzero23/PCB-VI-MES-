@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,12 +39,21 @@ namespace PCBVI.Forms.Facilities
 
         private void UscTopMenu_UpdateButtonClicked(object sender, Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs e)
         {
-            uscTopMenu.UpdateAll(uscList.GetUpateList());
+            List<Data.FacilitiesHistory> facilitiesHistories = uscList.GetUpateList();
+
+            if (facilitiesHistories == null)
+                return;
+
+            uscTopMenu.UpdateAll(facilitiesHistories);
         }
 
         private void UscTopMenu_DeleteButtonClicked(object sender, Controls.CommonControl.TopMenubar.DeleteButtonClickedEventArgs e)
         {
             Data.FacilitiesHistory facilitiesHistory = uscList.GetCurrentLow();
+
+            if (facilitiesHistory == null)
+                return;
+
             uscTopMenu.DeleteAt(facilitiesHistory);
             uscList.SetDataSource(DB.FacilitiesHistory.Search(_facilitiesId,_workPlaceId,_fHistoryDivisionId
                 ,_fromDate,_toDate));
@@ -57,7 +67,20 @@ namespace PCBVI.Forms.Facilities
         private void UscTopMenu_ExcelButtonClicked(object sender, Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs e)
         {
             DataGridView data = uscList.GetListView();
-            uscTopMenu.SaveExcelFile(data, "설비 이력 정보");
+
+            string fileName = null;
+            string filePath = null;
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "저장경로 지정하세요.";
+            saveFileDialog.OverwritePrompt = true;
+            saveFileDialog.Filter = "Excle 통합 문서(*.xlsx)| *.xlsx | Excel97 - 2003 통합문서(*.xls) | *.xls";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                fileName = saveFileDialog.FileName;
+                filePath = Path.GetFullPath(saveFileDialog.FileName);
+                uscTopMenu.SaveExcelFile(data, filePath, fileName);
+            }
         }
     }
 }

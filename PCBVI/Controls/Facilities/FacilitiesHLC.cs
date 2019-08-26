@@ -49,12 +49,35 @@ namespace PCBVI.Controls.Facilities
 
         public List<Data.FacilitiesHistory> GetUpateList()
         {
-            return (List<Data.FacilitiesHistory>)dgvList.DataSource;
+            List<Data.FacilitiesHistory> facilitiesHistories = null;
+            try
+            {
+                facilitiesHistories = (List<Data.FacilitiesHistory>)dgvList.DataSource;
+            }
+            catch (InvalidCastException)
+            {
+                MessageBox.Show(@"수정할 목록이 없습니다.");
+            }
+
+            return facilitiesHistories;
+           
         }
 
         public FacilitiesHistory GetCurrentLow()
         {
-            return dgvList.CurrentRow.DataBoundItem as Data.FacilitiesHistory;
+            Data.FacilitiesHistory facilities = null;
+
+            try
+            {
+                facilities = dgvList.CurrentRow.DataBoundItem as Data.FacilitiesHistory;
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("삭제할 요소가 없습니다.");
+            }
+
+            return facilities;
+            
         }
     }
 }
