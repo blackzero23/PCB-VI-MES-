@@ -19,12 +19,14 @@ namespace PCBVI.Forms.Main
         public MainForm()
         {
             InitializeComponent();
+            
         }
 
         public MainForm(Employee employee)
         {
             InitializeComponent();
             _employee = employee;
+            OpenForm(new MainSubForm());
         }
 
         protected override void OnLoad(EventArgs e)
