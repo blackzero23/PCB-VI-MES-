@@ -37,13 +37,10 @@ namespace PCBVI.Forms.Facilities
             double power = (e.Facilities.WorkTime.TotalHours / 24) * 1.0;
             double nonPower = ((24 - e.Facilities.WorkTime.TotalHours) / 24 ) * 1.0;
 
-            
-
             chartCircle.Series["Series1"].Points.Clear();
             chartCircle.Series["Series1"].Points.AddXY("가동률",power);
-            chartCircle.Series["Series1"].Points.AddXY("비가동율", nonPower);
-
-           
+            chartCircle.Series["Series1"].Points.AddXY("비가동률", nonPower);
+                       
             // bdsFacilitiesPower.DataSource = facilitiesPowers;
             //chartCircle.DataSource = e.Facilities;
 

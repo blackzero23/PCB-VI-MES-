@@ -59,6 +59,7 @@
             this.chartCircle.ChartAreas.Add(chartArea1);
             this.chartCircle.DataSource = this.bdsFacilitiesPower;
             this.chartCircle.Dock = System.Windows.Forms.DockStyle.Right;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
             legend1.Name = "Legend1";
             this.chartCircle.Legends.Add(legend1);
             this.chartCircle.Location = new System.Drawing.Point(464, 63);
