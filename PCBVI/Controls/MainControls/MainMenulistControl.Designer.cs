@@ -717,6 +717,7 @@
             this.btnProStatusMonitoring.TabIndex = 13;
             this.btnProStatusMonitoring.Text = "생산현황모니터링";
             this.btnProStatusMonitoring.UseVisualStyleBackColor = false;
+            this.btnProStatusMonitoring.Visible = false;
             this.btnProStatusMonitoring.Click += new System.EventHandler(this.BtnProStatusMonitoring_Click);
             // 
             // btnProPerformanceMonitoring

@@ -98,10 +98,11 @@ namespace PCBVI.Controls.Basic.ErrorCode
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             int code = (int)cbbErrorCode.SelectedValue;
-            int kind = (int)cbbErrorKind.SelectedValue;
             int type = (int)cbbErrorType.SelectedValue;
+            int kind = (int)cbbErrorKind.SelectedValue;
+            
 
-            OnSearchClicked(code, kind, type);            
+            OnSearchClicked(code, type, kind);            
         }
     }
 }
