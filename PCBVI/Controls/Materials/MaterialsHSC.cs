@@ -30,16 +30,16 @@ namespace PCBVI.Controls.Materials
 
         private void InitSetDataSource()
         {
-            bdsBarCode.DataSource = DB.BarCode.GetAll();
-            bdsLot.DataSource = DB.Lot.GetAll();
+            List<Data.Lot> lots = DB.Lot.GetAll();
+            lots.Insert(0, new Data.Lot(""));
+            bdsLot.DataSource = lots;
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             int lotId = (int)cbbLotNo.SelectedValue;
-            int barCodeId = (int)cbbBarcodeName.SelectedValue;
-
-            OnSearchButtonClicked(lotId, barCodeId);
+           
+            OnSearchButtonClicked(lotId);
         }
 
         #region SearchButtonClicked event things for C# 3.0
@@ -51,9 +51,9 @@ namespace PCBVI.Controls.Materials
                 SearchButtonClicked(this, e);
         }
 
-        private SearchButtonClickedEventArgs OnSearchButtonClicked(int lotId, int barCodeId)
+        private SearchButtonClickedEventArgs OnSearchButtonClicked(int lotId)
         {
-            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(lotId, barCodeId);
+            SearchButtonClickedEventArgs args = new SearchButtonClickedEventArgs(lotId);
             OnSearchButtonClicked(args);
 
             return args;
@@ -70,16 +70,14 @@ namespace PCBVI.Controls.Materials
         public class SearchButtonClickedEventArgs : EventArgs
         {
             public int LotId { get; set; }
-            public int BarCodeId { get; set; }
 
             public SearchButtonClickedEventArgs()
             {
             }
 
-            public SearchButtonClickedEventArgs(int lotId, int barCodeId)
+            public SearchButtonClickedEventArgs(int lotId)
             {
                 LotId = lotId;
-                BarCodeId = barCodeId;
             }
         }
         #endregion

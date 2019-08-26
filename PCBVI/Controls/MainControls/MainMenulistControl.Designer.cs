@@ -273,7 +273,7 @@
             this.panelProduction.Controls.Add(this.btnProductionHistory);
             this.panelProduction.Controls.Add(this.btnProduction);
             this.panelProduction.Location = new System.Drawing.Point(3, 60);
-            this.panelProduction.MaximumSize = new System.Drawing.Size(168, 227);
+            this.panelProduction.MaximumSize = new System.Drawing.Size(168, 198);
             this.panelProduction.MinimumSize = new System.Drawing.Size(168, 51);
             this.panelProduction.Name = "panelProduction";
             this.panelProduction.Size = new System.Drawing.Size(168, 51);
@@ -326,6 +326,7 @@
             this.btnMaterialsManage.TabIndex = 14;
             this.btnMaterialsManage.Text = "자재 투입";
             this.btnMaterialsManage.UseVisualStyleBackColor = false;
+            this.btnMaterialsManage.Visible = false;
             this.btnMaterialsManage.Click += new System.EventHandler(this.BtnMaterialsManage_Click);
             // 
             // btnWorker

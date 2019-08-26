@@ -20,7 +20,7 @@ namespace PCBVI.Forms.Materials
 
         private void UscSearch_SearchButtonClicked(object sender, Controls.Materials.MaterialsHSC.SearchButtonClickedEventArgs e)
         {
-            uscList.SetDataSource(DB.MaterialHistory.Search(e.LotId, e.BarCodeId));
+            uscList.SetDataSource(DB.MaterialHistory.Search(e.LotId));
         }
     }
 }

@@ -9,12 +9,12 @@ namespace PCBVI.Data.Data
     public class MaterialHistoryData : EntityData<MaterialHistory>
     {
         
-        public List<MaterialHistory> Search(int lotId, int barCodeId)
+        public List<MaterialHistory> Search(int lotId)
         {
             using(var context = DbContextFactory.Create())
             {
                 var query = from x in context.MaterialHistories
-                            where x.LotId == lotId && x.BarcodeId == barCodeId
+                            where x.LotId == lotId
                             select x;
 
                 return query.ToList();
