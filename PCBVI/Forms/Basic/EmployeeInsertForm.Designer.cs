@@ -178,7 +178,6 @@
             this.Controls.Add(this.kryptonPanel1);
             this.Name = "EmployeeInsertForm";
             this.Text = "EmployeeInsertForm";
-            this.Load += new System.EventHandler(this.EmployeeInsertForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();

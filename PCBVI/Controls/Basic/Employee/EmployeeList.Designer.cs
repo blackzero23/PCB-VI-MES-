@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employmentDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
             this.departureDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
             this.gradeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
@@ -46,8 +46,6 @@
             // dgvList
             // 
             this.dgvList.AllowUserToAddRows = false;
-            this.dgvList.AllowUserToResizeColumns = false;
-            this.dgvList.AllowUserToResizeRows = false;
             this.dgvList.AutoGenerateColumns = false;
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -63,17 +61,8 @@
             this.dgvList.Location = new System.Drawing.Point(0, 0);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(663, 461);
+            this.dgvList.Size = new System.Drawing.Size(763, 529);
             this.dgvList.TabIndex = 0;
-            this.dgvList.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvList_CellEndEdit);
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataSource = typeof(PCBVI.Data.Department);
-            // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataSource = typeof(PCBVI.Data.Employee);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -94,6 +83,10 @@
             this.departmentIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.departmentIdDataGridViewTextBoxColumn.ValueMember = "DepartmentId";
             // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataSource = typeof(PCBVI.Data.Department);
+            // 
             // codeDataGridViewTextBoxColumn
             // 
             this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
@@ -108,7 +101,7 @@
             this.employmentDateDataGridViewTextBoxColumn.Name = "employmentDateDataGridViewTextBoxColumn";
             this.employmentDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.employmentDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.employmentDateDataGridViewTextBoxColumn.Width = 104;
+            this.employmentDateDataGridViewTextBoxColumn.Width = 120;
             // 
             // departureDateDataGridViewTextBoxColumn
             // 
@@ -118,7 +111,7 @@
             this.departureDateDataGridViewTextBoxColumn.Name = "departureDateDataGridViewTextBoxColumn";
             this.departureDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.departureDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.departureDateDataGridViewTextBoxColumn.Width = 103;
+            this.departureDateDataGridViewTextBoxColumn.Width = 121;
             // 
             // gradeDataGridViewTextBoxColumn
             // 
@@ -126,13 +119,17 @@
             this.gradeDataGridViewTextBoxColumn.HeaderText = "조회권한";
             this.gradeDataGridViewTextBoxColumn.Name = "gradeDataGridViewTextBoxColumn";
             // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataSource = typeof(PCBVI.Data.Employee);
+            // 
             // EmployeeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvList);
             this.Name = "EmployeeList";
-            this.Size = new System.Drawing.Size(663, 461);
+            this.Size = new System.Drawing.Size(763, 529);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();

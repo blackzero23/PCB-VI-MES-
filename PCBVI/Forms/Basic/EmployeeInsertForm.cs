@@ -20,11 +20,16 @@ namespace PCBVI.Forms.Basic
             InitializeComponent();
         }
 
-        private void EmployeeInsertForm_Load(object sender, EventArgs e)
+       
+        protected override void OnLoad(EventArgs e)
         {
+            base.OnLoad(e);
+
+            if (DesignMode)
+                return;
+
             bdsDepartMent.DataSource = DB.Department.GetAll();
         }
-
 
         private void DgvList_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
@@ -169,7 +174,7 @@ namespace PCBVI.Forms.Basic
                     e.Cancel = true;
                 }
 
-                if (e.FormattedValue.ToString().Length < 5)
+                if (e.FormattedValue.ToString().Length > 8)
                 {
                     MessageBox.Show("8글자 이하로만 입력 해주세요.");
                     e.Cancel = true;

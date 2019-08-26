@@ -75,10 +75,7 @@ namespace PCBVI.Data.Data
                 {
                     item.Employee.DepartmentName = item.DepartmentName;
                 }
-
-                //나중에 NULL 체크해서 넣어야됨 
-               
-
+                
 
                 var list = query.ToList();
 

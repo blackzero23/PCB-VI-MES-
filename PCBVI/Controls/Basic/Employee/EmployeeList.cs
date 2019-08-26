@@ -29,7 +29,7 @@ namespace PCBVI.Controls.Basic.Employee
             departmentBindingSource.DataSource = DB.Department.GetAll();
         }
 
-        private List<Data.Employee> _employees = new List<Data.Employee>();
+        
 
         public void SetEmployeeDataSource(List<Data.Employee> list)
         {
@@ -73,15 +73,6 @@ namespace PCBVI.Controls.Basic.Employee
         }
 
 
-        /// <summary>
-        /// 에러 처리 못하면 이 함수는 쓸수없는함수.
-        /// </summary>       
-        private void DgvList_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvList.CurrentRow.DataBoundItem is Data.Employee employee)
-            {
-                _employees.Add(employee);
-            }           
-        }
+        
     }
 }
