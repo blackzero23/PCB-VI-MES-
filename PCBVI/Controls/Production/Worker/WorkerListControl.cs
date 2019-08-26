@@ -177,7 +177,7 @@ namespace PCBVI.Controls.Production.Worker
             tc.Close();
             tc.Dispose();
 
-            MessageBox.Show($"{pass}Pass + {fail}Fail = {pass + fail}Total");
+            //MessageBox.Show($"{pass}Pass + {fail}Fail = {pass + fail}Total");
 
             //통신을 통해서 라즈베리파이에서 시간과 생산수량 불량 수량을 넣을수 있는지 체크 
             //아니면 새창을 통해서 직접작성 하도록.
@@ -202,8 +202,8 @@ namespace PCBVI.Controls.Production.Worker
 
 
                 //작업일보 종료된 데이터 작성.
-                //일단 임시 값을 넘기는걸로 종료는 현재 시각, 생산량 : 10 불량 : 10
-                SetEndWorkLog(workOrder);
+                
+                SetEndWorkLog(workOrder, pass, fail);
 
                 //생산 이력 작성.
                 //작업일,공정,품목,양품,불량품,시작시간,종료시간
@@ -236,15 +236,15 @@ namespace PCBVI.Controls.Production.Worker
             //없다면 등록.
         }
 
-        private void SetEndWorkLog(Data.WorkOrder workOrder)
+        private void SetEndWorkLog(Data.WorkOrder workOrder,int passQuantity, int errorQuantity)
         {
             //작업일보에서 작업지시id로 등록된 일보를 불러온다.
             Data.WorkLog workLog = DB.WorkLog.SearhWorkDateFirst(workOrder.WorkOrderId);
             //일단 임시 값을 넘기는걸로 종료는 현재 시각, 생산량 : 10 불량 : 10
 
             workLog.EndTime = DateTime.Now;
-            workLog.ProductionQuantity = 10;
-            workLog.ErrorQuantity = 10;
+            workLog.ProductionQuantity = passQuantity;
+            workLog.ErrorQuantity = errorQuantity;
 
             DB.WorkLog.Update((workLog));
         }

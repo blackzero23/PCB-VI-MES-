@@ -13,8 +13,10 @@ namespace PCBVI.Data.Data
         {
             using(var context = DbContextFactory.Create())
             {
+                DateTime addDateTiem = workOrderDate.AddDays(1);
+
                 var query = from x in context.FacilitiesPowers
-                            where (x.WorkDate <= workOrderDate|| x.WorkDate >= workOrderDate)
+                            where (x.WorkDate >= workOrderDate.Date && x.WorkDate < addDateTiem.Date)
                                   && x.ProcessId == processId
                             && x.FacilitiesId == facilitiesId
                             select x;

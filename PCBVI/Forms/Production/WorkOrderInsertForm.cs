@@ -35,6 +35,7 @@ namespace PCBVI.Forms.Production
             bdsProcess.DataSource = DB.Process.GetAll();
             bdsRotationGroup.DataSource = DB.RotationGroup.GetAll();
             bdsWorkPlace.DataSource = DB.WorkPlace.GetAll();
+            bdsFacilities.DataSource = DB.Facilities.GetAll();
         }
 
         private void BtnCancle_Click(object sender, EventArgs e)
