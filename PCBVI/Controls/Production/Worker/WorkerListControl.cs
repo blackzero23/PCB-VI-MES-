@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PCBVI.Data.Data;
 using PCBVI.Data;
+using System.Net.Sockets;
 
 namespace PCBVI.Controls.Production.Worker
 {
@@ -52,6 +53,35 @@ namespace PCBVI.Controls.Production.Worker
         private void BtnStart_Click(object sender, EventArgs e)
         {
             //작업 시작을 누르면 작업일지에 등록이 되고 설비가 돌아가야된다.
+            int connectionTryCnt = 0;
+
+            TcpClient tc = new TcpClient();
+            while (!tc.Connected)
+            {
+                try
+                {
+                    tc.Connect("192.168.0.2", 50005);
+                }
+                catch (Exception)
+                {
+                    connectionTryCnt++;
+                }
+
+                if (connectionTryCnt > 5)
+                {
+                    MessageBox.Show("기기에 연결할 수 없습니다.");
+                    return;
+                }
+            }
+
+            NetworkStream stream = tc.GetStream();
+
+            byte[] buffer = Encoding.ASCII.GetBytes("start");
+            stream.Write(buffer, 0, buffer.Length);
+
+            stream.Close();
+            tc.Close();
+            tc.Dispose();
 
             //빈칸 체크
 
@@ -107,6 +137,47 @@ namespace PCBVI.Controls.Production.Worker
         private void BtnStop_Click(object sender, EventArgs e)
         {
             //작업종료를 누르면 해당 설비가 멈추고 작업 일보 작성
+            int connectionTryCnt = 0;
+            TcpClient tc = new TcpClient();
+            while (!tc.Connected)
+            {
+                try
+                {
+                    tc.Connect("192.168.0.2", 50005);
+                }
+                catch (Exception)
+                {
+                    connectionTryCnt++;
+                }
+
+                if (connectionTryCnt > 5)
+                {
+                    MessageBox.Show("기기에 연결할 수 없습니다.");
+                    return;
+                }
+            }
+
+            NetworkStream stream = tc.GetStream();
+
+            byte[] buffer = new byte[1024];
+            byte[] integerbuffer = new byte[4];
+            buffer = Encoding.ASCII.GetBytes("end");
+            stream.Write(buffer, 0, buffer.Length);
+
+            stream.Read(integerbuffer, 0, integerbuffer.Length);
+            int pass = BitConverter.ToInt32(integerbuffer, 0);
+
+            stream.Read(integerbuffer, 0, integerbuffer.Length);
+
+
+            int fail = BitConverter.ToInt32(integerbuffer, 0);
+
+
+            stream.Close();
+            tc.Close();
+            tc.Dispose();
+
+            MessageBox.Show($"{pass}Pass + {fail}Fail = {pass + fail}Total");
 
             //통신을 통해서 라즈베리파이에서 시간과 생산수량 불량 수량을 넣을수 있는지 체크 
             //아니면 새창을 통해서 직접작성 하도록.
