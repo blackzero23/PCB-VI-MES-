@@ -15,10 +15,10 @@ namespace PCBVI.Data
     public partial class FacilitiesHistory
     {
         public int FacilitiesHistoryId { get; set; }
-        public System.DateTime WorkDate { get; set; }
-        public int FacilitiesId { get; set; }
-        public int WorkPlaceId { get; set; }
-        public int FHistoryDivisionId { get; set; }
+        public System.DateTime? WorkDate { get; set; }
+        public int? FacilitiesId { get; set; }
+        public int? WorkPlaceId { get; set; }
+        public int? FHistoryDivisionId { get; set; }
         public string HistoryContent { get; set; }
         public string OCompanyName { get; set; }
         public string OCompanyPhoneNum { get; set; }
