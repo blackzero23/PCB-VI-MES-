@@ -39,6 +39,7 @@ namespace PCBVI.Forms.Basic
                 return;
 
             uscTopMenu.UpdateAll(items);
+            MessageBox.Show("저장이 완료되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
@@ -74,7 +75,7 @@ namespace PCBVI.Forms.Basic
         {
            
             Data.Item item = uscList.GetCurrentLow();
-            //uscTopMenu.DeleteAt(barcode.LotBarCodes);
+            
             if (item == null)
                 return;
             uscTopMenu.DeleteAt(item);
