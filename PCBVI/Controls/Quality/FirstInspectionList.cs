@@ -46,7 +46,7 @@ namespace PCBVI.Controls.Quality
             List<Data.FirstInspection> firstInspections = null;
             try
             {
-                firstInspections = ((List<Data.FirstInspection>)dgvList.DataSource;
+                firstInspections = (List<Data.FirstInspection>)dgvList.DataSource;
             }
             catch (InvalidCastException)
             {
