@@ -77,7 +77,7 @@ namespace PCBVI.Controls.Production.Worker
             //수정
             workOrder.WorkerName = txbWorker.Text;
             DB.WorkOrder.Update(workOrder);
-            dgvList.DataSource = DB.WorkOrder.ToDayWorkOrderList();
+            dgvList.DataSource = DB.WorkOrder.TodayWorkerListALL();
         }
 
 

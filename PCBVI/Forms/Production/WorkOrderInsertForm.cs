@@ -31,8 +31,6 @@ namespace PCBVI.Forms.Production
 
         private void InitSetDataSource()
         {
-
-            bdsFacilities.DataSource = DB.Facilities.GetAll();
             bdsItem.DataSource = DB.Item.GetAll();
             bdsProcess.DataSource = DB.Process.GetAll();
             bdsRotationGroup.DataSource = DB.RotationGroup.GetAll();
@@ -70,15 +68,6 @@ namespace PCBVI.Forms.Production
                 }
             }
 
-            if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("설비"))
-            {
-                if (string.IsNullOrWhiteSpace(e.FormattedValue.ToString()))
-                {
-                    MessageBox.Show("설비를 선택해주세요.");
-                    e.Cancel = true;
-                }
-            }
-           
 
             if (dgvList.Columns[e.ColumnIndex].HeaderText.Equals("근무조"))
             {
@@ -117,7 +106,7 @@ namespace PCBVI.Forms.Production
                     //Entity Frame에서 Nullable 형태로 변경하였기때문에
                     //초기값이 Null이 온다.
                     if (workOrder == null || workOrder.ItemId == null || workOrder.ProcessId == null
-                        || workOrder.FacilitiesId == null || workOrder.RotationGroupId == null
+                        ||  workOrder.RotationGroupId == null
                         || workOrder.TargetQuantity == 0)
                     {
                         MessageBox.Show("등록 할 수있는 작업 지시가 없습니다.");
@@ -132,7 +121,7 @@ namespace PCBVI.Forms.Production
                 Data.WorkOrder workOrder = dr.DataBoundItem as Data.WorkOrder;
 
                 if (workOrder == null || workOrder.ItemId == null || workOrder.ProcessId == null
-                    || workOrder.FacilitiesId == null || workOrder.RotationGroupId == null
+                    || workOrder.RotationGroupId == null
                     || workOrder.TargetQuantity == 0 )
                 {
                     MessageBox.Show("등록완료!");

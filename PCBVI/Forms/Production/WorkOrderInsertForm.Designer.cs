@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.bdsFacilities = new System.Windows.Forms.BindingSource(this.components);
             this.bdsProcess = new System.Windows.Forms.BindingSource(this.components);
             this.bdsItem = new System.Windows.Forms.BindingSource(this.components);
             this.bdsRotationGroup = new System.Windows.Forms.BindingSource(this.components);
@@ -39,7 +38,6 @@
             this.btnInsert = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnCancle = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
-            this.FacilitiesId = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.processIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.orderDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
@@ -47,7 +45,6 @@
             this.targetQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsFacilities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsRotationGroup)).BeginInit();
@@ -63,7 +60,6 @@
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FacilitiesId,
             this.processIdDataGridViewTextBoxColumn,
             this.itemIdDataGridViewTextBoxColumn,
             this.orderDateDataGridViewTextBoxColumn,
@@ -77,10 +73,6 @@
             this.dgvList.Size = new System.Drawing.Size(860, 290);
             this.dgvList.TabIndex = 0;
             this.dgvList.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.DgvList_CellValidating);
-            // 
-            // bdsFacilities
-            // 
-            this.bdsFacilities.DataSource = typeof(PCBVI.Data.Facility);
             // 
             // bdsProcess
             // 
@@ -130,19 +122,6 @@
             // 
             this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
             // 
-            // FacilitiesId
-            // 
-            this.FacilitiesId.DataPropertyName = "FacilitiesId";
-            this.FacilitiesId.DataSource = this.bdsFacilities;
-            this.FacilitiesId.DisplayMember = "Name";
-            this.FacilitiesId.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.FacilitiesId.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.FacilitiesId.HeaderText = "설비";
-            this.FacilitiesId.Name = "FacilitiesId";
-            this.FacilitiesId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.FacilitiesId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.FacilitiesId.ValueMember = "FacilitiesId";
-            // 
             // processIdDataGridViewTextBoxColumn
             // 
             this.processIdDataGridViewTextBoxColumn.DataPropertyName = "ProcessId";
@@ -177,7 +156,7 @@
             this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
             this.orderDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.orderDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.orderDateDataGridViewTextBoxColumn.Width = 117;
+            this.orderDateDataGridViewTextBoxColumn.Width = 137;
             // 
             // rotationGroupIdDataGridViewTextBoxColumn
             // 
@@ -214,7 +193,6 @@
             this.Name = "WorkOrderInsertForm";
             this.Text = "작업 지시 관리";
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsFacilities)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsProcess)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsRotationGroup)).EndInit();
@@ -237,8 +215,6 @@
         private System.Windows.Forms.BindingSource bdsRotationGroup;
         private System.Windows.Forms.BindingSource bdsProcess;
         private System.Windows.Forms.BindingSource bdsWorkPlace;
-        private System.Windows.Forms.BindingSource bdsFacilities;
-        private System.Windows.Forms.DataGridViewComboBoxColumn FacilitiesId;
         private System.Windows.Forms.DataGridViewComboBoxColumn processIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn itemIdDataGridViewTextBoxColumn;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn orderDateDataGridViewTextBoxColumn;

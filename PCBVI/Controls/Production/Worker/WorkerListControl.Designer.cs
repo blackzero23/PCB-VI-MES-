@@ -41,7 +41,6 @@
             this.bdsRotationGroup = new System.Windows.Forms.BindingSource(this.components);
             this.bdsWorkOrder = new System.Windows.Forms.BindingSource(this.components);
             this.bdsWorkPlace = new System.Windows.Forms.BindingSource(this.components);
-            this.FacilitiesId = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.processIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.orderDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
@@ -87,7 +86,7 @@
             this.txbWorker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txbWorker.Location = new System.Drawing.Point(575, 25);
             this.txbWorker.Name = "txbWorker";
-            this.txbWorker.Size = new System.Drawing.Size(100, 23);
+            this.txbWorker.Size = new System.Drawing.Size(100, 20);
             this.txbWorker.TabIndex = 5;
             // 
             // btnStop
@@ -117,7 +116,6 @@
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FacilitiesId,
             this.processIdDataGridViewTextBoxColumn,
             this.itemIdDataGridViewTextBoxColumn,
             this.orderDateDataGridViewTextBoxColumn,
@@ -158,20 +156,6 @@
             // 
             this.bdsWorkPlace.DataSource = typeof(PCBVI.Data.WorkPlace);
             // 
-            // FacilitiesId
-            // 
-            this.FacilitiesId.DataPropertyName = "FacilitiesId";
-            this.FacilitiesId.DataSource = this.bdsFacilities;
-            this.FacilitiesId.DisplayMember = "Name";
-            this.FacilitiesId.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.FacilitiesId.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.FacilitiesId.HeaderText = "설비";
-            this.FacilitiesId.Name = "FacilitiesId";
-            this.FacilitiesId.ReadOnly = true;
-            this.FacilitiesId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.FacilitiesId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.FacilitiesId.ValueMember = "FacilitiesId";
-            // 
             // processIdDataGridViewTextBoxColumn
             // 
             this.processIdDataGridViewTextBoxColumn.DataPropertyName = "ProcessId";
@@ -211,7 +195,7 @@
             this.orderDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.orderDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.orderDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.orderDateDataGridViewTextBoxColumn.Width = 113;
+            this.orderDateDataGridViewTextBoxColumn.Width = 129;
             // 
             // rotationGroupIdDataGridViewTextBoxColumn
             // 
@@ -287,7 +271,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txbWorker;
         private System.Windows.Forms.BindingSource bdsFacilities;
-        private System.Windows.Forms.DataGridViewComboBoxColumn FacilitiesId;
         private System.Windows.Forms.DataGridViewComboBoxColumn processIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn itemIdDataGridViewTextBoxColumn;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn orderDateDataGridViewTextBoxColumn;

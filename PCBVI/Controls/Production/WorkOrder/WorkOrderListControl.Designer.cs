@@ -36,9 +36,8 @@
             this.bdsWorkOrder = new System.Windows.Forms.BindingSource(this.components);
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.bdsFacilities = new System.Windows.Forms.BindingSource(this.components);
-            this.FacilitiesId = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.processIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.orderDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
             this.rotationGroupIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.targetQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,9 +78,8 @@
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FacilitiesId,
-            this.itemIdDataGridViewTextBoxColumn,
             this.processIdDataGridViewTextBoxColumn,
+            this.itemIdDataGridViewTextBoxColumn,
             this.orderDateDataGridViewTextBoxColumn,
             this.rotationGroupIdDataGridViewTextBoxColumn,
             this.targetQuantityDataGridViewTextBoxColumn,
@@ -98,32 +96,6 @@
             // 
             this.bdsFacilities.DataSource = typeof(PCBVI.Data.Facility);
             // 
-            // FacilitiesId
-            // 
-            this.FacilitiesId.DataPropertyName = "FacilitiesId";
-            this.FacilitiesId.DataSource = this.bdsFacilities;
-            this.FacilitiesId.DisplayMember = "Name";
-            this.FacilitiesId.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.FacilitiesId.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.FacilitiesId.HeaderText = "설 비";
-            this.FacilitiesId.Name = "FacilitiesId";
-            this.FacilitiesId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.FacilitiesId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.FacilitiesId.ValueMember = "FacilitiesId";
-            // 
-            // itemIdDataGridViewTextBoxColumn
-            // 
-            this.itemIdDataGridViewTextBoxColumn.DataPropertyName = "ItemId";
-            this.itemIdDataGridViewTextBoxColumn.DataSource = this.bdsItem;
-            this.itemIdDataGridViewTextBoxColumn.DisplayMember = "Name";
-            this.itemIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.itemIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.itemIdDataGridViewTextBoxColumn.HeaderText = "품목명";
-            this.itemIdDataGridViewTextBoxColumn.Name = "itemIdDataGridViewTextBoxColumn";
-            this.itemIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.itemIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.itemIdDataGridViewTextBoxColumn.ValueMember = "ItemId";
-            // 
             // processIdDataGridViewTextBoxColumn
             // 
             this.processIdDataGridViewTextBoxColumn.DataPropertyName = "ProcessId";
@@ -138,6 +110,19 @@
             this.processIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.processIdDataGridViewTextBoxColumn.ValueMember = "ProcessId";
             // 
+            // itemIdDataGridViewTextBoxColumn
+            // 
+            this.itemIdDataGridViewTextBoxColumn.DataPropertyName = "ItemId";
+            this.itemIdDataGridViewTextBoxColumn.DataSource = this.bdsItem;
+            this.itemIdDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.itemIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.itemIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.itemIdDataGridViewTextBoxColumn.HeaderText = "품목명";
+            this.itemIdDataGridViewTextBoxColumn.Name = "itemIdDataGridViewTextBoxColumn";
+            this.itemIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.itemIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.itemIdDataGridViewTextBoxColumn.ValueMember = "ItemId";
+            // 
             // orderDateDataGridViewTextBoxColumn
             // 
             this.orderDateDataGridViewTextBoxColumn.Checked = false;
@@ -147,7 +132,7 @@
             this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
             this.orderDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.orderDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.orderDateDataGridViewTextBoxColumn.Width = 130;
+            this.orderDateDataGridViewTextBoxColumn.Width = 151;
             // 
             // rotationGroupIdDataGridViewTextBoxColumn
             // 
@@ -204,9 +189,8 @@
         private System.Windows.Forms.BindingSource bdsWorkOrder;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
         private System.Windows.Forms.BindingSource bdsFacilities;
-        private System.Windows.Forms.DataGridViewComboBoxColumn FacilitiesId;
-        private System.Windows.Forms.DataGridViewComboBoxColumn itemIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn processIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn itemIdDataGridViewTextBoxColumn;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn orderDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn rotationGroupIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn targetQuantityDataGridViewTextBoxColumn;
