@@ -43,7 +43,17 @@ namespace PCBVI.Controls.Quality
 
         public List<Data.FirstInspection> GetUpateList()
         {
-            return (List<Data.FirstInspection>)dgvList.DataSource;
+            List<Data.FirstInspection> firstInspections = null;
+            try
+            {
+                firstInspections = ((List<Data.FirstInspection>)dgvList.DataSource;
+            }
+            catch (InvalidCastException)
+            {
+                MessageBox.Show(@"수정할 목록이 없습니다.");
+            }
+
+            return firstInspections;
         }
 
         public DataGridView GetListView()
@@ -53,7 +63,18 @@ namespace PCBVI.Controls.Quality
 
         public FirstInspection GetCurrentLow()
         {
-            return dgvList.CurrentRow.DataBoundItem as Data.FirstInspection;
+            Data.FirstInspection firstInspection = null;
+            try
+            {
+                firstInspection = dgvList.CurrentRow.DataBoundItem as Data.FirstInspection;
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("삭제할 요소가 없습니다.");
+            }
+
+            return firstInspection;
+           
         }
 
         

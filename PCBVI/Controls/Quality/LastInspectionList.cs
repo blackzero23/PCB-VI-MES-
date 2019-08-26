@@ -42,12 +42,32 @@ namespace PCBVI.Controls.Quality
 
         public List<Data.LastInspection> GetUpateList()
         {
-            return (List<Data.LastInspection>)dgvList.DataSource;
+            List<Data.LastInspection> lastInspections = null;
+            try
+            {
+                lastInspections = (List<Data.LastInspection>)dgvList.DataSource;
+            }
+            catch (InvalidCastException)
+            {
+                MessageBox.Show(@"수정할 목록이 없습니다.");
+            }
+
+            return lastInspections;                       
         }
 
         public LastInspection GetCurrentLow()
         {
-            return dgvList.CurrentRow.DataBoundItem as Data.LastInspection;
+            Data.LastInspection lastInspection = null;
+            try
+            {
+                lastInspection = dgvList.CurrentRow.DataBoundItem as Data.LastInspection;
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("삭제할 요소가 없습니다.");
+            }
+
+            return lastInspection;           
         }
 
         public DataGridView GetListView()

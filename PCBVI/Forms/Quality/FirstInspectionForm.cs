@@ -39,13 +39,33 @@ namespace PCBVI.Forms.Quality
 
         private void UscTopMenu_UpdateButtonClicked(object sender, Controls.CommonControl.TopMenubar.UpdateButtonClickedEventArgs e)
         {
-            uscTopMenu.UpdateAll(uscList.GetUpateList());
+            List<Data.FirstInspection> firstInspections = uscList.GetUpateList();
+
+            if (firstInspections == null)
+                return;
+
+            uscTopMenu.UpdateAll(firstInspections);
+
+            MessageBox.Show("저장이 완료되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);           
         }
 
         private void UscTopMenu_ExcelButtonClicked(object sender, Controls.CommonControl.TopMenubar.ExcelButtonClickedEventArgs e)
         {
             DataGridView data = uscList.GetListView();
-            uscTopMenu.SaveExcelFile(data, "수입 검사");
+
+            string fileName = null;
+            string filePath = null;
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "저장경로 지정하세요.";
+            saveFileDialog.OverwritePrompt = true;
+            saveFileDialog.Filter = "Excle 통합 문서(*.xlsx)| *.xlsx | Excel97 - 2003 통합문서(*.xls) | *.xls";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                fileName = saveFileDialog.FileName;
+                filePath = Path.GetFullPath(saveFileDialog.FileName);
+                uscTopMenu.SaveExcelFile(data, filePath, fileName);
+            }
         }
 
         private void UscTopMenu_DeleteButtonClicked(object sender, Controls.CommonControl.TopMenubar.DeleteButtonClickedEventArgs e)

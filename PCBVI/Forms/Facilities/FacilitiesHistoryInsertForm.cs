@@ -41,18 +41,21 @@ namespace PCBVI.Forms.Facilities
             if (dgvList.Rows.Count > 0)
             {
                 Data.FacilitiesHistory facilitiesHistory = dgvList.Rows[0].DataBoundItem as Data.FacilitiesHistory;
-                if (facilitiesHistory == null || facilitiesHistory.FacilitiesId == 0 || facilitiesHistory.WorkPlaceId == 0 || facilitiesHistory.FHistoryDivisionId == 0)
+
+                if (facilitiesHistory == null || facilitiesHistory.FacilitiesId == null || facilitiesHistory.WorkPlaceId == null || facilitiesHistory.FHistoryDivisionId == null)
                 {
                     MessageBox.Show("등록 할 수있는 설비이력이 없습니다.");
                     return;
                 }
 
             }
+
             foreach (DataGridViewRow dr in dgvList.Rows)
             {
 
-                Data.FacilitiesHistory facilitiesHistory = dgvList.Rows[0].DataBoundItem as Data.FacilitiesHistory;
-                if (facilitiesHistory == null || facilitiesHistory.FacilitiesId == 0 || facilitiesHistory.WorkPlaceId == 0 || facilitiesHistory.FHistoryDivisionId == 0)
+                Data.FacilitiesHistory facilitiesHistory = dr.DataBoundItem as Data.FacilitiesHistory;
+
+                if (facilitiesHistory == null || facilitiesHistory.FacilitiesId == null || facilitiesHistory.WorkPlaceId == null || facilitiesHistory.FHistoryDivisionId == null || string.IsNullOrWhiteSpace(facilitiesHistory.HistoryContent)) 
                 {
                     MessageBox.Show("등록완료!");
                     Close();
