@@ -29,23 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvList = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employmentDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
-            this.departureDateDataGridViewTextBoxColumn = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
+            this.employmentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departureDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gradeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            this.loginIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.SuspendLayout();
+            // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataSource = typeof(PCBVI.Data.Department);
+            // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataSource = typeof(PCBVI.Data.Employee);
             // 
             // dgvList
             // 
-            this.dgvList.AllowUserToAddRows = false;
             this.dgvList.AutoGenerateColumns = false;
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -55,19 +64,23 @@
             this.codeDataGridViewTextBoxColumn,
             this.employmentDateDataGridViewTextBoxColumn,
             this.departureDateDataGridViewTextBoxColumn,
-            this.gradeDataGridViewTextBoxColumn});
+            this.gradeDataGridViewTextBoxColumn,
+            this.loginIdDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn});
             this.dgvList.DataSource = this.employeeBindingSource;
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.Location = new System.Drawing.Point(0, 0);
             this.dgvList.Name = "dgvList";
-            this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(763, 529);
+            this.dgvList.RowHeadersWidth = 51;
+            this.dgvList.RowTemplate.Height = 27;
+            this.dgvList.Size = new System.Drawing.Size(872, 661);
             this.dgvList.TabIndex = 0;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "사원명";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // departmentIdDataGridViewTextBoxColumn
@@ -77,76 +90,81 @@
             this.departmentIdDataGridViewTextBoxColumn.DisplayMember = "Name";
             this.departmentIdDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.departmentIdDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.departmentIdDataGridViewTextBoxColumn.HeaderText = "부서명";
+            this.departmentIdDataGridViewTextBoxColumn.HeaderText = "부서";
+            this.departmentIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.departmentIdDataGridViewTextBoxColumn.Name = "departmentIdDataGridViewTextBoxColumn";
             this.departmentIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.departmentIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.departmentIdDataGridViewTextBoxColumn.ValueMember = "DepartmentId";
             // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataSource = typeof(PCBVI.Data.Department);
-            // 
             // codeDataGridViewTextBoxColumn
             // 
             this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
             this.codeDataGridViewTextBoxColumn.HeaderText = "사원코드";
+            this.codeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
             // 
             // employmentDateDataGridViewTextBoxColumn
             // 
-            this.employmentDateDataGridViewTextBoxColumn.Checked = false;
             this.employmentDateDataGridViewTextBoxColumn.DataPropertyName = "EmploymentDate";
             this.employmentDateDataGridViewTextBoxColumn.HeaderText = "입사일";
+            this.employmentDateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.employmentDateDataGridViewTextBoxColumn.Name = "employmentDateDataGridViewTextBoxColumn";
-            this.employmentDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.employmentDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.employmentDateDataGridViewTextBoxColumn.Width = 120;
             // 
             // departureDateDataGridViewTextBoxColumn
             // 
-            this.departureDateDataGridViewTextBoxColumn.Checked = false;
             this.departureDateDataGridViewTextBoxColumn.DataPropertyName = "DepartureDate";
             this.departureDateDataGridViewTextBoxColumn.HeaderText = "퇴사일";
+            this.departureDateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.departureDateDataGridViewTextBoxColumn.Name = "departureDateDataGridViewTextBoxColumn";
-            this.departureDateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.departureDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.departureDateDataGridViewTextBoxColumn.Width = 121;
             // 
             // gradeDataGridViewTextBoxColumn
             // 
             this.gradeDataGridViewTextBoxColumn.DataPropertyName = "Grade";
             this.gradeDataGridViewTextBoxColumn.HeaderText = "조회권한";
+            this.gradeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.gradeDataGridViewTextBoxColumn.Name = "gradeDataGridViewTextBoxColumn";
             // 
-            // employeeBindingSource
+            // loginIdDataGridViewTextBoxColumn
             // 
-            this.employeeBindingSource.DataSource = typeof(PCBVI.Data.Employee);
+            this.loginIdDataGridViewTextBoxColumn.DataPropertyName = "LoginId";
+            this.loginIdDataGridViewTextBoxColumn.HeaderText = "아이디";
+            this.loginIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.loginIdDataGridViewTextBoxColumn.Name = "loginIdDataGridViewTextBoxColumn";
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "비밀번호";
+            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             // 
             // EmployeeList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvList);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "EmployeeList";
-            this.Size = new System.Drawing.Size(763, 529);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            this.Size = new System.Drawing.Size(872, 661);
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
         private System.Windows.Forms.BindingSource employeeBindingSource;
         private System.Windows.Forms.BindingSource departmentBindingSource;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvList;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn departmentIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn employmentDateDataGridViewTextBoxColumn;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn departureDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employmentDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departureDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gradeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loginIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
     }
 }
