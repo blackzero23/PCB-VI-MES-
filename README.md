@@ -7,6 +7,8 @@
 1.1 프로젝트 이름 과 구성
 --
  프로젝트 : PCB - VI - MES  (화면 비전을 통한 PCB 오류 검출 자동화 시스템.)
+
+ ![image](https://user-images.githubusercontent.com/49605999/64469829-f26a2e80-d173-11e9-9f5a-0cbdfa619d4d.png)
  
  C#의 Winform을 활용한 Mes Application 제작 
 ----
