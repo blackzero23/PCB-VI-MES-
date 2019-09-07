@@ -1,10 +1,13 @@
 1.What
 ==
+전체 프로젝트 PPT
+--
+[PCB Visual Inspection_final.pptx](https://github.com/blackzero23/PCB-VI-MES-/files/3586225/PCB.Visual.Inspection_final.pptx)
 
 1.1 프로젝트 이름 과 구성
 --
  프로젝트 : PCB - VI - MES  (화면 비전을 통한 PCB 오류 검출 자동화 시스템.)
-- C#의 Winform을 활용한 Mes Application 제작 
+ C#의 Winform을 활용한 Mes Application 제작 
 ----
 - 아두이노 를 이용한 로봇팔 제어.(GitHub URL :)  
 - 라즈베리파이를 이용한 (GitHub URL : )
@@ -15,7 +18,7 @@
 장점 
   - 작업 시작과 종료 를 통해 공정데이터 자동 가공되어서 리스트 표현 및 시각화가 되어 데이터를 한눈에 파악할 수 있습니다.
 단점
- - Mes 적인 요소가 부족하다. ( 예 - 실시간 시설 상태 점검, 실시간 데이터 조회 등)
+ - 생산라인에 관한 내용 밖에 없습니다.
 
 1.3 로그인 화면과 메인화면 및 동작화면
 --
