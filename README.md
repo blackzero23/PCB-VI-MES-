@@ -41,8 +41,9 @@
 흐름 : 작업지시 작성 -> 작업자 -> 작업시작 -> 작업일보 자동 작성 -> 목표수량 생산 완료 및 작업종료 버튼 을 누를시
       ->작업일보, 생산이력, 설비가동 비가동 자동 작성.
 
-영상 : https://www.youtube.com/watch?v=_Zxt3b80D2w
+설비 영상 : https://www.youtube.com/watch?v=_Zxt3b80D2w
 
+MES 프로그램 설명 : 영상 :
  
 2.HOW
 ==
