@@ -91,3 +91,11 @@ Microsoft .NET Framework 4.7.2
 DB : MSSQL
 
 H/W : RasberryPi 4
+
+
+3. 추후 보안 사항
+==
+1. 재 업무 분석후 리빌딩.
+
+2. 현재 Winform 인것을 WPF , 모바일 연동 구현.
+
