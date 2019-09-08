@@ -10,7 +10,7 @@
 
  ![image](https://user-images.githubusercontent.com/49605999/64469829-f26a2e80-d173-11e9-9f5a-0cbdfa619d4d.png)
  
- C#의 Winform을 활용한 Mes Application 제작 
+ C#의 Winform을 활용한 MES Application 제작 
 ----
 - 아두이노 를 이용한 로봇팔 제어.(GitHub URL :)  
 - 라즈베리파이를 이용한 화면비젼 (GitHub URL : )
@@ -42,6 +42,8 @@
       ->작업일보, 생산이력, 설비가동 비가동 자동 작성.
 
 설비 영상 : https://www.youtube.com/watch?v=_Zxt3b80D2w
+
+MES(C#) 흐름 영상 : https://www.youtube.com/watch?v=qo5e_HCUAl8&feature=youtu.be
 
 MES 프로그램 설명 : 영상 :
  
