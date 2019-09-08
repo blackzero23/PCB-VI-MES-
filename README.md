@@ -45,8 +45,6 @@
 
 MES(C#) 흐름 영상 : https://www.youtube.com/watch?v=qo5e_HCUAl8&feature=youtu.be
 
-MES 프로그램 설명 : 영상 :
- 
 2.HOW
 ==
 
